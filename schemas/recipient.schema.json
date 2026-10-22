@@ -1,0 +1,56 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "email": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Email"
+    },
+    "evidence_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Unit Ids",
+      "type": "array"
+    },
+    "resolution_status": {
+      "default": "not_found",
+      "enum": [
+        "resolved",
+        "email_missing",
+        "ambiguous",
+        "not_found"
+      ],
+      "title": "Resolution Status",
+      "type": "string"
+    },
+    "justification": {
+      "default": "",
+      "title": "Justification",
+      "type": "string"
+    },
+    "alternatives": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Alternatives",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "Recipient",
+  "type": "object"
+}

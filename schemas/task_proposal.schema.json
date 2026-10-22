@@ -1,0 +1,93 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "needs_confirmation": {
+      "const": true,
+      "default": true,
+      "title": "Needs Confirmation",
+      "type": "boolean"
+    },
+    "executed": {
+      "const": false,
+      "default": false,
+      "title": "Executed",
+      "type": "boolean"
+    },
+    "intent": {
+      "const": "create_task",
+      "default": "create_task",
+      "title": "Intent",
+      "type": "string"
+    },
+    "tool_candidate": {
+      "const": "tasks.create",
+      "default": "tasks.create",
+      "title": "Tool Candidate",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "owner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Owner"
+    },
+    "due": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Due"
+    },
+    "project": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project"
+    },
+    "description": {
+      "default": "",
+      "title": "Description",
+      "type": "string"
+    },
+    "source_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Unit Ids",
+      "type": "array"
+    },
+    "missing_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Fields",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "title": "TaskProposal",
+  "type": "object"
+}

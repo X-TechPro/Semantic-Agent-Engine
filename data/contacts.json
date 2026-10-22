@@ -1,0 +1,8 @@
+{
+  "Marie": {"email": "marie.dupont@example.org", "role": "budget"},
+  "Sophie": {"email": "sophie.bernard@example.org", "role": "produit"},
+  "Karim": {"email": null, "role": "technique"},
+  "Julien": {"email": "julien.moreau@example.org", "role": "juridique"},
+  "Nadia": {"email": "nadia.cohen@example.org", "role": "recrutement"},
+  "Antoine": {"email": null, "role": "communication"}
+}

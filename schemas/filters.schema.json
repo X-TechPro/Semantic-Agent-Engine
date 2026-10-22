@@ -1,0 +1,117 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "projects": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Projects",
+      "type": "array"
+    },
+    "source_types": {
+      "items": {
+        "enum": [
+          "meeting",
+          "document",
+          "code",
+          "note"
+        ],
+        "type": "string"
+      },
+      "title": "Source Types",
+      "type": "array"
+    },
+    "statuses": {
+      "items": {
+        "enum": [
+          "proposed",
+          "hypothesis",
+          "conditional",
+          "confirmed",
+          "cancelled",
+          "mention"
+        ],
+        "type": "string"
+      },
+      "title": "Statuses",
+      "type": "array"
+    },
+    "types": {
+      "items": {
+        "enum": [
+          "decision",
+          "action",
+          "commitment",
+          "question",
+          "answer",
+          "fact",
+          "risk",
+          "idea",
+          "other"
+        ],
+        "type": "string"
+      },
+      "title": "Types",
+      "type": "array"
+    },
+    "speakers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Speakers",
+      "type": "array"
+    },
+    "date_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date From"
+    },
+    "date_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date To"
+    },
+    "current_only": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Current Only"
+    },
+    "subject_prefix": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Subject Prefix"
+    }
+  },
+  "title": "Filters",
+  "type": "object"
+}

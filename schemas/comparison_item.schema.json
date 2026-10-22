@@ -1,0 +1,39 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "subject": {
+      "title": "Subject",
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "supersedes",
+        "creates_action",
+        "answers",
+        "unrelated"
+      ],
+      "title": "Relation",
+      "type": "string"
+    },
+    "explanation": {
+      "default": "",
+      "title": "Explanation",
+      "type": "string"
+    },
+    "unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unit Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "subject",
+    "relation"
+  ],
+  "title": "ComparisonItem",
+  "type": "object"
+}

@@ -1,0 +1,27 @@
+{
+ "temporal@1_mean": {
+  "baseline_A": 0.3429,
+  "system_B": 0.4857,
+  "delta": 0.1237
+ },
+ "seeds": [
+  42
+ ],
+ "per_seed_recall@5": {
+  "42": {
+   "baseline_A": 0.6382,
+   "system_B": 0.6778,
+   "B_mean": 0.6912,
+   "B_ci95": [
+    0.5887,
+    0.7936
+   ],
+   "delta": 0.0715,
+   "delta_ci95": [
+    -0.1271,
+    0.27
+   ],
+   "significant_win": false
+  }
+ }
+}

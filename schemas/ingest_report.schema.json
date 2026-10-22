@@ -1,0 +1,56 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "n_units": {
+      "default": 0,
+      "title": "N Units",
+      "type": "integer"
+    },
+    "n_stored": {
+      "default": 0,
+      "title": "N Stored",
+      "type": "integer"
+    },
+    "n_skipped": {
+      "default": 0,
+      "title": "N Skipped",
+      "type": "integer"
+    },
+    "n_queries": {
+      "default": 0,
+      "title": "N Queries",
+      "type": "integer"
+    },
+    "n_edges": {
+      "default": 0,
+      "title": "N Edges",
+      "type": "integer"
+    },
+    "n_superseded": {
+      "default": 0,
+      "title": "N Superseded",
+      "type": "integer"
+    },
+    "relations": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Relations",
+      "type": "object"
+    },
+    "elapsed_s": {
+      "default": 0.0,
+      "title": "Elapsed S",
+      "type": "number"
+    }
+  },
+  "required": [
+    "source_id"
+  ],
+  "title": "IngestReport",
+  "type": "object"
+}

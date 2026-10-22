@@ -1,0 +1,53 @@
+# System B — the thesis configuration (BUILD_GUIDE 10, row 7).
+# Identical retrieval budget to baseline_A.yaml; the only difference is that the
+# typed-relation layer is switched on: edges are built at ingest, and retrieval
+# applies validity weighting + supersede-following.
+exp_id: system_B
+seed: 42
+seeds: [42, 43, 44]
+language: fr
+
+linker_enabled: true       # read by Engine(); false turns this row into A
+
+embed:
+  backend: hash
+  dim: 256
+
+lexical:
+  backend: bm25s
+  strip_accents: true
+  stem: false
+
+retrieve:
+  top_k_dense: 50
+  top_k_lexical: 50
+  rrf_k: 60
+  weights: {dense: 1.0, bm25: 1.0}
+  final_k: 30
+  slot_boost: 1.25         # explicit subject is a soft boost, never a filter
+  rerank: {backend: none}
+  validity:
+    alpha_superseded: 0.0  # 6.10: "current" queries drop stale evidence
+    alpha_history: 0.3
+    beta_soft_status: 0.5  # hypothesis/proposed half-weighted
+    hard_filter: false
+    graph_expansion: true
+
+link:
+  k_neighbors: 12
+  guards: true             # 6.8.3 deterministic guards always run
+  supersede_min_score: 0.55
+  value_topical_min: 0.0   # G9 topical floor. Dev, 20 projects, `sae stage linker`:
+                           # 0.0 -> P 0.5172 / R 0.7143; 0.5 -> P 0.4375 / R 0.3333.
+                           # 0.0 dominates both axes (same conclusion as
+                           # engine.config.DEFAULTS, which is the real record).
+                           # This file is documentation: nothing loads it, because
+                           # every entry point calls load_config() with no path.
+                           # That is how a stale 0.5 could sit here unnoticed;
+                           # tests/unit/test_config_drift.py now pins file == code
+                           # (DECISIONS D-014).
+  value_equal_max: 0.8
+
+agent:
+  llm: {backend: template}   # template-only: no LLM in the measured path
+  no_answer_overlap: 0.06

@@ -1,0 +1,15 @@
+{
+ "temporal@1": 0.3889,
+ "baseline_temporal@1": 0.1667,
+ "recall@5": 0.6618,
+ "gold_in_pool": 1.0,
+ "seed": 42,
+ "n_projects": 8,
+ "provenance": {
+  "reader_backend": "rules",
+  "rerank_backend": "none",
+  "linker_backend": "rules"
+ },
+ "embed_version": "hash-256-35",
+ "config_hash": "fb8c67b1e2a1"
+}

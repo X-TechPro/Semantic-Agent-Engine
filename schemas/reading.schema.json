@@ -1,0 +1,179 @@
+{
+  "$defs": {
+    "Slots": {
+      "additionalProperties": false,
+      "properties": {
+        "persons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Persons",
+          "type": "array"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject"
+        },
+        "date_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date Value"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "due": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Due"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action"
+        }
+      },
+      "title": "Slots",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "The reader's verdict for one unit.",
+  "properties": {
+    "unit_id": {
+      "title": "Unit Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "info",
+        "query"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "decision",
+        "action",
+        "commitment",
+        "question",
+        "answer",
+        "fact",
+        "risk",
+        "idea",
+        "other"
+      ],
+      "title": "Type",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "hypothesis",
+        "conditional",
+        "confirmed",
+        "cancelled",
+        "mention"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "intent": {
+      "default": "none",
+      "enum": [
+        "answer",
+        "compare",
+        "build_dossier",
+        "draft_email",
+        "create_task",
+        "schedule_event",
+        "clarify",
+        "none"
+      ],
+      "title": "Intent",
+      "type": "string"
+    },
+    "slots": {
+      "$ref": "#/$defs/Slots"
+    },
+    "probabilities": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "type": "number"
+        },
+        "type": "object"
+      },
+      "title": "Probabilities",
+      "type": "object"
+    },
+    "also_info": {
+      "default": false,
+      "title": "Also Info",
+      "type": "boolean"
+    },
+    "abstained": {
+      "default": false,
+      "title": "Abstained",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "unit_id",
+    "kind",
+    "type",
+    "status"
+  ],
+  "title": "Reading",
+  "type": "object"
+}

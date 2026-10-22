@@ -1,0 +1,81 @@
+# Pre-commit hooks — deliberately all `repo: local`.
+#
+# Every hook here runs something that is **already installed in this venv** or is a
+# property of the repo itself. No `repo: https://…` entries: this project's venv has
+# a known trap where installing packages into it shadows the system torch (DECISIONS
+# D-001), and a hook that quietly pip-installs a linter on first run would be that
+# same failure with a nicer error message. ruff, mypy and flake8 are *not* installed
+# here, so none is referenced — a config that names tools the repo does not have is a
+# promise the next `git commit` has to break.
+#
+# **No formatter hook, deliberately.** Measured 2026-10-21: `black --check
+# --line-length 100 src tests api ui` exits 1 and reports **111 of 126** Python files
+# would be reformatted (15 clean). pre-commit only passes staged files, so a
+# formatter hook would not rewrite the repository wholesale — it would silently
+# reformat *whatever anyone commits*, burying the actual change under unrelated
+# churn and failing the first commit every time. Adopting black is a dedicated
+# `make format` commit with its own diff; it is not a side effect of committing
+# something else.
+#
+# Run any hook by hand, without pre-commit installed:
+#   .venv/bin/python -m pytest tests/unit/test_config_drift.py -q   # [config-drift]
+#   .venv/bin/python -m pytest tests/unit -q -m unit                # [unit-tests]
+#   .venv/bin/python -m engine.cli export-schemas                   # [schemas-current]
+#   make format-check                                               # the deferred formatter
+
+repos:
+  - repo: local
+    hooks:
+      # [config-drift] The shipped YAML must not drift from the code defaults it
+      # annotates. This is the single most consequential bug class this repo has hit
+      # (D-014: `link.backend` and `reader.abstain_threshold` were inert for the
+      # whole recorded suite because nothing compared file to code), so it is checked
+      # at commit time, not only in CI.
+      - id: config-drift
+        name: config drift (shipped YAML vs code defaults)
+        entry: .venv/bin/python -m pytest tests/unit/test_config_drift.py -q
+        language: system
+        pass_filenames: false
+        files: ^(src/engine/config\.py|configs/.*\.yaml)$
+
+      # [unit-tests] Fast gate only. Deliberately not the whole suite: `make test`
+      # needs the optional ML extra and takes minutes, and a commit hook that people
+      # learn to bypass with --no-verify protects nothing.
+      - id: unit-tests
+        name: unit tests (fast gate)
+        entry: .venv/bin/python -m pytest tests/unit -q -m unit
+        language: system
+        pass_filenames: false
+        types_or: [python, yaml]
+
+      # [schemas-current] The JSON contracts are generated artefacts; a stale
+      # schemas/ directory is a silent contract break for anything validating against
+      # it (2.3). Runs the exporter, which is idempotent when already current.
+      - id: schemas-current
+        name: schemas/ matches the pydantic models
+        entry: .venv/bin/python -m engine.cli export-schemas
+        language: system
+        pass_filenames: false
+        files: ^(src/engine/schemas\.py|src/engine/tools/export_schemas\.py)$
+
+      # [no-merge-conflict-markers] Hygiene that needs no external tooling. Verified
+      # by execution: exit 0 on a clean file, exit 1 when a `<<<<<<<` line is present.
+      - id: no-merge-conflict-markers
+        name: no merge-conflict markers
+        entry: .venv/bin/python -c "import sys,re;pat=re.compile(r'^(<{7}|={7}|>{7})( |$)');sys.exit(any(pat.search(l) for f in sys.argv[1:] for l in open(f,errors='ignore')))"
+        language: system
+        types: [text]
+
+      # [forbid-secret-files] Secrets must not reach a commit: the guide forbids real
+      # credentials, and the LLM layer reads SAE_LLM_KEY from the environment, never
+      # from a file. `files:` and the python check have to agree — the first version
+      # filtered on patterns the script then re-checked for, so the api-key case could
+      # never reach it. `re` is imported because a `python -c` snippet that forgets it
+      # raises NameError on the first matching commit (measured), which reads as a
+      # broken repository rather than a broken hook.
+      - id: forbid-secret-files
+        name: no committed key/token files
+        entry: .venv/bin/python -c "import sys,re,os;pat=re.compile(r'(api[_-]?key|secret|token|credential)s?\.(txt|json|ya?ml|env|py)$',re.I);bad=[p for p in sys.argv[1:] if os.path.basename(p).startswith(('.env','.netrc')) or pat.search(p)];sys.exit(1 if bad else 0)"
+        language: system
+        require_serial: true
+        files: (^|/)\.(env|env\..+|netrc|pem|key|p12)$|(api[_-]?key|secret|token|credential)s?\.(txt|json|ya?ml|env|py)$

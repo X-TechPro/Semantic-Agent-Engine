@@ -1,0 +1,44 @@
+# 019a_EARD subject drawers — train split (third training meeting; a real
+# intergenerational roundtable on GAFAM/réseaux/open source). Drawer per
+# segment as above; null = fragments, jokes, turn-taking, personal asides.
+0-1:gafam
+2-8:null
+9-10:gafam
+11:reseaux_sociaux
+12:null
+13-20:reseaux_sociaux
+21:null
+22-23:reseaux_sociaux
+24-39:actualite_desinfo
+40:null
+41-52:reseaux_sociaux
+53-55:gafam
+56:null
+57-63:gafam
+64-80:reseaux_sociaux
+81-83:null
+84-87:reseaux_sociaux
+88-89:null
+90-103:fracture_numerique
+104-110:reseaux_sociaux
+111-118:actualite_desinfo
+119:null
+120-149:streaming
+150-158:actualite_desinfo
+159:null
+160-196:actualite_desinfo
+197-233:open_source
+234-288:commandes_en_ligne
+289:donnees
+290-295:null
+296-343:influence
+344-347:null
+348:commandes_en_ligne
+349-365:arnaque
+366-383:commandes_en_ligne
+384:null
+385:tracking
+386-418:alternatives
+419-423:tracking
+424-430:commandes_en_ligne
+431-435:null

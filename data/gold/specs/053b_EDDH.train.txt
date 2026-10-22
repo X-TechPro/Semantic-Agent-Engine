@@ -1,0 +1,23 @@
+# 053b_EDDH subject drawers — train split (music-festival planning: rap/R&B,
+# Parc Borély Marseille, June, artist packs big-names vs little-known). null =
+# turn-taking, interview digressions, fragments.
+0-1:null
+2-3:organisation
+4-14:genres
+15-21:lieu
+22:securite
+23-26:lieu
+27-35:organisation
+36-46:lieu
+47-62:dates
+63-95:lineup
+96-104:null
+105-231:lineup
+232-249:communication
+250-259:public_cible
+260-265:lineup
+266-267:billetterie
+268:null
+269-270:billetterie
+271-275:genres
+276:lineup

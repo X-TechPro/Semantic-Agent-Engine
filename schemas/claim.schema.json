@@ -1,0 +1,23 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Unit Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "text",
+    "unit_ids"
+  ],
+  "title": "Claim",
+  "type": "object"
+}

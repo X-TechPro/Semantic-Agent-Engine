@@ -1,0 +1,41 @@
+# Baseline A — plain hybrid RAG (BUILD_GUIDE 10, row 4).
+# Dense + BM25 over sentences + RRF. The relation layer is switched off at BOTH
+# ends: no edges are built at ingest, and retrieval applies no validity
+# weighting and no supersede-following. This is the same file shape as
+# system_B.yaml with `linker_enabled: false` — one flag, one difference.
+exp_id: baseline_A
+seed: 42
+seeds: [42, 43, 44]
+language: fr
+
+linker_enabled: false
+
+embed:
+  backend: hash
+  dim: 256
+
+lexical:
+  backend: bm25s
+  strip_accents: true
+  stem: false
+
+retrieve:
+  top_k_dense: 50
+  top_k_lexical: 50
+  rrf_k: 60
+  weights: {dense: 1.0, bm25: 1.0}
+  final_k: 30
+  slot_boost: 1.0          # no slot targeting in the baseline row
+  rerank: {backend: none}
+  # inert while linker_enabled is false; set equal so a future "filters only"
+  # ablation (10, row 6) can flip linker_enabled without changing these
+  validity:
+    alpha_superseded: 1.0
+    alpha_history: 1.0
+    beta_soft_status: 1.0
+    hard_filter: false
+    graph_expansion: false
+
+agent:
+  llm: {backend: template}
+  no_answer_overlap: 0.06

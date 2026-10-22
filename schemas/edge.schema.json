@@ -1,0 +1,62 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "from_id": {
+      "title": "From Id",
+      "type": "string"
+    },
+    "to_id": {
+      "title": "To Id",
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "supersedes",
+        "creates_action",
+        "answers",
+        "unrelated"
+      ],
+      "title": "Relation",
+      "type": "string"
+    },
+    "score": {
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Score",
+      "type": "number"
+    },
+    "evidence_source_id": {
+      "title": "Evidence Source Id",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "guard": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Guard"
+    }
+  },
+  "required": [
+    "from_id",
+    "to_id",
+    "relation",
+    "score",
+    "evidence_source_id",
+    "created_at"
+  ],
+  "title": "Edge",
+  "type": "object"
+}

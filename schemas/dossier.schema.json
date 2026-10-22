@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "unit_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Unit Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "unit_ids"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "DossierSection": {
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Claims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "DossierSection",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/DossierSection"
+      },
+      "title": "Sections",
+      "type": "array"
+    },
+    "references": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "References",
+      "type": "array"
+    },
+    "missing_information": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Information",
+      "type": "array"
+    },
+    "markdown": {
+      "default": "",
+      "title": "Markdown",
+      "type": "string"
+    }
+  },
+  "title": "Dossier",
+  "type": "object"
+}

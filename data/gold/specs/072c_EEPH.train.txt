@@ -1,0 +1,41 @@
+# 072c_EEPH subject drawers — train split (small eco-association preparing a
+# university stand: partenariats, communication, affiches recyclées, discours,
+# volontaires). Names reused from the existing vocab wherever the topic
+# matches — cross-meeting class support is the measured lever (D-031).
+0-1:partenariats
+2-6:communication
+7:repartition_roles
+8-19:communication
+20-22:null
+23-24:communication
+25-33:materiel
+34:repartition_roles
+35-41:materiel
+42-46:discours
+47:administratif
+48:materiel
+49-50:discours
+51:repartition_roles
+52-54:communication
+55-63:volontaires
+64-66:repartition_roles
+67-69:null
+70-83:dates
+84:null
+85-87:materiel
+88-90:communication
+91-95:discours
+96-98:null
+99-103:communication
+104-113:partenariats
+114:organisation
+115-118:dates
+119:null
+120:dates
+121:partenariats
+122-123:public_cible
+124-126:organisation
+127-129:repartition_roles
+130-132:communication
+133-135:repartition_roles
+136:null

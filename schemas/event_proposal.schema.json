@@ -1,0 +1,95 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "needs_confirmation": {
+      "const": true,
+      "default": true,
+      "title": "Needs Confirmation",
+      "type": "boolean"
+    },
+    "executed": {
+      "const": false,
+      "default": false,
+      "title": "Executed",
+      "type": "boolean"
+    },
+    "intent": {
+      "const": "schedule_event",
+      "default": "schedule_event",
+      "title": "Intent",
+      "type": "string"
+    },
+    "tool_candidate": {
+      "const": "calendar.create_event",
+      "default": "calendar.create_event",
+      "title": "Tool Candidate",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "start": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Start"
+    },
+    "end": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "End"
+    },
+    "attendees": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Attendees",
+      "type": "array"
+    },
+    "project": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project"
+    },
+    "source_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Unit Ids",
+      "type": "array"
+    },
+    "missing_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Fields",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "title": "EventProposal",
+  "type": "object"
+}

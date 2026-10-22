@@ -1,0 +1,147 @@
+{
+  "corpus": "linagora/SUMM-RE rev 47cb4ec3437ef5497b6092b8c6d1e0b5b1d86dc0, test split, text-only range read (data/external/summre_test/PROVENANCE.json)",
+  "protocol": "hand-labelled by the assistant on 2026-10-21, TEST-ONLY and never tuned on (9.5): the metric design was frozen before any score was computed. One thread per evolving decision subject; each relation is a PAIR (old, new) of positions in meetings.json's filtered segment list, labelled {supersedes, contradicts, supports}; texts are read back from meetings.json so this file cannot drift from the extract. Every thread's indices were read with +-2 segments of context; where the text left ownership or state genuinely ambiguous (e.g. 013c habillage 267-273) NO label was written rather than a guessed one.",
+  "review_note": "012c_EBPZ was extracted but skipped for labelling: only 11 segments survive the quality filter, too little to open honest threads (measured, not judged from the filename)",
+  "split": "test",
+  "sentences_reviewed_total": 1002,
+  "meetings": {
+    "007a_ECRH": {
+      "sentences_reviewed": 353,
+      "threads": [
+        {"topic": "campagne.pub.support_visuel", "relations": [
+          {"old": 14, "new": 17, "relation": "supports", "note": "pub for the library -> concrete: a proposal for our bu"},
+          {"old": 43, "new": 44, "relation": "supports", "note": "une grande affiche -> banderole sur l'esplanade"},
+          {"old": 44, "new": 46, "relation": "supersedes", "note": "banner at the fac -> 'la fac pas un bon moyen, mieux en ville'"},
+          {"old": 46, "new": 47, "relation": "supports", "note": "in town -> cours mirabeau / la rotonde"},
+          {"old": 46, "new": 60, "relation": "supports", "note": "city advertising reaffirmed as the operative decision"}
+        ]},
+        {"topic": "bu.access.libre", "relations": [
+          {"old": 18, "new": 20, "relation": "contradicts", "note": "'not open to all' vs 'ben si, universitaire, complique'"},
+          {"old": 20, "new": 22, "relation": "supersedes", "note": "'complicated' resolved: technically anyone can enter"},
+          {"old": 22, "new": 26, "relation": "supports", "note": "enter yes, but no book leaves the building"},
+          {"old": 26, "new": 28, "relation": "supports", "note": "group confirms: cannot borrow"}
+        ]},
+        {"topic": "bu.emprunt.droit", "relations": [
+          {"old": 78, "new": 80, "relation": "supports", "note": "borrowing reserved to students, restated as the state"},
+          {"old": 80, "new": 84, "relation": "contradicts", "note": "s024 challenges the restriction (proposal, not state)"},
+          {"old": 328, "new": 352, "relation": "supports", "note": "digital books cannot be borrowed either - confirmed end-state"}
+        ]},
+        {"topic": "carte.membre.prix", "relations": [
+          {"old": 6, "new": 90, "relation": "supports", "note": "member card recalled -> 'une carte d'abonnement'"},
+          {"old": 117, "new": 137, "relation": "supersedes", "note": "'carte de membre toute simple' -> decided: FREE subscription card"},
+          {"old": 137, "new": 139, "relation": "contradicts", "note": "s022: at her hometown it is paid for adults"},
+          {"old": 139, "new": 142, "relation": "supersedes", "note": "scope corrected: she meant another library, not this one"},
+          {"old": 142, "new": 145, "relation": "supports", "note": "ours is municipal and free - decision state restored"}
+        ]},
+        {"topic": "carte.support.application", "relations": [
+          {"old": 178, "new": 187, "relation": "supersedes", "note": "app instead of paper cards -> 'faut quand meme laisser des cartes'"},
+          {"old": 178, "new": 188, "relation": "contradicts", "note": "and the app is not advertising anyway (s021)"}
+        ]},
+        {"topic": "systeme.hybride.etudiants", "relations": [
+          {"old": 99, "new": 101, "relation": "supersedes", "note": "hybrid student/non-student system proposed -> withdrawn 'ca sert a rien, pas utile'"}
+        ]},
+        {"topic": "radio.cible.efficacite", "relations": [
+          {"old": 207, "new": 210, "relation": "supports", "note": "france bleu idea -> 'radio ca peut etre pas mal'"},
+          {"old": 210, "new": 253, "relation": "contradicts", "note": "young people don't listen to radio"},
+          {"old": 253, "new": 264, "relation": "supersedes", "note": "s021 reverses own objection: radio reaches more people, 'plus efficace'"}
+        ]},
+        {"topic": "rue.interpellation.canal", "relations": [
+          {"old": 274, "new": 275, "relation": "contradicts", "note": "stand on cours mirabeau, address people -> 'ca marche pas, enquete: 1 sur 200'"},
+          {"old": 275, "new": 280, "relation": "supports", "note": "'donc c'est pas productif' - channel rejected"}
+        ]},
+        {"topic": "offices.tourisme.canal", "relations": [
+          {"old": 302, "new": 303, "relation": "contradicts", "note": "tourist offices idea -> they serve tourists, not city people"},
+          {"old": 303, "new": 309, "relation": "supports", "note": "'du coup c'est nul' - rejection closed"}
+        ]}
+      ]
+    },
+    "013c_EAPD": {
+      "sentences_reviewed": 289,
+      "threads": [
+        {"topic": "evenement.date", "relations": [
+          {"old": 2, "new": 3, "relation": "supports", "note": "June 2022 -> a June Saturday, avoiding la fete de la musique"},
+          {"old": 3, "new": 10, "relation": "supersedes", "note": "'le quatre' chosen: the date stops being a window"}
+        ]},
+        {"topic": "taches.ordre", "relations": [
+          {"old": 15, "new": 19, "relation": "supersedes", "note": "first task flips: invite the guests before booking the room"},
+          {"old": 19, "new": 60, "relation": "supersedes", "note": "flips again: the sondage/pre-resa is 'carrément la première chose à faire'"},
+          {"old": 60, "new": 65, "relation": "supports", "note": "'donc du coup on va faire ça' - decision closed"},
+          {"old": 60, "new": 61, "relation": "supports", "note": "s045 confirms 'si c'est la première chose à faire'"}
+        ]},
+        {"topic": "bezos.negociation.canal", "relations": [
+          {"old": 30, "new": 31, "relation": "supersedes", "note": "maman negotiating in person -> 'je vais faire ça par mail d'abord'"},
+          {"old": 31, "new": 39, "relation": "supports", "note": "'mail puis harcèlement' - the channel decision as a rule"}
+        ]},
+        {"topic": "nièce.mise.en.contact", "relations": [
+          {"old": 40, "new": 41, "relation": "supersedes", "note": "'on passerait d'abord par une mise en contact' -> 'non je la connais, ça devrait le faire'"},
+          {"old": 41, "new": 43, "relation": "supports", "note": "'on contact direct en fait' - rephrased decision"}
+        ]},
+        {"topic": "business.sens.communication", "relations": [
+          {"old": 47, "new": 50, "relation": "supersedes", "note": "'communicate once we have the room' -> 'more interesting business-wise: is there demand'"},
+          {"old": 50, "new": 52, "relation": "supports", "note": "'c'est vrai c'est vrai' - order accepted"}
+        ]},
+        {"topic": "matos.preavis", "relations": [
+          {"old": 152, "new": 153, "relation": "supersedes", "note": "'un mois à l'avance pour le matos' -> 'non, un peu plus quand même'"},
+          {"old": 153, "new": 156, "relation": "supersedes", "note": "'un peu plus' -> 'peut-être six mois' (decided)"},
+          {"old": 156, "new": 158, "relation": "supports", "note": "'on a six mois quoi' - restated as the plan"}
+        ]},
+        {"topic": "logistique.responsable", "relations": [
+          {"old": 127, "new": 135, "relation": "supersedes", "note": "open question 'logistique?' -> 'c'est christophe, ça c'est clair on a compris'"},
+          {"old": 135, "new": 150, "relation": "supports", "note": "'donc ça c'est par christophe' in the recap"}
+        ]},
+        {"topic": "recrutement.coachs.quand", "relations": [
+          {"old": 263, "new": 265, "relation": "supersedes", "note": "'s'y prendre un peu en avance' -> 'à partir du mois de janvier, tac' (concrete)"}
+        ]},
+        {"topic": "materiel.techniciens.couverture", "relations": [
+          {"old": 281, "new": 282, "relation": "supersedes", "note": "'juste précision: réserver matériel et techniciens?' -> 'en fait j'avais mis' (already on the list)"}
+        ]}
+      ]
+    },
+    "014c_EAPD": {
+      "sentences_reviewed": 360,
+      "threads": [
+        {"topic": "reunion.date_fixee", "relations": [
+          {"old": 2, "new": 5, "relation": "supersedes", "note": "26 October proposed -> 'mardi vingt-deux c'était bien'"},
+          {"old": 5, "new": 6, "relation": "supports", "note": "'donc on choisit cette date définitivement'"},
+          {"old": 6, "new": 9, "relation": "supports", "note": "'octobre deux mille vingt et un ok très bien' - year closed too"}
+        ]},
+        {"topic": "professeur.confirmation", "relations": [
+          {"old": 82, "new": 100, "relation": "supersedes", "note": "'on lui a pas fixé la date, il faut confirmer' -> call happened: 'ça lui faisait plaisir de venir'"},
+          {"old": 100, "new": 101, "relation": "supports", "note": "'oui oui il trouve que c'est intéressant' - acceptance restated"}
+        ]},
+        {"topic": "journal.echo.date_parution", "relations": [
+          {"old": 122, "new": 124, "relation": "supersedes", "note": "'début septembre' -> 'non, déjà sorti: ce sera celui d'octobre'"},
+          {"old": 124, "new": 125, "relation": "supports", "note": "'oui oui début octobre'"}
+        ]},
+        {"topic": "affiches.responsable", "relations": [
+          {"old": 146, "new": 149, "relation": "supersedes", "note": "'qui s'occupe des affiches?' -> 'je m'en occupe moi-même et j'en donne pour distribution'"}
+        ]},
+        {"topic": "canal.principal.diffusion", "relations": [
+          {"old": 198, "new": 199, "relation": "supersedes", "note": "'ça va être plutôt du bouche à oreille' -> 'ça sera plus sur facebook, les réseaux sociaux'"},
+          {"old": 199, "new": 200, "relation": "supports", "note": "'et sur le facebook ouais' - accepted"}
+        ]},
+        {"topic": "rappel.quand", "relations": [
+          {"old": 272, "new": 274, "relation": "supersedes", "note": "'la veille c'est bien de rappeler' -> 'on va mettre deux jours avant' (decided)"}
+        ]},
+        {"topic": "pass_sanitaire.tache", "relations": [
+          {"old": 282, "new": 284, "relation": "supersedes", "note": "'un pass sanitaire, qui s'en occupe?' -> 'on va dire qu'il y en a pas, covid' (task dropped)"},
+          {"old": 284, "new": 286, "relation": "supports", "note": "'pour le moment on en parle pas' / 'c'est plus simple'"}
+        ]},
+        {"topic": "boissons.base_quantité", "relations": [
+          {"old": 291, "new": 301, "relation": "supersedes", "note": "'on part sur 150 personnes' -> after the supérette visit: 'pour soixante-soixante-dix-quatre-vingts maximum'"}
+        ]},
+        {"topic": "pizza.dernier_moment", "relations": [
+          {"old": 318, "new": 319, "relation": "contradicts", "note": "'la pizza on peut lui dire au dernier moment' -> 'ah non non non c'est pas possible'"},
+          {"old": 319, "new": 320, "relation": "supersedes", "note": "the fallback becomes chips/crisps, not last-minute pizza"}
+        ]},
+        {"topic": "salle.dispo.quand", "relations": [
+          {"old": 349, "new": 350, "relation": "supersedes", "note": "'t'as dit que c'est sûr qu'on l'aura le matin' -> 'non non pas sûr; je redemanderai pour la veille'"},
+          {"old": 350, "new": 351, "relation": "supports", "note": "'y a de grandes chances que ce soit le jour même'"}
+        ]},
+        {"topic": "transport.professeur", "relations": [
+          {"old": 353, "new": 355, "relation": "supports", "note": "'transport du prof?' -> 'il vient en voiture avec son étudiant, on rembourse les frais'"}
+        ]}
+      ]
+    }
+  }
+}

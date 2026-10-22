@@ -1,0 +1,24 @@
+# 070b_EBDL subject drawers — train split (cine-club festival: pair
+# documentary+superhero/fantasy films by country, three cinemas, weekend
+# scheduling, 10 EUR/day pricing). null = closings, bare reactions.
+0:organisation
+1-16:genres
+17-20:lineup
+21:public_cible
+22-23:dates
+24-32:billetterie
+33-59:lieu
+60:public_cible
+61-80:genres
+81-90:public_cible
+91:organisation
+92:null
+93-96:genres
+97-98:organisation
+99-107:dates
+108-139:billetterie
+140:organisation
+141-211:lineup
+212-219:dates
+220-221:organisation
+222-223:null

@@ -1,0 +1,173 @@
+{
+  "$defs": {
+    "Slots": {
+      "additionalProperties": false,
+      "properties": {
+        "persons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Persons",
+          "type": "array"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject"
+        },
+        "date_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date Value"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "due": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Due"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action"
+        }
+      },
+      "title": "Slots",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "role": {
+      "const": "query",
+      "default": "query",
+      "title": "Role",
+      "type": "string"
+    },
+    "mode": {
+      "default": "current",
+      "enum": [
+        "current",
+        "history",
+        "compare"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "project": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project"
+    },
+    "intent": {
+      "default": "answer",
+      "enum": [
+        "answer",
+        "compare",
+        "build_dossier",
+        "draft_email",
+        "create_task",
+        "schedule_event",
+        "clarify",
+        "none"
+      ],
+      "title": "Intent",
+      "type": "string"
+    },
+    "slots": {
+      "$ref": "#/$defs/Slots"
+    },
+    "source_unit_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Unit Id"
+    },
+    "as_of": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "As Of"
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "title": "Query",
+  "type": "object"
+}

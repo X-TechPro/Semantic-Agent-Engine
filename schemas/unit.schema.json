@@ -1,0 +1,324 @@
+{
+  "$defs": {
+    "Slots": {
+      "additionalProperties": false,
+      "properties": {
+        "persons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Persons",
+          "type": "array"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject"
+        },
+        "date_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date Value"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "due": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Due"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action"
+        }
+      },
+      "title": "Slots",
+      "type": "object"
+    },
+    "Span": {
+      "additionalProperties": false,
+      "description": "A character span inside a unit's `text` — the evidence granularity.\n\nInvariant (6.1 acceptance: 100% span reconstruction): `text[start:end]`\nequals `surface` after the segmenter's normalisation.",
+      "properties": {
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "surface": {
+          "title": "Surface",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "surface"
+      ],
+      "title": "Span",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "unit_id": {
+      "title": "Unit Id",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "meeting",
+        "document",
+        "code",
+        "note"
+      ],
+      "title": "Source Type",
+      "type": "string"
+    },
+    "source_date": {
+      "format": "date",
+      "title": "Source Date",
+      "type": "string"
+    },
+    "ingested_at": {
+      "format": "date-time",
+      "title": "Ingested At",
+      "type": "string"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "sentences": {
+      "items": {
+        "$ref": "#/$defs/Span"
+      },
+      "title": "Sentences",
+      "type": "array"
+    },
+    "speaker": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Speaker"
+    },
+    "project": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project"
+    },
+    "turn_index": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Turn Index"
+    },
+    "kind": {
+      "anyOf": [
+        {
+          "enum": [
+            "info",
+            "query"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Kind"
+    },
+    "type": {
+      "anyOf": [
+        {
+          "enum": [
+            "decision",
+            "action",
+            "commitment",
+            "question",
+            "answer",
+            "fact",
+            "risk",
+            "idea",
+            "other"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Type"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "enum": [
+            "proposed",
+            "hypothesis",
+            "conditional",
+            "confirmed",
+            "cancelled",
+            "mention"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Status"
+    },
+    "slots": {
+      "$ref": "#/$defs/Slots"
+    },
+    "valid_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid From"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid To"
+    },
+    "superseded_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Superseded By"
+    },
+    "embed_model_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Embed Model Version"
+    },
+    "gold_event_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gold Event Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "unit_id",
+    "source_id",
+    "source_type",
+    "source_date",
+    "ingested_at",
+    "text"
+  ],
+  "title": "Unit",
+  "type": "object"
+}

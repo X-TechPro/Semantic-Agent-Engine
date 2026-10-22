@@ -1,0 +1,112 @@
+{
+  "$defs": {
+    "Recipient": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Email"
+        },
+        "evidence_unit_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Unit Ids",
+          "type": "array"
+        },
+        "resolution_status": {
+          "default": "not_found",
+          "enum": [
+            "resolved",
+            "email_missing",
+            "ambiguous",
+            "not_found"
+          ],
+          "title": "Resolution Status",
+          "type": "string"
+        },
+        "justification": {
+          "default": "",
+          "title": "Justification",
+          "type": "string"
+        },
+        "alternatives": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Recipient",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "needs_confirmation": {
+      "const": true,
+      "default": true,
+      "title": "Needs Confirmation",
+      "type": "boolean"
+    },
+    "executed": {
+      "const": false,
+      "default": false,
+      "title": "Executed",
+      "type": "boolean"
+    },
+    "intent": {
+      "const": "draft_email",
+      "default": "draft_email",
+      "title": "Intent",
+      "type": "string"
+    },
+    "tool_candidate": {
+      "const": "email.create_draft",
+      "default": "email.create_draft",
+      "title": "Tool Candidate",
+      "type": "string"
+    },
+    "recipient": {
+      "$ref": "#/$defs/Recipient"
+    },
+    "subject": {
+      "title": "Subject",
+      "type": "string"
+    },
+    "body": {
+      "title": "Body",
+      "type": "string"
+    },
+    "source_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Unit Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "recipient",
+    "subject",
+    "body"
+  ],
+  "title": "DraftEmail",
+  "type": "object"
+}

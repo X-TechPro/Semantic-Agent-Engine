@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semantic-agent-engine"
+version = "0.1.0"
+description = "Typed-relation memory engine for RAG: embeddings find what it is about, a typed relation layer decides whether it is still true."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7",
+    "numpy>=1.26",
+    "PyYAML>=6.0",
+    "faiss-cpu>=1.8",
+    "bm25s>=0.2",
+    "chunklet-py>=3.0",
+    "dateparser>=1.2",
+    "hypothesis>=6.100",
+    "pytest>=8.0",
+    "rich>=13.0",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+# Heavy / optional. The engine must import and run without them (baseline
+# implementations are pure-python); see docs/DECISIONS.md D-002.
+ml = [
+    "torch>=2.4",
+    "transformers>=4.44",
+    "sentence-transformers>=3.0",
+    "scikit-learn>=1.4",
+    "peft>=0.11",
+    "datasets>=2.19",
+]
+serve = ["fastapi>=0.110", "uvicorn>=0.29", "streamlit>=1.35"]
+code = ["tree-sitter>=0.23"]
+slots = ["gliner>=0.2"]
+
+[project.scripts]
+sae = "engine.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["engine*", "gen*", "eval*"]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "unit: fast, isolated",
+    "property: hypothesis-based property tests",
+    "integration: multi-stage, local files only",
+    "golden: French minimal-pair suites (BUILD_GUIDE 12.3)",
+    "e2e: the 7 mandatory demo scenarios (BUILD_GUIDE 13)",
+    "slow: latency / large-data tests",
+    "gpu: requires a CUDA device (skipped otherwise)",
+]
+filterwarnings = ["ignore::DeprecationWarning"]

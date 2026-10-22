@@ -1,0 +1,93 @@
+{
+  "$defs": {
+    "ComparisonItem": {
+      "additionalProperties": false,
+      "properties": {
+        "subject": {
+          "title": "Subject",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "supports",
+            "contradicts",
+            "supersedes",
+            "creates_action",
+            "answers",
+            "unrelated"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "explanation": {
+          "default": "",
+          "title": "Explanation",
+          "type": "string"
+        },
+        "unit_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unit Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "subject",
+        "relation"
+      ],
+      "title": "ComparisonItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "left_source": {
+      "title": "Left Source",
+      "type": "string"
+    },
+    "right_source": {
+      "title": "Right Source",
+      "type": "string"
+    },
+    "unchanged": {
+      "items": {
+        "$ref": "#/$defs/ComparisonItem"
+      },
+      "title": "Unchanged",
+      "type": "array"
+    },
+    "changed": {
+      "items": {
+        "$ref": "#/$defs/ComparisonItem"
+      },
+      "title": "Changed",
+      "type": "array"
+    },
+    "superseded": {
+      "items": {
+        "$ref": "#/$defs/ComparisonItem"
+      },
+      "title": "Superseded",
+      "type": "array"
+    },
+    "contradicted": {
+      "items": {
+        "$ref": "#/$defs/ComparisonItem"
+      },
+      "title": "Contradicted",
+      "type": "array"
+    },
+    "summary": {
+      "default": "",
+      "title": "Summary",
+      "type": "string"
+    }
+  },
+  "required": [
+    "left_source",
+    "right_source"
+  ],
+  "title": "Comparison",
+  "type": "object"
+}

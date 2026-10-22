@@ -1,0 +1,428 @@
+{
+  "contracts": {
+    "unit": {
+      "title": "Unit",
+      "required": [
+        "unit_id",
+        "source_id",
+        "source_type",
+        "source_date",
+        "ingested_at",
+        "text"
+      ],
+      "properties": [
+        "embed_model_version",
+        "gold_event_ids",
+        "ingested_at",
+        "kind",
+        "project",
+        "sentences",
+        "slots",
+        "source_date",
+        "source_id",
+        "source_type",
+        "speaker",
+        "status",
+        "superseded_by",
+        "text",
+        "turn_index",
+        "type",
+        "unit_id",
+        "valid_from",
+        "valid_to"
+      ]
+    },
+    "slots": {
+      "title": "Slots",
+      "required": [],
+      "properties": [
+        "action",
+        "amount",
+        "date_value",
+        "due",
+        "owner",
+        "persons",
+        "subject"
+      ]
+    },
+    "span": {
+      "title": "Span",
+      "required": [
+        "start",
+        "end",
+        "surface"
+      ],
+      "properties": [
+        "end",
+        "start",
+        "surface"
+      ]
+    },
+    "source": {
+      "title": "Source",
+      "required": [
+        "source_id",
+        "source_type",
+        "source_date"
+      ],
+      "properties": [
+        "code",
+        "default_speaker",
+        "gold_event_ids",
+        "language",
+        "project",
+        "source_date",
+        "source_id",
+        "source_type",
+        "text",
+        "title",
+        "turns"
+      ]
+    },
+    "turn": {
+      "title": "Turn",
+      "required": [],
+      "properties": [
+        "gold_event_ids",
+        "project",
+        "speaker",
+        "text",
+        "timestamp",
+        "turn_index"
+      ]
+    },
+    "reading": {
+      "title": "Reading",
+      "required": [
+        "unit_id",
+        "kind",
+        "type",
+        "status"
+      ],
+      "properties": [
+        "abstained",
+        "also_info",
+        "intent",
+        "kind",
+        "probabilities",
+        "slots",
+        "status",
+        "type",
+        "unit_id"
+      ]
+    },
+    "read_context": {
+      "title": "ReadContext",
+      "required": [],
+      "properties": [
+        "default_speaker",
+        "previous",
+        "project"
+      ]
+    },
+    "edge": {
+      "title": "Edge",
+      "required": [
+        "from_id",
+        "to_id",
+        "relation",
+        "score",
+        "evidence_source_id",
+        "created_at"
+      ],
+      "properties": [
+        "created_at",
+        "evidence_source_id",
+        "from_id",
+        "guard",
+        "relation",
+        "score",
+        "to_id"
+      ]
+    },
+    "query": {
+      "title": "Query",
+      "required": [
+        "text"
+      ],
+      "properties": [
+        "as_of",
+        "intent",
+        "mode",
+        "project",
+        "role",
+        "slots",
+        "source_unit_id",
+        "text"
+      ]
+    },
+    "filters": {
+      "title": "Filters",
+      "required": [],
+      "properties": [
+        "current_only",
+        "date_from",
+        "date_to",
+        "projects",
+        "source_types",
+        "speakers",
+        "statuses",
+        "subject_prefix",
+        "types"
+      ]
+    },
+    "hit": {
+      "title": "Hit",
+      "required": [
+        "unit",
+        "score"
+      ],
+      "properties": [
+        "evidence",
+        "path",
+        "rank",
+        "score",
+        "score_parts",
+        "unit"
+      ]
+    },
+    "recipient": {
+      "title": "Recipient",
+      "required": [
+        "name"
+      ],
+      "properties": [
+        "alternatives",
+        "email",
+        "evidence_unit_ids",
+        "justification",
+        "name",
+        "resolution_status"
+      ]
+    },
+    "draft_email": {
+      "title": "DraftEmail",
+      "required": [
+        "recipient",
+        "subject",
+        "body"
+      ],
+      "properties": [
+        "body",
+        "executed",
+        "intent",
+        "needs_confirmation",
+        "recipient",
+        "source_unit_ids",
+        "subject",
+        "tool_candidate"
+      ]
+    },
+    "task_proposal": {
+      "title": "TaskProposal",
+      "required": [
+        "title"
+      ],
+      "properties": [
+        "description",
+        "due",
+        "executed",
+        "intent",
+        "missing_fields",
+        "needs_confirmation",
+        "owner",
+        "project",
+        "source_unit_ids",
+        "title",
+        "tool_candidate"
+      ]
+    },
+    "event_proposal": {
+      "title": "EventProposal",
+      "required": [
+        "title"
+      ],
+      "properties": [
+        "attendees",
+        "end",
+        "executed",
+        "intent",
+        "missing_fields",
+        "needs_confirmation",
+        "project",
+        "source_unit_ids",
+        "start",
+        "title",
+        "tool_candidate"
+      ]
+    },
+    "clarification": {
+      "title": "Clarification",
+      "required": [
+        "question"
+      ],
+      "properties": [
+        "options",
+        "question",
+        "reason"
+      ]
+    },
+    "claim": {
+      "title": "Claim",
+      "required": [
+        "text",
+        "unit_ids"
+      ],
+      "properties": [
+        "text",
+        "unit_ids"
+      ]
+    },
+    "dossier_section": {
+      "title": "DossierSection",
+      "required": [
+        "title"
+      ],
+      "properties": [
+        "claims",
+        "title"
+      ]
+    },
+    "dossier": {
+      "title": "Dossier",
+      "required": [],
+      "properties": [
+        "markdown",
+        "missing_information",
+        "project",
+        "references",
+        "sections"
+      ]
+    },
+    "answer_with_evidence": {
+      "title": "AnswerWithEvidence",
+      "required": [],
+      "properties": [
+        "answer",
+        "claims",
+        "no_answer_reason",
+        "query_mode",
+        "status_breakdown",
+        "superseded_history"
+      ]
+    },
+    "comparison_item": {
+      "title": "ComparisonItem",
+      "required": [
+        "subject",
+        "relation"
+      ],
+      "properties": [
+        "explanation",
+        "relation",
+        "subject",
+        "unit_ids"
+      ]
+    },
+    "comparison": {
+      "title": "Comparison",
+      "required": [
+        "left_source",
+        "right_source"
+      ],
+      "properties": [
+        "changed",
+        "contradicted",
+        "left_source",
+        "right_source",
+        "summary",
+        "superseded",
+        "unchanged"
+      ]
+    },
+    "action_result": {
+      "title": "ActionResult",
+      "required": [
+        "intent",
+        "operation",
+        "payload"
+      ],
+      "properties": [
+        "clarification",
+        "degraded_to_template",
+        "hit_unit_ids",
+        "intent",
+        "notes",
+        "operation",
+        "payload",
+        "used_llm"
+      ]
+    },
+    "ingest_report": {
+      "title": "IngestReport",
+      "required": [
+        "source_id"
+      ],
+      "properties": [
+        "elapsed_s",
+        "n_edges",
+        "n_queries",
+        "n_skipped",
+        "n_stored",
+        "n_superseded",
+        "n_units",
+        "relations",
+        "source_id"
+      ]
+    }
+  },
+  "label_sets": {
+    "source_type": [
+      "meeting",
+      "document",
+      "code",
+      "note"
+    ],
+    "kind": [
+      "info",
+      "query"
+    ],
+    "type": [
+      "decision",
+      "action",
+      "commitment",
+      "question",
+      "answer",
+      "fact",
+      "risk",
+      "idea",
+      "other"
+    ],
+    "status": [
+      "proposed",
+      "hypothesis",
+      "conditional",
+      "confirmed",
+      "cancelled",
+      "mention"
+    ],
+    "intent": [
+      "answer",
+      "compare",
+      "build_dossier",
+      "draft_email",
+      "create_task",
+      "schedule_event",
+      "clarify",
+      "none"
+    ],
+    "relation": [
+      "supports",
+      "contradicts",
+      "supersedes",
+      "creates_action",
+      "answers",
+      "unrelated"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "corpus": "linagora/SUMM-RE rev 47cb4ec3437ef5497b6092b8c6d1e0b5b1d86dc0, TEST-SPLIT meetings used as a DEV set (fresh, never read by the spent B-13 arm)",
+  "purpose": "tuning-side measurement for the fix-2 reach experiment (subject lookup + status firing). Thresholds and lexicon are never chosen against the spent test set (9.5); this file is the tuning corpus",
+  "protocol": "hand-labelled by the assistant on 2026-10-21 from decision-cued windows (+-2 segments of context, windows shown: 244 + 191); PAIR (old, new) positions in data/external/summre_test/meetings.json; relations {supersedes, contradicts, supports}; where the windows left a state genuinely undecidable no label was written rather than a guessed one",
+  "split": "dev",
+  "meetings": {
+    "019c_EAPD": {
+      "sentences_reviewed": 244,
+      "threads": [
+        {"topic": "buffet.paiement_vs_contact", "relations": [
+          {"old": 4, "new": 5, "relation": "contradicts", "note": "'tu payes tout?' -> 'non je paye pas, j'établis les contacts'"}
+        ]},
+        {"topic": "accueil.viennoiseries_ecole_hoteliere", "relations": [
+          {"old": 37, "new": 38, "relation": "contradicts", "note": "'cueillir les graines' joke -> 'non, les viennoiseries'"},
+          {"old": 38, "new": 39, "relation": "supports", "note": "viennoiseries -> contact école hôtelière d'Avignon, septembre"}
+        ]},
+        {"topic": "lycee.participer_vs_contacter", "relations": [
+          {"old": 42, "new": 43, "relation": "contradicts", "note": "'pourront participer' -> 'c'est contacter pour savoir, pas qu'ils le feront'"},
+          {"old": 43, "new": 45, "relation": "supports", "note": "same correction restated"}
+        ]},
+        {"topic": "comm.affiche_support", "relations": [
+          {"old": 115, "new": 116, "relation": "contradicts", "note": "bulletin municipal suggestion -> rejection"},
+          {"old": 116, "new": 118, "relation": "supersedes", "note": "rejected bulletin -> operative plan: affiches dans le hall"}
+        ]},
+        {"topic": "comm.posters_vs_affiches", "relations": [
+          {"old": 124, "new": 125, "relation": "contradicts", "note": "'des posters' -> 'des affiches, pas des posters'"}
+        ]},
+        {"topic": "taches.repartition_owner", "relations": [
+          {"old": 141, "new": 142, "relation": "contradicts", "note": "s060 offers to contact -> s062 'non c'est moi ça'"},
+          {"old": 142, "new": 143, "relation": "supersedes", "note": "claim -> split 'tu en fais deux, j'en fais un'"},
+          {"old": 143, "new": 144, "relation": "supersedes", "note": "split -> 'ok bref fais les tous'"}
+        ]},
+        {"topic": "tables_rondes.amphi", "relations": [
+          {"old": 152, "new": 154, "relation": "supports", "note": "'pas un amphi' -> 'non, pas possible dans un amphi'"},
+          {"old": 154, "new": 155, "relation": "contradicts", "note": "certainty -> 'je suis pas sûre qu'on ait le droit'"}
+        ]},
+        {"topic": "evenement.date_heures", "relations": [
+          {"old": 163, "new": 166, "relation": "supports", "note": "18 octobre recalled -> hours 9h-12h30 added"}
+        ]},
+        {"topic": "sanitaires.tache_owner", "relations": [
+          {"old": 191, "new": 194, "relation": "supports", "note": "propose sanitary-comms task -> s060 takes passing through classrooms"}
+        ]}
+      ]
+    },
+    "025b_EBDH": {
+      "sentences_reviewed": 191,
+      "threads": [
+        {"topic": "genre.paire_finale", "relations": [
+          {"old": 23, "new": 76, "relation": "supersedes", "note": "'comédie romance' candidate -> decided 'romance et historique'"},
+          {"old": 74, "new": 76, "relation": "supports", "note": "'on peut partir sur romance historique' -> 'ouais go'"}
+        ]},
+        {"topic": "cinema.venue", "relations": [
+          {"old": 118, "new": 125, "relation": "supersedes", "note": "'le art déco il est pas mal' proposal -> 'allez c'est parti, art déco'"},
+          {"old": 120, "new": 125, "relation": "supersedes", "note": "objection (injuste pour les autres) -> decided anyway"},
+          {"old": 95, "new": 96, "relation": "supports", "note": "drive-in to get more people -> agreement"}
+        ]},
+        {"topic": "films.candidats", "relations": [
+          {"old": 146, "new": 148, "relation": "supersedes", "note": "'ça peut rentrer' -> rejected: not enough romance"},
+          {"old": 229, "new": 232, "relation": "supersedes", "note": "zombie-revolution film raised -> 'on va pas le mettre'"}
+        ]},
+        {"topic": "historique.regle_true_story", "relations": [
+          {"old": 170, "new": 171, "relation": "supersedes", "note": "must it be a true story? -> 'non, pas forcément' (rule set)"}
+        ]},
+        {"topic": "films.colette.liste", "relations": [
+          {"old": 217, "new": 219, "relation": "supersedes", "note": "'j'ai pas vu colette' denial -> 'ah oui j'ai mis colette, oui'"}
+        ]}
+      ]
+    }
+  },
+  "n_supersedes_pairs": 10,
+  "n_relations": 18
+}

@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "Clarification": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "Clarification",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Uniform envelope returned by `act()` (2.2).",
+  "properties": {
+    "intent": {
+      "enum": [
+        "answer",
+        "compare",
+        "build_dossier",
+        "draft_email",
+        "create_task",
+        "schedule_event",
+        "clarify",
+        "none"
+      ],
+      "title": "Intent",
+      "type": "string"
+    },
+    "operation": {
+      "title": "Operation",
+      "type": "string"
+    },
+    "payload": {
+      "additionalProperties": true,
+      "title": "Payload",
+      "type": "object"
+    },
+    "hit_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Hit Unit Ids",
+      "type": "array"
+    },
+    "clarification": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Clarification"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "used_llm": {
+      "default": false,
+      "title": "Used Llm",
+      "type": "boolean"
+    },
+    "degraded_to_template": {
+      "default": false,
+      "title": "Degraded To Template",
+      "type": "boolean"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Notes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "intent",
+    "operation",
+    "payload"
+  ],
+  "title": "ActionResult",
+  "type": "object"
+}
