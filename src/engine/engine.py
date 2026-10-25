@@ -17,7 +17,7 @@ from engine.embed.base import Embedder, build_embedder
 from engine.ingest import IngestPipeline
 from engine.read.infer import build_reader
 from engine.retrieve.pipeline import RetrievalPipeline
-from engine.schemas import (Filters, Query, Reading, Slots, Source, Unit,
+from engine.schemas import (Filters, Hit, Query, Reading, Slots, Source, Unit,
                             make_unit_id, utcnow)
 from engine.segment.chunklet_adapter import Segmenter
 from engine.slots import rules as slot_rules
@@ -81,6 +81,7 @@ class Engine:
                                              linker_enabled=linker_enabled,
                                              reader=self.reader)
         self._pipeline: RetrievalPipeline | None = None
+        self._decision_view = None
         self.roster: set[str] = set(roster or ())
         self.projects: set[str] = set()
         self.reports: list = []
@@ -128,6 +129,7 @@ class Engine:
         if source.project:
             self.projects.add(source.project)
         self.pending_queries = list(getattr(self.ingest_pipeline, "last_queries", []))
+        self._decision_view = None
         return report
 
     def retrieve(self, query: Query, *, k: int | None = None,
@@ -173,10 +175,42 @@ class Engine:
         return self.pipeline.rerank_backend
 
     def ask(self, text: str, **kw):
-        """One shot: read the utterance → retrieve → act. Returns an ActionResult."""
+        """One shot: read the utterance → retrieve → act. Returns an ActionResult.
+
+        v3: for answer/history questions the node view runs beside retrieval, so
+        the latest child of the matching decision is the lead and `as_of` can
+        read the state on a past date. The meeting itself is never rewritten.
+        """
         from engine.agent.router import Agent
 
         return Agent(self).handle(text, **kw)
+
+    @property
+    def decision_view(self):
+        """Decision nodes over the whole store, built once (v3)."""
+        from engine.threads.view import NodeView
+
+        if self._decision_view is None:
+            self._decision_view = NodeView(self.store.all_units())
+        return self._decision_view
+
+    def node_hits(self, query: Query, *, as_of: date | None = None,
+                  k: int = 2) -> list[Hit]:
+        """The current child of the best matching node(s), as retrieval hits.
+
+        `as_of` selects the child that was current on that date; without it the
+        node's latest child is the current decision. Children are returned in
+        `path` so an answer can show the whole thread without mutating it.
+        """
+        out: list[Hit] = []
+        for m in self.decision_view.find(query.text, project=query.project,
+                                        as_of=as_of, k=k):
+            u = m.current
+            out.append(Hit(unit=u, score=float(m.score),
+                           score_parts={"node": float(m.score)},
+                           evidence=u.text,
+                           path=[c.unit_id for c in m.node.children]))
+        return out
 
     def intent_of(self, text: str) -> str:
         return self.read_text(text).intent or "answer"
@@ -204,9 +238,11 @@ class Engine:
                 # is undecidable without a subject key, so an artefact must
                 # name the resolver that actually ran, like the other two
                 "subject_resolver": getattr(self.ingest_pipeline,
-                                            "subject_resolver", "unknown")}
+                                            "subject_resolver", "unknown"),
+                "arch": "v3"}
 
     def rebuild(self) -> int:
+        self._decision_view = None
         n = self.store.rebuild_index()
         if self._pipeline is not None:
             self._pipeline.rebuild()

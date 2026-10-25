@@ -20,6 +20,7 @@ from engine.config import load_config, repo_root
 from engine.embed.base import Embedder, build_embedder
 from engine.link.supervised import build_linker
 from engine.link.supersede import evaluate, same_slot
+from engine.link.thread import ThreadIndex
 from engine.read.baseline_rules import is_chatter
 from engine.read.infer import build_reader
 from engine.schemas import (Edge, Filters, IngestReport, Query, Reading, Source,
@@ -76,6 +77,12 @@ class IngestPipeline:
                 p, repo_root() / "data/external/summre_test/meetings.json")
         self.roster = set(roster or ())
         self.linker_enabled = linker_enabled
+        # D-046: pair-local threads. OFF by default — measured on train+sel and
+        # refused (see runs/linker_local); turning it on changes what the guards
+        # are asked, so it has to be an explicit, recorded choice.
+        link_cfg = self.cfg["link"]
+        self.thread = (ThreadIndex(int(link_cfg.get("thread_window", 8)))
+                       if link_cfg.get("thread_context", False) else None)
         self.last_queries: list[Unit] = []
         #: how many preceding units the reader may see (6.2.3 ablation)
         self.context_units = int(getattr(reader, "context_units",
@@ -121,6 +128,16 @@ class IngestPipeline:
                     n_skipped += 1
                     continue
                 info_units.append(u)
+
+        # 0. session-first path (D-055): judge the whole source, then commit
+        if self.cfg["link"].get("session_batch", False):
+            n_stored, n_edges, n_superseded, relations = self._ingest_batch(info_units)
+            self.last_queries = query_units
+            return IngestReport(source_id=source.source_id, n_units=len(units),
+                                n_stored=n_stored, n_skipped=n_skipped,
+                                n_queries=n_queries, n_edges=n_edges,
+                                n_superseded=n_superseded, relations=relations,
+                                elapsed_s=round(time.perf_counter() - t0, 4))
 
         # 1. store + link every info unit (fresh facts land before queries run)
         for u in info_units:
@@ -213,7 +230,15 @@ class IngestPipeline:
                 if e.relation != "answers" or id(e) in kept]
 
     def _link(self, new: Unit) -> tuple[list, int]:
-        """6.8 online path: embed → top-k in scope → pair judge → guards → write."""
+        """6.8 online path: candidates → pair judge → guards → write."""
+        nbrs, thread_ids = self._candidates(new)
+        edges = self.linker.link(new, nbrs, thread_ids=thread_ids)
+        edges = self._one_answer_per_question(
+            edges, {new.unit_id: new, **{u.unit_id: u for u in nbrs}})
+        return self._commit_edges(new, edges, nbrs)
+
+    def _candidates(self, new: Unit) -> tuple[list[Unit], set[str]]:
+        """The shipped online shortlist: memory top-k + subject + thread."""
         k = int(self.cfg["link"]["k_neighbors"])
         vec = self.embedder.embed([new.text], role="doc")[0]
         filters = None
@@ -232,9 +257,20 @@ class IngestPipeline:
             if u.unit_id not in seen:
                 seen.add(u.unit_id)
                 nbrs.append(u)
-        edges = self.linker.link(new, nbrs)
-        edges = self._one_answer_per_question(
-            edges, {new.unit_id: new, **{u.unit_id: u for u in nbrs}})
+        thread_ids: set[str] = set()
+        if self.thread is not None:
+            # D-046: thread-mates are candidates even when cosine and the subject
+            # key both miss them (98% of real-ASR units have no subject).
+            for u in self.thread.context(new):
+                thread_ids.add(u.unit_id)
+                if u.unit_id not in seen:
+                    seen.add(u.unit_id)
+                    nbrs.append(u)
+        return nbrs, thread_ids
+
+    def _commit_edges(self, new: Unit, edges: list, nbrs: list[Unit]
+                      ) -> tuple[list, int]:
+        """Write judged edges and supersede stamps for one new unit."""
         sup = 0
         for e in edges:
             if e.relation == "supersedes":
@@ -303,6 +339,95 @@ class IngestPipeline:
                 sup += 1
                 break
         return edges, sup
+
+    def _ingest_batch(self, info_units: list[Unit]) -> tuple[int, int, int, dict]:
+        """Session-first (D-055): link against the session, then commit once.
+
+        The whole source is already annotated. Candidates are the session's
+        persistent-topic thread plus the last k session units — not the memory
+        top-k, because at this point the session is deliberately absent from
+        the store. Units and edges are written only after every pair has been
+        judged.
+        """
+        if not info_units:
+            return 0, 0, 0, {}
+        k = int(self.cfg["link"]["k_neighbors"])
+        index = ThreadIndex(int(self.cfg["link"].get("thread_window", 8)))
+        pending: list[tuple[Unit, list, list[Unit]]] = []
+        for i, new in enumerate(info_units):
+            mates = index.context(new)
+            thread_ids = {u.unit_id for u in mates}
+            nbrs = list(mates)
+            seen = {u.unit_id for u in nbrs}
+            for old in info_units[max(0, i - k):i]:
+                if old.unit_id not in seen:
+                    seen.add(old.unit_id)
+                    nbrs.append(old)
+            edges = self.linker.link(new, nbrs, thread_ids=thread_ids)
+            pending.append((new, edges, nbrs))
+            index.add(new)
+        vecs = self.embedder.embed([u.text for u in info_units], role="doc")
+        stamped = [u.model_copy(update={"embed_model_version": self.embedder.version})
+                   for u in info_units]
+        self.store.add_units(stamped)
+        self.store.add_vectors([u.unit_id for u in stamped], vecs)
+        all_units = {u.unit_id: u for u in stamped}
+        all_edges = self._one_answer_per_question(
+            [e for _, es, _ in pending for e in es], all_units)
+        by_from: dict[str, list] = {}
+        for e in all_edges:
+            by_from.setdefault(e.from_id, []).append(e)
+        n_edges = n_sup = 0
+        relations: dict[str, int] = {}
+        for new, _, nbrs in pending:
+            edges, sup = self._commit_edges(new, by_from.get(new.unit_id, []), nbrs)
+            n_edges += len(edges)
+            n_sup += sup
+            for rel, cnt in _tally(edges).items():
+                relations[rel] = relations.get(rel, 0) + cnt
+        # Phase 3: after the commit, compare the session's live state with the
+        # memory that existed BEFORE it. Intra-session pairs are already done;
+        # this is the only pass that can carry a decision across meetings.
+        session_ids = set(all_units)
+        for new in stamped:
+            cur = self.store.get(new.unit_id)
+            if cur is None or not cur.is_current:
+                continue
+            nbrs = self._memory_candidates(cur, session_ids)
+            if not nbrs:
+                continue
+            edges = self.linker.link(cur, nbrs, thread_ids=set())
+            edges = [e for e in edges if e.to_id not in session_ids]
+            edges = self._one_answer_per_question(
+                edges, {cur.unit_id: cur, **{u.unit_id: u for u in nbrs}})
+            e2, sup = self._commit_edges(cur, edges, nbrs)
+            n_edges += len(e2)
+            n_sup += sup
+            for rel, cnt in _tally(e2).items():
+                relations[rel] = relations.get(rel, 0) + cnt
+        return len(stamped), n_edges, n_sup, relations
+
+    def _memory_candidates(self, new: Unit, exclude: set[str]) -> list[Unit]:
+        """Post-commit shortlist from memory, excluding the session just written."""
+        k = int(self.cfg["link"]["k_neighbors"])
+        vec = self.embedder.embed([new.text], role="doc")[0]
+        filters = None
+        if self.cfg["link"]["same_scope_only"] and new.project:
+            filters = Filters(projects=[new.project])
+        nbrs: list[Unit] = []
+        seen = set(exclude) | {new.unit_id}
+        for uid, _ in self.store.neighbors(vec, 4 * k + 1, filters=filters):
+            if uid in seen:
+                continue
+            u = self.store.get(uid)
+            if u is not None:
+                seen.add(uid)
+                nbrs.append(u)
+        for u in self._lexical_neighbours(new, 4 * k):
+            if u.unit_id not in seen:
+                seen.add(u.unit_id)
+                nbrs.append(u)
+        return nbrs
 
     def _lexical_neighbours(self, new: Unit, k: int) -> list[Unit]:
         """Neighbours on the *subject key*, not only on cosine (6.8 step 1)."""

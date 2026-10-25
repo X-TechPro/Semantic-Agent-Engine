@@ -31,7 +31,8 @@ class SupervisedLinker(RuleLinker):
     def __init__(self, classifier: PairClassifier, *, guards: bool = True,
                  min_score: float = 0.55, topical_min: float = 0.5,
                  equal_max: float = 0.8, word_only_supersedes: bool = True,
-                 prefer_assertive_head: bool = True):
+                 prefer_assertive_head: bool = True,
+                 unknown_cardinality: str = "allow"):
         # `build_linker` passes the whole guard configuration to whichever linker
         # it builds. This signature accepted four of the six keys, so every call
         # with `link.backend: logreg` raised
@@ -43,13 +44,15 @@ class SupervisedLinker(RuleLinker):
         super().__init__(guards=guards, min_score=min_score,
                          topical_min=topical_min, equal_max=equal_max,
                          word_only_supersedes=word_only_supersedes,
-                         prefer_assertive_head=prefer_assertive_head)
+                         prefer_assertive_head=prefer_assertive_head,
+                         unknown_cardinality=unknown_cardinality)
         self.clf = classifier
         self.last_scores: list[tuple[str, str, float, str]] = []
 
     def propose(self, new: Unit, old: Unit, *, topical_min: float = 0.5,
-                equal_max: float = 0.8) -> str:
-        base = rules_propose(new, old, topical_min=topical_min, equal_max=equal_max)
+                equal_max: float = 0.8, thread: bool = False) -> str:
+        base = rules_propose(new, old, topical_min=topical_min,
+                             equal_max=equal_max, thread=thread)
         if base == "supersedes":
             # the rules already want it; the guard is still the authority
             self.last_scores.append((new.unit_id, old.unit_id, 1.0, "rules"))
@@ -86,11 +89,13 @@ class NLILinker(RuleLinker):
     def __init__(self, head, *, guards: bool = True, min_score: float = 0.55,
                  topical_min: float = 0.5, equal_max: float = 0.8,
                  word_only_supersedes: bool = True,
-                 prefer_assertive_head: bool = True):
+                 prefer_assertive_head: bool = True,
+                 unknown_cardinality: str = "allow"):
         super().__init__(guards=guards, min_score=min_score,
                          topical_min=topical_min, equal_max=equal_max,
                          word_only_supersedes=word_only_supersedes,
-                         prefer_assertive_head=prefer_assertive_head)
+                         prefer_assertive_head=prefer_assertive_head,
+                         unknown_cardinality=unknown_cardinality)
         self.head = head  # object with .relate(new_text, old_text) -> relation str
         #: (new_id, old_id, rules_base, head_answer) for every consultation —
         #: the audit needs to see when the head was asked at all
@@ -113,8 +118,9 @@ class NLILinker(RuleLinker):
         return False
 
     def propose(self, new: Unit, old: Unit, *, topical_min: float = 0.5,
-                equal_max: float = 0.8) -> str:
-        base = rules_propose(new, old, topical_min=topical_min, equal_max=equal_max)
+                equal_max: float = 0.8, thread: bool = False) -> str:
+        base = rules_propose(new, old, topical_min=topical_min,
+                             equal_max=equal_max, thread=thread)
         if self._structural(new, old, base):
             return base
         rel = self.head.relate(new.text, old.text)   # premise = older, hyp = newer
@@ -131,7 +137,9 @@ def build_linker(cfg):
                   equal_max=float(link_cfg.get("value_equal_max", 0.8)),
                   word_only_supersedes=bool(link_cfg.get("word_only_supersedes", True)),
                   prefer_assertive_head=bool(link_cfg.get("prefer_assertive_head",
-                                                        True)))
+                                                        True)),
+                  unknown_cardinality=str(link_cfg.get("unknown_cardinality",
+                                                       "allow")))
     want = str(link_cfg.get("backend", "rules")).lower()
     if want in ("logreg", "lr", "model", "supervised"):
         raw = link_cfg.get("model_path") or DEFAULT_MODEL

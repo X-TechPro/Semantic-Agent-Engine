@@ -28,8 +28,11 @@ Q = "Quand est le lancement du projet Atlas ?"
 def _two_sources(tmp_path, name, ordered):
     """One source per speaking date — bi-temporal truth needs real dates."""
     db = tmp_path / f"{name}.db"
+    # CPU-tier pin: the shipped cross-encoder (D-041) is a GPU model; golden
+    # rulers score the deterministic path, the model is gated by make demo.
     cfg = load_config(overrides={"store": {"path": str(db)},
-                                 "embed": {"backend": "hash"}})
+                                 "embed": {"backend": "hash"},
+                                 "retrieve": {"rerank": {"backend": "none"}}})
     eng = Engine(cfg, path=db)
     for i, (speaker, text, d) in enumerate(ordered):
         eng.ingest(Source(source_id=f"{name}-{i}", source_type="meeting",

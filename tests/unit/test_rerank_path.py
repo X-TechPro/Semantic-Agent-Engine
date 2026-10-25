@@ -103,3 +103,29 @@ class TestRerankExecutes:
                 _ = eng.pipeline
         finally:
             eng.close()
+
+
+def test_cross_encoder_is_the_shipped_default():
+    """D-041 (2026-10-23): the owner promoted the reranker to the shipped
+    default after it became the only lever that ever moved the headline
+    (D-015: +0.11 temporal@1, 3/3 seeds on dev AND test). This pins the
+    promotion itself — a silent revert fails here; the config-drift test
+    pins both shipped YAMLs alongside it."""
+    from engine.config import DEFAULTS
+
+    assert DEFAULTS["retrieve"]["rerank"]["backend"] == "cross_encoder"
+
+
+def test_headline_selection_follows_the_config_not_a_literal():
+    """The canonical guard and the report's headline filter used to hardcode
+    rerank == "none"; after the promotion that would have FROZEN the old
+    headline — the guard refusing every canonical write, the report quoting a
+    stale arm. Both now read the shipped default from the config."""
+    import inspect
+
+    from eval import report, temporal
+
+    ts = inspect.getsource(temporal.run_bench_seeds)
+    rs = inspect.getsource(report._headline)
+    assert "shipped_rerank" in ts and 'reranks == ["none"]' not in ts
+    assert "shipped_rerank" in rs and '!= "none"' not in rs

@@ -200,8 +200,11 @@ def run(projects_store: Path | None = None) -> dict[str, Any]:
     Path(store_path).parent.mkdir(parents=True, exist_ok=True)
     for stale in Path(store_path).parent.glob(Path(store_path).name + "*"):
         stale.unlink()
+    # ruler pin: the adversarial verdicts on disk were recorded pre-D-041
+    # with rerank none; this harness scores that ruler, not the moving default
     cfg = load_config(overrides={"store": {"path": str(store_path)},
                                  "embed": {"backend": "hash"},
+                                 "retrieve": {"rerank": {"backend": "none"}},
                                  "agent": {"contacts_path": str(root / CONTACTS)}})
     eng = Engine(cfg, path=store_path)
     for s in _sources(root / FIXTURE):
@@ -216,6 +219,11 @@ def run(projects_store: Path | None = None) -> dict[str, Any]:
                           project=case.get("project"), mode=case.get("mode", "current"))
             payload = res.payload if isinstance(res.payload, dict) else {}
             rec["operation"] = res.operation
+            # D-047: on THIS corpus the reader resolves subjects and statuses, so
+            # the currency caveat must never fire on an expected answer. If it
+            # does, the guard is guessing about known data and the case fails.
+            caveated = bool((payload.get("status_breakdown") or {}).get("unverified"))
+            rec["caveated"] = caveated
             blob = json.dumps(payload, ensure_ascii=False)
             # The recipient the agent actually committed to, recorded for every
             # case that produced one -- not only for the cases that passed. A
@@ -240,13 +248,15 @@ def run(projects_store: Path | None = None) -> dict[str, Any]:
                                  f"answer={str(payload.get('answer'))[:60]!r}")
             elif k == "answers_with":
                 hay = (payload.get("answer") or "") + " " + blob
-                rec["ok"] = case["expect"].lower() in hay.lower()
-                rec["detail"] = f"expected {case['expect']!r} operation={res.operation}"
+                rec["ok"] = (case["expect"].lower() in hay.lower()) and not caveated
+                rec["detail"] = (f"expected {case['expect']!r} "
+                                 f"operation={res.operation} caveated={caveated}")
             elif k == "answers_with_all":
                 hay = (payload.get("answer") or "") + " " + blob
                 missing = [e for e in case["expect"] if e.lower() not in hay.lower()]
-                rec["ok"] = not missing
-                rec["detail"] = f"missing {missing} of {case['expect']}"
+                rec["ok"] = not missing and not caveated
+                rec["detail"] = (f"missing {missing} of {case['expect']} "
+                                 f"caveated={caveated}")
             elif k == "clarify":
                 rec["ok"] = res.operation == "clarify" and bool(res.clarification)
                 rec["detail"] = f"operation={res.operation} options={getattr(res.clarification, 'options', None)}"

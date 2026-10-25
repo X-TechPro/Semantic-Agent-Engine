@@ -20,6 +20,66 @@ _QUESTION_RE = re.compile(r"\?|\best[-\s]ce que|\boù en\b|\bstatut\b", re.IGNOR
 _ACTIONISH_RE = re.compile(r"\b(?:mettre à jour|envoyer|préparer|rédiger|relancer|"
                           r"livrer|arbitrer|valider)\b", re.IGNORECASE)
 
+#: A plan (or a request) is fulfilled later. This is the "pizza" case: the
+#: follow-up names an accomplished act ("c'est bon, je les ai achetées") and the
+#: only thing tying it to the plan is the object, which a pronoun hides. The
+#: cue alone is not enough — the pair must share a content noun — so a bare
+#: "c'est bon" after an unrelated turn does not become an edge.
+_COMPLETION_CUE = re.compile(
+    r"\bc['’]est bon\b|\bc['’]est fait\b|\bc['’]est r[ée]gl[ée]\b|"
+    r"\bje (?:l['’]ai|les ai|la ai|l['’]a|les a)\b|"
+    # The auxiliary is required. A bare participle branch matched "validation"
+    # ("valid" + "ation") and wrote six false `completes` edges on the demo
+    # corpus — every budget turn linked to the same "D'accord pour 2,4 M€".
+    r"\b(?:j['’]ai|on a|nous avons)\s+(?:"
+    r"achet[ée]?e?s?|command[ée]?e?s?|r[ée]serv[ée]?e?s?|envoy[ée]?e?s?|"
+    r"fait(?:e|es)?|termin[ée]?e?s?|r[ée]gl[ée]?e?s?|pr[ée]par[ée]?e?s?|"
+    r"boucl[ée]?e?s?|valid[ée]?e?s?|pay[ée]?e?s?|install[ée]?e?s?|"
+    r"r[ée]cup[ée]?e?s?"
+    r")\b",
+    re.IGNORECASE)
+
+#: words that carry the completion, not the object. If these were the only
+#: overlap, "c'est bon" would link to every earlier "bon".
+_COMPLETION_STOP = {
+    "bon", "bien", "fait", "regle", "achete", "commande", "reserve", "envoye",
+    "termine", "prepare", "boucle", "valide", "paye", "installe", "recupere",
+    "chose", "truc", "tous", "tout", "soir", "hier", "midi", "matin", "jour",
+    "semaine", "apres", "avant", "encore", "aussi", "donc", "alors",
+}
+
+
+_PLAN_CUE = re.compile(
+    r"\bil faut\b|\bil faudrait\b|\bon pourrait\b|\bon devrait\b|\bon va\b|"
+    r"\bje propose\b|\bqui s['’]occupe\b|\best[-\s]ce qu['’]on\b|\bon peut\b|"
+    r"\bpourquoi pas\b|\bon part sur\b", re.IGNORECASE)
+
+_ASR_QUESTION = re.compile(
+    r"[?]|\bqu['’]?\s*est[-\s]|\best[-\s]ce\b|\bcomment\b|\bpourquoi\b|"
+    r"\bcombien\b", re.IGNORECASE)
+
+
+def _is_completion(new, old) -> bool:
+    """Does `new` report that `old`'s request/plan was carried out?"""
+    if new.kind != "info" or new.type in ("question", "risk"):
+        return False
+    if _ASR_QUESTION.search(new.text or ""):
+        # "qu'est-ce qu'on a fait au bon Dieu" is a film title, not a report.
+        return False
+    if old.type == "question":
+        pass
+    elif old.type in ("idea", "decision", "commitment", "action") \
+            and _PLAN_CUE.search(old.text or ""):
+        pass
+    else:
+        return False
+    if not _COMPLETION_CUE.search(new.text or ""):
+        return False
+    from engine.retrieve.relevance import content_words
+
+    shared = (set(content_words(new.text)) & set(content_words(old.text)))
+    return bool(shared - _COMPLETION_STOP)
+
 
 def _lex_overlap(a: str, b: str) -> float:
     from engine.store.fts import tokenize
@@ -31,8 +91,14 @@ def _lex_overlap(a: str, b: str) -> float:
 
 
 def propose(new: Unit, old: Unit, *, topical_min: float = 0.5,
-            equal_max: float = 0.8) -> str:
-    """Cheap classifier stand-in: what relation does this pair look like?"""
+            equal_max: float = 0.8, thread: bool = False) -> str:
+    """Cheap classifier stand-in: what relation does this pair look like?
+
+    `thread=True` (D-046) admits a `supersedes` proposal for a pair that shares a
+    deterministic coarse slot but no resolved subject key — the real-ASR case
+    where 98% of units have `subject=None`. The guards still decide, and the
+    caller only sets it for pairs `thread.ThreadIndex` actually grouped.
+    """
     if new.project != old.project:
         return "unrelated"
     # 7.3 / 6.8: an answer links to the question it answers by *speech act*. Keying
@@ -56,6 +122,11 @@ def propose(new: Unit, old: Unit, *, topical_min: float = 0.5,
         return "answers"
     if new.kind == "query" and old.type == "answer":
         return "answers"
+    if _is_completion(new, old):
+        # "quelqu'un veut manger des pizzas ?" -> "c'est bon, je les ai
+        # achetées". The pronoun has to be resolved upstream (D-049); the
+        # shared content noun is the evidence, the cue only opens the door.
+        return "completes"
     if same_slot(new, old):
         comparable, equal = comparable_values(new, old, topical_min=topical_min,
                                               equal_max=equal_max)
@@ -92,6 +163,13 @@ def propose(new: Unit, old: Unit, *, topical_min: float = 0.5,
         return "unrelated"
     if _QUESTION_RE.search(new.text) and _QUESTION_RE.search(old.text):
         return "unrelated"
+    if thread:
+        # D-046 pair-local path: no shared resolved subject, but the thread index
+        # grouped them and the words name a single change. Proposal only.
+        from engine.link.values import has_change_cue, pair_slot_witness
+
+        if pair_slot_witness(new.text, old.text) and has_change_cue(new.text):
+            return "supersedes"
     return "supports" if _lex_overlap(new.text, old.text) > 0.45 else "unrelated"
 
 
@@ -104,18 +182,22 @@ class RuleLinker:
     def __init__(self, guards: bool = True, min_score: float = 0.55, *,
                  topical_min: float = 0.5, equal_max: float = 0.8,
                  word_only_supersedes: bool = True,
-                 prefer_assertive_head: bool = True):
+                 prefer_assertive_head: bool = True,
+                 unknown_cardinality: str = "allow"):
         self.guards = guards
         self.min_score = min_score
         self.topical_min = topical_min
         self.equal_max = equal_max
         self.word_only = word_only_supersedes
         self.prefer_assertive_head = prefer_assertive_head
+        self.unknown_cardinality = unknown_cardinality
 
     def link(self, new: Unit, neighbours: list[Unit], *,
-             created_at: datetime | None = None) -> list[Edge]:
+             created_at: datetime | None = None,
+             thread_ids: set[str] | None = None) -> list[Edge]:
         edges: list[Edge] = []
         now = created_at or utcnow()
+        thread_ids = thread_ids or set()
         # G12: "target must be current" (G8) is necessary but not sufficient.
         # A hypothesis is never superseded, so it stays current forever and a
         # slot ends up with several current units; superseding the soft one
@@ -127,8 +209,9 @@ class RuleLinker:
         for old in neighbours:
             if old.unit_id == new.unit_id:
                 continue
+            same_thread = old.unit_id in thread_ids
             rel = self.propose(new, old, topical_min=self.topical_min,
-                             equal_max=self.equal_max)
+                             equal_max=self.equal_max, thread=same_thread)
             guard = "G0_model"
             score = 0.6
             if rel == "supersedes":
@@ -136,6 +219,8 @@ class RuleLinker:
                                 topical_min=self.topical_min,
                                 equal_max=self.equal_max,
                                 word_only_supersedes=self.word_only,
+                                same_thread=same_thread,
+                                unknown_cardinality=self.unknown_cardinality,
                                 ) if self.guards
                               else ("supersedes", "OFF"))
                 # `score` is evidence strength, not decoration: the validity
@@ -154,6 +239,8 @@ class RuleLinker:
                 score = 0.75 if (same_slot(new, old) and equal) else 0.6
             elif rel == "contradicts":
                 score = 0.7
+            elif rel == "completes":
+                score = 0.65
             if rel == "unrelated":
                 # unrelated edges are still recorded when the guard fired: the
                 # audit needs to see why a supersede was refused
@@ -184,4 +271,6 @@ def link(new: Unit, neighbours: list[Unit], cfg=None) -> list[Edge]:
                           "word_only_supersedes", True),
                       prefer_assertive_head=link_cfg.get(
                           "prefer_assertive_head", True),
+                      unknown_cardinality=link_cfg.get(
+                          "unknown_cardinality", "allow"),
                       ).link(new, neighbours)

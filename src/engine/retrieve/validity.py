@@ -33,7 +33,8 @@ def is_history_query(query: Query) -> bool:
 
 def validity_factor(unit: Unit, mode: QueryMode = "current", *,
                     alpha_superseded: float = 0.0, alpha_history: float = 0.3,
-                    beta_soft: float = 0.5, proposals_requested: bool = False,
+                    beta_soft: float = 0.5, beta_mention: float = 1.0,
+                    proposals_requested: bool = False,
                     hard_filter: bool = False, confidence: float = 1.0) -> float:
     if not unit.is_current:
         if mode == "history":
@@ -59,12 +60,19 @@ def validity_factor(unit: Unit, mode: QueryMode = "current", *,
         if hard_filter:
             return 0.0
         return max(0.0, min(1.0, beta_soft))
+    if unit.status == "mention" and mode == "current":
+        # the ranking census (D-040) found mention units — statements that
+        # merely name a subject without asserting a state — on rank 1 in 8 of
+        # 17 headline misses. Default 1.0 keeps the shipped behaviour; the AB
+        # run decides whether 0.5 becomes the new default.
+        return max(0.0, min(1.0, beta_mention))
     return 1.0
 
 
 def apply_validity(scored: list[tuple[Unit, float]], query: Query, *,
                    alpha_superseded: float = 0.0, alpha_history: float = 0.3,
-                   beta_soft: float = 0.5, hard_filter: bool = False,
+                   beta_soft: float = 0.5, beta_mention: float = 1.0,
+                   hard_filter: bool = False,
                    confidence_of=None
                    ) -> list[tuple[Unit, float, float, float]]:
     """-> [(unit, fused_score, validity_factor, final_score)], order preserved."""
@@ -74,6 +82,7 @@ def apply_validity(scored: list[tuple[Unit, float]], query: Query, *,
     for unit, score in scored:
         v = validity_factor(unit, mode, alpha_superseded=alpha_superseded,
                             alpha_history=alpha_history, beta_soft=beta_soft,
+                            beta_mention=beta_mention,
                             proposals_requested=proposals, hard_filter=hard_filter,
                             confidence=(confidence_of(unit) if confidence_of
                                         else 1.0))

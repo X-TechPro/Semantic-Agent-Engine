@@ -58,6 +58,7 @@ class AskBody(BaseModel):
     intent: str | None = None
     project: str | None = None
     mode: str = "current"
+    as_of: str | None = Field(default=None, description="YYYY-MM-DD; read the node on that date")
 
 
 class QueryBody(BaseModel):
@@ -99,7 +100,9 @@ def query(body: QueryBody = Body(...)) -> list[Hit]:
 def ask(body: AskBody = Body(...)) -> ActionResult:
     with _LOCK:
         res = engine().ask(body.text, intent=body.intent, project=body.project,
-                           mode=body.mode)
+                           mode=body.mode,
+                           as_of=(date.fromisoformat(body.as_of)
+                                  if body.as_of else None))
     # belt and braces: an action leaving this API must still be a proposal
     if isinstance(res.payload, dict) and res.payload.get("executed"):
         raise HTTPException(500, "engine returned an executed action")

@@ -104,13 +104,18 @@ def _headline(benches: list[Path]) -> Path | None:
     headline artefact. An 8-project number is not the headline.
     """
     best = {"test": (None, None), "other": (None, None)}
+    # D-041: "the headline" means the SHIPPED configuration, so the filter
+    # follows the config — a hardcoded "none" would keep quoting the
+    # pre-promotion artefact after the reranker became the default.
+    shipped_rerank = str(load_config().get_path("retrieve.rerank.backend",
+                                                "none"))
     for d in benches:
         meta = (_load(d / "metrics.json") or {}).get("meta") or {}
         reader = str(meta.get("reader_backend", "rules"))
         rerank = str(meta.get("rerank_backend", "none"))
         split = str(meta.get("split", ""))
         projects = meta.get("n_projects")
-        if not reader.startswith("rules") or rerank != "none":
+        if not reader.startswith("rules") or rerank != shipped_rerank:
             continue
         if split == "test" and projects != CANONICAL_PROJECTS:
             continue
@@ -119,6 +124,14 @@ def _headline(benches: list[Path]) -> Path | None:
         if best[slot][1] is None or key > best[slot][1]:
             best[slot] = (d, key)
     return best["test"][0] or best["other"][0]
+
+
+def _rerank_shipped() -> bool:
+    """Is the cross-encoder the shipped default? D-041 promoted it; status
+    claims in a generated document follow the config, never the last prose
+    edit (the same rule the pool-scan line obeys)."""
+    return str(load_config().get_path("retrieve.rerank.backend", "none")) \
+        == "cross_encoder"
 
 
 _FRBENCH = (
@@ -344,6 +357,485 @@ def demo_real_section(art: dict[str, Any]) -> list[str]:
     return L
 
 
+def linker_real_section(c: dict[str, Any]) -> list[str]:
+    """§6g — the linker fitted on REAL French pairs, scored on a sealed
+    holdout exactly once (D-039). Everything below is read from the run's
+    artefact: splits, bars, numbers, verdict — never retyped."""
+    L = ["", "## 6g. Linker trained on real pairs (sealed-holdout experiment)", ""]
+    art = c.get("summre_linker") or {}
+    if not art:
+        return L + ["_not measured — run `python -m engine.tools.summre_linker`_", ""]
+    sp = art.get("splits") or {}
+    ho = art.get("holdout") or {}
+    tr = ho.get("trained") or {}
+    ru = ho.get("rules_reference") or {}
+    op = art.get("operating_point") or {}
+    bars = art.get("bars_declared_before_training") or {}
+    L += [f"Corpus: {art.get('corpus')}. Candidate space = ordered pairs whose "
+          "two units share a gold drawer key inside one meeting — the space the "
+          "guards could authorise — with the reversed direction included so "
+          "ordering must be learned from content (dates are constant within a "
+          "meeting).", ""]
+    L += ["| split | meetings | pairs | gold supersedes |", "|---|---|---|---|"]
+    for s in ("train", "sel", "holdout"):
+        d = sp.get(s) or {}
+        L.append(f"| {s} | {', '.join(d.get('meetings') or [])} | "
+                 f"{d.get('pairs')} | {d.get('positives')} |")
+    L += ["",
+          f"Operating point selected on SEL only (bias {op.get('sel_bias')}, "
+          f"sel F1 {_fmt((op.get('sel') or {}).get('f1'))}); the holdout was "
+          "scored exactly once:", "",
+          "| holdout | precision | recall | F1 | tp | fp | fn |",
+          "|---|---|---|---|---|---|---|",
+          f"| trained on real pairs | {_fmt(tr.get('precision'))} | "
+          f"{_fmt(tr.get('recall'))} | {_fmt(tr.get('f1'))} | {tr.get('tp')} | "
+          f"{tr.get('fp')} | {tr.get('fn')} |",
+          f"| rules linker, same pairs | {_fmt(ru.get('precision'))} | "
+          f"{_fmt(ru.get('recall'))} | {_fmt(ru.get('f1'))} | {ru.get('tp')} | "
+          f"{ru.get('fp')} | {ru.get('fn')} |", ""]
+    verdict = ("**CLEARED** — checkpoint written, wired as opt-in."
+               if art.get("cleared") else
+               "**REFUSED** — no checkpoint, no backend, shipped default stays "
+               "`rules`. The recall half is the finding: content features on "
+               "real threads carry supersede signal the rules linker misses "
+               f"(recall {_fmt(tr.get('recall'))} vs {_fmt(ru.get('recall'))}). "
+               "The precision half is the support-count law again: "
+               f"{(sp.get('train') or {}).get('positives')} positives cannot "
+               "train a pair classifier — the same wall B-13 names, now "
+               "measured one layer up.")
+    L += ["Bars declared before training: "
+          + ", ".join(f"`{k}` {'PASS' if v else 'FAIL'}"
+                      for k, v in bars.items()) + " — " + verdict, ""]
+    ex = art.get("excluded") or {}
+    if ex:
+        L += ["Excluded by measurement, not by choice: "
+              + "; ".join(f"{k} — {v}" for k, v in ex.items()), ""]
+    return L
+
+
+def ranking_round_section(c: dict[str, Any]) -> list[str]:
+    """§6h — the ranking round (D-040): the failure census, the pairwise
+    dot-product probe, and the mention-demotion A/B. Rendered from artefacts;
+    bars were declared in the runner's own docstring before measurement."""
+    L = ["", "## 6h. Why the ranking misses — census, dot product, and the "
+            "mention test", ""]
+    cen = c.get("ranking_census") or {}
+    pc = c.get("paircos") or {}
+    ab = c.get("mention_ab") or {}
+    if not (cen or pc or ab):
+        return L + ["_not measured — run `python -m eval.ranking_census`, "
+                    "`python -m engine.tools.summre_paircos`, "
+                    "`python -m eval.beta_mention_ab`_", ""]
+    if cen:
+        L += [f"**Census** (seed {cen.get('seed')}, {cen.get('split')} split, "
+              "same store the headline builds): "
+              f"**{cen.get('misses')} of {cen.get('questions_scored')}** scored "
+              "questions miss temporal@1 although the gold unit is always in "
+              "the pool. Causes: "
+              + ", ".join(f"`{k}` {v}" for k, v in (cen.get("causes") or {}).items())
+              + f"; median gold rank among misses **{cen.get('median_gold_rank')}** "
+              "— the right unit usually sits right behind. Rank-1 offenders by "
+              "status: "
+              + ", ".join(f"`{k}` {v}"
+                          for k, v in (cen.get("miss_status") or {}).items())
+              + " (correct rank-1s: "
+              + ", ".join(f"`{k}` {v}"
+                          for k, v in (cen.get("win_status") or {}).items())
+              + ") — mention units are the dominant offender class.", ""]
+    if pc:
+        cm = pc.get("cos_mean") or {}
+        L += [f"**Pairwise dot product** (the user's proposal, e5, scored "
+              "directly against the hand-labelled real threads, train meetings "
+              "only): AUC related-vs-unrelated "
+              f"**{_fmt(pc.get('auc_related_vs_same_drawer_unlabelled'))}** "
+              f"(vs cross-drawer {_fmt(pc.get('auc_related_vs_cross_drawer'))}; "
+              f"supersedes-only "
+              f"{_fmt(pc.get('auc_supersedes_vs_same_drawer_unlabelled'))}). "
+              f"The floor is the finding: related pairs average cosine "
+              f"{_fmt(cm.get('positives'))}, unrelated "
+              f"{_fmt(cm.get('hard_negatives'))}–{_fmt(cm.get('easy_negatives'))} "
+              "— the distributions overlap almost entirely. That is D-026's "
+              "centroid geometry seen pairwise for the first time: the dot "
+              "product knows a meeting, not a topic.", ""]
+    ab_dev = ab.get("dev") or {}
+    ab_test = ab.get("test") or {}
+    if ab_dev:
+        means = ab_dev.get("means") or {}
+        L += ["**Mention-demotion A/B** (`beta_mention` on current queries; "
+              "control reproduction was required before any treatment number "
+              "was read — it held, exactly, on every seed). Dev means: "
+              + ", ".join(f"β={k} → {_fmt(v)}" for k, v in means.items())
+              + f"; winner β={ab_dev.get('winner')}.", ""]
+    if ab_test:
+        L += ["| test (single read, winner β) | recorded | demoted | paired Δ "
+              "CI (95%) |", "|---|---|---|---|"]
+        for s, t in (ab_test.get("per_seed") or {}).items():
+            pr = t.get("paired") or {}
+            ci = pr.get("ci95") or [None, None]
+            L += [f"| seed {s} | {_fmt(t.get('recorded'))} | "
+                  f"{_fmt(t.get('new'))} | {_fmt(pr.get('delta'))} "
+                  f"[{_fmt(ci[0])}, {_fmt(ci[1])}] |"]
+        L += [f"| **mean** | **{_fmt(ab_test.get('mean_recorded'))}** | "
+              f"**{_fmt(ab_test.get('mean_new'))}** | |", ""]
+        bars = ab_test.get("bars") or {}
+        L += ["Bars: " + ", ".join(f"`{k}` {'PASS' if v else 'FAIL'}"
+                                   for k, v in bars.items())
+              + f" — **{ab.get('verdict')}**", "",
+              "The dev win did not transfer: the demotion vacates top-10 slots "
+              "and lower-fused stale units move in (`stale@10` worse on every "
+              "seed), and the abstention instrument regressed on one seed. The "
+              "knob ships at 1.0 (off); the mechanism tests stay as its "
+              "documentation.", ""]
+    L += ["So the headline gap stands as measured: retrieval never loses the "
+          "gold unit, the cheap status demotion is refused by its own bars, "
+          "and the only lever that has ever moved the headline remains the "
+          "cross-encoder reranker (D-015: +0.11, 3/3 seeds; "
+          + ("**shipped default since D-041**" if _rerank_shipped()
+             else "opt-in on latency") + ").", ""]
+    return L
+
+
+def reranker_ft_section(c: dict[str, Any]) -> list[str]:
+    """§6i — the smoothness tune (D-042): can a LoRA on OUR drawer gold teach
+    the shipped cross-encoder topic identity, where the dot product could not?
+    Everything below is read from the run's artefact; bars were declared in
+    the tool's own docstring before the fit."""
+    L = ["", "## 6i. The smoothness tune — cross-encoder fine-tuned on real "
+            "topic pairs", ""]
+    art = c.get("reranker_ft") or {}
+    if not art:
+        return L + ["_not measured — run "
+                    "`python -m engine.tools.finetune_reranker`_", ""]
+    sel = art.get("sel") or {}
+    ho = art.get("holdout") or {}
+    dat = art.get("data") or {}
+    rec = art.get("recipe") or {}
+    tg = rec.get("targets")
+    tg = tg if isinstance(tg, str) else ", ".join(tg or [])
+    L += [f"Target: **same-topic relatedness** from the drawer gold — "
+          f"{dat.get('train_pos_pairs')} positive / {dat.get('train_neg_pairs')} "
+          f"negative pair rows from the train meetings "
+          f"({', '.join(dat.get('train_meetings') or [])}), negatives "
+          "cross-topic WITHIN the meeting; both orders trained (direction "
+          "stays the guards' job). This is the thousands-of-contrasts route "
+          "around D-039's 25-positive wall, on the model family the paircos "
+          "bi-encoder could not (AUC 0.63).",
+          "",
+          f"Recipe: LoRA r={rec.get('lora_r')} α={rec.get('alpha')} on "
+          f"`{tg}`, classifier head unfrozen, "
+          f"{rec.get('epochs')} epochs fp32-master/bf16-autocast, "
+          f"lr {rec.get('lr')}; weights_moved "
+          f"{(art.get('weights_moved') or {}).get('mean_abs_logit_diff')} "
+          "(proof the tune reached the model, not just the loss curve).",
+          "",
+          "| AUC (related vs unrelated) | base (control) | fine-tuned |",
+          "|---|---|---|",
+          f"| sel meeting | {_fmt(sel.get('control_base_auc'))} | "
+          f"**{_fmt(sel.get('tuned_auc'))}** |"]
+    if ho:
+        L += [f"| sealed holdout (read once) | {_fmt(ho.get('control_base_auc'))} "
+              f"| **{_fmt(ho.get('tuned_auc'))}** |"]
+    L += ["", "Bars: " + ", ".join(f"`{k}` {'PASS' if v else 'FAIL'}"
+                                   for k, v in (art.get("bars") or {}).items())
+          + f" — **{art.get('verdict')}**", ""]
+    return L
+
+
+def threader_section(c: dict[str, Any]) -> list[str]:
+    """§6j — thread-conditioned assignment (D-043): score the incoming
+    sentence against each ESTABLISHED thread and assign top-1. Rendered from
+    the artefact; bars were declared in the tool's docstring before the fit."""
+    L = ["", "## 6j. Assigning to established threads (the graph-conditioned "
+            "attempt)", ""]
+    art = c.get("threader_ft") or {}
+    if not art:
+        return L + ["_not measured — run "
+                    "`python -m engine.tools.finetune_threader`_", ""]
+    sel = art.get("sel") or {}
+    ho = art.get("holdout") or {}
+    dat = art.get("data") or {}
+    L += [f"Mechanism: {art.get('mechanism')}. Training rows "
+          f"{dat.get('train_pos_rows')} own-thread / "
+          f"{dat.get('train_neg_rows')} wrong-thread from the train meetings; "
+          f"{dat.get('sel_cases')} assignment cases on sel (multiple live "
+          "drawers per case — chance well below 0.15; the window-attention "
+          "classifier of D-030 got 0.19–0.26). Threads use PRECEDING "
+          "sentences only — pinned by unit tests.",
+          "",
+          f"Loss {art.get('loss_history')}; weights moved "
+          f"{(art.get('weights_moved') or {}).get('mean_abs_logit_diff')} "
+          "(the tune reached the model).",
+          "",
+          "| top-1 assignment | base (control) | fine-tuned |", "|---|---|---|",
+          f"| sel meeting | {_fmt(sel.get('control_top1'))} | "
+          f"**{_fmt(sel.get('tuned_top1'))}** |"]
+    if ho:
+        L += [f"| sealed holdout (read once, {ho.get('cases')} cases) | "
+              f"{_fmt(ho.get('control_top1'))} | "
+              f"**{_fmt(ho.get('tuned_top1'))}** |", ""]
+        pm = ho.get("per_meeting") or {}
+        if pm:
+            L += ["| holdout meeting | cases | base | tuned |",
+                  "|---|---|---|---|"]
+            for m, v in pm.items():
+                L += [f"| {m} | {v.get('n')} | {_fmt(v.get('control_top1'))} "
+                      f"| {_fmt(v.get('tuned_top1'))} |"]
+    L += ["", "Bars: " + ", ".join(f"`{k}` {'PASS' if v else 'FAIL'}"
+                                   for k, v in (art.get("bars") or {}).items())
+          + f" — **{art.get('verdict')}**", ""]
+    return L
+
+
+def completes_cardinality_section(c: dict[str, Any]) -> list[str]:
+    """§6o — `completes` and G12 cardinality (D-049/D-050), from the artefact."""
+    L = ["", "## 6o. Two missing relations: `completes` and cardinality "
+         "(D-049–D-051)", ""]
+    a = c.get("completes_cardinality") or {}
+    if not a:
+        return L + ["_not measured — run the probe._", ""]
+    co = a.get("completes") or {}
+    ca = a.get("cardinality") or {}
+    toy = co.get("toy") or {}
+    real = co.get("real") or {}
+    L += [f"Mechanism: {co.get('mechanism')}.", "",
+          f"Constructed pizza pair: before coreference `{toy.get('before')}`, "
+          f"after `{toy.get('after')}`.", "",
+          f"Real meetings: {real.get('meetings')} meetings, "
+          f"{real.get('cue_turns')} completion-cue turns, "
+          f"{real.get('proposals')} `completes` proposals, "
+          f"{real.get('genuine_plan_done_pairs')} genuine plan→done pairs. "
+          f"Verdict: **{co.get('verdict')}**.", "",
+          f"Cardinality: {ca.get('gold_supersedes')} gold supersedes, "
+          f"{ca.get('refused')} refused by G12; "
+          f"{ca.get('by_cardinality')}. Marking `animations`/`programmation` "
+          f"set would refuse {ca.get('would_refuse_if_set')} gold pairs. "
+          f"Verdict: **{ca.get('verdict')}**.", ""]
+    return L
+
+
+def linker_local_section(c: dict[str, Any]) -> list[str]:
+    """§6l — pair-local threads (D-046): a deterministic coarse-thread index and
+    spoken-French value witnesses were built, wired behind a flag, and scored on
+    train+sel. Rendered from the artefacts; the bars were declared in the tool's
+    docstring before the run."""
+    L = ["", "## 6l. Pair-local threads — reach moves, judgement does not (D-046)",
+         ""]
+    arts = c.get("linker_local") or []
+    if not arts:
+        return L + ["_not measured — run "
+                    "`python -m engine.eval.linker_local`_", ""]
+    a0 = arts[0]
+    L += [f"Mechanism: {a0.get('mechanism')}. Measured on "
+          f"{', '.join(a0.get('splits') or [])} "
+          f"({a0.get('n_gold_supersedes')} gold supersedes); sealed holdout: "
+          f"{a0.get('holdout')}.", "",
+          "| reader | path | gold olds reaching the guards | pred | tp | "
+          "precision | recall |", "|---|---|---|---|---|---|---|"]
+    for a in arts:
+        rb = a.get("reader_backend") or "?"
+        for key, label in (("shipped", "shipped (no thread)"),
+                           ("pair_local", "pair_local"),
+                           ("drawer", "drawer upper bound")):
+            r = (a.get("reach") or {}).get(key) or {}
+            m = a.get(key) or {}
+            L += [f"| {rb} | {label} | {r.get('gold_pairs_reaching_guards')}/"
+                  f"{a.get('n_gold_supersedes')} = {_fmt(r.get('rate'))} | "
+                  f"{m.get('n_pred')} | {m.get('tp')} | "
+                  f"{_fmt(m.get('precision'))} | {_fmt(m.get('recall'))} |"]
+    probe = c.get("linker_probe") or {}
+    pv = probe.get("per_variant") or {}
+    if pv:
+        L += ["", "Judgement probes on the same pairs (the already-trained XNLI "
+              "head; a diagnostic, no bars):", "",
+              "| variant | positives | AUC P(contradicts) | precision | recall |",
+              "|---|---|---|---|---|"]
+        for v, d in pv.items():
+            ca = d.get("contradicts_argmax") or {}
+            L += [f"| {v} | {d.get('n_positives')} | "
+                  f"{_fmt((d.get('auc') or {}).get('contradicts'))} | "
+                  f"{_fmt(ca.get('precision'))} | {_fmt(ca.get('recall'))} |"]
+    cleared = a0.get("cleared") or {}
+    L += ["", "Bars declared before the run — reach ≥ 0.50, precision ≥ 0.70, "
+          f"recall ≥ 0.30 — cleared L1/L2/L3: {cleared.get('L1')}/"
+          f"{cleared.get('L2')}/{cleared.get('L3')} → **{a0.get('verdict')}**. "
+          "The drawer row is the finding: a perfect threader puts 97.5% of the "
+          "gold old units in front of the guards, so thread identity — not the "
+          "pair judge — is the binding constraint.", ""]
+    return L
+
+
+def token_attention_section(c: dict[str, Any]) -> list[str]:
+    """§6n — concept attention on tokens (D-048): does raw token attention
+    separate a related pair? Rendered from the artefact."""
+    L = ["", "## 6n. Concept attention on tokens (D-048)", ""]
+    a = c.get("token_attention") or {}
+    if not a:
+        return L + ["_not measured — run "
+                    "`python -m engine.eval.token_attention`_", ""]
+    st = a.get("selected_on_train") or {}
+    L += [f"Mechanism: {a.get('n_signals_scanned')} token-level signals from the "
+          f"frozen `moderncamembert-base` (per-layer attention mass new→old, with "
+          f"and without the preceding 3 turns, all words vs content words, plus "
+          f"contextual token alignment) on {a.get('n_pairs')} same-drawer pairs "
+          f"({a.get('n_positives')} gold supersedes). Selection is on train, "
+          "scoring on sel — the pooled best of many signals would be a leak.", "",
+          "| signal (top by train) | train AUC | sel AUC | pooled |",
+          "|---|---|---|---|"]
+    for r in (a.get("top_by_train") or [])[:6]:
+        L += [f"| {r.get('name')} | {_fmt(r.get('train'))} | "
+              f"{_fmt(r.get('sel'))} | {_fmt(r.get('pooled'))} |"]
+    lk = c.get("token_attention_links") or {}
+    cleared = (a.get("cleared") or {}).get("T1")
+    if lk:
+        run = lk.get("runner_up") or {}
+        arg = lk.get("global_argmax") or {}
+        L += ["", f"Owner's example, exact link (layer {lk.get('layer')}): "
+              f"**“{lk.get('query_word')}” → “{lk.get('target_word')}” = "
+              f"{_fmt(lk.get('link_mass'))}**, runner-up “{run.get('word')}” "
+              f"{_fmt(run.get('mass'))} — the anaphora is read from the query "
+              f"word's own row. The aggregate max at that layer is "
+              f"“{arg.get('new_word')}” → “{arg.get('old_word')}” "
+              f"{_fmt(arg.get('mass'))}, a different pair.", ""]
+    ci = st.get("sel_ci95")
+    L += [f"Bar T1 (train-selected signal, sel AUC ≥ 0.70): "
+          f"**{_fmt(st.get('sel'))}**"
+          + (f" (95% CI {ci[0]}–{ci[1]}, {st.get('sel_n_pos')} positives)" if ci
+             else "")
+          + f" — {'cleared' if cleared else 'not cleared'}. "
+          f"{a.get('verdict')}", ""]
+    tr = c.get("token_attention_transfer") or {}
+    if tr:
+        pm = tr.get("per_meeting") or {}
+        spread = ", ".join(f"{m.split('_')[0]} {_fmt((v or {}).get('auc'))}"
+                           for m, v in pm.items())
+        L += [f"Transfer between meetings: {spread} — mean "
+              f"{_fmt(tr.get('per_meeting_mean'))}, sd "
+              f"{_fmt(tr.get('per_meeting_sd'))}; leave-one-meeting-out mean "
+              f"**{_fmt(tr.get('lomo_mean'))}**. The spread is between meetings, "
+              "so training longer on the same five fits the ones that already "
+              "work and leaves the rest at chance.", ""]
+    return L
+
+
+def currency_guard_section(c: dict[str, Any]) -> list[str]:
+    """§6m — the answer surface on raw speech (D-047): do not present a version
+    as current when nothing grounds its currency. Rendered from the artefact."""
+    L = ["", "## 6m. Refusing to guess on raw speech (D-047)", ""]
+    a = c.get("currency_guard") or {}
+    if not a:
+        return L + ["_not measured — run "
+                    "`python -m engine.eval.currency_guard`_", ""]
+    p = a.get("pairs") or {}
+    ctl = a.get("control_segments") or {}
+    L += [f"Mechanism: {a.get('mechanism')}. Measured on "
+          f"{', '.join(a.get('splits') or [])} ({p.get('n')} gold supersede pairs, "
+          f"query = the stale statement); {a.get('holdout')}.", "",
+          "| unguarded answers citing the old unit | caveated | refused | still "
+          "confidently stale |", "|---|---|---|---|",
+          f"| {p.get('unguarded_cited_old')} | {p.get('caveated')} | "
+          f"{p.get('refused')} | {p.get('still_confident_stale')} |", "",
+          f"Control sample (non-gold segments): {ctl.get('caveated')}/"
+          f"{ctl.get('n')} caveated ({_fmt(ctl.get('caveat_rate'))}) — expected: on "
+          "raw meeting speech the reader labels almost everything `mention`, which "
+          "names a topic and asserts no state. The synthetic demo corpus resolves "
+          "subjects and statuses, and the e2e suite now fails any expected answer "
+          "that carries the caveat.", "",
+          f"Bar C1 (honest answer = caveat or refusal, ≥ 0.95): "
+          f"**{_fmt((a.get('bars') or {}).get('C1_honest_on_stale>=0.95'))}** — "
+          f"{'cleared' if (a.get('cleared') or {}).get('C1') else 'not cleared'}. "
+          f"Context bar C2 (newer unit retrieved): "
+          f"{_fmt((a.get('bars') or {}).get('C2_new_in_hits>=0.50'))}.", ""]
+    return L
+
+
+def llm_linker_section(c: dict[str, Any]) -> list[str]:
+    """§6k — the tiny LLM as linker (D-045): the model reads the WHOLE
+    meeting and proposes typed relations by segment index, zero-shot.
+    Rendered from the artefact; bars were declared in the tool's docstring
+    before the run. The instrument check (offsets, ±1 neighbours, gap span)
+    is computed here from the artefact's own pred/gold lists — it separates
+    "my numbering shifted" from "the model picked wrong pairs"."""
+    L = ["", "## 6k. The tiny LLM as linker — whole-meeting zero-shot "
+            "proposals", ""]
+    art = c.get("llm_linker") or {}
+    if not art:
+        return L + ["_not measured — run "
+                    "`python -m engine.tools.summre_llmlink`_", ""]
+    ts = art.get("train_sel") or {}
+    pooled = ts.get("pooled") or {}
+    per = ts.get("per_meeting") or {}
+    L += [f"Mechanism: {art.get('mechanism')}. Scored set: the "
+          f"{len(per)} meetings carrying temporal gold "
+          f"({pooled.get('n_gold')} supersedes pairs); bars declared before "
+          "the run — pooled precision ≥ 0.70 and recall ≥ 0.30 (D-039's own "
+          "bars).", "",
+          "| meeting | proposals | supersedes pred | gold | exact hits | "
+          "rejected |", "|---|---|---|---|---|---|"]
+    for m, v in per.items():
+        met = v.get("metrics") or {}
+        L += [f"| {m} | {met.get('n_proposals')} | {met.get('n_pred')} | "
+              f"{met.get('n_gold')} | {met.get('tp')} | "
+              f"{met.get('n_rejected')} |"]
+    pred = {(m, o, n) for m, v in per.items() for o, n in (v.get("pred") or [])}
+    gold = {(m, o, n) for m, v in per.items() for o, n in (v.get("gold") or [])}
+    off_best = max((sum(1 for (m, o, n) in gold
+                        if (m, o + off, n + off) in pred)
+                    for off in range(-3, 4) if off), default=0)
+    near = sum(1 for (m, o, n) in gold
+               if any((m, o + do, n + dn) in pred
+                      for do in (-1, 0, 1) for dn in (-1, 0, 1)))
+    gaps = sorted(n - o for _m, o, n in pred)
+    L += ["",
+          f"Pooled: precision **{_fmt(pooled.get('precision'))}**, recall "
+          f"**{_fmt(pooled.get('recall'))}** ({pooled.get('n_pred')} "
+          f"proposals, {pooled.get('tp')} exact hits). Instrument check "
+          f"(computed from this artefact): best constant-offset hit "
+          f"{off_best} over ±1–±3, gold pairs with any proposal within ±1 "
+          f"on both indices {near} of {len(gold)}"
+          + (f", predicted gaps span {gaps[0]}–{gaps[-1]} segments"
+             if gaps else "")
+          + " — the wrong pairs are the model's, not the numbering.", ""]
+    diag = c.get("llm_linker_diag") or {}
+    dpm = diag.get("per_meeting") or {}
+    if dpm:
+        below = [m for m, v in dpm.items()
+                 if v.get("same_drawer_rate") is not None
+                 and v["same_drawer_rate"] < (v.get("chance_rate") or 0)]
+        above = [m for m, v in dpm.items()
+                 if (v.get("same_drawer_rate") or 0) > (v.get("chance_rate") or 0)]
+        L += ["", "Did it misunderstand? The same-drawer check (do proposals "
+              "at least stay inside ONE topic? computed from the raw answers "
+              "+ drawer gold):", "",
+              "| meeting | proposals | same-drawer | chance |",
+              "|---|---|---|---|"]
+        for m, v in dpm.items():
+            L += [f"| {m} | {v.get('proposals')} | "
+                  f"{_fmt(v.get('same_drawer_rate'))} | "
+                  f"{_fmt(v.get('chance_rate'))} |"]
+        L += ["", f"Pooled {_fmt((diag.get('pooled') or {}).get('same_drawer_rate'))}: "
+              f"BELOW chance on "
+              f"{', '.join(sorted(below)) or '—'} — the flood answers are "
+              "cross-topic darts, not right-topic-wrong-index; ABOVE chance on "
+              f"{', '.join(sorted(above)) or '—'} — those meetings show the "
+              "topic instinct exists but is labelled contradicts and capped "
+              "at ~5 proposals. The task's FORM was understood (valid JSON, "
+              "in-range indices, real French reasons); its substance was not.",
+              ""]
+    ho = art.get("holdout")
+    if ho:
+        hp = ho.get("pooled") or {}
+        L += [f"Holdout read once: precision {_fmt(hp.get('precision'))}, "
+              f"recall {_fmt(hp.get('recall'))}.", ""]
+
+    def _cleared(v: Any) -> bool:
+        return bool(v.get("cleared")) if isinstance(v, dict) else bool(v)
+
+    L += ["Bars: " + ", ".join(f"`{k}` {'PASS' if _cleared(v) else 'FAIL'}"
+                               for k, v in (art.get("bars") or {}).items())
+          + f" — **{art.get('verdict')}**", ""]
+    return L
+
+
 def _fbres(art: dict | None) -> dict[str, Any]:
     """Unwrap a run() envelope ({component,result,...}); miracl writes its dict
     directly, so both shapes must render from one accessor."""
@@ -447,6 +939,83 @@ def collect() -> dict[str, Any]:
     dr = sorted((runs / "demo_real").glob("demo-real-*.json"),
                 key=lambda p: p.stat().st_mtime, reverse=True)
     out["demo_real"] = _load(dr[0]) if dr else {}
+    # D-039: the linker trained on real pairs — verdict rendered from its
+    # artefact (newest first; -v1 preservation copies skipped, identity rule).
+    sl = [p for p in sorted((runs / "summre_linker").glob("result-*.json"))
+          if "-v1" not in p.name]
+    out["summre_linker"] = _load(sl[-1]) if sl else {}
+    # pool-vs-rank decomposition, computed from every 20-project artefact:
+    # when temporal@1 misses, is the in-force unit even IN the returned pool?
+    pool = []
+    for d in sorted(runs.glob("m1_m2_temporal_*_p20_*/metrics.json")):
+        r = _load(d) or {}
+        g = (r.get("system_B") or {}).get("gold_in_pool")
+        if g is not None:
+            pool.append(g)
+    out["pool_scan"] = {"n_artefacts": len(pool),
+                        "min": min(pool) if pool else None,
+                        "all_one": bool(pool) and all(v == 1.0 for v in pool)}
+    # D-040: the ranking round — census, pairwise dot-product probe, and the
+    # mention-demotion A/B. All three render from their artefacts.
+    pc = [p for p in sorted((runs / "summre_paircos").glob("result-*.json"))
+          if "-v1" not in p.name]
+    out["paircos"] = _load(pc[-1]) if pc else {}
+    cs = sorted(runs.glob("ranking_census_*/census.json"))
+    out["ranking_census"] = _load(cs[-1]) if cs else {}
+    ma = [p for p in sorted((runs / "beta_mention_ab").glob("result-*.json"))
+          if "-v1" not in p.name]
+    out["mention_ab"] = _load(ma[-1]) if ma else {}
+    # D-042: the smoothness tune — rendered from its own artefact (newest
+    # first; -v1 preservation copies skipped, identity rule)
+    rf = [p for p in sorted((runs / "reranker_ft").glob("result-*.json"))
+          if "-v1" not in p.name]
+    out["reranker_ft"] = _load(rf[-1]) if rf else {}
+    # D-043: thread-conditioned assignment — same rendering discipline
+    tf = [p for p in sorted((runs / "threader_ft").glob("result-*.json"))
+          if "-v1" not in p.name]
+    out["threader_ft"] = _load(tf[-1]) if tf else {}
+    # D-045/D-046: the whole-session tiny-LLM linker. Newest by MTIME, not
+    # sorted name: the filename carries the model tag AFTER the date, and
+    # "lfm2.5" sorts before "qwen3.5" — name order would keep rendering the
+    # older 2b verdict after the 24b run lands (same identity rule as
+    # _newest_sr; -v1 preservation copies skipped).
+    # D-046: pair-local setter round — one artefact per reader, newest last.
+    lc = [p for p in (runs / "linker_local").glob("result-*.json")
+          if "-v1" not in p.name]
+    out["linker_local"] = [_load(p) for p in
+                           sorted(lc, key=lambda p: p.stat().st_mtime)]
+    cc = [p for p in (runs / "completes_cardinality").glob("result-*.json")
+          if "-v1" not in p.name]
+    out["completes_cardinality"] = (_load(max(cc, key=lambda p: p.stat().st_mtime))
+                                    if cc else {})
+    lp = [p for p in (runs / "linker_local").glob("probe-*.json")
+          if "-v1" not in p.name]
+    out["linker_probe"] = (_load(max(lp, key=lambda p: p.stat().st_mtime))
+                           if lp else {})
+    cg = [p for p in (runs / "currency_guard").glob("result-*.json")
+          if "-v1" not in p.name]
+    out["currency_guard"] = (_load(max(cg, key=lambda p: p.stat().st_mtime))
+                             if cg else {})
+    ta = [p for p in (runs / "token_attention").glob("result-*.json")
+          if "-v1" not in p.name]
+    out["token_attention"] = (_load(max(ta, key=lambda p: p.stat().st_mtime))
+                              if ta else {})
+    tl = [p for p in (runs / "token_attention").glob("links-*.json")
+          if "-v1" not in p.name]
+    out["token_attention_links"] = (_load(max(tl, key=lambda p: p.stat().st_mtime))
+                                    if tl else {})
+    tt = [p for p in (runs / "token_attention").glob("transfer-*.json")
+          if "-v1" not in p.name]
+    out["token_attention_transfer"] = (_load(max(tt, key=lambda p: p.stat().st_mtime))
+                                       if tt else {})
+    ll = [p for p in (runs / "llm_linker").glob("result-*.json")
+          if "-v1" not in p.name]
+    out["llm_linker"] = (_load(max(ll, key=lambda p: p.stat().st_mtime))
+                         if ll else {})
+    ld = [p for p in (runs / "llm_linker").glob("diagnostic-*.json")
+          if "-v1" not in p.name]
+    out["llm_linker_diag"] = (_load(max(ld, key=lambda p: p.stat().st_mtime))
+                              if ld else {})
     gate = _load(repo_root() / "baselines" / "last_good.json")
     out["gate"] = gate
     return out
@@ -610,6 +1179,14 @@ def build(collected: dict[str, Any] | None = None) -> str:
               f"- instrument check `gold_in_pool`: {_fmt(base.get('gold_in_pool'))} / "
               f"{_fmt(sec.get('gold_in_pool'))} (System B must not lose gold evidence)",
               f"- embedder under test: `{(bench.get('meta') or {}).get('embed_version')}`"]
+    ps = c.get("pool_scan") or {}
+    if ps.get("n_artefacts"):
+        L += [f"- pool vs rank, across all {ps['n_artefacts']} 20-project artefacts: "
+              f"`gold_in_pool` min {_fmt(ps['min'])} — the in-force unit is always "
+              "IN the returned candidates, so every temporal@1 failure is a "
+              "RANKING miss, never a retrieval miss. The reranker (D-015, "
+              + ("default since D-041" if _rerank_shipped() else "opt-in")
+              + ") is the only lever measured against that gap so far."]
     lat = c.get("latency") or {}
     L += ["", "## 4b. System metrics, measured per stage (9.1)", ""]
     if lat:
@@ -924,6 +1501,15 @@ def build(collected: dict[str, Any] | None = None) -> str:
                   "the pooled run above replaced it (DECISIONS D-022).", ""]
     L += subjects_section(c)
     L += demo_real_section(c.get("demo_real") or {})
+    L += linker_real_section(c)
+    L += ranking_round_section(c)
+    L += reranker_ft_section(c)
+    L += threader_section(c)
+    L += linker_local_section(c)
+    L += token_attention_section(c)
+    L += completes_cardinality_section(c)
+    L += currency_guard_section(c)
+    L += llm_linker_section(c)
     L += ["## 7. Offline jobs (6.14)", ""]
     if off:
         aud = off.get("audit") or {}

@@ -1,0 +1,29 @@
+# 024c_EBPH — festival de cinéma (train)
+4->19:supersedes deux trois jours -> cinq jours retenus
+15->19:supports cinq jours confirmé
+27->36:supports vacances scolaires -> début juillet dedans
+32->36:supersedes juin -> début juillet
+36->41:supersedes début juillet -> mi-juillet compromis
+41->44:supports mi-juillet -> du 15 au 20
+45->51:supersedes lundi-vendredi -> mercredi-dimanche
+51->53:supersedes mercredi-dimanche -> mardi-samedi
+61->63:supersedes 18h -> 17h-19h puis 21h-23h
+63->67:supports reprise 17h et 21h
+110->111:contradicts peur de mélanger le son -> grand espace donc plusieurs scènes
+112->114:supports deux scènes -> scène devant écran plus petite scène excentrée
+144->150:contradicts plutôt acteur français -> acteur d'iron man américain
+150->152:supports acteur iron man -> robert downey junior
+177->181:supersedes un ou deux mois -> six sept mois
+193->197:supersedes cinq mois -> six sept mois retenu
+194->196:supports relance prestataires validée
+201->207:supersedes pub une deux semaines -> trois semaines
+207->208:supports trois semaines correct
+211->213:supports trois semaines pour la billetterie en ligne
+218->219:contradicts en ligne sympa -> tout le monde ne peut pas payer par carte
+218->226:supersedes en ligne seul -> réservation en ligne et stand à l'entrée
+232->238:supersedes prévoir un plan sécurité -> prestataires vigiles
+244->247:supersedes engager quelqu'un pour la billetterie -> on le fait nous-mêmes
+69->74:supports stands de nourriture -> plusieurs stands et food truck
+82->242:supports coin médical -> secouristes un ou deux médecins
+97->102:supports grand espace en plein air -> un champ
+16->59:supports romance comédie d'abord -> american pie pas au début

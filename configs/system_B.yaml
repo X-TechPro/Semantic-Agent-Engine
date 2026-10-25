@@ -24,12 +24,16 @@ retrieve:
   rrf_k: 60
   weights: {dense: 1.0, bm25: 1.0}
   final_k: 30
-  slot_boost: 1.25         # explicit subject is a soft boost, never a filter
-  rerank: {backend: none}
+  slot_boost: 1.25
+  node_view: true             # v3: decision nodes beside retrieval         # explicit subject is a soft boost, never a filter
+  rerank: {backend: cross_encoder}   # D-041: promoted to the shipped default
   validity:
     alpha_superseded: 0.0  # 6.10: "current" queries drop stale evidence
     alpha_history: 0.3
     beta_soft_status: 0.5  # hypothesis/proposed half-weighted
+    beta_mention: 1.0      # mention units on current queries: 1.0 off (D-040
+                           # census found them on 8/17 rank-1 misses; the AB
+                           # run decides whether 0.5 ships)
     hard_filter: false
     graph_expansion: true
 

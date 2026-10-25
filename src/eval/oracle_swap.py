@@ -184,7 +184,9 @@ def run(split: str = "dev", projects: int = 20, seed: int = 42) -> dict[str, Any
     out_dir = root / "runs" / f"oracle_swap_{split}_{seed}"
     out_dir.mkdir(parents=True, exist_ok=True)
     tmp = Path(tempfile.mkdtemp(prefix="oracle-swap-"))
-    cfg = load_config()
+    # ruler pin: the recorded headroom numbers (+0.057 / 0.000) were measured
+    # pre-D-041 with rerank none; a swap is only meaningful against that ruler
+    cfg = load_config(overrides={"retrieve": {"rerank": {"backend": "none"}}})
 
     results: dict[str, Any] = {"split": split, "seed": seed, "projects": projects,
                                "n_questions": len(items),
@@ -196,7 +198,9 @@ def run(split: str = "dev", projects: int = 20, seed: int = 42) -> dict[str, Any
         # mean "gold plus whatever the rules guessed"
         linker_on = name not in ("linker", "reader+slots+linker")
         scfg = load_config(overrides={"store": {"path": str(tmp / f"{slug}.db")},
-                                      "embed": {"backend": "hash"}, "seed": seed})
+                                      "embed": {"backend": "hash"}, "seed": seed,
+                                      "retrieve": {"rerank":
+                                                   {"backend": "none"}}})
         eng = _ingest(scfg, ledger, holdout, roster, tmp / f"{slug}.db",
                       linker=linker_on)
         gmap = gold_unit_map(eng.store)

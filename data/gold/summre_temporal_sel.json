@@ -1,0 +1,223 @@
+{
+ "split": "sel",
+ "corpus": "linagora/SUMM-RE, data/external/summre_test/meetings.json extract",
+ "protocol": "hand-labelled by the assistant on 2026-10-23: each thread read in full (segments grouped by the meeting's drawer gold, in order); relations are PAIRS (old, new) of segment indices in data/external/summre_test/meetings.json, labelled {supersedes, contradicts, supports}; where the thread left the state change undecidable no line was written; split declared before labelling (train / sel / holdout)",
+ "declared_splits": {
+  "train": [
+   "024c_EBPH",
+   "047a_EDRH",
+   "060a_EDRH",
+   "072c_EEPH",
+   "016c_EBPZ"
+  ],
+  "sel": [
+   "047c_EDPH"
+  ],
+  "holdout": [
+   "008a_EARH",
+   "049b_EBDH",
+   "053b_EDDH"
+  ]
+ },
+ "spent_test_never_labelled": [
+  "007a_ECRH",
+  "013c_EAPD",
+  "014c_EAPD"
+ ],
+ "meetings": {
+  "047c_EDPH": {
+   "sentences_reviewed": 316,
+   "threads": [
+    {
+     "topic": "animations",
+     "relations": [
+      {
+       "old": 129,
+       "new": 138,
+       "relation": "supports",
+       "note": "OLD: est-ce_que vous avez une idée ou vous pensez que c'est inécessaire | NEW: il_y a un dj qui vient et qui met des musiques voilà pour que les gens ne s endorment pas  | idée d'animation préouverture -> dj en première partie"
+      },
+      {
+       "old": 138,
+       "new": 272,
+       "relation": "supersedes",
+       "note": "OLD: il_y a un dj qui vient et qui met des musiques voilà pour que les gens ne s endorment pas  | NEW: participer tout_au_long de la soirée | dj en première partie -> dj toute la soirée entre les artistes"
+      },
+      {
+       "old": 141,
+       "new": 143,
+       "relation": "supports",
+       "note": "OLD: comme ça ça met de la musique ça reste un dj local pas besoin que ce soit un un grand nom  | NEW: euh non je ben je pense que je vais regarder sur les réseaux sociaux voir s'il n y a pas d | dj local -> chercher des dj d'aix ou marseille"
+      },
+      {
+       "old": 302,
+       "new": 314,
+       "relation": "supersedes",
+       "note": "OLD: je sais pas si vous avez déjà vu en_fait il_y a ce n est pas de la poudre de la farine mai | NEW: ça fait poser quelques problèmes quelques soucis de logistique mais le confetti je pense q | poudre colorée avant d'entrer -> confettis en clôture"
+      }
+     ]
+    },
+    {
+     "topic": "billetterie",
+     "relations": [
+      {
+       "old": 79,
+       "new": 84,
+       "relation": "supersedes",
+       "note": "OLD: de de faire une sorte de consensus de nombre de public qu on aura c'est-à-dire si on aura  | NEW: en_fait euh je me disais que aix-en-provence c'est quand même une ville qui est très étudi | adapter le tarif par public -> tarif unique pas très élevé"
+      },
+      {
+       "old": 111,
+       "new": 112,
+       "relation": "supports",
+       "note": "OLD: alors dans ce cas là il faudrait augmenter le prix du | NEW: de vip bien sûr hein pas pour tous hein voilà oui | augmenter le prix mais de vip bien sûr"
+      }
+     ]
+    },
+    {
+     "topic": "buvette",
+     "relations": [
+      {
+       "old": 55,
+       "new": 58,
+       "relation": "supports",
+       "note": "OLD: donc je me dis c'est bien aix c'est connu pour le nombre de brasseurs | NEW: local oui mh comme ça on fait travailler euh en même temps les commerçants de la ville | brasseurs locaux -> local oui on fait travailler les commerçants"
+      }
+     ]
+    },
+    {
+     "topic": "dates",
+     "relations": [
+      {
+       "old": 118,
+       "new": 120,
+       "relation": "supersedes",
+       "note": "OLD: vous pensez plutôt en avril | NEW: je pense qu on peut commencer dès maintenant à prospecter parce_que bon la date arrive trè | prospecter en avril -> commencer dès maintenant"
+      }
+     ]
+    },
+    {
+     "topic": "genres",
+     "relations": [
+      {
+       "old": 281,
+       "new": 282,
+       "relation": "supports",
+       "note": "OLD: choisir plutôt de la musique électro électro pop vous pensez quoi | NEW: je sais pas peut-être qu un changement de genre pour quelque_chose de_plus doux ça pourrai | dj électro pop plus doux ok"
+      }
+     ]
+    },
+    {
+     "topic": "lieu",
+     "relations": [
+      {
+       "old": 29,
+       "new": 42,
+       "relation": "supersedes",
+       "note": "OLD: et par_rapport_à l infrastructure euh je m' y connais un peu par_rapport_à la mairie donc  | NEW: juste à côté d aix il_y a l aréna du pays d aix | réserver la rotonde -> aréna du pays d'aix"
+      },
+      {
+       "old": 42,
+       "new": 168,
+       "relation": "supports",
+       "note": "OLD: juste à côté d aix il_y a l aréna du pays d aix | NEW: elle est adaptée parce_que y a des y a des gradins donc pour les gens qui veulent s asseoi | aréna adaptée gradins accès fauteuil"
+      }
+     ]
+    },
+    {
+     "topic": "lineup",
+     "relations": [
+      {
+       "old": 20,
+       "new": 24,
+       "relation": "supersedes",
+       "note": "OLD: ça veut dire qu il faut peut-être euh parler en italien pour euh mainskin j imagine | NEW: ça reste un assez global donc l anglais euh | parler en italien pour mainskin -> l'anglais fera l'affaire"
+      }
+     ]
+    },
+    {
+     "topic": "public_cible",
+     "relations": [
+      {
+       "old": 91,
+       "new": 92,
+       "relation": "supersedes",
+       "note": "OLD: cet effet de groupe un peu et comme tu disais aix c'est une ville qui est très étudiante d | NEW: après euh je pense que même ça peut attirer des familles hein je pense hein ça ça reste de | ville étudiante donc étudiants -> peut aussi attirer des familles"
+      },
+      {
+       "old": 92,
+       "new": 179,
+       "relation": "contradicts",
+       "note": "OLD: après euh je pense que même ça peut attirer des familles hein je pense hein ça ça reste de | NEW: bon pas forcément familial mais que il_y aurait beaucoup de public | les familles seront présentes -> pas forcément familial"
+      }
+     ]
+    },
+    {
+     "topic": "securite",
+     "relations": [
+      {
+       "old": 96,
+       "new": 100,
+       "relation": "supports",
+       "note": "OLD: vous pensez qu il vaut mieux prendre une une agence ou plutôt des bénévolats sachant que q | NEW: euh au niveau du du staff euh mettre des agents de sécurité euh vraiment euh qualifiés | agence ou bénévolat -> agents de sécurité qualifiés"
+      },
+      {
+       "old": 175,
+       "new": 180,
+       "relation": "supersedes",
+       "note": "OLD: une sensibilisation plutôt à aux boissons c'est ça | NEW: je pense que par_exemple mettre un système de bracelets | sensibilisation alcool -> bracelets compteur de verres"
+      },
+      {
+       "old": 180,
+       "new": 186,
+       "relation": "contradicts",
+       "note": "OLD: je pense que par_exemple mettre un système de bracelets | NEW: je pense que c'est une bonne idée mais peut-être qu on devrait aussi laisser le choix aux  | limite imposée par bracelet -> laisser le choix aux gens"
+      },
+      {
+       "old": 186,
+       "new": 188,
+       "relation": "supports",
+       "note": "OLD: je pense que c'est une bonne idée mais peut-être qu on devrait aussi laisser le choix aux  | NEW: à mon avis pour pour euh peut-être comme tu dis inciter aux gens à plutôt que de leur obli | inciter plutôt qu'obliger"
+      },
+      {
+       "old": 226,
+       "new": 227,
+       "relation": "supports",
+       "note": "OLD: c'est ça non je pense que l idée l idée des bracelets pourquoi pas pour un peu garder le c | NEW: oui pour garder le contrôle on va dire | bracelets pour garder le compte -> garder le contrôle"
+      }
+     ]
+    },
+    {
+     "topic": "soins",
+     "relations": [
+      {
+       "old": 241,
+       "new": 243,
+       "relation": "contradicts",
+       "note": "OLD: des des des pompiers euh qui sont sur place etcetera au_cas_où il_y ait problème de person | NEW: je pense que non enfin je pense que c'est nous qui devons | pompiers systématiquement sur place -> c'est nous qui devons prévoir"
+      },
+      {
+       "old": 236,
+       "new": 239,
+       "relation": "supports",
+       "note": "OLD: prévoir euh un coin on va dire soin bon pas soin mais au_cas_où aux urgences si quelqu'un  | NEW: ça normalement il faut faut toujours normalement dans les concerts les événements comme ça | coin secours inclus ou pas -> toujours une sécurité dans les concerts"
+      }
+     ]
+    },
+    {
+     "topic": "volontaires",
+     "relations": [
+      {
+       "old": 103,
+       "new": 135,
+       "relation": "supports",
+       "note": "OLD: euh des étudiants par_exemple au niveau de la buvette ce genre de choses de des informatio | NEW: on pourrait aussi faire_appel à un bénévolat | volontariat étudiants -> appel à bénévolat"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "n_relations": 22,
+ "n_supersedes_pairs": 8
+}

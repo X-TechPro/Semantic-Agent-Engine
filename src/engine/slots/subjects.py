@@ -58,6 +58,40 @@ GENERIC_TERMS = {
 }
 
 
+#: How many values an attribute can hold at once. A `functional` slot has one
+#: value in force (one budget, one launch date); a `set` slot accumulates (the
+#: films of the evening, the participants). A new value on a functional slot
+#: replaces the old one; on a set slot it coexists. This is the distinction
+#: Graphiti lacks and names as the missing discriminator in its invalidation
+#: bug: `PART_OF` is functional (a file belongs to one plugin), `TESTED_WITH`
+#: is not (a benchmark tests many models) — the two shapes are otherwise
+#: identical. `unknown` is the common real-ASR case (coined drawers): it must
+#: not be treated as functional, because the failure direction then is silent
+#: deletion of a true fact.
+CARDINALITY: dict[str, str] = {
+    # one value in force
+    "launch_date": "functional", "budget": "functional", "vendor": "functional",
+    "scope": "functional", "deadline_report": "functional", "stack": "functional",
+    "pricing": "functional", "hiring": "functional", "env_strategy": "functional",
+    "owner.budget": "functional", "delay": "functional", "status": "functional",
+    # `risque de conformité` is one posture in this lexicon: the golden pairs
+    # ratify a proposal on it (26/1550), so marking it set lost real supersedes.
+    "risk_compliance": "functional", "nombre_jours": "functional", "tarif": "functional",
+    # additions coexist; a new one never retires the old one
+    "films": "set", "participants": "set",
+    "invites": "set", "risques": "set", "actions": "set", "taches": "set",
+    "idees": "set", "propositions": "set", "outils": "set", "tests": "set",
+    "evaluations": "set", "dates": "set", "modeles": "set", "scenes": "set",
+}
+
+
+def cardinality(subject: str | None) -> str:
+    """`functional` / `set` / `unknown` for a resolved subject key."""
+    if not subject:
+        return "unknown"
+    return CARDINALITY.get(subject.rsplit(".", 1)[-1], "unknown")
+
+
 def fold(text: str) -> str:
     import unicodedata
 

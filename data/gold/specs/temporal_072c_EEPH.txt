@@ -1,0 +1,7 @@
+# 072c_EEPH — association intervention étudiante (train)
+74->75:contradicts première intervention à la fac -> non c'est la fac c'est fini
+10->16:supports prévenir l'année d'avant -> puis mail à tous les professeurs fin août
+29->38:supersedes intervention avec les enfants et déchets récupérés -> rester sur le cadre de l'affiche recyclée
+107->110:supersedes locations de vélos -> vélibs de marseille gratuits via qr code
+58->63:supports recherche de volontaires -> essentiellement les membres de l'association
+93->94:supports préparer le speech pas trop tard -> août à la rentrée

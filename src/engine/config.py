@@ -108,11 +108,21 @@ DEFAULTS: dict[str, Any] = {
         "weights": {"dense": 1.0, "bm25": 1.0},
         "final_k": 30,
         "slot_boost": 1.25,             # explicit subject = soft boost (6.7)
-        "rerank": {"backend": "none", "candidates": 30},
+        "node_view": True,              # v3: decision nodes beside retrieval
+        # D-041 (2026-10-23, owner decision): the cross-encoder was promoted to
+        # the shipped default. It is the only lever that has ever moved the
+        # headline (temporal@1 0.5518 -> 0.6616, 3/3 seeds on dev AND test,
+        # D-015); the accepted price is ~9 s cold start and ~4x steady-state
+        # latency (12 ms p50). `none`/`overlap` remain selectable ablations.
+        "rerank": {"backend": "cross_encoder", "candidates": 30},
         "validity": {
             "alpha_superseded": 0.0,    # 6.10 "current" queries
             "alpha_history": 0.3,       # 6.10 "history" queries
             "beta_soft_status": 0.5,    # hypothesis / proposed
+            "beta_mention": 1.0,        # 6.10 extension, D-040: mention units
+                                        # (name a subject, assert no state) at
+                                        # rank 1 caused 8/17 census misses; the
+                                        # AB run decides 1.0 (off) vs 0.5
             "hard_filter": False,
             "graph_expansion": True,
         },
@@ -146,6 +156,19 @@ DEFAULTS: dict[str, Any] = {
         "supersede_min_score": 0.55,
         "guards": True,                 # 6.8.3 deterministic guards
         "same_scope_only": True,
+        # D-046 pair-local threads: when True, units sharing a deterministic
+        # coarse slot (resolved subject, else attribute/date/amount/number from
+        # their own words) may be judged by `evaluate(..., same_thread=True)`
+        # instead of being refused at G1 for a missing subject key. OFF: the
+        # measured round on train+sel is refused (runs/linker_local), so the
+        # shipped behaviour and every recorded number stay unchanged.
+        "thread_context": False,
+        "thread_window": 8,
+        # Session-first ingest (D-055): annotate the whole source, link against
+        # session-local candidates, then commit units+edges once. OFF: the
+        # shipped online path stores each unit before linking, and every
+        # recorded number stays comparable.
+        "session_batch": False,
         # Value-comparability thresholds for G9/G4. Tuned on dev, not invented.
         # The sweep lives in the artefacts, not in prose: `runs/stage_linker_dev_*`
         # and `runs/g9_ablation/` (reproduce with `sae stage linker --split dev
@@ -184,6 +207,12 @@ DEFAULTS: dict[str, Any] = {
         # measured: 100% abstention on answerable questions.
         "no_answer_threshold": 0.0,     # fused-score floor (ranking-scale units)
         "no_answer_overlap": 0.06,      # content-word Jaccard floor
+        # D-047 unresolved-currency guard: two live statements that disagree
+        # about the same thing, with no relation deciding between them, make the
+        # answer say "I cannot tell which is in force" instead of leading with
+        # rank 1. Measured on real speech in runs/currency_guard; gated here so
+        # the shipped behaviour is a recorded choice.
+        "currency_guard": True,
     },
     "ledger": {
         "n_projects": 20,

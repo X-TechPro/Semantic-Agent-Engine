@@ -26,7 +26,11 @@ retrieve:
   weights: {dense: 1.0, bm25: 1.0}
   final_k: 30
   slot_boost: 1.0          # no slot targeting in the baseline row
-  rerank: {backend: none}
+  # D-041 fairness budget: the reranker is SEARCH, not the relation layer —
+  # both rows share it so the headline delta isolates the layer under study
+  # (the same lesson as the scoping decomposition). The relation layer stays
+  # off at BOTH ends via linker_enabled: false.
+  rerank: {backend: cross_encoder}
   # inert while linker_enabled is false; set equal so a future "filters only"
   # ablation (10, row 6) can flip linker_enabled without changing these
   validity:

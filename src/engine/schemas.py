@@ -27,7 +27,7 @@ IntentLabel = Literal[
 ]
 Relation = Literal[
     "supports", "contradicts", "supersedes", "creates_action", "answers",
-    "unrelated",
+    "completes", "unrelated",
 ]
 QueryMode = Literal["current", "history", "compare"]
 ResolutionStatus = Literal["resolved", "email_missing", "ambiguous", "not_found"]
@@ -47,7 +47,7 @@ INTENTS: tuple[str, ...] = (
 )
 RELATIONS: tuple[str, ...] = (
     "supports", "contradicts", "supersedes", "creates_action", "answers",
-    "unrelated",
+    "completes", "unrelated",
 )
 
 # 6.2 / 6.8 hard rule: these statuses may never supersede, and may never create

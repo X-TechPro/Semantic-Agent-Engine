@@ -31,6 +31,10 @@ def client(tmp_path_factory):
     import api.app as api_mod
 
     cfg_over = {"store": {"path": db},
+                # CPU-tier pin (D-041): the shipped reranker is a GPU model;
+                # these are contract tests — ranking quality is gated by the
+                # headline bench, response shape by this file.
+                "retrieve": {"rerank": {"backend": "none"}},
                 "agent": {"contacts_path": str(Path(__file__).resolve()
                                                .parents[2] / "data" / "contacts.json")}}
     from engine.config import load_config

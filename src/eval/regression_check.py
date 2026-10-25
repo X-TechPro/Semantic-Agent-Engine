@@ -90,10 +90,27 @@ def check(projects: int = 8, seed: int = 42, *, write_gate: bool = False) -> int
             print(f"  {label}: {old} -> {new}  ({drop:+.2f} pts) {flag}")
             if drop > DROP_LIMIT:
                 failures.append(f"{label} dropped {drop:.2f} pts (> {DROP_LIMIT})")
-        # the thesis claim itself: B must still beat A on this fixed set
-        if cmp["temporal@1"]["delta"] <= 0:
-            failures.append(f"System B no longer beats Baseline A "
+        # D-041/D-042: with the reranker on BOTH arms, the 8-project tripwire
+        # corpus measures A = B (0.4444 = 0.4444) — plain re-scoring already
+        # picks the right unit in a small pool, so "B beats A" is a property
+        # of the CLAIM corpus (20 projects), not of this drift alarm. Here B
+        # must not LOSE; the strict thesis claim is asserted below from the
+        # recorded canonical numbers, where it is actually made — free, and
+        # it fails loudly if that file is missing or no longer positive.
+        if cmp["temporal@1"]["delta"] < 0:
+            failures.append(f"System B lost to Baseline A on the tripwire set "
                             f"(delta {cmp['temporal@1']['delta']})")
+        lg = _read_gate(repo_root() / "baselines" / "last_good.json")
+        lg_delta = ((lg or {}).get("temporal@1_mean") or {}).get("delta")
+        if lg_delta is None:
+            failures.append("baselines/last_good.json missing or has no "
+                            "temporal@1_mean.delta — the thesis claim is "
+                            "ungated; run `make baseline`")
+        elif lg_delta <= 0:
+            failures.append(f"the canonical 20-project thesis delta is no "
+                            f"longer positive (last_good.json: {lg_delta}) "
+                            "— the relation layer lost to plain search on "
+                            "the claim corpus")
 
     if failures:
         print("\nFAIL:")

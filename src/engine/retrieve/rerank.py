@@ -1,10 +1,12 @@
 """Reranker (6.9) — three backends behind one interface.
 
-  * ``none`` (default)      — no reranking; RRF order is kept. This is Baseline A.
+  * ``none``                — no reranking; RRF order is kept. The pre-D-041
+                              default and the 10-row ablation.
   * ``overlap``             — deterministic lexical overlap + metadata prefix
                               bonus. No model, usable in CI and in the "LLM-off"
                               ablation, and it is what the unit tests exercise.
-  * ``cross_encoder``       — bge-reranker-v2-m3 (Apache-2.0, verified in
+  * ``cross_encoder`` (default since D-041)
+                            — bge-reranker-v2-m3 (Apache-2.0, verified in
                               docs/MODELCARDS.md) through
                               ``sentence_transformers.CrossEncoder``.
 

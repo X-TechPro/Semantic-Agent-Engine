@@ -651,9 +651,12 @@ def eval_summre_temporal(device: str = "cuda", top_k: int = 30) -> dict[str, Any
         (root / "data" / "external" / "summre_test" / "meetings.json")
         .read_text(encoding="utf-8"))
 
+    # ruler pin: the spent SUMM-RE reach read (D-025) ran pre-D-041 with
+    # rerank none — a re-run, if ever permitted, must score the same ruler
     cfg = load_config(overrides={"embed": {"backend": "sentence_transformers",
                                            "model_id": "intfloat/multilingual-e5-base",
-                                           "device": device}})
+                                           "device": device},
+                                 "retrieve": {"rerank": {"backend": "none"}}})
     embedder = build_embedder(cfg)          # shared by both arms — one instance
     out_dir = run_dir_for("summre", embed_tag(embedder.version), None, "test")
     if (out_dir / "result.json").exists():

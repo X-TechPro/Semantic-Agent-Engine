@@ -105,7 +105,10 @@ eval-fast:
 # `make eval` runs it because 10 requires latency reported beside quality.
 .PHONY: latency
 latency:
-	$(PY) -m engine.cli latency --split test --projects $(PROJECTS) --seed 42
+	# rows are explicit since D-041: "none" is the ablation, cross_encoder is
+	# the shipped default — a bare row would silently duplicate the other
+	$(PY) -m engine.cli latency --split test --projects $(PROJECTS) --seed 42 \
+	  --rerank none
 	$(PY) -m engine.cli latency --split test --projects $(PROJECTS) --seed 42 \
 	  --rerank cross_encoder
 

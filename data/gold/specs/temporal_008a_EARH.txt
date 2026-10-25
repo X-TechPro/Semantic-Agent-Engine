@@ -1,0 +1,11 @@
+# 008a_EARH — roundtable données personnelles (holdout)
+# opinions-only meeting: no state-changing supersedes pairs exist in the
+# threads read; supports chains only (honest sparseness, not laziness)
+20->23:supports rien n'est gratuit on paie avec nos données -> si c'est gratuit c'est vous le produit
+25->26:supports google facebook revendent nos données -> revendent l'or
+88->91:supports demander la suppression de nos données -> c'est le droit à l'oubli rgpd
+68->101:supports la rgpd est arrivée -> ils ont plus de mal à nous tracer
+101->107:supports moins de traçage -> chiffres d'affaires chutent
+138->140:supports problème moral du référencement -> exemple ivgnet premier résultat
+42->43:supports la géolocalisation est utile en période de covid -> la chine le fait
+153->154:supports les parents ne sont pas formés aux dangers -> harcèlement et exposition

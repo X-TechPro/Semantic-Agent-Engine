@@ -72,8 +72,11 @@ def _ingest(ledger, sources, args, root: Path) -> Engine:
     """Ingest the whole corpus. Scoring is restricted to one split's projects by
     the caller; the *store* must hold every project, because the cross-project
     distractors are the thing that makes "same slot" a hard problem (7.1.1)."""
+    # ruler pin: stage metrics are per-component rulers recorded pre-D-041
+    # with rerank none; the §3 rows must stay comparable to their artefacts
     overrides = {"store": {"path": str(root / f"stage-{args.seed}.db")},
-                 "embed": {"backend": "hash"}}
+                 "embed": {"backend": "hash"},
+                 "retrieve": {"rerank": {"backend": "none"}}}
     backend = getattr(args, "linker", None)
     if backend:
         overrides["link"] = {"backend": backend}

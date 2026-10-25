@@ -488,3 +488,23 @@ keys from it — annotation supplied, extraction refused), and the shared
 validator in `slots/subjects.py`. B-13 remains open as exactly what it
 always was — a data-scale demand for real annotated meetings — now with no
 dead code pretending otherwise.
+
+**D-046 (2026-10-24) put a number on the remaining cause and refused its fix.**
+Production subject resolution puts only **2/40** gold supersede pairs in front
+of the guards (train+sel; 0/11 on the sealed holdout as measured by D-039), so
+reach is the cap. A deterministic coarse-thread index + spoken-French value
+witnesses (`link/thread.py`, `link/values.py`, `evaluate(..., same_thread=True)`)
+raises reach to **9/40** — and the drawer upper bound is **39/40**, proving the
+judge is fed 97.5% of the right olds if threads were perfect. Judgement stayed
+at 1 true positive, and the XNLI head is at chance on the same pairs both bare
+(AUC 0.5727) and with the thread prefix as premise (AUC 0.5411). The round is
+refused and `link.thread_context` ships False; B-13's remaining demand is now
+specifically *labelled threads plus a judge trained on (thread, new turn)*.
+
+**D-047 moved the failure to the answer surface.** Since the relation cannot be
+recovered here, the engine no longer presents a `mention` as the version in
+force: it caveats the answer (or refuses when two live versions are visibly in
+conflict). On train+sel that took "stale version shown confidently" from 40/40
+to **0/40** while the synthetic demo corpus stays uncaveated (19/19). The cost is
+stated: 87.9% of control segments on raw speech are caveated, because that is how
+often the reader cannot ground currency. What B-13 still needs is unchanged.

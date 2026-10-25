@@ -138,6 +138,7 @@ class RetrievalPipeline:
                 alpha_superseded=float(self.valid["alpha_superseded"]),
                 alpha_history=float(self.valid["alpha_history"]),
                 beta_soft=float(self.valid["beta_soft_status"]),
+                beta_mention=float(self.valid.get("beta_mention", 1.0)),
                 hard_filter=bool(self.valid["hard_filter"]))
         else:
             valid = [(u, s, 1.0, s) for u, s in scored]

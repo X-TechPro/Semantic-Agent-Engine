@@ -23,6 +23,8 @@ runs/*
 runs/**/*
 !runs/**/summary.md
 !runs/**/SUMMARY.md
+!runs/*/summary.md
+!runs/*/SUMMARY.md
 
 # models
 models/
@@ -32,3 +34,17 @@ models/
 # caches
 .cache/
 .hypothesis/
+.zvec-grep/
+
+# local agent state
+.commandcode/
+
+# downloaded fonts (build_both.py fetches them on demand)
+fonts/
+
+# generated PDFs from `build_both.py --out-dir out`
+out/
+
+# SQLite sidecars are runtime state, never source
+data/engine.db-shm
+data/engine.db-wal

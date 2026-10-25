@@ -12,6 +12,7 @@
         "supersedes",
         "creates_action",
         "answers",
+        "completes",
         "unrelated"
       ],
       "title": "Relation",

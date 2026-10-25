@@ -154,7 +154,9 @@ def new_is_assertive(new: Unit) -> bool:
 
 def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
              topical_min: float = 0.5, equal_max: float = 0.8,
-             word_only_supersedes: bool = True) -> tuple[str, str]:
+             word_only_supersedes: bool = True,
+             same_thread: bool = False,
+             unknown_cardinality: str = "allow") -> tuple[str, str]:
     """Return (relation, guard_name). `proposed` is the classifier's guess.
 
     6.8.3 rules, in order:
@@ -166,13 +168,25 @@ def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
       G2 date order                    → older arriving later cannot supersede
       G3 assertiveness of the new unit → hypothesis/proposed/conditional never supersede
       G5 same date + same status       → keep as a real conflict (contradicts)
+
+    `same_thread=True` is the D-046 pair-local regime, used only when a
+    deterministic `thread.ThreadIndex` says the two units share a coarse slot
+    and `old` arrived first. It substitutes for a *missing* subject key — never
+    for a present one: two different resolved subjects still refuse (line 403).
     """
     if new.project != old.project:
         return "unrelated", "G0_cross_project"
+    witness: str | None = None
     if not same_slot(new, old):
         if new.slots.subject and old.slots.subject:
             return "unrelated", "G1_different_attribute"
-        return "unrelated", "G1_no_slot"
+        if not same_thread:
+            return "unrelated", "G1_no_slot"
+        from engine.link.values import pair_slot_witness
+
+        witness = pair_slot_witness(new.text, old.text)
+        if witness is None:
+            return "unrelated", "G1_no_slot"
     if proposed != "supersedes":
         return proposed, "G0_model"
     if new.type not in SUPERSEDING_TYPES:
@@ -184,6 +198,21 @@ def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
         # that is *in force*. Superseding an already-superseded unit turned a
         # chain of N statements into N-1 edges (measured: 102 false supersedes).
         return "supports", "G8_target_not_current"
+    # G12 cardinality: a set-valued slot accumulates, so a new value is an
+    # addition, never a replacement. This is the guard Graphiti's invalidation
+    # path is missing (issue #1728: 41% of facts retired, most of them additive;
+    # their own conclusion is that predicate cardinality is the only
+    # discriminator). Unknown cardinality is *not* silently functional when
+    # `unknown_cardinality="contested"`: the failure direction must be a visible
+    # extra fact, not a silently deleted true one. Default `allow` preserves the
+    # measured gold behaviour, where most real-ASR drawers are coined keys.
+    from engine.slots.subjects import cardinality
+
+    kind = cardinality(new.slots.subject)
+    if kind == "set":
+        return "supports", "G12_set_valued_additive"
+    if kind == "unknown" and unknown_cardinality == "contested":
+        return "supports", "G12_unknown_cardinality"
     # NB: no veto on `old.status == "mention"`. A terse value statement ("Le
     # lancement est prévu en décembre") carries no status keyword, so the reader
     # labels it mention; vetoing on that made the 12.3 flagship December->January
@@ -193,16 +222,19 @@ def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
     comparable, equal = comparable_values(new, old, topical_min=topical_min,
                                          equal_max=equal_max)
     if not comparable:
-        # Undecidable is not "unrelated" when both sides assert a state for the
-        # same slot: two in-force heads on one slot is exactly what 6.5 forbids
-        # "unless explicitly marked parallel", so record the conflict instead of
-        # staying silent. Measured: 13 such slots survived as unexplained
-        # double-heads while the audit emitted zero `contradicts` edges for them.
-        # 15's fallback is the same preference — contradict and ask, never guess.
-        both_assertive = (new.status in SUPERSEDING_STATUSES
-                          and old.status in SUPERSEDING_STATUSES)
-        return ("contradicts" if both_assertive else "unrelated"), \
-            "G9_values_not_comparable"
+        if witness:                 # pair-local value evidence already parsed
+            comparable, equal = True, False
+        else:
+            # Undecidable is not "unrelated" when both sides assert a state for the
+            # same slot: two in-force heads on one slot is exactly what 6.5 forbids
+            # "unless explicitly marked parallel", so record the conflict instead of
+            # staying silent. Measured: 13 such slots survived as unexplained
+            # double-heads while the audit emitted zero `contradicts` edges for them.
+            # 15's fallback is the same preference — contradict and ask, never guess.
+            both_assertive = (new.status in SUPERSEDING_STATUSES
+                              and old.status in SUPERSEDING_STATUSES)
+            return ("contradicts" if both_assertive else "unrelated"), \
+                "G9_values_not_comparable"
     if equal and old.status in SUPERSEDING_STATUSES:
         # restating a value that is already asserted -> supports, not supersedes
         return "supports", "G4_restatement"
@@ -224,8 +256,17 @@ def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
         # 12.3 "out-of-order": an older document ingested later must NOT supersede
         return "contradicts", "G2_stale_source_date"
     if not new_is_assertive(new):
-        # hypothesis / proposed / conditional after a decision
-        return "contradicts", "G3_not_assertive"
+        # hypothesis / proposed / conditional after a decision. In the pair-local
+        # regime a terse assertion carries no status word (rules reader: 768/781
+        # `mention` on real ASR), so an explicit change cue stands in for it —
+        # never for a question or a non-superseding speech act (G7 above).
+        from engine.link.values import has_change_cue
+
+        pair_assertive = (same_thread and witness is not None and new.kind == "info"
+                          and new.type in SUPERSEDING_TYPES
+                          and has_change_cue(new.text))
+        if not pair_assertive:
+            return "contradicts", "G3_not_assertive"
     # G6 (cancel-of-proposal -> contradicts) is GONE. 6.8.3 names `confirmed` and
     # `cancelled` as the superseding statuses and exempts nothing about the OLD
     # unit's state, so "je propose X" followed by "X est annulé" retires the
@@ -233,10 +274,13 @@ def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
     # left the proposal in force, and cost the guide's own cancel case its edge
     # (measured: 156/312 golden rows). Anything stricter than the guide has to be
     # justified by a metric, not by caution.
-    if new.source_date == old.source_date and new.status == old.status:
-        # simultaneous statements at the same strength: a real conflict, not an update
+    if (not (same_thread and witness)
+            and new.source_date == old.source_date and new.status == old.status):
+        # simultaneous statements at the same strength: a real conflict, not an update.
+        # Inside a thread the order is ingestion order, so equal source dates are
+        # expected (one meeting = one source_date) and carry no simultaneity.
         return "contradicts", "G5_simultaneous_conflict"
-    return "supersedes", "OK"
+    return "supersedes", (f"OK_pair_{witness}" if witness else "OK")
 
 
 def apply_supersede(old: Unit, new: Unit, at: date | None = None) -> Unit:

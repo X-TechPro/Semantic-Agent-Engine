@@ -1,0 +1,23 @@
+# 047c_EDPH — concert adèle aix (sel)
+29->42:supersedes réserver la rotonde -> aréna du pays d'aix
+42->168:supports aréna adaptée gradins accès fauteuil
+79->84:supersedes adapter le tarif par public -> tarif unique pas très élevé
+111->112:supports augmenter le prix mais de vip bien sûr
+129->138:supports idée d'animation préouverture -> dj en première partie
+138->272:supersedes dj en première partie -> dj toute la soirée entre les artistes
+141->143:supports dj local -> chercher des dj d'aix ou marseille
+302->314:supersedes poudre colorée avant d'entrer -> confettis en clôture
+55->58:supports brasseurs locaux -> local oui on fait travailler les commerçants
+118->120:supersedes prospecter en avril -> commencer dès maintenant
+281->282:supports dj électro pop plus doux ok
+20->24:supersedes parler en italien pour mainskin -> l'anglais fera l'affaire
+91->92:supersedes ville étudiante donc étudiants -> peut aussi attirer des familles
+92->179:contradicts les familles seront présentes -> pas forcément familial
+96->100:supports agence ou bénévolat -> agents de sécurité qualifiés
+175->180:supersedes sensibilisation alcool -> bracelets compteur de verres
+180->186:contradicts limite imposée par bracelet -> laisser le choix aux gens
+186->188:supports inciter plutôt qu'obliger
+226->227:supports bracelets pour garder le compte -> garder le contrôle
+241->243:contradicts pompiers systématiquement sur place -> c'est nous qui devons prévoir
+236->239:supports coin secours inclus ou pas -> toujours une sécurité dans les concerts
+103->135:supports volontariat étudiants -> appel à bénévolat

@@ -59,8 +59,12 @@ def run(seed: int = 42, embed_backend: str = "hash") -> dict:
     db = out_dir / "kill.db"
     for p in list(out_dir.glob("kill.db*")):
         p.unlink(missing_ok=True)
+    # ruler pin: the 6.13 geometry-vs-relations verdict was measured with
+    # rerank none; the reranker must not silently join the comparison arms
     cfg = load_config(overrides={"store": {"path": str(db)},
-                                 "embed": {"backend": embed_backend}})
+                                 "embed": {"backend": embed_backend},
+                                 "retrieve": {"rerank":
+                                              {"backend": "none"}}})
     eng = Engine(cfg, path=db, linker_enabled=True)
     for s in _sources():
         eng.ingest(s)

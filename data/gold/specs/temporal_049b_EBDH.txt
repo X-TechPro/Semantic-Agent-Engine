@@ -1,0 +1,18 @@
+# 049b_EBDH — festival de cinéma historique (holdout)
+13->196:supersedes deux genres retenus -> enlever suspense rester sur l'historique
+196->201:supports il y a du suspens dans l'historique donc rester historique
+201->275:supports on part sur le genre historique en art déco
+55->80:supersedes petit ou grand cinéma indécis -> cinéma d'art déco
+80->86:supports on part sur celui-là je vous rejoins
+1->2:contradicts les films de super héros -> ça n'avait pas trop d'intérêt
+95->232:supersedes huit films -> là on en a neuf
+232->233:supports neuf oh ben c'est bon alors
+233->235:supports on part sur ceux-là
+104->105:supports amadeus déjà noté je reste là-dessus
+160->175:supports film sur frida kahlo -> oui pas de soucis
+216->217:contradicts il faudrait un sujet plus actuel -> non une histoire dont on connaît la fin
+217->223:supports titanic grande romance -> oui c'est très bien
+46->51:supports on va éviter le drive-in -> oui ça c'est on enlève
+248->251:supports intervenants cours d'architecture aux pauses -> petits événements entre chaque film
+37->42:supports une dizaine de films c'est deux jours -> il nous faut deux jours
+78->91:supports expérience intimiste moins de personnes -> on sera sûrs de faire salle comble

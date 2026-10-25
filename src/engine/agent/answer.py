@@ -16,7 +16,8 @@ SOFT = {"proposed", "hypothesis", "conditional"}
 
 
 def build_answer(hits: list[Hit], query: Query, *, min_score: float = 0.0,
-                 max_claims: int = 6, overlap_floor: float = 0.06
+                 max_claims: int = 6, overlap_floor: float = 0.06,
+                 currency_guard: bool = True
                  ) -> AnswerWithEvidence:
     # Abstention is content-based: an RRF score carries no relevance signal (see
     # engine/retrieve/relevance.py), so "is there an answer" is decided by
@@ -38,10 +39,57 @@ def build_answer(hits: list[Hit], query: Query, *, min_score: float = 0.0,
     if not usable:
         return AnswerWithEvidence(answer=None, no_answer_reason=NO_ANSWER,
                                   query_mode=query.mode)
+    # D-047: two live versions that disagree, with no relation deciding between
+    # them, is not an answer. Refuse instead of leading with rank 1 — the whole
+    # point of the relation layer is that a guess is worse than "I cannot tell".
+    from engine.agent.currency import (CURRENCY_CAVEAT, UNRESOLVED_REASON,
+                                       competing_versions, unconfirmed_currency,
+                                       unresolved_answer)
+    from engine.retrieve.validity import wants_proposals
+
+    # `is_history_query` keys on "avant", which is a preposition in the very
+    # statements that need the guard ("une semaine avant", "deux mois avant"):
+    # measured, it disabled the caveat on 2/40 stale cases. Only a real request
+    # for the past should switch it off.
+    _STRONG_HISTORY = ("historique", "initialement", "au départ", "à l'époque",
+                       "précédemment", "avant ça", "rappel", "a l'epoque")
+    history_question = query.mode == "history" or any(
+        w in (query.text or "").lower() for w in _STRONG_HISTORY)
+
     current = [h for h in usable if h.unit.is_current]
     soft = [h for h in usable if h.unit.status in SOFT]
     decided = [h for h in current if h.unit.status in ("confirmed", "cancelled")]
     lead = decided[0] if decided else (current[0] if current else usable[0])
+    # D-047: two live versions that disagree, with no relation deciding between
+    # them, is not an answer. Refuse only when the unit this answer would LEAD
+    # with is one of the disagreeing versions — otherwise the conflict is real
+    # but not what the answer is about. The pool is every retrieved candidate,
+    # not just the ones sharing the question's words: the newer statement often
+    # says it differently ("sinon le onze" vs "le vingt et un juin").
+    caveat = None
+    if (currency_guard and query.mode == "current" and not history_question
+            and not wants_proposals(query)):
+        # same evidence filter as the answer: a directive aimed at the assistant
+        # must never be quoted, and it must not *create* a conflict either
+        safe_hits = [h for h in hits if h.unit.type != "other"
+                     and not is_injection(h.unit.text)]
+        conflict = competing_versions([h.unit for h in safe_hits])
+        ids = {u.unit_id for u in conflict}
+        if len(conflict) >= 2 and lead.unit.unit_id in ids:
+            by_id = {h.unit.unit_id: h for h in safe_hits}
+            cited = [by_id[u.unit_id] for u in conflict if u.unit_id in by_id]
+            return AnswerWithEvidence(
+                answer=unresolved_answer(conflict),
+                claims=[Claim(text=_with_citation(h), unit_ids=[h.unit.unit_id])
+                        for h in cited],
+                no_answer_reason=UNRESOLVED_REASON,
+                status_breakdown={"unresolved": [u.unit_id for u in conflict]},
+                query_mode=query.mode)
+        # Caveat the answer if ANY claim it shows cannot ground its currency.
+        # Lead-only missed 15/40 stale cases: a different, grounded unit often
+        # takes the lead while the stale statement stays in the cited context.
+        if any(unconfirmed_currency(h.unit) for h in usable[:max_claims]):
+            caveat = CURRENCY_CAVEAT
 
     claims = [Claim(text=_with_citation(h), unit_ids=[h.unit.unit_id])
               for h in usable[:max_claims]]
@@ -62,6 +110,9 @@ def build_answer(hits: list[Hit], query: Query, *, min_score: float = 0.0,
         parts.append("À noter : les éléments ci-dessus sont des propositions ou des "
                      "hypothèses, pas des décisions en vigueur.")
     answer = "\n".join(parts)
+    if caveat:
+        answer = f"{caveat}\n{answer}"
+        breakdown["unverified"] = [lead.unit.unit_id]
     return AnswerWithEvidence(answer=answer, claims=claims,
                               status_breakdown={k: v for k, v in breakdown.items() if v},
                               superseded_history=history, query_mode=query.mode)
@@ -104,7 +155,10 @@ def compose_answer(llm, query: Query, ans: AnswerWithEvidence) -> str | None:
     the result (the router does it: it has the units). No exception handling
     here: `LLMUnavailable` belongs to the caller's fallback decision.
     """
-    if ans.answer is None or not ans.claims:
+    if (ans.answer is None or not ans.claims or ans.no_answer_reason
+            or ans.status_breakdown.get("unverified")):
+        # a refusal or a currency caveat must never be rewritten into a confident
+        # sentence: the verifier checks names/numbers, not the hedge
         return None
     facts = "\n".join(f"- {c.text}" for c in ans.claims)
     out = llm.generate(

@@ -1,0 +1,410 @@
+{
+ "split": "holdout",
+ "corpus": "linagora/SUMM-RE, data/external/summre_test/meetings.json extract",
+ "protocol": "hand-labelled by the assistant on 2026-10-23: each thread read in full (segments grouped by the meeting's drawer gold, in order); relations are PAIRS (old, new) of segment indices in data/external/summre_test/meetings.json, labelled {supersedes, contradicts, supports}; where the thread left the state change undecidable no line was written; split declared before labelling (train / sel / holdout)",
+ "declared_splits": {
+  "train": [
+   "024c_EBPH",
+   "047a_EDRH",
+   "060a_EDRH",
+   "072c_EEPH",
+   "016c_EBPZ"
+  ],
+  "sel": [
+   "047c_EDPH"
+  ],
+  "holdout": [
+   "008a_EARH",
+   "049b_EBDH",
+   "053b_EDDH"
+  ]
+ },
+ "spent_test_never_labelled": [
+  "007a_ECRH",
+  "013c_EAPD",
+  "014c_EAPD"
+ ],
+ "meetings": {
+  "008a_EARH": {
+   "sentences_reviewed": 194,
+   "threads": [
+    {
+     "topic": "donnees",
+     "relations": [
+      {
+       "old": 20,
+       "new": 23,
+       "relation": "supports",
+       "note": "OLD: paye ça c'est nos données du_coup en acceptant nos données en contrepartie on a ça gratuit | NEW: ben il_y avait un je sais plus c'est qui quel entrepreneur qui avait dit si c'est gratuit  | rien n'est gratuit on paie avec nos données -> si c'est gratuit c'est vous le produit"
+      }
+     ]
+    },
+    {
+     "topic": "droit_oubli",
+     "relations": [
+      {
+       "old": 88,
+       "new": 91,
+       "relation": "supports",
+       "note": "OLD: euh mais après on peut demander la suppression de nos données | NEW: euh ouais c'est avec la loi rgpd je crois c'est le droit à l' oubli ou quelque_chose | demander la suppression de nos données -> c'est le droit à l'oubli rgpd"
+      }
+     ]
+    },
+    {
+     "topic": "enfants_dangers",
+     "relations": [
+      {
+       "old": 153,
+       "new": 154,
+       "relation": "supports",
+       "note": "OLD: c'est très grave même en france il_y a beaucoup de en fait les parents sont pas du tout fo | NEW: ouais ouais et beaucoup | les parents ne sont pas formés aux dangers -> harcèlement et exposition"
+      }
+     ]
+    },
+    {
+     "topic": "geolocalisation_covid",
+     "relations": [
+      {
+       "old": 42,
+       "new": 43,
+       "relation": "supports",
+       "note": "OLD: mais après ça c'est pas mais euh aussi euh quelquefois d' être utile pour euh par_exemple  | NEW: je sais que par_exemple en chine ils font de la géolocalisation pour savoir où est-ce | la géolocalisation est utile en période de covid -> la chine le fait"
+      }
+     ]
+    },
+    {
+     "topic": "modele_economique",
+     "relations": [
+      {
+       "old": 25,
+       "new": 26,
+       "relation": "supports",
+       "note": "OLD: hum ouais et google et facebook c'est vraiment ça leur modèle économique tout est gratuit  | NEW: revendent l' or | google facebook revendent nos données -> revendent l'or"
+      }
+     ]
+    },
+    {
+     "topic": "referencement",
+     "relations": [
+      {
+       "old": 138,
+       "new": 140,
+       "relation": "supports",
+       "note": "OLD: mais euh c'est vrai que que par_rapport_au référencement sur google il_y a aussi des fois  | NEW: il_y a un exemple comme ça avec des sites si on tape ivg donc avortement sur google interr | problème moral du référencement -> exemple ivgnet premier résultat"
+      }
+     ]
+    },
+    {
+     "topic": "risk_compliance",
+     "relations": [
+      {
+       "old": 68,
+       "new": 101,
+       "relation": "supports",
+       "note": "OLD: ben c'est pour ça que maintenant t' as eu la l' rgbd c'est-à-dire la réglementation des pr | NEW: et du_coup en_fait ils ont beaucoup plus de mal avec le rgpd à nous tracer | la rgpd est arrivée -> ils ont plus de mal à nous tracer"
+      },
+      {
+       "old": 101,
+       "new": 107,
+       "relation": "supports",
+       "note": "OLD: et du_coup en_fait ils ont beaucoup plus de mal avec le rgpd à nous tracer | NEW: ça fait chuter les chiffres d' affaires de certains du_coup | moins de traçage -> chiffres d'affaires chutent"
+      }
+     ]
+    }
+   ]
+  },
+  "049b_EBDH": {
+   "sentences_reviewed": 279,
+   "threads": [
+    {
+     "topic": "animations",
+     "relations": [
+      {
+       "old": 248,
+       "new": 251,
+       "relation": "supports",
+       "note": "OLD: si c'est un cinéma art déco ou art nouveau tu aux pauses parce_qu on aura des pauses il fa | NEW: donc on pourrait avoir des petits én- événements entre chaque film | intervenants cours d'architecture aux pauses -> petits événements entre chaque film"
+      }
+     ]
+    },
+    {
+     "topic": "films",
+     "relations": [
+      {
+       "old": 1,
+       "new": 2,
+       "relation": "contradicts",
+       "note": "OLD: euh les films de super héros | NEW: hein ça ça n avait pas trop d intérêt | les films de super héros -> ça n'avait pas trop d'intérêt"
+      },
+      {
+       "old": 95,
+       "new": 232,
+       "relation": "supersedes",
+       "note": "OLD: donc on peut déjà dire huit films peut-être pas dix parce_que dix ça fait beaucoup | NEW: euh là on a neuf | huit films -> là on en a neuf"
+      },
+      {
+       "old": 232,
+       "new": 233,
+       "relation": "supports",
+       "note": "OLD: euh là on a neuf | NEW: neuf oh ben c'est bon alors | neuf oh ben c'est bon alors"
+      },
+      {
+       "old": 233,
+       "new": 235,
+       "relation": "supports",
+       "note": "OLD: neuf oh ben c'est bon alors | NEW: on on part sur ceux-là | on part sur ceux-là"
+      },
+      {
+       "old": 104,
+       "new": 105,
+       "relation": "supports",
+       "note": "OLD: donc t as déjà noté amadeus hein | NEW: ok amadeus je reste là-dessus | amadeus déjà noté je reste là-dessus"
+      },
+      {
+       "old": 160,
+       "new": 175,
+       "relation": "supports",
+       "note": "OLD: moi j avais pensé peut-être à un film sur frida kahlo ou quelque_chose comme ça | NEW: oui pas de soucis | film sur frida kahlo -> oui pas de soucis"
+      },
+      {
+       "old": 216,
+       "new": 217,
+       "relation": "contradicts",
+       "note": "OLD: oui oui peut-être qu il faudrait un sujet plus actuel | NEW: ah ben voilà non une histoire dont on connaît la fin | il faudrait un sujet plus actuel -> non une histoire dont on connaît la fin"
+      },
+      {
+       "old": 217,
+       "new": 223,
+       "relation": "supports",
+       "note": "OLD: ah ben voilà non une histoire dont on connaît la fin | NEW: oui c'est très bien c'est très bien | titanic grande romance -> oui c'est très bien"
+      }
+     ]
+    },
+    {
+     "topic": "genres",
+     "relations": [
+      {
+       "old": 13,
+       "new": 196,
+       "relation": "supersedes",
+       "note": "OLD: oui il oui donc je on part sur ces deux là | NEW: ou on enlève suspense et on reste sur le historique parce_qu' on a beaucoup de films euh | deux genres retenus -> enlever suspense rester sur l'historique"
+      },
+      {
+       "old": 196,
+       "new": 201,
+       "relation": "supports",
+       "note": "OLD: ou on enlève suspense et on reste sur le historique parce_qu' on a beaucoup de films euh | NEW: mais j avoue que en_fait dans tous_les films qu on a choisi il_y a beaucoup de enfin un lo | il y a du suspens dans l'historique donc rester historique"
+      },
+      {
+       "old": 201,
+       "new": 275,
+       "relation": "supports",
+       "note": "OLD: mais j avoue que en_fait dans tous_les films qu on a choisi il_y a beaucoup de enfin un lo | NEW: donc ça p- on partirait sur un genre historique dans un cinéma d art déco et avec les film | on part sur le genre historique en art déco"
+      }
+     ]
+    },
+    {
+     "topic": "lieu",
+     "relations": [
+      {
+       "old": 55,
+       "new": 80,
+       "relation": "supersedes",
+       "note": "OLD: non donc après c'est le cinéma qu est ce_qu on prend le petit ou le grand | NEW: donc on partirait sur euh cinéma d' art déco | petit ou grand cinéma indécis -> cinéma d'art déco"
+      },
+      {
+       "old": 80,
+       "new": 86,
+       "relation": "supports",
+       "note": "OLD: donc on partirait sur euh cinéma d' art déco | NEW: donc on partons sur celui-là alors je vous rejoins | on part sur celui-là je vous rejoins"
+      },
+      {
+       "old": 46,
+       "new": 51,
+       "relation": "supports",
+       "note": "OLD: deux quatre six huit on va dire aller au minimum huit deux le matin après on si on prend s | NEW: ah non non mais ça c'est on enlève | on va éviter le drive-in -> oui ça c'est on enlève"
+      }
+     ]
+    },
+    {
+     "topic": "nombre_jours",
+     "relations": [
+      {
+       "old": 37,
+       "new": 42,
+       "relation": "supports",
+       "note": "OLD: oui et et et et et le et le temps parce_que si on a une dizaine de films c'est deux jours  | NEW: oui oui il nous faut deux jours moi je je préfère que qu' on étale hein pour dix films mh | une dizaine de films c'est deux jours -> il nous faut deux jours"
+      }
+     ]
+    },
+    {
+     "topic": "public_cible",
+     "relations": [
+      {
+       "old": 78,
+       "new": 91,
+       "relation": "supports",
+       "note": "OLD: donc euh à ce moment là il faut établir sur moins de personnes et euh une expérience plus  | NEW: là on sera sûrs de faire salle comble | expérience intimiste moins de personnes -> on sera sûrs de faire salle comble"
+      }
+     ]
+    }
+   ]
+  },
+  "053b_EDDH": {
+   "sentences_reviewed": 277,
+   "threads": [
+    {
+     "topic": "communication",
+     "relations": [
+      {
+       "old": 232,
+       "new": 233,
+       "relation": "supports",
+       "note": "OLD: du_coup quel thème quel thème général euh que notre festival va aborder | NEW: ben déjà la fête de la musique la promotion de la musique | quel thème général -> la fête de la musique promotion de la musique"
+      }
+     ]
+    },
+    {
+     "topic": "dates",
+     "relations": [
+      {
+       "old": 57,
+       "new": 61,
+       "relation": "supersedes",
+       "note": "OLD: fin vingt juin par là je sais pas | NEW: le vingt et un juin | fin vingt juin par là -> le vingt et un juin"
+      },
+      {
+       "old": 59,
+       "new": 61,
+       "relation": "supersedes",
+       "note": "OLD: sinon le onze hein | NEW: le vingt et un juin | sinon le onze -> le vingt et un juin"
+      }
+     ]
+    },
+    {
+     "topic": "genres",
+     "relations": [
+      {
+       "old": 5,
+       "new": 8,
+       "relation": "supersedes",
+       "note": "OLD: ben tout genre hein | NEW: franchement non non genre rap rnb and | tout genre hein -> non genre rap rnb"
+      },
+      {
+       "old": 10,
+       "new": 14,
+       "relation": "supersedes",
+       "note": "OLD: ouais c'est on va faire tous_les genres | NEW: je sais pas rnb rap c'est tout | on va faire tous les genres -> rnb rap c'est tout"
+      }
+     ]
+    },
+    {
+     "topic": "lieu",
+     "relations": [
+      {
+       "old": 17,
+       "new": 18,
+       "relation": "supersedes",
+       "note": "OLD: j' ai un petit faible pour los_angeles hein | NEW: ben on fait ça à marseille hein | j'ai un faible pour los angeles -> ben on fait ça à marseille"
+      },
+      {
+       "old": 25,
+       "new": 36,
+       "relation": "supersedes",
+       "note": "OLD: on peut pas faire ça euh à cannes | NEW: donc euh à marseille | on peut pas faire ça à cannes ou à nice -> donc à marseille"
+      },
+      {
+       "old": 24,
+       "new": 43,
+       "relation": "supports",
+       "note": "OLD: pas pour événements précisément il_y a le parc borely | NEW: euh parc borely | il y a le parc borely -> parc borely confirmé"
+      },
+      {
+       "old": 43,
+       "new": 45,
+       "relation": "supports",
+       "note": "OLD: euh parc borely | NEW: ben parce_que c'est déjà un parc qui accueille beaucoup d événements euh musicaux donc voi | pourquoi borely -> c'est un parc qui accueille déjà des événements musicaux"
+      }
+     ]
+    },
+    {
+     "topic": "lineup",
+     "relations": [
+      {
+       "old": 107,
+       "new": 108,
+       "relation": "contradicts",
+       "note": "OLD: nekfeu connu à l' internationale | NEW: mais vous vouliez pas prendre un artiste de rap plus international que ça | nekfeu connu à l'internationale -> vous vouliez un artiste étranger"
+      },
+      {
+       "old": 113,
+       "new": 128,
+       "relation": "supersedes",
+       "note": "OLD: non_pas maître gims | NEW: non c'est bon mets maitre gims | non maître gims -> non c'est bon mets maître gims"
+      },
+      {
+       "old": 137,
+       "new": 154,
+       "relation": "contradicts",
+       "note": "OLD: c'est pour ça parce_que vous avez vous avez commencé avec des des des semi gros en_fait c' | NEW: non en_fait on dit que tu es dans le syndrome tu es dans le syndrome où quand on dit améri | damso c'est un artiste national -> tu confonds américain et international"
+      },
+      {
+       "old": 142,
+       "new": 167,
+       "relation": "contradicts",
+       "note": "OLD: ozuna euh cardi b | NEW: non mais maitre gims fait le milliard de vues | de vrais artistes comme ozuna cardi b -> maître gims fait le milliard cardi b non"
+      },
+      {
+       "old": 131,
+       "new": 189,
+       "relation": "supersedes",
+       "note": "OLD: ben du_coup aux states si on prend quatre artistes peu connus | NEW: mais là on va prendre ici on va prendre en france | on prend les peu connus aux states -> là on va prendre en france"
+      },
+      {
+       "old": 209,
+       "new": 210,
+       "relation": "supports",
+       "note": "OLD: on on on j' ai mis oboy c'est bon | NEW: bon pour moi j' ai pas l' impression qu' il est si connu que ça mais ok | j'ai mis oboy c'est bon -> j'ai pas l'impression qu'il est si connu mais ok"
+      },
+      {
+       "old": 225,
+       "new": 231,
+       "relation": "supports",
+       "note": "OLD: ok j' ai trouvé on va prendre @ on va prendre un un artiste en martinique et | NEW: c'est un artiste peu connu | un artiste en martinique saaturn -> c'est un artiste peu connu"
+      },
+      {
+       "old": 261,
+       "new": 265,
+       "relation": "supports",
+       "note": "OLD: je pense qu on devrait d'abord commencer par présenter les moins connus | NEW: ouais et finir par damso et maitre gims | commencer par les moins connus -> finir par damso et maître gims"
+      }
+     ]
+    },
+    {
+     "topic": "organisation",
+     "relations": [
+      {
+       "old": 28,
+       "new": 30,
+       "relation": "contradicts",
+       "note": "OLD: non si on sera en été donc voilà * soleil c'est là pour faire la fête | NEW: il peut pleuvoir ouais parfois ça peut arriver | non on sera en été soleil -> il peut pleuvoir en été"
+      }
+     ]
+    },
+    {
+     "topic": "public_cible",
+     "relations": [
+      {
+       "old": 251,
+       "new": 253,
+       "relation": "supports",
+       "note": "OLD: je pense qu il_y aura plus de jeunes hein | NEW: là il faut mettre jeunes c'est tout là il faut juste mettre jeunes | il y aura plus de jeunes -> là il faut mettre jeunes c'est tout"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "n_relations": 44,
+ "n_supersedes_pairs": 11
+}

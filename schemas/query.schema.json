@@ -163,6 +163,26 @@
       ],
       "default": null,
       "title": "As Of"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "enum": [
+            "proposed",
+            "hypothesis",
+            "conditional",
+            "confirmed",
+            "cancelled",
+            "mention"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Status"
     }
   },
   "required": [

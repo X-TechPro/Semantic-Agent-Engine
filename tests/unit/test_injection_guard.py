@@ -73,7 +73,10 @@ def test_answer_guard_survives_a_mislabel():
 @pytest.fixture()
 def boreal_store(tmp_path):
     db = str(tmp_path / "b.db")
-    cfg = load_config(overrides={"store": {"path": db}})
+    # CPU-tier pin (D-041): the shipped cross-encoder is a GPU model; the
+    # guard under test here is label/text-based, not ranking-based.
+    cfg = load_config(overrides={"store": {"path": db},
+                                 "retrieve": {"rerank": {"backend": "none"}}})
     eng = Engine(cfg, path=db)
     eng.ingest(Source(source_id="meeting-boreal-1", source_type="meeting",
                       source_date=date(2026, 10, 3), title="Revue Boréal #1",

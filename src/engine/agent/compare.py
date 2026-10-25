@@ -20,6 +20,7 @@ EXPLAIN = {
     "unrelated": "sujets distincts",
     "answers": "réponse apportée",
     "creates_action": "génère une action",
+    "completes": "action réalisée",
 }
 
 

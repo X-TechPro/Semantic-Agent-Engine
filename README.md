@@ -4,10 +4,13 @@ A memory for meeting talk that knows **what is still true**.
 
 If someone says "the budget is proposed", then later "the budget is approved",
 and later still "actually, cancelled" — an ordinary search engine finds all
-three and picks whichever *sounds* most like your question. This engine keeps
-each statement with its date, its speaker and its status, links later
-statements to earlier ones ("this replaces that"), and answers with the
-version that is in force — citing the exact sentence it came from.
+three and picks whichever *sounds* most like your question. This engine groups
+the messages that belong to one decision into a **node**; the latest message is
+the node's current state, and `as_of(date)` replays the state on an earlier
+date. The meeting itself is never rewritten — a later update is a new child,
+not an edit. Answers cite the exact sentence they came from.
+
+Architecture v3: `docs/ARCH_V3.md`.
 
 > Embeddings find *what a sentence is about*. This engine's relation layer
 > decides *whether it is still true, and who said it*.
@@ -24,20 +27,22 @@ Everything is measured, nothing is asserted: `make report` rebuilds
 flowchart LR
     A["Meeting, chat, note<br/>or document"] --> B["Split into small<br/>meaningful pieces"]
     B --> C["Read each piece:<br/>fact or question?<br/>proposed or decided?<br/>who, when, how much?"]
-    C --> D[("Memory<br/>SQLite + word index<br/>+ meaning index<br/>nothing is ever deleted")]
-    C --> E["Compare with nearby<br/>stored pieces:<br/>replaces? confirms?<br/>contradicts? answers?"]
-    E --> F{"Safety rules<br/>approve every link:<br/>same subject? later?<br/>a real change?"}
-    F -- "approved" --> D
-    F -- "refused" --> G["kept, unlinked<br/>(refusals are counted)"]
-    Q["Your question"] --> R["Search: meaning + words,<br/>oldest versions pushed down,<br/>the current one followed"]
+    C --> N["Group related messages<br/>into a decision node<br/>latest child = current"]
+    N --> D[("Memory<br/>SQLite + word index<br/>+ meaning index<br/>nothing is ever deleted")]
+    N --> E["Change detector<br/>(review queue; proposes<br/>the child that changed a value)"]
+    E --> D
+    Q["Your question"] --> R["Search + node view:<br/>current child, or as_of(date)"]
     D --> R
     R --> S["Answer with proof, or a<br/>draft email / task / meeting<br/>— always a draft, never sent"]
 ```
 
-The second box in the diagram — reading every piece — is the only trained
-part, and even it is optional: a rules reader ships by default, and the
-trained readers must beat it on the headline metric before they become the
-default (none has yet — see §5).
+The second box in the diagram — reading every piece — is rules by default:
+trained readers must beat the rules on the headline metric before they become
+the default (none has yet — see §5). The search box carries one trained part
+that *did* win and now ships: a re-scorer that reads your question together
+with each candidate and picks the one that actually answers it (the reranker,
+shipped default since D-041 — its cost is a ~8 s warm-up, then single-digit
+milliseconds per query).
 
 ```mermaid
 flowchart TB
@@ -46,10 +51,9 @@ flowchart TB
     C --> NOW["Ask 'what is the budget?'<br/>→ the current answer wins;<br/>the history stays viewable"]
 ```
 
-**Why order matters:** linking happens when things are *stored*, not when you
-search. The memory has already resolved its own contradictions, so queries stay
-fast (about 2 ms) and a wrong link is visible in the store instead of hidden in
-a ranking.
+**Why order matters:** nodes are built when a session is *stored*; the detector
+runs offline and only proposes review rows. The meeting is immutable, so a wrong
+detection is visible as a row, not hidden as a rewritten fact.
 
 **One engine, two jobs.** Meetings/chat are the subject; the same memory,
 links and search also serve documents and code — only the splitting differs
@@ -106,22 +110,29 @@ sae offline --reader model                    # the six nightly batch checks
 
 Backends (rules vs trained) are chosen in exactly one place,
 `engine/config.py`; the CLI, API, UI and benchmarks read it, so no two of them
-can disagree about what ran.
+can disagree about what ran. Since D-041 the shipped default includes the GPU
+reranker, so `make demo`, `make eval-fast` and the served apps want the GPU
+free; the CPU test tier pins `rerank: none` and stays model-free.
 
 ## 4. The headline number
 
 Same holdout corpus, same search budget; the only difference is whether the
-relation layer is on. Test split, 20 projects, 3 seeds:
+relation layer is on (both arms share the reranker — it is search, not the
+relation layer, so the delta still isolates the thesis). Test split,
+20 projects, 3 seeds:
 
 | | plain search (Baseline A) | with relations (System B) | gain |
 |---|---|---|---|
-| current version ranked first | 0.2498 | **0.5518** | **+0.3077**, significant on 3/3 seeds |
+| current version ranked first | 0.2915 | **0.6616** | **+0.3629**, significant on 3/3 seeds |
 
-Honest split of that gain: part of it is simply filtering by project, and only
-the relation-layer share is the thesis; the absolute target (0.90) is **not**
-met. §6d shows the same comparison on real French meetings, where it does not
-yet win — that is the open item below, stated in the report as a measured
-limit, not as a promise.
+Honest split of that gain: filtering by project contributes **+0.19**, and only
+the relation-layer share (**+0.17**) is the thesis; the absolute target (0.90)
+is **not** met. A new honesty from the re-measurement: on the small 8-project
+CI corpus the reranker alone now ties A and B — the relation layer earns its
+keep when there are many projects to confuse, which is why the claim corpus is
+20 projects. §6d shows the same comparison on real French meetings, where it
+does not yet win — that is the open item below, stated in the report as a
+measured limit, not as a promise.
 
 ## 5. What does not work yet (plainly)
 
@@ -133,9 +144,11 @@ limit, not as a promise.
   `data/gold/` and is what the real-meeting demos read their topic keys from.
   The blocker `B-13` keeps the precise demand: more *matched* annotated
   meetings, not cleverer code.
-- **The trained parts are not the defaults.** The trained reader, linker and
+- **Most trained parts are not the defaults.** The trained reader, linker and
   embedder each beat their own narrow test and lose the end-to-end headline;
-  rules ship. Each decision is recorded with its numbers.
+  rules ship. The reranker is the exception — it won the headline, and the
+  owner promoted it to the shipped default (D-041, cost accepted: ~8 s warm-up,
+  ~9 ms per query). Each decision is recorded with its numbers.
 - **Abstention leaks**: 3 of 12 unanswerable questions still get an answer.
 - **`contradicts` is the weakest relation** (most contradictions get written
   as confirmations) — the confusion matrix in §3b shows the shape.

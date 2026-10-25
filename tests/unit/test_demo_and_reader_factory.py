@@ -102,6 +102,11 @@ def test_safety_payloads_carry_no_leaked_address_and_no_execution():
     root = pathlib.Path(tempfile.mkdtemp())
     cfg = load_config(overrides={"store": {"path": str(root / "d.db")},
                                  "embed": {"backend": "hash"},
+                                 # CPU-tier pin (D-041): the shipped reranker is
+                                 # a GPU model; the demo assertions here are
+                                 # behavioural, and the model is gated by
+                                 # `make demo` / eval-fast / the headline bench.
+                                 "retrieve": {"rerank": {"backend": "none"}},
                                  "agent": {"contacts_path": str(CONTACTS)}})
     eng = Engine(cfg, path=root / "d.db")
     for s in _sources(FIXTURE):

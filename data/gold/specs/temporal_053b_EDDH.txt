@@ -1,0 +1,20 @@
+# 053b_EDDH — festival rap marseille (holdout)
+17->18:supersedes j'ai un faible pour los angeles -> ben on fait ça à marseille
+25->36:supersedes on peut pas faire ça à cannes ou à nice -> donc à marseille
+24->43:supports il y a le parc borely -> parc borely confirmé
+43->45:supports pourquoi borely -> c'est un parc qui accueille déjà des événements musicaux
+5->8:supersedes tout genre hein -> non genre rap rnb
+10->14:supersedes on va faire tous les genres -> rnb rap c'est tout
+107->108:contradicts nekfeu connu à l'internationale -> vous vouliez un artiste étranger
+113->128:supersedes non maître gims -> non c'est bon mets maître gims
+137->154:contradicts damso c'est un artiste national -> tu confonds américain et international
+142->167:contradicts de vrais artistes comme ozuna cardi b -> maître gims fait le milliard cardi b non
+131->189:supersedes on prend les peu connus aux states -> là on va prendre en france
+209->210:supports j'ai mis oboy c'est bon -> j'ai pas l'impression qu'il est si connu mais ok
+225->231:supports un artiste en martinique saaturn -> c'est un artiste peu connu
+57->61:supersedes fin vingt juin par là -> le vingt et un juin
+59->61:supersedes sinon le onze -> le vingt et un juin
+28->30:contradicts non on sera en été soleil -> il peut pleuvoir en été
+251->253:supports il y aura plus de jeunes -> là il faut mettre jeunes c'est tout
+261->265:supports commencer par les moins connus -> finir par damso et maître gims
+232->233:supports quel thème général -> la fête de la musique promotion de la musique

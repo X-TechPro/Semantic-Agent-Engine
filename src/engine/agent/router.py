@@ -8,6 +8,7 @@ a non-assertive status produces a refusal instead of an action object.
 from __future__ import annotations
 
 import re
+from datetime import date
 from typing import TYPE_CHECKING
 
 from engine.agent.actions import (build_email, build_event, build_task,
@@ -49,11 +50,26 @@ class Agent:
 
     # --- entry point -------------------------------------------------------
     def handle(self, text: str, *, intent: str | None = None,
-               project: str | None = None, mode: str = "current") -> ActionResult:
+               project: str | None = None, mode: str = "current",
+               as_of: date | None = None) -> ActionResult:
         q = self._query(text, intent=intent, project=project, mode=mode)
         hits = self.engine.retrieve(q)
         chosen = intent or self.engine.intent_of(text)
+        # v3: the node view is the decision-shaped retrieval unit. It only runs
+        # for answer/history, and only when the query names a known topic or
+        # shares words with a node; otherwise retrieval is unchanged.
+        if (chosen in ("answer", "history")
+                and bool(self.engine.cfg["retrieve"].get("node_view", True))):
+            hits = self._with_nodes(self.engine.node_hits(q, as_of=as_of), hits)
         return self.act(chosen, hits, q)
+
+    @staticmethod
+    def _with_nodes(node_hits: list[Hit], hits: list[Hit]) -> list[Hit]:
+        """Prepend node-current units, de-duplicated, keeping retrieval order."""
+        if not node_hits:
+            return hits
+        seen = {h.unit.unit_id for h in node_hits}
+        return node_hits + [h for h in hits if h.unit.unit_id not in seen]
 
     def act(self, intent: str, hits: list[Hit], query: Query) -> ActionResult:
         store = self.engine.store
@@ -86,7 +102,8 @@ class Agent:
             payload = build_answer(
                 hits, query,
                 min_score=float(agent_cfg["no_answer_threshold"]),
-                overlap_floor=float(agent_cfg["no_answer_overlap"]))
+                overlap_floor=float(agent_cfg["no_answer_overlap"]),
+                currency_guard=bool(agent_cfg.get("currency_guard", True)))
             if agent_cfg.get("llm_answer"):
                 payload, note = self._compose(payload, hits, query)
                 return self._wrap("answer", payload, hits, notes=[note])

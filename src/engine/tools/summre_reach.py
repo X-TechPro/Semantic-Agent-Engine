@@ -66,10 +66,13 @@ def _load_pair_lists(gold_path, meetings: dict):
 
 def _eng_cfg(store_path, reader: dict, slots: dict, device: str):
     from engine.config import load_config
+    # ruler pin: the reach tape was recorded pre-D-041 with rerank none;
+    # re-runs must measure the same system that produced the verdicts
     return load_config(overrides={"store": {"path": str(store_path)},
                                   "embed": {"backend": "sentence_transformers",
                                             "model_id": "intfloat/multilingual-e5-base",
                                             "device": device},
+                                  "retrieve": {"rerank": {"backend": "none"}},
                                   "reader": reader, "slots": slots,
                                   "link": {"backend": "rules"}})
 

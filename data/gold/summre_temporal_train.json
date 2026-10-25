@@ -1,0 +1,843 @@
+{
+ "split": "train",
+ "corpus": "linagora/SUMM-RE, data/external/summre_test/meetings.json extract",
+ "protocol": "hand-labelled by the assistant on 2026-10-23: each thread read in full (segments grouped by the meeting's drawer gold, in order); relations are PAIRS (old, new) of segment indices in data/external/summre_test/meetings.json, labelled {supersedes, contradicts, supports}; where the thread left the state change undecidable no line was written; split declared before labelling (train / sel / holdout)",
+ "declared_splits": {
+  "train": [
+   "024c_EBPH",
+   "047a_EDRH",
+   "060a_EDRH",
+   "072c_EEPH",
+   "016c_EBPZ"
+  ],
+  "sel": [
+   "047c_EDPH"
+  ],
+  "holdout": [
+   "008a_EARH",
+   "049b_EBDH",
+   "053b_EDDH"
+  ]
+ },
+ "spent_test_never_labelled": [
+  "007a_ECRH",
+  "013c_EAPD",
+  "014c_EAPD"
+ ],
+ "meetings": {
+  "024c_EBPH": {
+   "sentences_reviewed": 251,
+   "threads": [
+    {
+     "topic": "billetterie",
+     "relations": [
+      {
+       "old": 211,
+       "new": 213,
+       "relation": "supports",
+       "note": "OLD: et en plus c'est surtout que trois semaines on peut prévoir une billetterie en ligne où il | NEW: oui trois semaines ça semble correct | trois semaines pour la billetterie en ligne"
+      },
+      {
+       "old": 218,
+       "new": 219,
+       "relation": "contradicts",
+       "note": "OLD: en ligne ça peut être sympa | NEW: après en ligne tout_le monde ne veut pas payer ou ne peut pas payer par carte bleue donc j | en ligne sympa -> tout le monde ne peut pas payer par carte"
+      },
+      {
+       "old": 218,
+       "new": 226,
+       "relation": "supersedes",
+       "note": "OLD: en ligne ça peut être sympa | NEW: voilà une réservation euh en ligne qu on peut euh qu on peut effectuer euh ben du_coup oui | en ligne seul -> réservation en ligne et stand à l'entrée"
+      },
+      {
+       "old": 244,
+       "new": 247,
+       "relation": "supersedes",
+       "note": "OLD: euh qui s en occupe juste par rapport où on demande à quelqu'un de le faire on engage quel | NEW: donc on peut le faire nous même d'accord | engager quelqu'un pour la billetterie -> on le fait nous-mêmes"
+      }
+     ]
+    },
+    {
+     "topic": "communication",
+     "relations": [
+      {
+       "old": 201,
+       "new": 207,
+       "relation": "supersedes",
+       "note": "OLD: ouais publicité publicité il faut je pense une semaine ou deux semaines avant quelque_chos | NEW: ouais ou trois je pense trois semaines c'est bien trois | pub une deux semaines -> trois semaines"
+      },
+      {
+       "old": 207,
+       "new": 208,
+       "relation": "supports",
+       "note": "OLD: ouais ou trois je pense trois semaines c'est bien trois | NEW: trois oui trois semaines ça ça me semble correct | trois semaines correct"
+      }
+     ]
+    },
+    {
+     "topic": "dates",
+     "relations": [
+      {
+       "old": 27,
+       "new": 36,
+       "relation": "supports",
+       "note": "OLD: peut-être pendant des vacances scolaires | NEW: ou début juillet peut-être ouais début juillet mi-juillet ça peut être euh | vacances scolaires -> début juillet dedans"
+      },
+      {
+       "old": 32,
+       "new": 36,
+       "relation": "supersedes",
+       "note": "OLD: juin peut-être juin il fait pas non_plus euh c'est pas la période caniculaire | NEW: ou début juillet peut-être ouais début juillet mi-juillet ça peut être euh | juin -> début juillet"
+      },
+      {
+       "old": 36,
+       "new": 41,
+       "relation": "supersedes",
+       "note": "OLD: ou début juillet peut-être ouais début juillet mi-juillet ça peut être euh | NEW: je suis d'accord donc on part sur mi-juillet comme ça c'est un compromis | début juillet -> mi-juillet compromis"
+      },
+      {
+       "old": 41,
+       "new": 44,
+       "relation": "supports",
+       "note": "OLD: je suis d'accord donc on part sur mi-juillet comme ça c'est un compromis | NEW: mi-juillet donc ouais que ce soit du quinze au vingt ou des choses choses comme | mi-juillet -> du 15 au 20"
+      },
+      {
+       "old": 45,
+       "new": 51,
+       "relation": "supersedes",
+       "note": "OLD: donc en pleine semaine lundi mardi du lundi au vendredi | NEW: peut-être du mercredi oui les en fin de semaine du_coup du mercredi au au dimanche peut-êt | lundi-vendredi -> mercredi-dimanche"
+      },
+      {
+       "old": 51,
+       "new": 53,
+       "relation": "supersedes",
+       "note": "OLD: peut-être du mercredi oui les en fin de semaine du_coup du mercredi au au dimanche peut-êt | NEW: ou mardi ouais mardi au samedi ça peut être euh pas mal comme ça le dimanche ça laisse qua | mercredi-dimanche -> mardi-samedi"
+      }
+     ]
+    },
+    {
+     "topic": "delais",
+     "relations": [
+      {
+       "old": 177,
+       "new": 181,
+       "relation": "supersedes",
+       "note": "OLD: déjà au niveau de s organiser avec les prestateurs ou du matériel et tout je pense qu il f | NEW: moi je partirais sur du six sept mois | un ou deux mois -> six sept mois"
+      },
+      {
+       "old": 193,
+       "new": 197,
+       "relation": "supersedes",
+       "note": "OLD: on on peut peut-être dire cinq mois ça | NEW: donc on prévoit à peu près six sept mois | cinq mois -> six sept mois retenu"
+      },
+      {
+       "old": 194,
+       "new": 196,
+       "relation": "supports",
+       "note": "OLD: on peut demander à environ six sept mois à l avance leur en parler par_exemple aux prestat | NEW: ok ça marche on f- on part là-dessus ouais | relance prestataires validée"
+      }
+     ]
+    },
+    {
+     "topic": "films",
+     "relations": [
+      {
+       "old": 16,
+       "new": 59,
+       "relation": "supports",
+       "note": "OLD: voilà on essaierait de de mettre euh peut-être un romance en un romance comédie en premier | NEW: oui par_exemple american pie on le mettra pas au_début | romance comédie d'abord -> american pie pas au début"
+      }
+     ]
+    },
+    {
+     "topic": "horaires",
+     "relations": [
+      {
+       "old": 61,
+       "new": 63,
+       "relation": "supersedes",
+       "note": "OLD: je dirais euh d- ouais peut-être dix-huit heures quelque_chose comme ça | NEW: ouais ou même 17h qui dure jusqu'à 19h après il_y a une petite pause manger où on propose  | 18h -> 17h-19h puis 21h-23h"
+      },
+      {
+       "old": 63,
+       "new": 67,
+       "relation": "supports",
+       "note": "OLD: ouais ou même 17h qui dure jusqu'à 19h après il_y a une petite pause manger où on propose  | NEW: dix-sept heures | reprise 17h et 21h"
+      }
+     ]
+    },
+    {
+     "topic": "invites",
+     "relations": [
+      {
+       "old": 144,
+       "new": 150,
+       "relation": "contradicts",
+       "note": "OLD: ben ça va être plutôt acteur français parce_que je pense qu américain ça risque d être com | NEW: moi je dirais euh l acteur d iron man alors je sais plus_du_tout le nom @ | plutôt acteur français -> acteur d'iron man américain"
+      },
+      {
+       "old": 150,
+       "new": 152,
+       "relation": "supports",
+       "note": "OLD: moi je dirais euh l acteur d iron man alors je sais plus_du_tout le nom @ | NEW: docteur euh robert downey junior c'est pas ça | acteur iron man -> robert downey junior"
+      }
+     ]
+    },
+    {
+     "topic": "lieu",
+     "relations": [
+      {
+       "old": 97,
+       "new": 102,
+       "relation": "supports",
+       "note": "OLD: mais il faudrait trouver un grand espace en plein air | NEW: ouais un champ par_exemple on pourrait euh le faire dans un champ ou | grand espace en plein air -> un champ"
+      }
+     ]
+    },
+    {
+     "topic": "nombre_jours",
+     "relations": [
+      {
+       "old": 4,
+       "new": 19,
+       "relation": "supersedes",
+       "note": "OLD: donc euh tout à l heure on a évoqué le fait qu il_y aurait peut-être deux trois jours | NEW: et du_coup pour vous donc on partirait sur cinq jours | deux trois jours -> cinq jours retenus"
+      },
+      {
+       "old": 15,
+       "new": 19,
+       "relation": "supports",
+       "note": "OLD: après on pourrait partir sur cinq jours ça ferait deux films par jour | NEW: et du_coup pour vous donc on partirait sur cinq jours | cinq jours confirmé"
+      }
+     ]
+    },
+    {
+     "topic": "scene",
+     "relations": [
+      {
+       "old": 110,
+       "new": 111,
+       "relation": "contradicts",
+       "note": "OLD: ça risque de mélanger le le son je pense non ou alors faut vraiment que ce soit | NEW: ben si l espace est vraiment grand c'est vrai que sur l écran il_y a pas de soucis comme e | peur de mélanger le son -> grand espace donc plusieurs scènes"
+      },
+      {
+       "old": 112,
+       "new": 114,
+       "relation": "supports",
+       "note": "OLD: différentes ou bon après les concerts c'est pas forcément en même temps mais là c'est pare | NEW: je pense que ça pourrait être intéressant d avoir la scène euh enfin la vraie scène euh de | deux scènes -> scène devant écran plus petite scène excentrée"
+      }
+     ]
+    },
+    {
+     "topic": "securite",
+     "relations": [
+      {
+       "old": 232,
+       "new": 238,
+       "relation": "supersedes",
+       "note": "OLD: sécurité ouais prévoir un plan euh | NEW: et c'est pareil dans ce cas là on pourrait contacter des prestataires euh au niveau de la  | prévoir un plan sécurité -> prestataires vigiles"
+      }
+     ]
+    },
+    {
+     "topic": "soins",
+     "relations": [
+      {
+       "old": 82,
+       "new": 242,
+       "relation": "supports",
+       "note": "OLD: il faudrait aussi penser à un un coin médical | NEW: secouriste avec euh quand même un ou deux médecins pour les cas graves | coin médical -> secouristes un ou deux médecins"
+      }
+     ]
+    },
+    {
+     "topic": "stands_nourriture",
+     "relations": [
+      {
+       "old": 69,
+       "new": 74,
+       "relation": "supports",
+       "note": "OLD: d'accord donc on pourrait faire des stands c'est bien ça stand de nourriture | NEW: et qu il_y ait plusieurs stands par_exemple un food truck ou des choses comme ça | stands de nourriture -> plusieurs stands et food truck"
+      }
+     ]
+    }
+   ]
+  },
+  "047a_EDRH": {
+   "sentences_reviewed": 217,
+   "threads": [
+    {
+     "topic": "animations",
+     "relations": [
+      {
+       "old": 176,
+       "new": 184,
+       "relation": "supersedes",
+       "note": "OLD: donc on pourrait essayer de d instaurer cet système | NEW: et puis euh aussi il faudrait quand même que les artistes pour lesquels les gens votent pu | précommande de chansons -> d'abord les artistes puis les chansons"
+      },
+      {
+       "old": 184,
+       "new": 187,
+       "relation": "supports",
+       "note": "OLD: et puis euh aussi il faudrait quand même que les artistes pour lesquels les gens votent pu | NEW: oui ça c'est ça c'est encore une meilleure idée parce_que on aurait les artistes que les g | demander la disponibilité des artistes d'abord"
+      },
+      {
+       "old": 187,
+       "new": 199,
+       "relation": "supports",
+       "note": "OLD: oui ça c'est ça c'est encore une meilleure idée parce_que on aurait les artistes que les g | NEW: donc on part sur des sondages pour savoir quels artistes et quels euh quels morceaux | on part sur des sondages artistes et morceaux"
+      }
+     ]
+    },
+    {
+     "topic": "billetterie",
+     "relations": [
+      {
+       "old": 108,
+       "new": 110,
+       "relation": "supports",
+       "note": "OLD: et puis on pourra du_coup augmenter le prix des billets vu que vu qu il_y aura adèle | NEW: ça pourrait justifier le le prix exactement oui | augmenter le prix justifié par adèle"
+      },
+      {
+       "old": 149,
+       "new": 151,
+       "relation": "supports",
+       "note": "OLD: les les mettre les billets en ligne on fait tout_le jour j c'est à dire que on peut achete | NEW: moi je pense que c'est mieux en pré vente hein comme ça les gens ils ont le temps de vraim | préférence prévente"
+      },
+      {
+       "old": 150,
+       "new": 151,
+       "relation": "contradicts",
+       "note": "OLD: ou laisser toute_la la billetterie à la fin | NEW: moi je pense que c'est mieux en pré vente hein comme ça les gens ils ont le temps de vraim | laisser la billetterie à la fin -> mieux en prévente"
+      },
+      {
+       "old": 151,
+       "new": 152,
+       "relation": "supersedes",
+       "note": "OLD: moi je pense que c'est mieux en pré vente hein comme ça les gens ils ont le temps de vraim | NEW: mais il faut aussi mettre une billet- une billetterie sur place le jour j | prévente seule -> prévente et billetterie sur place le jour j"
+      }
+     ]
+    },
+    {
+     "topic": "budget",
+     "relations": [
+      {
+       "old": 115,
+       "new": 117,
+       "relation": "supports",
+       "note": "OLD: je sais pas mais c'est vrai comme elle est très demandée en_ce moment et qu elle a sorti d | NEW: pour la faire venir il faudra un prix important | un prix à mettre -> prix important"
+      }
+     ]
+    },
+    {
+     "topic": "buvette",
+     "relations": [
+      {
+       "old": 97,
+       "new": 101,
+       "relation": "supersedes",
+       "note": "OLD: donc oui faudrait prévoir un coin buvette un coin snack | NEW: ben là pourquoi pas mettre deux coins buvettes d une part et d'autre de la salle pour que  | un coin buvette -> deux coins buvettes de part et d'autre"
+      },
+      {
+       "old": 101,
+       "new": 102,
+       "relation": "supports",
+       "note": "OLD: ben là pourquoi pas mettre deux coins buvettes d une part et d'autre de la salle pour que  | NEW: ouais ok il_y a un accès des deux côtés c'est une bonne idée | accès des deux côtés validé"
+      }
+     ]
+    },
+    {
+     "topic": "communication",
+     "relations": [
+      {
+       "old": 156,
+       "new": 162,
+       "relation": "supersedes",
+       "note": "OLD: ah oui faudrait qu on fasse de la pub donc sur les réseaux sociaux euh tous_les réseaux je | NEW: sur tiktok et sur instagram aussi puisqu il_y a des pubs sponsorisées beaucoup sur insta | contenu sponsorisé tiktok -> tiktok et instagram"
+      },
+      {
+       "old": 165,
+       "new": 166,
+       "relation": "supports",
+       "note": "OLD: ils ça leur rappellera que il_y a cet événement qui qui va arriver bien évidemment faire d | NEW: pour euh l ouverture des des billets de la billetterie | alertes -> pour l'ouverture de la billetterie"
+      }
+     ]
+    },
+    {
+     "topic": "dates",
+     "relations": [
+      {
+       "old": 209,
+       "new": 211,
+       "relation": "supports",
+       "note": "OLD: ça serait cet été ou l été prochain | NEW: diminuer ouais je pense que ça peut ça peut bien marcher s'il n y a pas de nouvelles vague | cet été possible avec la baisse du covid"
+      }
+     ]
+    },
+    {
+     "topic": "genres",
+     "relations": [
+      {
+       "old": 31,
+       "new": 197,
+       "relation": "contradicts",
+       "note": "OLD: euh il nous reste cinq minutes de réunion je vais prendre le dernier tour de parole donc m | NEW: on pourrait limite changer les les genres aussi hein on pourrait peut-être pas changer com | les trois genres sont choisis -> on pourrait changer les genres"
+      }
+     ]
+    },
+    {
+     "topic": "horaires",
+     "relations": [
+      {
+       "old": 39,
+       "new": 40,
+       "relation": "supersedes",
+       "note": "OLD: elle pourrait soit ouvrir le concert ou le cloturer tu penses quoi | NEW: eh_ben oui je pense qu on peut réfléchir à plutôt le clôturer pour que les gens restent ju | adèle ouvre ou clôture -> elle clôture"
+      },
+      {
+       "old": 40,
+       "new": 43,
+       "relation": "supports",
+       "note": "OLD: eh_ben oui je pense qu on peut réfléchir à plutôt le clôturer pour que les gens restent ju | NEW: et du_coup à la fin si on met adèle | clôturer pour que tout le monde reste"
+      },
+      {
+       "old": 48,
+       "new": 54,
+       "relation": "supports",
+       "note": "OLD: de chaque genre je pense qu on devrait commencer par le jazz | NEW: le rock peut-être que ça va bon le jazz pour commencer plus doucement le rock ça va un peu | commencer par le jazz -> jazz rock puis pop"
+      },
+      {
+       "old": 54,
+       "new": 55,
+       "relation": "supports",
+       "note": "OLD: le rock peut-être que ça va bon le jazz pour commencer plus doucement le rock ça va un peu | NEW: et la pop pour conclure ouais | la pop pour conclure"
+      },
+      {
+       "old": 58,
+       "new": 60,
+       "relation": "supports",
+       "note": "OLD: et ben du_coup si y aurait que adèle je propose qu elle chante plusieurs chansons parce pa | NEW: oui ouais parce_que pour une seule chanson ça va | adèle chante plusieurs chansons"
+      }
+     ]
+    },
+    {
+     "topic": "lieu",
+     "relations": [
+      {
+       "old": 63,
+       "new": 71,
+       "relation": "supersedes",
+       "note": "OLD: oui après je pense que la salle des spectacles de aix elle est assez grande | NEW: ben je pense que l' arène à aix elle est | salle des spectacles d'aix -> l'arène d'aix"
+      },
+      {
+       "old": 71,
+       "new": 72,
+       "relation": "supports",
+       "note": "OLD: ben je pense que l' arène à aix elle est | NEW: elle est protégée en cas de pluie oui | l'arène est protégée en cas de pluie"
+      }
+     ]
+    },
+    {
+     "topic": "lineup",
+     "relations": [
+      {
+       "old": 119,
+       "new": 122,
+       "relation": "supports",
+       "note": "OLD: et on doit envisager un plan b au_cas_où elle l accepte pas | NEW: je propose qu on prenne peut-être un artiste pop mais alors plutôt français | plan b si adèle refuse -> artiste pop français"
+      },
+      {
+       "old": 195,
+       "new": 203,
+       "relation": "supersedes",
+       "note": "OLD: des des voilà selon les votes bien sûr parce_que si on voit que le le la pop ou le jazz ça | NEW: peut-être euh peut-être qu en_fait on devrait déjà euh plébisciter notre | inviter selon les votes -> vérifier la disponibilité d'abord"
+      },
+      {
+       "old": 203,
+       "new": 207,
+       "relation": "supports",
+       "note": "OLD: peut-être euh peut-être qu en_fait on devrait déjà euh plébisciter notre | NEW: il faudrait contacter je pense qu il faudrait d'abord contacter en priorité euh adèle | contacter adèle en priorité"
+      }
+     ]
+    },
+    {
+     "topic": "public_cible",
+     "relations": [
+      {
+       "old": 83,
+       "new": 86,
+       "relation": "contradicts",
+       "note": "OLD: oui voilà mais je pense qu il faut aussi s attendre à ce que les gens s en aillent aussi e | NEW: après je pense que ceux qui aiment le pop en_général ils supportent un peu tout | peur que le public parte entre les genres -> le public pop reste"
+      },
+      {
+       "old": 86,
+       "new": 89,
+       "relation": "supports",
+       "note": "OLD: après je pense que ceux qui aiment le pop en_général ils supportent un peu tout | NEW: ah oui oui le rock euh je pense que le le seul qui pourrait que ça pourrait commencer voil | le jazz est l'exception qui rassemble moins"
+      }
+     ]
+    }
+   ]
+  },
+  "060a_EDRH": {
+   "sentences_reviewed": 291,
+   "threads": [
+    {
+     "topic": "billetterie",
+     "relations": [
+      {
+       "old": 255,
+       "new": 264,
+       "relation": "supports",
+       "note": "OLD: moi j aurais pas été j aurais pas mis cent cinquante euros | NEW: surtout s'il y a une le côté surprise du truc et que c'est inclus euh | je n'aurais pas payé pour l'inconnu -> la surprise incluse ça passe"
+      }
+     ]
+    },
+    {
+     "topic": "communication",
+     "relations": [
+      {
+       "old": 50,
+       "new": 51,
+       "relation": "supports",
+       "note": "OLD: et euh et de le faire découvrir quitte peut-être à ne_pas l annoncer à faire un espèce de  | NEW: en_effet et annoncer le titre euh de la pièce choisie annoncer éventuellement la formation | ne pas l'annoncer -> annoncer le titre et la formation sans le genre"
+      }
+     ]
+    },
+    {
+     "topic": "genres",
+     "relations": [
+      {
+       "old": 28,
+       "new": 52,
+       "relation": "contradicts",
+       "note": "OLD: eh_ben en plus j' ai choisi classique donc je pense que si on a choisi deux thèmes bien op | NEW: en sachant aussi qu en_effet avec la musique classique ce qui a été beaucoup fait c'est de | pop et classique se marieront mal -> les reprises classiques de pop rapprochent"
+      },
+      {
+       "old": 61,
+       "new": 62,
+       "relation": "contradicts",
+       "note": "OLD: c'est un peu en déclin au_contraire euh | NEW: ah en déclin non non non je suis d'accord avec toi oui oui hum il_y a beaucoup de | le classique en déclin -> non en déclin"
+      },
+      {
+       "old": 62,
+       "new": 68,
+       "relation": "supports",
+       "note": "OLD: ah en déclin non non non je suis d'accord avec toi oui oui hum il_y a beaucoup de | NEW: n'importe qui donc euh oui oui c'est c'est à la mode et plus ça va plus y en aura je pense | conservatoires refaits -> c'est à la mode"
+      }
+     ]
+    },
+    {
+     "topic": "lineup",
+     "relations": [
+      {
+       "old": 102,
+       "new": 105,
+       "relation": "supports",
+       "note": "OLD: euh au niveau du rap j aimerais bien aussi euh notamment dans le cadre du festival | NEW: qui qui aimaient beaucoup le rap mais on oublie ces vieux artistes de rap de d il_y a quel | mettre en scène des artistes d'une autre génération"
+      },
+      {
+       "old": 17,
+       "new": 24,
+       "relation": "supports",
+       "note": "OLD: il_y a un artiste qui m est venu en tête par_exemple mika parce_qu il a fait euh il a une  | NEW: et pour toi c'est quel morceau de enfin t as dit mika pour toi c'est l artiste le plus con | mika proposé puis discuté comme artiste connu"
+      }
+     ]
+    },
+    {
+     "topic": "organisation",
+     "relations": [
+      {
+       "old": 162,
+       "new": 163,
+       "relation": "contradicts",
+       "note": "OLD: et ben pour pour l' organisation pourquoi pas penser à des chaises ou à faire deux scènes  | NEW: ah ben oui mais malheureusement qui dit de scène dit que ça va rester tout_à_fait euh figé | deux scènes comme dans les festivals -> le public resterait figé"
+      },
+      {
+       "old": 163,
+       "new": 166,
+       "relation": "supersedes",
+       "note": "OLD: ah ben oui mais malheureusement qui dit de scène dit que ça va rester tout_à_fait euh figé | NEW: et du_coup quitte à faire pareil un truc de l imprévu on demande à tout_le monde de s asse | deux scènes séparées -> une salle assis debout avec surprise"
+      },
+      {
+       "old": 166,
+       "new": 167,
+       "relation": "supports",
+       "note": "OLD: et du_coup quitte à faire pareil un truc de l imprévu on demande à tout_le monde de s asse | NEW: avec un message écrit vous êtes autorisés à vous lever pour danser | message écrit pour s'autoriser à danser"
+      }
+     ]
+    },
+    {
+     "topic": "public_cible",
+     "relations": [
+      {
+       "old": 145,
+       "new": 146,
+       "relation": "supports",
+       "note": "OLD: et j ai vu aussi justement euh sur le rap euh avec tous ces artistes nouveaux comme big fl | NEW: un certain intérêt pour des personnes de quarante cinquante ans qui avant détestaient le r | bigflo et oli ont attiré les 40-50 ans"
+      },
+      {
+       "old": 250,
+       "new": 253,
+       "relation": "supports",
+       "note": "OLD: enfin pas capital culturel mais qu il_y a cette idée que les gens qui ont plus d a- oui ou | NEW: je pense ouais je pense qu il_y a un peu des deux justement ouais de enfin le côté prix ju | explication par le capital culturel -> prix et peur les deux"
+      }
+     ]
+    }
+   ]
+  },
+  "072c_EEPH": {
+   "sentences_reviewed": 137,
+   "threads": [
+    {
+     "topic": "communication",
+     "relations": [
+      {
+       "old": 10,
+       "new": 16,
+       "relation": "supports",
+       "note": "OLD: euh en fin d année du_coup je pense qu il faudrait le faire l année d avant | NEW: vers courant de fin août début septembre tout début septembre | prévenir l'année d'avant -> puis mail à tous les professeurs fin août"
+      }
+     ]
+    },
+    {
+     "topic": "dates",
+     "relations": [
+      {
+       "old": 74,
+       "new": 75,
+       "relation": "contradicts",
+       "note": "OLD: à_la_fois on ferait une première intervention du_coup en | NEW: en non c'est la fac c'est fini | première intervention à la fac -> non c'est la fac c'est fini"
+      }
+     ]
+    },
+    {
+     "topic": "discours",
+     "relations": [
+      {
+       "old": 93,
+       "new": 94,
+       "relation": "supports",
+       "note": "OLD: pour préparer le speech euh peut-être avec des sujets du_coup d actualité donc il faut pas | NEW: euh du_coup je pense euh août hein | préparer le speech pas trop tard -> août à la rentrée"
+      }
+     ]
+    },
+    {
+     "topic": "materiel",
+     "relations": [
+      {
+       "old": 29,
+       "new": 38,
+       "relation": "supersedes",
+       "note": "OLD: ouais donc on pourrait même faire euh une intervention euh | NEW: ouais en_fait il faudrait pas trop qu on s étale plus qu on reste sur le cadre de l affich | intervention avec les enfants et déchets récupérés -> rester sur le cadre de l'affiche recyclée"
+      }
+     ]
+    },
+    {
+     "topic": "partenariats",
+     "relations": [
+      {
+       "old": 107,
+       "new": 110,
+       "relation": "supersedes",
+       "note": "OLD: et euh des locations de vélos | NEW: peut-être voir avec marseille si les vélibs peuvent pas être disponibles euh | locations de vélos -> vélibs de marseille gratuits via qr code"
+      }
+     ]
+    },
+    {
+     "topic": "volontaires",
+     "relations": [
+      {
+       "old": 58,
+       "new": 63,
+       "relation": "supports",
+       "note": "OLD: donc euh recherche euh de volontaires euh | NEW: euh non des membres euh de l association essentiellement qui viendraient eux intervenir du | recherche de volontaires -> essentiellement les membres de l'association"
+      }
+     ]
+    }
+   ]
+  },
+  "016c_EBPZ": {
+   "sentences_reviewed": 263,
+   "threads": [
+    {
+     "topic": "billetterie",
+     "relations": [
+      {
+       "old": 58,
+       "new": 105,
+       "relation": "supports",
+       "note": "OLD: parce_que on commence à vendre des billets six mois avant | NEW: la vente des billets c'est six mois à l avance donc ouverture de la vente des billets | vente des billets six mois avant confirmée"
+      },
+      {
+       "old": 124,
+       "new": 129,
+       "relation": "supports",
+       "note": "OLD: tâche sept on va dire à deux mois | NEW: et ça réactive les ventes des billetteries | tâche sept à deux mois réactive les ventes"
+      },
+      {
+       "old": 129,
+       "new": 223,
+       "relation": "supports",
+       "note": "OLD: et ça réactive les ventes des billetteries | NEW: à deux mois tâche sept à deux mois réactiver les ventes avec nouvelle tête d affiche via c | réactiver les ventes avec nouvelle tête d'affiche"
+      }
+     ]
+    },
+    {
+     "topic": "budget",
+     "relations": [
+      {
+       "old": 1,
+       "new": 74,
+       "relation": "supports",
+       "note": "OLD: par_contre budget alloué deux cent euros | NEW: la communication des réseaux sociaux c'est pas très très cher mais ça coûte quand même de  | budget 200 euros -> peut passer entièrement dans la com"
+      }
+     ]
+    },
+    {
+     "topic": "communication",
+     "relations": [
+      {
+       "old": 27,
+       "new": 64,
+       "relation": "supersedes",
+       "note": "OLD: donc par réseaux sociaux pas sur des affiches on peut créer une affiche mais digitale pour | NEW: et après euh il n y a plus que à donner euh des liens là on commence la vraie communicatio | communication digitale sans affiches -> vraies affiches imprimées en ville"
+      }
+     ]
+    },
+    {
+     "topic": "delais",
+     "relations": [
+      {
+       "old": 9,
+       "new": 101,
+       "relation": "supersedes",
+       "note": "OLD: ben ça ça se prévoit un an à l avance donc euh | NEW: sept mois à l avance | prévoir un an à l'avance -> sept mois à l'avance"
+      },
+      {
+       "old": 101,
+       "new": 103,
+       "relation": "supports",
+       "note": "OLD: sept mois à l avance | NEW: sept huit mois à l' avance | sept huit mois à l'avance"
+      }
+     ]
+    },
+    {
+     "topic": "escape_game",
+     "relations": [
+      {
+       "old": 149,
+       "new": 151,
+       "relation": "supersedes",
+       "note": "OLD: donc travailler ensemble pour pouvoir créer l' escape game il faut qu' ils nous donnent to | NEW: pour que nous on sache ou s ils veulent pas qu' on sache que eux le fasse | la storyline nous est donnée -> s'ils ne veulent pas qu'on sache eux le font"
+      }
+     ]
+    },
+    {
+     "topic": "festival_precedent",
+     "relations": [
+      {
+       "old": 244,
+       "new": 246,
+       "relation": "contradicts",
+       "note": "OLD: et les budgets après on avait des gros budgets puisqu on a demandé des subventions de part | NEW: mais euh notre budget de base c'était zéro | on avait de gros budgets -> notre budget de base c'était zéro"
+      },
+      {
+       "old": 246,
+       "new": 247,
+       "relation": "supports",
+       "note": "OLD: mais euh notre budget de base c'était zéro | NEW: donc on a fait levée de fonds | budget zéro -> levée de fonds et subventions"
+      }
+     ]
+    },
+    {
+     "topic": "influenceurs",
+     "relations": [
+      {
+       "old": 69,
+       "new": 70,
+       "relation": "supersedes",
+       "note": "OLD: on peut payer des influenceurs ou au_lieu de payer des influenceurs parce_que c'est | NEW: on les invite à venir | payer des influenceurs -> les inviter pour de la pub gratuite"
+      }
+     ]
+    },
+    {
+     "topic": "repartition_roles",
+     "relations": [
+      {
+       "old": 167,
+       "new": 228,
+       "relation": "supersedes",
+       "note": "OLD: euh coordinateur du projet | NEW: directeur de projet | coordinateur du projet -> directeur de projet"
+      },
+      {
+       "old": 211,
+       "new": 216,
+       "relation": "supersedes",
+       "note": "OLD: community manager | NEW: je pense c'est mieux chargé de com ouais chargé de com | community manager -> chargé de com retenu"
+      },
+      {
+       "old": 216,
+       "new": 218,
+       "relation": "supports",
+       "note": "OLD: je pense c'est mieux chargé de com ouais chargé de com | NEW: community manager c'est vraiment les réseaux sociaux non mais on va laisser charger de com | on va laisser chargé de com"
+      }
+     ]
+    },
+    {
+     "topic": "salles_hotels",
+     "relations": [
+      {
+       "old": 22,
+       "new": 94,
+       "relation": "supports",
+       "note": "OLD: euh les euh les salles salles les salles slash hôtels | NEW: tâche deux contacter les salles hôtels de la région choisies | salles hôtels de la région -> tâche deux"
+      }
+     ]
+    },
+    {
+     "topic": "subventions",
+     "relations": [
+      {
+       "old": 114,
+       "new": 117,
+       "relation": "supersedes",
+       "note": "OLD: euh tâche six voir si subventions possibles avec la ville trouver des sponsors | NEW: ouais c'est dès_qu on a la salle | tâche six subventions -> à faire dès qu'on a la salle"
+      },
+      {
+       "old": 117,
+       "new": 207,
+       "relation": "supersedes",
+       "note": "OLD: ouais c'est dès_qu on a la salle | NEW: tâche trois voir si subventions possibles avec la ville et sponsors donc ça aussi j ai mis | position après la salle -> devient tâche trois"
+      }
+     ]
+    },
+    {
+     "topic": "volontaires",
+     "relations": [
+      {
+       "old": 184,
+       "new": 187,
+       "relation": "supersedes",
+       "note": "OLD: dix euh mais euh recrutement euh des des volontaires et c'est pas grave c'est pas dans l o | NEW: ça je vais le remonter du_coup je vais le mettre je vais le mettre en même temps qu on on  | recrutement volontaires trois mois avant -> remonté avec la réactivation des ventes"
+      },
+      {
+       "old": 185,
+       "new": 198,
+       "relation": "supports",
+       "note": "OLD: ils auront euh accès à un logement de camping et | NEW: et soit on leur paye le camping soit ils payent eux | logement camping détaillé"
+      },
+      {
+       "old": 195,
+       "new": 197,
+       "relation": "supersedes",
+       "note": "OLD: donc il faut prendre des volontaires en priorité locaux | NEW: et on peut prendre aussi les non locaux | volontaires locaux en priorité -> aussi les non locaux"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "n_relations": 92,
+ "n_supersedes_pairs": 32
+}

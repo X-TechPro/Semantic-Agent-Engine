@@ -1,0 +1,21 @@
+# 016c_EBPZ — événement série netflix (train)
+9->101:supersedes prévoir un an à l'avance -> sept mois à l'avance
+101->103:supports sept huit mois à l'avance
+27->64:supersedes communication digitale sans affiches -> vraies affiches imprimées en ville
+58->105:supports vente des billets six mois avant confirmée
+69->70:supersedes payer des influenceurs -> les inviter pour de la pub gratuite
+114->117:supersedes tâche six subventions -> à faire dès qu'on a la salle
+117->207:supersedes position après la salle -> devient tâche trois
+124->129:supports tâche sept à deux mois réactive les ventes
+129->223:supports réactiver les ventes avec nouvelle tête d'affiche
+149->151:supersedes la storyline nous est donnée -> s'ils ne veulent pas qu'on sache eux le font
+167->228:supersedes coordinateur du projet -> directeur de projet
+184->187:supersedes recrutement volontaires trois mois avant -> remonté avec la réactivation des ventes
+185->198:supports logement camping détaillé
+195->197:supersedes volontaires locaux en priorité -> aussi les non locaux
+211->216:supersedes community manager -> chargé de com retenu
+216->218:supports on va laisser chargé de com
+244->246:contradicts on avait de gros budgets -> notre budget de base c'était zéro
+246->247:supports budget zéro -> levée de fonds et subventions
+1->74:supports budget 200 euros -> peut passer entièrement dans la com
+22->94:supports salles hôtels de la région -> tâche deux

@@ -28,6 +28,10 @@ def demo_engine(tmp_path_factory):
     cfg = load_config(overrides={
         "store": {"path": str(root / "engine.db")},
         "embed": {"backend": "hash", "dim": 256},
+        # CPU-tier pin: the shipped reranker (D-041) is a GPU model; the
+        # rerank branch itself is covered by test_rerank_path, the model by
+        # make demo / eval-fast / the headline bench.
+        "retrieve": {"rerank": {"backend": "none"}},
         "agent": {"contacts_path": str(CONTACTS)},
     })
     eng = Engine(cfg, path=root / "engine.db")

@@ -127,7 +127,10 @@ def gate(seeds: list[int], *, n_projects: int = 20, split: str = "dev",
     base_dir = Path(out_root or (root / "runs" / "concept_gate"))
     base_dir.mkdir(parents=True, exist_ok=True)
     runs: dict[str, dict[str, Any]] = {}
-    cfgs = {c: load_config(overrides={"store": {"faiss": {"index_key": c}}})
+    # ruler pin: D-022's loss verdict was measured with rerank none
+    cfgs = {c: load_config(overrides={"store": {"faiss": {"index_key": c}},
+                                      "retrieve": {"rerank":
+                                                   {"backend": "none"}}})
             for c in COLUMNS}
     for column in COLUMNS:
         for seed in seeds:
@@ -258,7 +261,10 @@ def verdict_from_summary(path: Path, seeds: list[int]) -> dict[str, Any]:
     """
     d = json.loads(Path(path).read_text(encoding="utf-8"))
     runs = d["runs"]
-    cfgs = {c: load_config(overrides={"store": {"faiss": {"index_key": c}}})
+    # same ruler pin as the live path (rerank none, pre-D-041)
+    cfgs = {c: load_config(overrides={"store": {"faiss": {"index_key": c}},
+                                      "retrieve": {"rerank":
+                                                   {"backend": "none"}}})
             for c in COLUMNS}
     for key, p in runs.items():
         p["normalised_hash"] = _normalised_hash(cfgs[key.split("/")[0]])

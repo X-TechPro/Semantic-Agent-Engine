@@ -153,6 +153,7 @@
         "role",
         "slots",
         "source_unit_id",
+        "status",
         "text"
       ]
     },
@@ -422,6 +423,7 @@
       "supersedes",
       "creates_action",
       "answers",
+      "completes",
       "unrelated"
     ]
   }

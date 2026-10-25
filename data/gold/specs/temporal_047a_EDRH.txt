@@ -1,0 +1,27 @@
+# 047a_EDRH — festival de musique adèle (train)
+39->40:supersedes adèle ouvre ou clôture -> elle clôture
+40->43:supports clôturer pour que tout le monde reste
+48->54:supports commencer par le jazz -> jazz rock puis pop
+54->55:supports la pop pour conclure
+58->60:supports adèle chante plusieurs chansons
+63->71:supersedes salle des spectacles d'aix -> l'arène d'aix
+71->72:supports l'arène est protégée en cas de pluie
+83->86:contradicts peur que le public parte entre les genres -> le public pop reste
+86->89:supports le jazz est l'exception qui rassemble moins
+97->101:supersedes un coin buvette -> deux coins buvettes de part et d'autre
+101->102:supports accès des deux côtés validé
+108->110:supports augmenter le prix justifié par adèle
+115->117:supports un prix à mettre -> prix important
+119->122:supports plan b si adèle refuse -> artiste pop français
+149->151:supports préférence prévente
+150->151:contradicts laisser la billetterie à la fin -> mieux en prévente
+151->152:supersedes prévente seule -> prévente et billetterie sur place le jour j
+156->162:supersedes contenu sponsorisé tiktok -> tiktok et instagram
+165->166:supports alertes -> pour l'ouverture de la billetterie
+176->184:supersedes précommande de chansons -> d'abord les artistes puis les chansons
+184->187:supports demander la disponibilité des artistes d'abord
+187->199:supports on part sur des sondages artistes et morceaux
+195->203:supersedes inviter selon les votes -> vérifier la disponibilité d'abord
+203->207:supports contacter adèle en priorité
+209->211:supports cet été possible avec la baisse du covid
+31->197:contradicts les trois genres sont choisis -> on pourrait changer les genres

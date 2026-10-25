@@ -593,9 +593,14 @@ def run_bench_seeds(seeds: list[int], *, n_projects: int = 20, split: str = "tes
     # The project count is part of "shipped" too: the 8-project tripwire is a
     # different, easier corpus, and a 3-seed run of it used to qualify as
     # canonical and rewrite the headline with its own smaller numbers.
+    # D-041: the rerank clause compares against the SHIPPED default, not the
+    # literal "none" — after the cross-encoder promotion a hardcoded "none"
+    # would have refused every canonical write and frozen the old headline.
+    shipped_rerank = str(load_config().get_path("retrieve.rerank.backend",
+                                                "none"))
     canonical = (split == "test" and len(seeds) >= 3
                  and n_projects == CANONICAL_PROJECTS
-                 and readers == ["rules"] and reranks == ["none"]
+                 and readers == ["rules"] and reranks == [shipped_rerank]
                  # 6.13's row 9 is a different system, not the shipped one: a
                  # refined run at test x 3 seeds x 20 projects with rules+none
                  # satisfies every other clause, and without this it would rewrite
