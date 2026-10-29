@@ -74,7 +74,7 @@ class LateArm:
     """Late-chunked vectors + a query encoder in the same space."""
 
     def __init__(self, meetings, stores: dict, device: str):
-        from engine.eval.late_chunk import LateV5
+        from late_chunk import LateV5
 
         self.late = LateV5(device)
         self.vectors: dict[str, np.ndarray] = {}
@@ -228,7 +228,7 @@ def main(argv=None) -> int:
             searches[mid] = V4Search(st, encoder=late.query_encoder,
                                      vectors=late.vectors)
     else:
-        from engine.eval.v4_real import turn_encoder
+        from v4_real import turn_encoder
         enc = turn_encoder(meetings, root)
         for mid, st in stores.items():
             searches[mid] = V4Search(st, encoder=enc)

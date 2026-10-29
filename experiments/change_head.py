@@ -17,7 +17,7 @@ from pathlib import Path
 import numpy as np
 
 from engine.config import repo_root
-from engine.eval.late_chunk import LateV5
+from late_chunk import LateV5
 from engine.eval.real_pairs import load_meetings
 from engine.eval.v4_data import texts_of
 

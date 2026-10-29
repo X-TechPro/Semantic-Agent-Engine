@@ -28,7 +28,7 @@ from pathlib import Path
 import torch
 
 from engine.config import repo_root
-from engine.eval.mlm_link import auc, decoys
+from mlm_link import auc, decoys
 from engine.eval.real_pairs import load_meetings
 from engine.eval.v4_data import load_edges, texts_of
 

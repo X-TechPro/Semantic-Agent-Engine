@@ -26,8 +26,8 @@ import numpy as np
 import torch
 
 from engine.config import repo_root
-from engine.eval.jina_ab import _norm, pair_set
-from engine.eval.mlm_link import auc
+from jina_ab import _norm, pair_set
+from mlm_link import auc
 from engine.eval.real_pairs import load_meetings
 from engine.eval.v4_data import citation_set, load_edges, texts_of
 

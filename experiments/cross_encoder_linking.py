@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 from engine.config import repo_root
-from engine.eval.continuity_stages import (bm25_index, bm25_rank, dense_rank,
+from continuity_stages import (bm25_index, bm25_rank, dense_rank,
                                            dense_vecs)
 from engine.eval.real_pairs import load_meetings, load_pairs, pair_rows
 from engine.link.cross_encoder_linker import Candidate, CrossEncoderLinker

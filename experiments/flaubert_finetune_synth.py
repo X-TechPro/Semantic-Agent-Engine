@@ -16,7 +16,7 @@ from torch.nn import functional as F
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from engine.config import repo_root
-from engine.eval.continuity_stages_v2 import active_topics
+from continuity_stages_v2 import active_topics
 from engine.eval.real_pairs import load_meetings
 from engine.store.fts import tokenize
 

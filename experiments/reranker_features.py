@@ -20,7 +20,7 @@ from sklearn.preprocessing import StandardScaler
 
 from engine.config import repo_root
 from engine.eval.real_pairs import load_meetings
-from engine.eval.relation_graph_real import (BUNDLE, add_hard_negatives,
+from relation_graph_real import (BUNDLE, add_hard_negatives,
                                              read_jsonl, synth_rows)
 from engine.link.cross_encoder_linker import Candidate, CrossEncoderLinker
 from engine.link.relation_scorer import PairMeta, RelationScorer, features

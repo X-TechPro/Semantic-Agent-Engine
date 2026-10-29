@@ -17,7 +17,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from engine.config import repo_root
-from engine.eval.decision_nodes import MEETINGS, gold_pairs, units_of
+from decision_nodes import MEETINGS, gold_pairs, units_of
 from engine.threads import build_session_nodes
 
 

@@ -18,7 +18,7 @@ from sklearn.metrics import f1_score
 
 from engine.config import repo_root
 from engine.eval.real_pairs import load_meetings, load_pairs, pair_rows
-from engine.eval.relation_graph_real import (BUNDLE, add_hard_negatives,
+from relation_graph_real import (BUNDLE, add_hard_negatives,
                                              read_jsonl, synth_rows)
 from engine.link.relation_scorer import PairMeta, RelationScorer, features
 from engine.link.thread import detect_topic

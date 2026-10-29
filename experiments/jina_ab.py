@@ -27,7 +27,7 @@ import numpy as np  # noqa: E402
 import torch  # noqa: E402
 
 from engine.config import repo_root  # noqa: E402
-from engine.eval.mlm_link import auc, decoys  # noqa: E402
+from mlm_link import auc, decoys  # noqa: E402
 from engine.eval.real_pairs import load_meetings  # noqa: E402
 from engine.eval.v4_data import citation_set, load_edges, texts_of  # noqa: E402
 

@@ -28,9 +28,9 @@ from torch import nn
 from torch.nn import functional as F
 
 from engine.config import repo_root
-from engine.eval.mlm_link import auc, decoys
+from mlm_link import auc, decoys
 from engine.eval.real_pairs import load_meetings
-from engine.eval.ssm_model import SSMLM
+from ssm_model import SSMLM
 from engine.eval.v4_data import load_edges, texts_of
 from engine.store.fts import tokenize
 
@@ -258,7 +258,7 @@ def main(argv=None) -> int:
 
 
 def block_rel(rows, relation, key):
-    from engine.eval.mlm_link import auc as _auc
+    from mlm_link import auc as _auc
     rs = [r for r in rows if r["relation"] == relation and key in r]
     if not rs:
         return {"n": 0}

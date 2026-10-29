@@ -57,3 +57,9 @@ data/engine.db-wal
 docs/hyperframes/*/node_modules/
 docs/hyperframes/*/.hyperframes/
 docs/hyperframes/*/out.mp4
+
+# downloaded corpora: fetch with `python -m engine.tools.fetch_french`
+data/external/
+
+# local tool state
+.qwen/

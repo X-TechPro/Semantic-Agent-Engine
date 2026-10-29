@@ -1082,14 +1082,9 @@ def build(lang, out):
 
 
 class V4Diagram(Flowable):
-    """Seven named steps — 1-4 on top, 5-7 below, contract rail underneath.
-
-    Named parts, not verbs: store · chunker · tagger · linker · memory ·
-    retriever · answerer. The snake makes the write/read path obvious: the
-    linker appends to memory, the retriever reads it, the answerer proves it.
-    """
-    W, H = CW, 110 * mm
-    R1_Y, R1_H, R2_Y, R2_H, GAP = 83, 24, 47, 25, 4
+    """Seven named steps, 4 + 3, with the linker->memory write path in teal."""
+    W, H = CW, 71 * mm
+    R1_Y, R1_H, R2_Y, R2_H, GAP = 41, 26, 4, 28, 4
 
     def wrap(self, aw, ah):
         return self.W, self.H
@@ -1098,25 +1093,25 @@ class V4Diagram(Flowable):
              tcolor=INK, scolor=MUTED):
         c = self.canv
         c.setFillColor(fill); c.setStrokeColor(stroke); c.setLineWidth(0.9)
-        c.roundRect(x * mm, y * mm, w * mm, h * mm, 3.2 * mm, stroke=1, fill=1)
-        cx, cy = (x + 4.6) * mm, (y + h - 4.4) * mm
-        c.setFillColor(stroke); c.circle(cx, cy, 2.7 * mm, stroke=0, fill=1)
-        c.setFillColor(colors.white); c.setFont("Head", 7.8)
-        c.drawCentredString(cx, cy - 2.7, str(num))
-        c.setFillColor(tcolor); c.setFont("Head-M", 7.9)
-        c.drawString((x + 9.4) * mm, cy - 2.9, fr(title))
-        c.setFillColor(scolor); c.setFont("Body", 7.0)
-        yy = (y + h - 10.6) * mm
-        for ln in wrap_text(fr(sub), "Body", 7.0, (w - 11) * mm)[:3]:
-            c.drawString((x + 9.4) * mm, yy, ln)
-            yy -= 4.8 * mm
+        c.roundRect(x * mm, y * mm, w * mm, h * mm, 3.4 * mm, stroke=1, fill=1)
+        cx, cy = (x + 5.2) * mm, (y + h - 5.2) * mm
+        c.setFillColor(stroke); c.circle(cx, cy, 3.0 * mm, stroke=0, fill=1)
+        c.setFillColor(colors.white); c.setFont("Head", 8.2)
+        c.drawCentredString(cx, cy - 2.9, str(num))
+        c.setFillColor(tcolor); c.setFont("Head-M", 9.0)
+        c.drawString((x + 10.4) * mm, cy - 3.2, fr(title))
+        c.setFillColor(scolor); c.setFont("Body", 7.8)
+        yy = (y + h - 11.8) * mm
+        for ln in wrap_text(fr(sub), "Body", 7.8, (w - 12) * mm)[:3]:
+            c.drawString((x + 10.4) * mm, yy, ln)
+            yy -= 5.1 * mm
 
     def arrow(self, x1, y1, x2, y2, color=MUTED):
         import math
         c = self.canv
-        c.setStrokeColor(color); c.setFillColor(color); c.setLineWidth(1.2)
+        c.setStrokeColor(color); c.setFillColor(color); c.setLineWidth(1.3)
         c.line(x1 * mm, y1 * mm, x2 * mm, y2 * mm)
-        a = math.atan2((y2 - y1), (x2 - x1)); L, Wd = 2.1 * mm, 1.1 * mm
+        a = math.atan2((y2 - y1), (x2 - x1)); L, Wd = 2.2 * mm, 1.15 * mm
         tx_, ty = x2 * mm, y2 * mm
         pth = c.beginPath(); pth.moveTo(tx_, ty)
         pth.lineTo(tx_ - L * math.cos(a) + Wd * math.sin(a),
@@ -1124,11 +1119,6 @@ class V4Diagram(Flowable):
         pth.lineTo(tx_ - L * math.cos(a) - Wd * math.sin(a),
                    ty - L * math.sin(a) + Wd * math.cos(a))
         pth.close(); c.drawPath(pth, stroke=0, fill=1)
-
-    def label(self, x, y, t, color=MUTED, size=7.0):
-        c = self.canv
-        c.setFillColor(color); c.setFont("Body-I", size)
-        c.drawString(x * mm, y * mm, fr(t))
 
     def draw(self):
         c = self.canv
@@ -1163,47 +1153,51 @@ class V4Diagram(Flowable):
         ]
         for i, (fill, st, n, t, sub) in enumerate(top):
             self.rbox(xs1[i], self.R1_Y, w1, self.R1_H, fill, st, n, t, sub,
-                      PURPLE_D if st is PURPLE else INK)
+                      PURPLE_D if st is PURPLE else (TEAL_D if st is TEAL else INK))
             if i:
-                self.arrow(xs1[i-1] + w1 + 0.6, self.R1_Y + self.R1_H / 2,
-                           xs1[i] - 0.6, self.R1_Y + self.R1_H / 2)
+                self.arrow(xs1[i-1] + w1 + 0.8, self.R1_Y + self.R1_H / 2,
+                           xs1[i] - 0.8, self.R1_Y + self.R1_H / 2)
         for i, (fill, st, n, t, sub) in enumerate(bottom):
             self.rbox(xs2[i], self.R2_Y, w2, self.R2_H, fill, st, n, t, sub,
                       PURPLE_D if st is PURPLE else (AMBER_D if st is AMBER else TEAL_D))
             if i:
-                self.arrow(xs2[i-1] + w2 + 0.6, self.R2_Y + self.R2_H / 2,
-                           xs2[i] - 0.6, self.R2_Y + self.R2_H / 2)
-        # snake: the linker appends to memory
+                self.arrow(xs2[i-1] + w2 + 0.8, self.R2_Y + self.R2_H / 2,
+                           xs2[i] - 0.8, self.R2_Y + self.R2_H / 2)
+        # the one write path: linker -> memory, drawn as a teal elbow
         bx = xs1[3] + w1 / 2
-        c.setStrokeColor(MUTED); c.setLineWidth(1.2)
-        c.line(bx * mm, self.R1_Y * mm, bx * mm, (self.R1_Y - 6) * mm)
-        c.line(bx * mm, (self.R1_Y - 6) * mm,
-               (xs2[0] + w2 / 2) * mm, (self.R1_Y - 6) * mm)
-        self.arrow(xs2[0] + w2 / 2, self.R1_Y - 6, xs2[0] + w2 / 2,
-                   self.R2_Y + self.R2_H)
-        self.label(64, self.R1_Y - 4.6,
-                   X("liens typés ajoutés", "typed links appended"))
-        # contract rail
-        c.setFillColor(AMBER_L); c.setStrokeColor(AMBER); c.setLineWidth(0.9)
-        c.roundRect(0, 28 * mm, self.W, 13 * mm, 3 * mm, stroke=1, fill=1)
-        c.setFillColor(AMBER_D); c.setFont("Head-M", 7.9)
-        c.drawString(4 * mm, 35.4 * mm, fr(X("contrat", "contract")))
-        c.setFillColor(HexColor("#6E4A18")); c.setFont("Body", 7.6)
-        c.drawString(19 * mm, 35.4 * mm, fr(X(
-            "message et phrase immuables · liens et états ajoutés, jamais réécrits · réponse citée, sinon refus",
-            "message and sentence immutable · links and states appended, never rewritten · cited answer, otherwise refusal")))
-        # legend
-        items = [(PURPLE_L, PURPLE, X("entraîné", "trained")),
-                 (TEAL_L, TEAL, X("déterministe / mémoire", "deterministic / memory")),
-                 (BG, LINE, X("sans entraînement", "no training")),
-                 (AMBER_L, AMBER, X("sécurité", "safety"))]
-        x = 0
-        for fill, st, label in items:
-            c.setFillColor(fill); c.setStrokeColor(st); c.setLineWidth(0.9)
-            c.roundRect(x * mm, 12 * mm, 4.2 * mm, 3.2 * mm, 1 * mm, stroke=1, fill=1)
-            c.setFillColor(MUTED); c.setFont("Body", 8)
-            c.drawString((x + 5.6) * mm, 12.8 * mm, fr(label))
-            x += 7 + stringWidth(fr(label), "Body", 8) / mm + 6
+        mid = self.R1_Y - 6.0
+        c.setStrokeColor(TEAL); c.setLineWidth(1.6)
+        c.line(bx * mm, self.R1_Y * mm, bx * mm, mid * mm)
+        c.line(bx * mm, mid * mm, (xs2[0] + w2 / 2) * mm, mid * mm)
+        self.arrow(xs2[0] + w2 / 2, mid, xs2[0] + w2 / 2, self.R2_Y + self.R2_H,
+                   color=TEAL)
+        c.setFillColor(TEAL_D); c.setFont("Body-I", 7.6)
+        c.drawString(96 * mm, (mid + 1.2) * mm,
+                     fr(X("ajoute liens + état, sans réécrire",
+                          "appends links + state, never rewrites")))
+
+
+
+class Legend(Flowable):
+    """Four colour swatches, drawn (not typed): the font has no solid square."""
+
+    def __init__(self, items):
+        super().__init__()
+        self.items = items
+
+    def wrap(self, aw, ah):
+        self.w, self.h = aw, 5.6 * mm
+        return self.w, self.h
+
+    def draw(self):
+        c = self.canv
+        x = 0.0
+        for fill, stroke, label in self.items:
+            c.setFillColor(fill); c.setStrokeColor(stroke); c.setLineWidth(0.8)
+            c.roundRect(x * mm, 1.0 * mm, 3.2 * mm, 3.2 * mm, 0.9 * mm, stroke=1, fill=1)
+            c.setFillColor(MUTED); c.setFont("Body", 8.0)
+            c.drawString((x + 4.6) * mm, 1.8 * mm, fr(label))
+            x += 4.6 + stringWidth(fr(label), "Body", 8.0) / mm + 6.0
 
 
 def _steps_table(rows):
@@ -1320,10 +1314,13 @@ def build_v4(lang, out):
           "<b>The connector</b> between linker and memory is the only state-writing path: nothing else changes the "
           "current state.")))
     gap(3)
-    S(P(X("Couleurs : violet = partie entraînée, turquoise = déterministe ou mémoire, gris = sans entraînement, "
-          "ambre = contrat et refus. Deux étapes n'ont volontairement aucun entraînement : le linker et la mémoire.",
-          "Colours: purple = trained part, teal = deterministic or memory, grey = no training, amber = contract and "
-          "refusal. Two steps deliberately have no training at all: the linker and memory."), body_s))
+    S(Legend([(PURPLE_L, PURPLE, X("entraîné", "trained")),
+              (TEAL_L, TEAL, X("déterministe ou mémoire", "deterministic or memory")),
+              (BG, LINE, X("sans entraînement", "no training")),
+              (AMBER_L, AMBER, X("contrat et refus", "contract and refusal"))]))
+    gap(2)
+    S(P(X("Deux étapes n'ont volontairement aucun entraînement : le linker et la mémoire.",
+          "Two steps deliberately have no training at all: the linker and memory."), cap))
     gap(3)
     S(Box([title_p(AMBER_D, X("Le contrat, en clair", "The contract, in plain words")), 3,
            P(X("Un message ne change jamais ; une phrase garde ses offsets ; un remplacement est un lien ajouté ; "
@@ -1353,6 +1350,11 @@ def build_v4(lang, out):
                "to that unit → <b>answerer</b> cites the turn directly (“4,500 [traiteur:17:u0]”). This is the case "
                "that failed before: a true fact with no state was not answerable."), body_s)],
           width=CW, bg=PURPLE_L, stroke=PURPLE, pad=9))
+    gap(3)
+    S(P(X("Les sept étapes se lisent comme une phrase : le message est stocké, découpé, tagué, relié, "
+          "mémorisé, retrouvé, puis cité. Aucune ne réécrit la précédente.",
+          "The seven steps read as one sentence: the message is stored, split, tagged, linked, memorised, "
+          "retrieved, then cited. None of them rewrites the one before."), body_s))
     S(PageBreak())
 
     # ================= PAGE 3 — exemple + chunker =================
