@@ -52,3 +52,8 @@ data/engine.db-wal
 # keep the small measured artefacts the docs cite
 !runs/meetings/*.json
 !runs/v4/*.json
+
+# hyperframes project: keep source, ignore render artefacts
+docs/hyperframes/*/node_modules/
+docs/hyperframes/*/.hyperframes/
+docs/hyperframes/*/out.mp4
