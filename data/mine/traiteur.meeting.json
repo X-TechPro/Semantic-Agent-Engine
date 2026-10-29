@@ -1,0 +1,23 @@
+{
+  "meeting_id": "traiteur",
+  "messages": [
+    {"message_id": "traiteur:0", "speaker": "Julie", "timestamp": "2026-11-06T11:00:00+01:00", "text": "pour l événement du 12 juin on a 80 personnes"},
+    {"message_id": "traiteur:1", "speaker": "Claire", "timestamp": "2026-11-06T11:01:00+01:00", "text": "80 c est bien le traiteur il a envoyé un devis"},
+    {"message_id": "traiteur:2", "speaker": "Julie", "timestamp": "2026-11-06T11:02:00+01:00", "text": "oui 4 800 euros pour le repas"},
+    {"message_id": "traiteur:3", "speaker": "Claire", "timestamp": "2026-11-06T11:03:00+01:00", "text": "4 800 c est trop on essaie 4 200"},
+    {"message_id": "traiteur:4", "speaker": "Julie", "timestamp": "2026-11-06T11:04:00+01:00", "text": "je lui ai demandé il dit non il peut faire 4 500"},
+    {"message_id": "traiteur:5", "speaker": "Claire", "timestamp": "2026-11-06T11:05:00+01:00", "text": "ok on prend 4 500"},
+    {"message_id": "traiteur:6", "speaker": "Julie", "timestamp": "2026-11-06T11:06:00+01:00", "text": "j ai aussi demandé une option végétarienne"},
+    {"message_id": "traiteur:7", "speaker": "Claire", "timestamp": "2026-11-06T11:07:00+01:00", "text": "il la propose"},
+    {"message_id": "traiteur:8", "speaker": "Julie", "timestamp": "2026-11-06T11:08:00+01:00", "text": "oui sans supplément"},
+    {"message_id": "traiteur:9", "speaker": "Claire", "timestamp": "2026-11-06T11:09:00+01:00", "text": "et l acompte c est combien"},
+    {"message_id": "traiteur:10", "speaker": "Julie", "timestamp": "2026-11-06T11:10:00+01:00", "text": "30 pour cent soit 1 350 à verser avant le 15 mai"},
+    {"message_id": "traiteur:11", "speaker": "Claire", "timestamp": "2026-11-06T11:11:00+01:00", "text": "d accord tu le verses cette semaine"},
+    {"message_id": "traiteur:12", "speaker": "Julie", "timestamp": "2026-11-06T11:12:00+01:00", "text": "la salle elle peut accueillir 100 personnes"},
+    {"message_id": "traiteur:13", "speaker": "Claire", "timestamp": "2026-11-06T11:13:00+01:00", "text": "donc on est larges"},
+    {"message_id": "traiteur:14", "speaker": "Julie", "timestamp": "2026-11-06T11:14:00+01:00", "text": "et le menu il faut le valider avant le 30 mai"},
+    {"message_id": "traiteur:15", "speaker": "Claire", "timestamp": "2026-11-06T11:15:00+01:00", "text": "on le valide la semaine prochaine"},
+    {"message_id": "traiteur:16", "speaker": "Julie", "timestamp": "2026-11-06T11:16:00+01:00", "text": "je relance le traiteur pour le contrat"},
+    {"message_id": "traiteur:17", "speaker": "Claire", "timestamp": "2026-11-06T11:17:00+01:00", "text": "ok on part sur 4 500 c est acté"}
+  ]
+}

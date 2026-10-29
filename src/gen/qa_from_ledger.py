@@ -124,6 +124,12 @@ def build_questions(ledger: Ledger, *, seed: int = 42, per_project: int = 8,
                 by_subject.setdefault(e.subject_key, []).append(e)
         subjects = sorted(by_subject)
         for s_i, subject in enumerate(subjects[:per_project]):
+            # Owner keys are a different speech act. Asking "what is the value
+            # of atlas.owner.launch_date?" and scoring the answer against "Sophie
+            # owns it" is a malformed temporal question; the owner loop below
+            # emits the proper "who owns it?" question.
+            if parse_subject(subject)[2]:
+                continue
             chain = sorted(by_subject[subject], key=lambda e: (e.on, e.event_id))
             _ = _terminal(chain, ledger)
             attr = base_attribute(subject)

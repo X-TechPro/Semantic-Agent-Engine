@@ -13,6 +13,7 @@ is what makes the §10 comparison table honest — the same code path, one switc
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -24,6 +25,10 @@ from engine.retrieve.fusion import FusedHit, rrf
 from engine.retrieve.graph_expand import expand
 from engine.retrieve.rerank import build_reranker
 from engine.retrieve.validity import apply_validity, filters_for_query
+
+OWNER_Q = re.compile(
+    r"\b(?:qui\s+(?:s['’]?occupe|est responsable|gère|gere)|"
+    r"qui s['’]?occupe|responsable de|à qui|a qui)\b", re.IGNORECASE)
 
 
 @dataclass
@@ -114,6 +119,20 @@ class RetrievalPipeline:
         units = [(u, f) for u, f in units if u is not None]
         scored = [(u, f.score) for u, f in units]
         parts_by_id = {f.unit_id: f.parts for _, f in units}
+
+        # An owner question is not a value question. The cross-encoder ranks
+        # "risk: under control" above "risk: Marie" because both are about the
+        # risk; the person slot is the speech act the question asks for.
+        owner_boost = float(self.cfg["retrieve"].get("owner_boost", 0.0))
+        if owner_boost and OWNER_Q.search(q.text or ""):
+            boosted_owner = []
+            for u, s in scored:
+                has_person = bool(u.slots.persons or u.slots.owner)
+                if has_person:
+                    s += owner_boost
+                    parts_by_id.setdefault(u.unit_id, {})["owner"] = owner_boost
+                boosted_owner.append((u, s))
+            scored = boosted_owner
 
         # 6.7: an explicit slot is a *soft boost*, never a hard filter — the
         # extractor leaves subject unset on many units, so filtering on it

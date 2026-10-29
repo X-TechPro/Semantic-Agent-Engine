@@ -1,0 +1,29 @@
+{
+  "corpus_id": "incident-eval",
+  "questions": [
+    {"query_id": "incident-q1", "style": "formal", "meeting_id": "incident",
+     "text": "Combien de temps a duré la panne ?",
+     "expected_message_ids": ["incident:1"], "expected_value": "14 h 47", "must_abstain": false},
+    {"query_id": "incident-q2", "style": "formal", "meeting_id": "incident",
+     "text": "Quelle était la cause de l'incident ?",
+     "expected_message_ids": ["incident:4"], "expected_value": "certificat", "must_abstain": false},
+    {"query_id": "incident-q3", "style": "messy", "meeting_id": "incident",
+     "text": "ça a touché combien d utilisateurs en gros ?",
+     "expected_message_ids": ["incident:6"], "expected_value": "12 000", "must_abstain": false},
+    {"query_id": "incident-q4", "style": "formal", "meeting_id": "incident",
+     "text": "A-t-on perdu des données pendant la panne ?",
+     "expected_message_ids": ["incident:8"], "expected_value": "rien perdu", "must_abstain": false},
+    {"query_id": "incident-q5", "style": "formal", "meeting_id": "incident",
+     "text": "Qui rédige le post mortem ?",
+     "expected_message_ids": ["incident:15"], "expected_value": "Inès", "must_abstain": false},
+    {"query_id": "incident-q6", "style": "formal", "meeting_id": "incident",
+     "text": "Quel est le nouveau seuil d'alerte ?",
+     "expected_message_ids": ["incident:16", "incident:17"], "expected_value": "5 minutes", "must_abstain": false},
+    {"query_id": "incident-q7", "style": "tricky", "meeting_id": "incident",
+     "text": "Qui fournit le certificat TLS ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true},
+    {"query_id": "incident-q8", "style": "tricky", "meeting_id": "incident",
+     "text": "Le post mortem a-t-il été publié ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true}
+  ]
+}

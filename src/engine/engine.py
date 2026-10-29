@@ -191,7 +191,9 @@ class Engine:
         from engine.threads.view import NodeView
 
         if self._decision_view is None:
-            self._decision_view = NodeView(self.store.all_units())
+            self._decision_view = NodeView(
+                self.store.all_units(),
+                state=bool(self.cfg["retrieve"].get("node_state", False)))
         return self._decision_view
 
     def node_hits(self, query: Query, *, as_of: date | None = None,

@@ -42,15 +42,28 @@ class NodeMatch:
 class NodeView:
     """All decision nodes in a store, searchable by named topic or words."""
 
-    def __init__(self, units: list[Unit], *, merge_topic: bool = True):
-        self.nodes = build_session_nodes(units, merge_topic=merge_topic)
+    def __init__(self, units: list[Unit], *, merge_topic: bool = True,
+                 state: bool = False):
+        from engine.threads.state_reader import StateReader
+
+        self.nodes = build_session_nodes(
+            units, merge_topic=merge_topic,
+            state_reader=StateReader() if state else None)
 
     @staticmethod
     def at(node: DecisionNode, day: date | None = None,
            turn: int | None = None) -> Unit | None:
         if turn is not None:
             return node.at_turn(turn)
-        return node.as_of(day) if day is not None else node.latest
+        if day is not None:
+            return node.as_of(day)
+        # State nodes carry the last confirmed/cancelled update. A later
+        # proposal must not displace it; topic nodes keep the historical latest.
+        if node.current_turn is not None:
+            confirmed = node.at_turn(node.current_turn)
+            if confirmed is not None:
+                return confirmed
+        return node.latest
 
     def find(self, text: str, *, project: str | None = None,
              as_of: date | None = None, turn: int | None = None, k: int = 2,

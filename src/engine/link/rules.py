@@ -128,6 +128,15 @@ def propose(new: Unit, old: Unit, *, topical_min: float = 0.5,
         # shared content noun is the evidence, the cue only opens the door.
         return "completes"
     if same_slot(new, old):
+        # An opposite-polarity pair is not a restatement, even when the typed
+        # value is identical ("budget 2 M€" vs "budget n'est pas 2 M€"). Route it
+        # to the guards so G13 decides contradict vs a genuinely new value.
+        from engine.link.values import polarity
+
+        pn = polarity(new.text, new.slots.subject)
+        po = polarity(old.text, old.slots.subject)
+        if pn and po and pn != po:
+            return "supersedes"
         comparable, equal = comparable_values(new, old, topical_min=topical_min,
                                               equal_max=equal_max)
         if not comparable:

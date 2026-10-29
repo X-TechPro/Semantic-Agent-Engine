@@ -2532,3 +2532,545 @@ Verification: `make demo` 19/19; `make eval-fast` PASS, temporal@1 A=0.4444
 B=0.4444, recall@5 0.7164, gold_in_pool 1.0. Config hash moved with the new
 `retrieve.node_view` key and the fast gate was re-recorded. Tests:
 `test_node_view.py` (5), `test_decision_nodes.py`; full suite green.
+
+## D-061 — negation scope + turn order: a safety guard, not the reach fix (2026-10-26)
+
+The B-13 deficit has two independent parts: reach (2/40 shipped, 39/40 upper bound)
+and judgement (1 true positive). This round fixes a
+judgement bug that the aggregate hid: a negated value shares its typed value
+with the affirmative one, so "le budget n'est pas de 2 M€" could be proposed as
+a support or even a replacement.
+
+* `values.polarity(text, subject)` is clause-scoped: `ne … pas/plus/…`,
+  `non pas`, verbless `pas de/encore/validé`, `sans` (but not `sans doute`),
+  `aucun/jamais/rien`; bare `plus de` returns `None` (more vs no more), and the
+  clause split includes commas and discourse markers.
+* `rules.propose` routes an opposite-polarity pair on a shared subject to the
+  guards instead of returning `supports`.
+* `supersede.G13_polarity`: opposite polarity plus the same typed value is a
+  `contradicts`; a genuinely new typed value still goes through; `cancelled`
+  is a cancellation; an explicit affirmative correction after a negative is
+  allowed.
+* `supersede.turn_order_ok` + `G2_turn_order`: inside one source with distinct
+  known turns, the new turn must be later. Equal/unknown turns stay unordered;
+  cross-source pairs keep using dates.
+
+Measured on D-046's 40 train+sel gold (`linker_local --reader rules`; sealed
+holdout untouched): pair_local predictions **6 → 5**, TP **1 → 1**, precision
+**0.167 → 0.200**, recall **0.025 → 0.025**. The removed prediction was a false
+positive. The shipped path is unchanged at 0. That is the honest result: the
+guard prevents a wrong replacement; it does not create reach.
+
+Verification: 12 new tests (`test_polarity_guard.py`), full suite green,
+`make eval-fast` PASS +0.00 (temporal@1 A=0.4444 / B=0.4444, recall@5 0.7164,
+gold_in_pool 1.0). `link.thread_context` stays False; B-13's reach demand is
+unchanged.
+
+## D-062 — change-first tested: cues, turn classifier, top-5 candidates, 7B (2026-10-26)
+
+The proposal was to stop fixing the pair judge and ask a different question:
+does the **new turn** change or close something? Find the new turn first, then
+look only at 5 old candidates in its topic thread, then let the 7B verify.
+Target definition: `docs/CHANGE_DEFINITION.md`. The 40 hand-labelled
+supersedes new turns across six meetings were the positives; all other turns
+(1,435) were the negative pool.
+
+**Cue coverage.** With ASR underscores normalized (`du_coup`, `en_fait`), the
+owner's narrow cue set (`finalement`, `on part sur`, `plutôt`, `du coup`)
+covers **7/40 = 0.175** gold new turns and fires on 101 negatives; the broader
+French change-cue set covers **22/40 = 0.55** and fires on 306 negatives
+(cue-only precision **0.065–0.067**). Cues alone cannot find the turn.
+
+**Turn-only classifier.** TF-IDF word 1–2 grams + logistic regression,
+leave-one-meeting-out, no embeddings: pooled **AUC 0.718**, **AP 0.050**
+against a 0.027 base rate; top-5 per meeting **1/40**, top-10 **3/40**,
+top-20 **6/40**. The AUC is not usable: the ranking collapses above rank 20,
+and every held-out meeting failed at top-5.
+
+**Top-5 old candidates.** Inside the persistent topic thread, ranked by
+lexical overlap plus recency, the gold old turn is in the 5 candidates for
+**21/40 = 0.525** (recency-only 16/40, lexical-only 19/40; union of top-5
+recency + top-5 lexical reaches 22/40 but needs 10 candidates). That is the
+ceiling for the 7B stage.
+
+**7B under the new definition.** `qwen2.5:7b-instruct`, 185 candidate pairs
+from the 40 new turns, prompt explicitly counts closing an open option and
+uses the "ouvrir ou clôturer → plutôt clôturer" example. Result:
+
+| level | result |
+|---|---|
+| candidate recall | 21/40 = 0.525 |
+| exact-pair TP / FP | 21 / 106 |
+| exact-pair precision / recall | **0.165 / 0.525** |
+| gold old selected when present | 21/21 |
+| gold new turns with any selection | 35/40 = 0.875 |
+| sampled non-gold new turns with any selection | 25/40 = 0.625 |
+| balanced new-turn precision | 0.583 |
+| natural-prevalence estimate | ~0.038 |
+
+Per meeting, the over-selection is not uniform: 047a selects 4/7 gold pairs but
+6/6 sampled negatives; 024c 10/12 gold and 9/11 negatives; 047c 2/8 gold and
+1/8 negatives. The model's confidence does not separate (all selected pairs
+0.8–0.95), so no threshold rescues it.
+
+**Verdict.** The definition is correct as a product decision and becomes the
+label target. The proposed chain does not implement it on this corpus: cues
+cover 55% with 6.7% precision, the turn classifier cannot rank, top-5 caps
+recall at 52.5%, and the 7B is over-inclusive (natural-prevalence precision
+~4%). Because the negative pool is not exhaustively labelled, the 62.5%
+selection on non-gold turns is a **lower bound** on the error, not proof that
+every selection is wrong; it still means the current gold cannot score the
+turn-level question.
+
+**What stays.** Guards, node view, review queue, and the D-061 polarity/turn
+guards are untouched. No shipped default changed. The next step is exhaustive
+binary `change` labels on a sample of turns (the 7B can propose, a human
+confirms), not another pair judge. Artefacts:
+`runs/llm_judge/change_first_2026-10-26.json` (+ `.summary.json`),
+`runs/llm_judge/change_first_neg_2026-10-26.json`, scripts
+`runs/llm_judge/change_first{,_neg}.py` (git-ignored).
+
+## D-063 — explicit state table + additive state nodes (2026-10-27)
+
+The dense recurrent state test failed, so the implementation moved to the form
+the evidence supports: an explicit `DecisionState` table plus a deterministic
+state reader, not another encoder.
+
+**State writer.** `engine/threads/state.py` stores one row per decision point
+(`food`, `budget`, `date`, `mode`, `venue`, `role`, ...): value, status
+(`proposed`/`confirmed`/`cancelled`), turn, evidence, old value. Proposed rows
+stay in `open`; confirmed/cancelled rows replace the current row; every update
+must quote a value that occurs in the turn.
+
+`engine/threads/state_reader.py` detects the point, extracts the grounded value,
+and reads status with the rules reader plus the state-conditioned short-answer
+case. Example: `le buffet est confirmé` writes `food=buffet`; with `budget`
+open, `donc on le paie ?` closes `budget` instead of becoming a question. No
+value is invented when the turn does not contain one.
+
+**v3 wiring.** `build_session_nodes` accepts an optional `state_reader` and
+adds a second node set keyed by state point. Topic nodes are untouched. The
+default config sets `retrieve.node_state: true`; `NodeView(..., state=True)`
+uses it, and `retrieve.node_state: false` restores topic-only. Every child keeps
+`valid_to=None`/`superseded_by=None`.
+
+Measured on the six gold meetings (`engine.eval.state_nodes_gate`,
+`runs/decision_nodes/state-all6.json`):
+
+| measure | topic only | + state nodes |
+|---|---|---|
+| coverage | 0.995 | 0.997 |
+| gold old+new in one node | **25/40 = 0.625** | **33/40 = 0.825** |
+| `at_turn(new)` returns new | 40/40 = 1.000 | **40/40 = 1.000** |
+| current is gold new | 2/40 = 0.050 | **6/40 = 0.150** |
+| mutations | 0 | 0 |
+
+The +8 pairs are the point-level continuations the topic key missed
+(047a 7/7, 016c 8/10, 047c 6/8, 024c 11/12). The state nodes also raise
+`current` from 2/40 to 6/40, because a confirmed state row can outrank later
+chatter; `at_turn` stays 40/40. Remaining pair misses: 060a 163→166, 072c
+29→38; 072c 107→110 and the other point continuations are covered.
+
+**0.66.** The `0.6616` headline is the synthetic-ledger System-B temporal@1
+path; it calls `Engine.retrieve`, not the v3 node view, so this change cannot
+move it. Fast gate after the new config hash: temporal@1 A=0.4444 / B=0.4444,
+recall@5 0.7164, gold_in_pool 1.0, PASS. If `0.66` means the v3 node pair
+metric, it moved 0.625→0.825; if it means temporal@1 0.6616, it is unchanged.
+
+Verification: `tests/unit/test_state_reader.py` (3), full unit+golden suite
+green, `make eval-fast` PASS, `baselines/fast_gate.json` re-recorded for the
+config-hash change. The state reader is deterministic and CPU-only; no LLM.
+
+## D-064 — temporal@1: owner questions and a corrected ruler (2026-10-27)
+
+The rank-1 error review found two distinct causes, not one ranking weakness:
+
+1. **Malformed ruler.** A subject key such as `atlas.owner.launch_date` was fed
+   to the *current-value* template ("Où en est la date de lancement ?") while the
+   gold was "Sophie owns it". No ranker can answer that as a value question. The
+   QA builder now skips `.owner.*` subjects in the value loop; the separate
+   owner loop still emits the proper "Qui s'occupe de … ?" questions.
+2. **Owner questions ranked value rows first.** "Qui s'occupe du risque ?"
+   returned "le risque : sous contrôle" above "le risque : Marie". The
+   cross-encoder scores both as relevant; it does not know the question asks for
+   a person. `RetrievalPipeline` now adds `retrieve.owner_boost` (0.5) to a
+   candidate carrying `slots.persons`/`slots.owner` when the query is an owner
+   question (`qui s'occupe`, `qui est responsable`, `qui gère`). This happens
+   before validity weighting; it does not filter anything.
+
+Measured on the canonical 20-project temporal bench, System B, seeds 42/43/44
+(`eval.temporal.run_bench`). The corrected ruler changes the question set, so
+these are **not** directly comparable to the old 0.6616; both arms are reported:
+
+| arm | seed 42 | seed 43 | seed 44 | mean |
+|---|---|---|---|---|
+| corrected ruler, no owner prior | 0.6786 | 0.8148 | 0.8462 | **0.7799** |
+| corrected ruler + owner prior | **0.7500** | **0.8889** | 0.8462 | **0.8284** |
+| old ruler (historical, different questions) | 0.6286 | 0.6061 | 0.7500 | 0.6616 |
+
+The prior adds **+4.85 points** on the corrected test mean and costs no
+recall: `gold_in_pool` stays 1.0, `recall@5` 0.8847. Dev (20 projects) with the
+prior: 0.7407 / 0.7407 / 0.8214 across seeds 42/43/44.
+
+Fast gate after the config change: temporal@1 A=0.6429 / B=0.7143, recall@5
+0.8582, gold_in_pool 1.0, **PASS**; `baselines/fast_gate.json` re-recorded. This
+is a retrieval change, not a v3 node-view change: `Engine.retrieve` is the path
+the metric uses.
+
+Caveats: the 0.8284 is still the synthetic ledger, not real meetings. The
+ruler fix is a benchmark correction; the old 0.6616 should not be quoted as a
+like-for-like baseline. Full suite green.
+
+### D-064 addendum — real SUMM-RE read (train+sel, 40 pairs)
+
+Same shipped e5 + cross-encoder, not the hash/overlap stand-in; the sealed test
+split is untouched. Two realistic query shapes:
+
+| query | new@1 | old@1 | new above old | both in pool | MRR new |
+|---|---|---|---|---|---|
+| old sentence asked as current | **0/40** | 39/40 | 0.000 | 24/40 | 0.107 |
+| hand thread topic ("Où en est … ?") | **0/40** | 3/40 | 0.075 | 6/40 | 0.038 |
+
+The old-sentence query is the stress case the relation layer is supposed to fix:
+the old unit is literally the query, so 39/40 rank it first. The topic query is
+too broad: both gold units are in the top 30 for only 6/40 pairs. On real ASR,
+the current unit is not retrieved at rank 1 in either shape. This is the same
+detector/reach wall, not the owner prior.
+
+The v3 node view is better than raw retrieval but still not a current detector:
+pair reach **33/40 = 0.825**, current is gold new **6/40 = 0.150**, `at_turn`
+**40/40**, mutations 0. So the node view often *contains* both versions and can
+retrace history; it usually does not know which one is current.
+
+Conclusion: synthetic temporal@1 0.828 is internal-validity only. Real
+meeting Q&A should use the node view for **history/at_turn** and the review
+queue for current, not raw top-1. Artefacts:
+`runs/summre_real_temporal/result_old.json`,
+`result_topic.json`.
+
+## D-065 — mention/event JSON store: real result (2026-10-27)
+
+Implemented the event-sourced form of N3/N4:
+
+- `engine/memory/event_store.py`: mention JSON (timestamp, text, tags, value,
+  status, evidence, embedding) + event JSON (key, mentions, current, open,
+  history). N3 is the event key; N4 is `current()`.
+- `engine/memory/event_builder.py`: state reader -> mentions -> events.
+- `engine/eval/event_store_real.py`: the same 40 SUMM-RE train+sel pairs, e5,
+  old-sentence and topic queries, `latest` and `latest_confirmed`.
+
+Real result:
+
+| query | mode | new@1 | old@1 |
+|---|---|---|---|
+| old sentence | latest | **0/40** | 2/40 |
+| old sentence | latest_confirmed | **2/40** | 4/40 |
+| thread topic | latest | **0/40** | 1/40 |
+| thread topic | latest_confirmed | **1/40** | 0/40 |
+
+The storage rule works when the event is right; the event key is wrong. The
+current state for a “date” pair is often **another date event** (e.g. 32→36
+returns turn 199), because `project + point` merges every date in the meeting.
+`latest` also promotes later proposals/questions. This is N3's missing event
+identity, not N4's timestamp rule: the JSON needs a discriminator such as
+`point + entity/attribute` (`date.festival`, `date.publicity`, `mode.billetterie`,
+`mode.payment`). The N2 tagger cannot currently produce it.
+
+No shipped default changed. Tests: `tests/unit/test_event_store.py` (5 green).
+The next gate is 30 hand-checked real turns with explicit event keys; without
+that key, the event store is correct plumbing around the wrong bucket.
+
+## D-066 — dynamic event writer: real LOMO result (2026-10-27)
+
+Implemented the dynamic version of N2/N3:
+
+- `engine/memory/dynamic.py`: frozen turn embeddings -> trained projection ->
+  learned event clusters; status from a learned text classifier. No hand point
+  lexicon.
+- `engine/eval/event_dynamic_real.py`: leave-one-meeting-out over the six
+  SUMM-RE meetings, 40 gold pairs, old-sentence query, event store current.
+
+Real LOMO result:
+
+| mode | new@1 | old@1 |
+|---|---|---|
+| latest | **0/40** | 39/40 |
+| latest_confirmed | **1/40** | 8/40 |
+
+Diagnostic (the important part):
+
+- Base embeddings, per-meeting agglomerative clustering: old/new share a
+  cluster on only **17/40** at the best threshold; the event code is not there.
+- Projection trained on **all** pairs (transductive, leak): old/new share a
+  cluster **40/40**, and `latest` returns the new turn **34/40**. The storage
+  and latest rule work when the event code is right.
+- The same projection under LOMO puts old/new in the same cluster far less
+  often; held-out meetings get 0/40. The learned event code does not generalize
+  from 40 pairs across six meetings.
+
+So the dynamic architecture is not disproven; the supervision is insufficient.
+The event store/latest rule is correct plumbing. The missing object is a
+**generalizing event identity**, which 40 pair labels cannot train on real ASR.
+This is the same wall as D-062/D-064, now measured on the event store rather
+than the pair judge.
+
+No shipped default changed. Artefacts: `runs/event_dynamic/result.json`.
+
+## D-067 — N2 bundle checked on real SUMM-RE (2026-10-27)
+
+`N2-model/piscine_summre_model_v2_bundle/contextual_model_piscine.pt` is a
+history-conditioned **retrieval encoder**: query + chronological history ->
+contextual vector + ranked historical turns/units. It does not emit event
+identity, value, status, polarity or evidence; its unit schema is pre-extracted
+(`field`, `status`, `value`, `source_id`, `source_date`, `entities`,
+`replaces_value`).
+
+Real check (`engine/eval/n2_model_real.py`, 40 train+sel pairs, topic query,
+history through the gold new turn, alpha=2.0):
+
+| metric | result |
+|---|---:|
+| new@1 | 0/40 |
+| old@1 | 0/40 |
+| new@5 | 1/40 |
+| old@5 | 2/40 |
+
+It does not transfer to real ASR. The bundle's own report says the encoder starts
+from random token embeddings, has no pretrained French knowledge, and is trained
+on template-generated conversations; its synthetic 0.422 global R@1 is not real
+conversation evidence.
+
+Useful contribution: the bundle's unit/relation schema is the right contract for
+the event JSON. The missing piece is extraction of those fields from real turns,
+not another ranking encoder. Not wired into v3 defaults.
+
+## D-068 — reader vs writer, and pretrained/fine-tune check (2026-10-27)
+
+Terminology correction: v3's **reader** is the read stage in `engine/read/`
+(kind/type/status/intent); N3 in the node-contract plan is ATTACH/COMMIT, which
+appends a derived mention/event index. It is not a content writer and it never
+mutates the meeting. The earlier "writer" wording was wrong.
+
+Pretrained check (`engine/eval/pretrained_event_real.py`), Qwen3-Embedding-0.6B,
+real 40 pairs:
+
+| model | new@1 | old@1 | new@5 | cos(old,new) | cos(old,neg) |
+|---|---:|---:|---:|---:|---:|
+| Qwen3 zero-shot | 0/40 | 39/40 | 14/40 | 0.526 | 0.404 |
+| Qwen3 + LoRA on 480 synthetic `supersedes` pairs | 0/40 | 40/40 | 15/40 | 0.496 | 0.337 |
+
+Synthetic fine-tuning does not transfer to real ASR; it slightly reduces
+old/new separation. A bigger pretrained encoder improves new@5 over e5 but
+cannot make the new turn rank first when the query is the old sentence, because
+the old sentence is its own nearest neighbour and "this replaces that" is a
+relation, not a similarity. The missing supervision is real event/relation
+labels, not encoder capacity.
+
+`@N2-model` bundle checkpoint on the same real pairs: new@1 0/40, new@5 1/40;
+it is a synthetic history-conditioned retrieval encoder, not an event writer.
+The bundle's unit schema (`field`, `status`, `value`, `source_id`,
+`source_date`, `replaces_value`) remains the right contract.
+
+No experimental path is wired into v3 defaults.
+
+## D-069 — learned continuity scorer + typed graph: first real read (2026-10-27)
+
+Implemented the two-stage mechanism instead of asking one vector to carry both
+similarity and continuity:
+
+- `engine/link/relation_scorer.py`: pair features (cosine, lexical overlap,
+  shared numbers, speaker, project, turn gap, length) -> same-thread probability
+  and a typed relation (`answers`, `supports`, `supersedes`, `creates_action`,
+  `contradicts`, `unrelated`).
+- `engine/memory/thread_graph.py`: nodes are turns; edges are typed, weighted,
+  evidence-bearing links. A node can have several edges; no one-cluster
+  assignment. Component current is a convenience view only.
+- `engine/eval/relation_graph_real.py`: train on the N2 synthetic relation graph
+  (480 supersedes + other typed relations + 500 same/cross-project hard
+  negatives); test on the real 40 pairs. Real labels are never in training.
+
+Results:
+
+| split | metric | value |
+|---|---|---:|
+| synthetic validation (400) | relation macro-F1 | **0.9438** |
+| synthetic validation (400) | relation accuracy | **0.9450** |
+| real (40) | old+new in one graph component | **12/40** |
+| real (40) | graph current is gold new | **2/40** |
+| real (40) | new ranked first after old (old excluded) | **4/40** |
+| real (40) | new in top 5 | **12/40** |
+
+The scorer learns the synthetic typed graph, but real transfer is weak: the
+same pattern as D-066/D-068. The real graph is built with Qwen3 candidates and
+the learned scorer, not one embedding. It is not wired into v3 defaults.
+
+This is the first slice of the four-objective program: retrieval + link/relation.
+State tracking and B-cubed/pairwise graph metrics are not trained yet. The
+synthetic generator still supplies the latent graph; a real latent-event
+generator (graph first, dialogue second) is required before this number can be
+read as conversational continuity.
+
+## D-070 — 40-pair stage error analysis (2026-10-27)
+
+Artefacts: `runs/continuity_stages/result.json`,
+`data/gold/summre_pair_stage_labels.json` (40/40 manually reviewed).
+
+| stage | count |
+|---|---:|
+| candidate missing (not in dense@20 ∪ BM25@20) | **16/40** |
+| candidate found, reranker low (>5) | **13/40** |
+| linked but wrong relation | **1/40** |
+| link wrong | **6/40** |
+| state wrong after link | **3/40** |
+| correct | **1/40** |
+
+Candidate recall@20: dense 23/40, BM25 14/40, union **24/40**. Reranker@1
+4/40, @5 11/40. Graph pair-connected 12/40; graph current is new 2/40;
+relation `supersedes` predicted 9/40.
+
+The dominant miss is **candidate generation**, not the relation scorer: 16/40
+gold new turns never enter the candidate pool. The second is **reranking after
+the candidate was found** (13/40). Link/state are smaller but real. This is why
+changing the encoder alone cannot move the headline.
+
+## D-071 — cross-encoder baseline on the same candidate pool (2026-10-27)
+
+`engine/eval/cross_encoder_linking.py`, `BAAI/bge-reranker-v2-m3`, same
+dense@20 ∪ BM25@20 pool, 24/40 pairs covered:
+
+| method | @1 | @5 | MRR all | MRR covered |
+|---|---:|---:|---:|---:|
+| current learned scorer | **4** | 11 | 0.1822 | 0.3037 |
+| CE plain | 3 | 6 | 0.1394 | 0.2323 |
+| CE metadata | 3 | 11 | 0.1688 | 0.2814 |
+| CE context | **4** | 11 | 0.1874 | 0.3124 |
+| CE metadata+context | **4** | **12** | **0.1920** | **0.3200** |
+
+The contextual CE is a small improvement over the current scorer in MRR and
+@5, not a step change, and candidate coverage still caps it at 24/40. It stays
+an ablation; no default promotion.
+
+## D-072 — graph-first corpus and explicit state (2026-10-27)
+
+`gen/latent_event_graph.py` generates hidden events/slots/history first, then
+renders noisy dialogue. Splits use template variants A/B/C; project ids are
+unique; every mention points to a turn and every query points to an event and
+evidence turns. Outputs: `data/latent_v1/{train,validation,test}`.
+
+`engine/memory/event_state.py` uses explicit state: a late proposal does not
+displace a confirmed value; open payment stays open; cancelled/completed update
+current. `engine/eval/event_state_synthetic.py`:
+
+| measure | result |
+|---|---:|
+| state correct | **144/144** |
+| latest-sentence correct | **134/144** |
+| unresolved correct | **144/144** |
+
+This is a mechanism check on graph-first data, not a real-corpus claim. The
+generator currently produces 144 events across 24 projects; test uses unseen
+template C.
+
+## D-073 — corrected direction and candidate fix (2026-10-27)
+
+D-070/D-071 evaluated old sentence -> new turn. The deployed query is the
+incoming **new** message looking back for the antecedent, so those numbers are a
+stress read, not the stage read.
+
+Corrected stage (`engine/eval/continuity_stages_v2.py`), query = gold new,
+target = gold old:
+
+- candidate recall@20: **32/40** (up from 24/40 in the old direction).
+- candidate recall@50: **34/40**.
+- candidate missing: **8/40**.
+- reranker low: **21/40**.
+- link wrong: **7/40**; state wrong: **4/40**.
+
+Candidate sources now: dense query, BM25 query, dense/BM25 context, active-topic
+index, rare-token/entity index, and a ±5 query-neighbour source; union top20 by
+best rank. The ±5 source is what closes the close-distance cases.
+
+Reranker on that exact pool (`engine/eval/cross_encoder_reverse.py`):
+
+| method | @1 | @5 | MRR |
+|---|---:|---:|---:|
+| current relation scorer | 1 | 11 | 0.156 |
+| CE plain | 3 | 12 | 0.190 |
+| CE context | 3 | 15 | 0.227 |
+| CE metadata+context | **4** | **16** | **0.229** |
+
+The candidate stage is no longer the dominant miss. The remaining dominant miss
+is reranking: 21/40 candidates need to be selected from a pool that already
+contains the antecedent. The contextual CE is the best current reranker, but 4/40
+@1 is still not shippable; no default promotion.
+
+Candidate fix is in `engine/eval/candidate_generation_reverse.py`; corrected
+stage in `engine/eval/continuity_stages_v2.py`; CE comparison in
+`engine/eval/cross_encoder_reverse.py`.
+
+## D-074 — candidate fixed, reranker still open (2026-10-27)
+
+Corrected direction (new query -> old antecedent):
+
+- candidate recall@20: **32/40**; candidate missing **8/40**.
+- candidate rank itself is a strong signal: old is rank 1 in **9/32** covered,
+  rank ≤5 in **19/32**.
+- After candidate pool, the current learned reranker is poor: **1/32 @1**,
+  **11/32 @5**.
+- Query-context cross-encoder (`new` plus previous 2 turns) is better:
+  - plain: **6/32 @1**, **16/32 @5**, MRR **0.28**
+  - metadata: 6/32 @1, 16/32 @5, MRR 0.28
+  - candidate context: 4/32 @1, 18/32 @5, MRR 0.24
+- A 16-feature LOMO reranker overfits: 2/32 @1, 20/32 @5, MRR 0.30.
+- One-weight rank fusion of candidate rank + query-context CE: 6/32 @1,
+  19/32 @5, not better than CE alone.
+- Full fine-tune of `bge-reranker-v2-m3` on 2,641 synthetic relation examples
+  hit CUDA OOM on the 8 GB card at optimizer start; no result to report.
+
+So candidate generation is no longer the dominant miss. The remaining gap is
+**reranker supervision / target definition**: 8 pairs have no candidate at all,
+and 21 covered pairs are rerank-low. The 40-pair labels cannot make the old@1
+target full; a larger human-labelled or event-level set is required.
+
+No v3 default change. Candidate direction and reranker artefacts:
+`runs/continuity_stages_v2/result.json`,
+`runs/cross_encoder/reverse.json`,
+`runs/reranker_features/result.json`,
+`runs/reranker_fusion/result.json`.
+
+## D-075 — v4 real-data path and v4 PDF (2026-10-27)
+
+Implemented the v4 path alongside v3:
+
+- immutable `MessageRecord` / `ChunkRecord` contracts (`schemas_v4.py`);
+- append-only SQLite store (`store/v4.py`) with messages, chunks, units, links,
+  state_events and FTS5;
+- sentence-span + semantic-unit chunker (`segment/sentences_v4.py`);
+- ingest path (`ingest_v4.py`);
+- separate entity/event indexes (`retrieve/entity_index.py`,
+  `retrieve/event_index.py`);
+- query interpreter and reference detection (`query/interpret.py`);
+- FlauBERT XNLI/STS linker (`link/flaubert_linker.py`);
+- real v4 eval (`eval/v4_real.py`).
+
+Real v4 result on six SUMM-RE meetings, 40 pairs, new query -> old antecedent:
+
+| measure | result |
+|---|---:|
+| candidate recall@20 | **32/40** |
+| candidate rank 1 | 3/40 |
+| FlauBERT XNLI/STS zero-shot @1 | **1/40** |
+| FlauBERT XNLI/STS zero-shot @5 | **9/40** |
+| FlauBERT structural fine-tune @1 | **2/40** |
+| FlauBERT structural fine-tune @5 | **13/40** |
+| FlauBERT MRR | 0.1311 |
+
+The candidate stage is usable; the zero-shot FlauBERT relation reranker is not.
+v4 is not the default; v3 remains rollback.
+
+`build_both.py --variant v4` now writes
+`out/semantic_agent_engine_architecture_v4_{FR,EN}.pdf` and copies them to the
+repo root. The v4 diagram is v2-style (message -> split -> read -> store/link ->
+search -> answer), not the v3 detector/node diagram.
+
+Docs: `docs/ARCH_V4.md`, `docs/REPORT_V4.md`; `README.md` updated.

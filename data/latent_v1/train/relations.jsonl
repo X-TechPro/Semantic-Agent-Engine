@@ -1,0 +1,60 @@
+{"from_mention_id": "Atlas-t0:budget:m000", "to_mention_id": "Atlas-t0:budget:m001", "relation": "supersedes", "event_id": "Atlas-t0:budget", "evidence": "On valide le budget a 2400 euros."}
+{"from_mention_id": "Atlas-t0:date:m002", "to_mention_id": "Atlas-t0:date:m003", "relation": "supersedes", "event_id": "Atlas-t0:date", "evidence": "Je bloque le 1 janvier au final."}
+{"from_mention_id": "Atlas-t0:venue:m004", "to_mention_id": "Atlas-t0:venue:m005", "relation": "supersedes", "event_id": "Atlas-t0:venue", "evidence": "Le lieu retenu est la salle Atlas."}
+{"from_mention_id": "Atlas-t0:payment:m007", "to_mention_id": "Atlas-t0:payment:m008", "relation": "answers", "event_id": "Atlas-t0:payment", "evidence": "On valide le paiement de 500 euros a Traiteur du Parc."}
+{"from_mention_id": "Atlas-t0:action:m009", "to_mention_id": "Atlas-t0:action:m010", "relation": "answers", "event_id": "Atlas-t0:action", "evidence": "Camille a termine la billetterie en ligne."}
+{"from_mention_id": "Orion-t1:budget:m000", "to_mention_id": "Orion-t1:budget:m001", "relation": "supersedes", "event_id": "Orion-t1:budget", "evidence": "On valide le budget a 2200 euros."}
+{"from_mention_id": "Orion-t1:date:m003", "to_mention_id": "Orion-t1:date:m004", "relation": "supersedes", "event_id": "Orion-t1:date", "evidence": "attends Je bloque le 19 mars au final."}
+{"from_mention_id": "Orion-t1:date:m004", "to_mention_id": "Orion-t1:date:m005", "relation": "supersedes", "event_id": "Orion-t1:date", "evidence": "en fait Finalement on decale au 10 janvier."}
+{"from_mention_id": "Orion-t1:venue:m006", "to_mention_id": "Orion-t1:venue:m007", "relation": "supersedes", "event_id": "Orion-t1:venue", "evidence": "en fait Le lieu retenu est la amphi B."}
+{"from_mention_id": "Orion-t1:payment:m009", "to_mention_id": "Orion-t1:payment:m010", "relation": "answers", "event_id": "Orion-t1:payment", "evidence": "On valide le paiement de 300 euros a Table Mobile."}
+{"from_mention_id": "Mosaique-t2:budget:m000", "to_mention_id": "Mosaique-t2:budget:m001", "relation": "supersedes", "event_id": "Mosaique-t2:budget", "evidence": "On valide le budget a 300 euros."}
+{"from_mention_id": "Mosaique-t2:date:m002", "to_mention_id": "Mosaique-t2:date:m003", "relation": "supersedes", "event_id": "Mosaique-t2:date", "evidence": "Je bloque le 10 janvier au final."}
+{"from_mention_id": "Mosaique-t2:date:m003", "to_mention_id": "Mosaique-t2:date:m004", "relation": "supersedes", "event_id": "Mosaique-t2:date", "evidence": "Finalement on decale au 23 fevrier."}
+{"from_mention_id": "Mosaique-t2:venue:m005", "to_mention_id": "Mosaique-t2:venue:m006", "relation": "supersedes", "event_id": "Mosaique-t2:venue", "evidence": "Le lieu retenu est la rotonde."}
+{"from_mention_id": "Mosaique-t2:payment:m008", "to_mention_id": "Mosaique-t2:payment:m009", "relation": "answers", "event_id": "Mosaique-t2:payment", "evidence": "On valide le paiement de 800 euros a Comptoir Mistral."}
+{"from_mention_id": "Mosaique-t2:action:m010", "to_mention_id": "Mosaique-t2:action:m011", "relation": "answers", "event_id": "Mosaique-t2:action", "evidence": "Malik a termine le dossier technique."}
+{"from_mention_id": "Canopee-t3:budget:m000", "to_mention_id": "Canopee-t3:budget:m001", "relation": "supersedes", "event_id": "Canopee-t3:budget", "evidence": "On valide le budget a 800 euros."}
+{"from_mention_id": "Canopee-t3:date:m002", "to_mention_id": "Canopee-t3:date:m003", "relation": "supersedes", "event_id": "Canopee-t3:date", "evidence": "en fait Je bloque le 11 janvier au final."}
+{"from_mention_id": "Canopee-t3:date:m003", "to_mention_id": "Canopee-t3:date:m004", "relation": "supersedes", "event_id": "Canopee-t3:date", "evidence": "Finalement on decale au 28 octobre."}
+{"from_mention_id": "Canopee-t3:venue:m005", "to_mention_id": "Canopee-t3:venue:m006", "relation": "supersedes", "event_id": "Canopee-t3:venue", "evidence": "euh Le lieu retenu est la rotonde."}
+{"from_mention_id": "Canopee-t3:payment:m008", "to_mention_id": "Canopee-t3:payment:m009", "relation": "answers", "event_id": "Canopee-t3:payment", "evidence": "en fait On valide le paiement de 800 euros a Maison Pollen."}
+{"from_mention_id": "Horizon-t4:budget:m000", "to_mention_id": "Horizon-t4:budget:m001", "relation": "supersedes", "event_id": "Horizon-t4:budget", "evidence": "On valide le budget a 2100 euros."}
+{"from_mention_id": "Horizon-t4:budget:m001", "to_mention_id": "Horizon-t4:budget:m002", "relation": "supersedes", "event_id": "Horizon-t4:budget", "evidence": "en fait Finalement le budget passe a 2300 euros."}
+{"from_mention_id": "Horizon-t4:date:m003", "to_mention_id": "Horizon-t4:date:m004", "relation": "supersedes", "event_id": "Horizon-t4:date", "evidence": "Je bloque le 18 octobre au final."}
+{"from_mention_id": "Horizon-t4:venue:m005", "to_mention_id": "Horizon-t4:venue:m006", "relation": "supersedes", "event_id": "Horizon-t4:venue", "evidence": "Le lieu retenu est la rotonde."}
+{"from_mention_id": "Horizon-t4:payment:m008", "to_mention_id": "Horizon-t4:payment:m009", "relation": "answers", "event_id": "Horizon-t4:payment", "evidence": "On valide le paiement de 500 euros a Maison Pollen."}
+{"from_mention_id": "Horizon-t4:action:m010", "to_mention_id": "Horizon-t4:action:m011", "relation": "answers", "event_id": "Horizon-t4:action", "evidence": "attends Mina a termine la billetterie en ligne."}
+{"from_mention_id": "Etincelle-t5:budget:m000", "to_mention_id": "Etincelle-t5:budget:m001", "relation": "supersedes", "event_id": "Etincelle-t5:budget", "evidence": "On valide le budget a 2400 euros."}
+{"from_mention_id": "Etincelle-t5:budget:m001", "to_mention_id": "Etincelle-t5:budget:m002", "relation": "supersedes", "event_id": "Etincelle-t5:budget", "evidence": "Finalement le budget passe a 2600 euros."}
+{"from_mention_id": "Etincelle-t5:date:m003", "to_mention_id": "Etincelle-t5:date:m004", "relation": "supersedes", "event_id": "Etincelle-t5:date", "evidence": "Je bloque le 21 fevrier au final."}
+{"from_mention_id": "Etincelle-t5:venue:m005", "to_mention_id": "Etincelle-t5:venue:m006", "relation": "supersedes", "event_id": "Etincelle-t5:venue", "evidence": "Le lieu retenu est la arena du pays d'Aix."}
+{"from_mention_id": "Etincelle-t5:action:m009", "to_mention_id": "Etincelle-t5:action:m010", "relation": "answers", "event_id": "Etincelle-t5:action", "evidence": "Malik a termine le dossier technique."}
+{"from_mention_id": "Traverse-t6:budget:m000", "to_mention_id": "Traverse-t6:budget:m001", "relation": "supersedes", "event_id": "Traverse-t6:budget", "evidence": "euh On valide le budget a 1450 euros."}
+{"from_mention_id": "Traverse-t6:budget:m001", "to_mention_id": "Traverse-t6:budget:m002", "relation": "supersedes", "event_id": "Traverse-t6:budget", "evidence": "Finalement le budget passe a 1650 euros."}
+{"from_mention_id": "Traverse-t6:date:m003", "to_mention_id": "Traverse-t6:date:m004", "relation": "supersedes", "event_id": "Traverse-t6:date", "evidence": "Je bloque le 1 fevrier au final."}
+{"from_mention_id": "Traverse-t6:venue:m005", "to_mention_id": "Traverse-t6:venue:m006", "relation": "supersedes", "event_id": "Traverse-t6:venue", "evidence": "Le lieu retenu est la salle Atlas."}
+{"from_mention_id": "Latitude-t7:budget:m000", "to_mention_id": "Latitude-t7:budget:m001", "relation": "supersedes", "event_id": "Latitude-t7:budget", "evidence": "On valide le budget a 1800 euros."}
+{"from_mention_id": "Latitude-t7:date:m002", "to_mention_id": "Latitude-t7:date:m003", "relation": "supersedes", "event_id": "Latitude-t7:date", "evidence": "Je bloque le 15 janvier au final."}
+{"from_mention_id": "Latitude-t7:venue:m004", "to_mention_id": "Latitude-t7:venue:m005", "relation": "supersedes", "event_id": "Latitude-t7:venue", "evidence": "Le lieu retenu est la rotonde."}
+{"from_mention_id": "Latitude-t7:action:m008", "to_mention_id": "Latitude-t7:action:m009", "relation": "answers", "event_id": "Latitude-t7:action", "evidence": "Mina a termine les badges."}
+{"from_mention_id": "Pollen-t8:budget:m000", "to_mention_id": "Pollen-t8:budget:m001", "relation": "supersedes", "event_id": "Pollen-t8:budget", "evidence": "On valide le budget a 2200 euros."}
+{"from_mention_id": "Pollen-t8:date:m003", "to_mention_id": "Pollen-t8:date:m004", "relation": "supersedes", "event_id": "Pollen-t8:date", "evidence": "Je bloque le 11 mai au final."}
+{"from_mention_id": "Pollen-t8:venue:m005", "to_mention_id": "Pollen-t8:venue:m006", "relation": "supersedes", "event_id": "Pollen-t8:venue", "evidence": "Le lieu retenu est la rotonde."}
+{"from_mention_id": "Pollen-t8:payment:m008", "to_mention_id": "Pollen-t8:payment:m009", "relation": "answers", "event_id": "Pollen-t8:payment", "evidence": "On valide le paiement de 500 euros a Traiteur du Parc."}
+{"from_mention_id": "Osmose-t9:budget:m000", "to_mention_id": "Osmose-t9:budget:m001", "relation": "supersedes", "event_id": "Osmose-t9:budget", "evidence": "On valide le budget a 3000 euros."}
+{"from_mention_id": "Osmose-t9:date:m003", "to_mention_id": "Osmose-t9:date:m004", "relation": "supersedes", "event_id": "Osmose-t9:date", "evidence": "Je bloque le 24 juillet au final."}
+{"from_mention_id": "Osmose-t9:date:m004", "to_mention_id": "Osmose-t9:date:m005", "relation": "supersedes", "event_id": "Osmose-t9:date", "evidence": "Finalement on decale au 13 fevrier."}
+{"from_mention_id": "Osmose-t9:venue:m006", "to_mention_id": "Osmose-t9:venue:m007", "relation": "supersedes", "event_id": "Osmose-t9:venue", "evidence": "Le lieu retenu est la foyer etudiant."}
+{"from_mention_id": "Atlas-t10:budget:m000", "to_mention_id": "Atlas-t10:budget:m001", "relation": "supersedes", "event_id": "Atlas-t10:budget", "evidence": "On valide le budget a 300 euros."}
+{"from_mention_id": "Atlas-t10:date:m003", "to_mention_id": "Atlas-t10:date:m004", "relation": "supersedes", "event_id": "Atlas-t10:date", "evidence": "Je bloque le 7 mai au final."}
+{"from_mention_id": "Atlas-t10:date:m004", "to_mention_id": "Atlas-t10:date:m005", "relation": "supersedes", "event_id": "Atlas-t10:date", "evidence": "Finalement on decale au 5 fevrier."}
+{"from_mention_id": "Atlas-t10:venue:m006", "to_mention_id": "Atlas-t10:venue:m007", "relation": "supersedes", "event_id": "Atlas-t10:venue", "evidence": "Le lieu retenu est la foyer etudiant."}
+{"from_mention_id": "Atlas-t10:payment:m009", "to_mention_id": "Atlas-t10:payment:m010", "relation": "answers", "event_id": "Atlas-t10:payment", "evidence": "On valide le paiement de 300 euros a Table Mobile."}
+{"from_mention_id": "Atlas-t10:action:m011", "to_mention_id": "Atlas-t10:action:m012", "relation": "answers", "event_id": "Atlas-t10:action", "evidence": "Ines a termine la billetterie en ligne."}
+{"from_mention_id": "Orion-t11:budget:m000", "to_mention_id": "Orion-t11:budget:m001", "relation": "supersedes", "event_id": "Orion-t11:budget", "evidence": "attends On valide le budget a 1450 euros."}
+{"from_mention_id": "Orion-t11:date:m003", "to_mention_id": "Orion-t11:date:m004", "relation": "supersedes", "event_id": "Orion-t11:date", "evidence": "Je bloque le 27 janvier au final."}
+{"from_mention_id": "Orion-t11:date:m004", "to_mention_id": "Orion-t11:date:m005", "relation": "supersedes", "event_id": "Orion-t11:date", "evidence": "Finalement on decale au 1 juillet."}
+{"from_mention_id": "Orion-t11:venue:m006", "to_mention_id": "Orion-t11:venue:m007", "relation": "supersedes", "event_id": "Orion-t11:venue", "evidence": "Le lieu retenu est la amphi B."}
+{"from_mention_id": "Orion-t11:payment:m009", "to_mention_id": "Orion-t11:payment:m010", "relation": "answers", "event_id": "Orion-t11:payment", "evidence": "On valide le paiement de 800 euros a Maison Pollen."}
+{"from_mention_id": "Orion-t11:action:m011", "to_mention_id": "Orion-t11:action:m012", "relation": "answers", "event_id": "Orion-t11:action", "evidence": "Yanis a termine la billetterie en ligne."}

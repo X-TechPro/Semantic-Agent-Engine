@@ -48,3 +48,7 @@ out/
 # SQLite sidecars are runtime state, never source
 data/engine.db-shm
 data/engine.db-wal
+
+# keep the small measured artefacts the docs cite
+!runs/meetings/*.json
+!runs/v4/*.json

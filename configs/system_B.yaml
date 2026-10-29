@@ -25,7 +25,9 @@ retrieve:
   weights: {dense: 1.0, bm25: 1.0}
   final_k: 30
   slot_boost: 1.25
-  node_view: true             # v3: decision nodes beside retrieval         # explicit subject is a soft boost, never a filter
+  owner_boost: 0.5            # owner questions prefer rows carrying a person
+  node_view: true             # v3: decision nodes beside retrieval
+  node_state: true            # v3.1: additive explicit state-point nodes
   rerank: {backend: cross_encoder}   # D-041: promoted to the shipped default
   validity:
     alpha_superseded: 0.0  # 6.10: "current" queries drop stale evidence

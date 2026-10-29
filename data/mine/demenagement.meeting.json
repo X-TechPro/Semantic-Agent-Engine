@@ -1,0 +1,25 @@
+{
+  "meeting_id": "demenagement",
+  "messages": [
+    {"message_id": "demenagement:0", "speaker": "Sam", "timestamp": "2026-11-09T09:30:00+01:00", "text": "le déménagement on vise le 1er septembre"},
+    {"message_id": "demenagement:1", "speaker": "Claire", "timestamp": "2026-11-09T09:31:00+01:00", "text": "et le bail actuel il finit quand"},
+    {"message_id": "demenagement:2", "speaker": "Sam", "timestamp": "2026-11-09T09:32:00+01:00", "text": "le 30 septembre donc on a un mois de marge"},
+    {"message_id": "demenagement:3", "speaker": "Rémi", "timestamp": "2026-11-09T09:33:00+01:00", "text": "côté it il faut la fibre dans le nouveau local"},
+    {"message_id": "demenagement:4", "speaker": "Sam", "timestamp": "2026-11-09T09:34:00+01:00", "text": "le nouveau bureau fait 450 mètres carrés"},
+    {"message_id": "demenagement:5", "speaker": "Claire", "timestamp": "2026-11-09T09:35:00+01:00", "text": "et le loyer"},
+    {"message_id": "demenagement:6", "speaker": "Sam", "timestamp": "2026-11-09T09:36:00+01:00", "text": "18 000 par mois"},
+    {"message_id": "demenagement:7", "speaker": "Claire", "timestamp": "2026-11-09T09:37:00+01:00", "text": "c est cher on peut négocier"},
+    {"message_id": "demenagement:8", "speaker": "Sam", "timestamp": "2026-11-09T09:38:00+01:00", "text": "j ai négocié à 16 500"},
+    {"message_id": "demenagement:9", "speaker": "Claire", "timestamp": "2026-11-09T09:39:00+01:00", "text": "16 500 c est mieux on prend"},
+    {"message_id": "demenagement:10", "speaker": "Rémi", "timestamp": "2026-11-09T09:40:00+01:00", "text": "la fibre elle sera prête le 20 août"},
+    {"message_id": "demenagement:11", "speaker": "Claire", "timestamp": "2026-11-09T09:41:00+01:00", "text": "donc le 1er septembre c est tenable"},
+    {"message_id": "demenagement:12", "speaker": "Sam", "timestamp": "2026-11-09T09:42:00+01:00", "text": "oui si la fibre est là le 20"},
+    {"message_id": "demenagement:13", "speaker": "Rémi", "timestamp": "2026-11-09T09:43:00+01:00", "text": "je prévois le déménagement du réseau le 25 août"},
+    {"message_id": "demenagement:14", "speaker": "Claire", "timestamp": "2026-11-09T09:44:00+01:00", "text": "et les clés on les récupère quand"},
+    {"message_id": "demenagement:15", "speaker": "Sam", "timestamp": "2026-11-09T09:45:00+01:00", "text": "le 15 août normalement"},
+    {"message_id": "demenagement:16", "speaker": "Claire", "timestamp": "2026-11-09T09:46:00+01:00", "text": "on confirme le 1er septembre"},
+    {"message_id": "demenagement:17", "speaker": "Rémi", "timestamp": "2026-11-09T09:47:00+01:00", "text": "je bloque la prestation réseau"},
+    {"message_id": "demenagement:18", "speaker": "Sam", "timestamp": "2026-11-09T09:48:00+01:00", "text": "je préviens les équipes"},
+    {"message_id": "demenagement:19", "speaker": "Claire", "timestamp": "2026-11-09T09:49:00+01:00", "text": "bon on valide le 1er septembre et 16 500"}
+  ]
+}

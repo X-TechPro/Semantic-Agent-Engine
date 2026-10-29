@@ -1,0 +1,26 @@
+{
+  "corpus_id": "traiteur-eval",
+  "questions": [
+    {"query_id": "traiteur-q1", "style": "formal", "meeting_id": "traiteur",
+     "text": "Quel prix a finalement été retenu pour le traiteur ?",
+     "expected_message_ids": ["traiteur:4", "traiteur:5", "traiteur:17"], "expected_value": "4 500", "must_abstain": false},
+    {"query_id": "traiteur-q2", "style": "messy", "meeting_id": "traiteur",
+     "text": "et l acompte on doit verser combien ?",
+     "expected_message_ids": ["traiteur:10"], "expected_value": "1 350", "must_abstain": false},
+    {"query_id": "traiteur-q3", "style": "formal", "meeting_id": "traiteur",
+     "text": "Quelle est la date limite pour l'acompte ?",
+     "expected_message_ids": ["traiteur:10"], "expected_value": "15 mai", "must_abstain": false},
+    {"query_id": "traiteur-q4", "style": "formal", "meeting_id": "traiteur",
+     "text": "Quelle est la capacité de la salle ?",
+     "expected_message_ids": ["traiteur:12"], "expected_value": "100", "must_abstain": false},
+    {"query_id": "traiteur-q5", "style": "messy", "meeting_id": "traiteur",
+     "text": "l option végétarienne c est bon ou pas ?",
+     "expected_message_ids": ["traiteur:6", "traiteur:8"], "expected_value": "végétarienne", "must_abstain": false},
+    {"query_id": "traiteur-q6", "style": "tricky", "meeting_id": "traiteur",
+     "text": "Quel est le numéro de téléphone du traiteur ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true},
+    {"query_id": "traiteur-q7", "style": "tricky", "meeting_id": "traiteur",
+     "text": "L'acompte a-t-il été versé ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true}
+  ]
+}

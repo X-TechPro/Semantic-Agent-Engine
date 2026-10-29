@@ -508,3 +508,34 @@ conflict). On train+sel that took "stale version shown confidently" from 40/40
 to **0/40** while the synthetic demo corpus stays uncaveated (19/19). The cost is
 stated: 87.9% of control segments on raw speech are caveated, because that is how
 often the reader cannot ground currency. What B-13 still needs is unchanged.
+
+**D-061 (2026-10-26) fixed the negation leak, not reach.** Clause-scoped
+polarity plus `G13_polarity` stops a negated value from being read as a support
+or replacement, and `G2_turn_order` stops a later turn from being superseded by
+an earlier one. On the 40 train+sel gold, pair_local went 6 predictions / 1 TP
+to **5 / 1** (precision 0.167 → 0.200, recall unchanged 0.025): one false
+positive removed, no new true positive. Shipped reach stays 2/40; B-13's remaining demand is still labelled threads plus a judge trained
+on `(thread, new turn)`.
+
+**D-062 (2026-10-26) tested the change-first alternative and refused it.** The
+new-turn definition is now `docs/CHANGE_DEFINITION.md`, but the chain does not
+enforce it: cue coverage is 7/40 narrow and 22/40 broad with 6.7% precision; a
+turn-only TF-IDF classifier has top-5 1/40; the 5-candidate ceiling is 21/40;
+and the 7B accepts 35/40 gold new turns but also 25/40 sampled non-gold turns
+(exact-pair P 0.165 / R 0.525). The next step is exhaustive binary change
+labels, not another pair judge.
+
+## v4 (2026-10-27)
+
+- **v4 is not the default yet.** The append-only store, sentence spans, entity/
+  event indexes, query interpreter and FlauBERT XNLI/STS linker exist; v3 still
+  runs the shipped path until the real-data gates pass.
+- **FlauBERT XNLI/STS is zero-shot on relations.** On 40 real SUMM-RE pairs it
+  returns the old antecedent at rank 1 in **2/40**, rank ≤5 in **12/40**; it has
+  not been trained on `supersedes`/status labels.
+- **8/40 real pairs have no candidate.** These are long-range/weak-entity pairs;
+  adding another retrieval source has not moved them.
+- **The real labels are small.** 40 pairs, six meetings; the v4 reranker must
+  not be selected on the same pairs it reports.
+- **No LLM writes memory.** Answers are evidence-grounded; the verifier and
+  abstention path remain mandatory.

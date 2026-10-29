@@ -1,0 +1,25 @@
+{
+  "meeting_id": "incident",
+  "messages": [
+    {"message_id": "incident:0", "speaker": "Karim", "timestamp": "2026-11-05T15:10:00+01:00", "text": "bon incident prod on fait le point à froid"},
+    {"message_id": "incident:1", "speaker": "Hugo", "timestamp": "2026-11-05T15:11:00+01:00", "text": "la panne a commencé à 14 h 02 et s est terminée à 14 h 47"},
+    {"message_id": "incident:2", "speaker": "Inès", "timestamp": "2026-11-05T15:12:00+01:00", "text": "j étais d astreinte j ai vu les alertes à 14 h 05"},
+    {"message_id": "incident:3", "speaker": "Karim", "timestamp": "2026-11-05T15:13:00+01:00", "text": "et la cause c est quoi"},
+    {"message_id": "incident:4", "speaker": "Hugo", "timestamp": "2026-11-05T15:14:00+01:00", "text": "un certificat tls expiré sur le load balancer"},
+    {"message_id": "incident:5", "speaker": "Inès", "timestamp": "2026-11-05T15:15:00+01:00", "text": "le renouvellement était manuel et personne l a fait"},
+    {"message_id": "incident:6", "speaker": "Hugo", "timestamp": "2026-11-05T15:16:00+01:00", "text": "impact euh environ 12 000 utilisateurs"},
+    {"message_id": "incident:7", "speaker": "Karim", "timestamp": "2026-11-05T15:17:00+01:00", "text": "on a perdu des données"},
+    {"message_id": "incident:8", "speaker": "Inès", "timestamp": "2026-11-05T15:18:00+01:00", "text": "non rien perdu on a juste refusé les connexions"},
+    {"message_id": "incident:9", "speaker": "Hugo", "timestamp": "2026-11-05T15:19:00+01:00", "text": "le certificat est renouvelé depuis 14 h 47"},
+    {"message_id": "incident:10", "speaker": "Karim", "timestamp": "2026-11-05T15:20:00+01:00", "text": "il faut automatiser le renouvellement"},
+    {"message_id": "incident:11", "speaker": "Inès", "timestamp": "2026-11-05T15:21:00+01:00", "text": "je m en occupe avec hugo"},
+    {"message_id": "incident:12", "speaker": "Karim", "timestamp": "2026-11-05T15:22:00+01:00", "text": "et c est pour quand"},
+    {"message_id": "incident:13", "speaker": "Hugo", "timestamp": "2026-11-05T15:23:00+01:00", "text": "vendredi au plus tard"},
+    {"message_id": "incident:14", "speaker": "Karim", "timestamp": "2026-11-05T15:24:00+01:00", "text": "le post mortem qui le rédige"},
+    {"message_id": "incident:15", "speaker": "Inès", "timestamp": "2026-11-05T15:25:00+01:00", "text": "c est moi je le fais"},
+    {"message_id": "incident:16", "speaker": "Hugo", "timestamp": "2026-11-05T15:26:00+01:00", "text": "et on baisse le seuil d alerte à 5 minutes"},
+    {"message_id": "incident:17", "speaker": "Karim", "timestamp": "2026-11-05T15:27:00+01:00", "text": "oui 5 minutes c est validé"},
+    {"message_id": "incident:18", "speaker": "Inès", "timestamp": "2026-11-05T15:28:00+01:00", "text": "je le mets dans le runbook"},
+    {"message_id": "incident:19", "speaker": "Karim", "timestamp": "2026-11-05T15:29:00+01:00", "text": "bon on se reparle vendredi"}
+  ]
+}

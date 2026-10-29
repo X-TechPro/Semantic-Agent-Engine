@@ -1,0 +1,155 @@
+{
+  "definition": "Hand-written gold for the five meetings in data/mine. Changes are the turns that decide, close or change a value; non_changes are turns that look contentful but change nothing. This is the author's reading, not independent annotation.",
+  "meetings": {
+    "nova": {
+      "changes": [
+        {
+          "new": "nova:7",
+          "slot": "feature",
+          "value": "partage",
+          "olds": []
+        },
+        {
+          "new": "nova:9",
+          "slot": "date",
+          "value": "5 avril",
+          "olds": []
+        },
+        {
+          "new": "nova:11",
+          "slot": "amount",
+          "value": "150 000",
+          "olds": [
+            "nova:4"
+          ]
+        }
+      ],
+      "non_changes": [
+        "nova:2",
+        "nova:3",
+        "nova:5",
+        "nova:6",
+        "nova:13",
+        "nova:15"
+      ]
+    },
+    "hiring": {
+      "changes": [
+        {
+          "new": "hiring:3",
+          "slot": "amount",
+          "value": "52 000",
+          "olds": []
+        },
+        {
+          "new": "hiring:5",
+          "slot": "headcount",
+          "value": null,
+          "olds": []
+        },
+        {
+          "new": "hiring:12",
+          "slot": "amount",
+          "value": "52 000",
+          "olds": [
+            "hiring:2",
+            "hiring:3"
+          ]
+        }
+      ],
+      "non_changes": [
+        "hiring:1",
+        "hiring:2",
+        "hiring:7",
+        "hiring:11",
+        "hiring:14"
+      ]
+    },
+    "incident": {
+      "changes": [
+        {
+          "new": "incident:13",
+          "slot": "date",
+          "value": "vendredi",
+          "olds": []
+        },
+        {
+          "new": "incident:17",
+          "slot": "amount",
+          "value": "5 minutes",
+          "olds": []
+        }
+      ],
+      "non_changes": [
+        "incident:0",
+        "incident:3",
+        "incident:6",
+        "incident:7",
+        "incident:12"
+      ]
+    },
+    "traiteur": {
+      "changes": [
+        {
+          "new": "traiteur:4",
+          "slot": "amount",
+          "value": "4 500",
+          "olds": []
+        },
+        {
+          "new": "traiteur:5",
+          "slot": "amount",
+          "value": "4 500",
+          "olds": [
+            "traiteur:2",
+            "traiteur:3"
+          ]
+        },
+        {
+          "new": "traiteur:10",
+          "slot": "amount",
+          "value": "1 350",
+          "olds": []
+        }
+      ],
+      "non_changes": [
+        "traiteur:0",
+        "traiteur:3",
+        "traiteur:9",
+        "traiteur:13",
+        "traiteur:14"
+      ]
+    },
+    "demenagement": {
+      "changes": [
+        {
+          "new": "demenagement:8",
+          "slot": "amount",
+          "value": "16 500",
+          "olds": []
+        },
+        {
+          "new": "demenagement:9",
+          "slot": "amount",
+          "value": "16 500",
+          "olds": [
+            "demenagement:6",
+            "demenagement:8"
+          ]
+        },
+        {
+          "new": "demenagement:15",
+          "slot": "date",
+          "value": "15 août",
+          "olds": []
+        }
+      ],
+      "non_changes": [
+        "demenagement:1",
+        "demenagement:5",
+        "demenagement:7",
+        "demenagement:14"
+      ]
+    }
+  }
+}

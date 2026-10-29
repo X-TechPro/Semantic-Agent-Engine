@@ -16,7 +16,8 @@ setup:
 	$(PIP) install --python .venv/bin/python -e .
 	$(PY) -c "import faiss, bm25s, chunklet, pydantic, hypothesis, dateparser; print('deps ok')"
 	@$(PY) -c "import torch;print('cuda', torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'cpu only')"
-	@echo "run: make test && make ledger && make demo"
+	@echo "run: make test && make meetings && make steps"
+	@echo "legacy v3: make demo && make demo-real"
 
 # 12.3 golden minimal-pair suites (>= 30 pairs per category). The files under
 # tests/golden/*.jsonl are generated; a test asserts they still match, so they
@@ -115,6 +116,42 @@ latency:
 .PHONY: eval
 eval: stages bench latency
 
+# --- current pipeline: five hand-written meetings, synthetic-only data -------
+# Everything below uses the v4 path (ingest_v4 → store/v4 → search → answer).
+# `make demo` and `make demo-real` are the legacy v3 scenarios kept as rollback.
+
+.PHONY: meetings
+meetings:
+	# step 7 end to end: reranker + retrieved context + memory state + LLM
+	$(PY) -m engine.eval.meetings_eval --rerank --answer hybrid
+
+.PHONY: steps
+steps:
+	# the per-step table (store, chunk, label, link, memory, search, answer)
+	$(PY) -m engine.eval.steps_eval --rerank
+
+.PHONY: step7
+step7:
+	# the funnel inside step 7: parse, retrieve, state, match, select, direct
+	$(PY) -m engine.eval.step7_debug
+
+.PHONY: rerank
+rerank:
+	# Qwen3-Reranker-0.6B vs the pipeline order, on the same candidates
+	$(PY) -m engine.eval.rerank_qwen
+
+.PHONY: tag
+tag:
+	# fine-tune Laya on the piscine tags (GPU, ~1.2 GB output)
+	$(PY) -m engine.read.laya_tags --epochs 2 --lr-enc 2e-5
+
+.PHONY: validate-data
+validate-data:
+	$(PY) -m engine.tools.validate_dataset data/mine/*.meeting.json
+	$(PY) -m engine.tools.validate_dataset data/mine/*.questions.json \
+	  --meetings data/mine/*.meeting.json
+
+# --- legacy v3 demo and report ----------------------------------------------
 .PHONY: demo
 demo:
 	$(PY) -m engine.cli demo
@@ -122,6 +159,12 @@ demo:
 .PHONY: demo-real
 demo-real:
 	$(PY) -m engine.cli demo-real
+
+.PHONY: ask4
+ask4:
+	@test -n "$(M)" || { echo 'usage: make ask4 M=data/mine/nova.meeting.json Q="..."'; exit 1; }
+	@test -n "$(Q)" || { echo 'usage: make ask4 M=data/mine/nova.meeting.json Q="..."'; exit 1; }
+	$(PY) -m engine.cli_v4 "$(M)" "$(Q)" $(if $(ANSWER),--answer $(ANSWER)) $(if $(NORERANK),--no-rerank)
 
 .PHONY: ask
 ask:

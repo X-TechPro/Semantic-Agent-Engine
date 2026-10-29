@@ -49,6 +49,30 @@ CHANGE_CUE_RE = re.compile(
 
 _NEG_RE = re.compile(r"\b(non|pas|plus|jamais|aucun|sans)\b", re.IGNORECASE)
 
+#: clause boundary for scope tests. Deliberately not "et": it is too common to
+#: split on, and a negation before "et" usually still governs the first value.
+_CLAUSE_SPLIT = re.compile(
+    r"(?:[.;!?,]|\bmais\b|\bdonc\b|\balors\b|\bparce que\b|\bcar\b|\bpuis\b|"
+    r"\bensuite\b|\bdu coup\b)", re.IGNORECASE)
+
+#: Negative cues, in increasing ambiguity. `ne ... pas/plus/...` is the reliable
+#: form; verbless ASR forms ("pas de budget", "pas encore validé") need a
+#: following determiner/participle. Bare "plus" is NOT here: "plus de budget"
+#: can mean *more* budget. `sans doute`/`sans problème` are affirmative.
+_NEG_PATTERNS = (
+    re.compile(r"\b(?:ne\s+|n['’]\s*)(?:\w+\s+){0,6}"
+               r"(?:pas|plus|jamais|rien|aucun(?:e)?s?|personne|gu[eè]re)\b",
+               re.IGNORECASE),
+    re.compile(r"\bnon\s+pas\b", re.IGNORECASE),
+    re.compile(r"\bpas\s+(?:de|d['’]|du|des|un|une|le|la|les|ce|cette|ces|"
+               r"encore|assez|trop|toujours|vraiment|pour|à|a|valid|act|"
+               r"pr[ée]vu|possible|question|besoin)\b", re.IGNORECASE),
+    re.compile(r"\bsans\s+(?!doute\b|probl[eè]me\b|compter\b|que\b)\w+",
+               re.IGNORECASE),
+    re.compile(r"(?<!si )\b(?:aucun(?:e)?s?|jamais|rien)\b", re.IGNORECASE),
+    re.compile(r"\bnon\b(?!\s+pas)", re.IGNORECASE),
+)
+
 #: scaffolding that carries no topic/value on its own
 SCAFFOLD: frozenset[str] = frozenset({
     "projet", "budget", "lancement", "date", "prestataire", "stack", "technique",
@@ -103,6 +127,38 @@ def has_change_cue(text: str) -> bool:
 
 def is_negated(text: str) -> bool:
     return bool(_NEG_RE.search(text or ""))
+
+
+def _polarity_of(clause: str) -> str | None:
+    if any(p.search(clause) for p in _NEG_PATTERNS):
+        return "negative"
+    # "plus de budget" without "ne" is genuinely ambiguous (more vs no more).
+    # Refusing to label it is safer than inventing a contradiction.
+    if re.search(r"\bplus\s+de\b", clause):
+        return None
+    return "affirmative"
+
+
+def polarity(text: str, subject: str | None = None) -> str | None:
+    """Affirmative / negative for the clause that carries this slot.
+
+    `subject` is the resolved key (`atlas.budget`). When it maps to a known
+    attribute, only the clause containing that attribute's surface form is
+    tested, so "le budget est de 2 M€, mais la salle n'est pas prête" stays
+    affirmative for `budget`. Without a match the whole text is used, which is
+    the old sentence-level behaviour. `None` means genuinely undecidable.
+    """
+    hay = fold(text)
+    if not hay.strip():
+        return None
+    if subject:
+        attr = subject.rsplit(".", 1)[-1]
+        forms = S.ATTRIBUTE_LEXICON.get(attr, [attr])
+        needles = [fold(f) for f in forms if f]
+        for clause in _CLAUSE_SPLIT.split(hay):
+            if any(n in clause for n in needles):
+                return _polarity_of(clause)
+    return _polarity_of(hay)
 
 
 def slot_signature(text: str) -> str | None:

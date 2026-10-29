@@ -1,0 +1,28 @@
+{"from_mention_id": "Mosaique-v0:budget:m000", "to_mention_id": "Mosaique-v0:budget:m001", "relation": "supersedes", "event_id": "Mosaique-v0:budget", "evidence": "L'enveloppe est arretee a 300 euros."}
+{"from_mention_id": "Mosaique-v0:date:m002", "to_mention_id": "Mosaique-v0:date:m003", "relation": "supersedes", "event_id": "Mosaique-v0:date", "evidence": "On retient le 21 octobre."}
+{"from_mention_id": "Mosaique-v0:date:m003", "to_mention_id": "Mosaique-v0:date:m004", "relation": "supersedes", "event_id": "Mosaique-v0:date", "evidence": "La date bouge au 15 juillet."}
+{"from_mention_id": "Mosaique-v0:venue:m005", "to_mention_id": "Mosaique-v0:venue:m006", "relation": "supersedes", "event_id": "Mosaique-v0:venue", "evidence": "attends On part sur la campus Nord."}
+{"from_mention_id": "Mosaique-v0:action:m009", "to_mention_id": "Mosaique-v0:action:m010", "relation": "answers", "event_id": "Mosaique-v0:action", "evidence": "euh Adam a boucle les badges."}
+{"from_mention_id": "Canopee-v1:budget:m000", "to_mention_id": "Canopee-v1:budget:m001", "relation": "supersedes", "event_id": "Canopee-v1:budget", "evidence": "L'enveloppe est arretee a 2400 euros."}
+{"from_mention_id": "Canopee-v1:date:m003", "to_mention_id": "Canopee-v1:date:m004", "relation": "supersedes", "event_id": "Canopee-v1:date", "evidence": "On retient le 11 octobre."}
+{"from_mention_id": "Canopee-v1:venue:m005", "to_mention_id": "Canopee-v1:venue:m006", "relation": "supersedes", "event_id": "Canopee-v1:venue", "evidence": "On part sur la mediatheque."}
+{"from_mention_id": "Horizon-v2:budget:m000", "to_mention_id": "Horizon-v2:budget:m001", "relation": "supersedes", "event_id": "Horizon-v2:budget", "evidence": "L'enveloppe est arretee a 1500 euros."}
+{"from_mention_id": "Horizon-v2:date:m002", "to_mention_id": "Horizon-v2:date:m003", "relation": "supersedes", "event_id": "Horizon-v2:date", "evidence": "On retient le 1 octobre."}
+{"from_mention_id": "Horizon-v2:date:m003", "to_mention_id": "Horizon-v2:date:m004", "relation": "supersedes", "event_id": "Horizon-v2:date", "evidence": "La date bouge au 9 avril."}
+{"from_mention_id": "Horizon-v2:venue:m005", "to_mention_id": "Horizon-v2:venue:m006", "relation": "supersedes", "event_id": "Horizon-v2:venue", "evidence": "On part sur la rotonde."}
+{"from_mention_id": "Horizon-v2:action:m009", "to_mention_id": "Horizon-v2:action:m010", "relation": "answers", "event_id": "Horizon-v2:action", "evidence": "Salma a boucle le dossier technique."}
+{"from_mention_id": "Etincelle-v3:budget:m000", "to_mention_id": "Etincelle-v3:budget:m001", "relation": "supersedes", "event_id": "Etincelle-v3:budget", "evidence": "L'enveloppe est arretee a 1800 euros."}
+{"from_mention_id": "Etincelle-v3:budget:m001", "to_mention_id": "Etincelle-v3:budget:m002", "relation": "supersedes", "event_id": "Etincelle-v3:budget", "evidence": "On revoit l'enveloppe a 2000 euros."}
+{"from_mention_id": "Etincelle-v3:date:m003", "to_mention_id": "Etincelle-v3:date:m004", "relation": "supersedes", "event_id": "Etincelle-v3:date", "evidence": "euh On retient le 3 mai."}
+{"from_mention_id": "Etincelle-v3:date:m004", "to_mention_id": "Etincelle-v3:date:m005", "relation": "supersedes", "event_id": "Etincelle-v3:date", "evidence": "La date bouge au 5 janvier."}
+{"from_mention_id": "Etincelle-v3:venue:m006", "to_mention_id": "Etincelle-v3:venue:m007", "relation": "supersedes", "event_id": "Etincelle-v3:venue", "evidence": "attends On part sur la halle des ateliers."}
+{"from_mention_id": "Etincelle-v3:action:m010", "to_mention_id": "Etincelle-v3:action:m011", "relation": "answers", "event_id": "Etincelle-v3:action", "evidence": "Adam a boucle le dossier technique."}
+{"from_mention_id": "Traverse-v4:budget:m000", "to_mention_id": "Traverse-v4:budget:m001", "relation": "supersedes", "event_id": "Traverse-v4:budget", "evidence": "L'enveloppe est arretee a 2400 euros."}
+{"from_mention_id": "Traverse-v4:date:m003", "to_mention_id": "Traverse-v4:date:m004", "relation": "supersedes", "event_id": "Traverse-v4:date", "evidence": "On retient le 15 mai."}
+{"from_mention_id": "Traverse-v4:venue:m005", "to_mention_id": "Traverse-v4:venue:m006", "relation": "supersedes", "event_id": "Traverse-v4:venue", "evidence": "en fait On part sur la mediatheque."}
+{"from_mention_id": "Traverse-v4:action:m009", "to_mention_id": "Traverse-v4:action:m010", "relation": "answers", "event_id": "Traverse-v4:action", "evidence": "Ines a boucle les badges."}
+{"from_mention_id": "Latitude-v5:budget:m000", "to_mention_id": "Latitude-v5:budget:m001", "relation": "supersedes", "event_id": "Latitude-v5:budget", "evidence": "L'enveloppe est arretee a 2400 euros."}
+{"from_mention_id": "Latitude-v5:date:m002", "to_mention_id": "Latitude-v5:date:m003", "relation": "supersedes", "event_id": "Latitude-v5:date", "evidence": "On retient le 25 novembre."}
+{"from_mention_id": "Latitude-v5:date:m003", "to_mention_id": "Latitude-v5:date:m004", "relation": "supersedes", "event_id": "Latitude-v5:date", "evidence": "La date bouge au 12 septembre."}
+{"from_mention_id": "Latitude-v5:venue:m005", "to_mention_id": "Latitude-v5:venue:m006", "relation": "supersedes", "event_id": "Latitude-v5:venue", "evidence": "On part sur la mediatheque."}
+{"from_mention_id": "Latitude-v5:payment:m008", "to_mention_id": "Latitude-v5:payment:m009", "relation": "answers", "event_id": "Latitude-v5:payment", "evidence": "Reglement de 800 euros valide pour Traiteur du Parc."}

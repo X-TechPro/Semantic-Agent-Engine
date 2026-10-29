@@ -1,0 +1,79 @@
+{
+ "train": {
+  "n": 12540,
+  "kind": {
+   "action": 1100,
+   "answer": 660,
+   "commitment": 880,
+   "decision": 2640,
+   "fact": 880,
+   "idea": 660,
+   "question": 880,
+   "risk": 660
+  },
+  "status": {
+   "cancelled": 880,
+   "completed": 880,
+   "confirmed": 2420,
+   "proposed": 1100,
+   "unknown": 1320
+  },
+  "intent": {
+   "answer": 220,
+   "clarify": 220,
+   "compare": 220,
+   "dossier": 220,
+   "email": 220,
+   "schedule": 220,
+   "task": 220
+  }
+ },
+ "val": {
+  "n": 1980,
+  "kind": {
+   "action": 220,
+   "answer": 220,
+   "decision": 660,
+   "fact": 220,
+   "idea": 220,
+   "question": 220,
+   "risk": 220
+  },
+  "status": {
+   "cancelled": 220,
+   "confirmed": 440,
+   "proposed": 440,
+   "unknown": 880
+  },
+  "intent": {}
+ },
+ "test": {
+  "n": 4180,
+  "kind": {
+   "action": 440,
+   "answer": 220,
+   "commitment": 220,
+   "decision": 880,
+   "fact": 220,
+   "idea": 220,
+   "question": 220,
+   "risk": 220
+  },
+  "status": {
+   "cancelled": 220,
+   "completed": 440,
+   "confirmed": 660,
+   "proposed": 440,
+   "unknown": 880
+  },
+  "intent": {
+   "answer": 220,
+   "clarify": 220,
+   "compare": 220,
+   "dossier": 220,
+   "email": 220,
+   "schedule": 220,
+   "task": 220
+  }
+ }
+}

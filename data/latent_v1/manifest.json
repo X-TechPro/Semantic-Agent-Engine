@@ -1,0 +1,34 @@
+{
+ "seed": 20261027,
+ "variant_by_split": {
+  "train": "A",
+  "validation": "B",
+  "test": "C"
+ },
+ "splits": {
+  "train": {
+   "projects": 12,
+   "turns": 272,
+   "events": 84,
+   "mentions": 149,
+   "relations": 60,
+   "queries": 72
+  },
+  "validation": {
+   "projects": 6,
+   "turns": 137,
+   "events": 42,
+   "mentions": 72,
+   "relations": 28,
+   "queries": 36
+  },
+  "test": {
+   "projects": 6,
+   "turns": 114,
+   "events": 42,
+   "mentions": 76,
+   "relations": 31,
+   "queries": 36
+  }
+ }
+}

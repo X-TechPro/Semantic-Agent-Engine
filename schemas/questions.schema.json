@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semantic-agent-engine/questions.schema.json",
+  "title": "Evaluation questions — messy, formal and tricky, paired with message ids",
+  "description": "What the pipeline is scored on. `expected_message_ids` is the set of messages any correct answer may cite (the same set semantics as the change definition: one canonical gold is not the target). A tricky question cites nothing and must be refused.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["corpus_id", "questions"],
+  "properties": {
+    "corpus_id": {"type": "string"},
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["query_id", "style", "text", "expected_message_ids", "must_abstain"],
+        "properties": {
+          "query_id": {"type": "string", "minLength": 1},
+          "style": {"enum": ["messy", "formal", "tricky", "chat"]},
+          "text": {"type": "string", "minLength": 1},
+          "expected_message_ids": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Any message stating the expected value. Empty only when must_abstain is true."
+          },
+          "expected_value": {
+            "type": ["string", "null"],
+            "description": "Optional: a substring the answer must contain (e.g. '2,4 M€')."
+          },
+          "must_abstain": {"type": "boolean"},
+          "meeting_id": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

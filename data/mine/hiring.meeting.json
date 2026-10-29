@@ -1,0 +1,25 @@
+{
+  "meeting_id": "hiring",
+  "messages": [
+    {"message_id": "hiring:0", "speaker": "Claire", "timestamp": "2026-11-04T10:00:00+01:00", "text": "on doit recruter deux devs backend pour la rentrée"},
+    {"message_id": "hiring:1", "speaker": "Nadia", "timestamp": "2026-11-04T10:01:00+01:00", "text": "deux postes ça veut dire deux offres et deux budgets"},
+    {"message_id": "hiring:2", "speaker": "Marc", "timestamp": "2026-11-04T10:02:00+01:00", "text": "le budget par hire il est à 55 000 pour l instant"},
+    {"message_id": "hiring:3", "speaker": "Claire", "timestamp": "2026-11-04T10:03:00+01:00", "text": "55 000 c est trop on va dire 52 000"},
+    {"message_id": "hiring:4", "speaker": "Marc", "timestamp": "2026-11-04T10:04:00+01:00", "text": "52 000 ça passe si on décale le deuxième recrutement"},
+    {"message_id": "hiring:5", "speaker": "Claire", "timestamp": "2026-11-04T10:05:00+01:00", "text": "ok un maintenant et un au troisième trimestre"},
+    {"message_id": "hiring:6", "speaker": "Nadia", "timestamp": "2026-11-04T10:06:00+01:00", "text": "je lance l offre pour yassine à 52 000"},
+    {"message_id": "hiring:7", "speaker": "Claire", "timestamp": "2026-11-04T10:07:00+01:00", "text": "yassine c est bien celui qui a fait la plateforme"},
+    {"message_id": "hiring:8", "speaker": "Nadia", "timestamp": "2026-11-04T10:08:00+01:00", "text": "oui il démarre le 1er avril si on valide"},
+    {"message_id": "hiring:9", "speaker": "Marc", "timestamp": "2026-11-04T10:09:00+01:00", "text": "55 000 c était le budget initial mais 52 000 c est acté alors"},
+    {"message_id": "hiring:10", "speaker": "Claire", "timestamp": "2026-11-04T10:10:00+01:00", "text": "et le deuxième poste on le rouvre en juillet"},
+    {"message_id": "hiring:11", "speaker": "Nadia", "timestamp": "2026-11-04T10:11:00+01:00", "text": "je prépare le descriptif pour juillet"},
+    {"message_id": "hiring:12", "speaker": "Claire", "timestamp": "2026-11-04T10:12:00+01:00", "text": "on valide 52 000 pour yassine"},
+    {"message_id": "hiring:13", "speaker": "Nadia", "timestamp": "2026-11-04T10:13:00+01:00", "text": "c est noté je lui envoie l offre"},
+    {"message_id": "hiring:14", "speaker": "Marc", "timestamp": "2026-11-04T10:14:00+01:00", "text": "et les 3 000 de différence ils vont où"},
+    {"message_id": "hiring:15", "speaker": "Claire", "timestamp": "2026-11-04T10:15:00+01:00", "text": "on les garde pour la formation"},
+    {"message_id": "hiring:16", "speaker": "Nadia", "timestamp": "2026-11-04T10:16:00+01:00", "text": "ok je mets à jour le budget rh"},
+    {"message_id": "hiring:17", "speaker": "Claire", "timestamp": "2026-11-04T10:17:00+01:00", "text": "bon on valide tout ça"},
+    {"message_id": "hiring:18", "speaker": "Nadia", "timestamp": "2026-11-04T10:18:00+01:00", "text": "dernière chose la date de démarrage c est bien le 1er avril"},
+    {"message_id": "hiring:19", "speaker": "Claire", "timestamp": "2026-11-04T10:19:00+01:00", "text": "oui le 1er avril c est bon"}
+  ]
+}

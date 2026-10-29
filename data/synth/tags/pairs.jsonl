@@ -1,0 +1,320 @@
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide l'api", "la": "decision", "b": "est-ce qu'on valide l'api", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le prototype", "la": "decision", "b": "genre est-ce qu'on valide le prototype", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide la roadmap", "la": "decision", "b": "est-ce qu'on valide la roadmap", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le cahier des charges", "la": "decision", "b": "est-ce qu'on valide le cahier des charges", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "quoi on valide l'offre commerciale", "la": "decision", "b": "est-ce qu'on valide l'offre commerciale", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le jeu de données", "la": "decision", "b": "est-ce qu'on valide le jeu de données", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide l'offre commerciale", "la": "decision", "b": "ok est-ce qu'on valide l'offre commerciale", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le jeu de données", "la": "decision", "b": "du coup est-ce qu'on valide le jeu de données", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide la facture", "la": "decision", "b": "du coup est-ce qu'on valide la facture", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le rapport", "la": "decision", "b": "quoi quoi est-ce qu'on valide le rapport", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide la recette", "la": "decision", "b": "euh est-ce qu'on valide la recette", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le planning", "la": "decision", "b": "bref est-ce qu'on valide le planning", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le devis", "la": "decision", "b": "est-ce qu'on valide le devis", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le jeu de données", "la": "decision", "b": "est-ce qu'on valide le jeu de données", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le budget marketing", "la": "decision", "b": "ah ouais ah ouais est-ce qu'on valide le budget marketing", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "tu vois on valide le planning", "la": "decision", "b": "est-ce qu'on valide le planning", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le deck", "la": "decision", "b": "est-ce qu'on valide le deck", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le rapport", "la": "decision", "b": "ben est-ce qu'on valide le rapport", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le benchmark", "la": "decision", "b": "est-ce qu'on valide le benchmark", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le cahier des charges", "la": "decision", "b": "est-ce qu'on valide le cahier des charges", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le backlog", "la": "decision", "b": "ah ouais est-ce qu'on valide le backlog", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "voilà on valide le support de formation", "la": "decision", "b": "est-ce qu'on valide le support de formation", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "mh on valide le planning", "la": "decision", "b": "du coup est-ce qu'on valide le planning", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "quoi on valide le devis", "la": "decision", "b": "est-ce qu'on valide le devis", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le prototype", "la": "decision", "b": "est-ce qu'on valide le prototype", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide l'api", "la": "decision", "b": "est-ce qu'on valide l'api", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide l'api", "la": "decision", "b": "est-ce qu'on valide l'api", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "bah on valide le jeu de données", "la": "decision", "b": "est-ce qu'on valide le jeu de données", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le planning", "la": "decision", "b": "est-ce qu'on valide le planning", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on on valide la spécification", "la": "decision", "b": "est-ce qu'on valide la spécification", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide l'audit", "la": "decision", "b": "est-ce qu'on valide l'audit", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le backlog", "la": "decision", "b": "est-ce qu'on valide le backlog", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le support de formation", "la": "decision", "b": "voilà est-ce qu'on valide le support de formation", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide la recette", "la": "decision", "b": "est-ce qu'on valide la recette", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le prototype", "la": "decision", "b": "est-ce qu'on valide le prototype", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "quoi on valide le backlog", "la": "decision", "b": "est-ce qu'on valide le backlog", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide la facture", "la": "decision", "b": "est-ce qu'on valide la facture", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide la roadmap", "la": "decision", "b": "est-ce qu'on valide la roadmap", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide l'offre commerciale", "la": "decision", "b": "est-ce qu'on valide l'offre commerciale", "lb": "question"}
+{"group": "decision_vs_question_b", "field": "kind", "a": "on valide le deck", "la": "decision", "b": "est-ce qu'on valide le deck", "lb": "question"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "quoi on retient la roadmap", "la": "decision", "b": "et si on retenait la roadmap", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient la maquette", "la": "decision", "b": "et si on retenait la maquette", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient retient l'offre commerciale", "la": "decision", "b": "et si on retenait l'offre commerciale", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient l'audit", "la": "decision", "b": "du coup et si on retenait l'audit", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient retient le backlog", "la": "decision", "b": "et si on retenait le backlog", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le plan de charge", "la": "decision", "b": "et si on retenait le plan de charge", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "voilà on retient le budget marketing", "la": "decision", "b": "et si on retenait le budget marketing", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le plan de charge", "la": "decision", "b": "et si on retenait le plan de charge", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient la roadmap", "la": "decision", "b": "en fait et si on retenait la roadmap", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient l'audit", "la": "decision", "b": "et si on retenait l'audit", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le budget", "la": "decision", "b": "tu vois et si on retenait le budget", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on on retient la recette", "la": "decision", "b": "et si on retenait la recette", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient retient le budget", "la": "decision", "b": "et si on retenait le budget", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient la spécification", "la": "decision", "b": "bref et si on retenait la spécification", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient retient la facture", "la": "decision", "b": "genre et si on retenait la facture", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "tu vois on retient l'api", "la": "decision", "b": "et si on retenait l'api", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le budget marketing", "la": "decision", "b": "et si on retenait le budget marketing", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "ah ouais on retient l'offre commerciale", "la": "decision", "b": "en fait et si on retenait l'offre commerciale", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "en fait on retient le plan de charge", "la": "decision", "b": "mh et si on retenait le plan de charge", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient la recette", "la": "decision", "b": "et si on retenait la recette", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "tu vois tu vois on retient l'audit", "la": "decision", "b": "et si on retenait l'audit", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le plan de charge", "la": "decision", "b": "et si on retenait le plan de charge", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient retient le prototype", "la": "decision", "b": "bref et si on retenait le prototype", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient l'audit", "la": "decision", "b": "et et si on retenait l'audit", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient l'offre commerciale", "la": "decision", "b": "et si on retenait l'offre commerciale", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le support de formation", "la": "decision", "b": "et si on retenait le support de formation", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "bah on retient l'api", "la": "decision", "b": "et si on retenait retenait l'api", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "genre on retient le plan de charge", "la": "decision", "b": "et si on retenait le plan de charge", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le plan de charge", "la": "decision", "b": "et si on retenait le plan de charge", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "tu vois on retient le benchmark", "la": "decision", "b": "et si on retenait le benchmark", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le backlog", "la": "decision", "b": "en fait et si on retenait le backlog", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "ben on on retient l'audit", "la": "decision", "b": "et et si on retenait l'audit", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient la note de cadrage", "la": "decision", "b": "en fait et si on retenait la note de cadrage", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient la maquette", "la": "decision", "b": "en fait et si on retenait la maquette", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient l'api", "la": "decision", "b": "et si on retenait l'api", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "ben on retient le support de formation", "la": "decision", "b": "et si on retenait le support de formation", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le cahier des charges", "la": "decision", "b": "ah ouais et si on retenait le cahier des charges", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le support de formation", "la": "decision", "b": "et si on retenait le support de formation", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le support de formation", "la": "decision", "b": "et si on on retenait le support de formation", "lb": "idea"}
+{"group": "idea_vs_decision_b", "field": "kind", "a": "on retient le cahier des charges", "la": "decision", "b": "et si on retenait le cahier des charges", "lb": "idea"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "mh granit est en retard", "la": "fact", "b": "il y a un risque que granit soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "euh nova est en retard", "la": "fact", "b": "il y a un risque que nova soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "en fait baobab est en retard", "la": "fact", "b": "il y a un risque que baobab soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "tempo est en retard", "la": "fact", "b": "il y a un risque que tempo soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "dune est en retard", "la": "fact", "b": "ah ouais il y a un risque que dune soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "ébène est en retard", "la": "fact", "b": "il y a un risque que ébène soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "vega est en retard", "la": "fact", "b": "il y a un risque que vega soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "dune est en retard", "la": "fact", "b": "ok il y a un risque que dune soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "zéphyr est en retard", "la": "fact", "b": "du coup il y a un risque que zéphyr soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "faucon est en retard", "la": "fact", "b": "bah il y a un risque que faucon soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "lagune est en retard", "la": "fact", "b": "il y a un risque que lagune soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "kaïros est en en retard", "la": "fact", "b": "il y a un risque que kaïros soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "alizé est en retard", "la": "fact", "b": "il y a un risque que alizé soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "boréal est en retard", "la": "fact", "b": "il y a un risque que boréal soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "oasis est en retard", "la": "fact", "b": "il y a un risque que oasis soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "ah ouais delta est en retard", "la": "fact", "b": "tu vois il y a un un risque que delta soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "cèdre est en retard", "la": "fact", "b": "euh il y a un risque que cèdre soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "jade est en retard", "la": "fact", "b": "il y a un risque que jade soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "kaïros est en retard", "la": "fact", "b": "il y a un risque que kaïros soit en en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "orion est en retard", "la": "fact", "b": "il y a un risque que orion soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "tu vois mistral est en retard", "la": "fact", "b": "il y a un risque que mistral soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "ah ouais vega est en retard", "la": "fact", "b": "il y a a un risque que vega soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "dune est en retard", "la": "fact", "b": "il y a un risque que dune soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "nimbus est en retard", "la": "fact", "b": "il y a un risque que nimbus soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "granit est en retard", "la": "fact", "b": "il y a un risque que granit soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "aurora est en retard", "la": "fact", "b": "il y a un risque que aurora soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "dune est en retard", "la": "fact", "b": "en fait il y a un risque que dune soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "sirocco est en retard", "la": "fact", "b": "il y a un risque que sirocco soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "du coup flux est en retard", "la": "fact", "b": "il y a un risque que flux soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "cèdre est en retard", "la": "fact", "b": "voilà il y a un risque que cèdre soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "nova est en retard", "la": "fact", "b": "euh il y a un risque que nova soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "ivoire est en retard", "la": "fact", "b": "il y a un risque que ivoire soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "bah sirocco est en retard", "la": "fact", "b": "il y a un risque que sirocco soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "euh boréal est en retard", "la": "fact", "b": "il y a un risque que boréal soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "ivoire est en retard", "la": "fact", "b": "bref il y a un risque que ivoire soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "ivoire est est en retard", "la": "fact", "b": "il y a un risque que ivoire soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "boréal est en retard", "la": "fact", "b": "il y a un risque que boréal soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "tempo est en retard", "la": "fact", "b": "il y a un risque que tempo soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "mirage est en retard", "la": "fact", "b": "il y a un risque que mirage soit en retard", "lb": "risk"}
+{"group": "fact_vs_risk_b", "field": "kind", "a": "flux est en retard", "la": "fact", "b": "il y a un risque que flux soit en retard", "lb": "risk"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le deck est validé", "la": "answer", "b": "le deck est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la présentation est validé", "la": "answer", "b": "la présentation est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la présentation est validé", "la": "answer", "b": "voilà la présentation est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la note de cadrage est validé", "la": "answer", "b": "la note de cadrage est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le backlog est validé", "la": "answer", "b": "le backlog est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le contrat est validé", "la": "answer", "b": "le contrat est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la recette est validé", "la": "answer", "b": "la recette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà voilà, la spécification est validé", "la": "answer", "b": "la spécification est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la note de cadrage est validé", "la": "answer", "b": "la note de cadrage est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la maquette est validé", "la": "answer", "b": "la maquette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, l'audit est validé", "la": "answer", "b": "genre l'audit est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le budget marketing est validé", "la": "answer", "b": "le budget marketing est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà voilà, la facture est validé", "la": "answer", "b": "la facture est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la facture est validé", "la": "answer", "b": "voilà la facture est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le budget est validé", "la": "answer", "b": "le budget est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le rapport est validé", "la": "answer", "b": "le rapport est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le devis est validé", "la": "answer", "b": "le devis est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le budget marketing est validé", "la": "answer", "b": "le budget marketing est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, l'api est validé", "la": "answer", "b": "l'api est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà voilà, la maquette est validé", "la": "answer", "b": "la maquette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le benchmark est validé", "la": "answer", "b": "le benchmark est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "euh voilà, la spécification est validé", "la": "answer", "b": "la spécification est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la maquette est validé", "la": "answer", "b": "tu vois la maquette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, l'audit est validé", "la": "answer", "b": "l'audit est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le prototype est validé", "la": "answer", "b": "le prototype est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la recette est validé", "la": "answer", "b": "la recette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le jeu de données est validé", "la": "answer", "b": "le jeu de données est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le backlog est validé", "la": "answer", "b": "le backlog est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le support de formation est validé", "la": "answer", "b": "le support de formation est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la facture est validé", "la": "answer", "b": "euh la facture est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "ah ouais voilà, le devis est validé", "la": "answer", "b": "le devis devis est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la note de cadrage est validé", "la": "answer", "b": "en fait la note de cadrage est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, le contrat est validé", "la": "answer", "b": "le contrat est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "ben voilà, l'audit est validé", "la": "answer", "b": "l'audit est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, l'api est validé", "la": "answer", "b": "l'api est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "genre voilà, le plan de charge est validé", "la": "answer", "b": "le plan de charge est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la recette est validé", "la": "answer", "b": "la recette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la recette est validé", "la": "answer", "b": "la recette est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "voilà, la facture est validé", "la": "answer", "b": "la facture est validé", "lb": "decision"}
+{"group": "answer_vs_fact_b", "field": "kind", "a": "en fait voilà, la présentation est validé", "la": "answer", "b": "genre la présentation est validé", "lb": "decision"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le plan de charge avant les vacances", "la": "action", "b": "je te garantis le plan de charge avant les vacances", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le contrat début mars", "la": "action", "b": "je te te garantis le contrat début mars", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le benchmark avant les vacances", "la": "action", "b": "je te garantis le benchmark avant les vacances", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le jeu de données vendredi", "la": "action", "b": "ben je te garantis le jeu de données vendredi", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le devis le 30 septembre", "la": "action", "b": "je te garantis le devis le 30 septembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le jeu de données avant la fin du mois", "la": "action", "b": "je te garantis le jeu de données avant la fin du mois", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je je transmets le planning lundi prochain", "la": "action", "b": "je te garantis le planning lundi prochain", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le budget marketing après le comité", "la": "action", "b": "je te garantis le budget marketing après le comité", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le support de formation avant la fin du mois", "la": "action", "b": "je te garantis le support de formation avant la fin du mois", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "en fait je transmets le deck avant les vacances", "la": "action", "b": "je te garantis le deck avant les vacances", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le plan de charge lundi prochain", "la": "action", "b": "je te garantis le plan de charge lundi prochain", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le deck le 15 juin", "la": "action", "b": "je te garantis le deck le 15 juin", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le deck début mars", "la": "action", "b": "je te garantis le deck début mars", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le jeu de données en fin de semaine", "la": "action", "b": "je te garantis le jeu de données en fin de semaine", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le devis après le comité", "la": "action", "b": "je te garantis le devis après le comité", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets l'audit le 30 septembre", "la": "action", "b": "je te garantis l'audit le 30 septembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le benchmark vendredi", "la": "action", "b": "je te garantis le benchmark vendredi", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "ah ouais je transmets le benchmark fin novembre", "la": "action", "b": "je te garantis le benchmark fin novembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je je transmets le planning le 3 février", "la": "action", "b": "je te garantis le planning le 3 février", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets la roadmap début mars", "la": "action", "b": "je te garantis la roadmap début mars", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le support de formation la semaine prochaine", "la": "action", "b": "du coup je te garantis le support de formation la semaine prochaine", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets la présentation jeudi matin", "la": "action", "b": "je te garantis la présentation jeudi matin", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "en fait je transmets le planning fin novembre", "la": "action", "b": "je te garantis le planning fin novembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "ok je transmets la facture mi-janvier", "la": "action", "b": "bah je te garantis la facture mi-janvier", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le backlog le 15 juin", "la": "action", "b": "je te garantis le backlog backlog le 15 juin", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets la note de cadrage vendredi", "la": "action", "b": "je te garantis la note de cadrage vendredi", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le planning après le comité", "la": "action", "b": "je te garantis le planning après le comité", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets l'offre commerciale avant les vacances", "la": "action", "b": "je te garantis l'offre commerciale avant les vacances", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "ah ouais je transmets le prototype après le comité", "la": "action", "b": "je te garantis le prototype après le comité", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le prototype fin fin novembre", "la": "action", "b": "je te garantis le prototype fin novembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets la facture après le comité", "la": "action", "b": "je te garantis la facture après le comité", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets l'audit lundi prochain", "la": "action", "b": "je te garantis l'audit lundi prochain", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "ok je transmets l'api vendredi", "la": "action", "b": "je te garantis l'api vendredi", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets la présentation fin novembre", "la": "action", "b": "je te garantis la présentation fin novembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le cahier des charges début mars", "la": "action", "b": "je te garantis le cahier des charges début mars", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets la facture facture le 12 décembre", "la": "action", "b": "ben je te garantis la facture facture le 12 décembre", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "tu vois je transmets le deck début mars", "la": "action", "b": "je te garantis le deck début mars", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets l'offre commerciale le 3 février", "la": "action", "b": "bref je te garantis l'offre commerciale le 3 février", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le jeu de données après le comité", "la": "action", "b": "en fait je te garantis le jeu de données après le comité", "lb": "commitment"}
+{"group": "action_vs_commitment_b", "field": "kind", "a": "je transmets le deck le 12 décembre", "la": "action", "b": "je te garantis le deck le 12 décembre", "lb": "commitment"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le prototype", "la": "confirmed", "b": "ce n'est pas encore acté pour le prototype", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la roadmap", "la": "confirmed", "b": "ce n'est pas encore acté pour la roadmap", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "en fait c'est acté pour le deck", "la": "confirmed", "b": "ce n'est pas encore acté pour le deck", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la recette", "la": "confirmed", "b": "quoi ce n'est pas encore acté pour la recette", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le plan de charge", "la": "confirmed", "b": "ce n'est pas encore acté pour le plan de charge", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la roadmap", "la": "confirmed", "b": "ce n'est pas encore acté pour la roadmap", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "ah ouais c'est acté pour pour le deck", "la": "confirmed", "b": "ce n'est pas encore acté pour le deck", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la maquette", "la": "confirmed", "b": "tu vois ce n'est pas encore acté pour la maquette", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la maquette", "la": "confirmed", "b": "ce n'est pas encore acté pour la maquette", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le planning", "la": "confirmed", "b": "bah ce n'est pas encore acté pour le planning", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "tu vois c'est acté pour le devis", "la": "confirmed", "b": "ce n'est pas encore acté pour le devis", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le planning", "la": "confirmed", "b": "ce n'est pas encore acté pour le planning", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté acté pour la recette", "la": "confirmed", "b": "bref ce n'est pas encore acté pour la recette", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour pour le benchmark", "la": "confirmed", "b": "tu vois ce n'est pas encore acté pour le benchmark", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "tu vois c'est acté pour le jeu de données", "la": "confirmed", "b": "ce n'est pas encore acté pour le jeu de données", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "ah ouais c'est acté pour la recette", "la": "confirmed", "b": "ce n'est pas encore acté pour la recette", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le budget marketing", "la": "confirmed", "b": "ce n'est pas encore acté pour le budget marketing", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "en fait c'est acté pour le plan de charge", "la": "confirmed", "b": "ce n'est pas encore acté pour pour le plan de charge", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la présentation", "la": "confirmed", "b": "ce n'est pas encore acté pour la présentation", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le devis", "la": "confirmed", "b": "ce n'est pas encore acté pour le devis", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "quoi c'est acté pour l'audit", "la": "confirmed", "b": "tu vois ce n'est pas encore acté pour l'audit", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la roadmap", "la": "confirmed", "b": "ce n'est pas encore acté pour la roadmap", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la spécification", "la": "confirmed", "b": "ce n'est pas encore acté pour la spécification", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le jeu de données", "la": "confirmed", "b": "ce n'est pas encore acté pour le jeu de données", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le prototype", "la": "confirmed", "b": "ah ouais ce n'est pas encore acté pour le prototype", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le budget", "la": "confirmed", "b": "ce n'est pas encore acté pour le budget", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour l'api", "la": "confirmed", "b": "ce n'est pas encore acté pour l'api", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le budget marketing", "la": "confirmed", "b": "ce n'est pas encore acté pour pour le budget marketing", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la facture", "la": "confirmed", "b": "ce n'est pas encore acté pour la facture", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le contrat", "la": "confirmed", "b": "ce n'est pas encore acté pour le contrat", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour l'audit", "la": "confirmed", "b": "ce n'est pas encore acté pour l'audit", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le cahier des charges", "la": "confirmed", "b": "ce n'est pas encore acté pour le cahier des charges", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "euh c'est acté acté pour le cahier des charges", "la": "confirmed", "b": "ce n'est pas encore acté pour le cahier des charges", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le benchmark", "la": "confirmed", "b": "ce n'est pas encore acté pour le benchmark", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la spécification", "la": "confirmed", "b": "du coup ce n'est pas encore acté pour la spécification", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour pour le support de formation", "la": "confirmed", "b": "ce n'est pas encore acté pour le support de formation", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour la note de cadrage", "la": "confirmed", "b": "tu vois ce n'est pas encore acté pour la note de cadrage", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le budget", "la": "confirmed", "b": "ok ce n'est pas encore acté pour le budget", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le budget", "la": "confirmed", "b": "quoi ce n'est pas pas encore acté pour le budget", "lb": "proposed"}
+{"group": "confirmed_vs_proposed_b", "field": "status", "a": "c'est acté pour le deck", "la": "confirmed", "b": "ce n'est pas encore acté pour le deck", "lb": "proposed"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "bah on garde le rapport", "la": "confirmed", "b": "on ne garde pas le rapport", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la note de cadrage", "la": "confirmed", "b": "on ne garde pas la note de cadrage", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la roadmap", "la": "confirmed", "b": "on ne garde pas la roadmap", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "ah ouais on garde le rapport", "la": "confirmed", "b": "on ne garde pas le rapport", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le jeu de données", "la": "confirmed", "b": "on ne garde pas le jeu de données", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la roadmap", "la": "confirmed", "b": "on ne garde pas la roadmap", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la présentation", "la": "confirmed", "b": "on ne garde pas la présentation", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "mh on garde le prototype", "la": "confirmed", "b": "ok on ne garde pas le prototype", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le devis", "la": "confirmed", "b": "on ne garde pas le devis", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la maquette", "la": "confirmed", "b": "on ne garde pas la maquette", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "mh on garde le jeu de données", "la": "confirmed", "b": "on ne garde pas le jeu jeu de données", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le backlog", "la": "confirmed", "b": "on ne garde pas le backlog", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "quoi on garde le budget marketing", "la": "confirmed", "b": "on ne garde pas le budget budget marketing", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la facture", "la": "confirmed", "b": "on ne garde pas la facture", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le contrat", "la": "confirmed", "b": "on ne garde pas le contrat", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le budget", "la": "confirmed", "b": "ok on ne garde pas le budget", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le contrat", "la": "confirmed", "b": "on ne garde pas le contrat", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le contrat", "la": "confirmed", "b": "on ne garde pas le contrat", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la facture", "la": "confirmed", "b": "on ne garde pas la facture", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le benchmark", "la": "confirmed", "b": "on ne garde pas le benchmark", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le planning", "la": "confirmed", "b": "ok on ne garde pas le planning", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le support de formation", "la": "confirmed", "b": "on ne garde pas le support de formation", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le planning", "la": "confirmed", "b": "on ne garde pas le planning", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde l'api", "la": "confirmed", "b": "on ne garde pas l'api", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la facture", "la": "confirmed", "b": "on ne garde pas pas la facture", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le backlog", "la": "confirmed", "b": "on ne garde pas le backlog", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la note de cadrage", "la": "confirmed", "b": "on ne garde garde pas la note de cadrage", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la note de cadrage", "la": "confirmed", "b": "on ne garde pas la note de cadrage", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le contrat", "la": "confirmed", "b": "on ne garde pas le contrat", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le support de formation", "la": "confirmed", "b": "du coup on ne ne garde pas le support de formation", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le planning", "la": "confirmed", "b": "on ne garde pas le planning", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le budget", "la": "confirmed", "b": "on ne garde pas le budget", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde l'audit", "la": "confirmed", "b": "on ne garde pas l'audit", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la note de cadrage", "la": "confirmed", "b": "on ne garde pas la note de cadrage", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde la recette", "la": "confirmed", "b": "on ne garde pas la recette", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le deck", "la": "confirmed", "b": "on ne garde pas le deck", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "ben on garde le plan de charge", "la": "confirmed", "b": "on ne garde pas le plan de charge", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "ok on garde la recette", "la": "confirmed", "b": "on ne garde pas la recette", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le contrat", "la": "confirmed", "b": "on ne garde pas le contrat", "lb": "cancelled"}
+{"group": "confirmed_vs_cancelled_b", "field": "status", "a": "on garde le rapport", "la": "confirmed", "b": "on ne garde pas le rapport", "lb": "cancelled"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "mh on valide le budget marketing", "la": "confirmed", "b": "c'est déjà fait pour le budget marketing", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le devis", "la": "confirmed", "b": "c'est déjà fait pour le devis", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "bah on valide le backlog", "la": "confirmed", "b": "c'est déjà fait pour le backlog", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide l'audit", "la": "confirmed", "b": "c'est déjà fait pour l'audit", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le jeu de données", "la": "confirmed", "b": "c'est déjà fait pour le jeu jeu de données", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la présentation", "la": "confirmed", "b": "c'est déjà fait pour la présentation", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le devis", "la": "confirmed", "b": "c'est déjà fait pour le devis", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "bah on valide l'audit", "la": "confirmed", "b": "c'est déjà fait pour l'audit", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le jeu de données", "la": "confirmed", "b": "c'est déjà fait pour le jeu de données", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "bah on valide le planning", "la": "confirmed", "b": "c'est déjà fait pour le planning", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la facture", "la": "confirmed", "b": "c'est déjà fait pour la facture", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le support de formation", "la": "confirmed", "b": "mh c'est déjà fait pour le support de formation", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le backlog", "la": "confirmed", "b": "c'est déjà fait pour le backlog", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le devis", "la": "confirmed", "b": "c'est déjà fait pour le devis", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "bref on valide le plan de charge", "la": "confirmed", "b": "c'est déjà déjà fait pour le plan de charge", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la recette", "la": "confirmed", "b": "euh c'est déjà fait pour la recette", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le budget marketing", "la": "confirmed", "b": "c'est déjà fait pour le budget marketing", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "genre on valide valide le contrat", "la": "confirmed", "b": "c'est déjà fait pour le contrat", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le rapport", "la": "confirmed", "b": "c'est déjà fait pour le rapport", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide valide le jeu de données", "la": "confirmed", "b": "c'est déjà fait pour le jeu de données", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le rapport", "la": "confirmed", "b": "c'est déjà fait pour le rapport", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la spécification", "la": "confirmed", "b": "c'est déjà fait pour la spécification", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide l'api", "la": "confirmed", "b": "c'est déjà fait pour l'api", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la recette", "la": "confirmed", "b": "c'est déjà fait pour la recette", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la recette", "la": "confirmed", "b": "genre c'est déjà fait pour la recette", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le deck", "la": "confirmed", "b": "tu vois c'est déjà fait pour le deck", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le deck", "la": "confirmed", "b": "c'est déjà fait pour le deck", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le contrat", "la": "confirmed", "b": "c'est déjà fait pour le contrat", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le cahier des charges", "la": "confirmed", "b": "c'est déjà fait pour le cahier des charges", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le plan de charge", "la": "confirmed", "b": "c'est déjà fait pour le plan de charge", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la roadmap", "la": "confirmed", "b": "c'est déjà fait pour la roadmap", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le rapport", "la": "confirmed", "b": "c'est déjà fait pour le rapport", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le budget marketing", "la": "confirmed", "b": "c'est déjà fait pour le budget marketing", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le cahier des charges", "la": "confirmed", "b": "c'est déjà fait pour le cahier des charges", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide la présentation", "la": "confirmed", "b": "c'est déjà fait pour la présentation", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide l'audit", "la": "confirmed", "b": "ben c'est déjà fait pour l'audit", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "genre on valide le contrat", "la": "confirmed", "b": "c'est déjà fait pour le contrat", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le devis", "la": "confirmed", "b": "genre c'est déjà fait pour le devis", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide valide la présentation", "la": "confirmed", "b": "c'est déjà fait pour la présentation", "lb": "completed"}
+{"group": "confirmed_vs_completed_b", "field": "status", "a": "on valide le deck", "la": "confirmed", "b": "c'est déjà fait pour le deck", "lb": "completed"}

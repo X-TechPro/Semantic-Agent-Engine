@@ -1,0 +1,26 @@
+{
+  "corpus_id": "hiring-eval",
+  "questions": [
+    {"query_id": "hiring-q1", "style": "formal", "meeting_id": "hiring",
+     "text": "Quel salaire a été validé pour le premier recrutement ?",
+     "expected_message_ids": ["hiring:3", "hiring:9", "hiring:12"], "expected_value": "52 000", "must_abstain": false},
+    {"query_id": "hiring-q2", "style": "messy", "meeting_id": "hiring",
+     "text": "et yassine il commence quand du coup ?",
+     "expected_message_ids": ["hiring:8", "hiring:18", "hiring:19"], "expected_value": "1er avril", "must_abstain": false},
+    {"query_id": "hiring-q3", "style": "formal", "meeting_id": "hiring",
+     "text": "Combien de recrutements sont lancés maintenant ?",
+     "expected_message_ids": ["hiring:5"], "expected_value": "un", "must_abstain": false},
+    {"query_id": "hiring-q4", "style": "formal", "meeting_id": "hiring",
+     "text": "Quand le deuxième poste est-il ouvert ?",
+     "expected_message_ids": ["hiring:5", "hiring:10"], "expected_value": "juillet", "must_abstain": false},
+    {"query_id": "hiring-q5", "style": "messy", "meeting_id": "hiring",
+     "text": "les 3 000 de différence on en fait quoi ?",
+     "expected_message_ids": ["hiring:14", "hiring:15"], "expected_value": "formation", "must_abstain": false},
+    {"query_id": "hiring-q6", "style": "tricky", "meeting_id": "hiring",
+     "text": "Quel est le salaire actuel de Yassine ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true},
+    {"query_id": "hiring-q7", "style": "tricky", "meeting_id": "hiring",
+     "text": "Yassine a-t-il accepté l'offre ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true}
+  ]
+}

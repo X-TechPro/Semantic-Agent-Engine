@@ -1,0 +1,45 @@
+{
+  "corpus_id": "atlas-eval-v1",
+  "questions": [
+    {
+      "query_id": "q-001",
+      "style": "formal",
+      "text": "Quel budget a été validé pour le projet Atlas ?",
+      "expected_message_ids": ["m-001:1"],
+      "expected_value": "2,4 M€",
+      "must_abstain": false
+    },
+    {
+      "query_id": "q-002",
+      "style": "messy",
+      "text": "et du coup le budget on part sur combien ?",
+      "expected_message_ids": ["m-001:1"],
+      "expected_value": "2,4 M€",
+      "must_abstain": false
+    },
+    {
+      "query_id": "q-003",
+      "style": "formal",
+      "text": "Quand le lancement est-il prévu ?",
+      "expected_message_ids": ["m-001:3"],
+      "expected_value": "janvier",
+      "must_abstain": false
+    },
+    {
+      "query_id": "q-004",
+      "style": "tricky",
+      "text": "Qui gère le budget du projet Atlas ?",
+      "expected_message_ids": [],
+      "expected_value": null,
+      "must_abstain": true
+    },
+    {
+      "query_id": "q-005",
+      "style": "tricky",
+      "text": "Est-ce qu'on a déjà signé le contrat avec le traiteur ?",
+      "expected_message_ids": [],
+      "expected_value": null,
+      "must_abstain": true
+    }
+  ]
+}

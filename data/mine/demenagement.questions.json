@@ -1,0 +1,26 @@
+{
+  "corpus_id": "demenagement-eval",
+  "questions": [
+    {"query_id": "demenagement-q1", "style": "formal", "meeting_id": "demenagement",
+     "text": "Quelle est la date du déménagement ?",
+     "expected_message_ids": ["demenagement:0", "demenagement:11", "demenagement:12", "demenagement:16", "demenagement:19"], "expected_value": "1er septembre", "must_abstain": false},
+    {"query_id": "demenagement-q2", "style": "messy", "meeting_id": "demenagement",
+     "text": "et le loyer on est sur combien au final ?",
+     "expected_message_ids": ["demenagement:8", "demenagement:9", "demenagement:19"], "expected_value": "16 500", "must_abstain": false},
+    {"query_id": "demenagement-q3", "style": "formal", "meeting_id": "demenagement",
+     "text": "Quand se termine le bail actuel ?",
+     "expected_message_ids": ["demenagement:2"], "expected_value": "30 septembre", "must_abstain": false},
+    {"query_id": "demenagement-q4", "style": "formal", "meeting_id": "demenagement",
+     "text": "Quand la fibre sera-t-elle prête ?",
+     "expected_message_ids": ["demenagement:10"], "expected_value": "20 août", "must_abstain": false},
+    {"query_id": "demenagement-q5", "style": "formal", "meeting_id": "demenagement",
+     "text": "Quand récupère-t-on les clés ?",
+     "expected_message_ids": ["demenagement:15"], "expected_value": "15 août", "must_abstain": false},
+    {"query_id": "demenagement-q6", "style": "tricky", "meeting_id": "demenagement",
+     "text": "Quel est le nom du bailleur ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true},
+    {"query_id": "demenagement-q7", "style": "tricky", "meeting_id": "demenagement",
+     "text": "Le nouveau bail est-il signé ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true}
+  ]
+}

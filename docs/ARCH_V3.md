@@ -1,6 +1,6 @@
 # Architecture v3 — immutable meetings, decision nodes, a dated view
 
-Status: **v3 is the shipped architecture** (2026-10-25). v2's pairwise
+Status: **v3 is the rollback path**; v4 is the new architecture (`docs/ARCH_V4.md`). v2's pairwise
 `supersedes` writer is disabled; the meeting is immutable.
 
 ## The constraint
@@ -60,6 +60,25 @@ Artefact: `runs/decision_nodes/v3-all6.json`.
 The last row is not a defect: the gold pairs are intermediate changes, and the
 thread usually continues afterwards. The node's **current** is the latest
 message, as specified; the historical truth is read with `at_turn`/`as_of`.
+
+### Additive state-point nodes (D-063)
+
+`retrieve.node_state: true` adds a second node set keyed by the explicit
+`DecisionState` point (`food`, `budget`, `date`, `mode`, `venue`, ...). The
+topic nodes remain; a pair is reached if it shares either key. `state: false`
+(or the config flag) keeps the old topic-only view.
+
+| measure | topic only | + state |
+|---|---|---|
+| gold old+new in one node | **25/40 = 0.625** | **33/40 = 0.825** |
+| `at_turn(new)` returns the new | 40/40 = 1.000 | **40/40 = 1.000** |
+| current is gold new | 2/40 = 0.050 | **6/40 = 0.150** |
+| mutated children | 0 | 0 |
+
+This is a reach and current improvement; `at_turn` is unchanged. The state
+reader is deterministic and writes a point only when the value is grounded in
+the turn.
+
 
 ## Detector (2 labelled meetings)
 

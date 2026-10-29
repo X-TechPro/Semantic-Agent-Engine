@@ -1,0 +1,29 @@
+{
+  "meeting_id": "m-001",
+  "messages": [
+    {
+      "message_id": "m-001:0",
+      "speaker": "Marie",
+      "timestamp": "2026-10-12T09:00:00+02:00",
+      "text": "euh on pourrait partir sur un budget de 1,5 M€ pour atlas"
+    },
+    {
+      "message_id": "m-001:1",
+      "speaker": "Sophie",
+      "timestamp": "2026-10-12T09:02:30+02:00",
+      "text": "bon finalement on valide 2,4 M€ c'est acté"
+    },
+    {
+      "message_id": "m-001:2",
+      "speaker": "Karim",
+      "timestamp": "2026-10-12T09:04:00+02:00",
+      "text": "et le lancement on le décale à janvier ou pas"
+    },
+    {
+      "message_id": "m-001:3",
+      "speaker": "Marie",
+      "timestamp": "2026-10-12T09:04:36+02:00",
+      "text": "oui on décale à janvier"
+    }
+  ]
+}

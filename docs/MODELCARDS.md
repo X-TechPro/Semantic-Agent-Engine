@@ -38,3 +38,15 @@ Verification method: live `huggingface.co/api/models/<id>` plus `config.json` / 
 - **Embedder:** the guide's `harrier-oss-*` names must be confirmed below; until confirmed, `BAAI/bge-m3` and `intfloat/multilingual-e5-base` are the working candidates (both verified, both permissive).
 - **Reranker:** `jinaai/jina-reranker-v3` is not usable as an Apache-2.0 substitute — `BAAI/bge-reranker-v2-m3` is the default.
 - Prefix conventions are enforced in `engine/embed/hf_embedder.py` (`KNOWN_PREFIXES`), keyed by these verified ids.
+
+## v4 addendum — FlauBERT XNLI/STS
+
+| role | model | status |
+|---|---|---|
+| contextual linker / reranker | `inokufu/flaubert-base-uncased-xnli-sts` | loaded locally through `AutoModelForSequenceClassification`; 2 output logits in this checkpoint; `sacremoses` required by `FlaubertTokenizer` |
+
+This is a **sentence-pair reranker**, not a bi-encoder and not a relation
+classifier. The 2-logit head is treated as an STS-style pair score; it must be
+fine-tuned with a relation/status head before it can be a shipped linker.
+Licence/model-card verification is still required in the live registry before
+promotion.

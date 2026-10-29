@@ -148,6 +148,22 @@ def date_order_ok(new: Unit, old: Unit) -> bool:
     return new.source_date >= old.source_date
 
 
+def turn_order_ok(new: Unit, old: Unit) -> bool:
+    """Turn order is the only clock inside one meeting.
+
+    SUMM-RE gives every turn the same `source_date`, so `date_order_ok` cannot
+    reject a later-turn -> earlier-turn relation there. Equal/unknown turn
+    indices stay allowed: two units from the same turn have no order to test.
+    """
+    if new.source_id != old.source_id:
+        return True
+    if new.turn_index is None or old.turn_index is None:
+        return True
+    if new.turn_index == old.turn_index:
+        return True
+    return new.turn_index > old.turn_index
+
+
 def new_is_assertive(new: Unit) -> bool:
     return new.kind == "info" and new.status in {"confirmed", "cancelled"}
 
@@ -198,6 +214,26 @@ def evaluate(new: Unit, old: Unit, proposed: str = "supersedes", *,
         # that is *in force*. Superseding an already-superseded unit turned a
         # chain of N statements into N-1 edges (measured: 102 false supersedes).
         return "supports", "G8_target_not_current"
+    if not turn_order_ok(new, old):
+        return "contradicts", "G2_turn_order"
+    # G13: same value does not mean same polarity. "le budget est de 2 M€" and
+    # "le budget n'est pas de 2 M€" share the typed amount, so the old path
+    # called the second a support or even a replacement. Scope is per subject
+    # clause (`values.polarity`), not sentence-wide. A genuinely new typed value
+    # ("... n'est pas 2 M€, il est de 3 M€") still goes through; a bare negation
+    # is a contradiction, never a replacement.
+    from engine.link.values import has_change_cue, polarity
+
+    pn = polarity(new.text, new.slots.subject)
+    po = polarity(old.text, old.slots.subject)
+    if pn and po and pn != po:
+        if new.status == "cancelled":
+            return "supersedes", "G13_polarity_cancelled"
+        change = difference_kind(new, old)
+        if change != "typed" and not (
+                has_change_cue(new.text)
+                and pn == "affirmative" and po == "negative"):
+            return "contradicts", "G13_polarity"
     # G12 cardinality: a set-valued slot accumulates, so a new value is an
     # addition, never a replacement. This is the guard Graphiti's invalidation
     # path is missing (issue #1728: 41% of facts retired, most of them additive;

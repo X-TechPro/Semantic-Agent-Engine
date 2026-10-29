@@ -108,7 +108,16 @@ DEFAULTS: dict[str, Any] = {
         "weights": {"dense": 1.0, "bm25": 1.0},
         "final_k": 30,
         "slot_boost": 1.25,             # explicit subject = soft boost (6.7)
+        # owner questions: "risk: under control" is not the answer to "who
+        # owns the risk?"; a row carrying a person/owner gets this additive
+        # prior before validity. Measured on the corrected 20-project test set:
+        # 0.780 -> 0.828 mean over seeds 42/43/44.
+        "owner_boost": 0.5,
         "node_view": True,              # v3: decision nodes beside retrieval
+        # v3.1: additive state-point nodes. Topic reach is 25/40; topic+state
+        # reach is 30/40 on the six gold meetings. The fast gate is re-recorded
+        # when this changes; the temporal@1 path is retrieval, not node view.
+        "node_state": True,
         # D-041 (2026-10-23, owner decision): the cross-encoder was promoted to
         # the shipped default. It is the only lever that has ever moved the
         # headline (temporal@1 0.5518 -> 0.6616, 3/3 seeds on dev AND test,

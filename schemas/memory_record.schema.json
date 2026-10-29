@@ -1,0 +1,772 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semantic-agent-engine/memory_record.schema.json",
+  "title": "Memory record — what the architecture writes (NOT an input file)",
+  "description": "Produced by the pipeline after ingest: units with spans and tags, typed links, state events. This is the shape the memory layer stores; it is not something a dataset author writes. The input is schemas/meeting.schema.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "definition_version",
+    "language",
+    "corpus",
+    "meetings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "definition_version": {
+      "type": "string",
+      "description": "Which change definition the labels follow, e.g. change-v1 (docs/CHANGE_DEFINITION.md)."
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+    },
+    "corpus": {
+      "$ref": "#/$defs/corpus"
+    },
+    "meetings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/meeting"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    }
+  },
+  "$defs": {
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corpus_id",
+        "created_at",
+        "license",
+        "generators",
+        "styles",
+        "splits"
+      ],
+      "properties": {
+        "corpus_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "license": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "generators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "model",
+              "prompt_id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "model": {
+                "type": "string"
+              },
+              "prompt_id": {
+                "type": "string"
+              },
+              "temperature": {
+                "type": "number",
+                "minimum": 0
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "styles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "messy",
+              "formal",
+              "semi-formal",
+              "asr",
+              "chat"
+            ]
+          }
+        },
+        "splits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "train",
+            "val",
+            "test"
+          ],
+          "properties": {
+            "train": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "val": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "test": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Meeting ids only. Also hold out at least one generator x style combination for test so style transfer is measurable."
+        }
+      }
+    },
+    "meeting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "meeting_id",
+        "source_date",
+        "started_at",
+        "project_id",
+        "style",
+        "generator_id",
+        "split",
+        "participants",
+        "turns"
+      ],
+      "properties": {
+        "meeting_id": {
+          "type": "string"
+        },
+        "source_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "Calendar date if known. null is honest; never invent one."
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "style": {
+          "enum": [
+            "messy",
+            "formal",
+            "semi-formal",
+            "asr",
+            "chat"
+          ]
+        },
+        "generator_id": {
+          "type": "string"
+        },
+        "split": {
+          "enum": [
+            "train",
+            "val",
+            "test"
+          ]
+        },
+        "human_verified": {
+          "type": "boolean",
+          "default": false
+        },
+        "participants": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "speaker_id",
+              "name"
+            ],
+            "properties": {
+              "speaker_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "email": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Fictional addresses only."
+              }
+            }
+          }
+        },
+        "turns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/turn"
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        },
+        "state": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/state_event"
+          }
+        }
+      }
+    },
+    "turn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "message_id",
+        "turn_index",
+        "minute_in_meeting",
+        "timestamp",
+        "speaker_id",
+        "text",
+        "units"
+      ],
+      "properties": {
+        "message_id": {
+          "type": "string"
+        },
+        "turn_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minute_in_meeting": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Relative time. Works even when the calendar date is unknown."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "speaker_id": {
+          "type": "string"
+        },
+        "speaker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "description": "Cleaned text. Offsets below index into this string."
+        },
+        "raw_text": {
+          "type": "string",
+          "description": "Optional: the model's raw output before cleanup."
+        },
+        "noise": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "disfluencies": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "asr_errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "truncated": {
+              "type": "boolean"
+            },
+            "punctuation": {
+              "enum": [
+                "none",
+                "partial",
+                "full"
+              ]
+            }
+          }
+        },
+        "change": {
+          "$ref": "#/$defs/change"
+        },
+        "units": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/unit"
+          }
+        }
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "is_change",
+        "definition_version",
+        "annotator"
+      ],
+      "properties": {
+        "is_change": {
+          "type": "boolean"
+        },
+        "definition_version": {
+          "type": "string"
+        },
+        "changed_slots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "slot",
+              "to"
+            ],
+            "properties": {
+              "slot": {
+                "type": "string"
+              },
+              "from": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "null when the slot was open."
+              },
+              "to": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Any earlier unit that states the replaced value. A set, not one gold (CHANGE_DEFINITION.md)."
+        },
+        "annotator": {
+          "type": "string",
+          "description": "human | rule | llm:<model>"
+        },
+        "human_verified": {
+          "type": "boolean",
+          "default": false
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "source_id",
+        "source_date",
+        "span",
+        "type",
+        "statement",
+        "speaker",
+        "status",
+        "evidence",
+        "annotator"
+      ],
+      "properties": {
+        "unit_id": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string",
+          "description": "piscine: the meeting id this unit comes from."
+        },
+        "source_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "span": {
+          "$ref": "#/$defs/span"
+        },
+        "type": {
+          "enum": [
+            "decision",
+            "action",
+            "commitment",
+            "question",
+            "answer",
+            "fact",
+            "risk",
+            "idea"
+          ]
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "confirmed",
+            "cancelled",
+            "completed",
+            "replaced",
+            "unknown"
+          ]
+        },
+        "intent": {
+          "enum": [
+            "answer",
+            "compare",
+            "dossier",
+            "email",
+            "task",
+            "schedule",
+            "clarify",
+            "none"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "description": "piscine: the proposition, normalised."
+        },
+        "speaker": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/span"
+        },
+        "slot": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "budget | date | owner | place | quantity | mode | ..."
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deadline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "value"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "person",
+                  "project",
+                  "object",
+                  "date",
+                  "amount",
+                  "action",
+                  "event"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "annotator": {
+          "type": "string"
+        },
+        "human_verified": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "text"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from_id",
+        "to_id",
+        "relation",
+        "evidence_source_id"
+      ],
+      "properties": {
+        "from_id": {
+          "type": "string"
+        },
+        "to_id": {
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "supersedes",
+            "answers",
+            "supports",
+            "creates_action",
+            "contradicts",
+            "unrelated"
+          ]
+        },
+        "evidence_source_id": {
+          "type": "string"
+        },
+        "annotator": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "state_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "project_id",
+        "slot",
+        "value",
+        "status",
+        "from_unit_id",
+        "at_turn"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "slot": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "confirmed",
+            "cancelled",
+            "completed",
+            "replaced",
+            "unknown"
+          ]
+        },
+        "from_unit_id": {
+          "type": "string"
+        },
+        "at_turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valid_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "supersedes_unit_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_id",
+        "text",
+        "intent",
+        "expected"
+      ],
+      "properties": {
+        "query_id": {
+          "type": "string"
+        },
+        "meeting_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "intent": {
+          "enum": [
+            "answer",
+            "compare",
+            "dossier",
+            "email",
+            "task",
+            "schedule",
+            "clarify"
+          ]
+        },
+        "style": {
+          "enum": [
+            "messy",
+            "formal",
+            "semi-formal",
+            "chat"
+          ]
+        },
+        "expected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "operation",
+            "citation_unit_ids",
+            "must_abstain"
+          ],
+          "properties": {
+            "operation": {
+              "enum": [
+                "answer",
+                "compare",
+                "build_dossier",
+                "draft_email",
+                "create_task",
+                "schedule_event",
+                "clarify"
+              ]
+            },
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "citation_unit_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "must_abstain": {
+              "type": "boolean"
+            },
+            "recipient_name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "recipient_status": {
+              "enum": [
+                "resolved",
+                "email_missing",
+                "ambiguous",
+                "not_found",
+                null
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

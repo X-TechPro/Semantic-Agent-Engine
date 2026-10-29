@@ -1,0 +1,31 @@
+{"from_mention_id": "Pollen-t0:budget:m000", "to_mention_id": "Pollen-t0:budget:m001", "relation": "supersedes", "event_id": "Pollen-t0:budget", "evidence": "C'est bon pour 2200 euros, c'est valide."}
+{"from_mention_id": "Pollen-t0:budget:m001", "to_mention_id": "Pollen-t0:budget:m002", "relation": "supersedes", "event_id": "Pollen-t0:budget", "evidence": "Nouveau montant valide : 2400 euros."}
+{"from_mention_id": "Pollen-t0:date:m003", "to_mention_id": "Pollen-t0:date:m004", "relation": "supersedes", "event_id": "Pollen-t0:date", "evidence": "euh Le 1 juin, c'est acte."}
+{"from_mention_id": "Pollen-t0:date:m004", "to_mention_id": "Pollen-t0:date:m005", "relation": "supersedes", "event_id": "Pollen-t0:date", "evidence": "On repart sur le 25 fevrier, c'est la nouvelle date."}
+{"from_mention_id": "Pollen-t0:venue:m006", "to_mention_id": "Pollen-t0:venue:m007", "relation": "supersedes", "event_id": "Pollen-t0:venue", "evidence": "La mediatheque, c'est confirme."}
+{"from_mention_id": "Pollen-t0:payment:m009", "to_mention_id": "Pollen-t0:payment:m010", "relation": "answers", "event_id": "Pollen-t0:payment", "evidence": "Le virement de 800 euros a Comptoir Mistral est passe."}
+{"from_mention_id": "Osmose-t1:budget:m000", "to_mention_id": "Osmose-t1:budget:m001", "relation": "supersedes", "event_id": "Osmose-t1:budget", "evidence": "euh C'est bon pour 1450 euros, c'est valide."}
+{"from_mention_id": "Osmose-t1:budget:m001", "to_mention_id": "Osmose-t1:budget:m002", "relation": "supersedes", "event_id": "Osmose-t1:budget", "evidence": "Nouveau montant valide : 1650 euros."}
+{"from_mention_id": "Osmose-t1:date:m004", "to_mention_id": "Osmose-t1:date:m005", "relation": "supersedes", "event_id": "Osmose-t1:date", "evidence": "euh Le 25 septembre, c'est acte."}
+{"from_mention_id": "Osmose-t1:date:m005", "to_mention_id": "Osmose-t1:date:m006", "relation": "supersedes", "event_id": "Osmose-t1:date", "evidence": "On repart sur le 14 mars, c'est la nouvelle date."}
+{"from_mention_id": "Osmose-t1:venue:m007", "to_mention_id": "Osmose-t1:venue:m008", "relation": "supersedes", "event_id": "Osmose-t1:venue", "evidence": "La salle Atlas, c'est confirme."}
+{"from_mention_id": "Osmose-t1:payment:m010", "to_mention_id": "Osmose-t1:payment:m011", "relation": "answers", "event_id": "Osmose-t1:payment", "evidence": "Le virement de 500 euros a Comptoir Mistral est passe."}
+{"from_mention_id": "Osmose-t1:action:m012", "to_mention_id": "Osmose-t1:action:m013", "relation": "answers", "event_id": "Osmose-t1:action", "evidence": "euh la billetterie en ligne est fait par Salma."}
+{"from_mention_id": "Atlas-t2:budget:m000", "to_mention_id": "Atlas-t2:budget:m001", "relation": "supersedes", "event_id": "Atlas-t2:budget", "evidence": "C'est bon pour 1450 euros, c'est valide."}
+{"from_mention_id": "Atlas-t2:date:m002", "to_mention_id": "Atlas-t2:date:m003", "relation": "supersedes", "event_id": "Atlas-t2:date", "evidence": "Le 27 mai, c'est acte."}
+{"from_mention_id": "Atlas-t2:venue:m004", "to_mention_id": "Atlas-t2:venue:m005", "relation": "supersedes", "event_id": "Atlas-t2:venue", "evidence": "attends La arena du pays d'Aix, c'est confirme."}
+{"from_mention_id": "Atlas-t2:payment:m007", "to_mention_id": "Atlas-t2:payment:m008", "relation": "answers", "event_id": "Atlas-t2:payment", "evidence": "Le virement de 800 euros a Maison Pollen est passe."}
+{"from_mention_id": "Orion-t3:budget:m000", "to_mention_id": "Orion-t3:budget:m001", "relation": "supersedes", "event_id": "Orion-t3:budget", "evidence": "C'est bon pour 2700 euros, c'est valide."}
+{"from_mention_id": "Orion-t3:budget:m001", "to_mention_id": "Orion-t3:budget:m002", "relation": "supersedes", "event_id": "Orion-t3:budget", "evidence": "Nouveau montant valide : 2900 euros."}
+{"from_mention_id": "Orion-t3:date:m004", "to_mention_id": "Orion-t3:date:m005", "relation": "supersedes", "event_id": "Orion-t3:date", "evidence": "Le 21 juin, c'est acte."}
+{"from_mention_id": "Orion-t3:venue:m006", "to_mention_id": "Orion-t3:venue:m007", "relation": "supersedes", "event_id": "Orion-t3:venue", "evidence": "euh La amphi B, c'est confirme."}
+{"from_mention_id": "Orion-t3:payment:m009", "to_mention_id": "Orion-t3:payment:m010", "relation": "answers", "event_id": "Orion-t3:payment", "evidence": "euh Le virement de 800 euros a Comptoir Mistral est passe."}
+{"from_mention_id": "Mosaique-t4:budget:m000", "to_mention_id": "Mosaique-t4:budget:m001", "relation": "supersedes", "event_id": "Mosaique-t4:budget", "evidence": "C'est bon pour 800 euros, c'est valide."}
+{"from_mention_id": "Mosaique-t4:date:m003", "to_mention_id": "Mosaique-t4:date:m004", "relation": "supersedes", "event_id": "Mosaique-t4:date", "evidence": "Le 17 mai, c'est acte."}
+{"from_mention_id": "Mosaique-t4:venue:m005", "to_mention_id": "Mosaique-t4:venue:m006", "relation": "supersedes", "event_id": "Mosaique-t4:venue", "evidence": "La arena du pays d'Aix, c'est confirme."}
+{"from_mention_id": "Canopee-t5:budget:m000", "to_mention_id": "Canopee-t5:budget:m001", "relation": "supersedes", "event_id": "Canopee-t5:budget", "evidence": "euh C'est bon pour 800 euros, c'est valide."}
+{"from_mention_id": "Canopee-t5:budget:m001", "to_mention_id": "Canopee-t5:budget:m002", "relation": "supersedes", "event_id": "Canopee-t5:budget", "evidence": "Nouveau montant valide : 1000 euros."}
+{"from_mention_id": "Canopee-t5:date:m003", "to_mention_id": "Canopee-t5:date:m004", "relation": "supersedes", "event_id": "Canopee-t5:date", "evidence": "attends Le 17 juillet, c'est acte."}
+{"from_mention_id": "Canopee-t5:date:m004", "to_mention_id": "Canopee-t5:date:m005", "relation": "supersedes", "event_id": "Canopee-t5:date", "evidence": "On repart sur le 6 juillet, c'est la nouvelle date."}
+{"from_mention_id": "Canopee-t5:venue:m006", "to_mention_id": "Canopee-t5:venue:m007", "relation": "supersedes", "event_id": "Canopee-t5:venue", "evidence": "en fait La halle des ateliers, c'est confirme."}
+{"from_mention_id": "Canopee-t5:action:m010", "to_mention_id": "Canopee-t5:action:m011", "relation": "answers", "event_id": "Canopee-t5:action", "evidence": "les badges est fait par Malik."}

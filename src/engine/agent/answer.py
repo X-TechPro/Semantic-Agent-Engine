@@ -34,8 +34,16 @@ def build_answer(hits: list[Hit], query: Query, *, min_score: float = 0.0,
     # verbatim as answer context. The text test is the guard; the `other`
     # label is the rules reader's own verdict — both, because the trained
     # reader never applies INJECTION_RE and must not be trusted to filter it.
-    usable = [h for h in hits if h.score >= min_score and on_topic(h)
-              and h.unit.type != "other" and not is_injection(h.unit.text)]
+    # one unit, one claim: hybrid + node expansion can return the same unit on
+    # two paths, and the answer quoted it twice (seen in the UI, 2026-10-29)
+    usable: list[Hit] = []
+    seen: set[str] = set()
+    for h in hits:
+        if (h.score < min_score or not on_topic(h) or h.unit.type == "other"
+                or is_injection(h.unit.text) or h.unit.unit_id in seen):
+            continue
+        seen.add(h.unit.unit_id)
+        usable.append(h)
     if not usable:
         return AnswerWithEvidence(answer=None, no_answer_reason=NO_ANSWER,
                                   query_mode=query.mode)
@@ -91,8 +99,20 @@ def build_answer(hits: list[Hit], query: Query, *, min_score: float = 0.0,
         if any(unconfirmed_currency(h.unit) for h in usable[:max_claims]):
             caveat = CURRENCY_CAVEAT
 
+    # Contexte answers the same subject as the lead. Without this, a budget
+    # question quoted the launch date ("le lancement passe en janvier") as if it
+    # were part of the budget: same corpus, same words, different slot.
+    # exclude by id, not by position: the lead is decided[0], which is not
+    # always usable[0] (a mention can outrank the decision) and slicing
+    # usable[1:] then repeated the lead as its own context
+    lead_key = lead.unit.slots.subject
+    rest = [h for h in usable if h.unit.unit_id != lead.unit.unit_id]
+    context = [h for h in rest[:max_claims - 1]
+               if not lead_key or not h.unit.slots.subject
+               or h.unit.slots.subject == lead_key]
+    cited = [lead] + context
     claims = [Claim(text=_with_citation(h), unit_ids=[h.unit.unit_id])
-              for h in usable[:max_claims]]
+              for h in cited]
     breakdown = {"confirmed": [h.unit.unit_id for h in decided],
                  "proposed": [h.unit.unit_id for h in soft],
                  "superseded": [h.unit.unit_id for h in usable if not h.unit.is_current]}
@@ -102,11 +122,11 @@ def build_answer(hits: list[Hit], query: Query, *, min_score: float = 0.0,
                for h in usable if not h.unit.is_current][:max_claims]
 
     parts = [f"{lead.unit.text} ({_meta(lead.unit)})"]
-    if len(usable) > 1:
+    if context:
         parts.append("Contexte :")
-        parts += [f"- {_short(h)}" for h in usable[1:max_claims]]
+        parts += [f"- {_short(h)} [{h.unit.unit_id}]" for h in context]
     if decided and any(h.unit.unit_id not in {d.unit.unit_id for d in decided}
-                       for h in usable):
+                       for h in cited):
         parts.append("À noter : les éléments ci-dessus sont des propositions ou des "
                      "hypothèses, pas des décisions en vigueur.")
     answer = "\n".join(parts)

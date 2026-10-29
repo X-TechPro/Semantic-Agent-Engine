@@ -1,0 +1,26 @@
+{
+  "corpus_id": "nova-eval",
+  "questions": [
+    {"query_id": "nova-q1", "style": "formal", "meeting_id": "nova",
+     "text": "Quelle est la date de lancement retenue pour Nova ?",
+     "expected_message_ids": ["nova:9", "nova:18", "nova:19"], "expected_value": "5 avril", "must_abstain": false},
+    {"query_id": "nova-q2", "style": "messy", "meeting_id": "nova",
+     "text": "et du coup le budget marketing on part sur combien ?",
+     "expected_message_ids": ["nova:11", "nova:21", "nova:22"], "expected_value": "150 000", "must_abstain": false},
+    {"query_id": "nova-q3", "style": "formal", "meeting_id": "nova",
+     "text": "Quelle fonctionnalité a été retirée du lancement ?",
+     "expected_message_ids": ["nova:6", "nova:7"], "expected_value": "partage", "must_abstain": false},
+    {"query_id": "nova-q4", "style": "formal", "meeting_id": "nova",
+     "text": "Qui s'occupe du kit presse ?",
+     "expected_message_ids": ["nova:14"], "expected_value": "Léa", "must_abstain": false},
+    {"query_id": "nova-q5", "style": "messy", "meeting_id": "nova",
+     "text": "la revue juridique elle en est où ?",
+     "expected_message_ids": ["nova:16"], "expected_value": "pas commencée", "must_abstain": false},
+    {"query_id": "nova-q6", "style": "tricky", "meeting_id": "nova",
+     "text": "Quel est le nom du client pour qui Nova est lancé ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true},
+    {"query_id": "nova-q7", "style": "tricky", "meeting_id": "nova",
+     "text": "Le contrat avec l'agence est-il signé ?",
+     "expected_message_ids": [], "expected_value": null, "must_abstain": true}
+  ]
+}
