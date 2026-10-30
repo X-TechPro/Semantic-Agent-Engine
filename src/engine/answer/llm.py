@@ -140,6 +140,7 @@ def call_ollama(model: str, system: str, user: str, *,
     the whole budget into their reasoning channel and return an empty answer
     with `finish_reason: length` when it is left on.
     """
+    import os
     import urllib.request
 
     payload = json.dumps({
@@ -148,7 +149,7 @@ def call_ollama(model: str, system: str, user: str, *,
                      {"role": "user", "content": user}],
         "stream": False,
         "think": False,
-        "keep_alive": "30s",
+        "keep_alive": os.environ.get("SAE_OLLAMA_KEEP_ALIVE", "5m"),
         "options": {"temperature": 0.0, "num_predict": max_tokens},
     }).encode()
     req = urllib.request.Request(
@@ -159,7 +160,7 @@ def call_ollama(model: str, system: str, user: str, *,
     return (body.get("message") or {}).get("content") or ""
 
 
-def answer_llm(query: str, hits, store=None, *, model="qwen2.5:7b-instruct",
+def answer_llm(query: str, hits, store=None, *, model="qwen3.5:4b",
                **kw) -> Answer:
     if not hits:
         return Answer("Je n'ai pas assez d'information pour répondre.",

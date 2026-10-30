@@ -1767,7 +1767,7 @@ def build_v4(lang, out):
          Paragraph(fr(X("aucune", "none")), cell), Paragraph(fr(X("4/4", "4/4")), cell)],
         [Paragraph(fr(X("5 · memory", "5 · memory")), cell_b), Paragraph(fr(X("règle append-only", "append-only rule")), cell),
          Paragraph(fr(X("aucune", "none")), cell), Paragraph(fr(X("12/12 ; 0 fuite", "12/12; 0 leak")), cell)],
-        [Paragraph(fr(X("7 · answerer", "7 · answerer")), cell_b), Paragraph("Qwen2.5-7B-instruct + vérificateur", cell),
+        [Paragraph(fr(X("7 · answerer", "7 · answerer")), cell_b), Paragraph("Qwen3.5-4B + vérificateur", cell),
          Paragraph(fr(X("aucune", "none")), cell), Paragraph(fr(X("0,778 hybride", "0.778 hybrid")), cell)],
     ]
     tt = Table(train_rows, colWidths=[32*mm, 48*mm, 58*mm, CW-138*mm], repeatRows=1)

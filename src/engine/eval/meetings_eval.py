@@ -141,7 +141,7 @@ def main(argv=None) -> int:
     ap.add_argument("--rerank", action="store_true")
     ap.add_argument("--answer", choices=("rules", "llm", "hybrid"),
                     default="hybrid")
-    ap.add_argument("--answer-model", default="qwen2.5:7b-instruct")
+    ap.add_argument("--answer-model", default="qwen3.5:4b")
     args = ap.parse_args(argv)
 
     root = repo_root()

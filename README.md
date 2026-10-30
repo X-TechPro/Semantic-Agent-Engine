@@ -154,8 +154,9 @@ v4, five hand-written meetings, 36 questions (26 answerable, 10 tricky):
 
 Same set, three answerers: the deterministic template 0.694, the LLM alone
 0.583, the shipped hybrid **0.778** — memory answers when it holds the proof,
-the LLM takes the rest. A 4B model refuses everything; the 7B is the usable
-floor on 8 GB.
+the LLM takes the rest. The local model is Qwen3.5-4B by default
+(`SAE_OLLAMA_KEEP_ALIVE` keeps it warm between questions); re-measured with it
+and no reranker (CPU): **0.750** correct, cites .731, 7/10 refused.
 
 v3's comparison stays as the rollback baseline. Same holdout corpus, same
 search budget; the only difference is whether the relation layer is on (both
@@ -179,7 +180,7 @@ is **not** met.
 - **hit@1 is .577.** The right turn is in the top 3 for 85% of questions and in
   the top 10 for 96%, but not always first. Pure reranking wins top-1 and loses
   top-3; rank fusion is what ships.
-- **3 of 10 tricky questions still get an answer.** The 7B model turns an
+- **3 of 10 tricky questions still get an answer.** The local model turns an
   intention ("we'll send the offer") into a completed act. A larger answerer is
   the missing variable, not another prompt.
 - **Two keys for one point.** A turn with no point writes `project:slot`

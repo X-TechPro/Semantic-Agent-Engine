@@ -69,7 +69,7 @@ def main(argv=None) -> int:
     ap.add_argument("--k", type=int, default=10)
     ap.add_argument("--answer", choices=("rules", "llm", "hybrid"),
                     default="hybrid")
-    ap.add_argument("--model", default="qwen2.5:7b-instruct")
+    ap.add_argument("--model", default="qwen3.5:4b")
     ap.add_argument("--no-rerank", action="store_true")
     ap.add_argument("--device", default="cuda")
     args = ap.parse_args(argv)

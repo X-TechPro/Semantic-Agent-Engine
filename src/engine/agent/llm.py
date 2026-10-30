@@ -43,7 +43,7 @@ class TemplateBackend(LLMBackend):
 class OllamaBackend(LLMBackend):
     name = "ollama"
 
-    def __init__(self, model: str = "qwen2.5:7b-instruct",
+    def __init__(self, model: str = "qwen3.5:4b",
                  endpoint: str | None = None, timeout: float = 120.0,
                  extra_options: dict[str, Any] | None = None):
         self.model = model
@@ -116,7 +116,7 @@ def build_llm(cfg) -> LLMBackend:
         # no difference on qwen3.5:4b (16-51 s/call either way — smoke +
         # ctx-smoke, 2026-10-21), so nothing sold it as a speed fix and the
         # shipped default stays plain.
-        return OllamaBackend(model=cfg["agent"]["llm"].get("model_id") or "qwen2.5:7b-instruct")
+        return OllamaBackend(model=cfg["agent"]["llm"].get("model_id") or "qwen3.5:4b")
     if backend in ("openai", "openai_compatible"):
         return OpenAICompatibleBackend(model=cfg["agent"]["llm"].get("model_id")
                                        or "gpt-4o-mini")
