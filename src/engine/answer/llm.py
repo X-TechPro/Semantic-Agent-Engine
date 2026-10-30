@@ -33,7 +33,10 @@ SYSTEM = (
     "6. Ne déduis pas. Une intention (« je vais envoyer », « à verser cette "
     "semaine ») ne prouve pas que l'action a eu lieu. Si aucun extrait ne dit "
     "que c'est fait, réponds " + INSUFFICIENT + ".\n"
-    "7. Réponds en français, en une ou deux phrases."
+    "7. Si tu ne peux pas confirmer ce que la question demande (une action "
+    "qui n'a pas eu lieu, une personne qui n'est pas nommée), réponds "
+    f"exactement {INSUFFICIENT} — sans phrase explicative.\n"
+    "8. Réponds en français, en une ou deux phrases."
 )
 
 ID_IN_TEXT = re.compile(r"\[([^\[\]\s:]{1,80}(?::[^\[\]\s]+)?)\]")
@@ -54,7 +57,7 @@ def _messages(hits, store) -> list[dict]:
     return rows
 
 
-def _state_block(store, hits) -> str:
+def _state_lines(store, hits) -> list[tuple[str, str]]:
     """The memory's current view: what steps 4-5 already decided.
 
     Step 7 is retrieval + memory, not retrieval alone: "what is the current
@@ -62,8 +65,10 @@ def _state_block(store, hits) -> str:
     that proves it.
     """
     if store is None:
-        return ""
-    allowed = {h.unit_id for h in hits}
+        return []
+    # every live state of the store, not only the ones whose evidence was
+    # retrieved: "when was the salary confirmed" must not depend on whether
+    # turn 12 made the top 10 for this question.
     live = {"confirmed", "cancelled", "completed"}
     latest: dict[str, dict] = {}
     for row in store.state_events():
@@ -71,28 +76,63 @@ def _state_block(store, hits) -> str:
             continue
         latest[row["event_id"]] = row          # append-only: last wins
     if not latest:
-        return ""
+        return []
     lines = []
+    rows = []
     for event_id, row in latest.items():
-        if row.get("evidence_unit") not in allowed:
-            continue
         slot = str(row.get("slot") or "")
         # the event key is project:slot:point; without the point the model saw
         # "date = 15 août" and "date = 1er septembre" with nothing to tell them
         # apart (the keys vs the move).
         parts = str(event_id).split(":")
-        point = parts[2] if len(parts) >= 3 else None
+        unit = store.unit(str(row.get("evidence_unit") or "")) or {}
+        # the event key drops the point when the tagger had none; the unit still
+        # carries it, and without it "date = 1er septembre" reads like a date
+        point = (parts[2] if len(parts) >= 3 else None) or unit.get("point")
         label = f"{slot} · {point}" if point and point != slot else slot
-        lines.append(f"- {label} = {row.get('value')} [{row.get('evidence_unit')}]"
-                     f" ({row.get('status')}, {str(row.get('created_at'))[:10]})")
-    return "\n".join(lines)
+        # who confirmed it, resolved from the evidence turn: "who decided" is
+        # the speaker of the confirming turn, not everyone who mentioned it
+        msg = (store.message(unit.get("message_id", "")) if unit else None) or {}
+        by = f" par {msg.get('speaker')}" if msg.get("speaker") else ""
+        when = str(msg.get("timestamp") or row.get("created_at") or "")[:10]
+        fr = {"confirmed": "confirmé", "cancelled": "annulé",
+              "completed": "réalisé", "proposed": "proposé"}.get(
+                  str(row.get("status")), str(row.get("status")))
+        rows.append((when, label, str(row.get("value")),
+                     f"- {label} : {row.get('value')} — {fr} le {when}{by}"
+                     f" [{row.get('evidence_unit')}]",
+                     str(row.get("evidence_unit") or "")))
+    # the same slot is often written under several keys (project:slot,
+    # project:slot:point, project:slot:slot). Keep the newest line per
+    # (slot, value) or the model sees five "budget = 52 000" rows.
+    best: dict[tuple, tuple] = {}
+    for when, label, value, line, uid in rows:
+        key = (label, value)
+        if key not in best or when > best[key][0]:
+            best[key] = (when, line, uid)
+    ordered = sorted(best.values(), key=lambda t: t[0], reverse=True)
+    return [(line, uid) for _, line, uid in ordered[:12]]
 
 
 def build_prompt(query: str, hits, store) -> tuple[str, list[dict]]:
     rows = _messages(hits, store)
     body = "\n".join(r["label"] for r in rows)
-    state = _state_block(store, hits)
+    state_lines = _state_lines(store, hits)
+    state = "\n".join(line for line, _ in state_lines)
     mem = f"État connu en mémoire:\n{state}\n\n" if state else ""
+    # the state names its evidence unit; that turn must be citable too, even
+    # when retrieval did not return it, or the model can only refuse
+    have = {r["unit_id"] for r in rows}
+    for _, uid in state_lines:
+        if uid in have or not uid:
+            continue
+        u = (store.unit(uid) if store is not None else None) or {}
+        msg = (store.message(u.get("message_id", "")) if store is not None else None) or {}
+        rows.append({"unit_id": uid, "message_id": msg.get("message_id", ""),
+                     "timestamp": msg.get("timestamp", ""),
+                     "label": f"[{uid}] {msg.get('speaker', '?')}: {u.get('text', '')}"})
+        have.add(uid)
+    body = "\n".join(r["label"] for r in rows)
     user = (f"Question: {query}\n\n{mem}Extraits:\n{body}\n\nRéponds.")
     return user, rows
 

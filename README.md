@@ -156,7 +156,7 @@ Same set, three answerers: the deterministic template 0.694, the LLM alone
 0.583, the shipped hybrid **0.778** — memory answers when it holds the proof,
 the LLM takes the rest. The local model is Qwen3.5-4B by default
 (`SAE_OLLAMA_KEEP_ALIVE` keeps it warm between questions); re-measured with it
-and no reranker (CPU): **0.750** correct, cites .731, 7/10 refused.
+and no reranker (CPU): **0.806** correct, cites .808, 8/10 refused.
 
 v3's comparison stays as the rollback baseline. Same holdout corpus, same
 search budget; the only difference is whether the relation layer is on (both
