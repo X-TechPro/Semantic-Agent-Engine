@@ -18,8 +18,8 @@ from engine.agent.compare import build_comparison
 from engine.agent.dossier import build_dossier
 from engine.agent.intents import ACTION_INTENTS, REFUSAL
 from engine.agent.recipients import ContactBook
-from engine.schemas import (ActionResult, Clarification, DraftEmail, Hit, Query,
-                            TaskProposal, EventProposal, AnswerWithEvidence,
+from engine.schemas import (ActionResult, Claim, Clarification, DraftEmail,
+                            Hit, Query, TaskProposal, EventProposal, AnswerWithEvidence,
                             Comparison, Dossier, NON_ACTIONABLE_STATUSES)
 
 if TYPE_CHECKING:  # composition root, for typing only (no import cycle)
@@ -96,6 +96,19 @@ class Agent:
                     options=["Oui, c'est acté", "Non, rester en proposition"],
                     reason=REFUSAL.get(blocking, blocking)),
                 notes=["guard:hypothesis_never_acts"])
+
+        if intent == "answer" and _asks_latest(query.text):
+            latest = _latest_units(store, query.project)
+            if latest:
+                u = latest[0]
+                where = f" ({u.source_date.isoformat()} / {u.speaker or '—'} / {u.status or '—'})"
+                payload = AnswerWithEvidence(
+                    answer=f"{u.text}{where}",
+                    claims=[Claim(text=f"{u.text} [{u.unit_id}]",
+                                  unit_ids=[u.unit_id])],
+                    status_breakdown={u.status: [u.unit_id]} if u.status else {},
+                    query_mode=query.mode)
+                return self._wrap("answer", payload, hits, notes=["recency:latest"])
 
         if intent == "answer":
             agent_cfg = self.engine.cfg["agent"]
@@ -304,6 +317,28 @@ class Agent:
                             payload=clar.model_dump(mode="json"),
                             hit_unit_ids=[h.unit.unit_id for h in hits],
                             clarification=clar)
+
+
+_LATEST = ("dernier message", "dernière message", "derniere message",
+           "le dernier", "la dernière", "la derniere", "dernière info",
+           "derniere info", "dernière information", "plus récent",
+           "plus recent", "last message")
+
+
+def _asks_latest(text: str) -> bool:
+    low = (text or "").lower()
+    return any(w in low for w in _LATEST)
+
+
+def _latest_units(store, project: str | None, n: int = 3):
+    """Order by the meeting's own clock: date, turn, then ingestion time."""
+    units = [u for u in store.all_units()
+             if project is None or u.project == project]
+    def key(u):
+        return (u.source_date,
+                u.turn_index if u.turn_index is not None else -1,
+                u.ingested_at)
+    return sorted(units, key=key, reverse=True)[:n]
 
 
 def _fold(s: str) -> str:

@@ -33,10 +33,12 @@ SYSTEM = (
     "6. Ne déduis pas. Une intention (« je vais envoyer », « à verser cette "
     "semaine ») ne prouve pas que l'action a eu lieu. Si aucun extrait ne dit "
     "que c'est fait, réponds " + INSUFFICIENT + ".\n"
-    "7. Si tu ne peux pas confirmer ce que la question demande (une action "
+    "7. Pour « première » ou « dernière » décision, compare les heures des "
+    "tours cités : la première est la plus petite, la dernière la plus grande.\n"
+    "8. Si tu ne peux pas confirmer ce que la question demande (une action "
     "qui n'a pas eu lieu, une personne qui n'est pas nommée), réponds "
     f"exactement {INSUFFICIENT} — sans phrase explicative.\n"
-    "8. Réponds en français, en une ou deux phrases."
+    "9. Réponds en français, en une ou deux phrases."
 )
 
 ID_IN_TEXT = re.compile(r"\[([^\[\]\s:]{1,80}(?::[^\[\]\s]+)?)\]")
@@ -94,7 +96,7 @@ def _state_lines(store, hits) -> list[tuple[str, str]]:
         # the speaker of the confirming turn, not everyone who mentioned it
         msg = (store.message(unit.get("message_id", "")) if unit else None) or {}
         by = f" par {msg.get('speaker')}" if msg.get("speaker") else ""
-        when = str(msg.get("timestamp") or row.get("created_at") or "")[:10]
+        when = str(msg.get("timestamp") or row.get("created_at") or "")[:16].replace("T", " ")
         fr = {"confirmed": "confirmé", "cancelled": "annulé",
               "completed": "réalisé", "proposed": "proposé"}.get(
                   str(row.get("status")), str(row.get("status")))
@@ -128,9 +130,11 @@ def build_prompt(query: str, hits, store) -> tuple[str, list[dict]]:
             continue
         u = (store.unit(uid) if store is not None else None) or {}
         msg = (store.message(u.get("message_id", "")) if store is not None else None) or {}
+        when = str(msg.get("timestamp") or "")[:16].replace("T", " ")
         rows.append({"unit_id": uid, "message_id": msg.get("message_id", ""),
                      "timestamp": msg.get("timestamp", ""),
-                     "label": f"[{uid}] {msg.get('speaker', '?')}: {u.get('text', '')}"})
+                     "label": f"[{uid}] {when} {msg.get('speaker', '?')}: "
+                              f"{u.get('text', '')}"})
         have.add(uid)
     body = "\n".join(r["label"] for r in rows)
     user = (f"Question: {query}\n\n{mem}Extraits:\n{body}\n\nRéponds.")

@@ -246,9 +246,50 @@ def _direct_answer(query: str, query_slot: str, hits, store,
     return None
 
 
+_FIRST = ("première", "premier", "first", "earliest", "la plus ancienne")
+_LAST = ("dernière", "dernier", "last", "latest", "la plus récente")
+
+
+def _decision_rows(store) -> list[tuple[tuple, list[dict]]]:
+    """Live states grouped by the turn that confirmed them, oldest first."""
+    groups: dict[tuple, list[dict]] = {}
+    for row in store.state_events():
+        if row.get("status") not in ("confirmed", "cancelled", "completed"):
+            continue
+        unit = store.unit(str(row.get("evidence_unit") or "")) or {}
+        msg = store.message(unit.get("message_id", "")) or {}
+        key = (str(msg.get("timestamp") or ""), str(msg.get("speaker") or ""),
+               unit.get("message_id", ""))
+        groups.setdefault(key, []).append(row)
+    return sorted(groups.items(), key=lambda kv: kv[0][0])
+
+
+def _meta_decision(query: str, store) -> Answer | None:
+    """"first / last decision, when, by whom" is a lookup, not a generation."""
+    low = (query or "").lower()
+    first = any(w in low for w in _FIRST)
+    last = any(w in low for w in _LAST)
+    if not (first or last) or store is None:
+        return None
+    rows = _decision_rows(store)
+    if not rows:
+        return None
+    (when, who, mid), facts = rows[0] if first else rows[-1]
+    ev = str(facts[0].get("evidence_unit") or "")
+    body = "; ".join(f"{r.get('slot')} = {r.get('value')}" for r in facts)
+    when_txt = when[:16].replace("T", " ") or "date inconnue"
+    text = f"{body} — décidé le {when_txt} par {who or '?'} [{ev}]"
+    cites = _citations_for([ev], store, [])
+    return Answer(text, cites, None, unknown=False, verified=True,
+                  status=str(facts[0].get("status") or "unknown"))
+
+
 def answer(query: str, hits, state: dict | None = None,
            store=None) -> Answer:
     hits = [h for h in (hits or [])]
+    meta = _meta_decision(query, store)
+    if meta is not None:
+        return meta
     if not hits:
         return Answer("Je n'ai pas assez d'information pour répondre.",
                       unknown=True, status="unknown")
