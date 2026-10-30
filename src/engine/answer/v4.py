@@ -264,9 +264,17 @@ def _decision_rows(store) -> list[tuple[tuple, list[dict]]]:
     return sorted(groups.items(), key=lambda kv: kv[0][0])
 
 
+_DECISION_WORDS = ("décision", "decision", "décidé", "décidée", "decided")
+_MESSAGE_WORDS = ("message", "tour", "échange", "echange", "turn", "dire")
+
+
 def _meta_decision(query: str, store) -> Answer | None:
     """"first / last decision, when, by whom" is a lookup, not a generation."""
     low = (query or "").lower()
+    # "premier message" must not land here: the noun is the intent, not the
+    # ordinal ("premier" alone matched every question starting with it).
+    if not any(w in low for w in _DECISION_WORDS):
+        return None
     first = any(w in low for w in _FIRST)
     last = any(w in low for w in _LAST)
     if not (first or last) or store is None:
@@ -284,10 +292,34 @@ def _meta_decision(query: str, store) -> Answer | None:
                   status=str(facts[0].get("status") or "unknown"))
 
 
+def _meta_message(query: str, store) -> Answer | None:
+    """First / last message is a timestamp lookup over the stored messages."""
+    low = (query or "").lower()
+    if not any(w in low for w in _MESSAGE_WORDS):
+        return None
+    if any(w in low for w in _DECISION_WORDS):
+        return None
+    first = any(w in low for w in _FIRST)
+    last = any(w in low for w in _LAST)
+    if not (first or last) or store is None:
+        return None
+    rows = [m for m in store.all_messages() if m.get("timestamp")]
+    if not rows:
+        return None
+    rows.sort(key=lambda m: str(m.get("timestamp")))
+    msg = rows[0] if first else rows[-1]
+    units = store.units_for_message(msg["message_id"])
+    cites = _citations_for([units[0]["unit_id"]], store, []) if units else []
+    when = str(msg.get("timestamp"))[:16].replace("T", " ")
+    text = f"{msg.get('text', '')} ({when} / {msg.get('speaker') or '?'})"
+    return Answer(text, cites, None, unknown=False, verified=True,
+                  status="answered")
+
+
 def answer(query: str, hits, state: dict | None = None,
            store=None) -> Answer:
     hits = [h for h in (hits or [])]
-    meta = _meta_decision(query, store)
+    meta = _meta_message(query, store) or _meta_decision(query, store)
     if meta is not None:
         return meta
     if not hits:

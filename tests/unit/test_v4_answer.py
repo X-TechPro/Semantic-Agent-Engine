@@ -72,3 +72,20 @@ def test_open_proposal_is_answered_as_a_proposal():
     hits = V4Search(s).retrieve("le budget", k=3, mode="current", project="Atlas")
     a = answer("le budget", hits, store=s)
     assert "proposé" in a.text and a.status == "proposed"
+
+
+def test_first_message_is_a_message_not_a_decision():
+    """"premier message" used to match the "premier" branch of the decision
+    lookup and answer with a state row."""
+    s = _scenario()
+    first = answer("Quelle était le premier message ?", [], store=s)
+    last = answer("Quelle était le dernier message ?", [], store=s)
+    assert "proposé" in first.text and "2026-10-01" in first.text
+    assert "annule" in last.text and "2026-10-15" in last.text
+    assert "budget = " not in first.text
+
+
+def test_first_decision_needs_the_word_decision():
+    s = _scenario()
+    d = answer("Quelle était la première décision ?", [], store=s)
+    assert "— décidé le" in d.text and "2026-10-08" in d.text

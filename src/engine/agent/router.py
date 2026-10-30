@@ -327,7 +327,10 @@ _LATEST = ("dernier message", "dernière message", "derniere message",
 
 def _asks_latest(text: str) -> bool:
     low = (text or "").lower()
-    return any(w in low for w in _LATEST)
+    if any(w in low for w in ("décision", "decision")):
+        return False
+    return (any(w in low for w in ("message", "info", "tour", "échange", "echange"))
+            and any(w in low for w in _LATEST))
 
 
 def _latest_units(store, project: str | None, n: int = 3):
