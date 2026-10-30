@@ -59,7 +59,21 @@ def _messages(hits, store) -> list[dict]:
     return rows
 
 
-def _state_lines(store, hits) -> list[tuple[str, str]]:
+_STOP = {"le", "la", "les", "de", "des", "du", "un", "une", "et", "a", "au",
+         "aux", "en", "est", "ete", "quelle", "quel", "quand", "qui", "que",
+         "qu", "ce", "c", "on", "il", "elle", "pour", "dans", "sur", "avec"}
+
+
+def _tokens(text: str) -> set[str]:
+    import re
+    import unicodedata
+    folded = "".join(ch for ch in unicodedata.normalize("NFD", (text or "").lower())
+                     if not unicodedata.combining(ch))
+    return {w for w in re.findall(r"[a-z0-9]+", folded)
+            if len(w) > 2 and w not in _STOP}
+
+
+def _state_lines(store, hits, query: str = "") -> list[tuple[str, str]]:
     """The memory's current view: what steps 4-5 already decided.
 
     Step 7 is retrieval + memory, not retrieval alone: "what is the current
@@ -96,7 +110,7 @@ def _state_lines(store, hits) -> list[tuple[str, str]]:
         # the speaker of the confirming turn, not everyone who mentioned it
         msg = (store.message(unit.get("message_id", "")) if unit else None) or {}
         by = f" par {msg.get('speaker')}" if msg.get("speaker") else ""
-        when = str(msg.get("timestamp") or row.get("created_at") or "")[:16].replace("T", " ")
+        when = str(msg.get("timestamp") or row.get("created_at") or "")[:19].replace("T", " ")
         fr = {"confirmed": "confirmé", "cancelled": "annulé",
               "completed": "réalisé", "proposed": "proposé"}.get(
                   str(row.get("status")), str(row.get("status")))
@@ -113,13 +127,29 @@ def _state_lines(store, hits) -> list[tuple[str, str]]:
         if key not in best or when > best[key][0]:
             best[key] = (when, line, uid)
     ordered = sorted(best.values(), key=lambda t: t[0], reverse=True)
-    return [(line, uid) for _, line, uid in ordered[:12]]
+    # retrieve the states instead of handing the model the whole memory:
+    # lexical overlap with the question, newest first as a tie-break, at most 8.
+    q = _tokens(query)
+    scored = []
+    for when, line, uid in ordered:
+        hay = _tokens(line)
+        scored.append((len(q & hay) / max(1, len(q)), when, line, uid))
+    relevant = [s for s in scored if s[0] > 0]
+    relevant.sort(key=lambda s: (-s[0], s[1]))
+    kept = relevant[:8]
+    if len(kept) < 3:                       # a bare question still needs context
+        for s in scored:
+            if s not in kept:
+                kept.append(s)
+            if len(kept) >= 3:
+                break
+    return [(line, uid) for _, _, line, uid in kept]
 
 
 def build_prompt(query: str, hits, store) -> tuple[str, list[dict]]:
     rows = _messages(hits, store)
     body = "\n".join(r["label"] for r in rows)
-    state_lines = _state_lines(store, hits)
+    state_lines = _state_lines(store, hits, query)
     state = "\n".join(line for line, _ in state_lines)
     mem = f"État connu en mémoire:\n{state}\n\n" if state else ""
     # the state names its evidence unit; that turn must be citable too, even
@@ -130,7 +160,7 @@ def build_prompt(query: str, hits, store) -> tuple[str, list[dict]]:
             continue
         u = (store.unit(uid) if store is not None else None) or {}
         msg = (store.message(u.get("message_id", "")) if store is not None else None) or {}
-        when = str(msg.get("timestamp") or "")[:16].replace("T", " ")
+        when = str(msg.get("timestamp") or "")[:19].replace("T", " ")
         rows.append({"unit_id": uid, "message_id": msg.get("message_id", ""),
                      "timestamp": msg.get("timestamp", ""),
                      "label": f"[{uid}] {when} {msg.get('speaker', '?')}: "

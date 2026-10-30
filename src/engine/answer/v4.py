@@ -246,82 +246,9 @@ def _direct_answer(query: str, query_slot: str, hits, store,
     return None
 
 
-_FIRST = ("première", "premier", "first", "earliest", "la plus ancienne")
-_LAST = ("dernière", "dernier", "last", "latest", "la plus récente")
-
-
-def _decision_rows(store) -> list[tuple[tuple, list[dict]]]:
-    """Live states grouped by the turn that confirmed them, oldest first."""
-    groups: dict[tuple, list[dict]] = {}
-    for row in store.state_events():
-        if row.get("status") not in ("confirmed", "cancelled", "completed"):
-            continue
-        unit = store.unit(str(row.get("evidence_unit") or "")) or {}
-        msg = store.message(unit.get("message_id", "")) or {}
-        key = (str(msg.get("timestamp") or ""), str(msg.get("speaker") or ""),
-               unit.get("message_id", ""))
-        groups.setdefault(key, []).append(row)
-    return sorted(groups.items(), key=lambda kv: kv[0][0])
-
-
-_DECISION_WORDS = ("décision", "decision", "décidé", "décidée", "decided")
-_MESSAGE_WORDS = ("message", "tour", "échange", "echange", "turn", "dire")
-
-
-def _meta_decision(query: str, store) -> Answer | None:
-    """"first / last decision, when, by whom" is a lookup, not a generation."""
-    low = (query or "").lower()
-    # "premier message" must not land here: the noun is the intent, not the
-    # ordinal ("premier" alone matched every question starting with it).
-    if not any(w in low for w in _DECISION_WORDS):
-        return None
-    first = any(w in low for w in _FIRST)
-    last = any(w in low for w in _LAST)
-    if not (first or last) or store is None:
-        return None
-    rows = _decision_rows(store)
-    if not rows:
-        return None
-    (when, who, mid), facts = rows[0] if first else rows[-1]
-    ev = str(facts[0].get("evidence_unit") or "")
-    body = "; ".join(f"{r.get('slot')} = {r.get('value')}" for r in facts)
-    when_txt = when[:16].replace("T", " ") or "date inconnue"
-    text = f"{body} — décidé le {when_txt} par {who or '?'} [{ev}]"
-    cites = _citations_for([ev], store, [])
-    return Answer(text, cites, None, unknown=False, verified=True,
-                  status=str(facts[0].get("status") or "unknown"))
-
-
-def _meta_message(query: str, store) -> Answer | None:
-    """First / last message is a timestamp lookup over the stored messages."""
-    low = (query or "").lower()
-    if not any(w in low for w in _MESSAGE_WORDS):
-        return None
-    if any(w in low for w in _DECISION_WORDS):
-        return None
-    first = any(w in low for w in _FIRST)
-    last = any(w in low for w in _LAST)
-    if not (first or last) or store is None:
-        return None
-    rows = [m for m in store.all_messages() if m.get("timestamp")]
-    if not rows:
-        return None
-    rows.sort(key=lambda m: str(m.get("timestamp")))
-    msg = rows[0] if first else rows[-1]
-    units = store.units_for_message(msg["message_id"])
-    cites = _citations_for([units[0]["unit_id"]], store, []) if units else []
-    when = str(msg.get("timestamp"))[:16].replace("T", " ")
-    text = f"{msg.get('text', '')} ({when} / {msg.get('speaker') or '?'})"
-    return Answer(text, cites, None, unknown=False, verified=True,
-                  status="answered")
-
-
 def answer(query: str, hits, state: dict | None = None,
            store=None) -> Answer:
     hits = [h for h in (hits or [])]
-    meta = _meta_message(query, store) or _meta_decision(query, store)
-    if meta is not None:
-        return meta
     if not hits:
         return Answer("Je n'ai pas assez d'information pour répondre.",
                       unknown=True, status="unknown")
@@ -381,7 +308,9 @@ def answer(query: str, hits, state: dict | None = None,
         text = f"{label} : réalisé ({value})."
     else:
         text = f"{label} : {value} ({fr.get(status, status)})."
-    if transition:
+    if transition and str(transition.get("from")) != str(value):
+        # a "transition" from 16 500 to 16 500 is the tagger restating the same
+        # value on a later turn; it must not be announced as a replacement
         text += (f" Remplace « {transition.get('from')} » "
                  f"({transition.get('from_status')}).")
 

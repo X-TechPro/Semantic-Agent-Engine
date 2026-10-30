@@ -88,7 +88,18 @@ def main(argv=None) -> int:
         print(f"{h.rank:>3}  {u['unit_id']:<24} {u['slot']:<9} "
               f"{(u.get('point') or '-'):<14} {u['status']:<10} {u['text'][:60]}")
 
-    if args.answer == "rules":
+    meta = None
+    if args.answer in ("hybrid", "llm"):
+        from engine.answer.meta import lookup
+        from engine.query.route import classify
+
+        route = classify(args.question, model=args.model)
+        if route:
+            meta = lookup(store, route["object"], route["ordinal"])
+
+    if meta is not None:
+        ans = meta
+    elif args.answer == "rules":
         ans = answer(args.question, hits, store=store)
     elif args.answer == "llm":
         from engine.answer.llm import answer_llm

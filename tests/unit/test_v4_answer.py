@@ -74,18 +74,30 @@ def test_open_proposal_is_answered_as_a_proposal():
     assert "proposé" in a.text and a.status == "proposed"
 
 
-def test_first_message_is_a_message_not_a_decision():
-    """"premier message" used to match the "premier" branch of the decision
-    lookup and answer with a state row."""
+def test_message_lookup_reads_first_and_last_message():
+    from engine.answer.meta import lookup
+
     s = _scenario()
-    first = answer("Quelle était le premier message ?", [], store=s)
-    last = answer("Quelle était le dernier message ?", [], store=s)
-    assert "proposé" in first.text and "2026-10-01" in first.text
-    assert "annule" in last.text and "2026-10-15" in last.text
+    first = lookup(s, "message", "first")
+    last = lookup(s, "message", "last")
+    assert first is not None and "proposé" in first.text and "2026-10-01" in first.text
+    assert last is not None and "annule" in last.text and "2026-10-15" in last.text
     assert "budget = " not in first.text
 
 
-def test_first_decision_needs_the_word_decision():
+def test_decision_lookup_reads_the_state_rows():
+    from engine.answer.meta import lookup
+
     s = _scenario()
-    d = answer("Quelle était la première décision ?", [], store=s)
-    assert "— décidé le" in d.text and "2026-10-08" in d.text
+    first = lookup(s, "decision", "first")
+    assert first is not None and "— décidé le" in first.text and "2026-10-08" in first.text
+
+
+def test_router_parses_the_model_json(monkeypatch):
+    import engine.answer.llm as llm
+    from engine.query.route import classify
+
+    monkeypatch.setattr(llm, "call_ollama",
+                        lambda *a, **k: 'bruit\n```json\n{"object": "message", '
+                                        '"ordinal": "last"}\n```')
+    assert classify("peu importe") == {"object": "message", "ordinal": "last"}

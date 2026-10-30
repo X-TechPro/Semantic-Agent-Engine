@@ -158,6 +158,12 @@ the LLM takes the rest. The local model is Qwen3.5-4B by default
 (`SAE_OLLAMA_KEEP_ALIVE` keeps it warm between questions); re-measured with it
 and no reranker (CPU): **0.806** correct, cites .808, 8/10 refused.
 
+Step 7 gives the model ten retrieved turns, at most eight state rows scored
+against the question, and the evidence turn of each state — never the whole
+memory. "First/last decision or message" is not generated: the local model
+classifies the request (`object`, `ordinal`) and the store answers the lookup.
+Timestamps are shown to the second (`YYYY-MM-DD HH:MM:SS`).
+
 v3's comparison stays as the rollback baseline. Same holdout corpus, same
 search budget; the only difference is whether the relation layer is on (both
 arms share the reranker — it is search, not the relation layer, so the delta

@@ -1,30 +1,155 @@
 {
   "meeting_id": "nova",
   "messages": [
-    {"message_id": "nova:0", "speaker": "Claire", "timestamp": "2026-11-03T09:00:00+01:00", "text": "bon on est là pour le lancement de nova on fait le point hein"},
-    {"message_id": "nova:1", "speaker": "Malik", "timestamp": "2026-11-03T09:01:00+01:00", "text": "alors euh côté produit on est prêts sur le parcours d inscription"},
-    {"message_id": "nova:2", "speaker": "Sofia", "timestamp": "2026-11-03T09:02:00+01:00", "text": "côté dev euh on a un souci sur la fonctionnalité de partage elle sera pas prête pour le 15 mars"},
-    {"message_id": "nova:3", "speaker": "Claire", "timestamp": "2026-11-03T09:03:00+01:00", "text": "attends on avait dit 15 mars pour le lancement"},
-    {"message_id": "nova:4", "speaker": "Léa", "timestamp": "2026-11-03T09:04:00+01:00", "text": "oui et le budget marketing il est de 120 000 euros pour l instant"},
-    {"message_id": "nova:5", "speaker": "Sofia", "timestamp": "2026-11-03T09:05:00+01:00", "text": "le partage il nous manque deux semaines de dev minimum"},
-    {"message_id": "nova:6", "speaker": "Malik", "timestamp": "2026-11-03T09:06:00+01:00", "text": "on pourrait couper le partage du lancement et le sortir en juin"},
-    {"message_id": "nova:7", "speaker": "Claire", "timestamp": "2026-11-03T09:07:00+01:00", "text": "ok on coupe le partage on garde le reste"},
-    {"message_id": "nova:8", "speaker": "Léa", "timestamp": "2026-11-03T09:08:00+01:00", "text": "du coup je dois refaire le kit presse sans le partage"},
-    {"message_id": "nova:9", "speaker": "Claire", "timestamp": "2026-11-03T09:09:00+01:00", "text": "oui et on décale le lancement au 5 avril"},
-    {"message_id": "nova:10", "speaker": "Malik", "timestamp": "2026-11-03T09:10:00+01:00", "text": "5 avril ça me va on a le temps de tester"},
-    {"message_id": "nova:11", "speaker": "Claire", "timestamp": "2026-11-03T09:11:00+01:00", "text": "et il faut passer le budget marketing à 150 000 pour la nouvelle date"},
-    {"message_id": "nova:12", "speaker": "Léa", "timestamp": "2026-11-03T09:12:00+01:00", "text": "150 000 d accord je refais le plan"},
-    {"message_id": "nova:13", "speaker": "Sofia", "timestamp": "2026-11-03T09:13:00+01:00", "text": "qui s occupe du kit presse au final"},
-    {"message_id": "nova:14", "speaker": "Léa", "timestamp": "2026-11-03T09:14:00+01:00", "text": "c est moi je le fais avec malik"},
-    {"message_id": "nova:15", "speaker": "Claire", "timestamp": "2026-11-03T09:15:00+01:00", "text": "et la revue juridique elle en est où"},
-    {"message_id": "nova:16", "speaker": "Malik", "timestamp": "2026-11-03T09:16:00+01:00", "text": "elle est pas commencée il faut la lancer cette semaine"},
-    {"message_id": "nova:17", "speaker": "Claire", "timestamp": "2026-11-03T09:17:00+01:00", "text": "ok tu la lances malik"},
-    {"message_id": "nova:18", "speaker": "Sofia", "timestamp": "2026-11-03T09:18:00+01:00", "text": "et on confirme bien le 5 avril alors"},
-    {"message_id": "nova:19", "speaker": "Claire", "timestamp": "2026-11-03T09:19:00+01:00", "text": "oui c est acté le 5 avril"},
-    {"message_id": "nova:20", "speaker": "Léa", "timestamp": "2026-11-03T09:20:00+01:00", "text": "je préviens l agence aujourd hui"},
-    {"message_id": "nova:21", "speaker": "Malik", "timestamp": "2026-11-03T09:21:00+01:00", "text": "et le budget on part bien sur 150 000"},
-    {"message_id": "nova:22", "speaker": "Claire", "timestamp": "2026-11-03T09:22:00+01:00", "text": "oui 150 000 c est validé"},
-    {"message_id": "nova:23", "speaker": "Sofia", "timestamp": "2026-11-03T09:23:00+01:00", "text": "parfait côté dev on repart sur le planning"},
-    {"message_id": "nova:24", "speaker": "Claire", "timestamp": "2026-11-03T09:24:00+01:00", "text": "bon on se refait un point jeudi"}
+    {
+      "message_id": "nova:0",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:00:00+01:00",
+      "text": "bon on est là pour le lancement de nova on fait le point hein"
+    },
+    {
+      "message_id": "nova:1",
+      "speaker": "Malik",
+      "timestamp": "2026-11-03T09:01:00+01:00",
+      "text": "alors euh côté produit on est prêts sur le parcours d inscription"
+    },
+    {
+      "message_id": "nova:2",
+      "speaker": "Sofia",
+      "timestamp": "2026-11-03T09:02:00+01:00",
+      "text": "côté dev euh on a un souci sur la fonctionnalité de partage elle sera pas prête pour le 15 mars"
+    },
+    {
+      "message_id": "nova:3",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:03:00+01:00",
+      "text": "attends on avait dit 15 mars pour le lancement"
+    },
+    {
+      "message_id": "nova:4",
+      "speaker": "Léa",
+      "timestamp": "2026-11-03T09:04:00+01:00",
+      "text": "oui et le budget marketing il est de 120 000 euros pour l instant"
+    },
+    {
+      "message_id": "nova:5",
+      "speaker": "Sofia",
+      "timestamp": "2026-11-03T09:05:00+01:00",
+      "text": "le partage il nous manque deux semaines de dev minimum"
+    },
+    {
+      "message_id": "nova:6",
+      "speaker": "Malik",
+      "timestamp": "2026-11-03T09:06:00+01:00",
+      "text": "on pourrait couper le partage du lancement et le sortir en juin"
+    },
+    {
+      "message_id": "nova:7",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:07:00+01:00",
+      "text": "ok on coupe le partage on garde le reste"
+    },
+    {
+      "message_id": "nova:8",
+      "speaker": "Léa",
+      "timestamp": "2026-11-03T09:08:00+01:00",
+      "text": "du coup je dois refaire le kit presse sans le partage"
+    },
+    {
+      "message_id": "nova:9",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:09:00+01:00",
+      "text": "oui et on décale le lancement au 5 avril"
+    },
+    {
+      "message_id": "nova:10",
+      "speaker": "Malik",
+      "timestamp": "2026-11-03T09:10:00+01:00",
+      "text": "5 avril ça me va on a le temps de tester"
+    },
+    {
+      "message_id": "nova:11",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:11:00+01:00",
+      "text": "et il faut passer le budget marketing à 150 000 pour la nouvelle date"
+    },
+    {
+      "message_id": "nova:12",
+      "speaker": "Léa",
+      "timestamp": "2026-11-03T09:12:00+01:00",
+      "text": "150 000 d accord je refais le plan"
+    },
+    {
+      "message_id": "nova:13",
+      "speaker": "Sofia",
+      "timestamp": "2026-11-03T09:13:00+01:00",
+      "text": "qui s occupe du kit presse au final"
+    },
+    {
+      "message_id": "nova:14",
+      "speaker": "Léa",
+      "timestamp": "2026-11-03T09:14:00+01:00",
+      "text": "c est moi je le fais avec malik"
+    },
+    {
+      "message_id": "nova:15",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:15:00+01:00",
+      "text": "et la revue juridique elle en est où"
+    },
+    {
+      "message_id": "nova:16",
+      "speaker": "Malik",
+      "timestamp": "2026-11-03T09:16:00+01:00",
+      "text": "elle est pas commencée il faut la lancer cette semaine"
+    },
+    {
+      "message_id": "nova:17",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:17:00+01:00",
+      "text": "ok tu la lances malik"
+    },
+    {
+      "message_id": "nova:18",
+      "speaker": "Sofia",
+      "timestamp": "2026-11-03T09:18:00+01:00",
+      "text": "et on confirme bien le 5 avril alors"
+    },
+    {
+      "message_id": "nova:19",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:19:00+01:00",
+      "text": "oui c est acté le 5 avril"
+    },
+    {
+      "message_id": "nova:20",
+      "speaker": "Léa",
+      "timestamp": "2026-11-03T09:20:00+01:00",
+      "text": "je préviens l agence aujourd hui"
+    },
+    {
+      "message_id": "nova:21",
+      "speaker": "Malik",
+      "timestamp": "2026-11-03T09:21:00+01:00",
+      "text": "et le budget on part bien sur 150 000"
+    },
+    {
+      "message_id": "nova:22",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:22:00+01:00",
+      "text": "oui 150 000 c est validé"
+    },
+    {
+      "message_id": "nova:23",
+      "speaker": "Sofia",
+      "timestamp": "2026-11-03T09:23:00+01:00",
+      "text": "parfait côté dev on repart sur le planning"
+    },
+    {
+      "message_id": "nova:24",
+      "speaker": "Claire",
+      "timestamp": "2026-11-03T09:24:00+01:00",
+      "text": "bon on se refait un point jeudi"
+    }
   ]
 }

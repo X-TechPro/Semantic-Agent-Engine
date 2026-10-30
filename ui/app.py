@@ -351,18 +351,24 @@ def view_meetings() -> None:
         hits = search.retrieve(text, k=k, project=mid)
         from engine.answer.v4 import answer as answer_rules
 
-        ans = answer_rules(text, hits, store=store)
-        if answerer != "rules" and ans.unknown:
-            try:
-                from engine.answer.llm import answer_llm
+        ans = None
+        if answerer in ("hybrid", "llm"):
+            # the model classifies the request; the store answers a lookup
+            from engine.answer.meta import lookup
+            from engine.query.route import classify
 
-                ans = answer_llm(text, hits, store=store)
-            except Exception as exc:  # ollama down: keep the rules refusal
-                st.warning(f"LLM unavailable ({exc}); showing the deterministic answer")
-        if answerer == "llm":
-            from engine.answer.llm import answer_llm
+            route = classify(text)
+            if route:
+                ans = lookup(store, route["object"], route["ordinal"])
+        if ans is None:
+            ans = answer_rules(text, hits, store=store)
+            if answerer == "llm" or (answerer == "hybrid" and ans.unknown):
+                try:
+                    from engine.answer.llm import answer_llm
 
-            ans = answer_llm(text, hits, store=store)
+                    ans = answer_llm(text, hits, store=store)
+                except Exception as exc:  # ollama down: keep the rules answer
+                    st.warning(f"LLM unavailable ({exc}); showing the deterministic answer")
 
     l, r = st.columns([1.3, 1], gap="large")
     with l:
