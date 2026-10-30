@@ -51,7 +51,7 @@ def _messages(hits, store) -> list[dict]:
         u = store.unit(uid) if store is not None else None
         msg = (store.message(u["message_id"]) if (u and store) else None) or {}
         who = msg.get("speaker") or "?"
-        when = str(msg.get("timestamp") or "")[:10]
+        when = str(msg.get("timestamp") or "")[:19].replace("T", " ")
         text = (u or {}).get("text") or h.text
         rows.append({"unit_id": uid, "message_id": msg.get("message_id", ""),
                      "timestamp": msg.get("timestamp", ""),

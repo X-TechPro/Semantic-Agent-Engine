@@ -352,6 +352,7 @@ def view_meetings() -> None:
         from engine.answer.v4 import answer as answer_rules
 
         ans = None
+        path, route = "rules", None
         if answerer in ("hybrid", "llm"):
             # the model classifies the request; the store answers a lookup
             from engine.answer.meta import lookup
@@ -360,19 +361,26 @@ def view_meetings() -> None:
             route = classify(text)
             if route:
                 ans = lookup(store, route["object"], route["ordinal"])
+                if ans is not None:
+                    path = "store lookup"
         if ans is None:
             ans = answer_rules(text, hits, store=store)
+            path = "rules"
             if answerer == "llm" or (answerer == "hybrid" and ans.unknown):
                 try:
                     from engine.answer.llm import answer_llm
 
                     ans = answer_llm(text, hits, store=store)
+                    path = "llm"
                 except Exception as exc:  # ollama down: keep the rules answer
                     st.warning(f"LLM unavailable ({exc}); showing the deterministic answer")
 
     l, r = st.columns([1.3, 1], gap="large")
     with l:
-        section("Answer", f"{answerer} · unknown={ans.unknown} · verified={ans.verified}")
+        via = f" · via {path}"
+        if route:
+            via += f" · router {route['object']}/{route['ordinal']}"
+        section("Answer", f"{answerer}{via} · unknown={ans.unknown} · verified={ans.verified}")
         tone = "b-old" if ans.unknown else ("b-ok" if ans.verified else "b-bad")
         st.markdown(
             f"<div class='sae-card'><div class='sae-lead'>{esc(ans.text)}</div>"
@@ -411,8 +419,10 @@ def view_meetings() -> None:
             st.caption("no live state yet")
 
     tab_hits, tab_state, tab_prompt = st.tabs(
-        ["Retrieval", "State events", "Prompt sent to the LLM"])
+        ["Retrieval", "State events", "Prompt (only when the LLM is called)"])
     with tab_hits:
+        if path != "llm":
+            st.caption(f"shown for reference — this answer came from {path}")
         st.dataframe(
             [{"#": h.rank, "unit": h.unit_id,
               "slot": (store.unit(h.unit_id) or {}).get("slot"),
@@ -424,10 +434,15 @@ def view_meetings() -> None:
     with tab_state:
         st.dataframe(store.state_events(), hide_index=True, use_container_width=True)
     with tab_prompt:
-        from engine.answer.llm import build_prompt
+        if path != "llm":
+            st.info(f"This answer came from **{path}**"
+                    + (f" (router: {route['object']}/{route['ordinal']})" if route else "")
+                    + "; no prompt was sent to the language model.")
+        else:
+            from engine.answer.llm import build_prompt
 
-        user, _rows = build_prompt(text, hits, store)
-        st.code(user, language=None)
+            user, _rows = build_prompt(text, hits, store)
+            st.code(user, language=None)
 
 
 def view_timeline(eng: Engine) -> None:
