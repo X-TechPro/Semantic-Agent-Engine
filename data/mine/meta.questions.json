@@ -1,0 +1,135 @@
+{
+  "corpus_id": "mine-meta-v1",
+  "questions": [
+    {
+      "query_id": "meta-q1",
+      "style": "formal",
+      "text": "Quand le loyer du nouveau bureau a-t-il été fixé ?",
+      "expected_message_ids": [
+        "demenagement:9",
+        "demenagement:8"
+      ],
+      "expected_value": "16 500",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q2",
+      "style": "formal",
+      "text": "Qui a validé le loyer de 16 500 ?",
+      "expected_message_ids": [
+        "demenagement:9",
+        "demenagement:19"
+      ],
+      "expected_value": "Claire",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q3",
+      "style": "formal",
+      "text": "Quand la date du déménagement a-t-elle été confirmée ?",
+      "expected_message_ids": [
+        "demenagement:16",
+        "demenagement:19"
+      ],
+      "expected_value": "1er septembre",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q4",
+      "style": "formal",
+      "text": "Qui a confirmé la date du déménagement ?",
+      "expected_message_ids": [
+        "demenagement:16",
+        "demenagement:19"
+      ],
+      "expected_value": "Claire",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q5",
+      "style": "formal",
+      "text": "Quand le prix du traiteur a-t-il été validé ?",
+      "expected_message_ids": [
+        "traiteur:17",
+        "traiteur:5"
+      ],
+      "expected_value": "4 500",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q6",
+      "style": "formal",
+      "text": "Qui a validé le prix du traiteur ?",
+      "expected_message_ids": [
+        "traiteur:17"
+      ],
+      "expected_value": "Claire",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q7",
+      "style": "formal",
+      "text": "Quand la date de lancement de Nova a-t-elle été décidée ?",
+      "expected_message_ids": [
+        "nova:9",
+        "nova:19"
+      ],
+      "expected_value": "5 avril",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q8",
+      "style": "formal",
+      "text": "Qui a décidé de décaler le lancement de Nova ?",
+      "expected_message_ids": [
+        "nova:9"
+      ],
+      "expected_value": "Claire",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q9",
+      "style": "formal",
+      "text": "Quand le salaire de Yassine a-t-il été validé ?",
+      "expected_message_ids": [
+        "hiring:12",
+        "hiring:19"
+      ],
+      "expected_value": "52 000",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q10",
+      "style": "formal",
+      "text": "Qui a rédigé le post mortem de l'incident ?",
+      "expected_message_ids": [
+        "incident:15"
+      ],
+      "expected_value": "Inès",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q11",
+      "style": "formal",
+      "text": "Qu'a validé Claire le 9 novembre 2026 ?",
+      "expected_message_ids": [
+        "demenagement:19",
+        "demenagement:16",
+        "demenagement:9"
+      ],
+      "expected_value": "16 500",
+      "must_abstain": false
+    },
+    {
+      "query_id": "meta-q12",
+      "style": "formal",
+      "text": "Quelle décision a été prise le 6 novembre 2026 ?",
+      "expected_message_ids": [
+        "traiteur:17",
+        "traiteur:5"
+      ],
+      "expected_value": "4 500",
+      "must_abstain": false
+    }
+  ]
+}

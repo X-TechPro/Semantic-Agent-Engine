@@ -77,7 +77,13 @@ def _state_block(store, hits) -> str:
         if row.get("evidence_unit") not in allowed:
             continue
         slot = str(row.get("slot") or "")
-        lines.append(f"- {slot} = {row.get('value')} [{row.get('evidence_unit')}]"
+        # the event key is project:slot:point; without the point the model saw
+        # "date = 15 août" and "date = 1er septembre" with nothing to tell them
+        # apart (the keys vs the move).
+        parts = str(event_id).split(":")
+        point = parts[2] if len(parts) >= 3 else None
+        label = f"{slot} · {point}" if point and point != slot else slot
+        lines.append(f"- {label} = {row.get('value')} [{row.get('evidence_unit')}]"
                      f" ({row.get('status')}, {str(row.get('created_at'))[:10]})")
     return "\n".join(lines)
 
@@ -126,25 +132,31 @@ def cite_and_verify(reply: str, rows: list[dict], store) -> Answer:
 
 
 def call_ollama(model: str, system: str, user: str, *,
-                base_url: str = "http://127.0.0.1:11434/v1",
-                timeout: float = 120.0) -> str:
+                base_url: str = "http://127.0.0.1:11434",
+                timeout: float = 300.0, max_tokens: int = 2000) -> str:
+    """Native /api/chat, not the OpenAI shim.
+
+    `think: false` is the point: reasoning models (lfm3, lfm2.5-thinking) put
+    the whole budget into their reasoning channel and return an empty answer
+    with `finish_reason: length` when it is left on.
+    """
     import urllib.request
 
     payload = json.dumps({
         "model": model,
         "messages": [{"role": "system", "content": system},
                      {"role": "user", "content": user}],
-        "temperature": 0.0, "max_tokens": 220, "stream": False,
-        # release the GPU shortly after the run: the 7B model holds ~4 GB and
-        # starves the embedding/reranker tests otherwise
+        "stream": False,
+        "think": False,
         "keep_alive": "30s",
+        "options": {"temperature": 0.0, "num_predict": max_tokens},
     }).encode()
     req = urllib.request.Request(
-        f"{base_url}/chat/completions", data=payload,
+        f"{base_url}/api/chat", data=payload,
         headers={"Content-Type": "application/json"}, method="POST")
     with urllib.request.urlopen(req, timeout=timeout) as r:
         body = json.loads(r.read().decode())
-    return body["choices"][0]["message"]["content"]
+    return (body.get("message") or {}).get("content") or ""
 
 
 def answer_llm(query: str, hits, store=None, *, model="qwen2.5:7b-instruct",

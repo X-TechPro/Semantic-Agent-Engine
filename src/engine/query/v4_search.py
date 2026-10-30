@@ -133,7 +133,8 @@ class V4Search:
     def __init__(self, store: V4Store, linker=None, encoder=None, *,
                  vectors: dict[str, np.ndarray] | None = None,
                  reranker=None, rerank_k: int = 20,
-                 rrf_k: int = 60, final_k: int = 10, candidates: int = 30):
+                 rrf_k: int = 60, final_k: int = 10, candidates: int = 30,
+                 text_fn=None):
         self.store = store
         self.linker = linker
         self.encoder = encoder
@@ -142,6 +143,10 @@ class V4Search:
         self.rrf_k = rrf_k
         self.final_k = final_k
         self.candidates = candidates
+        # what gets embedded at index time; default is the unit text alone.
+        # A caller can prepend speaker/date so "when/who" turns carry that
+        # information in the vector instead of only in the metadata.
+        self.text_fn = text_fn
         self._units: list[dict] = []
         self._index: UnitIndex | None = None
         # unit_id -> vector. Late-chunked vectors arrive here already computed
@@ -159,15 +164,15 @@ class V4Search:
             self._units = units
             self._index = UnitIndex(units)
             self._project = self.store.unit_projects()
-            missing = [u["text"] for u in units if u["unit_id"] not in self._vecs]
+            todo = [u for u in units if u["unit_id"] not in self._vecs]
+            missing = [self.text_fn(u) if self.text_fn else u["text"] for u in todo]
             if self.encoder is not None and missing:
                 vecs = np.asarray(self.encoder(missing), dtype=np.float32)
                 if vecs.ndim == 1:
                     vecs = vecs[None, :]
                 norm = np.linalg.norm(vecs, axis=1, keepdims=True)
                 vecs = vecs / np.clip(norm, 1e-9, None)
-                for u, v in zip([u for u in units
-                                 if u["unit_id"] not in self._vecs], vecs):
+                for u, v in zip(todo, vecs):
                     self._vecs[u["unit_id"]] = v
 
     def _keep(self, uid: str) -> bool:
