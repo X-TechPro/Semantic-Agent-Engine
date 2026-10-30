@@ -32,7 +32,12 @@ _CHUNK_FIELDS = ("message_id", "start", "end", "text", "sentence_index")
 class V4Store:
     def __init__(self, path: str | Path = ":memory:"):
         self.path = str(path)
-        self.db = sqlite3.connect(self.path)
+        # Streamlit caches the store in one script thread and reruns the query
+        # in another; the default check_same_thread=True turns that into
+        # "SQLite objects created in a thread can only be used in that same
+        # thread". Python's sqlite3 is built in serialized mode, so sharing the
+        # connection across threads is safe here.
+        self.db = sqlite3.connect(self.path, check_same_thread=False)
         self.db.row_factory = sqlite3.Row
         self._schema()
 

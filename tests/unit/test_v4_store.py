@@ -133,3 +133,21 @@ def test_origin_separates_real_and_synthetic():
     assert s.message("m2")["origin"] == "synthetic"
     with pytest.raises(ValueError):
         MessageRecord("m3", "src", "p", "s", "2026-01-01", "x", origin="other")
+
+
+def test_store_is_usable_from_another_thread():
+    """Streamlit caches the store in one thread and reruns queries in another."""
+    import threading
+
+    from engine.store.v4 import V4Store
+
+    store = V4Store()
+    seen = {}
+
+    def worker():
+        seen["units"] = len(store.all_units())
+
+    t = threading.Thread(target=worker)
+    t.start()
+    t.join()
+    assert seen["units"] == 0
