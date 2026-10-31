@@ -9,3 +9,4 @@ data/user_datasets/**
 !data/user_datasets/.gitkeep
 
 artifacts/hybrid/**
+artifacts/**
