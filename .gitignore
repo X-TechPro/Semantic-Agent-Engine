@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+artifacts/hf_cache/**
+artifacts/pretrained_vectors/**
+data/user_datasets/**
+!data/user_datasets/.gitkeep
+
+artifacts/hybrid/**

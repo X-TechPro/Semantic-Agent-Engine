@@ -1,0 +1,16 @@
+[
+  {
+    "query_id": "demo-q1",
+    "split": "test",
+    "meeting_id": "demo-architecture-001",
+    "query": "Quelle décision a été prise concernant la base de données ?",
+    "target_chunk_id": "demo-architecture-001:004"
+  },
+  {
+    "query_id": "demo-q2",
+    "split": "test",
+    "meeting_id": "demo-architecture-001",
+    "query": "Qui s'est engagé à effectuer le test de restauration ?",
+    "target_chunk_id": "demo-architecture-001:005"
+  }
+]

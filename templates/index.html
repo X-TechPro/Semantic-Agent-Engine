@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr" data-ui="console">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>Semantic Memory · Meeting Intelligence</title>
+  <script>
+    try {
+      document.documentElement.dataset.ui = localStorage.getItem('sm-ui') === 'fixed' ? 'fixed' : 'console';
+    } catch (e) {
+      document.documentElement.dataset.ui = 'console';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='console.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><div class="brand-title">SEMANTIC<span>MEMORY</span></div><div class="brand-sub">MEETING INTELLIGENCE</div></div>
+      </div>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" data-view="search"><span class="nav-icon legacy-glyph">⌕</span><i class="nav-icon ui-lucide" data-lucide="search" aria-hidden="true"></i><span>Recherche</span><kbd>01</kbd></button>
+      <button class="nav-item" data-view="manager"><span class="nav-icon legacy-glyph">▤</span><i class="nav-icon ui-lucide" data-lucide="message-square" aria-hidden="true"></i><span>Réunions</span><kbd>02</kbd></button>
+      <button class="nav-item" data-view="datasets"><span class="nav-icon legacy-glyph">◈</span><i class="nav-icon ui-lucide" data-lucide="database" aria-hidden="true"></i><span>Datasets</span><kbd>03</kbd></button>
+      <button class="nav-item" data-view="benchmarks"><span class="nav-icon legacy-glyph">⌁</span><i class="nav-icon ui-lucide" data-lucide="activity" aria-hidden="true"></i><span>Benchmarks</span><kbd>04</kbd></button>
+      <button class="nav-item" data-view="graph"><span class="nav-icon legacy-glyph">◍</span><i class="nav-icon ui-lucide" data-lucide="share-2" aria-hidden="true"></i><span>Graphe</span><kbd>05</kbd></button>
+      <button class="nav-item" data-view="agent"><span class="nav-icon legacy-glyph">✧</span><i class="nav-icon ui-lucide" data-lucide="sparkles" aria-hidden="true"></i><span>Agent</span><kbd>06</kbd></button>
+      <div class="sidebar-spacer"></div>
+      <div class="side-label">ACTIVE MEMORY</div>
+      <div class="dataset-switcher">
+        <div class="switcher-dot"></div>
+        <select id="datasetSelect" aria-label="Dataset actif"><option value="synthetic">Synthetic · français</option></select>
+        <span class="chevron legacy-glyph">⌄</span>
+        <i class="chevron ui-lucide" data-lucide="chevron-down" aria-hidden="true"></i>
+      </div>
+      <div class="sidebar-footer">
+        <div class="avatar">SM</div><div class="footer-copy"><b>Local instance</b><span id="deviceLabel">Chargement du moteur…</span></div><div class="online-dot"></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>WORKSPACE</span><i>/</i><b id="breadcrumbCurrent">Recherche sémantique</b></div>
+        <div class="top-actions">
+          <div class="ui-switch" role="group" aria-label="Style d'interface">
+            <button type="button" data-ui-choice="fixed" aria-pressed="false">Fixed</button>
+            <button type="button" data-ui-choice="console" aria-pressed="true">Console</button>
+          </div>
+          <span class="local-pill"><span></span> LOCAL-FIRST</span>
+          <button class="icon-button" id="refreshState" title="Actualiser" aria-label="Actualiser l'état">
+            <span class="legacy-glyph">↻</span><i class="ui-lucide" data-lucide="refresh-cw" aria-hidden="true"></i>
+          </button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-search">
+        <div class="page-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> RETRIEVAL ENGINE / 01</div><h1>Find the <em>signal.</em></h1><p>Interrogez la mémoire. Inspectez les preuves. Comparez les stratégies de retrieval.</p></div>
+          <div class="heading-orb"><div class="orb-ring ring-a"></div><div class="orb-ring ring-b"></div><div class="orb-core">✳</div></div>
+        </div>
+        <div class="search-panel panel">
+          <div class="panel-topline"><span class="tiny-label">QUERY CONSOLE</span><span class="hotkey-note">ENTER TO SEARCH <kbd>↵</kbd></span></div>
+          <div class="query-wrap"><span class="query-glyph legacy-glyph">⌕</span><i class="query-glyph ui-lucide" data-lucide="search" aria-hidden="true"></i><input id="queryInput" type="text" placeholder="Ex. : Quelle décision a été prise sur la base de données ?" autocomplete="off"><button id="searchButton" class="primary-button">Search <span>↗</span><i class="ui-lucide" data-lucide="arrow-up-right" aria-hidden="true"></i></button></div>
+          <div class="query-controls">
+            <label><span>MÉTHODE</span><select id="methodSelect"><option value="graphrag">GraphRAG · hybride</option><option value="colbert">ColBERT · BGE-M3</option><option value="feature_aware">Feature-aware · custom</option><option value="dense">Dense · custom</option><option value="bm25">BM25</option><option value="french_me5">French ME5</option><option value="multilingual_e5">Multilingual E5</option><option value="compare">Comparer les 5</option></select></label>
+            <label><span>PORTÉE</span><select id="scopeSelect"><option value="">Toutes les réunions</option></select></label>
+            <label><span>TOP-K</span><select id="topKSelect"><option>5</option><option selected>10</option><option>20</option><option>30</option></select></label>
+            <div class="query-hint"><span class="pulse-dot"></span> JSON source immuable · résultats traçables</div>
+          </div>
+        </div>
+        <div class="results-header"><div><div class="section-kicker">RETRIEVED EVIDENCE</div><h2>Résultats <span id="resultCount" class="count-chip">—</span></h2></div><div class="results-meta" id="searchMeta">En attente d'une requête</div></div>
+        <div id="searchResults" class="results-grid empty-state"><div class="empty-icon"><span class="legacy-glyph">⌕</span><i class="ui-lucide" data-lucide="search" aria-hidden="true"></i></div><h3>La mémoire attend votre requête.</h3><p>Essayez une question sur une décision, un responsable, une objection ou un engagement.</p><div class="example-chips"><button data-query="Quelle est la dernière décision prise et qui l'a formulée ?">Dernière décision</button><button data-query="Qui s'est engagé à préparer le rapport de sécurité ?">Responsable d'action</button><button data-query="Quel était le principal risque évoqué ?">Risque évoqué</button></div></div>
+      </section>
+
+      <section class="view" id="view-manager">
+        <div class="page-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> MEMORY EXPLORER / 02</div><h1>Meeting <em>manager.</em></h1><p>Parcourez les réunions comme des conversations, directement depuis les chunks JSON.</p></div><div class="manager-stats" id="managerStats">— réunions</div></div>
+        <div class="manager-layout panel">
+          <div class="meeting-list-pane"><div class="pane-heading"><span class="tiny-label">MEMORY INDEX</span><span class="pane-count" id="meetingCount">0</span></div><input class="filter-input" id="meetingFilter" placeholder="Filtrer les réunions…"><div id="meetingList" class="meeting-list"></div></div>
+          <div class="chat-pane"><div id="chatEmpty" class="chat-empty"><div class="empty-icon"><span class="legacy-glyph">▤</span><i class="ui-lucide" data-lucide="message-square" aria-hidden="true"></i></div><h3>Sélectionnez une réunion</h3><p>Le transcript et ses métadonnées apparaîtront ici.</p></div><div id="chatContent" class="chat-content hidden"><div class="chat-header" id="chatHeader"></div><div class="chat-messages" id="chatMessages"></div></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-datasets">
+        <div class="page-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> MEMORY MANAGEMENT / 03</div><h1>Your data. <em>Your memory.</em></h1><p>Importez vos réunions. Chaque dataset reçoit sa propre mémoire SQLite et ses propres embeddings.</p></div><div class="heading-icon"><span class="legacy-glyph">◈</span><i class="ui-lucide" data-lucide="database" aria-hidden="true"></i></div></div>
+        <div class="dataset-layout">
+          <div class="panel import-panel"><div class="panel-topline"><span class="tiny-label">IMPORT DATASET</span><span class="format-tag">JSON / JSONL</span></div><form id="importForm">
+            <label class="form-label">Nom du dataset<input id="datasetName" name="dataset_name" value="Mes réunions" placeholder="Mon corpus de réunions"></label>
+            <label class="drop-zone" for="meetingsFile"><div class="upload-symbol"><span class="legacy-glyph">↑</span><i class="ui-lucide" data-lucide="upload" aria-hidden="true"></i></div><b>Déposez votre fichier de réunions</b><span>ou cliquez pour sélectionner · JSON jusqu'à 128 Mo</span><input id="meetingsFile" name="meetings_file" type="file" accept=".json,.jsonl,application/json" required><small id="meetingsFilename">Aucun fichier sélectionné</small></label>
+            <label class="form-label">Questions + chunk cible <span class="optional">OPTIONNEL</span><input id="queriesFile" name="queries_file" type="file" accept=".json,application/json"><small>Pour calculer Recall@K / MRR sur vos données.</small></label>
+            <button class="primary-button full-button" id="importButton" type="submit">Build memory <span>↗</span><i class="ui-lucide" data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+          </form><div id="importStatus" class="status-box hidden"></div></div>
+          <div class="panel schema-panel"><div class="panel-topline"><span class="tiny-label">SUPPORTED SCHEMA</span><span class="format-tag green-tag">SOURCE PRESERVED</span></div><h3>Flexible input, immutable chunks.</h3><p>Le format recommandé est celui de vos chunks de réunion. Les métadonnées de réunion sont facultatives.</p><pre class="code-block">{
+  "meeting_id": "reunion-001",
+  "title": "Revue architecture",
+  "meeting_date": "2026-10-31",
+  "messages": [
+    {
+      "username": "alice",
+      "message_id": 42,
+      "timestamp": "10:42:13",
+      "message": "On valide PostgreSQL."
+    }
+  ]
+}</pre><div class="schema-foot"><span>✓ JSON original conservé</span><span>✓ Embedding lié par chunk_id</span><span>✓ Mémoire isolée par dataset</span></div></div>
+        </div>
+        <div class="section-row"><div><div class="section-kicker">AVAILABLE MEMORIES</div><h2>Datasets installés</h2></div></div><div id="datasetCards" class="dataset-cards"></div>
+      </section>
+
+      <section class="view" id="view-benchmarks">
+        <div class="page-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> MODEL EVALUATION / 04</div><h1>Measure, <em>don't guess.</em></h1><p>Évaluez les méthodes sur les mêmes questions et les mêmes chunks cibles.</p></div><div class="heading-icon chart-icon"><span class="legacy-glyph">⌁</span><i class="ui-lucide" data-lucide="activity" aria-hidden="true"></i></div></div>
+        <div class="panel benchmark-controls"><div><div class="tiny-label">EVALUATION RUN</div><h3>Comparer les stratégies de retrieval</h3><p>Le benchmark utilise les questions annotées du dataset actif.</p></div><div class="benchmark-action"><select id="benchmarkSplit"><option value="test" selected>Test split</option><option value="val">Validation split</option><option value="train">Train split</option></select><button class="primary-button" id="runBenchmark">Run benchmark <span>↗</span><i class="ui-lucide" data-lucide="play" aria-hidden="true"></i></button></div></div>
+        <div id="benchmarkProgress" class="progress-panel hidden"><div class="progress-line"><span id="progressLabel">Initialisation…</span><span class="progress-spinner"></span></div><div class="progress-track"><span></span></div></div>
+        <div id="benchmarkResults" class="benchmark-results"><div class="empty-state panel"><div class="empty-icon"><span class="legacy-glyph">⌁</span><i class="ui-lucide" data-lucide="activity" aria-hidden="true"></i></div><h3>Aucun benchmark lancé</h3><p>Lancez un run pour comparer les sept méthodes sur les questions annotées du dataset actif.</p></div></div>
+      </section>
+
+      <section class="view" id="view-graph">
+        <div class="page-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> GRAPH MEMORY / 05</div><h1>Discussion <em>graph.</em></h1><p>Une mémoire typée : messages, intervenants, thèmes, actes et relations prédites. Cliquez un nœud pour l'inspecter.</p></div><div class="manager-stats" id="graphStats">—</div></div>
+        <div class="panel graph-toolbar">
+          <div class="graph-switch" role="group" aria-label="Portée du graphe">
+            <button type="button" data-graph-scope="global" aria-pressed="true">Toutes les discussions</button>
+            <button type="button" data-graph-scope="meeting" aria-pressed="false">Réunion</button>
+          </div>
+          <select id="graphMeetingSelect" aria-label="Choisir une réunion"></select>
+          <div class="graph-legend" id="graphLegend"></div>
+        </div>
+        <div class="graph-layout">
+          <div class="panel graph-panel"><div id="graphCanvas" class="graph-canvas"></div></div>
+          <aside class="panel graph-inspector" id="graphInspector"><div class="tiny-label">INSPECTOR</div><p class="graph-hint">Sélectionnez un nœud du graphe pour afficher son JSON, son auteur, son acte et ses tags.</p></aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-agent">
+        <div class="page-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> SEMANTIC AGENT / 06</div><h1>Ask the <em>memory.</em></h1><p>Le moteur analyse l'intention, recherche les preuves, exécute un outil simulé, puis donne les meilleurs chunks JSON au modèle local.</p></div><div class="manager-stats" id="agentStatus">LLM · vérification…</div></div>
+        <div class="agent-layout">
+          <div class="panel agent-chat">
+            <div class="panel-topline"><span class="tiny-label">CONVERSATION</span><span class="format-tag" id="agentModel">OLLAMA</span></div>
+            <div id="agentMessages" class="agent-messages">
+              <div class="agent-welcome"><h3>Que voulez-vous retrouver ?</h3><p>Les réponses sont générées uniquement à partir des chunks JSON récupérés. La trace à droite montre l'intention, la recherche, l'outil et l'appel LLM.</p><div class="example-chips"><button type="button" data-agent-query="Quelle décision a été prise sur les parcours de connexion ?">Décision précise</button><button type="button" data-agent-query="Prépare un dossier sur la migration des données.">Dossier</button><button type="button" data-agent-query="Rédige un mail au responsable du budget pour demander la dernière version validée.">Brouillon d'e-mail</button><button type="button" data-agent-query="Envoie ça à la bonne personne.">Demande ambiguë</button></div></div>
+            </div>
+            <form id="agentForm" class="agent-form">
+              <textarea id="agentQuery" rows="2" placeholder="Ex. : Quelle décision a été prise sur les parcours de connexion ?" aria-label="Question à la mémoire"></textarea>
+              <div class="agent-controls">
+                <label><span>RÉUNION</span><select id="agentMeeting"><option value="">Toutes</option></select></label>
+                <label><span>TOP-K</span><select id="agentTopK"><option>5</option><option selected>8</option><option>12</option></select></label>
+                <button class="primary-button" id="agentSend" type="submit">Ask memory <span>↗</span><i class="ui-lucide" data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+              </div>
+            </form>
+          </div>
+          <aside class="panel agent-side">
+            <div class="panel-topline"><span class="tiny-label">TRACE / TOOL CALLS</span><span class="format-tag" id="agentTraceTime">—</span></div>
+            <div id="agentTrace" class="agent-trace"><p class="graph-hint">L'intention, le plan de requête, la recherche hybride, les outils et le LLM apparaîtront ici.</p></div>
+            <div id="agentAction" class="agent-action"></div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="app-footer"><span>SEMANTIC MEMORY ENGINE <b>·</b> EXPERIMENTAL</span><span id="footerModel">CUSTOM ENCODER · 64D</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

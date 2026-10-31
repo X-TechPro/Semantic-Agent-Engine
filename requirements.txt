@@ -1,0 +1,8 @@
+# PyTorch is installed separately with the CUDA-specific setup script for RTX 5060.
+Flask>=3.1,<4
+numpy>=1.26
+scikit-learn>=1.5
+joblib>=1.4
+tqdm>=4.66
+torch>=2.14.1
+sentence-transformers>=5.0

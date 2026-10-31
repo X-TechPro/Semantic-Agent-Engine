@@ -1,0 +1,36 @@
+{
+  "meetings": [
+    {
+      "meeting_id": "demo-architecture-001",
+      "project_id": "demo-architecture",
+      "project": "Projet Démo",
+      "title": "Revue d'architecture et de sécurité",
+      "meeting_date": "2026-10-30",
+      "style": "messy",
+      "messages": [
+        {"username": "Alice", "message_id": 1, "timestamp": "09:00:00", "message": "Bon, on commence par la base de données. Aujourd'hui les écritures prennent trop de temps."},
+        {"username": "Karim", "message_id": 2, "timestamp": "09:01:12", "message": "Je propose de migrer vers PostgreSQL, mais il faut tester la charge avant."},
+        {"username": "Nora", "message_id": 3, "timestamp": "09:02:40", "message": "Attendez, on a aussi un problème de sauvegarde, pas uniquement de débit."},
+        {"username": "Alice", "message_id": 4, "timestamp": "09:04:03", "message": "Après discussion, on valide PostgreSQL pour le prochain jalon, sous réserve du test de restauration."},
+        {"username": "Mehdi", "message_id": 5, "timestamp": "09:05:21", "message": "Je prends le test de restauration et je partage le rapport avant vendredi."},
+        {"username": "Camille", "message_id": 6, "timestamp": "09:06:10", "message": "D'accord, je vais mettre à jour le plan de migration."}
+      ]
+    },
+    {
+      "meeting_id": "demo-product-002",
+      "project_id": "demo-product",
+      "project": "Projet Démo",
+      "title": "Priorisation produit",
+      "meeting_date": "2026-10-31",
+      "style": "formelle",
+      "messages": [
+        {"username": "Léa", "message_id": 1, "timestamp": "10:00:00", "message": "Nous devons confirmer le périmètre de la prochaine version."},
+        {"username": "Hugo", "message_id": 2, "timestamp": "10:02:00", "message": "Je recommande de reporter les exports avancés afin de sécuriser la livraison."},
+        {"username": "Léa", "message_id": 3, "timestamp": "10:05:00", "message": "La décision retenue est de reporter les exports avancés à la version suivante."},
+        {"username": "Inès", "message_id": 4, "timestamp": "10:07:00", "message": "Je prendrai en charge la mise à jour de la documentation produit."},
+        {"username": "Yanis", "message_id": 5, "timestamp": "10:09:00", "message": "Le risque principal concerne la formation des utilisateurs."},
+        {"username": "Nora", "message_id": 6, "timestamp": "10:10:00", "message": "Nous organiserons un point de suivi la semaine prochaine."}
+      ]
+    }
+  ]
+}

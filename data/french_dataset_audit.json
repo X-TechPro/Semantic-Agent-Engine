@@ -1,0 +1,35 @@
+{
+  "total_meetings": 60,
+  "formal_meetings": 30,
+  "messy_meetings": 30,
+  "messages": 3600,
+  "min_messages_per_meeting": 60,
+  "min_speakers_per_meeting": 6,
+  "messy_transcription_stats": {
+    "messages": 1800,
+    "with_filler_or_discourse_marker": 1015,
+    "with_repeated_word": 214,
+    "without_terminal_punctuation": 1710,
+    "with_light_asr_artifact": 137,
+    "with_restart_or_repair": 223
+  },
+  "splits": {
+    "train": {
+      "meetings": 36,
+      "formal": 18,
+      "messy": 18
+    },
+    "val": {
+      "meetings": 12,
+      "formal": 6,
+      "messy": 6
+    },
+    "test": {
+      "meetings": 12,
+      "formal": 6,
+      "messy": 6
+    }
+  },
+  "project_leakage": 0,
+  "issues": []
+}

@@ -1,0 +1,148 @@
+[
+  {
+    "query_id": "agent-01-decision",
+    "dataset": "transcribed",
+    "query": "Quelle décision a été prise sur la migration des données et qui l'a formulée ?",
+    "expected_intent": "answer",
+    "expect_action": "none",
+    "expect_citations": true
+  },
+  {
+    "query_id": "agent-02-risk",
+    "dataset": "transcribed",
+    "query": "Quel risque a été évoqué sur la refonte mobile ?",
+    "expected_intent": "answer",
+    "expect_action": "none",
+    "expect_citations": true
+  },
+  {
+    "query_id": "agent-03-proposition",
+    "dataset": "transcribed",
+    "query": "Est-ce que la proposition sur les parcours de connexion a été validée ?",
+    "expected_intent": "answer",
+    "expect_action": "none",
+    "expect_citations": true
+  },
+  {
+    "query_id": "agent-04-compare",
+    "dataset": "transcribed",
+    "query": "Qu'est-ce qui a changé entre les réunions sur la migration des données ?",
+    "expected_intent": "compare",
+    "expect_action": "compare",
+    "require_timeline": true
+  },
+  {
+    "query_id": "agent-05-dossier",
+    "dataset": "transcribed",
+    "query": "Prépare un dossier sur la migration des données.",
+    "expected_intent": "build_dossier",
+    "expect_action": "build_dossier",
+    "required_sections": ["contexte", "chronologie", "decisions", "responsables", "risques", "references"]
+  },
+  {
+    "query_id": "agent-06-email",
+    "dataset": "transcribed",
+    "query": "Rédige un mail à David au sujet des maquettes de l'écran d'accueil.",
+    "expected_intent": "draft_email",
+    "expect_action": "draft_email",
+    "expected_recipient": "david",
+    "expect_email_missing": true
+  },
+  {
+    "query_id": "agent-07-email-ambiguous",
+    "dataset": "transcribed",
+    "query": "Rédige un mail au responsable du budget pour demander la dernière version validée.",
+    "expected_intent": "clarify",
+    "expect_clarify": true,
+    "expect_action": "clarify"
+  },
+  {
+    "query_id": "agent-08-clarify",
+    "dataset": "transcribed",
+    "query": "Envoie ça à la bonne personne.",
+    "expected_intent": "clarify",
+    "expect_clarify": true,
+    "expect_action": "clarify"
+  },
+  {
+    "query_id": "agent-09-hypothetical",
+    "dataset": "transcribed",
+    "query": "On pourrait peut-être revoir le budget.",
+    "expected_intent": "answer",
+    "expect_action": "none",
+    "expect_no_action": true
+  },
+  {
+    "query_id": "agent-10-task",
+    "dataset": "transcribed",
+    "query": "Prépare une tâche pour les tests de synchronisation.",
+    "expected_intent": "create_task",
+    "expect_action": "create_task",
+    "require_task": true
+  },
+  {
+    "query_id": "agent-11-event",
+    "dataset": "transcribed",
+    "query": "Prépare un point vendredi sur la migration des données.",
+    "expected_intent": "schedule_event",
+    "expect_action": "schedule_event",
+    "require_event": true
+  },
+  {
+    "query_id": "agent-12-dossier-a11y",
+    "dataset": "transcribed",
+    "query": "Prépare un dossier sur l'accessibilité.",
+    "expected_intent": "build_dossier",
+    "expect_action": "build_dossier",
+    "required_sections": ["contexte", "chronologie", "decisions", "responsables", "references"]
+  },
+  {
+    "query_id": "agent-13-compare-secu",
+    "dataset": "transcribed",
+    "query": "Compare les décisions sur la sécurité applicative.",
+    "expected_intent": "compare",
+    "expect_action": "compare",
+    "require_timeline": true
+  },
+  {
+    "query_id": "agent-14-email-ines",
+    "dataset": "transcribed",
+    "query": "Rédige un mail à Inès pour demander les maquettes de l'écran d'accueil.",
+    "expected_intent": "draft_email",
+    "expect_action": "draft_email",
+    "expected_recipient": "inès",
+    "expect_email_missing": true
+  },
+  {
+    "query_id": "agent-15-cross-meeting",
+    "dataset": "transcribed",
+    "query": "Qu'avait-on décidé le 2026-01-05 sur l'audit UX ?",
+    "expected_intent": "answer",
+    "expect_action": "none",
+    "expect_citations": true
+  },
+  {
+    "query_id": "agent-16-unanswerable",
+    "dataset": "transcribed",
+    "query": "Quelle décision a été prise sur la conquête spatiale ?",
+    "expected_intent": "answer",
+    "expect_action": "none",
+    "expect_no_action": true
+  },
+  {
+    "query_id": "agent-17-compare-dates",
+    "dataset": "transcribed",
+    "query": "Est-ce que la réunion du 2026-02-02 contredit celle du 2026-01-12 ?",
+    "expected_intent": "compare",
+    "expect_action": "compare",
+    "require_timeline": true
+  },
+  {
+    "query_id": "agent-18-email-multi",
+    "dataset": "transcribed",
+    "query": "Rédige un mail à la personne qui a pris en charge les maquettes de l'écran d'accueil.",
+    "expected_intent": "clarify",
+    "expect_ambiguous": true,
+    "expect_action": "clarify"
+  }
+]
