@@ -14,6 +14,17 @@ git checkout -q -B main
 # add all changes
 git add .
 
+# refuse to upload blobs GitHub will reject (>100 MB)
+big=$(git diff --cached --name-only --diff-filter=AM | while read -r f; do
+    [ -f "$f" ] && [ "$(stat -c%s "$f")" -gt 104857600 ] && echo "  $f ($(du -h "$f" | cut -f1))"
+done)
+if [ -n "$big" ]; then
+    echo "ERROR: staged files exceed GitHub's 100 MB limit:"
+    echo "$big"
+    echo "Add them to .gitignore instead."
+    exit 1
+fi
+
 # prompt for commit message
 read -p "Enter commit message: " msg
 
