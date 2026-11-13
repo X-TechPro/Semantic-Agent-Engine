@@ -1,4 +1,4 @@
-# Semantic Meeting Memory — v7
+# Semantic Meeting Memory — Rexu v3
 
 One corpus, one split protocol, one evaluation for every model. v7 replaces the
 separate synthetic/transcribed v6 benchmarks with a project- and
@@ -262,9 +262,9 @@ Previous numbers stay as measured and are not replaced:
   (table above).
 - v10 zero-shot with the v3 head: R@1 .500, R@5 1.000, MRR .688,
   Evidence@5 .475, All-Hops@5 .000 on 4 test queries (Defaults section).
-- QMSum and the doc-level caches are local artefacts: `artifacts/` is ignored
-  by git, so these numbers come from the raw result JSONs in
-  `data/pyramid/results/`.
+- The raw per-method JSONs behind the table above are in
+  `data/pyramid/results/`; large model and document caches stay local under
+  `artifacts/` (git-ignored).
 
 Caveats: n = 50 per language, one meeting per language. SAE is truncated to
 its top 30, so its MRR and full-recall are floors. Rexu builds its document
