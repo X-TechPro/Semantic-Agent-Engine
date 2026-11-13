@@ -1,0 +1,154 @@
+[
+ {
+  "dataset": "meeting_en.json",
+  "turns": 206,
+  "units": 225,
+  "queries": 50,
+  "rerank": true,
+  "metrics": {
+   "recall_full": 0.61,
+   "precision_full": 0.036804597701149425,
+   "all_evidence": 0.36,
+   "coverage": 0.86,
+   "mrr_main": 0.24419496204278812,
+   "recall@5": 0.42666666666666664,
+   "precision@5": 0.11600000000000002,
+   "f1@5": 0.17595238095238097,
+   "recall@10": 0.5333333333333333,
+   "precision@10": 0.086,
+   "f1@10": 0.14317349317349318,
+   "recall@20": 0.5483333333333333,
+   "precision@20": 0.046000000000000006,
+   "f1@20": 0.0830067758328628,
+   "main_rank": 3.58,
+   "n_retrieved": 29.38,
+   "r@1": 0.06,
+   "any@5": 0.58,
+   "any@10": 0.72,
+   "any@20": 0.78
+  },
+  "by_qtype": {
+   "direct1hop": {
+    "n": 20,
+    "r@1": 0.15,
+    "any@5": 0.8,
+    "any@10": 0.85,
+    "any@20": 0.85,
+    "mrr": 0.4121739130434783,
+    "recall_full": 0.9
+   },
+   "owner2hop": {
+    "n": 10,
+    "r@1": 0.0,
+    "any@5": 0.6,
+    "any@10": 0.7,
+    "any@20": 0.7,
+    "mrr": 0.20194444444444443,
+    "recall_full": 0.4
+   },
+   "supplier3hop": {
+    "n": 10,
+    "r@1": 0.0,
+    "any@5": 0.7,
+    "any@10": 1.0,
+    "any@20": 1.0,
+    "mrr": 0.19468253968253968,
+    "recall_full": 0.6
+   },
+   "phone4hop": {
+    "n": 10,
+    "r@1": 0.0,
+    "any@5": 0.0,
+    "any@10": 0.2,
+    "any@20": 0.5,
+    "mrr": 0.0,
+    "recall_full": 0.25
+   }
+  },
+  "resources": {
+   "ingest_s": 0.77,
+   "index_s": 0.52,
+   "vram_peak_gb": 2.6,
+   "vram_free_after_gb": 2.08,
+   "rss_peak_gb": 2.78,
+   "query_ms_mean": 224.0,
+   "query_ms_p95": 223.4
+  }
+ },
+ {
+  "dataset": "meeting_fr.json",
+  "turns": 206,
+  "units": 225,
+  "queries": 50,
+  "rerank": true,
+  "metrics": {
+   "recall_full": 0.665,
+   "precision_full": 0.040880313811348296,
+   "all_evidence": 0.42,
+   "coverage": 0.94,
+   "mrr_main": 0.3193213940648723,
+   "recall@5": 0.465,
+   "precision@5": 0.132,
+   "f1@5": 0.1962698412698413,
+   "recall@10": 0.5316666666666666,
+   "precision@10": 0.07800000000000001,
+   "f1@10": 0.1315817515817516,
+   "recall@20": 0.5433333333333333,
+   "precision@20": 0.04100000000000001,
+   "f1@20": 0.0746489742141916,
+   "main_rank": 5.72,
+   "n_retrieved": 29.36,
+   "r@1": 0.16,
+   "any@5": 0.6,
+   "any@10": 0.72,
+   "any@20": 0.76
+  },
+  "by_qtype": {
+   "direct1hop": {
+    "n": 20,
+    "r@1": 0.2,
+    "any@5": 0.85,
+    "any@10": 0.95,
+    "any@20": 0.95,
+    "mrr": 0.47714285714285715,
+    "recall_full": 0.95
+   },
+   "owner2hop": {
+    "n": 10,
+    "r@1": 0.2,
+    "any@5": 0.8,
+    "any@10": 0.8,
+    "any@20": 0.8,
+    "mrr": 0.404,
+    "recall_full": 0.5
+   },
+   "supplier3hop": {
+    "n": 10,
+    "r@1": 0.1,
+    "any@5": 0.2,
+    "any@10": 0.6,
+    "any@20": 0.7,
+    "mrr": 0.13832125603864734,
+    "recall_full": 0.6
+   },
+   "phone4hop": {
+    "n": 10,
+    "r@1": 0.1,
+    "any@5": 0.3,
+    "any@10": 0.3,
+    "any@20": 0.4,
+    "mrr": 0.1,
+    "recall_full": 0.325
+   }
+  },
+  "resources": {
+   "ingest_s": 0.8,
+   "index_s": 0.26,
+   "vram_peak_gb": 2.66,
+   "vram_free_after_gb": 2.0,
+   "rss_peak_gb": 4.21,
+   "query_ms_mean": 201.3,
+   "query_ms_p95": 222.4
+  }
+ }
+]

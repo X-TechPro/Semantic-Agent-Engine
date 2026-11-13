@@ -1,0 +1,2372 @@
+{
+  "domain": "aurora_launch_meeting",
+  "seed": 777,
+  "turns": [
+    {
+      "idx": 0,
+      "ts": "0:00",
+      "speaker": "Bruno",
+      "text": "Alright everyone, thanks for joining. Today we need to plan the Aurora launch event end to end, so let's go through each workstream and leave with clear owners and deadlines.",
+      "thread": "opening",
+      "role": "facilitator",
+      "ante": null
+    },
+    {
+      "idx": 1,
+      "ts": "0:28",
+      "speaker": "Alice",
+      "text": "Sounds good. I think we should start with the venue, because everything else depends on the date and the location.",
+      "thread": "opening",
+      "role": "discuss",
+      "ante": 0
+    },
+    {
+      "idx": 2,
+      "ts": "0:56",
+      "speaker": "Claire",
+      "text": "Agreed. Before we dive in, can we confirm the event date so everyone is working toward the same target?",
+      "thread": "opening",
+      "role": "question",
+      "ante": 1
+    },
+    {
+      "idx": 3,
+      "ts": "1:24",
+      "speaker": "Bruno",
+      "text": "Yes, the launch event is set for May 20. That gives us about two months to get everything ready.",
+      "thread": "opening",
+      "role": "decision",
+      "ante": 2
+    },
+    {
+      "idx": 4,
+      "ts": "1:52",
+      "speaker": "Emma",
+      "text": "Two months is tight but doable. Let's make sure we book the big things first so we don't lose availability.",
+      "thread": "opening",
+      "role": "discuss",
+      "ante": 3
+    },
+    {
+      "idx": 5,
+      "ts": "2:20",
+      "speaker": "David",
+      "text": "I'll keep a shared checklist so we can track what is decided and what is still open across all the workstreams.",
+      "thread": "opening",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 6,
+      "ts": "2:48",
+      "speaker": "Hugo",
+      "text": "Perfect. Let's also remember to keep every decision in this chat so nothing gets lost between meetings.",
+      "thread": "opening",
+      "role": "discuss",
+      "ante": null
+    },
+    {
+      "idx": 7,
+      "ts": "3:16",
+      "speaker": "Bruno",
+      "text": "Great, let's begin. Alice, the venue is yours first.",
+      "thread": "opening",
+      "role": "facilitator",
+      "ante": 0
+    },
+    {
+      "idx": 8,
+      "ts": "3:44",
+      "speaker": "Alice",
+      "text": "I'll take responsibility for the venue, since I've already visited a few places around the city.",
+      "thread": "venue",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 9,
+      "ts": "4:12",
+      "speaker": "Alice",
+      "text": "We need a space that can comfortably hold around three hundred people and that is easy to reach by public transport.",
+      "thread": "venue",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 10,
+      "ts": "4:40",
+      "speaker": "Bruno",
+      "text": "Make sure it has proper wheelchair access too, because that is a hard requirement for us this year.",
+      "thread": "venue",
+      "role": "discuss",
+      "ante": 8
+    },
+    {
+      "idx": 11,
+      "ts": "5:08",
+      "speaker": "Alice",
+      "text": "Good point, I'll add that to the list. It also needs a separate room where we can run the hands-on workshops.",
+      "thread": "venue",
+      "role": "requirement",
+      "ante": 10
+    },
+    {
+      "idx": 12,
+      "ts": "5:36",
+      "speaker": "Bruno",
+      "text": "By the way, when do we actually need to have the venue confirmed and signed?",
+      "thread": "venue",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 13,
+      "ts": "6:04",
+      "speaker": "Alice",
+      "text": "We have to lock in the venue by March 15, otherwise we lose the early-bird rate and the date might slip.",
+      "thread": "venue",
+      "role": "deadline",
+      "ante": 12
+    },
+    {
+      "idx": 14,
+      "ts": "6:32",
+      "speaker": "Bruno",
+      "text": "And how much can we spend on the venue in total?",
+      "thread": "venue",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 15,
+      "ts": "7:00",
+      "speaker": "Alice",
+      "text": "The budget for the venue is twelve thousand euros, and that amount has to cover the deposit as well.",
+      "thread": "venue",
+      "role": "budget",
+      "ante": 14
+    },
+    {
+      "idx": 16,
+      "ts": "7:28",
+      "speaker": "Alice",
+      "text": "I've narrowed it down to two options. GrandHall is central, spacious, and already has most of the equipment we need.",
+      "thread": "venue",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 17,
+      "ts": "7:56",
+      "speaker": "Bruno",
+      "text": "What about the Riverside Center? It is noticeably cheaper, but it is quite far from the train station.",
+      "thread": "venue",
+      "role": "discuss",
+      "ante": 16
+    },
+    {
+      "idx": 18,
+      "ts": "8:24",
+      "speaker": "Alice",
+      "text": "Riverside is cheaper, but with three hundred guests arriving, the transport problem is a real dealbreaker.",
+      "thread": "venue",
+      "role": "discuss",
+      "ante": 17
+    },
+    {
+      "idx": 19,
+      "ts": "8:52",
+      "speaker": "Alice",
+      "text": "So let's go with GrandHall for the venue. I'll start the paperwork and confirm the date with them.",
+      "thread": "venue",
+      "role": "vendor",
+      "ante": 18
+    },
+    {
+      "idx": 20,
+      "ts": "9:20",
+      "speaker": "Bruno",
+      "text": "Who do we talk to at GrandHall to get the contract moving?",
+      "thread": "venue",
+      "role": "question",
+      "ante": 19
+    },
+    {
+      "idx": 21,
+      "ts": "9:48",
+      "speaker": "Alice",
+      "text": "Our contact at GrandHall is Marie Lambert, she is the events manager and she handles all the bookings.",
+      "thread": "venue",
+      "role": "contact",
+      "ante": 20
+    },
+    {
+      "idx": 22,
+      "ts": "10:16",
+      "speaker": "Bruno",
+      "text": "Can you share her number so I can call her about the deposit this afternoon?",
+      "thread": "venue",
+      "role": "question",
+      "ante": 21
+    },
+    {
+      "idx": 23,
+      "ts": "10:44",
+      "speaker": "Alice",
+      "text": "Sure, you can reach Marie Lambert at +33 6 12 34 56 01, she usually answers quickly.",
+      "thread": "venue",
+      "role": "phone",
+      "ante": 22
+    },
+    {
+      "idx": 24,
+      "ts": "11:12",
+      "speaker": "Alice",
+      "text": "I'll email her the full requirements today and copy everyone here so we are all aligned.",
+      "thread": "venue",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 25,
+      "ts": "11:40",
+      "speaker": "Bruno",
+      "text": "Perfect, thanks for taking this on, it is one less thing for the rest of us to worry about.",
+      "thread": "venue",
+      "role": "discuss",
+      "ante": 24
+    },
+    {
+      "idx": 26,
+      "ts": "12:08",
+      "speaker": "Bruno",
+      "text": "I'll handle the catering, I've worked with a couple of good providers on previous events.",
+      "thread": "catering",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 27,
+      "ts": "12:36",
+      "speaker": "Bruno",
+      "text": "We need food for three hundred people, with clear vegetarian, vegan, and gluten-free options labeled on every dish.",
+      "thread": "catering",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 28,
+      "ts": "13:04",
+      "speaker": "Emma",
+      "text": "Please also account for allergies, we had a serious nut allergy issue at the last event and we cannot repeat that.",
+      "thread": "catering",
+      "role": "discuss",
+      "ante": 26
+    },
+    {
+      "idx": 29,
+      "ts": "13:32",
+      "speaker": "Bruno",
+      "text": "Absolutely, I'll require a full allergen chart from whoever we pick, and separate preparation for the free-from meals.",
+      "thread": "catering",
+      "role": "requirement",
+      "ante": 28
+    },
+    {
+      "idx": 30,
+      "ts": "14:00",
+      "speaker": "Emma",
+      "text": "When do we need to give the caterer the final headcount and menu?",
+      "thread": "catering",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 31,
+      "ts": "14:28",
+      "speaker": "Bruno",
+      "text": "The caterer needs the final numbers by March 20, so I'll collect dietary requirements from the registration team before then.",
+      "thread": "catering",
+      "role": "deadline",
+      "ante": 30
+    },
+    {
+      "idx": 32,
+      "ts": "14:56",
+      "speaker": "Emma",
+      "text": "What budget are we working with for the food and service?",
+      "thread": "catering",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 33,
+      "ts": "15:24",
+      "speaker": "Bruno",
+      "text": "We have eight thousand five hundred euros for catering, which works out to roughly twenty-eight euros per person.",
+      "thread": "catering",
+      "role": "budget",
+      "ante": 32
+    },
+    {
+      "idx": 34,
+      "ts": "15:52",
+      "speaker": "Bruno",
+      "text": "I'm considering FreshTable, they do seasonal menus and they were very reliable when we used them last spring.",
+      "thread": "catering",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 35,
+      "ts": "16:20",
+      "speaker": "Emma",
+      "text": "There is also BistroEvent, they are a bit cheaper but I'm not sure they can handle three hundred covers smoothly.",
+      "thread": "catering",
+      "role": "discuss",
+      "ante": 34
+    },
+    {
+      "idx": 36,
+      "ts": "16:48",
+      "speaker": "Bruno",
+      "text": "Right, scaling to three hundred is exactly where the cheaper option gets risky, so reliability matters more here.",
+      "thread": "catering",
+      "role": "discuss",
+      "ante": 35
+    },
+    {
+      "idx": 37,
+      "ts": "17:16",
+      "speaker": "Bruno",
+      "text": "Let's choose FreshTable for the catering, I'll send them the brief and the allergen requirements.",
+      "thread": "catering",
+      "role": "vendor",
+      "ante": 36
+    },
+    {
+      "idx": 38,
+      "ts": "17:44",
+      "speaker": "Emma",
+      "text": "Who is the person we coordinate with at FreshTable?",
+      "thread": "catering",
+      "role": "question",
+      "ante": 37
+    },
+    {
+      "idx": 39,
+      "ts": "18:12",
+      "speaker": "Bruno",
+      "text": "Our contact at FreshTable is Julien Roy, he is the head chef and he manages the event menus directly.",
+      "thread": "catering",
+      "role": "contact",
+      "ante": 38
+    },
+    {
+      "idx": 40,
+      "ts": "18:40",
+      "speaker": "Emma",
+      "text": "Could you pass me his number? I want to confirm the vegan options with him.",
+      "thread": "catering",
+      "role": "question",
+      "ante": 39
+    },
+    {
+      "idx": 41,
+      "ts": "19:08",
+      "speaker": "Bruno",
+      "text": "Of course, you can reach Julien Roy at +33 6 12 34 56 02, he prefers calls in the morning.",
+      "thread": "catering",
+      "role": "phone",
+      "ante": 40
+    },
+    {
+      "idx": 42,
+      "ts": "19:36",
+      "speaker": "Bruno",
+      "text": "I'll set up a tasting session next week and invite a few of us to validate the menu before we sign.",
+      "thread": "catering",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 43,
+      "ts": "20:04",
+      "speaker": "Emma",
+      "text": "Great idea, a tasting will catch any problems early, thanks Bruno.",
+      "thread": "catering",
+      "role": "discuss",
+      "ante": 42
+    },
+    {
+      "idx": 44,
+      "ts": "20:32",
+      "speaker": "Claire",
+      "text": "I'll own the event website and the online marketing, since I've been building our landing pages all year.",
+      "thread": "website",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 45,
+      "ts": "21:00",
+      "speaker": "Claire",
+      "text": "The site needs a clear agenda, speaker bios, a registration button, and it must work perfectly on mobile phones.",
+      "thread": "website",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 46,
+      "ts": "21:28",
+      "speaker": "David",
+      "text": "It should also load fast, people will open it from the invitation email and we lose them if it is slow.",
+      "thread": "website",
+      "role": "discuss",
+      "ante": 44
+    },
+    {
+      "idx": 47,
+      "ts": "21:56",
+      "speaker": "Claire",
+      "text": "Agreed, I'll keep the pages lightweight and add a simple FAQ so we get fewer support emails before the event.",
+      "thread": "website",
+      "role": "requirement",
+      "ante": 46
+    },
+    {
+      "idx": 48,
+      "ts": "22:24",
+      "speaker": "David",
+      "text": "When does the website need to be live and tested?",
+      "thread": "website",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 49,
+      "ts": "22:52",
+      "speaker": "Claire",
+      "text": "The website has to be live by April 2, so we can start driving registrations a full month before the event.",
+      "thread": "website",
+      "role": "deadline",
+      "ante": 48
+    },
+    {
+      "idx": 50,
+      "ts": "23:20",
+      "speaker": "David",
+      "text": "How much have we set aside for the website work?",
+      "thread": "website",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 51,
+      "ts": "23:48",
+      "speaker": "Claire",
+      "text": "The budget for the website is six thousand euros, covering design, development, and the hosting for the year.",
+      "thread": "website",
+      "role": "budget",
+      "ante": 50
+    },
+    {
+      "idx": 52,
+      "ts": "24:16",
+      "speaker": "Claire",
+      "text": "I'm talking to WebNova, they specialize in event sites and can deliver a polished result quickly.",
+      "thread": "website",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 53,
+      "ts": "24:44",
+      "speaker": "David",
+      "text": "Could we just use our existing template instead? It would save money, though it is less flexible.",
+      "thread": "website",
+      "role": "discuss",
+      "ante": 52
+    },
+    {
+      "idx": 54,
+      "ts": "25:12",
+      "speaker": "Claire",
+      "text": "The template saves money but it cannot handle the registration flow we need, so a custom build is worth it here.",
+      "thread": "website",
+      "role": "discuss",
+      "ante": 53
+    },
+    {
+      "idx": 55,
+      "ts": "25:40",
+      "speaker": "Claire",
+      "text": "Let's go with WebNova for the website, I'll share the wireframes and the content plan with them.",
+      "thread": "website",
+      "role": "vendor",
+      "ante": 54
+    },
+    {
+      "idx": 56,
+      "ts": "26:08",
+      "speaker": "David",
+      "text": "Who is our point of contact at WebNova?",
+      "thread": "website",
+      "role": "question",
+      "ante": 55
+    },
+    {
+      "idx": 57,
+      "ts": "26:36",
+      "speaker": "Claire",
+      "text": "Our contact at WebNova is Sofia Martin, she is the project lead and she will run the whole build.",
+      "thread": "website",
+      "role": "contact",
+      "ante": 56
+    },
+    {
+      "idx": 58,
+      "ts": "27:04",
+      "speaker": "David",
+      "text": "Can I get her number to coordinate the hosting setup?",
+      "thread": "website",
+      "role": "question",
+      "ante": 57
+    },
+    {
+      "idx": 59,
+      "ts": "27:32",
+      "speaker": "Claire",
+      "text": "Yes, you can reach Sofia Martin at +33 6 12 34 56 03, she is very responsive on technical questions.",
+      "thread": "website",
+      "role": "phone",
+      "ante": 58
+    },
+    {
+      "idx": 60,
+      "ts": "28:00",
+      "speaker": "Claire",
+      "text": "I'll draft all the page copy this week so the developers are never waiting on content.",
+      "thread": "website",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 61,
+      "ts": "28:28",
+      "speaker": "David",
+      "text": "Nice, keeping content ahead of development is exactly how we avoid a last-minute rush.",
+      "thread": "website",
+      "role": "discuss",
+      "ante": 60
+    },
+    {
+      "idx": 62,
+      "ts": "28:56",
+      "speaker": "David",
+      "text": "I'll take care of the audio and video, I want the keynote to look and sound professional for everyone in the room.",
+      "thread": "av",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 63,
+      "ts": "29:24",
+      "speaker": "David",
+      "text": "We need a reliable sound system, two large screens, and a recording setup so we can publish the talks afterwards.",
+      "thread": "av",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 64,
+      "ts": "29:52",
+      "speaker": "Alice",
+      "text": "Please make sure the microphones are wireless and that we have spares, last year one died mid-talk.",
+      "thread": "av",
+      "role": "discuss",
+      "ante": 62
+    },
+    {
+      "idx": 65,
+      "ts": "30:20",
+      "speaker": "David",
+      "text": "Good call, I'll budget for backup microphones and a dedicated technician who stays in the room the whole time.",
+      "thread": "av",
+      "role": "requirement",
+      "ante": 64
+    },
+    {
+      "idx": 66,
+      "ts": "30:48",
+      "speaker": "Alice",
+      "text": "When do we need to confirm the AV equipment and the technician?",
+      "thread": "av",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 67,
+      "ts": "31:16",
+      "speaker": "David",
+      "text": "We need to confirm the AV setup by March 28, because the good technicians get booked up fast in spring.",
+      "thread": "av",
+      "role": "deadline",
+      "ante": 66
+    },
+    {
+      "idx": 68,
+      "ts": "31:44",
+      "speaker": "Alice",
+      "text": "What is the budget for audio and video?",
+      "thread": "av",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 69,
+      "ts": "32:12",
+      "speaker": "David",
+      "text": "The AV budget is nine thousand five hundred euros, which includes the recording and the on-site technician.",
+      "thread": "av",
+      "role": "budget",
+      "ante": 68
+    },
+    {
+      "idx": 70,
+      "ts": "32:40",
+      "speaker": "David",
+      "text": "SoundPro is my first choice, they handled a similar conference for us and the sound was flawless.",
+      "thread": "av",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 71,
+      "ts": "33:08",
+      "speaker": "Alice",
+      "text": "What about VisualEvent? They quote lower, but I haven't seen their work on a room this size.",
+      "thread": "av",
+      "role": "discuss",
+      "ante": 70
+    },
+    {
+      "idx": 72,
+      "ts": "33:36",
+      "speaker": "David",
+      "text": "VisualEvent is cheaper but unproven at this scale, and bad sound would ruin the keynote, so I'd rather not risk it.",
+      "thread": "av",
+      "role": "discuss",
+      "ante": 71
+    },
+    {
+      "idx": 73,
+      "ts": "34:04",
+      "speaker": "David",
+      "text": "Let's book SoundPro for the audio and video, I'll send them the room layout and the technical needs.",
+      "thread": "av",
+      "role": "vendor",
+      "ante": 72
+    },
+    {
+      "idx": 74,
+      "ts": "34:32",
+      "speaker": "Alice",
+      "text": "Who do we coordinate with at SoundPro?",
+      "thread": "av",
+      "role": "question",
+      "ante": 73
+    },
+    {
+      "idx": 75,
+      "ts": "35:00",
+      "speaker": "David",
+      "text": "Our contact at SoundPro is Lucas Bernard, he is the technical director and he will oversee the installation.",
+      "thread": "av",
+      "role": "contact",
+      "ante": 74
+    },
+    {
+      "idx": 76,
+      "ts": "35:28",
+      "speaker": "Alice",
+      "text": "Can you share his number so I can ask about the screen dimensions?",
+      "thread": "av",
+      "role": "question",
+      "ante": 75
+    },
+    {
+      "idx": 77,
+      "ts": "35:56",
+      "speaker": "David",
+      "text": "Sure, you can reach Lucas Bernard at +33 6 12 34 56 04, he knows the venue already.",
+      "thread": "av",
+      "role": "phone",
+      "ante": 76
+    },
+    {
+      "idx": 78,
+      "ts": "36:24",
+      "speaker": "David",
+      "text": "I'll schedule a site visit with them so they can test the acoustics before the event day.",
+      "thread": "av",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 79,
+      "ts": "36:52",
+      "speaker": "Alice",
+      "text": "That site visit is a good safety net, thanks for being thorough David.",
+      "thread": "av",
+      "role": "discuss",
+      "ante": 78
+    },
+    {
+      "idx": 80,
+      "ts": "37:20",
+      "speaker": "Emma",
+      "text": "I'll manage registration and ticketing, I want the sign-up process to be smooth from the first click to the confirmation email.",
+      "thread": "registration",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 81,
+      "ts": "37:48",
+      "speaker": "Emma",
+      "text": "We need a system that handles three hundred registrations, sends confirmations, and lets us track dietary requirements.",
+      "thread": "registration",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 82,
+      "ts": "38:16",
+      "speaker": "Hugo",
+      "text": "It should also support a waitlist, because if we hit capacity we don't want to just turn people away.",
+      "thread": "registration",
+      "role": "discuss",
+      "ante": 80
+    },
+    {
+      "idx": 83,
+      "ts": "38:44",
+      "speaker": "Emma",
+      "text": "Yes, a waitlist plus automatic notifications when a spot opens up, that keeps interested people engaged.",
+      "thread": "registration",
+      "role": "requirement",
+      "ante": 82
+    },
+    {
+      "idx": 84,
+      "ts": "39:12",
+      "speaker": "Hugo",
+      "text": "When does the registration system need to be ready to accept sign-ups?",
+      "thread": "registration",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 85,
+      "ts": "39:40",
+      "speaker": "Emma",
+      "text": "Registration has to open by April 10, right after the website goes live, so the two need to be connected.",
+      "thread": "registration",
+      "role": "deadline",
+      "ante": 84
+    },
+    {
+      "idx": 86,
+      "ts": "40:08",
+      "speaker": "Hugo",
+      "text": "What budget do we have for the ticketing platform?",
+      "thread": "registration",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 87,
+      "ts": "40:36",
+      "speaker": "Emma",
+      "text": "The registration budget is three thousand euros, mostly platform fees and the payment processing costs.",
+      "thread": "registration",
+      "role": "budget",
+      "ante": 86
+    },
+    {
+      "idx": 88,
+      "ts": "41:04",
+      "speaker": "Emma",
+      "text": "TicketFlow looks ideal, it has built-in waitlists and it integrates easily with the website.",
+      "thread": "registration",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 89,
+      "ts": "41:32",
+      "speaker": "Hugo",
+      "text": "There is also EventBrite, everyone knows it, but their fees per ticket add up at our scale.",
+      "thread": "registration",
+      "role": "discuss",
+      "ante": 88
+    },
+    {
+      "idx": 90,
+      "ts": "42:00",
+      "speaker": "Emma",
+      "text": "EventBrite is familiar but the per-ticket fees would eat our budget, so TicketFlow is the better fit financially.",
+      "thread": "registration",
+      "role": "discuss",
+      "ante": 89
+    },
+    {
+      "idx": 91,
+      "ts": "42:28",
+      "speaker": "Emma",
+      "text": "Let's use TicketFlow for registration, I'll configure the forms and connect it to the website.",
+      "thread": "registration",
+      "role": "vendor",
+      "ante": 90
+    },
+    {
+      "idx": 92,
+      "ts": "42:56",
+      "speaker": "Hugo",
+      "text": "Who is our contact at TicketFlow?",
+      "thread": "registration",
+      "role": "question",
+      "ante": 91
+    },
+    {
+      "idx": 93,
+      "ts": "43:24",
+      "speaker": "Emma",
+      "text": "Our contact at TicketFlow is Nina Petit, she is the account manager and she helps with the setup.",
+      "thread": "registration",
+      "role": "contact",
+      "ante": 92
+    },
+    {
+      "idx": 94,
+      "ts": "43:52",
+      "speaker": "Hugo",
+      "text": "Can I have her number to ask about the payment integration?",
+      "thread": "registration",
+      "role": "question",
+      "ante": 93
+    },
+    {
+      "idx": 95,
+      "ts": "44:20",
+      "speaker": "Emma",
+      "text": "Yes, you can reach Nina Petit at +33 6 12 34 56 05, she handles all the technical onboarding.",
+      "thread": "registration",
+      "role": "phone",
+      "ante": 94
+    },
+    {
+      "idx": 96,
+      "ts": "44:48",
+      "speaker": "Emma",
+      "text": "I'll run a test registration end to end this week to make sure the confirmation emails actually arrive.",
+      "thread": "registration",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 97,
+      "ts": "45:16",
+      "speaker": "Hugo",
+      "text": "Testing the whole flow early is smart, thanks Emma.",
+      "thread": "registration",
+      "role": "discuss",
+      "ante": 96
+    },
+    {
+      "idx": 98,
+      "ts": "45:44",
+      "speaker": "Bruno",
+      "text": "Quick pause before we continue. Now that the venue and the date are fixed, let's make sure every workstream is aligned on May 20.",
+      "thread": "coordination",
+      "role": "facilitator",
+      "ante": null
+    },
+    {
+      "idx": 99,
+      "ts": "46:12",
+      "speaker": "Claire",
+      "text": "The website and registration both depend on that date, so I'll hard-code May 20 everywhere to avoid any confusion.",
+      "thread": "coordination",
+      "role": "discuss",
+      "ante": 98
+    },
+    {
+      "idx": 100,
+      "ts": "46:40",
+      "speaker": "Emma",
+      "text": "I'll also add the date to every confirmation email, because people always ask even when it is on the site.",
+      "thread": "coordination",
+      "role": "discuss",
+      "ante": null
+    },
+    {
+      "idx": 101,
+      "ts": "47:08",
+      "speaker": "David",
+      "text": "One thing across all workstreams: we should keep a single shared contact sheet so anyone can reach any vendor quickly.",
+      "thread": "coordination",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 102,
+      "ts": "47:36",
+      "speaker": "Alice",
+      "text": "Good idea David, I'll start that sheet with the venue contact and everyone can add their own vendor as we go.",
+      "thread": "coordination",
+      "role": "discuss",
+      "ante": 101
+    },
+    {
+      "idx": 103,
+      "ts": "48:04",
+      "speaker": "Hugo",
+      "text": "Let's also agree on a contingency plan, if a vendor falls through we need to know who decides and how fast.",
+      "thread": "coordination",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 104,
+      "ts": "48:32",
+      "speaker": "Bruno",
+      "text": "If any vendor falls through, the workstream owner decides the replacement and flags it here within twenty-four hours.",
+      "thread": "coordination",
+      "role": "decision",
+      "ante": 103
+    },
+    {
+      "idx": 105,
+      "ts": "49:00",
+      "speaker": "Emma",
+      "text": "That clear rule helps a lot, let's keep going with the remaining workstreams.",
+      "thread": "coordination",
+      "role": "discuss",
+      "ante": null
+    },
+    {
+      "idx": 106,
+      "ts": "49:28",
+      "speaker": "Hugo",
+      "text": "I'll lead sponsorship, my goal is to bring in partners who cover part of the cost and add credibility to the event.",
+      "thread": "sponsorship",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 107,
+      "ts": "49:56",
+      "speaker": "Hugo",
+      "text": "We need a sponsorship deck with clear tiers, and a list of companies whose audience matches ours.",
+      "thread": "sponsorship",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 108,
+      "ts": "50:24",
+      "speaker": "Claire",
+      "text": "Make sure the tiers offer real visibility, sponsors want their logo on the site and a mention during the keynote.",
+      "thread": "sponsorship",
+      "role": "discuss",
+      "ante": 106
+    },
+    {
+      "idx": 109,
+      "ts": "50:52",
+      "speaker": "Hugo",
+      "text": "Exactly, I'll define gold, silver, and bronze tiers with logo placement, a booth, and speaking slots as the benefits.",
+      "thread": "sponsorship",
+      "role": "requirement",
+      "ante": 108
+    },
+    {
+      "idx": 110,
+      "ts": "51:20",
+      "speaker": "Claire",
+      "text": "When do we need to have the sponsorship agreements signed?",
+      "thread": "sponsorship",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 111,
+      "ts": "51:48",
+      "speaker": "Hugo",
+      "text": "We need the sponsorship deals signed by April 5, so we can print the logos and announce the partners in time.",
+      "thread": "sponsorship",
+      "role": "deadline",
+      "ante": 110
+    },
+    {
+      "idx": 112,
+      "ts": "52:16",
+      "speaker": "Claire",
+      "text": "How much sponsorship revenue are we targeting?",
+      "thread": "sponsorship",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 113,
+      "ts": "52:44",
+      "speaker": "Hugo",
+      "text": "We are targeting twenty thousand euros in sponsorship, which would cover a big part of the venue and catering costs.",
+      "thread": "sponsorship",
+      "role": "budget",
+      "ante": 112
+    },
+    {
+      "idx": 114,
+      "ts": "53:12",
+      "speaker": "Hugo",
+      "text": "BrandLink is my top prospect, they sponsor similar tech events and their audience is exactly who we want to reach.",
+      "thread": "sponsorship",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 115,
+      "ts": "53:40",
+      "speaker": "Claire",
+      "text": "There is also PartnerPlus, but they tend to ask for a lot of control over the content in exchange.",
+      "thread": "sponsorship",
+      "role": "discuss",
+      "ante": 114
+    },
+    {
+      "idx": 116,
+      "ts": "54:08",
+      "speaker": "Hugo",
+      "text": "PartnerPlus gives money but wants editorial control, and that is not a trade I want to make for this launch.",
+      "thread": "sponsorship",
+      "role": "discuss",
+      "ante": 115
+    },
+    {
+      "idx": 117,
+      "ts": "54:36",
+      "speaker": "Hugo",
+      "text": "Let's pursue BrandLink for sponsorship, I'll send them the deck and propose a gold tier partnership.",
+      "thread": "sponsorship",
+      "role": "vendor",
+      "ante": 116
+    },
+    {
+      "idx": 118,
+      "ts": "55:04",
+      "speaker": "Claire",
+      "text": "Who is the person we negotiate with at BrandLink?",
+      "thread": "sponsorship",
+      "role": "question",
+      "ante": 117
+    },
+    {
+      "idx": 119,
+      "ts": "55:32",
+      "speaker": "Hugo",
+      "text": "Our contact at BrandLink is Omar Diallo, he is the partnerships director and he makes the funding decisions.",
+      "thread": "sponsorship",
+      "role": "contact",
+      "ante": 118
+    },
+    {
+      "idx": 120,
+      "ts": "56:00",
+      "speaker": "Claire",
+      "text": "Can you share his number so I can loop him into the branding discussion?",
+      "thread": "sponsorship",
+      "role": "question",
+      "ante": 119
+    },
+    {
+      "idx": 121,
+      "ts": "56:28",
+      "speaker": "Hugo",
+      "text": "Sure, you can reach Omar Diallo at +33 6 12 34 56 06, he is expecting our proposal this week.",
+      "thread": "sponsorship",
+      "role": "phone",
+      "ante": 120
+    },
+    {
+      "idx": 122,
+      "ts": "56:56",
+      "speaker": "Hugo",
+      "text": "I'll follow up with a call two days after sending the deck, that usually keeps the conversation moving.",
+      "thread": "sponsorship",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 123,
+      "ts": "57:24",
+      "speaker": "Claire",
+      "text": "Good plan, a timely follow-up makes a big difference with sponsors, thanks Hugo.",
+      "thread": "sponsorship",
+      "role": "discuss",
+      "ante": 122
+    },
+    {
+      "idx": 124,
+      "ts": "57:52",
+      "speaker": "Alice",
+      "text": "I'll also handle the keynote speakers, since I've been in touch with a few interesting people in the industry.",
+      "thread": "keynote",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 125,
+      "ts": "58:20",
+      "speaker": "Alice",
+      "text": "We want one strong opening keynote and two shorter talks, all focused on the future of smart home technology.",
+      "thread": "keynote",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 126,
+      "ts": "58:48",
+      "speaker": "Emma",
+      "text": "Please confirm the speakers early, attendees often decide to come based on who is speaking.",
+      "thread": "keynote",
+      "role": "discuss",
+      "ante": 124
+    },
+    {
+      "idx": 127,
+      "ts": "59:16",
+      "speaker": "Alice",
+      "text": "Agreed, the speaker lineup is a big part of our marketing, so I'll lock the names before we launch the site.",
+      "thread": "keynote",
+      "role": "requirement",
+      "ante": 126
+    },
+    {
+      "idx": 128,
+      "ts": "59:44",
+      "speaker": "Emma",
+      "text": "When do we need the keynote speakers confirmed?",
+      "thread": "keynote",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 129,
+      "ts": "60:12",
+      "speaker": "Alice",
+      "text": "We need the keynote speakers confirmed by March 25, so Claire can publish their bios when the site goes live.",
+      "thread": "keynote",
+      "role": "deadline",
+      "ante": 128
+    },
+    {
+      "idx": 130,
+      "ts": "60:40",
+      "speaker": "Emma",
+      "text": "What budget do we have for the speakers?",
+      "thread": "keynote",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 131,
+      "ts": "61:08",
+      "speaker": "Alice",
+      "text": "The speaker budget is seven thousand euros, covering fees and travel for the three talks.",
+      "thread": "keynote",
+      "role": "budget",
+      "ante": 130
+    },
+    {
+      "idx": 132,
+      "ts": "61:36",
+      "speaker": "Alice",
+      "text": "SpeakerHub is a great option, they represent experienced speakers and handle all the logistics for us.",
+      "thread": "keynote",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 133,
+      "ts": "62:04",
+      "speaker": "Emma",
+      "text": "Could we invite someone directly instead? It might be cheaper, but it is more work to manage.",
+      "thread": "keynote",
+      "role": "discuss",
+      "ante": 132
+    },
+    {
+      "idx": 134,
+      "ts": "62:32",
+      "speaker": "Alice",
+      "text": "Going direct is cheaper but riskier on reliability, and SpeakerHub guarantees a replacement if someone cancels.",
+      "thread": "keynote",
+      "role": "discuss",
+      "ante": 133
+    },
+    {
+      "idx": 135,
+      "ts": "63:00",
+      "speaker": "Alice",
+      "text": "Let's work with SpeakerHub for the keynote, I'll brief them on the topics and the audience.",
+      "thread": "keynote",
+      "role": "vendor",
+      "ante": 134
+    },
+    {
+      "idx": 136,
+      "ts": "63:28",
+      "speaker": "Emma",
+      "text": "Who is our contact at SpeakerHub?",
+      "thread": "keynote",
+      "role": "question",
+      "ante": 135
+    },
+    {
+      "idx": 137,
+      "ts": "63:56",
+      "speaker": "Alice",
+      "text": "Our contact at SpeakerHub is Elena Rossi, she is the talent manager and she matches speakers to events.",
+      "thread": "keynote",
+      "role": "contact",
+      "ante": 136
+    },
+    {
+      "idx": 138,
+      "ts": "64:24",
+      "speaker": "Emma",
+      "text": "Can I get her number to ask about the opening speaker's availability?",
+      "thread": "keynote",
+      "role": "question",
+      "ante": 137
+    },
+    {
+      "idx": 139,
+      "ts": "64:52",
+      "speaker": "Alice",
+      "text": "Yes, you can reach Elena Rossi at +33 6 12 34 56 07, she has a shortlist ready for us.",
+      "thread": "keynote",
+      "role": "phone",
+      "ante": 138
+    },
+    {
+      "idx": 140,
+      "ts": "65:20",
+      "speaker": "Alice",
+      "text": "I'll review the shortlist with the team tomorrow so we pick the opening speaker together.",
+      "thread": "keynote",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 141,
+      "ts": "65:48",
+      "speaker": "Emma",
+      "text": "Picking together is a good idea, the opening talk really sets the tone for the whole day.",
+      "thread": "keynote",
+      "role": "discuss",
+      "ante": 140
+    },
+    {
+      "idx": 142,
+      "ts": "66:16",
+      "speaker": "Bruno",
+      "text": "I'll take security and logistics, with three hundred people we need a proper plan for access and crowd flow.",
+      "thread": "security",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 143,
+      "ts": "66:44",
+      "speaker": "Bruno",
+      "text": "We need badge checks at the entrance, clear emergency exits, and a few staff guiding people between rooms.",
+      "thread": "security",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 144,
+      "ts": "67:12",
+      "speaker": "David",
+      "text": "We should also protect the equipment, the AV gear is expensive and it will be left in the room overnight.",
+      "thread": "security",
+      "role": "discuss",
+      "ante": 142
+    },
+    {
+      "idx": 145,
+      "ts": "67:40",
+      "speaker": "Bruno",
+      "text": "Right, I'll arrange overnight coverage and a locked storage area for the valuable equipment.",
+      "thread": "security",
+      "role": "requirement",
+      "ante": 144
+    },
+    {
+      "idx": 146,
+      "ts": "68:08",
+      "speaker": "David",
+      "text": "When do we need the security plan and staff in place?",
+      "thread": "security",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 147,
+      "ts": "68:36",
+      "speaker": "Bruno",
+      "text": "The security plan must be finalized by April 8, and the staff need a briefing the day before the event.",
+      "thread": "security",
+      "role": "deadline",
+      "ante": 146
+    },
+    {
+      "idx": 148,
+      "ts": "69:04",
+      "speaker": "David",
+      "text": "What budget is allocated to security?",
+      "thread": "security",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 149,
+      "ts": "69:32",
+      "speaker": "Bruno",
+      "text": "The security budget is four thousand five hundred euros, covering the guards and the overnight coverage.",
+      "thread": "security",
+      "role": "budget",
+      "ante": 148
+    },
+    {
+      "idx": 150,
+      "ts": "70:00",
+      "speaker": "Bruno",
+      "text": "SafeGuard is the provider I trust, they do event security regularly and their staff are well trained.",
+      "thread": "security",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 151,
+      "ts": "70:28",
+      "speaker": "David",
+      "text": "There is also SecureEvent, they are cheaper but I recall they were understaffed at a previous event.",
+      "thread": "security",
+      "role": "discuss",
+      "ante": 150
+    },
+    {
+      "idx": 152,
+      "ts": "70:56",
+      "speaker": "Bruno",
+      "text": "SecureEvent being understaffed is exactly the risk we cannot take with three hundred guests, so I'll avoid them.",
+      "thread": "security",
+      "role": "discuss",
+      "ante": 151
+    },
+    {
+      "idx": 153,
+      "ts": "71:24",
+      "speaker": "Bruno",
+      "text": "Let's hire SafeGuard for security, I'll send them the floor plan and the access requirements.",
+      "thread": "security",
+      "role": "vendor",
+      "ante": 152
+    },
+    {
+      "idx": 154,
+      "ts": "71:52",
+      "speaker": "David",
+      "text": "Who is our contact at SafeGuard?",
+      "thread": "security",
+      "role": "question",
+      "ante": 153
+    },
+    {
+      "idx": 155,
+      "ts": "72:20",
+      "speaker": "Bruno",
+      "text": "Our contact at SafeGuard is Marc Dubois, he is the operations manager and he plans the staff deployment.",
+      "thread": "security",
+      "role": "contact",
+      "ante": 154
+    },
+    {
+      "idx": 156,
+      "ts": "72:48",
+      "speaker": "David",
+      "text": "Can you share his number so I can coordinate the equipment storage?",
+      "thread": "security",
+      "role": "question",
+      "ante": 155
+    },
+    {
+      "idx": 157,
+      "ts": "73:16",
+      "speaker": "Bruno",
+      "text": "Of course, you can reach Marc Dubois at +33 6 12 34 56 08, he will walk the venue with us.",
+      "thread": "security",
+      "role": "phone",
+      "ante": 156
+    },
+    {
+      "idx": 158,
+      "ts": "73:44",
+      "speaker": "Bruno",
+      "text": "I'll write a one-page security briefing so every staff member knows their role on the day.",
+      "thread": "security",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 159,
+      "ts": "74:12",
+      "speaker": "David",
+      "text": "A clear one-pager is exactly what we need, thanks Bruno.",
+      "thread": "security",
+      "role": "discuss",
+      "ante": 158
+    },
+    {
+      "idx": 160,
+      "ts": "74:40",
+      "speaker": "Claire",
+      "text": "I'll handle press and media, getting coverage in the right outlets will amplify the launch well beyond the room.",
+      "thread": "press",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 161,
+      "ts": "75:08",
+      "speaker": "Claire",
+      "text": "We need a press kit with the product story, high-resolution images, and a clear embargo date for the announcements.",
+      "thread": "press",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 162,
+      "ts": "75:36",
+      "speaker": "Bruno",
+      "text": "Make sure the embargo is respected, if the news leaks early it steals the thunder from the live keynote.",
+      "thread": "press",
+      "role": "discuss",
+      "ante": 160
+    },
+    {
+      "idx": 163,
+      "ts": "76:04",
+      "speaker": "Claire",
+      "text": "Absolutely, I'll set the embargo to the morning of May 20 and confirm it in writing with every journalist.",
+      "thread": "press",
+      "role": "requirement",
+      "ante": 162
+    },
+    {
+      "idx": 164,
+      "ts": "76:32",
+      "speaker": "Bruno",
+      "text": "When do we need the press kit ready and the invitations sent?",
+      "thread": "press",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 165,
+      "ts": "77:00",
+      "speaker": "Claire",
+      "text": "The press kit has to be ready by April 12, so journalists have time to prepare their coverage before the event.",
+      "thread": "press",
+      "role": "deadline",
+      "ante": 164
+    },
+    {
+      "idx": 166,
+      "ts": "77:28",
+      "speaker": "Bruno",
+      "text": "What budget do we have for press and media?",
+      "thread": "press",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 167,
+      "ts": "77:56",
+      "speaker": "Claire",
+      "text": "The press budget is two thousand five hundred euros, mostly for the kit design and a small media lunch.",
+      "thread": "press",
+      "role": "budget",
+      "ante": 166
+    },
+    {
+      "idx": 168,
+      "ts": "78:24",
+      "speaker": "Claire",
+      "text": "MediaWave is my preferred partner, they have strong relationships with the tech journalists we want to reach.",
+      "thread": "press",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 169,
+      "ts": "78:52",
+      "speaker": "Bruno",
+      "text": "Could we just email journalists ourselves? It saves money but we might miss the right contacts.",
+      "thread": "press",
+      "role": "discuss",
+      "ante": 168
+    },
+    {
+      "idx": 170,
+      "ts": "79:20",
+      "speaker": "Claire",
+      "text": "Doing it ourselves saves money but MediaWave's relationships get us coverage we could not reach alone, so it is worth it.",
+      "thread": "press",
+      "role": "discuss",
+      "ante": 169
+    },
+    {
+      "idx": 171,
+      "ts": "79:48",
+      "speaker": "Claire",
+      "text": "Let's work with MediaWave for press, I'll share the product story and the embargo details with them.",
+      "thread": "press",
+      "role": "vendor",
+      "ante": 170
+    },
+    {
+      "idx": 172,
+      "ts": "80:16",
+      "speaker": "Bruno",
+      "text": "Who is our contact at MediaWave?",
+      "thread": "press",
+      "role": "question",
+      "ante": 171
+    },
+    {
+      "idx": 173,
+      "ts": "80:44",
+      "speaker": "Claire",
+      "text": "Our contact at MediaWave is Laura Chen, she is the media relations lead and she knows all the key journalists.",
+      "thread": "press",
+      "role": "contact",
+      "ante": 172
+    },
+    {
+      "idx": 174,
+      "ts": "81:12",
+      "speaker": "Bruno",
+      "text": "Can I get her number to coordinate the media lunch?",
+      "thread": "press",
+      "role": "question",
+      "ante": 173
+    },
+    {
+      "idx": 175,
+      "ts": "81:40",
+      "speaker": "Claire",
+      "text": "Yes, you can reach Laura Chen at +33 6 12 34 56 09, she is already drafting the invitation list.",
+      "thread": "press",
+      "role": "phone",
+      "ante": 174
+    },
+    {
+      "idx": 176,
+      "ts": "82:08",
+      "speaker": "Claire",
+      "text": "I'll prepare the press kit this month so we are not rushing the images and the product story at the last minute.",
+      "thread": "press",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 177,
+      "ts": "82:36",
+      "speaker": "Bruno",
+      "text": "Having the kit ready early is the right call, thanks Claire.",
+      "thread": "press",
+      "role": "discuss",
+      "ante": 176
+    },
+    {
+      "idx": 178,
+      "ts": "83:04",
+      "speaker": "David",
+      "text": "I'll handle the merchandise, good quality swag leaves a lasting impression and people keep it for years.",
+      "thread": "merchandise",
+      "role": "owner",
+      "ante": null
+    },
+    {
+      "idx": 179,
+      "ts": "83:32",
+      "speaker": "David",
+      "text": "We want branded t-shirts, notebooks, and a reusable bottle, all in sizes and quantities for three hundred people.",
+      "thread": "merchandise",
+      "role": "requirement",
+      "ante": null
+    },
+    {
+      "idx": 180,
+      "ts": "84:00",
+      "speaker": "Hugo",
+      "text": "Please make the merchandise sustainable, cheap plastic giveaways would contradict the message of the product.",
+      "thread": "merchandise",
+      "role": "discuss",
+      "ante": 178
+    },
+    {
+      "idx": 181,
+      "ts": "84:28",
+      "speaker": "David",
+      "text": "Totally, I'll choose organic cotton and recycled materials, and avoid single-use plastic entirely.",
+      "thread": "merchandise",
+      "role": "requirement",
+      "ante": 180
+    },
+    {
+      "idx": 182,
+      "ts": "84:56",
+      "speaker": "Hugo",
+      "text": "When do we need to order the merchandise so it arrives on time?",
+      "thread": "merchandise",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 183,
+      "ts": "85:24",
+      "speaker": "David",
+      "text": "We have to place the merchandise order by April 15, because production and shipping take about three weeks.",
+      "thread": "merchandise",
+      "role": "deadline",
+      "ante": 182
+    },
+    {
+      "idx": 184,
+      "ts": "85:52",
+      "speaker": "Hugo",
+      "text": "What budget do we have for the merchandise?",
+      "thread": "merchandise",
+      "role": "question",
+      "ante": null
+    },
+    {
+      "idx": 185,
+      "ts": "86:20",
+      "speaker": "David",
+      "text": "The merchandise budget is three thousand five hundred euros, which is about eleven euros per person.",
+      "thread": "merchandise",
+      "role": "budget",
+      "ante": 184
+    },
+    {
+      "idx": 186,
+      "ts": "86:48",
+      "speaker": "David",
+      "text": "PrintWorks is my recommendation, they do high-quality sustainable printing and they delivered well last time.",
+      "thread": "merchandise",
+      "role": "vendor",
+      "ante": null
+    },
+    {
+      "idx": 187,
+      "ts": "87:16",
+      "speaker": "Hugo",
+      "text": "There is also SwagCheap, the name says it all, but the quality reviews are pretty poor.",
+      "thread": "merchandise",
+      "role": "discuss",
+      "ante": 186
+    },
+    {
+      "idx": 188,
+      "ts": "87:44",
+      "speaker": "David",
+      "text": "SwagCheap is cheap but the poor quality would reflect badly on the brand, so I'd rather pay a little more.",
+      "thread": "merchandise",
+      "role": "discuss",
+      "ante": 187
+    },
+    {
+      "idx": 189,
+      "ts": "88:12",
+      "speaker": "David",
+      "text": "Let's order from PrintWorks for the merchandise, I'll send them the designs and the size breakdown.",
+      "thread": "merchandise",
+      "role": "vendor",
+      "ante": 188
+    },
+    {
+      "idx": 190,
+      "ts": "88:40",
+      "speaker": "Hugo",
+      "text": "Who is our contact at PrintWorks?",
+      "thread": "merchandise",
+      "role": "question",
+      "ante": 189
+    },
+    {
+      "idx": 191,
+      "ts": "89:08",
+      "speaker": "David",
+      "text": "Our contact at PrintWorks is Tom Weber, he is the production manager and he tracks every order.",
+      "thread": "merchandise",
+      "role": "contact",
+      "ante": 190
+    },
+    {
+      "idx": 192,
+      "ts": "89:36",
+      "speaker": "Hugo",
+      "text": "Can you share his number so I can confirm the delivery address?",
+      "thread": "merchandise",
+      "role": "question",
+      "ante": 191
+    },
+    {
+      "idx": 193,
+      "ts": "90:04",
+      "speaker": "David",
+      "text": "Sure, you can reach Tom Weber at +33 6 12 34 56 10, he will confirm the shipping timeline.",
+      "thread": "merchandise",
+      "role": "phone",
+      "ante": 192
+    },
+    {
+      "idx": 194,
+      "ts": "90:32",
+      "speaker": "David",
+      "text": "I'll request a physical sample before the full run so we can check the quality with our own eyes.",
+      "thread": "merchandise",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 195,
+      "ts": "91:00",
+      "speaker": "Hugo",
+      "text": "Checking a sample first is smart, thanks for keeping the quality bar high David.",
+      "thread": "merchandise",
+      "role": "discuss",
+      "ante": 194
+    },
+    {
+      "idx": 196,
+      "ts": "91:28",
+      "speaker": "Bruno",
+      "text": "Alright, we've covered all ten workstreams. Let's do a quick recap so everyone leaves knowing exactly what they own.",
+      "thread": "closing",
+      "role": "facilitator",
+      "ante": null
+    },
+    {
+      "idx": 197,
+      "ts": "91:56",
+      "speaker": "Alice",
+      "text": "I own the venue with GrandHall and the keynote with SpeakerHub, both need to be locked by mid to late March.",
+      "thread": "closing",
+      "role": "followup",
+      "ante": 196
+    },
+    {
+      "idx": 198,
+      "ts": "92:24",
+      "speaker": "Bruno",
+      "text": "I have catering with FreshTable and security with SafeGuard, with deadlines on March 20 and April 8.",
+      "thread": "closing",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 199,
+      "ts": "92:52",
+      "speaker": "Claire",
+      "text": "I'm on the website with WebNova and press with MediaWave, live by April 2 and the kit ready by April 12.",
+      "thread": "closing",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 200,
+      "ts": "93:20",
+      "speaker": "David",
+      "text": "I handle audio and video with SoundPro and merchandise with PrintWorks, confirmed by March 28 and ordered by April 15.",
+      "thread": "closing",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 201,
+      "ts": "93:48",
+      "speaker": "Emma",
+      "text": "I own registration with TicketFlow, opening by April 10, and I'll connect it to Claire's website.",
+      "thread": "closing",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 202,
+      "ts": "94:16",
+      "speaker": "Hugo",
+      "text": "And I'm on sponsorship with BrandLink, targeting twenty thousand euros and signed by April 5.",
+      "thread": "closing",
+      "role": "followup",
+      "ante": null
+    },
+    {
+      "idx": 203,
+      "ts": "94:44",
+      "speaker": "Bruno",
+      "text": "Perfect. David will keep the shared checklist and the contact sheet, and we'll regroup here next week to check progress.",
+      "thread": "closing",
+      "role": "decision",
+      "ante": 202
+    },
+    {
+      "idx": 204,
+      "ts": "95:12",
+      "speaker": "Alice",
+      "text": "Thanks everyone, this was a productive meeting, let's keep all updates in this chat so nothing slips.",
+      "thread": "closing",
+      "role": "discuss",
+      "ante": null
+    },
+    {
+      "idx": 205,
+      "ts": "95:40",
+      "speaker": "Bruno",
+      "text": "Agreed, great work today, let's make the Aurora launch a real success.",
+      "thread": "closing",
+      "role": "facilitator",
+      "ante": null
+    }
+  ],
+  "queries": [
+    {
+      "text": "What is the budget for the venue?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        15
+      ],
+      "main": 15
+    },
+    {
+      "text": "When must the venue be confirmed?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        13
+      ],
+      "main": 13
+    },
+    {
+      "text": "When does Alice need to finalize the venue?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        8,
+        13
+      ],
+      "main": 13
+    },
+    {
+      "text": "Who is our contact at the vendor handling the venue?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        8,
+        19,
+        21
+      ],
+      "main": 21
+    },
+    {
+      "text": "What is the phone number of the contact at the venue vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        8,
+        19,
+        21,
+        23
+      ],
+      "main": 23
+    },
+    {
+      "text": "What is the budget for catering?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        33
+      ],
+      "main": 33
+    },
+    {
+      "text": "When must the final catering headcount be given?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        31
+      ],
+      "main": 31
+    },
+    {
+      "text": "When does Bruno need to finalize the catering?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        26,
+        31
+      ],
+      "main": 31
+    },
+    {
+      "text": "Who is our contact at the vendor handling catering?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        26,
+        37,
+        39
+      ],
+      "main": 39
+    },
+    {
+      "text": "What is the phone number of the contact at the catering vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        26,
+        37,
+        39,
+        41
+      ],
+      "main": 41
+    },
+    {
+      "text": "What is the budget for the website?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        51
+      ],
+      "main": 51
+    },
+    {
+      "text": "When must the website be live?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        49
+      ],
+      "main": 49
+    },
+    {
+      "text": "When does Claire need to finalize the website?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        44,
+        49
+      ],
+      "main": 49
+    },
+    {
+      "text": "Who is our contact at the vendor handling the website?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        44,
+        55,
+        57
+      ],
+      "main": 57
+    },
+    {
+      "text": "What is the phone number of the contact at the website vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        44,
+        55,
+        57,
+        59
+      ],
+      "main": 59
+    },
+    {
+      "text": "What is the budget for audio and video?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        69
+      ],
+      "main": 69
+    },
+    {
+      "text": "When must the AV setup be confirmed?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        67
+      ],
+      "main": 67
+    },
+    {
+      "text": "When does David need to finalize the audio and video?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        62,
+        67
+      ],
+      "main": 67
+    },
+    {
+      "text": "Who is our contact at the vendor handling audio and video?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        62,
+        73,
+        75
+      ],
+      "main": 75
+    },
+    {
+      "text": "What is the phone number of the contact at the AV vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        62,
+        73,
+        75,
+        77
+      ],
+      "main": 77
+    },
+    {
+      "text": "What is the budget for registration?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        87
+      ],
+      "main": 87
+    },
+    {
+      "text": "When must registration open?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        85
+      ],
+      "main": 85
+    },
+    {
+      "text": "When does Emma need to finalize registration?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        80,
+        85
+      ],
+      "main": 85
+    },
+    {
+      "text": "Who is our contact at the vendor handling registration?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        80,
+        91,
+        93
+      ],
+      "main": 93
+    },
+    {
+      "text": "What is the phone number of the contact at the registration vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        80,
+        91,
+        93,
+        95
+      ],
+      "main": 95
+    },
+    {
+      "text": "How much sponsorship revenue are we targeting?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        113
+      ],
+      "main": 113
+    },
+    {
+      "text": "When must the sponsorship deals be signed?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        111
+      ],
+      "main": 111
+    },
+    {
+      "text": "When does Hugo need to finalize sponsorship?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        106,
+        111
+      ],
+      "main": 111
+    },
+    {
+      "text": "Who is our contact at the vendor handling sponsorship?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        106,
+        117,
+        119
+      ],
+      "main": 119
+    },
+    {
+      "text": "What is the phone number of the contact at the sponsorship vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        106,
+        117,
+        119,
+        121
+      ],
+      "main": 121
+    },
+    {
+      "text": "What is the budget for the keynote speakers?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        131
+      ],
+      "main": 131
+    },
+    {
+      "text": "When must the keynote speakers be confirmed?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        129
+      ],
+      "main": 129
+    },
+    {
+      "text": "When does Alice need to finalize the keynote?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        124,
+        129
+      ],
+      "main": 129
+    },
+    {
+      "text": "Who is our contact at the vendor handling the keynote?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        124,
+        135,
+        137
+      ],
+      "main": 137
+    },
+    {
+      "text": "What is the phone number of the contact at the keynote vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        124,
+        135,
+        137,
+        139
+      ],
+      "main": 139
+    },
+    {
+      "text": "What is the budget for security?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        149
+      ],
+      "main": 149
+    },
+    {
+      "text": "When must the security plan be finalized?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        147
+      ],
+      "main": 147
+    },
+    {
+      "text": "When does Bruno need to finalize security?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        142,
+        147
+      ],
+      "main": 147
+    },
+    {
+      "text": "Who is our contact at the vendor handling security?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        142,
+        153,
+        155
+      ],
+      "main": 155
+    },
+    {
+      "text": "What is the phone number of the contact at the security vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        142,
+        153,
+        155,
+        157
+      ],
+      "main": 157
+    },
+    {
+      "text": "What is the budget for press and media?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        167
+      ],
+      "main": 167
+    },
+    {
+      "text": "When must the press kit be ready?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        165
+      ],
+      "main": 165
+    },
+    {
+      "text": "When does Claire need to finalize the press work?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        160,
+        165
+      ],
+      "main": 165
+    },
+    {
+      "text": "Who is our contact at the vendor handling press?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        160,
+        171,
+        173
+      ],
+      "main": 173
+    },
+    {
+      "text": "What is the phone number of the contact at the press vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        160,
+        171,
+        173,
+        175
+      ],
+      "main": 175
+    },
+    {
+      "text": "What is the budget for merchandise?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        185
+      ],
+      "main": 185
+    },
+    {
+      "text": "When must the merchandise order be placed?",
+      "qtype": "direct1hop",
+      "hops": 1,
+      "evidence": [
+        183
+      ],
+      "main": 183
+    },
+    {
+      "text": "When does David need to finalize the merchandise?",
+      "qtype": "owner2hop",
+      "hops": 2,
+      "evidence": [
+        178,
+        183
+      ],
+      "main": 183
+    },
+    {
+      "text": "Who is our contact at the vendor handling merchandise?",
+      "qtype": "supplier3hop",
+      "hops": 3,
+      "evidence": [
+        178,
+        189,
+        191
+      ],
+      "main": 191
+    },
+    {
+      "text": "What is the phone number of the contact at the merchandise vendor?",
+      "qtype": "phone4hop",
+      "hops": 4,
+      "evidence": [
+        178,
+        189,
+        191,
+        193
+      ],
+      "main": 193
+    }
+  ]
+}
