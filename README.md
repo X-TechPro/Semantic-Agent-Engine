@@ -72,8 +72,8 @@ What the table says:
 - **Finding the whole chain is not.** AllHops@5 is 0.000 on v8, 0.420 on v9 and
   0.000 on v10; EvidenceRecall@5 is 0.60/0.81/0.48. In multi-hop terms the
   model reliably finds a hop, not all hops.
-- v9 is coherent where v8 is not: same R@1, but the evidence coverage and
-  AllHops@5 numbers move from .603/.000 to .813/.420.
+- v9's evidence sets are better covered than v8's: same R@1, but evidence
+  recall and AllHops@5 move from .603/.000 to .813/.420.
 - v8/v9/v10 values are not comparable to each other or to a cross-meeting
   benchmark; the candidate pool and the number of test queries differ.
 
