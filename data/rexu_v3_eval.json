@@ -1,0 +1,41 @@
+{
+ "corpora": {
+  "v8": {
+   "R@1": 1.0,
+   "R@5": 1.0,
+   "MRR": 1.0,
+   "EvidenceRecall@5": 0.6033333333333334,
+   "AllHops@5": 0.0,
+   "n": 50
+  },
+  "v9": {
+   "R@1": 1.0,
+   "R@5": 1.0,
+   "MRR": 1.0,
+   "EvidenceRecall@5": 0.8128571428571431,
+   "AllHops@5": 0.42,
+   "n": 50
+  }
+ },
+ "v10": {
+  "n": 4,
+  "R@1": 0.5,
+  "R@5": 1.0,
+  "MRR": 0.6875,
+  "EvidenceRecall@5": 0.475,
+  "AllHops@5": 0.0
+ },
+ "qmsum": {
+  "dataset": "qmsum-test",
+  "scope": "meeting",
+  "n_queries": 244,
+  "n_meetings": 35,
+  "Recall@1": 0.029473573447175418,
+  "AnyR@1": 0.26229508196721313,
+  "Recall@5": 0.07439176039418967,
+  "AnyR@5": 0.5409836065573771,
+  "MRR@10": 0.38220465781941193,
+  "median_best_gold_rank": 5.0
+ },
+ "note": "v8/v9/v10 are meeting-scoped: the candidate pool is the query's own meeting. Values copied from artifacts/pplx_multidataset_eval.json, artifacts/pplx_v10_eval.json and artifacts/pplx_qmsum_eval.json."
+}

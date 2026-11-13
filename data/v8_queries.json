@@ -1,0 +1,5882 @@
+[
+  {
+    "query_id": "v8-m01-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m01:0002",
+      "v8-m01:0008",
+      "v8-m01:0009",
+      "v8-m01:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m01:0002",
+      "v8-m01:0008",
+      "v8-m01:0009",
+      "v8-m01:0010"
+    ],
+    "meeting_id": "v8-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m01-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m01:0003",
+      "v8-m01:0010",
+      "v8-m01:0011",
+      "v8-m01:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m01:0003",
+      "v8-m01:0010",
+      "v8-m01:0011",
+      "v8-m01:0025"
+    ],
+    "meeting_id": "v8-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m01-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m01:0006",
+      "v8-m01:0007",
+      "v8-m01:0028",
+      "v8-m01:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m01:0006",
+      "v8-m01:0007",
+      "v8-m01:0028",
+      "v8-m01:0047"
+    ],
+    "meeting_id": "v8-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m01-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m01:0005",
+      "v8-m01:0012",
+      "v8-m01:0013",
+      "v8-m01:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m01:0005",
+      "v8-m01:0012",
+      "v8-m01:0013",
+      "v8-m01:0022"
+    ],
+    "meeting_id": "v8-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m01-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m01:0014",
+      "v8-m01:0009",
+      "v8-m01:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m01:0014",
+      "v8-m01:0009",
+      "v8-m01:0040"
+    ],
+    "meeting_id": "v8-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m02-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m02:0002",
+      "v8-m02:0008",
+      "v8-m02:0009",
+      "v8-m02:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m02:0002",
+      "v8-m02:0008",
+      "v8-m02:0009",
+      "v8-m02:0010"
+    ],
+    "meeting_id": "v8-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m02-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m02:0003",
+      "v8-m02:0010",
+      "v8-m02:0011",
+      "v8-m02:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m02:0003",
+      "v8-m02:0010",
+      "v8-m02:0011",
+      "v8-m02:0025"
+    ],
+    "meeting_id": "v8-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m02-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m02:0006",
+      "v8-m02:0007",
+      "v8-m02:0028",
+      "v8-m02:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m02:0006",
+      "v8-m02:0007",
+      "v8-m02:0028",
+      "v8-m02:0047"
+    ],
+    "meeting_id": "v8-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m02-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m02:0005",
+      "v8-m02:0012",
+      "v8-m02:0013",
+      "v8-m02:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m02:0005",
+      "v8-m02:0012",
+      "v8-m02:0013",
+      "v8-m02:0022"
+    ],
+    "meeting_id": "v8-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m02-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m02:0014",
+      "v8-m02:0009",
+      "v8-m02:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m02:0014",
+      "v8-m02:0009",
+      "v8-m02:0040"
+    ],
+    "meeting_id": "v8-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m03-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m03:0002",
+      "v8-m03:0008",
+      "v8-m03:0009",
+      "v8-m03:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m03:0002",
+      "v8-m03:0008",
+      "v8-m03:0009",
+      "v8-m03:0010"
+    ],
+    "meeting_id": "v8-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m03-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m03:0003",
+      "v8-m03:0010",
+      "v8-m03:0011",
+      "v8-m03:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m03:0003",
+      "v8-m03:0010",
+      "v8-m03:0011",
+      "v8-m03:0025"
+    ],
+    "meeting_id": "v8-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m03-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m03:0006",
+      "v8-m03:0007",
+      "v8-m03:0028",
+      "v8-m03:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m03:0006",
+      "v8-m03:0007",
+      "v8-m03:0028",
+      "v8-m03:0047"
+    ],
+    "meeting_id": "v8-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m03-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m03:0005",
+      "v8-m03:0012",
+      "v8-m03:0013",
+      "v8-m03:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m03:0005",
+      "v8-m03:0012",
+      "v8-m03:0013",
+      "v8-m03:0022"
+    ],
+    "meeting_id": "v8-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m03-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m03:0014",
+      "v8-m03:0009",
+      "v8-m03:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m03:0014",
+      "v8-m03:0009",
+      "v8-m03:0040"
+    ],
+    "meeting_id": "v8-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m04-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m04:0002",
+      "v8-m04:0008",
+      "v8-m04:0009",
+      "v8-m04:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m04:0002",
+      "v8-m04:0008",
+      "v8-m04:0009",
+      "v8-m04:0010"
+    ],
+    "meeting_id": "v8-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m04-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m04:0003",
+      "v8-m04:0010",
+      "v8-m04:0011",
+      "v8-m04:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m04:0003",
+      "v8-m04:0010",
+      "v8-m04:0011",
+      "v8-m04:0025"
+    ],
+    "meeting_id": "v8-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m04-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m04:0006",
+      "v8-m04:0007",
+      "v8-m04:0028",
+      "v8-m04:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m04:0006",
+      "v8-m04:0007",
+      "v8-m04:0028",
+      "v8-m04:0047"
+    ],
+    "meeting_id": "v8-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m04-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m04:0005",
+      "v8-m04:0012",
+      "v8-m04:0013",
+      "v8-m04:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m04:0005",
+      "v8-m04:0012",
+      "v8-m04:0013",
+      "v8-m04:0022"
+    ],
+    "meeting_id": "v8-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m04-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m04:0014",
+      "v8-m04:0009",
+      "v8-m04:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m04:0014",
+      "v8-m04:0009",
+      "v8-m04:0040"
+    ],
+    "meeting_id": "v8-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m05-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m05:0002",
+      "v8-m05:0008",
+      "v8-m05:0009",
+      "v8-m05:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m05:0002",
+      "v8-m05:0008",
+      "v8-m05:0009",
+      "v8-m05:0010"
+    ],
+    "meeting_id": "v8-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m05-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m05:0003",
+      "v8-m05:0010",
+      "v8-m05:0011",
+      "v8-m05:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m05:0003",
+      "v8-m05:0010",
+      "v8-m05:0011",
+      "v8-m05:0025"
+    ],
+    "meeting_id": "v8-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m05-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m05:0006",
+      "v8-m05:0007",
+      "v8-m05:0028",
+      "v8-m05:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m05:0006",
+      "v8-m05:0007",
+      "v8-m05:0028",
+      "v8-m05:0047"
+    ],
+    "meeting_id": "v8-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m05-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m05:0005",
+      "v8-m05:0012",
+      "v8-m05:0013",
+      "v8-m05:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m05:0005",
+      "v8-m05:0012",
+      "v8-m05:0013",
+      "v8-m05:0022"
+    ],
+    "meeting_id": "v8-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m05-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m05:0014",
+      "v8-m05:0009",
+      "v8-m05:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m05:0014",
+      "v8-m05:0009",
+      "v8-m05:0040"
+    ],
+    "meeting_id": "v8-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m06-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m06:0002",
+      "v8-m06:0008",
+      "v8-m06:0009",
+      "v8-m06:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m06:0002",
+      "v8-m06:0008",
+      "v8-m06:0009",
+      "v8-m06:0010"
+    ],
+    "meeting_id": "v8-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m06-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m06:0003",
+      "v8-m06:0010",
+      "v8-m06:0011",
+      "v8-m06:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m06:0003",
+      "v8-m06:0010",
+      "v8-m06:0011",
+      "v8-m06:0025"
+    ],
+    "meeting_id": "v8-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m06-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m06:0006",
+      "v8-m06:0007",
+      "v8-m06:0028",
+      "v8-m06:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m06:0006",
+      "v8-m06:0007",
+      "v8-m06:0028",
+      "v8-m06:0047"
+    ],
+    "meeting_id": "v8-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m06-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m06:0005",
+      "v8-m06:0012",
+      "v8-m06:0013",
+      "v8-m06:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m06:0005",
+      "v8-m06:0012",
+      "v8-m06:0013",
+      "v8-m06:0022"
+    ],
+    "meeting_id": "v8-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m06-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m06:0014",
+      "v8-m06:0009",
+      "v8-m06:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m06:0014",
+      "v8-m06:0009",
+      "v8-m06:0040"
+    ],
+    "meeting_id": "v8-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m07-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m07:0002",
+      "v8-m07:0008",
+      "v8-m07:0009",
+      "v8-m07:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m07:0002",
+      "v8-m07:0008",
+      "v8-m07:0009",
+      "v8-m07:0010"
+    ],
+    "meeting_id": "v8-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m07-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m07:0003",
+      "v8-m07:0010",
+      "v8-m07:0011",
+      "v8-m07:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m07:0003",
+      "v8-m07:0010",
+      "v8-m07:0011",
+      "v8-m07:0025"
+    ],
+    "meeting_id": "v8-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m07-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m07:0006",
+      "v8-m07:0007",
+      "v8-m07:0028",
+      "v8-m07:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m07:0006",
+      "v8-m07:0007",
+      "v8-m07:0028",
+      "v8-m07:0047"
+    ],
+    "meeting_id": "v8-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m07-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m07:0005",
+      "v8-m07:0012",
+      "v8-m07:0013",
+      "v8-m07:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m07:0005",
+      "v8-m07:0012",
+      "v8-m07:0013",
+      "v8-m07:0022"
+    ],
+    "meeting_id": "v8-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m07-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m07:0014",
+      "v8-m07:0009",
+      "v8-m07:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m07:0014",
+      "v8-m07:0009",
+      "v8-m07:0040"
+    ],
+    "meeting_id": "v8-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m08-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m08:0002",
+      "v8-m08:0008",
+      "v8-m08:0009",
+      "v8-m08:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m08:0002",
+      "v8-m08:0008",
+      "v8-m08:0009",
+      "v8-m08:0010"
+    ],
+    "meeting_id": "v8-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m08-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m08:0003",
+      "v8-m08:0010",
+      "v8-m08:0011",
+      "v8-m08:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m08:0003",
+      "v8-m08:0010",
+      "v8-m08:0011",
+      "v8-m08:0025"
+    ],
+    "meeting_id": "v8-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m08-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m08:0006",
+      "v8-m08:0007",
+      "v8-m08:0028",
+      "v8-m08:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m08:0006",
+      "v8-m08:0007",
+      "v8-m08:0028",
+      "v8-m08:0047"
+    ],
+    "meeting_id": "v8-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m08-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m08:0005",
+      "v8-m08:0012",
+      "v8-m08:0013",
+      "v8-m08:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m08:0005",
+      "v8-m08:0012",
+      "v8-m08:0013",
+      "v8-m08:0022"
+    ],
+    "meeting_id": "v8-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m08-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m08:0014",
+      "v8-m08:0009",
+      "v8-m08:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m08:0014",
+      "v8-m08:0009",
+      "v8-m08:0040"
+    ],
+    "meeting_id": "v8-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m09-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m09:0002",
+      "v8-m09:0008",
+      "v8-m09:0009",
+      "v8-m09:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m09:0002",
+      "v8-m09:0008",
+      "v8-m09:0009",
+      "v8-m09:0010"
+    ],
+    "meeting_id": "v8-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m09-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m09:0003",
+      "v8-m09:0010",
+      "v8-m09:0011",
+      "v8-m09:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m09:0003",
+      "v8-m09:0010",
+      "v8-m09:0011",
+      "v8-m09:0025"
+    ],
+    "meeting_id": "v8-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m09-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m09:0006",
+      "v8-m09:0007",
+      "v8-m09:0028",
+      "v8-m09:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m09:0006",
+      "v8-m09:0007",
+      "v8-m09:0028",
+      "v8-m09:0047"
+    ],
+    "meeting_id": "v8-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m09-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m09:0005",
+      "v8-m09:0012",
+      "v8-m09:0013",
+      "v8-m09:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m09:0005",
+      "v8-m09:0012",
+      "v8-m09:0013",
+      "v8-m09:0022"
+    ],
+    "meeting_id": "v8-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m09-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m09:0014",
+      "v8-m09:0009",
+      "v8-m09:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m09:0014",
+      "v8-m09:0009",
+      "v8-m09:0040"
+    ],
+    "meeting_id": "v8-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m10-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m10:0002",
+      "v8-m10:0008",
+      "v8-m10:0009",
+      "v8-m10:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m10:0002",
+      "v8-m10:0008",
+      "v8-m10:0009",
+      "v8-m10:0010"
+    ],
+    "meeting_id": "v8-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m10-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m10:0003",
+      "v8-m10:0010",
+      "v8-m10:0011",
+      "v8-m10:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m10:0003",
+      "v8-m10:0010",
+      "v8-m10:0011",
+      "v8-m10:0025"
+    ],
+    "meeting_id": "v8-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m10-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m10:0006",
+      "v8-m10:0007",
+      "v8-m10:0028",
+      "v8-m10:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m10:0006",
+      "v8-m10:0007",
+      "v8-m10:0028",
+      "v8-m10:0047"
+    ],
+    "meeting_id": "v8-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m10-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m10:0005",
+      "v8-m10:0012",
+      "v8-m10:0013",
+      "v8-m10:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m10:0005",
+      "v8-m10:0012",
+      "v8-m10:0013",
+      "v8-m10:0022"
+    ],
+    "meeting_id": "v8-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m10-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m10:0014",
+      "v8-m10:0009",
+      "v8-m10:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m10:0014",
+      "v8-m10:0009",
+      "v8-m10:0040"
+    ],
+    "meeting_id": "v8-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m11-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m11:0002",
+      "v8-m11:0008",
+      "v8-m11:0009",
+      "v8-m11:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m11:0002",
+      "v8-m11:0008",
+      "v8-m11:0009",
+      "v8-m11:0010"
+    ],
+    "meeting_id": "v8-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m11-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m11:0003",
+      "v8-m11:0010",
+      "v8-m11:0011",
+      "v8-m11:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m11:0003",
+      "v8-m11:0010",
+      "v8-m11:0011",
+      "v8-m11:0025"
+    ],
+    "meeting_id": "v8-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m11-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m11:0006",
+      "v8-m11:0007",
+      "v8-m11:0028",
+      "v8-m11:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m11:0006",
+      "v8-m11:0007",
+      "v8-m11:0028",
+      "v8-m11:0047"
+    ],
+    "meeting_id": "v8-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m11-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m11:0005",
+      "v8-m11:0012",
+      "v8-m11:0013",
+      "v8-m11:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m11:0005",
+      "v8-m11:0012",
+      "v8-m11:0013",
+      "v8-m11:0022"
+    ],
+    "meeting_id": "v8-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m11-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m11:0014",
+      "v8-m11:0009",
+      "v8-m11:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m11:0014",
+      "v8-m11:0009",
+      "v8-m11:0040"
+    ],
+    "meeting_id": "v8-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m12-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m12:0002",
+      "v8-m12:0008",
+      "v8-m12:0009",
+      "v8-m12:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m12:0002",
+      "v8-m12:0008",
+      "v8-m12:0009",
+      "v8-m12:0010"
+    ],
+    "meeting_id": "v8-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m12-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m12:0003",
+      "v8-m12:0010",
+      "v8-m12:0011",
+      "v8-m12:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m12:0003",
+      "v8-m12:0010",
+      "v8-m12:0011",
+      "v8-m12:0025"
+    ],
+    "meeting_id": "v8-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m12-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m12:0006",
+      "v8-m12:0007",
+      "v8-m12:0028",
+      "v8-m12:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m12:0006",
+      "v8-m12:0007",
+      "v8-m12:0028",
+      "v8-m12:0047"
+    ],
+    "meeting_id": "v8-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m12-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m12:0005",
+      "v8-m12:0012",
+      "v8-m12:0013",
+      "v8-m12:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m12:0005",
+      "v8-m12:0012",
+      "v8-m12:0013",
+      "v8-m12:0022"
+    ],
+    "meeting_id": "v8-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m12-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m12:0014",
+      "v8-m12:0009",
+      "v8-m12:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m12:0014",
+      "v8-m12:0009",
+      "v8-m12:0040"
+    ],
+    "meeting_id": "v8-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m13-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m13:0002",
+      "v8-m13:0008",
+      "v8-m13:0009",
+      "v8-m13:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m13:0002",
+      "v8-m13:0008",
+      "v8-m13:0009",
+      "v8-m13:0010"
+    ],
+    "meeting_id": "v8-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m13-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m13:0003",
+      "v8-m13:0010",
+      "v8-m13:0011",
+      "v8-m13:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m13:0003",
+      "v8-m13:0010",
+      "v8-m13:0011",
+      "v8-m13:0025"
+    ],
+    "meeting_id": "v8-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m13-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m13:0006",
+      "v8-m13:0007",
+      "v8-m13:0028",
+      "v8-m13:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m13:0006",
+      "v8-m13:0007",
+      "v8-m13:0028",
+      "v8-m13:0047"
+    ],
+    "meeting_id": "v8-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m13-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m13:0005",
+      "v8-m13:0012",
+      "v8-m13:0013",
+      "v8-m13:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m13:0005",
+      "v8-m13:0012",
+      "v8-m13:0013",
+      "v8-m13:0022"
+    ],
+    "meeting_id": "v8-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m13-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m13:0014",
+      "v8-m13:0009",
+      "v8-m13:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m13:0014",
+      "v8-m13:0009",
+      "v8-m13:0040"
+    ],
+    "meeting_id": "v8-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m14-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m14:0002",
+      "v8-m14:0008",
+      "v8-m14:0009",
+      "v8-m14:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m14:0002",
+      "v8-m14:0008",
+      "v8-m14:0009",
+      "v8-m14:0010"
+    ],
+    "meeting_id": "v8-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m14-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m14:0003",
+      "v8-m14:0010",
+      "v8-m14:0011",
+      "v8-m14:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m14:0003",
+      "v8-m14:0010",
+      "v8-m14:0011",
+      "v8-m14:0025"
+    ],
+    "meeting_id": "v8-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m14-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m14:0006",
+      "v8-m14:0007",
+      "v8-m14:0028",
+      "v8-m14:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m14:0006",
+      "v8-m14:0007",
+      "v8-m14:0028",
+      "v8-m14:0047"
+    ],
+    "meeting_id": "v8-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m14-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m14:0005",
+      "v8-m14:0012",
+      "v8-m14:0013",
+      "v8-m14:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m14:0005",
+      "v8-m14:0012",
+      "v8-m14:0013",
+      "v8-m14:0022"
+    ],
+    "meeting_id": "v8-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m14-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m14:0014",
+      "v8-m14:0009",
+      "v8-m14:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m14:0014",
+      "v8-m14:0009",
+      "v8-m14:0040"
+    ],
+    "meeting_id": "v8-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m15-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m15:0002",
+      "v8-m15:0008",
+      "v8-m15:0009",
+      "v8-m15:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m15:0002",
+      "v8-m15:0008",
+      "v8-m15:0009",
+      "v8-m15:0010"
+    ],
+    "meeting_id": "v8-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m15-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m15:0003",
+      "v8-m15:0010",
+      "v8-m15:0011",
+      "v8-m15:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m15:0003",
+      "v8-m15:0010",
+      "v8-m15:0011",
+      "v8-m15:0025"
+    ],
+    "meeting_id": "v8-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m15-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m15:0006",
+      "v8-m15:0007",
+      "v8-m15:0028",
+      "v8-m15:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m15:0006",
+      "v8-m15:0007",
+      "v8-m15:0028",
+      "v8-m15:0047"
+    ],
+    "meeting_id": "v8-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m15-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m15:0005",
+      "v8-m15:0012",
+      "v8-m15:0013",
+      "v8-m15:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m15:0005",
+      "v8-m15:0012",
+      "v8-m15:0013",
+      "v8-m15:0022"
+    ],
+    "meeting_id": "v8-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m15-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m15:0014",
+      "v8-m15:0009",
+      "v8-m15:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m15:0014",
+      "v8-m15:0009",
+      "v8-m15:0040"
+    ],
+    "meeting_id": "v8-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m16-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m16:0002",
+      "v8-m16:0008",
+      "v8-m16:0009",
+      "v8-m16:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m16:0002",
+      "v8-m16:0008",
+      "v8-m16:0009",
+      "v8-m16:0010"
+    ],
+    "meeting_id": "v8-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m16-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m16:0003",
+      "v8-m16:0010",
+      "v8-m16:0011",
+      "v8-m16:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m16:0003",
+      "v8-m16:0010",
+      "v8-m16:0011",
+      "v8-m16:0025"
+    ],
+    "meeting_id": "v8-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m16-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m16:0006",
+      "v8-m16:0007",
+      "v8-m16:0028",
+      "v8-m16:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m16:0006",
+      "v8-m16:0007",
+      "v8-m16:0028",
+      "v8-m16:0047"
+    ],
+    "meeting_id": "v8-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m16-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m16:0005",
+      "v8-m16:0012",
+      "v8-m16:0013",
+      "v8-m16:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m16:0005",
+      "v8-m16:0012",
+      "v8-m16:0013",
+      "v8-m16:0022"
+    ],
+    "meeting_id": "v8-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m16-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m16:0014",
+      "v8-m16:0009",
+      "v8-m16:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m16:0014",
+      "v8-m16:0009",
+      "v8-m16:0040"
+    ],
+    "meeting_id": "v8-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m17-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m17:0002",
+      "v8-m17:0008",
+      "v8-m17:0009",
+      "v8-m17:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m17:0002",
+      "v8-m17:0008",
+      "v8-m17:0009",
+      "v8-m17:0010"
+    ],
+    "meeting_id": "v8-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m17-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m17:0003",
+      "v8-m17:0010",
+      "v8-m17:0011",
+      "v8-m17:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m17:0003",
+      "v8-m17:0010",
+      "v8-m17:0011",
+      "v8-m17:0025"
+    ],
+    "meeting_id": "v8-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m17-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m17:0006",
+      "v8-m17:0007",
+      "v8-m17:0028",
+      "v8-m17:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m17:0006",
+      "v8-m17:0007",
+      "v8-m17:0028",
+      "v8-m17:0047"
+    ],
+    "meeting_id": "v8-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m17-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m17:0005",
+      "v8-m17:0012",
+      "v8-m17:0013",
+      "v8-m17:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m17:0005",
+      "v8-m17:0012",
+      "v8-m17:0013",
+      "v8-m17:0022"
+    ],
+    "meeting_id": "v8-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m17-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m17:0014",
+      "v8-m17:0009",
+      "v8-m17:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m17:0014",
+      "v8-m17:0009",
+      "v8-m17:0040"
+    ],
+    "meeting_id": "v8-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m18-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m18:0002",
+      "v8-m18:0008",
+      "v8-m18:0009",
+      "v8-m18:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m18:0002",
+      "v8-m18:0008",
+      "v8-m18:0009",
+      "v8-m18:0010"
+    ],
+    "meeting_id": "v8-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m18-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m18:0003",
+      "v8-m18:0010",
+      "v8-m18:0011",
+      "v8-m18:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m18:0003",
+      "v8-m18:0010",
+      "v8-m18:0011",
+      "v8-m18:0025"
+    ],
+    "meeting_id": "v8-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m18-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m18:0006",
+      "v8-m18:0007",
+      "v8-m18:0028",
+      "v8-m18:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m18:0006",
+      "v8-m18:0007",
+      "v8-m18:0028",
+      "v8-m18:0047"
+    ],
+    "meeting_id": "v8-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m18-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m18:0005",
+      "v8-m18:0012",
+      "v8-m18:0013",
+      "v8-m18:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m18:0005",
+      "v8-m18:0012",
+      "v8-m18:0013",
+      "v8-m18:0022"
+    ],
+    "meeting_id": "v8-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m18-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m18:0014",
+      "v8-m18:0009",
+      "v8-m18:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m18:0014",
+      "v8-m18:0009",
+      "v8-m18:0040"
+    ],
+    "meeting_id": "v8-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m19-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m19:0002",
+      "v8-m19:0008",
+      "v8-m19:0009",
+      "v8-m19:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m19:0002",
+      "v8-m19:0008",
+      "v8-m19:0009",
+      "v8-m19:0010"
+    ],
+    "meeting_id": "v8-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m19-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m19:0003",
+      "v8-m19:0010",
+      "v8-m19:0011",
+      "v8-m19:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m19:0003",
+      "v8-m19:0010",
+      "v8-m19:0011",
+      "v8-m19:0025"
+    ],
+    "meeting_id": "v8-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m19-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m19:0006",
+      "v8-m19:0007",
+      "v8-m19:0028",
+      "v8-m19:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m19:0006",
+      "v8-m19:0007",
+      "v8-m19:0028",
+      "v8-m19:0047"
+    ],
+    "meeting_id": "v8-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m19-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m19:0005",
+      "v8-m19:0012",
+      "v8-m19:0013",
+      "v8-m19:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m19:0005",
+      "v8-m19:0012",
+      "v8-m19:0013",
+      "v8-m19:0022"
+    ],
+    "meeting_id": "v8-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m19-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m19:0014",
+      "v8-m19:0009",
+      "v8-m19:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m19:0014",
+      "v8-m19:0009",
+      "v8-m19:0040"
+    ],
+    "meeting_id": "v8-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m20-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m20:0002",
+      "v8-m20:0008",
+      "v8-m20:0009",
+      "v8-m20:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m20:0002",
+      "v8-m20:0008",
+      "v8-m20:0009",
+      "v8-m20:0010"
+    ],
+    "meeting_id": "v8-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m20-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m20:0003",
+      "v8-m20:0010",
+      "v8-m20:0011",
+      "v8-m20:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m20:0003",
+      "v8-m20:0010",
+      "v8-m20:0011",
+      "v8-m20:0025"
+    ],
+    "meeting_id": "v8-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m20-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m20:0006",
+      "v8-m20:0007",
+      "v8-m20:0028",
+      "v8-m20:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m20:0006",
+      "v8-m20:0007",
+      "v8-m20:0028",
+      "v8-m20:0047"
+    ],
+    "meeting_id": "v8-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m20-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m20:0005",
+      "v8-m20:0012",
+      "v8-m20:0013",
+      "v8-m20:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m20:0005",
+      "v8-m20:0012",
+      "v8-m20:0013",
+      "v8-m20:0022"
+    ],
+    "meeting_id": "v8-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m20-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m20:0014",
+      "v8-m20:0009",
+      "v8-m20:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m20:0014",
+      "v8-m20:0009",
+      "v8-m20:0040"
+    ],
+    "meeting_id": "v8-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m21-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m21:0002",
+      "v8-m21:0008",
+      "v8-m21:0009",
+      "v8-m21:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m21:0002",
+      "v8-m21:0008",
+      "v8-m21:0009",
+      "v8-m21:0010"
+    ],
+    "meeting_id": "v8-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m21-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m21:0003",
+      "v8-m21:0010",
+      "v8-m21:0011",
+      "v8-m21:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m21:0003",
+      "v8-m21:0010",
+      "v8-m21:0011",
+      "v8-m21:0025"
+    ],
+    "meeting_id": "v8-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m21-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m21:0006",
+      "v8-m21:0007",
+      "v8-m21:0028",
+      "v8-m21:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m21:0006",
+      "v8-m21:0007",
+      "v8-m21:0028",
+      "v8-m21:0047"
+    ],
+    "meeting_id": "v8-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m21-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m21:0005",
+      "v8-m21:0012",
+      "v8-m21:0013",
+      "v8-m21:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m21:0005",
+      "v8-m21:0012",
+      "v8-m21:0013",
+      "v8-m21:0022"
+    ],
+    "meeting_id": "v8-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m21-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m21:0014",
+      "v8-m21:0009",
+      "v8-m21:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m21:0014",
+      "v8-m21:0009",
+      "v8-m21:0040"
+    ],
+    "meeting_id": "v8-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m22-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m22:0002",
+      "v8-m22:0008",
+      "v8-m22:0009",
+      "v8-m22:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m22:0002",
+      "v8-m22:0008",
+      "v8-m22:0009",
+      "v8-m22:0010"
+    ],
+    "meeting_id": "v8-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m22-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m22:0003",
+      "v8-m22:0010",
+      "v8-m22:0011",
+      "v8-m22:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m22:0003",
+      "v8-m22:0010",
+      "v8-m22:0011",
+      "v8-m22:0025"
+    ],
+    "meeting_id": "v8-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m22-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m22:0006",
+      "v8-m22:0007",
+      "v8-m22:0028",
+      "v8-m22:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m22:0006",
+      "v8-m22:0007",
+      "v8-m22:0028",
+      "v8-m22:0047"
+    ],
+    "meeting_id": "v8-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m22-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m22:0005",
+      "v8-m22:0012",
+      "v8-m22:0013",
+      "v8-m22:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m22:0005",
+      "v8-m22:0012",
+      "v8-m22:0013",
+      "v8-m22:0022"
+    ],
+    "meeting_id": "v8-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m22-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m22:0014",
+      "v8-m22:0009",
+      "v8-m22:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m22:0014",
+      "v8-m22:0009",
+      "v8-m22:0040"
+    ],
+    "meeting_id": "v8-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m23-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m23:0002",
+      "v8-m23:0008",
+      "v8-m23:0009",
+      "v8-m23:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m23:0002",
+      "v8-m23:0008",
+      "v8-m23:0009",
+      "v8-m23:0010"
+    ],
+    "meeting_id": "v8-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m23-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m23:0003",
+      "v8-m23:0010",
+      "v8-m23:0011",
+      "v8-m23:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m23:0003",
+      "v8-m23:0010",
+      "v8-m23:0011",
+      "v8-m23:0025"
+    ],
+    "meeting_id": "v8-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m23-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m23:0006",
+      "v8-m23:0007",
+      "v8-m23:0028",
+      "v8-m23:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m23:0006",
+      "v8-m23:0007",
+      "v8-m23:0028",
+      "v8-m23:0047"
+    ],
+    "meeting_id": "v8-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m23-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m23:0005",
+      "v8-m23:0012",
+      "v8-m23:0013",
+      "v8-m23:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m23:0005",
+      "v8-m23:0012",
+      "v8-m23:0013",
+      "v8-m23:0022"
+    ],
+    "meeting_id": "v8-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m23-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m23:0014",
+      "v8-m23:0009",
+      "v8-m23:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m23:0014",
+      "v8-m23:0009",
+      "v8-m23:0040"
+    ],
+    "meeting_id": "v8-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m24-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m24:0002",
+      "v8-m24:0008",
+      "v8-m24:0009",
+      "v8-m24:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m24:0002",
+      "v8-m24:0008",
+      "v8-m24:0009",
+      "v8-m24:0010"
+    ],
+    "meeting_id": "v8-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m24-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m24:0003",
+      "v8-m24:0010",
+      "v8-m24:0011",
+      "v8-m24:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m24:0003",
+      "v8-m24:0010",
+      "v8-m24:0011",
+      "v8-m24:0025"
+    ],
+    "meeting_id": "v8-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m24-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m24:0006",
+      "v8-m24:0007",
+      "v8-m24:0028",
+      "v8-m24:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m24:0006",
+      "v8-m24:0007",
+      "v8-m24:0028",
+      "v8-m24:0047"
+    ],
+    "meeting_id": "v8-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m24-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m24:0005",
+      "v8-m24:0012",
+      "v8-m24:0013",
+      "v8-m24:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m24:0005",
+      "v8-m24:0012",
+      "v8-m24:0013",
+      "v8-m24:0022"
+    ],
+    "meeting_id": "v8-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m24-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m24:0014",
+      "v8-m24:0009",
+      "v8-m24:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m24:0014",
+      "v8-m24:0009",
+      "v8-m24:0040"
+    ],
+    "meeting_id": "v8-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m25-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m25:0002",
+      "v8-m25:0008",
+      "v8-m25:0009",
+      "v8-m25:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m25:0002",
+      "v8-m25:0008",
+      "v8-m25:0009",
+      "v8-m25:0010"
+    ],
+    "meeting_id": "v8-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m25-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m25:0003",
+      "v8-m25:0010",
+      "v8-m25:0011",
+      "v8-m25:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m25:0003",
+      "v8-m25:0010",
+      "v8-m25:0011",
+      "v8-m25:0025"
+    ],
+    "meeting_id": "v8-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m25-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m25:0006",
+      "v8-m25:0007",
+      "v8-m25:0028",
+      "v8-m25:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m25:0006",
+      "v8-m25:0007",
+      "v8-m25:0028",
+      "v8-m25:0047"
+    ],
+    "meeting_id": "v8-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m25-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m25:0005",
+      "v8-m25:0012",
+      "v8-m25:0013",
+      "v8-m25:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m25:0005",
+      "v8-m25:0012",
+      "v8-m25:0013",
+      "v8-m25:0022"
+    ],
+    "meeting_id": "v8-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m25-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m25:0014",
+      "v8-m25:0009",
+      "v8-m25:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m25:0014",
+      "v8-m25:0009",
+      "v8-m25:0040"
+    ],
+    "meeting_id": "v8-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m26-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m26:0002",
+      "v8-m26:0008",
+      "v8-m26:0009",
+      "v8-m26:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m26:0002",
+      "v8-m26:0008",
+      "v8-m26:0009",
+      "v8-m26:0010"
+    ],
+    "meeting_id": "v8-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m26-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m26:0003",
+      "v8-m26:0010",
+      "v8-m26:0011",
+      "v8-m26:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m26:0003",
+      "v8-m26:0010",
+      "v8-m26:0011",
+      "v8-m26:0025"
+    ],
+    "meeting_id": "v8-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m26-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m26:0006",
+      "v8-m26:0007",
+      "v8-m26:0028",
+      "v8-m26:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m26:0006",
+      "v8-m26:0007",
+      "v8-m26:0028",
+      "v8-m26:0047"
+    ],
+    "meeting_id": "v8-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m26-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m26:0005",
+      "v8-m26:0012",
+      "v8-m26:0013",
+      "v8-m26:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m26:0005",
+      "v8-m26:0012",
+      "v8-m26:0013",
+      "v8-m26:0022"
+    ],
+    "meeting_id": "v8-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m26-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m26:0014",
+      "v8-m26:0009",
+      "v8-m26:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m26:0014",
+      "v8-m26:0009",
+      "v8-m26:0040"
+    ],
+    "meeting_id": "v8-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m27-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m27:0002",
+      "v8-m27:0008",
+      "v8-m27:0009",
+      "v8-m27:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m27:0002",
+      "v8-m27:0008",
+      "v8-m27:0009",
+      "v8-m27:0010"
+    ],
+    "meeting_id": "v8-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m27-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m27:0003",
+      "v8-m27:0010",
+      "v8-m27:0011",
+      "v8-m27:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m27:0003",
+      "v8-m27:0010",
+      "v8-m27:0011",
+      "v8-m27:0025"
+    ],
+    "meeting_id": "v8-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m27-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m27:0006",
+      "v8-m27:0007",
+      "v8-m27:0028",
+      "v8-m27:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m27:0006",
+      "v8-m27:0007",
+      "v8-m27:0028",
+      "v8-m27:0047"
+    ],
+    "meeting_id": "v8-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m27-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m27:0005",
+      "v8-m27:0012",
+      "v8-m27:0013",
+      "v8-m27:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m27:0005",
+      "v8-m27:0012",
+      "v8-m27:0013",
+      "v8-m27:0022"
+    ],
+    "meeting_id": "v8-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m27-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m27:0014",
+      "v8-m27:0009",
+      "v8-m27:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m27:0014",
+      "v8-m27:0009",
+      "v8-m27:0040"
+    ],
+    "meeting_id": "v8-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m28-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m28:0002",
+      "v8-m28:0008",
+      "v8-m28:0009",
+      "v8-m28:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m28:0002",
+      "v8-m28:0008",
+      "v8-m28:0009",
+      "v8-m28:0010"
+    ],
+    "meeting_id": "v8-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m28-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m28:0003",
+      "v8-m28:0010",
+      "v8-m28:0011",
+      "v8-m28:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m28:0003",
+      "v8-m28:0010",
+      "v8-m28:0011",
+      "v8-m28:0025"
+    ],
+    "meeting_id": "v8-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m28-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m28:0006",
+      "v8-m28:0007",
+      "v8-m28:0028",
+      "v8-m28:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m28:0006",
+      "v8-m28:0007",
+      "v8-m28:0028",
+      "v8-m28:0047"
+    ],
+    "meeting_id": "v8-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m28-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m28:0005",
+      "v8-m28:0012",
+      "v8-m28:0013",
+      "v8-m28:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m28:0005",
+      "v8-m28:0012",
+      "v8-m28:0013",
+      "v8-m28:0022"
+    ],
+    "meeting_id": "v8-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m28-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m28:0014",
+      "v8-m28:0009",
+      "v8-m28:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m28:0014",
+      "v8-m28:0009",
+      "v8-m28:0040"
+    ],
+    "meeting_id": "v8-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m29-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m29:0002",
+      "v8-m29:0008",
+      "v8-m29:0009",
+      "v8-m29:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m29:0002",
+      "v8-m29:0008",
+      "v8-m29:0009",
+      "v8-m29:0010"
+    ],
+    "meeting_id": "v8-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m29-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m29:0003",
+      "v8-m29:0010",
+      "v8-m29:0011",
+      "v8-m29:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m29:0003",
+      "v8-m29:0010",
+      "v8-m29:0011",
+      "v8-m29:0025"
+    ],
+    "meeting_id": "v8-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m29-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m29:0006",
+      "v8-m29:0007",
+      "v8-m29:0028",
+      "v8-m29:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m29:0006",
+      "v8-m29:0007",
+      "v8-m29:0028",
+      "v8-m29:0047"
+    ],
+    "meeting_id": "v8-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m29-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m29:0005",
+      "v8-m29:0012",
+      "v8-m29:0013",
+      "v8-m29:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m29:0005",
+      "v8-m29:0012",
+      "v8-m29:0013",
+      "v8-m29:0022"
+    ],
+    "meeting_id": "v8-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m29-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m29:0014",
+      "v8-m29:0009",
+      "v8-m29:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m29:0014",
+      "v8-m29:0009",
+      "v8-m29:0040"
+    ],
+    "meeting_id": "v8-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m30-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m30:0002",
+      "v8-m30:0008",
+      "v8-m30:0009",
+      "v8-m30:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m30:0002",
+      "v8-m30:0008",
+      "v8-m30:0009",
+      "v8-m30:0010"
+    ],
+    "meeting_id": "v8-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m30-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m30:0003",
+      "v8-m30:0010",
+      "v8-m30:0011",
+      "v8-m30:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m30:0003",
+      "v8-m30:0010",
+      "v8-m30:0011",
+      "v8-m30:0025"
+    ],
+    "meeting_id": "v8-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m30-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m30:0006",
+      "v8-m30:0007",
+      "v8-m30:0028",
+      "v8-m30:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m30:0006",
+      "v8-m30:0007",
+      "v8-m30:0028",
+      "v8-m30:0047"
+    ],
+    "meeting_id": "v8-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m30-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m30:0005",
+      "v8-m30:0012",
+      "v8-m30:0013",
+      "v8-m30:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m30:0005",
+      "v8-m30:0012",
+      "v8-m30:0013",
+      "v8-m30:0022"
+    ],
+    "meeting_id": "v8-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m30-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m30:0014",
+      "v8-m30:0009",
+      "v8-m30:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m30:0014",
+      "v8-m30:0009",
+      "v8-m30:0040"
+    ],
+    "meeting_id": "v8-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m31-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m31:0002",
+      "v8-m31:0008",
+      "v8-m31:0009",
+      "v8-m31:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m31:0002",
+      "v8-m31:0008",
+      "v8-m31:0009",
+      "v8-m31:0010"
+    ],
+    "meeting_id": "v8-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m31-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m31:0003",
+      "v8-m31:0010",
+      "v8-m31:0011",
+      "v8-m31:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m31:0003",
+      "v8-m31:0010",
+      "v8-m31:0011",
+      "v8-m31:0025"
+    ],
+    "meeting_id": "v8-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m31-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m31:0006",
+      "v8-m31:0007",
+      "v8-m31:0028",
+      "v8-m31:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m31:0006",
+      "v8-m31:0007",
+      "v8-m31:0028",
+      "v8-m31:0047"
+    ],
+    "meeting_id": "v8-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m31-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m31:0005",
+      "v8-m31:0012",
+      "v8-m31:0013",
+      "v8-m31:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m31:0005",
+      "v8-m31:0012",
+      "v8-m31:0013",
+      "v8-m31:0022"
+    ],
+    "meeting_id": "v8-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m31-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m31:0014",
+      "v8-m31:0009",
+      "v8-m31:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m31:0014",
+      "v8-m31:0009",
+      "v8-m31:0040"
+    ],
+    "meeting_id": "v8-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m32-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m32:0002",
+      "v8-m32:0008",
+      "v8-m32:0009",
+      "v8-m32:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m32:0002",
+      "v8-m32:0008",
+      "v8-m32:0009",
+      "v8-m32:0010"
+    ],
+    "meeting_id": "v8-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m32-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m32:0003",
+      "v8-m32:0010",
+      "v8-m32:0011",
+      "v8-m32:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m32:0003",
+      "v8-m32:0010",
+      "v8-m32:0011",
+      "v8-m32:0025"
+    ],
+    "meeting_id": "v8-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m32-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m32:0006",
+      "v8-m32:0007",
+      "v8-m32:0028",
+      "v8-m32:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m32:0006",
+      "v8-m32:0007",
+      "v8-m32:0028",
+      "v8-m32:0047"
+    ],
+    "meeting_id": "v8-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m32-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m32:0005",
+      "v8-m32:0012",
+      "v8-m32:0013",
+      "v8-m32:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m32:0005",
+      "v8-m32:0012",
+      "v8-m32:0013",
+      "v8-m32:0022"
+    ],
+    "meeting_id": "v8-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m32-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m32:0014",
+      "v8-m32:0009",
+      "v8-m32:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m32:0014",
+      "v8-m32:0009",
+      "v8-m32:0040"
+    ],
+    "meeting_id": "v8-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m33-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m33:0002",
+      "v8-m33:0008",
+      "v8-m33:0009",
+      "v8-m33:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m33:0002",
+      "v8-m33:0008",
+      "v8-m33:0009",
+      "v8-m33:0010"
+    ],
+    "meeting_id": "v8-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m33-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m33:0003",
+      "v8-m33:0010",
+      "v8-m33:0011",
+      "v8-m33:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m33:0003",
+      "v8-m33:0010",
+      "v8-m33:0011",
+      "v8-m33:0025"
+    ],
+    "meeting_id": "v8-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m33-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m33:0006",
+      "v8-m33:0007",
+      "v8-m33:0028",
+      "v8-m33:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m33:0006",
+      "v8-m33:0007",
+      "v8-m33:0028",
+      "v8-m33:0047"
+    ],
+    "meeting_id": "v8-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m33-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m33:0005",
+      "v8-m33:0012",
+      "v8-m33:0013",
+      "v8-m33:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m33:0005",
+      "v8-m33:0012",
+      "v8-m33:0013",
+      "v8-m33:0022"
+    ],
+    "meeting_id": "v8-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m33-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m33:0014",
+      "v8-m33:0009",
+      "v8-m33:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m33:0014",
+      "v8-m33:0009",
+      "v8-m33:0040"
+    ],
+    "meeting_id": "v8-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m34-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m34:0002",
+      "v8-m34:0008",
+      "v8-m34:0009",
+      "v8-m34:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m34:0002",
+      "v8-m34:0008",
+      "v8-m34:0009",
+      "v8-m34:0010"
+    ],
+    "meeting_id": "v8-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m34-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m34:0003",
+      "v8-m34:0010",
+      "v8-m34:0011",
+      "v8-m34:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m34:0003",
+      "v8-m34:0010",
+      "v8-m34:0011",
+      "v8-m34:0025"
+    ],
+    "meeting_id": "v8-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m34-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m34:0006",
+      "v8-m34:0007",
+      "v8-m34:0028",
+      "v8-m34:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m34:0006",
+      "v8-m34:0007",
+      "v8-m34:0028",
+      "v8-m34:0047"
+    ],
+    "meeting_id": "v8-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m34-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m34:0005",
+      "v8-m34:0012",
+      "v8-m34:0013",
+      "v8-m34:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m34:0005",
+      "v8-m34:0012",
+      "v8-m34:0013",
+      "v8-m34:0022"
+    ],
+    "meeting_id": "v8-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m34-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m34:0014",
+      "v8-m34:0009",
+      "v8-m34:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m34:0014",
+      "v8-m34:0009",
+      "v8-m34:0040"
+    ],
+    "meeting_id": "v8-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m35-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m35:0002",
+      "v8-m35:0008",
+      "v8-m35:0009",
+      "v8-m35:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m35:0002",
+      "v8-m35:0008",
+      "v8-m35:0009",
+      "v8-m35:0010"
+    ],
+    "meeting_id": "v8-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m35-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m35:0003",
+      "v8-m35:0010",
+      "v8-m35:0011",
+      "v8-m35:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m35:0003",
+      "v8-m35:0010",
+      "v8-m35:0011",
+      "v8-m35:0025"
+    ],
+    "meeting_id": "v8-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m35-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m35:0006",
+      "v8-m35:0007",
+      "v8-m35:0028",
+      "v8-m35:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m35:0006",
+      "v8-m35:0007",
+      "v8-m35:0028",
+      "v8-m35:0047"
+    ],
+    "meeting_id": "v8-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m35-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m35:0005",
+      "v8-m35:0012",
+      "v8-m35:0013",
+      "v8-m35:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m35:0005",
+      "v8-m35:0012",
+      "v8-m35:0013",
+      "v8-m35:0022"
+    ],
+    "meeting_id": "v8-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m35-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m35:0014",
+      "v8-m35:0009",
+      "v8-m35:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m35:0014",
+      "v8-m35:0009",
+      "v8-m35:0040"
+    ],
+    "meeting_id": "v8-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m36-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m36:0002",
+      "v8-m36:0008",
+      "v8-m36:0009",
+      "v8-m36:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m36:0002",
+      "v8-m36:0008",
+      "v8-m36:0009",
+      "v8-m36:0010"
+    ],
+    "meeting_id": "v8-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m36-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m36:0003",
+      "v8-m36:0010",
+      "v8-m36:0011",
+      "v8-m36:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m36:0003",
+      "v8-m36:0010",
+      "v8-m36:0011",
+      "v8-m36:0025"
+    ],
+    "meeting_id": "v8-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m36-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m36:0006",
+      "v8-m36:0007",
+      "v8-m36:0028",
+      "v8-m36:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m36:0006",
+      "v8-m36:0007",
+      "v8-m36:0028",
+      "v8-m36:0047"
+    ],
+    "meeting_id": "v8-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m36-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m36:0005",
+      "v8-m36:0012",
+      "v8-m36:0013",
+      "v8-m36:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m36:0005",
+      "v8-m36:0012",
+      "v8-m36:0013",
+      "v8-m36:0022"
+    ],
+    "meeting_id": "v8-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m36-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m36:0014",
+      "v8-m36:0009",
+      "v8-m36:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m36:0014",
+      "v8-m36:0009",
+      "v8-m36:0040"
+    ],
+    "meeting_id": "v8-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m37-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m37:0002",
+      "v8-m37:0008",
+      "v8-m37:0009",
+      "v8-m37:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m37:0002",
+      "v8-m37:0008",
+      "v8-m37:0009",
+      "v8-m37:0010"
+    ],
+    "meeting_id": "v8-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m37-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m37:0003",
+      "v8-m37:0010",
+      "v8-m37:0011",
+      "v8-m37:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m37:0003",
+      "v8-m37:0010",
+      "v8-m37:0011",
+      "v8-m37:0025"
+    ],
+    "meeting_id": "v8-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m37-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m37:0006",
+      "v8-m37:0007",
+      "v8-m37:0028",
+      "v8-m37:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m37:0006",
+      "v8-m37:0007",
+      "v8-m37:0028",
+      "v8-m37:0047"
+    ],
+    "meeting_id": "v8-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m37-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m37:0005",
+      "v8-m37:0012",
+      "v8-m37:0013",
+      "v8-m37:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m37:0005",
+      "v8-m37:0012",
+      "v8-m37:0013",
+      "v8-m37:0022"
+    ],
+    "meeting_id": "v8-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m37-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m37:0014",
+      "v8-m37:0009",
+      "v8-m37:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m37:0014",
+      "v8-m37:0009",
+      "v8-m37:0040"
+    ],
+    "meeting_id": "v8-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m38-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m38:0002",
+      "v8-m38:0008",
+      "v8-m38:0009",
+      "v8-m38:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m38:0002",
+      "v8-m38:0008",
+      "v8-m38:0009",
+      "v8-m38:0010"
+    ],
+    "meeting_id": "v8-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m38-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m38:0003",
+      "v8-m38:0010",
+      "v8-m38:0011",
+      "v8-m38:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m38:0003",
+      "v8-m38:0010",
+      "v8-m38:0011",
+      "v8-m38:0025"
+    ],
+    "meeting_id": "v8-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m38-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m38:0006",
+      "v8-m38:0007",
+      "v8-m38:0028",
+      "v8-m38:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m38:0006",
+      "v8-m38:0007",
+      "v8-m38:0028",
+      "v8-m38:0047"
+    ],
+    "meeting_id": "v8-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m38-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m38:0005",
+      "v8-m38:0012",
+      "v8-m38:0013",
+      "v8-m38:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m38:0005",
+      "v8-m38:0012",
+      "v8-m38:0013",
+      "v8-m38:0022"
+    ],
+    "meeting_id": "v8-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m38-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m38:0014",
+      "v8-m38:0009",
+      "v8-m38:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m38:0014",
+      "v8-m38:0009",
+      "v8-m38:0040"
+    ],
+    "meeting_id": "v8-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m39-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m39:0002",
+      "v8-m39:0008",
+      "v8-m39:0009",
+      "v8-m39:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m39:0002",
+      "v8-m39:0008",
+      "v8-m39:0009",
+      "v8-m39:0010"
+    ],
+    "meeting_id": "v8-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m39-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m39:0003",
+      "v8-m39:0010",
+      "v8-m39:0011",
+      "v8-m39:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m39:0003",
+      "v8-m39:0010",
+      "v8-m39:0011",
+      "v8-m39:0025"
+    ],
+    "meeting_id": "v8-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m39-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m39:0006",
+      "v8-m39:0007",
+      "v8-m39:0028",
+      "v8-m39:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m39:0006",
+      "v8-m39:0007",
+      "v8-m39:0028",
+      "v8-m39:0047"
+    ],
+    "meeting_id": "v8-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m39-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m39:0005",
+      "v8-m39:0012",
+      "v8-m39:0013",
+      "v8-m39:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m39:0005",
+      "v8-m39:0012",
+      "v8-m39:0013",
+      "v8-m39:0022"
+    ],
+    "meeting_id": "v8-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m39-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m39:0014",
+      "v8-m39:0009",
+      "v8-m39:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m39:0014",
+      "v8-m39:0009",
+      "v8-m39:0040"
+    ],
+    "meeting_id": "v8-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m40-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m40:0002",
+      "v8-m40:0008",
+      "v8-m40:0009",
+      "v8-m40:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m40:0002",
+      "v8-m40:0008",
+      "v8-m40:0009",
+      "v8-m40:0010"
+    ],
+    "meeting_id": "v8-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m40-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m40:0003",
+      "v8-m40:0010",
+      "v8-m40:0011",
+      "v8-m40:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m40:0003",
+      "v8-m40:0010",
+      "v8-m40:0011",
+      "v8-m40:0025"
+    ],
+    "meeting_id": "v8-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m40-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m40:0006",
+      "v8-m40:0007",
+      "v8-m40:0028",
+      "v8-m40:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m40:0006",
+      "v8-m40:0007",
+      "v8-m40:0028",
+      "v8-m40:0047"
+    ],
+    "meeting_id": "v8-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m40-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m40:0005",
+      "v8-m40:0012",
+      "v8-m40:0013",
+      "v8-m40:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m40:0005",
+      "v8-m40:0012",
+      "v8-m40:0013",
+      "v8-m40:0022"
+    ],
+    "meeting_id": "v8-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m40-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m40:0014",
+      "v8-m40:0009",
+      "v8-m40:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m40:0014",
+      "v8-m40:0009",
+      "v8-m40:0040"
+    ],
+    "meeting_id": "v8-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m41-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m41:0002",
+      "v8-m41:0008",
+      "v8-m41:0009",
+      "v8-m41:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m41:0002",
+      "v8-m41:0008",
+      "v8-m41:0009",
+      "v8-m41:0010"
+    ],
+    "meeting_id": "v8-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m41-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m41:0003",
+      "v8-m41:0010",
+      "v8-m41:0011",
+      "v8-m41:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m41:0003",
+      "v8-m41:0010",
+      "v8-m41:0011",
+      "v8-m41:0025"
+    ],
+    "meeting_id": "v8-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m41-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m41:0006",
+      "v8-m41:0007",
+      "v8-m41:0028",
+      "v8-m41:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m41:0006",
+      "v8-m41:0007",
+      "v8-m41:0028",
+      "v8-m41:0047"
+    ],
+    "meeting_id": "v8-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m41-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m41:0005",
+      "v8-m41:0012",
+      "v8-m41:0013",
+      "v8-m41:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m41:0005",
+      "v8-m41:0012",
+      "v8-m41:0013",
+      "v8-m41:0022"
+    ],
+    "meeting_id": "v8-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m41-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m41:0014",
+      "v8-m41:0009",
+      "v8-m41:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m41:0014",
+      "v8-m41:0009",
+      "v8-m41:0040"
+    ],
+    "meeting_id": "v8-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m42-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m42:0002",
+      "v8-m42:0008",
+      "v8-m42:0009",
+      "v8-m42:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m42:0002",
+      "v8-m42:0008",
+      "v8-m42:0009",
+      "v8-m42:0010"
+    ],
+    "meeting_id": "v8-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m42-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m42:0003",
+      "v8-m42:0010",
+      "v8-m42:0011",
+      "v8-m42:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m42:0003",
+      "v8-m42:0010",
+      "v8-m42:0011",
+      "v8-m42:0025"
+    ],
+    "meeting_id": "v8-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m42-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m42:0006",
+      "v8-m42:0007",
+      "v8-m42:0028",
+      "v8-m42:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m42:0006",
+      "v8-m42:0007",
+      "v8-m42:0028",
+      "v8-m42:0047"
+    ],
+    "meeting_id": "v8-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m42-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m42:0005",
+      "v8-m42:0012",
+      "v8-m42:0013",
+      "v8-m42:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m42:0005",
+      "v8-m42:0012",
+      "v8-m42:0013",
+      "v8-m42:0022"
+    ],
+    "meeting_id": "v8-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m42-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m42:0014",
+      "v8-m42:0009",
+      "v8-m42:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m42:0014",
+      "v8-m42:0009",
+      "v8-m42:0040"
+    ],
+    "meeting_id": "v8-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m43-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m43:0002",
+      "v8-m43:0008",
+      "v8-m43:0009",
+      "v8-m43:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m43:0002",
+      "v8-m43:0008",
+      "v8-m43:0009",
+      "v8-m43:0010"
+    ],
+    "meeting_id": "v8-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m43-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m43:0003",
+      "v8-m43:0010",
+      "v8-m43:0011",
+      "v8-m43:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m43:0003",
+      "v8-m43:0010",
+      "v8-m43:0011",
+      "v8-m43:0025"
+    ],
+    "meeting_id": "v8-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m43-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m43:0006",
+      "v8-m43:0007",
+      "v8-m43:0028",
+      "v8-m43:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m43:0006",
+      "v8-m43:0007",
+      "v8-m43:0028",
+      "v8-m43:0047"
+    ],
+    "meeting_id": "v8-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m43-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m43:0005",
+      "v8-m43:0012",
+      "v8-m43:0013",
+      "v8-m43:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m43:0005",
+      "v8-m43:0012",
+      "v8-m43:0013",
+      "v8-m43:0022"
+    ],
+    "meeting_id": "v8-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m43-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m43:0014",
+      "v8-m43:0009",
+      "v8-m43:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m43:0014",
+      "v8-m43:0009",
+      "v8-m43:0040"
+    ],
+    "meeting_id": "v8-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m44-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m44:0002",
+      "v8-m44:0008",
+      "v8-m44:0009",
+      "v8-m44:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m44:0002",
+      "v8-m44:0008",
+      "v8-m44:0009",
+      "v8-m44:0010"
+    ],
+    "meeting_id": "v8-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m44-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m44:0003",
+      "v8-m44:0010",
+      "v8-m44:0011",
+      "v8-m44:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m44:0003",
+      "v8-m44:0010",
+      "v8-m44:0011",
+      "v8-m44:0025"
+    ],
+    "meeting_id": "v8-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m44-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m44:0006",
+      "v8-m44:0007",
+      "v8-m44:0028",
+      "v8-m44:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m44:0006",
+      "v8-m44:0007",
+      "v8-m44:0028",
+      "v8-m44:0047"
+    ],
+    "meeting_id": "v8-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m44-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m44:0005",
+      "v8-m44:0012",
+      "v8-m44:0013",
+      "v8-m44:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m44:0005",
+      "v8-m44:0012",
+      "v8-m44:0013",
+      "v8-m44:0022"
+    ],
+    "meeting_id": "v8-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m44-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m44:0014",
+      "v8-m44:0009",
+      "v8-m44:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m44:0014",
+      "v8-m44:0009",
+      "v8-m44:0040"
+    ],
+    "meeting_id": "v8-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m45-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m45:0002",
+      "v8-m45:0008",
+      "v8-m45:0009",
+      "v8-m45:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m45:0002",
+      "v8-m45:0008",
+      "v8-m45:0009",
+      "v8-m45:0010"
+    ],
+    "meeting_id": "v8-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m45-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m45:0003",
+      "v8-m45:0010",
+      "v8-m45:0011",
+      "v8-m45:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m45:0003",
+      "v8-m45:0010",
+      "v8-m45:0011",
+      "v8-m45:0025"
+    ],
+    "meeting_id": "v8-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m45-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m45:0006",
+      "v8-m45:0007",
+      "v8-m45:0028",
+      "v8-m45:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m45:0006",
+      "v8-m45:0007",
+      "v8-m45:0028",
+      "v8-m45:0047"
+    ],
+    "meeting_id": "v8-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m45-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m45:0005",
+      "v8-m45:0012",
+      "v8-m45:0013",
+      "v8-m45:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m45:0005",
+      "v8-m45:0012",
+      "v8-m45:0013",
+      "v8-m45:0022"
+    ],
+    "meeting_id": "v8-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m45-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m45:0014",
+      "v8-m45:0009",
+      "v8-m45:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m45:0014",
+      "v8-m45:0009",
+      "v8-m45:0040"
+    ],
+    "meeting_id": "v8-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m46-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m46:0002",
+      "v8-m46:0008",
+      "v8-m46:0009",
+      "v8-m46:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m46:0002",
+      "v8-m46:0008",
+      "v8-m46:0009",
+      "v8-m46:0010"
+    ],
+    "meeting_id": "v8-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m46-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m46:0003",
+      "v8-m46:0010",
+      "v8-m46:0011",
+      "v8-m46:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m46:0003",
+      "v8-m46:0010",
+      "v8-m46:0011",
+      "v8-m46:0025"
+    ],
+    "meeting_id": "v8-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m46-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m46:0006",
+      "v8-m46:0007",
+      "v8-m46:0028",
+      "v8-m46:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m46:0006",
+      "v8-m46:0007",
+      "v8-m46:0028",
+      "v8-m46:0047"
+    ],
+    "meeting_id": "v8-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m46-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m46:0005",
+      "v8-m46:0012",
+      "v8-m46:0013",
+      "v8-m46:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m46:0005",
+      "v8-m46:0012",
+      "v8-m46:0013",
+      "v8-m46:0022"
+    ],
+    "meeting_id": "v8-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m46-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m46:0014",
+      "v8-m46:0009",
+      "v8-m46:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m46:0014",
+      "v8-m46:0009",
+      "v8-m46:0040"
+    ],
+    "meeting_id": "v8-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m47-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m47:0002",
+      "v8-m47:0008",
+      "v8-m47:0009",
+      "v8-m47:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m47:0002",
+      "v8-m47:0008",
+      "v8-m47:0009",
+      "v8-m47:0010"
+    ],
+    "meeting_id": "v8-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m47-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m47:0003",
+      "v8-m47:0010",
+      "v8-m47:0011",
+      "v8-m47:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m47:0003",
+      "v8-m47:0010",
+      "v8-m47:0011",
+      "v8-m47:0025"
+    ],
+    "meeting_id": "v8-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m47-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m47:0006",
+      "v8-m47:0007",
+      "v8-m47:0028",
+      "v8-m47:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m47:0006",
+      "v8-m47:0007",
+      "v8-m47:0028",
+      "v8-m47:0047"
+    ],
+    "meeting_id": "v8-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m47-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m47:0005",
+      "v8-m47:0012",
+      "v8-m47:0013",
+      "v8-m47:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m47:0005",
+      "v8-m47:0012",
+      "v8-m47:0013",
+      "v8-m47:0022"
+    ],
+    "meeting_id": "v8-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m47-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m47:0014",
+      "v8-m47:0009",
+      "v8-m47:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m47:0014",
+      "v8-m47:0009",
+      "v8-m47:0040"
+    ],
+    "meeting_id": "v8-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m48-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m48:0002",
+      "v8-m48:0008",
+      "v8-m48:0009",
+      "v8-m48:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m48:0002",
+      "v8-m48:0008",
+      "v8-m48:0009",
+      "v8-m48:0010"
+    ],
+    "meeting_id": "v8-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m48-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m48:0003",
+      "v8-m48:0010",
+      "v8-m48:0011",
+      "v8-m48:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m48:0003",
+      "v8-m48:0010",
+      "v8-m48:0011",
+      "v8-m48:0025"
+    ],
+    "meeting_id": "v8-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m48-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m48:0006",
+      "v8-m48:0007",
+      "v8-m48:0028",
+      "v8-m48:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m48:0006",
+      "v8-m48:0007",
+      "v8-m48:0028",
+      "v8-m48:0047"
+    ],
+    "meeting_id": "v8-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m48-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m48:0005",
+      "v8-m48:0012",
+      "v8-m48:0013",
+      "v8-m48:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m48:0005",
+      "v8-m48:0012",
+      "v8-m48:0013",
+      "v8-m48:0022"
+    ],
+    "meeting_id": "v8-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m48-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m48:0014",
+      "v8-m48:0009",
+      "v8-m48:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m48:0014",
+      "v8-m48:0009",
+      "v8-m48:0040"
+    ],
+    "meeting_id": "v8-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m49-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m49:0002",
+      "v8-m49:0008",
+      "v8-m49:0009",
+      "v8-m49:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m49:0002",
+      "v8-m49:0008",
+      "v8-m49:0009",
+      "v8-m49:0010"
+    ],
+    "meeting_id": "v8-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m49-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m49:0003",
+      "v8-m49:0010",
+      "v8-m49:0011",
+      "v8-m49:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m49:0003",
+      "v8-m49:0010",
+      "v8-m49:0011",
+      "v8-m49:0025"
+    ],
+    "meeting_id": "v8-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m49-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m49:0006",
+      "v8-m49:0007",
+      "v8-m49:0028",
+      "v8-m49:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m49:0006",
+      "v8-m49:0007",
+      "v8-m49:0028",
+      "v8-m49:0047"
+    ],
+    "meeting_id": "v8-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m49-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m49:0005",
+      "v8-m49:0012",
+      "v8-m49:0013",
+      "v8-m49:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m49:0005",
+      "v8-m49:0012",
+      "v8-m49:0013",
+      "v8-m49:0022"
+    ],
+    "meeting_id": "v8-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m49-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m49:0014",
+      "v8-m49:0009",
+      "v8-m49:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m49:0014",
+      "v8-m49:0009",
+      "v8-m49:0040"
+    ],
+    "meeting_id": "v8-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m50-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m50:0002",
+      "v8-m50:0008",
+      "v8-m50:0009",
+      "v8-m50:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m50:0002",
+      "v8-m50:0008",
+      "v8-m50:0009",
+      "v8-m50:0010"
+    ],
+    "meeting_id": "v8-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m50-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m50:0003",
+      "v8-m50:0010",
+      "v8-m50:0011",
+      "v8-m50:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m50:0003",
+      "v8-m50:0010",
+      "v8-m50:0011",
+      "v8-m50:0025"
+    ],
+    "meeting_id": "v8-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m50-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m50:0006",
+      "v8-m50:0007",
+      "v8-m50:0028",
+      "v8-m50:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m50:0006",
+      "v8-m50:0007",
+      "v8-m50:0028",
+      "v8-m50:0047"
+    ],
+    "meeting_id": "v8-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m50-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m50:0005",
+      "v8-m50:0012",
+      "v8-m50:0013",
+      "v8-m50:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m50:0005",
+      "v8-m50:0012",
+      "v8-m50:0013",
+      "v8-m50:0022"
+    ],
+    "meeting_id": "v8-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m50-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m50:0014",
+      "v8-m50:0009",
+      "v8-m50:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m50:0014",
+      "v8-m50:0009",
+      "v8-m50:0040"
+    ],
+    "meeting_id": "v8-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m51-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m51:0002",
+      "v8-m51:0008",
+      "v8-m51:0009",
+      "v8-m51:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m51:0002",
+      "v8-m51:0008",
+      "v8-m51:0009",
+      "v8-m51:0010"
+    ],
+    "meeting_id": "v8-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m51-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m51:0003",
+      "v8-m51:0010",
+      "v8-m51:0011",
+      "v8-m51:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m51:0003",
+      "v8-m51:0010",
+      "v8-m51:0011",
+      "v8-m51:0025"
+    ],
+    "meeting_id": "v8-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m51-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m51:0006",
+      "v8-m51:0007",
+      "v8-m51:0028",
+      "v8-m51:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m51:0006",
+      "v8-m51:0007",
+      "v8-m51:0028",
+      "v8-m51:0047"
+    ],
+    "meeting_id": "v8-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m51-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m51:0005",
+      "v8-m51:0012",
+      "v8-m51:0013",
+      "v8-m51:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m51:0005",
+      "v8-m51:0012",
+      "v8-m51:0013",
+      "v8-m51:0022"
+    ],
+    "meeting_id": "v8-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m51-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m51:0014",
+      "v8-m51:0009",
+      "v8-m51:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m51:0014",
+      "v8-m51:0009",
+      "v8-m51:0040"
+    ],
+    "meeting_id": "v8-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m52-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m52:0002",
+      "v8-m52:0008",
+      "v8-m52:0009",
+      "v8-m52:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m52:0002",
+      "v8-m52:0008",
+      "v8-m52:0009",
+      "v8-m52:0010"
+    ],
+    "meeting_id": "v8-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m52-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m52:0003",
+      "v8-m52:0010",
+      "v8-m52:0011",
+      "v8-m52:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m52:0003",
+      "v8-m52:0010",
+      "v8-m52:0011",
+      "v8-m52:0025"
+    ],
+    "meeting_id": "v8-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m52-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m52:0006",
+      "v8-m52:0007",
+      "v8-m52:0028",
+      "v8-m52:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m52:0006",
+      "v8-m52:0007",
+      "v8-m52:0028",
+      "v8-m52:0047"
+    ],
+    "meeting_id": "v8-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m52-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m52:0005",
+      "v8-m52:0012",
+      "v8-m52:0013",
+      "v8-m52:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m52:0005",
+      "v8-m52:0012",
+      "v8-m52:0013",
+      "v8-m52:0022"
+    ],
+    "meeting_id": "v8-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m52-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m52:0014",
+      "v8-m52:0009",
+      "v8-m52:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m52:0014",
+      "v8-m52:0009",
+      "v8-m52:0040"
+    ],
+    "meeting_id": "v8-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m53-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m53:0002",
+      "v8-m53:0008",
+      "v8-m53:0009",
+      "v8-m53:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m53:0002",
+      "v8-m53:0008",
+      "v8-m53:0009",
+      "v8-m53:0010"
+    ],
+    "meeting_id": "v8-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m53-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m53:0003",
+      "v8-m53:0010",
+      "v8-m53:0011",
+      "v8-m53:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m53:0003",
+      "v8-m53:0010",
+      "v8-m53:0011",
+      "v8-m53:0025"
+    ],
+    "meeting_id": "v8-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m53-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m53:0006",
+      "v8-m53:0007",
+      "v8-m53:0028",
+      "v8-m53:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m53:0006",
+      "v8-m53:0007",
+      "v8-m53:0028",
+      "v8-m53:0047"
+    ],
+    "meeting_id": "v8-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m53-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m53:0005",
+      "v8-m53:0012",
+      "v8-m53:0013",
+      "v8-m53:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m53:0005",
+      "v8-m53:0012",
+      "v8-m53:0013",
+      "v8-m53:0022"
+    ],
+    "meeting_id": "v8-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m53-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m53:0014",
+      "v8-m53:0009",
+      "v8-m53:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m53:0014",
+      "v8-m53:0009",
+      "v8-m53:0040"
+    ],
+    "meeting_id": "v8-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m54-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m54:0002",
+      "v8-m54:0008",
+      "v8-m54:0009",
+      "v8-m54:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m54:0002",
+      "v8-m54:0008",
+      "v8-m54:0009",
+      "v8-m54:0010"
+    ],
+    "meeting_id": "v8-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m54-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m54:0003",
+      "v8-m54:0010",
+      "v8-m54:0011",
+      "v8-m54:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m54:0003",
+      "v8-m54:0010",
+      "v8-m54:0011",
+      "v8-m54:0025"
+    ],
+    "meeting_id": "v8-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m54-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m54:0006",
+      "v8-m54:0007",
+      "v8-m54:0028",
+      "v8-m54:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m54:0006",
+      "v8-m54:0007",
+      "v8-m54:0028",
+      "v8-m54:0047"
+    ],
+    "meeting_id": "v8-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m54-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m54:0005",
+      "v8-m54:0012",
+      "v8-m54:0013",
+      "v8-m54:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m54:0005",
+      "v8-m54:0012",
+      "v8-m54:0013",
+      "v8-m54:0022"
+    ],
+    "meeting_id": "v8-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m54-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m54:0014",
+      "v8-m54:0009",
+      "v8-m54:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m54:0014",
+      "v8-m54:0009",
+      "v8-m54:0040"
+    ],
+    "meeting_id": "v8-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m55-q1",
+    "query": "Quelle base de données a finalement été retenue pour Orion, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m55:0002",
+      "v8-m55:0008",
+      "v8-m55:0009",
+      "v8-m55:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m55:0002",
+      "v8-m55:0008",
+      "v8-m55:0009",
+      "v8-m55:0010"
+    ],
+    "meeting_id": "v8-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m55-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m55:0003",
+      "v8-m55:0010",
+      "v8-m55:0011",
+      "v8-m55:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m55:0003",
+      "v8-m55:0010",
+      "v8-m55:0011",
+      "v8-m55:0025"
+    ],
+    "meeting_id": "v8-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m55-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m55:0006",
+      "v8-m55:0007",
+      "v8-m55:0028",
+      "v8-m55:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m55:0006",
+      "v8-m55:0007",
+      "v8-m55:0028",
+      "v8-m55:0047"
+    ],
+    "meeting_id": "v8-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m55-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m55:0005",
+      "v8-m55:0012",
+      "v8-m55:0013",
+      "v8-m55:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m55:0005",
+      "v8-m55:0012",
+      "v8-m55:0013",
+      "v8-m55:0022"
+    ],
+    "meeting_id": "v8-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m55-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m55:0014",
+      "v8-m55:0009",
+      "v8-m55:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m55:0014",
+      "v8-m55:0009",
+      "v8-m55:0040"
+    ],
+    "meeting_id": "v8-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m56-q1",
+    "query": "Quelle base de données a finalement été retenue pour Atlas, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m56:0002",
+      "v8-m56:0008",
+      "v8-m56:0009",
+      "v8-m56:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m56:0002",
+      "v8-m56:0008",
+      "v8-m56:0009",
+      "v8-m56:0010"
+    ],
+    "meeting_id": "v8-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m56-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m56:0003",
+      "v8-m56:0010",
+      "v8-m56:0011",
+      "v8-m56:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m56:0003",
+      "v8-m56:0010",
+      "v8-m56:0011",
+      "v8-m56:0025"
+    ],
+    "meeting_id": "v8-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m56-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m56:0006",
+      "v8-m56:0007",
+      "v8-m56:0028",
+      "v8-m56:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m56:0006",
+      "v8-m56:0007",
+      "v8-m56:0028",
+      "v8-m56:0047"
+    ],
+    "meeting_id": "v8-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m56-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m56:0005",
+      "v8-m56:0012",
+      "v8-m56:0013",
+      "v8-m56:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m56:0005",
+      "v8-m56:0012",
+      "v8-m56:0013",
+      "v8-m56:0022"
+    ],
+    "meeting_id": "v8-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m56-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m56:0014",
+      "v8-m56:0009",
+      "v8-m56:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m56:0014",
+      "v8-m56:0009",
+      "v8-m56:0040"
+    ],
+    "meeting_id": "v8-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m57-q1",
+    "query": "Quelle base de données a finalement été retenue pour Nova, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m57:0002",
+      "v8-m57:0008",
+      "v8-m57:0009",
+      "v8-m57:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m57:0002",
+      "v8-m57:0008",
+      "v8-m57:0009",
+      "v8-m57:0010"
+    ],
+    "meeting_id": "v8-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m57-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m57:0003",
+      "v8-m57:0010",
+      "v8-m57:0011",
+      "v8-m57:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m57:0003",
+      "v8-m57:0010",
+      "v8-m57:0011",
+      "v8-m57:0025"
+    ],
+    "meeting_id": "v8-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m57-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m57:0006",
+      "v8-m57:0007",
+      "v8-m57:0028",
+      "v8-m57:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m57:0006",
+      "v8-m57:0007",
+      "v8-m57:0028",
+      "v8-m57:0047"
+    ],
+    "meeting_id": "v8-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m57-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m57:0005",
+      "v8-m57:0012",
+      "v8-m57:0013",
+      "v8-m57:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m57:0005",
+      "v8-m57:0012",
+      "v8-m57:0013",
+      "v8-m57:0022"
+    ],
+    "meeting_id": "v8-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m57-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m57:0014",
+      "v8-m57:0009",
+      "v8-m57:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m57:0014",
+      "v8-m57:0009",
+      "v8-m57:0040"
+    ],
+    "meeting_id": "v8-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m58-q1",
+    "query": "Quelle base de données a finalement été retenue pour Hestia, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m58:0002",
+      "v8-m58:0008",
+      "v8-m58:0009",
+      "v8-m58:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m58:0002",
+      "v8-m58:0008",
+      "v8-m58:0009",
+      "v8-m58:0010"
+    ],
+    "meeting_id": "v8-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m58-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m58:0003",
+      "v8-m58:0010",
+      "v8-m58:0011",
+      "v8-m58:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m58:0003",
+      "v8-m58:0010",
+      "v8-m58:0011",
+      "v8-m58:0025"
+    ],
+    "meeting_id": "v8-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m58-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m58:0006",
+      "v8-m58:0007",
+      "v8-m58:0028",
+      "v8-m58:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m58:0006",
+      "v8-m58:0007",
+      "v8-m58:0028",
+      "v8-m58:0047"
+    ],
+    "meeting_id": "v8-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m58-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m58:0005",
+      "v8-m58:0012",
+      "v8-m58:0013",
+      "v8-m58:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m58:0005",
+      "v8-m58:0012",
+      "v8-m58:0013",
+      "v8-m58:0022"
+    ],
+    "meeting_id": "v8-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m58-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m58:0014",
+      "v8-m58:0009",
+      "v8-m58:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m58:0014",
+      "v8-m58:0009",
+      "v8-m58:0040"
+    ],
+    "meeting_id": "v8-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m59-q1",
+    "query": "Quelle base de données a finalement été retenue pour Mistral, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m59:0002",
+      "v8-m59:0008",
+      "v8-m59:0009",
+      "v8-m59:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m59:0002",
+      "v8-m59:0008",
+      "v8-m59:0009",
+      "v8-m59:0010"
+    ],
+    "meeting_id": "v8-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m59-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m59:0003",
+      "v8-m59:0010",
+      "v8-m59:0011",
+      "v8-m59:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m59:0003",
+      "v8-m59:0010",
+      "v8-m59:0011",
+      "v8-m59:0025"
+    ],
+    "meeting_id": "v8-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m59-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m59:0006",
+      "v8-m59:0007",
+      "v8-m59:0028",
+      "v8-m59:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m59:0006",
+      "v8-m59:0007",
+      "v8-m59:0028",
+      "v8-m59:0047"
+    ],
+    "meeting_id": "v8-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m59-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m59:0005",
+      "v8-m59:0012",
+      "v8-m59:0013",
+      "v8-m59:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m59:0005",
+      "v8-m59:0012",
+      "v8-m59:0013",
+      "v8-m59:0022"
+    ],
+    "meeting_id": "v8-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m59-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m59:0014",
+      "v8-m59:0009",
+      "v8-m59:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m59:0014",
+      "v8-m59:0009",
+      "v8-m59:0040"
+    ],
+    "meeting_id": "v8-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m60-q1",
+    "query": "Quelle base de données a finalement été retenue pour Zenith, et qui est responsable de la migration ?",
+    "answer": "PostgreSQL a été retenu pour le service principal ; le responsable est indiqué dans la réunion.",
+    "evidence_chunk_ids": [
+      "v8-m60:0002",
+      "v8-m60:0008",
+      "v8-m60:0009",
+      "v8-m60:0010"
+    ],
+    "target_chunk_ids": [
+      "v8-m60:0002",
+      "v8-m60:0008",
+      "v8-m60:0009",
+      "v8-m60:0010"
+    ],
+    "meeting_id": "v8-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m60-q2",
+    "query": "Quel budget a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget révisé a été validé par l'approbateur nommé, sous réserve du vote du comité.",
+    "evidence_chunk_ids": [
+      "v8-m60:0003",
+      "v8-m60:0010",
+      "v8-m60:0011",
+      "v8-m60:0025"
+    ],
+    "target_chunk_ids": [
+      "v8-m60:0003",
+      "v8-m60:0010",
+      "v8-m60:0011",
+      "v8-m60:0025"
+    ],
+    "meeting_id": "v8-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m60-q3",
+    "query": "Quelles décisions de sécurité ont été prises, et qui en est responsable ?",
+    "answer": "Le chiffrement au repos et TLS sont exigés ; le responsable sécurité doit valider le plan.",
+    "evidence_chunk_ids": [
+      "v8-m60:0006",
+      "v8-m60:0007",
+      "v8-m60:0028",
+      "v8-m60:0047"
+    ],
+    "target_chunk_ids": [
+      "v8-m60:0006",
+      "v8-m60:0007",
+      "v8-m60:0028",
+      "v8-m60:0047"
+    ],
+    "meeting_id": "v8-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m60-q4",
+    "query": "Pourquoi le lancement a-t-il été décalé, et quelle est la nouvelle date ?",
+    "answer": "Le lancement a été décalé après le test de charge et l'incident ; la nouvelle date est celle validée en réunion.",
+    "evidence_chunk_ids": [
+      "v8-m60:0005",
+      "v8-m60:0012",
+      "v8-m60:0013",
+      "v8-m60:0022"
+    ],
+    "target_chunk_ids": [
+      "v8-m60:0005",
+      "v8-m60:0012",
+      "v8-m60:0013",
+      "v8-m60:0022"
+    ],
+    "meeting_id": "v8-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v8-m60-q5",
+    "query": "Qui doit livrer le rapport de migration, et pour quelle date ?",
+    "answer": "Le rapport de migration est attendu avant la revue de la prochaine réunion.",
+    "evidence_chunk_ids": [
+      "v8-m60:0014",
+      "v8-m60:0009",
+      "v8-m60:0040"
+    ],
+    "target_chunk_ids": [
+      "v8-m60:0014",
+      "v8-m60:0009",
+      "v8-m60:0040"
+    ],
+    "meeting_id": "v8-m60",
+    "split": "test",
+    "type": "multi_hop"
+  }
+]

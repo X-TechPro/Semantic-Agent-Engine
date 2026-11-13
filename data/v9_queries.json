@@ -1,0 +1,6482 @@
+[
+  {
+    "query_id": "v9-m01-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m01:0003",
+      "v9-m01:0004",
+      "v9-m01:0005",
+      "v9-m01:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m01:0003",
+      "v9-m01:0004",
+      "v9-m01:0005",
+      "v9-m01:0006"
+    ],
+    "meeting_id": "v9-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m01-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m01:0004",
+      "v9-m01:0005",
+      "v9-m01:0006",
+      "v9-m01:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m01:0004",
+      "v9-m01:0005",
+      "v9-m01:0006",
+      "v9-m01:0007"
+    ],
+    "meeting_id": "v9-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m01-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m01:0017",
+      "v9-m01:0018",
+      "v9-m01:0044",
+      "v9-m01:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m01:0017",
+      "v9-m01:0018",
+      "v9-m01:0044",
+      "v9-m01:0045"
+    ],
+    "meeting_id": "v9-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m01-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m01:0021",
+      "v9-m01:0022",
+      "v9-m01:0026",
+      "v9-m01:0027",
+      "v9-m01:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m01:0021",
+      "v9-m01:0022",
+      "v9-m01:0026",
+      "v9-m01:0027",
+      "v9-m01:0049"
+    ],
+    "meeting_id": "v9-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m01-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m01:0005",
+      "v9-m01:0007",
+      "v9-m01:0030",
+      "v9-m01:0031",
+      "v9-m01:0032",
+      "v9-m01:0033",
+      "v9-m01:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m01:0005",
+      "v9-m01:0007",
+      "v9-m01:0030",
+      "v9-m01:0031",
+      "v9-m01:0032",
+      "v9-m01:0033",
+      "v9-m01:0034"
+    ],
+    "meeting_id": "v9-m01",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m02-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m02:0003",
+      "v9-m02:0004",
+      "v9-m02:0005",
+      "v9-m02:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m02:0003",
+      "v9-m02:0004",
+      "v9-m02:0005",
+      "v9-m02:0006"
+    ],
+    "meeting_id": "v9-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m02-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m02:0004",
+      "v9-m02:0005",
+      "v9-m02:0006",
+      "v9-m02:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m02:0004",
+      "v9-m02:0005",
+      "v9-m02:0006",
+      "v9-m02:0007"
+    ],
+    "meeting_id": "v9-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m02-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m02:0017",
+      "v9-m02:0018",
+      "v9-m02:0044",
+      "v9-m02:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m02:0017",
+      "v9-m02:0018",
+      "v9-m02:0044",
+      "v9-m02:0045"
+    ],
+    "meeting_id": "v9-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m02-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m02:0021",
+      "v9-m02:0022",
+      "v9-m02:0026",
+      "v9-m02:0027",
+      "v9-m02:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m02:0021",
+      "v9-m02:0022",
+      "v9-m02:0026",
+      "v9-m02:0027",
+      "v9-m02:0049"
+    ],
+    "meeting_id": "v9-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m02-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m02:0005",
+      "v9-m02:0007",
+      "v9-m02:0030",
+      "v9-m02:0031",
+      "v9-m02:0032",
+      "v9-m02:0033",
+      "v9-m02:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m02:0005",
+      "v9-m02:0007",
+      "v9-m02:0030",
+      "v9-m02:0031",
+      "v9-m02:0032",
+      "v9-m02:0033",
+      "v9-m02:0034"
+    ],
+    "meeting_id": "v9-m02",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m03-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m03:0003",
+      "v9-m03:0004",
+      "v9-m03:0005",
+      "v9-m03:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m03:0003",
+      "v9-m03:0004",
+      "v9-m03:0005",
+      "v9-m03:0006"
+    ],
+    "meeting_id": "v9-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m03-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m03:0004",
+      "v9-m03:0005",
+      "v9-m03:0006",
+      "v9-m03:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m03:0004",
+      "v9-m03:0005",
+      "v9-m03:0006",
+      "v9-m03:0007"
+    ],
+    "meeting_id": "v9-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m03-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m03:0017",
+      "v9-m03:0018",
+      "v9-m03:0044",
+      "v9-m03:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m03:0017",
+      "v9-m03:0018",
+      "v9-m03:0044",
+      "v9-m03:0045"
+    ],
+    "meeting_id": "v9-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m03-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m03:0021",
+      "v9-m03:0022",
+      "v9-m03:0026",
+      "v9-m03:0027",
+      "v9-m03:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m03:0021",
+      "v9-m03:0022",
+      "v9-m03:0026",
+      "v9-m03:0027",
+      "v9-m03:0049"
+    ],
+    "meeting_id": "v9-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m03-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m03:0005",
+      "v9-m03:0007",
+      "v9-m03:0030",
+      "v9-m03:0031",
+      "v9-m03:0032",
+      "v9-m03:0033",
+      "v9-m03:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m03:0005",
+      "v9-m03:0007",
+      "v9-m03:0030",
+      "v9-m03:0031",
+      "v9-m03:0032",
+      "v9-m03:0033",
+      "v9-m03:0034"
+    ],
+    "meeting_id": "v9-m03",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m04-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m04:0003",
+      "v9-m04:0004",
+      "v9-m04:0005",
+      "v9-m04:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m04:0003",
+      "v9-m04:0004",
+      "v9-m04:0005",
+      "v9-m04:0006"
+    ],
+    "meeting_id": "v9-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m04-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m04:0004",
+      "v9-m04:0005",
+      "v9-m04:0006",
+      "v9-m04:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m04:0004",
+      "v9-m04:0005",
+      "v9-m04:0006",
+      "v9-m04:0007"
+    ],
+    "meeting_id": "v9-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m04-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m04:0017",
+      "v9-m04:0018",
+      "v9-m04:0044",
+      "v9-m04:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m04:0017",
+      "v9-m04:0018",
+      "v9-m04:0044",
+      "v9-m04:0045"
+    ],
+    "meeting_id": "v9-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m04-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m04:0021",
+      "v9-m04:0022",
+      "v9-m04:0026",
+      "v9-m04:0027",
+      "v9-m04:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m04:0021",
+      "v9-m04:0022",
+      "v9-m04:0026",
+      "v9-m04:0027",
+      "v9-m04:0049"
+    ],
+    "meeting_id": "v9-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m04-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m04:0005",
+      "v9-m04:0007",
+      "v9-m04:0030",
+      "v9-m04:0031",
+      "v9-m04:0032",
+      "v9-m04:0033",
+      "v9-m04:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m04:0005",
+      "v9-m04:0007",
+      "v9-m04:0030",
+      "v9-m04:0031",
+      "v9-m04:0032",
+      "v9-m04:0033",
+      "v9-m04:0034"
+    ],
+    "meeting_id": "v9-m04",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m05-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m05:0003",
+      "v9-m05:0004",
+      "v9-m05:0005",
+      "v9-m05:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m05:0003",
+      "v9-m05:0004",
+      "v9-m05:0005",
+      "v9-m05:0006"
+    ],
+    "meeting_id": "v9-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m05-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m05:0004",
+      "v9-m05:0005",
+      "v9-m05:0006",
+      "v9-m05:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m05:0004",
+      "v9-m05:0005",
+      "v9-m05:0006",
+      "v9-m05:0007"
+    ],
+    "meeting_id": "v9-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m05-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m05:0017",
+      "v9-m05:0018",
+      "v9-m05:0044",
+      "v9-m05:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m05:0017",
+      "v9-m05:0018",
+      "v9-m05:0044",
+      "v9-m05:0045"
+    ],
+    "meeting_id": "v9-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m05-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m05:0021",
+      "v9-m05:0022",
+      "v9-m05:0026",
+      "v9-m05:0027",
+      "v9-m05:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m05:0021",
+      "v9-m05:0022",
+      "v9-m05:0026",
+      "v9-m05:0027",
+      "v9-m05:0049"
+    ],
+    "meeting_id": "v9-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m05-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m05:0005",
+      "v9-m05:0007",
+      "v9-m05:0030",
+      "v9-m05:0031",
+      "v9-m05:0032",
+      "v9-m05:0033",
+      "v9-m05:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m05:0005",
+      "v9-m05:0007",
+      "v9-m05:0030",
+      "v9-m05:0031",
+      "v9-m05:0032",
+      "v9-m05:0033",
+      "v9-m05:0034"
+    ],
+    "meeting_id": "v9-m05",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m06-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m06:0003",
+      "v9-m06:0004",
+      "v9-m06:0005",
+      "v9-m06:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m06:0003",
+      "v9-m06:0004",
+      "v9-m06:0005",
+      "v9-m06:0006"
+    ],
+    "meeting_id": "v9-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m06-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m06:0004",
+      "v9-m06:0005",
+      "v9-m06:0006",
+      "v9-m06:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m06:0004",
+      "v9-m06:0005",
+      "v9-m06:0006",
+      "v9-m06:0007"
+    ],
+    "meeting_id": "v9-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m06-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m06:0017",
+      "v9-m06:0018",
+      "v9-m06:0044",
+      "v9-m06:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m06:0017",
+      "v9-m06:0018",
+      "v9-m06:0044",
+      "v9-m06:0045"
+    ],
+    "meeting_id": "v9-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m06-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m06:0021",
+      "v9-m06:0022",
+      "v9-m06:0026",
+      "v9-m06:0027",
+      "v9-m06:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m06:0021",
+      "v9-m06:0022",
+      "v9-m06:0026",
+      "v9-m06:0027",
+      "v9-m06:0049"
+    ],
+    "meeting_id": "v9-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m06-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m06:0005",
+      "v9-m06:0007",
+      "v9-m06:0030",
+      "v9-m06:0031",
+      "v9-m06:0032",
+      "v9-m06:0033",
+      "v9-m06:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m06:0005",
+      "v9-m06:0007",
+      "v9-m06:0030",
+      "v9-m06:0031",
+      "v9-m06:0032",
+      "v9-m06:0033",
+      "v9-m06:0034"
+    ],
+    "meeting_id": "v9-m06",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m07-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m07:0003",
+      "v9-m07:0004",
+      "v9-m07:0005",
+      "v9-m07:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m07:0003",
+      "v9-m07:0004",
+      "v9-m07:0005",
+      "v9-m07:0006"
+    ],
+    "meeting_id": "v9-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m07-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m07:0004",
+      "v9-m07:0005",
+      "v9-m07:0006",
+      "v9-m07:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m07:0004",
+      "v9-m07:0005",
+      "v9-m07:0006",
+      "v9-m07:0007"
+    ],
+    "meeting_id": "v9-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m07-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m07:0017",
+      "v9-m07:0018",
+      "v9-m07:0044",
+      "v9-m07:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m07:0017",
+      "v9-m07:0018",
+      "v9-m07:0044",
+      "v9-m07:0045"
+    ],
+    "meeting_id": "v9-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m07-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m07:0021",
+      "v9-m07:0022",
+      "v9-m07:0026",
+      "v9-m07:0027",
+      "v9-m07:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m07:0021",
+      "v9-m07:0022",
+      "v9-m07:0026",
+      "v9-m07:0027",
+      "v9-m07:0049"
+    ],
+    "meeting_id": "v9-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m07-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m07:0005",
+      "v9-m07:0007",
+      "v9-m07:0030",
+      "v9-m07:0031",
+      "v9-m07:0032",
+      "v9-m07:0033",
+      "v9-m07:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m07:0005",
+      "v9-m07:0007",
+      "v9-m07:0030",
+      "v9-m07:0031",
+      "v9-m07:0032",
+      "v9-m07:0033",
+      "v9-m07:0034"
+    ],
+    "meeting_id": "v9-m07",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m08-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m08:0003",
+      "v9-m08:0004",
+      "v9-m08:0005",
+      "v9-m08:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m08:0003",
+      "v9-m08:0004",
+      "v9-m08:0005",
+      "v9-m08:0006"
+    ],
+    "meeting_id": "v9-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m08-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m08:0004",
+      "v9-m08:0005",
+      "v9-m08:0006",
+      "v9-m08:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m08:0004",
+      "v9-m08:0005",
+      "v9-m08:0006",
+      "v9-m08:0007"
+    ],
+    "meeting_id": "v9-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m08-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m08:0017",
+      "v9-m08:0018",
+      "v9-m08:0044",
+      "v9-m08:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m08:0017",
+      "v9-m08:0018",
+      "v9-m08:0044",
+      "v9-m08:0045"
+    ],
+    "meeting_id": "v9-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m08-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m08:0021",
+      "v9-m08:0022",
+      "v9-m08:0026",
+      "v9-m08:0027",
+      "v9-m08:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m08:0021",
+      "v9-m08:0022",
+      "v9-m08:0026",
+      "v9-m08:0027",
+      "v9-m08:0049"
+    ],
+    "meeting_id": "v9-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m08-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m08:0005",
+      "v9-m08:0007",
+      "v9-m08:0030",
+      "v9-m08:0031",
+      "v9-m08:0032",
+      "v9-m08:0033",
+      "v9-m08:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m08:0005",
+      "v9-m08:0007",
+      "v9-m08:0030",
+      "v9-m08:0031",
+      "v9-m08:0032",
+      "v9-m08:0033",
+      "v9-m08:0034"
+    ],
+    "meeting_id": "v9-m08",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m09-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m09:0003",
+      "v9-m09:0004",
+      "v9-m09:0005",
+      "v9-m09:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m09:0003",
+      "v9-m09:0004",
+      "v9-m09:0005",
+      "v9-m09:0006"
+    ],
+    "meeting_id": "v9-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m09-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m09:0004",
+      "v9-m09:0005",
+      "v9-m09:0006",
+      "v9-m09:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m09:0004",
+      "v9-m09:0005",
+      "v9-m09:0006",
+      "v9-m09:0007"
+    ],
+    "meeting_id": "v9-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m09-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m09:0017",
+      "v9-m09:0018",
+      "v9-m09:0044",
+      "v9-m09:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m09:0017",
+      "v9-m09:0018",
+      "v9-m09:0044",
+      "v9-m09:0045"
+    ],
+    "meeting_id": "v9-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m09-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m09:0021",
+      "v9-m09:0022",
+      "v9-m09:0026",
+      "v9-m09:0027",
+      "v9-m09:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m09:0021",
+      "v9-m09:0022",
+      "v9-m09:0026",
+      "v9-m09:0027",
+      "v9-m09:0049"
+    ],
+    "meeting_id": "v9-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m09-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m09:0005",
+      "v9-m09:0007",
+      "v9-m09:0030",
+      "v9-m09:0031",
+      "v9-m09:0032",
+      "v9-m09:0033",
+      "v9-m09:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m09:0005",
+      "v9-m09:0007",
+      "v9-m09:0030",
+      "v9-m09:0031",
+      "v9-m09:0032",
+      "v9-m09:0033",
+      "v9-m09:0034"
+    ],
+    "meeting_id": "v9-m09",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m10-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m10:0003",
+      "v9-m10:0004",
+      "v9-m10:0005",
+      "v9-m10:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m10:0003",
+      "v9-m10:0004",
+      "v9-m10:0005",
+      "v9-m10:0006"
+    ],
+    "meeting_id": "v9-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m10-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m10:0004",
+      "v9-m10:0005",
+      "v9-m10:0006",
+      "v9-m10:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m10:0004",
+      "v9-m10:0005",
+      "v9-m10:0006",
+      "v9-m10:0007"
+    ],
+    "meeting_id": "v9-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m10-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m10:0017",
+      "v9-m10:0018",
+      "v9-m10:0044",
+      "v9-m10:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m10:0017",
+      "v9-m10:0018",
+      "v9-m10:0044",
+      "v9-m10:0045"
+    ],
+    "meeting_id": "v9-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m10-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m10:0021",
+      "v9-m10:0022",
+      "v9-m10:0026",
+      "v9-m10:0027",
+      "v9-m10:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m10:0021",
+      "v9-m10:0022",
+      "v9-m10:0026",
+      "v9-m10:0027",
+      "v9-m10:0049"
+    ],
+    "meeting_id": "v9-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m10-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m10:0005",
+      "v9-m10:0007",
+      "v9-m10:0030",
+      "v9-m10:0031",
+      "v9-m10:0032",
+      "v9-m10:0033",
+      "v9-m10:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m10:0005",
+      "v9-m10:0007",
+      "v9-m10:0030",
+      "v9-m10:0031",
+      "v9-m10:0032",
+      "v9-m10:0033",
+      "v9-m10:0034"
+    ],
+    "meeting_id": "v9-m10",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m11-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m11:0003",
+      "v9-m11:0004",
+      "v9-m11:0005",
+      "v9-m11:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m11:0003",
+      "v9-m11:0004",
+      "v9-m11:0005",
+      "v9-m11:0006"
+    ],
+    "meeting_id": "v9-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m11-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m11:0004",
+      "v9-m11:0005",
+      "v9-m11:0006",
+      "v9-m11:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m11:0004",
+      "v9-m11:0005",
+      "v9-m11:0006",
+      "v9-m11:0007"
+    ],
+    "meeting_id": "v9-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m11-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m11:0017",
+      "v9-m11:0018",
+      "v9-m11:0044",
+      "v9-m11:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m11:0017",
+      "v9-m11:0018",
+      "v9-m11:0044",
+      "v9-m11:0045"
+    ],
+    "meeting_id": "v9-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m11-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m11:0021",
+      "v9-m11:0022",
+      "v9-m11:0026",
+      "v9-m11:0027",
+      "v9-m11:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m11:0021",
+      "v9-m11:0022",
+      "v9-m11:0026",
+      "v9-m11:0027",
+      "v9-m11:0049"
+    ],
+    "meeting_id": "v9-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m11-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m11:0005",
+      "v9-m11:0007",
+      "v9-m11:0030",
+      "v9-m11:0031",
+      "v9-m11:0032",
+      "v9-m11:0033",
+      "v9-m11:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m11:0005",
+      "v9-m11:0007",
+      "v9-m11:0030",
+      "v9-m11:0031",
+      "v9-m11:0032",
+      "v9-m11:0033",
+      "v9-m11:0034"
+    ],
+    "meeting_id": "v9-m11",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m12-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m12:0003",
+      "v9-m12:0004",
+      "v9-m12:0005",
+      "v9-m12:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m12:0003",
+      "v9-m12:0004",
+      "v9-m12:0005",
+      "v9-m12:0006"
+    ],
+    "meeting_id": "v9-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m12-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m12:0004",
+      "v9-m12:0005",
+      "v9-m12:0006",
+      "v9-m12:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m12:0004",
+      "v9-m12:0005",
+      "v9-m12:0006",
+      "v9-m12:0007"
+    ],
+    "meeting_id": "v9-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m12-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m12:0017",
+      "v9-m12:0018",
+      "v9-m12:0044",
+      "v9-m12:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m12:0017",
+      "v9-m12:0018",
+      "v9-m12:0044",
+      "v9-m12:0045"
+    ],
+    "meeting_id": "v9-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m12-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m12:0021",
+      "v9-m12:0022",
+      "v9-m12:0026",
+      "v9-m12:0027",
+      "v9-m12:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m12:0021",
+      "v9-m12:0022",
+      "v9-m12:0026",
+      "v9-m12:0027",
+      "v9-m12:0049"
+    ],
+    "meeting_id": "v9-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m12-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m12:0005",
+      "v9-m12:0007",
+      "v9-m12:0030",
+      "v9-m12:0031",
+      "v9-m12:0032",
+      "v9-m12:0033",
+      "v9-m12:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m12:0005",
+      "v9-m12:0007",
+      "v9-m12:0030",
+      "v9-m12:0031",
+      "v9-m12:0032",
+      "v9-m12:0033",
+      "v9-m12:0034"
+    ],
+    "meeting_id": "v9-m12",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m13-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m13:0003",
+      "v9-m13:0004",
+      "v9-m13:0005",
+      "v9-m13:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m13:0003",
+      "v9-m13:0004",
+      "v9-m13:0005",
+      "v9-m13:0006"
+    ],
+    "meeting_id": "v9-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m13-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m13:0004",
+      "v9-m13:0005",
+      "v9-m13:0006",
+      "v9-m13:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m13:0004",
+      "v9-m13:0005",
+      "v9-m13:0006",
+      "v9-m13:0007"
+    ],
+    "meeting_id": "v9-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m13-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m13:0017",
+      "v9-m13:0018",
+      "v9-m13:0044",
+      "v9-m13:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m13:0017",
+      "v9-m13:0018",
+      "v9-m13:0044",
+      "v9-m13:0045"
+    ],
+    "meeting_id": "v9-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m13-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m13:0021",
+      "v9-m13:0022",
+      "v9-m13:0026",
+      "v9-m13:0027",
+      "v9-m13:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m13:0021",
+      "v9-m13:0022",
+      "v9-m13:0026",
+      "v9-m13:0027",
+      "v9-m13:0049"
+    ],
+    "meeting_id": "v9-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m13-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m13:0005",
+      "v9-m13:0007",
+      "v9-m13:0030",
+      "v9-m13:0031",
+      "v9-m13:0032",
+      "v9-m13:0033",
+      "v9-m13:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m13:0005",
+      "v9-m13:0007",
+      "v9-m13:0030",
+      "v9-m13:0031",
+      "v9-m13:0032",
+      "v9-m13:0033",
+      "v9-m13:0034"
+    ],
+    "meeting_id": "v9-m13",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m14-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m14:0003",
+      "v9-m14:0004",
+      "v9-m14:0005",
+      "v9-m14:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m14:0003",
+      "v9-m14:0004",
+      "v9-m14:0005",
+      "v9-m14:0006"
+    ],
+    "meeting_id": "v9-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m14-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m14:0004",
+      "v9-m14:0005",
+      "v9-m14:0006",
+      "v9-m14:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m14:0004",
+      "v9-m14:0005",
+      "v9-m14:0006",
+      "v9-m14:0007"
+    ],
+    "meeting_id": "v9-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m14-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m14:0017",
+      "v9-m14:0018",
+      "v9-m14:0044",
+      "v9-m14:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m14:0017",
+      "v9-m14:0018",
+      "v9-m14:0044",
+      "v9-m14:0045"
+    ],
+    "meeting_id": "v9-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m14-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m14:0021",
+      "v9-m14:0022",
+      "v9-m14:0026",
+      "v9-m14:0027",
+      "v9-m14:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m14:0021",
+      "v9-m14:0022",
+      "v9-m14:0026",
+      "v9-m14:0027",
+      "v9-m14:0049"
+    ],
+    "meeting_id": "v9-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m14-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m14:0005",
+      "v9-m14:0007",
+      "v9-m14:0030",
+      "v9-m14:0031",
+      "v9-m14:0032",
+      "v9-m14:0033",
+      "v9-m14:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m14:0005",
+      "v9-m14:0007",
+      "v9-m14:0030",
+      "v9-m14:0031",
+      "v9-m14:0032",
+      "v9-m14:0033",
+      "v9-m14:0034"
+    ],
+    "meeting_id": "v9-m14",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m15-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m15:0003",
+      "v9-m15:0004",
+      "v9-m15:0005",
+      "v9-m15:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m15:0003",
+      "v9-m15:0004",
+      "v9-m15:0005",
+      "v9-m15:0006"
+    ],
+    "meeting_id": "v9-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m15-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m15:0004",
+      "v9-m15:0005",
+      "v9-m15:0006",
+      "v9-m15:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m15:0004",
+      "v9-m15:0005",
+      "v9-m15:0006",
+      "v9-m15:0007"
+    ],
+    "meeting_id": "v9-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m15-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m15:0017",
+      "v9-m15:0018",
+      "v9-m15:0044",
+      "v9-m15:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m15:0017",
+      "v9-m15:0018",
+      "v9-m15:0044",
+      "v9-m15:0045"
+    ],
+    "meeting_id": "v9-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m15-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m15:0021",
+      "v9-m15:0022",
+      "v9-m15:0026",
+      "v9-m15:0027",
+      "v9-m15:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m15:0021",
+      "v9-m15:0022",
+      "v9-m15:0026",
+      "v9-m15:0027",
+      "v9-m15:0049"
+    ],
+    "meeting_id": "v9-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m15-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m15:0005",
+      "v9-m15:0007",
+      "v9-m15:0030",
+      "v9-m15:0031",
+      "v9-m15:0032",
+      "v9-m15:0033",
+      "v9-m15:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m15:0005",
+      "v9-m15:0007",
+      "v9-m15:0030",
+      "v9-m15:0031",
+      "v9-m15:0032",
+      "v9-m15:0033",
+      "v9-m15:0034"
+    ],
+    "meeting_id": "v9-m15",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m16-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m16:0003",
+      "v9-m16:0004",
+      "v9-m16:0005",
+      "v9-m16:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m16:0003",
+      "v9-m16:0004",
+      "v9-m16:0005",
+      "v9-m16:0006"
+    ],
+    "meeting_id": "v9-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m16-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m16:0004",
+      "v9-m16:0005",
+      "v9-m16:0006",
+      "v9-m16:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m16:0004",
+      "v9-m16:0005",
+      "v9-m16:0006",
+      "v9-m16:0007"
+    ],
+    "meeting_id": "v9-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m16-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m16:0017",
+      "v9-m16:0018",
+      "v9-m16:0044",
+      "v9-m16:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m16:0017",
+      "v9-m16:0018",
+      "v9-m16:0044",
+      "v9-m16:0045"
+    ],
+    "meeting_id": "v9-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m16-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m16:0021",
+      "v9-m16:0022",
+      "v9-m16:0026",
+      "v9-m16:0027",
+      "v9-m16:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m16:0021",
+      "v9-m16:0022",
+      "v9-m16:0026",
+      "v9-m16:0027",
+      "v9-m16:0049"
+    ],
+    "meeting_id": "v9-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m16-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m16:0005",
+      "v9-m16:0007",
+      "v9-m16:0030",
+      "v9-m16:0031",
+      "v9-m16:0032",
+      "v9-m16:0033",
+      "v9-m16:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m16:0005",
+      "v9-m16:0007",
+      "v9-m16:0030",
+      "v9-m16:0031",
+      "v9-m16:0032",
+      "v9-m16:0033",
+      "v9-m16:0034"
+    ],
+    "meeting_id": "v9-m16",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m17-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m17:0003",
+      "v9-m17:0004",
+      "v9-m17:0005",
+      "v9-m17:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m17:0003",
+      "v9-m17:0004",
+      "v9-m17:0005",
+      "v9-m17:0006"
+    ],
+    "meeting_id": "v9-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m17-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m17:0004",
+      "v9-m17:0005",
+      "v9-m17:0006",
+      "v9-m17:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m17:0004",
+      "v9-m17:0005",
+      "v9-m17:0006",
+      "v9-m17:0007"
+    ],
+    "meeting_id": "v9-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m17-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m17:0017",
+      "v9-m17:0018",
+      "v9-m17:0044",
+      "v9-m17:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m17:0017",
+      "v9-m17:0018",
+      "v9-m17:0044",
+      "v9-m17:0045"
+    ],
+    "meeting_id": "v9-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m17-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m17:0021",
+      "v9-m17:0022",
+      "v9-m17:0026",
+      "v9-m17:0027",
+      "v9-m17:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m17:0021",
+      "v9-m17:0022",
+      "v9-m17:0026",
+      "v9-m17:0027",
+      "v9-m17:0049"
+    ],
+    "meeting_id": "v9-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m17-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m17:0005",
+      "v9-m17:0007",
+      "v9-m17:0030",
+      "v9-m17:0031",
+      "v9-m17:0032",
+      "v9-m17:0033",
+      "v9-m17:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m17:0005",
+      "v9-m17:0007",
+      "v9-m17:0030",
+      "v9-m17:0031",
+      "v9-m17:0032",
+      "v9-m17:0033",
+      "v9-m17:0034"
+    ],
+    "meeting_id": "v9-m17",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m18-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m18:0003",
+      "v9-m18:0004",
+      "v9-m18:0005",
+      "v9-m18:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m18:0003",
+      "v9-m18:0004",
+      "v9-m18:0005",
+      "v9-m18:0006"
+    ],
+    "meeting_id": "v9-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m18-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m18:0004",
+      "v9-m18:0005",
+      "v9-m18:0006",
+      "v9-m18:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m18:0004",
+      "v9-m18:0005",
+      "v9-m18:0006",
+      "v9-m18:0007"
+    ],
+    "meeting_id": "v9-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m18-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m18:0017",
+      "v9-m18:0018",
+      "v9-m18:0044",
+      "v9-m18:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m18:0017",
+      "v9-m18:0018",
+      "v9-m18:0044",
+      "v9-m18:0045"
+    ],
+    "meeting_id": "v9-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m18-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m18:0021",
+      "v9-m18:0022",
+      "v9-m18:0026",
+      "v9-m18:0027",
+      "v9-m18:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m18:0021",
+      "v9-m18:0022",
+      "v9-m18:0026",
+      "v9-m18:0027",
+      "v9-m18:0049"
+    ],
+    "meeting_id": "v9-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m18-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m18:0005",
+      "v9-m18:0007",
+      "v9-m18:0030",
+      "v9-m18:0031",
+      "v9-m18:0032",
+      "v9-m18:0033",
+      "v9-m18:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m18:0005",
+      "v9-m18:0007",
+      "v9-m18:0030",
+      "v9-m18:0031",
+      "v9-m18:0032",
+      "v9-m18:0033",
+      "v9-m18:0034"
+    ],
+    "meeting_id": "v9-m18",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m19-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m19:0003",
+      "v9-m19:0004",
+      "v9-m19:0005",
+      "v9-m19:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m19:0003",
+      "v9-m19:0004",
+      "v9-m19:0005",
+      "v9-m19:0006"
+    ],
+    "meeting_id": "v9-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m19-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m19:0004",
+      "v9-m19:0005",
+      "v9-m19:0006",
+      "v9-m19:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m19:0004",
+      "v9-m19:0005",
+      "v9-m19:0006",
+      "v9-m19:0007"
+    ],
+    "meeting_id": "v9-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m19-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m19:0017",
+      "v9-m19:0018",
+      "v9-m19:0044",
+      "v9-m19:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m19:0017",
+      "v9-m19:0018",
+      "v9-m19:0044",
+      "v9-m19:0045"
+    ],
+    "meeting_id": "v9-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m19-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m19:0021",
+      "v9-m19:0022",
+      "v9-m19:0026",
+      "v9-m19:0027",
+      "v9-m19:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m19:0021",
+      "v9-m19:0022",
+      "v9-m19:0026",
+      "v9-m19:0027",
+      "v9-m19:0049"
+    ],
+    "meeting_id": "v9-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m19-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m19:0005",
+      "v9-m19:0007",
+      "v9-m19:0030",
+      "v9-m19:0031",
+      "v9-m19:0032",
+      "v9-m19:0033",
+      "v9-m19:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m19:0005",
+      "v9-m19:0007",
+      "v9-m19:0030",
+      "v9-m19:0031",
+      "v9-m19:0032",
+      "v9-m19:0033",
+      "v9-m19:0034"
+    ],
+    "meeting_id": "v9-m19",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m20-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m20:0003",
+      "v9-m20:0004",
+      "v9-m20:0005",
+      "v9-m20:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m20:0003",
+      "v9-m20:0004",
+      "v9-m20:0005",
+      "v9-m20:0006"
+    ],
+    "meeting_id": "v9-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m20-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m20:0004",
+      "v9-m20:0005",
+      "v9-m20:0006",
+      "v9-m20:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m20:0004",
+      "v9-m20:0005",
+      "v9-m20:0006",
+      "v9-m20:0007"
+    ],
+    "meeting_id": "v9-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m20-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m20:0017",
+      "v9-m20:0018",
+      "v9-m20:0044",
+      "v9-m20:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m20:0017",
+      "v9-m20:0018",
+      "v9-m20:0044",
+      "v9-m20:0045"
+    ],
+    "meeting_id": "v9-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m20-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m20:0021",
+      "v9-m20:0022",
+      "v9-m20:0026",
+      "v9-m20:0027",
+      "v9-m20:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m20:0021",
+      "v9-m20:0022",
+      "v9-m20:0026",
+      "v9-m20:0027",
+      "v9-m20:0049"
+    ],
+    "meeting_id": "v9-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m20-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m20:0005",
+      "v9-m20:0007",
+      "v9-m20:0030",
+      "v9-m20:0031",
+      "v9-m20:0032",
+      "v9-m20:0033",
+      "v9-m20:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m20:0005",
+      "v9-m20:0007",
+      "v9-m20:0030",
+      "v9-m20:0031",
+      "v9-m20:0032",
+      "v9-m20:0033",
+      "v9-m20:0034"
+    ],
+    "meeting_id": "v9-m20",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m21-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m21:0003",
+      "v9-m21:0004",
+      "v9-m21:0005",
+      "v9-m21:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m21:0003",
+      "v9-m21:0004",
+      "v9-m21:0005",
+      "v9-m21:0006"
+    ],
+    "meeting_id": "v9-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m21-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m21:0004",
+      "v9-m21:0005",
+      "v9-m21:0006",
+      "v9-m21:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m21:0004",
+      "v9-m21:0005",
+      "v9-m21:0006",
+      "v9-m21:0007"
+    ],
+    "meeting_id": "v9-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m21-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m21:0017",
+      "v9-m21:0018",
+      "v9-m21:0044",
+      "v9-m21:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m21:0017",
+      "v9-m21:0018",
+      "v9-m21:0044",
+      "v9-m21:0045"
+    ],
+    "meeting_id": "v9-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m21-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m21:0021",
+      "v9-m21:0022",
+      "v9-m21:0026",
+      "v9-m21:0027",
+      "v9-m21:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m21:0021",
+      "v9-m21:0022",
+      "v9-m21:0026",
+      "v9-m21:0027",
+      "v9-m21:0049"
+    ],
+    "meeting_id": "v9-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m21-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m21:0005",
+      "v9-m21:0007",
+      "v9-m21:0030",
+      "v9-m21:0031",
+      "v9-m21:0032",
+      "v9-m21:0033",
+      "v9-m21:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m21:0005",
+      "v9-m21:0007",
+      "v9-m21:0030",
+      "v9-m21:0031",
+      "v9-m21:0032",
+      "v9-m21:0033",
+      "v9-m21:0034"
+    ],
+    "meeting_id": "v9-m21",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m22-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m22:0003",
+      "v9-m22:0004",
+      "v9-m22:0005",
+      "v9-m22:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m22:0003",
+      "v9-m22:0004",
+      "v9-m22:0005",
+      "v9-m22:0006"
+    ],
+    "meeting_id": "v9-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m22-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m22:0004",
+      "v9-m22:0005",
+      "v9-m22:0006",
+      "v9-m22:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m22:0004",
+      "v9-m22:0005",
+      "v9-m22:0006",
+      "v9-m22:0007"
+    ],
+    "meeting_id": "v9-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m22-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m22:0017",
+      "v9-m22:0018",
+      "v9-m22:0044",
+      "v9-m22:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m22:0017",
+      "v9-m22:0018",
+      "v9-m22:0044",
+      "v9-m22:0045"
+    ],
+    "meeting_id": "v9-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m22-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m22:0021",
+      "v9-m22:0022",
+      "v9-m22:0026",
+      "v9-m22:0027",
+      "v9-m22:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m22:0021",
+      "v9-m22:0022",
+      "v9-m22:0026",
+      "v9-m22:0027",
+      "v9-m22:0049"
+    ],
+    "meeting_id": "v9-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m22-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m22:0005",
+      "v9-m22:0007",
+      "v9-m22:0030",
+      "v9-m22:0031",
+      "v9-m22:0032",
+      "v9-m22:0033",
+      "v9-m22:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m22:0005",
+      "v9-m22:0007",
+      "v9-m22:0030",
+      "v9-m22:0031",
+      "v9-m22:0032",
+      "v9-m22:0033",
+      "v9-m22:0034"
+    ],
+    "meeting_id": "v9-m22",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m23-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m23:0003",
+      "v9-m23:0004",
+      "v9-m23:0005",
+      "v9-m23:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m23:0003",
+      "v9-m23:0004",
+      "v9-m23:0005",
+      "v9-m23:0006"
+    ],
+    "meeting_id": "v9-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m23-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m23:0004",
+      "v9-m23:0005",
+      "v9-m23:0006",
+      "v9-m23:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m23:0004",
+      "v9-m23:0005",
+      "v9-m23:0006",
+      "v9-m23:0007"
+    ],
+    "meeting_id": "v9-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m23-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m23:0017",
+      "v9-m23:0018",
+      "v9-m23:0044",
+      "v9-m23:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m23:0017",
+      "v9-m23:0018",
+      "v9-m23:0044",
+      "v9-m23:0045"
+    ],
+    "meeting_id": "v9-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m23-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m23:0021",
+      "v9-m23:0022",
+      "v9-m23:0026",
+      "v9-m23:0027",
+      "v9-m23:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m23:0021",
+      "v9-m23:0022",
+      "v9-m23:0026",
+      "v9-m23:0027",
+      "v9-m23:0049"
+    ],
+    "meeting_id": "v9-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m23-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m23:0005",
+      "v9-m23:0007",
+      "v9-m23:0030",
+      "v9-m23:0031",
+      "v9-m23:0032",
+      "v9-m23:0033",
+      "v9-m23:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m23:0005",
+      "v9-m23:0007",
+      "v9-m23:0030",
+      "v9-m23:0031",
+      "v9-m23:0032",
+      "v9-m23:0033",
+      "v9-m23:0034"
+    ],
+    "meeting_id": "v9-m23",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m24-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m24:0003",
+      "v9-m24:0004",
+      "v9-m24:0005",
+      "v9-m24:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m24:0003",
+      "v9-m24:0004",
+      "v9-m24:0005",
+      "v9-m24:0006"
+    ],
+    "meeting_id": "v9-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m24-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m24:0004",
+      "v9-m24:0005",
+      "v9-m24:0006",
+      "v9-m24:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m24:0004",
+      "v9-m24:0005",
+      "v9-m24:0006",
+      "v9-m24:0007"
+    ],
+    "meeting_id": "v9-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m24-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m24:0017",
+      "v9-m24:0018",
+      "v9-m24:0044",
+      "v9-m24:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m24:0017",
+      "v9-m24:0018",
+      "v9-m24:0044",
+      "v9-m24:0045"
+    ],
+    "meeting_id": "v9-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m24-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m24:0021",
+      "v9-m24:0022",
+      "v9-m24:0026",
+      "v9-m24:0027",
+      "v9-m24:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m24:0021",
+      "v9-m24:0022",
+      "v9-m24:0026",
+      "v9-m24:0027",
+      "v9-m24:0049"
+    ],
+    "meeting_id": "v9-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m24-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m24:0005",
+      "v9-m24:0007",
+      "v9-m24:0030",
+      "v9-m24:0031",
+      "v9-m24:0032",
+      "v9-m24:0033",
+      "v9-m24:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m24:0005",
+      "v9-m24:0007",
+      "v9-m24:0030",
+      "v9-m24:0031",
+      "v9-m24:0032",
+      "v9-m24:0033",
+      "v9-m24:0034"
+    ],
+    "meeting_id": "v9-m24",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m25-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m25:0003",
+      "v9-m25:0004",
+      "v9-m25:0005",
+      "v9-m25:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m25:0003",
+      "v9-m25:0004",
+      "v9-m25:0005",
+      "v9-m25:0006"
+    ],
+    "meeting_id": "v9-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m25-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m25:0004",
+      "v9-m25:0005",
+      "v9-m25:0006",
+      "v9-m25:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m25:0004",
+      "v9-m25:0005",
+      "v9-m25:0006",
+      "v9-m25:0007"
+    ],
+    "meeting_id": "v9-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m25-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m25:0017",
+      "v9-m25:0018",
+      "v9-m25:0044",
+      "v9-m25:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m25:0017",
+      "v9-m25:0018",
+      "v9-m25:0044",
+      "v9-m25:0045"
+    ],
+    "meeting_id": "v9-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m25-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m25:0021",
+      "v9-m25:0022",
+      "v9-m25:0026",
+      "v9-m25:0027",
+      "v9-m25:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m25:0021",
+      "v9-m25:0022",
+      "v9-m25:0026",
+      "v9-m25:0027",
+      "v9-m25:0049"
+    ],
+    "meeting_id": "v9-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m25-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m25:0005",
+      "v9-m25:0007",
+      "v9-m25:0030",
+      "v9-m25:0031",
+      "v9-m25:0032",
+      "v9-m25:0033",
+      "v9-m25:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m25:0005",
+      "v9-m25:0007",
+      "v9-m25:0030",
+      "v9-m25:0031",
+      "v9-m25:0032",
+      "v9-m25:0033",
+      "v9-m25:0034"
+    ],
+    "meeting_id": "v9-m25",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m26-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m26:0003",
+      "v9-m26:0004",
+      "v9-m26:0005",
+      "v9-m26:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m26:0003",
+      "v9-m26:0004",
+      "v9-m26:0005",
+      "v9-m26:0006"
+    ],
+    "meeting_id": "v9-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m26-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m26:0004",
+      "v9-m26:0005",
+      "v9-m26:0006",
+      "v9-m26:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m26:0004",
+      "v9-m26:0005",
+      "v9-m26:0006",
+      "v9-m26:0007"
+    ],
+    "meeting_id": "v9-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m26-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m26:0017",
+      "v9-m26:0018",
+      "v9-m26:0044",
+      "v9-m26:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m26:0017",
+      "v9-m26:0018",
+      "v9-m26:0044",
+      "v9-m26:0045"
+    ],
+    "meeting_id": "v9-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m26-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m26:0021",
+      "v9-m26:0022",
+      "v9-m26:0026",
+      "v9-m26:0027",
+      "v9-m26:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m26:0021",
+      "v9-m26:0022",
+      "v9-m26:0026",
+      "v9-m26:0027",
+      "v9-m26:0049"
+    ],
+    "meeting_id": "v9-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m26-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m26:0005",
+      "v9-m26:0007",
+      "v9-m26:0030",
+      "v9-m26:0031",
+      "v9-m26:0032",
+      "v9-m26:0033",
+      "v9-m26:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m26:0005",
+      "v9-m26:0007",
+      "v9-m26:0030",
+      "v9-m26:0031",
+      "v9-m26:0032",
+      "v9-m26:0033",
+      "v9-m26:0034"
+    ],
+    "meeting_id": "v9-m26",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m27-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m27:0003",
+      "v9-m27:0004",
+      "v9-m27:0005",
+      "v9-m27:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m27:0003",
+      "v9-m27:0004",
+      "v9-m27:0005",
+      "v9-m27:0006"
+    ],
+    "meeting_id": "v9-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m27-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m27:0004",
+      "v9-m27:0005",
+      "v9-m27:0006",
+      "v9-m27:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m27:0004",
+      "v9-m27:0005",
+      "v9-m27:0006",
+      "v9-m27:0007"
+    ],
+    "meeting_id": "v9-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m27-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m27:0017",
+      "v9-m27:0018",
+      "v9-m27:0044",
+      "v9-m27:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m27:0017",
+      "v9-m27:0018",
+      "v9-m27:0044",
+      "v9-m27:0045"
+    ],
+    "meeting_id": "v9-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m27-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m27:0021",
+      "v9-m27:0022",
+      "v9-m27:0026",
+      "v9-m27:0027",
+      "v9-m27:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m27:0021",
+      "v9-m27:0022",
+      "v9-m27:0026",
+      "v9-m27:0027",
+      "v9-m27:0049"
+    ],
+    "meeting_id": "v9-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m27-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m27:0005",
+      "v9-m27:0007",
+      "v9-m27:0030",
+      "v9-m27:0031",
+      "v9-m27:0032",
+      "v9-m27:0033",
+      "v9-m27:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m27:0005",
+      "v9-m27:0007",
+      "v9-m27:0030",
+      "v9-m27:0031",
+      "v9-m27:0032",
+      "v9-m27:0033",
+      "v9-m27:0034"
+    ],
+    "meeting_id": "v9-m27",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m28-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m28:0003",
+      "v9-m28:0004",
+      "v9-m28:0005",
+      "v9-m28:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m28:0003",
+      "v9-m28:0004",
+      "v9-m28:0005",
+      "v9-m28:0006"
+    ],
+    "meeting_id": "v9-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m28-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m28:0004",
+      "v9-m28:0005",
+      "v9-m28:0006",
+      "v9-m28:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m28:0004",
+      "v9-m28:0005",
+      "v9-m28:0006",
+      "v9-m28:0007"
+    ],
+    "meeting_id": "v9-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m28-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m28:0017",
+      "v9-m28:0018",
+      "v9-m28:0044",
+      "v9-m28:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m28:0017",
+      "v9-m28:0018",
+      "v9-m28:0044",
+      "v9-m28:0045"
+    ],
+    "meeting_id": "v9-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m28-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m28:0021",
+      "v9-m28:0022",
+      "v9-m28:0026",
+      "v9-m28:0027",
+      "v9-m28:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m28:0021",
+      "v9-m28:0022",
+      "v9-m28:0026",
+      "v9-m28:0027",
+      "v9-m28:0049"
+    ],
+    "meeting_id": "v9-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m28-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m28:0005",
+      "v9-m28:0007",
+      "v9-m28:0030",
+      "v9-m28:0031",
+      "v9-m28:0032",
+      "v9-m28:0033",
+      "v9-m28:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m28:0005",
+      "v9-m28:0007",
+      "v9-m28:0030",
+      "v9-m28:0031",
+      "v9-m28:0032",
+      "v9-m28:0033",
+      "v9-m28:0034"
+    ],
+    "meeting_id": "v9-m28",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m29-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m29:0003",
+      "v9-m29:0004",
+      "v9-m29:0005",
+      "v9-m29:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m29:0003",
+      "v9-m29:0004",
+      "v9-m29:0005",
+      "v9-m29:0006"
+    ],
+    "meeting_id": "v9-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m29-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m29:0004",
+      "v9-m29:0005",
+      "v9-m29:0006",
+      "v9-m29:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m29:0004",
+      "v9-m29:0005",
+      "v9-m29:0006",
+      "v9-m29:0007"
+    ],
+    "meeting_id": "v9-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m29-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m29:0017",
+      "v9-m29:0018",
+      "v9-m29:0044",
+      "v9-m29:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m29:0017",
+      "v9-m29:0018",
+      "v9-m29:0044",
+      "v9-m29:0045"
+    ],
+    "meeting_id": "v9-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m29-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m29:0021",
+      "v9-m29:0022",
+      "v9-m29:0026",
+      "v9-m29:0027",
+      "v9-m29:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m29:0021",
+      "v9-m29:0022",
+      "v9-m29:0026",
+      "v9-m29:0027",
+      "v9-m29:0049"
+    ],
+    "meeting_id": "v9-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m29-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m29:0005",
+      "v9-m29:0007",
+      "v9-m29:0030",
+      "v9-m29:0031",
+      "v9-m29:0032",
+      "v9-m29:0033",
+      "v9-m29:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m29:0005",
+      "v9-m29:0007",
+      "v9-m29:0030",
+      "v9-m29:0031",
+      "v9-m29:0032",
+      "v9-m29:0033",
+      "v9-m29:0034"
+    ],
+    "meeting_id": "v9-m29",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m30-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m30:0003",
+      "v9-m30:0004",
+      "v9-m30:0005",
+      "v9-m30:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m30:0003",
+      "v9-m30:0004",
+      "v9-m30:0005",
+      "v9-m30:0006"
+    ],
+    "meeting_id": "v9-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m30-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m30:0004",
+      "v9-m30:0005",
+      "v9-m30:0006",
+      "v9-m30:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m30:0004",
+      "v9-m30:0005",
+      "v9-m30:0006",
+      "v9-m30:0007"
+    ],
+    "meeting_id": "v9-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m30-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m30:0017",
+      "v9-m30:0018",
+      "v9-m30:0044",
+      "v9-m30:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m30:0017",
+      "v9-m30:0018",
+      "v9-m30:0044",
+      "v9-m30:0045"
+    ],
+    "meeting_id": "v9-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m30-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m30:0021",
+      "v9-m30:0022",
+      "v9-m30:0026",
+      "v9-m30:0027",
+      "v9-m30:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m30:0021",
+      "v9-m30:0022",
+      "v9-m30:0026",
+      "v9-m30:0027",
+      "v9-m30:0049"
+    ],
+    "meeting_id": "v9-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m30-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m30:0005",
+      "v9-m30:0007",
+      "v9-m30:0030",
+      "v9-m30:0031",
+      "v9-m30:0032",
+      "v9-m30:0033",
+      "v9-m30:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m30:0005",
+      "v9-m30:0007",
+      "v9-m30:0030",
+      "v9-m30:0031",
+      "v9-m30:0032",
+      "v9-m30:0033",
+      "v9-m30:0034"
+    ],
+    "meeting_id": "v9-m30",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m31-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m31:0003",
+      "v9-m31:0004",
+      "v9-m31:0005",
+      "v9-m31:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m31:0003",
+      "v9-m31:0004",
+      "v9-m31:0005",
+      "v9-m31:0006"
+    ],
+    "meeting_id": "v9-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m31-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m31:0004",
+      "v9-m31:0005",
+      "v9-m31:0006",
+      "v9-m31:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m31:0004",
+      "v9-m31:0005",
+      "v9-m31:0006",
+      "v9-m31:0007"
+    ],
+    "meeting_id": "v9-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m31-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m31:0017",
+      "v9-m31:0018",
+      "v9-m31:0044",
+      "v9-m31:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m31:0017",
+      "v9-m31:0018",
+      "v9-m31:0044",
+      "v9-m31:0045"
+    ],
+    "meeting_id": "v9-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m31-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m31:0021",
+      "v9-m31:0022",
+      "v9-m31:0026",
+      "v9-m31:0027",
+      "v9-m31:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m31:0021",
+      "v9-m31:0022",
+      "v9-m31:0026",
+      "v9-m31:0027",
+      "v9-m31:0049"
+    ],
+    "meeting_id": "v9-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m31-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m31:0005",
+      "v9-m31:0007",
+      "v9-m31:0030",
+      "v9-m31:0031",
+      "v9-m31:0032",
+      "v9-m31:0033",
+      "v9-m31:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m31:0005",
+      "v9-m31:0007",
+      "v9-m31:0030",
+      "v9-m31:0031",
+      "v9-m31:0032",
+      "v9-m31:0033",
+      "v9-m31:0034"
+    ],
+    "meeting_id": "v9-m31",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m32-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m32:0003",
+      "v9-m32:0004",
+      "v9-m32:0005",
+      "v9-m32:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m32:0003",
+      "v9-m32:0004",
+      "v9-m32:0005",
+      "v9-m32:0006"
+    ],
+    "meeting_id": "v9-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m32-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m32:0004",
+      "v9-m32:0005",
+      "v9-m32:0006",
+      "v9-m32:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m32:0004",
+      "v9-m32:0005",
+      "v9-m32:0006",
+      "v9-m32:0007"
+    ],
+    "meeting_id": "v9-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m32-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m32:0017",
+      "v9-m32:0018",
+      "v9-m32:0044",
+      "v9-m32:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m32:0017",
+      "v9-m32:0018",
+      "v9-m32:0044",
+      "v9-m32:0045"
+    ],
+    "meeting_id": "v9-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m32-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m32:0021",
+      "v9-m32:0022",
+      "v9-m32:0026",
+      "v9-m32:0027",
+      "v9-m32:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m32:0021",
+      "v9-m32:0022",
+      "v9-m32:0026",
+      "v9-m32:0027",
+      "v9-m32:0049"
+    ],
+    "meeting_id": "v9-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m32-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m32:0005",
+      "v9-m32:0007",
+      "v9-m32:0030",
+      "v9-m32:0031",
+      "v9-m32:0032",
+      "v9-m32:0033",
+      "v9-m32:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m32:0005",
+      "v9-m32:0007",
+      "v9-m32:0030",
+      "v9-m32:0031",
+      "v9-m32:0032",
+      "v9-m32:0033",
+      "v9-m32:0034"
+    ],
+    "meeting_id": "v9-m32",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m33-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m33:0003",
+      "v9-m33:0004",
+      "v9-m33:0005",
+      "v9-m33:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m33:0003",
+      "v9-m33:0004",
+      "v9-m33:0005",
+      "v9-m33:0006"
+    ],
+    "meeting_id": "v9-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m33-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m33:0004",
+      "v9-m33:0005",
+      "v9-m33:0006",
+      "v9-m33:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m33:0004",
+      "v9-m33:0005",
+      "v9-m33:0006",
+      "v9-m33:0007"
+    ],
+    "meeting_id": "v9-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m33-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m33:0017",
+      "v9-m33:0018",
+      "v9-m33:0044",
+      "v9-m33:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m33:0017",
+      "v9-m33:0018",
+      "v9-m33:0044",
+      "v9-m33:0045"
+    ],
+    "meeting_id": "v9-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m33-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m33:0021",
+      "v9-m33:0022",
+      "v9-m33:0026",
+      "v9-m33:0027",
+      "v9-m33:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m33:0021",
+      "v9-m33:0022",
+      "v9-m33:0026",
+      "v9-m33:0027",
+      "v9-m33:0049"
+    ],
+    "meeting_id": "v9-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m33-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m33:0005",
+      "v9-m33:0007",
+      "v9-m33:0030",
+      "v9-m33:0031",
+      "v9-m33:0032",
+      "v9-m33:0033",
+      "v9-m33:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m33:0005",
+      "v9-m33:0007",
+      "v9-m33:0030",
+      "v9-m33:0031",
+      "v9-m33:0032",
+      "v9-m33:0033",
+      "v9-m33:0034"
+    ],
+    "meeting_id": "v9-m33",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m34-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m34:0003",
+      "v9-m34:0004",
+      "v9-m34:0005",
+      "v9-m34:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m34:0003",
+      "v9-m34:0004",
+      "v9-m34:0005",
+      "v9-m34:0006"
+    ],
+    "meeting_id": "v9-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m34-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m34:0004",
+      "v9-m34:0005",
+      "v9-m34:0006",
+      "v9-m34:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m34:0004",
+      "v9-m34:0005",
+      "v9-m34:0006",
+      "v9-m34:0007"
+    ],
+    "meeting_id": "v9-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m34-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m34:0017",
+      "v9-m34:0018",
+      "v9-m34:0044",
+      "v9-m34:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m34:0017",
+      "v9-m34:0018",
+      "v9-m34:0044",
+      "v9-m34:0045"
+    ],
+    "meeting_id": "v9-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m34-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m34:0021",
+      "v9-m34:0022",
+      "v9-m34:0026",
+      "v9-m34:0027",
+      "v9-m34:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m34:0021",
+      "v9-m34:0022",
+      "v9-m34:0026",
+      "v9-m34:0027",
+      "v9-m34:0049"
+    ],
+    "meeting_id": "v9-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m34-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m34:0005",
+      "v9-m34:0007",
+      "v9-m34:0030",
+      "v9-m34:0031",
+      "v9-m34:0032",
+      "v9-m34:0033",
+      "v9-m34:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m34:0005",
+      "v9-m34:0007",
+      "v9-m34:0030",
+      "v9-m34:0031",
+      "v9-m34:0032",
+      "v9-m34:0033",
+      "v9-m34:0034"
+    ],
+    "meeting_id": "v9-m34",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m35-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m35:0003",
+      "v9-m35:0004",
+      "v9-m35:0005",
+      "v9-m35:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m35:0003",
+      "v9-m35:0004",
+      "v9-m35:0005",
+      "v9-m35:0006"
+    ],
+    "meeting_id": "v9-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m35-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m35:0004",
+      "v9-m35:0005",
+      "v9-m35:0006",
+      "v9-m35:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m35:0004",
+      "v9-m35:0005",
+      "v9-m35:0006",
+      "v9-m35:0007"
+    ],
+    "meeting_id": "v9-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m35-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m35:0017",
+      "v9-m35:0018",
+      "v9-m35:0044",
+      "v9-m35:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m35:0017",
+      "v9-m35:0018",
+      "v9-m35:0044",
+      "v9-m35:0045"
+    ],
+    "meeting_id": "v9-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m35-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m35:0021",
+      "v9-m35:0022",
+      "v9-m35:0026",
+      "v9-m35:0027",
+      "v9-m35:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m35:0021",
+      "v9-m35:0022",
+      "v9-m35:0026",
+      "v9-m35:0027",
+      "v9-m35:0049"
+    ],
+    "meeting_id": "v9-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m35-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m35:0005",
+      "v9-m35:0007",
+      "v9-m35:0030",
+      "v9-m35:0031",
+      "v9-m35:0032",
+      "v9-m35:0033",
+      "v9-m35:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m35:0005",
+      "v9-m35:0007",
+      "v9-m35:0030",
+      "v9-m35:0031",
+      "v9-m35:0032",
+      "v9-m35:0033",
+      "v9-m35:0034"
+    ],
+    "meeting_id": "v9-m35",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m36-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m36:0003",
+      "v9-m36:0004",
+      "v9-m36:0005",
+      "v9-m36:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m36:0003",
+      "v9-m36:0004",
+      "v9-m36:0005",
+      "v9-m36:0006"
+    ],
+    "meeting_id": "v9-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m36-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m36:0004",
+      "v9-m36:0005",
+      "v9-m36:0006",
+      "v9-m36:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m36:0004",
+      "v9-m36:0005",
+      "v9-m36:0006",
+      "v9-m36:0007"
+    ],
+    "meeting_id": "v9-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m36-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m36:0017",
+      "v9-m36:0018",
+      "v9-m36:0044",
+      "v9-m36:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m36:0017",
+      "v9-m36:0018",
+      "v9-m36:0044",
+      "v9-m36:0045"
+    ],
+    "meeting_id": "v9-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m36-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m36:0021",
+      "v9-m36:0022",
+      "v9-m36:0026",
+      "v9-m36:0027",
+      "v9-m36:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m36:0021",
+      "v9-m36:0022",
+      "v9-m36:0026",
+      "v9-m36:0027",
+      "v9-m36:0049"
+    ],
+    "meeting_id": "v9-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m36-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m36:0005",
+      "v9-m36:0007",
+      "v9-m36:0030",
+      "v9-m36:0031",
+      "v9-m36:0032",
+      "v9-m36:0033",
+      "v9-m36:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m36:0005",
+      "v9-m36:0007",
+      "v9-m36:0030",
+      "v9-m36:0031",
+      "v9-m36:0032",
+      "v9-m36:0033",
+      "v9-m36:0034"
+    ],
+    "meeting_id": "v9-m36",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m37-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m37:0003",
+      "v9-m37:0004",
+      "v9-m37:0005",
+      "v9-m37:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m37:0003",
+      "v9-m37:0004",
+      "v9-m37:0005",
+      "v9-m37:0006"
+    ],
+    "meeting_id": "v9-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m37-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m37:0004",
+      "v9-m37:0005",
+      "v9-m37:0006",
+      "v9-m37:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m37:0004",
+      "v9-m37:0005",
+      "v9-m37:0006",
+      "v9-m37:0007"
+    ],
+    "meeting_id": "v9-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m37-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m37:0017",
+      "v9-m37:0018",
+      "v9-m37:0044",
+      "v9-m37:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m37:0017",
+      "v9-m37:0018",
+      "v9-m37:0044",
+      "v9-m37:0045"
+    ],
+    "meeting_id": "v9-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m37-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m37:0021",
+      "v9-m37:0022",
+      "v9-m37:0026",
+      "v9-m37:0027",
+      "v9-m37:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m37:0021",
+      "v9-m37:0022",
+      "v9-m37:0026",
+      "v9-m37:0027",
+      "v9-m37:0049"
+    ],
+    "meeting_id": "v9-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m37-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m37:0005",
+      "v9-m37:0007",
+      "v9-m37:0030",
+      "v9-m37:0031",
+      "v9-m37:0032",
+      "v9-m37:0033",
+      "v9-m37:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m37:0005",
+      "v9-m37:0007",
+      "v9-m37:0030",
+      "v9-m37:0031",
+      "v9-m37:0032",
+      "v9-m37:0033",
+      "v9-m37:0034"
+    ],
+    "meeting_id": "v9-m37",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m38-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m38:0003",
+      "v9-m38:0004",
+      "v9-m38:0005",
+      "v9-m38:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m38:0003",
+      "v9-m38:0004",
+      "v9-m38:0005",
+      "v9-m38:0006"
+    ],
+    "meeting_id": "v9-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m38-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m38:0004",
+      "v9-m38:0005",
+      "v9-m38:0006",
+      "v9-m38:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m38:0004",
+      "v9-m38:0005",
+      "v9-m38:0006",
+      "v9-m38:0007"
+    ],
+    "meeting_id": "v9-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m38-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m38:0017",
+      "v9-m38:0018",
+      "v9-m38:0044",
+      "v9-m38:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m38:0017",
+      "v9-m38:0018",
+      "v9-m38:0044",
+      "v9-m38:0045"
+    ],
+    "meeting_id": "v9-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m38-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m38:0021",
+      "v9-m38:0022",
+      "v9-m38:0026",
+      "v9-m38:0027",
+      "v9-m38:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m38:0021",
+      "v9-m38:0022",
+      "v9-m38:0026",
+      "v9-m38:0027",
+      "v9-m38:0049"
+    ],
+    "meeting_id": "v9-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m38-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m38:0005",
+      "v9-m38:0007",
+      "v9-m38:0030",
+      "v9-m38:0031",
+      "v9-m38:0032",
+      "v9-m38:0033",
+      "v9-m38:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m38:0005",
+      "v9-m38:0007",
+      "v9-m38:0030",
+      "v9-m38:0031",
+      "v9-m38:0032",
+      "v9-m38:0033",
+      "v9-m38:0034"
+    ],
+    "meeting_id": "v9-m38",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m39-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m39:0003",
+      "v9-m39:0004",
+      "v9-m39:0005",
+      "v9-m39:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m39:0003",
+      "v9-m39:0004",
+      "v9-m39:0005",
+      "v9-m39:0006"
+    ],
+    "meeting_id": "v9-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m39-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m39:0004",
+      "v9-m39:0005",
+      "v9-m39:0006",
+      "v9-m39:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m39:0004",
+      "v9-m39:0005",
+      "v9-m39:0006",
+      "v9-m39:0007"
+    ],
+    "meeting_id": "v9-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m39-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m39:0017",
+      "v9-m39:0018",
+      "v9-m39:0044",
+      "v9-m39:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m39:0017",
+      "v9-m39:0018",
+      "v9-m39:0044",
+      "v9-m39:0045"
+    ],
+    "meeting_id": "v9-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m39-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m39:0021",
+      "v9-m39:0022",
+      "v9-m39:0026",
+      "v9-m39:0027",
+      "v9-m39:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m39:0021",
+      "v9-m39:0022",
+      "v9-m39:0026",
+      "v9-m39:0027",
+      "v9-m39:0049"
+    ],
+    "meeting_id": "v9-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m39-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m39:0005",
+      "v9-m39:0007",
+      "v9-m39:0030",
+      "v9-m39:0031",
+      "v9-m39:0032",
+      "v9-m39:0033",
+      "v9-m39:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m39:0005",
+      "v9-m39:0007",
+      "v9-m39:0030",
+      "v9-m39:0031",
+      "v9-m39:0032",
+      "v9-m39:0033",
+      "v9-m39:0034"
+    ],
+    "meeting_id": "v9-m39",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m40-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m40:0003",
+      "v9-m40:0004",
+      "v9-m40:0005",
+      "v9-m40:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m40:0003",
+      "v9-m40:0004",
+      "v9-m40:0005",
+      "v9-m40:0006"
+    ],
+    "meeting_id": "v9-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m40-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m40:0004",
+      "v9-m40:0005",
+      "v9-m40:0006",
+      "v9-m40:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m40:0004",
+      "v9-m40:0005",
+      "v9-m40:0006",
+      "v9-m40:0007"
+    ],
+    "meeting_id": "v9-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m40-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m40:0017",
+      "v9-m40:0018",
+      "v9-m40:0044",
+      "v9-m40:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m40:0017",
+      "v9-m40:0018",
+      "v9-m40:0044",
+      "v9-m40:0045"
+    ],
+    "meeting_id": "v9-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m40-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m40:0021",
+      "v9-m40:0022",
+      "v9-m40:0026",
+      "v9-m40:0027",
+      "v9-m40:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m40:0021",
+      "v9-m40:0022",
+      "v9-m40:0026",
+      "v9-m40:0027",
+      "v9-m40:0049"
+    ],
+    "meeting_id": "v9-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m40-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m40:0005",
+      "v9-m40:0007",
+      "v9-m40:0030",
+      "v9-m40:0031",
+      "v9-m40:0032",
+      "v9-m40:0033",
+      "v9-m40:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m40:0005",
+      "v9-m40:0007",
+      "v9-m40:0030",
+      "v9-m40:0031",
+      "v9-m40:0032",
+      "v9-m40:0033",
+      "v9-m40:0034"
+    ],
+    "meeting_id": "v9-m40",
+    "split": "train",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m41-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m41:0003",
+      "v9-m41:0004",
+      "v9-m41:0005",
+      "v9-m41:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m41:0003",
+      "v9-m41:0004",
+      "v9-m41:0005",
+      "v9-m41:0006"
+    ],
+    "meeting_id": "v9-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m41-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m41:0004",
+      "v9-m41:0005",
+      "v9-m41:0006",
+      "v9-m41:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m41:0004",
+      "v9-m41:0005",
+      "v9-m41:0006",
+      "v9-m41:0007"
+    ],
+    "meeting_id": "v9-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m41-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m41:0017",
+      "v9-m41:0018",
+      "v9-m41:0044",
+      "v9-m41:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m41:0017",
+      "v9-m41:0018",
+      "v9-m41:0044",
+      "v9-m41:0045"
+    ],
+    "meeting_id": "v9-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m41-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m41:0021",
+      "v9-m41:0022",
+      "v9-m41:0026",
+      "v9-m41:0027",
+      "v9-m41:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m41:0021",
+      "v9-m41:0022",
+      "v9-m41:0026",
+      "v9-m41:0027",
+      "v9-m41:0049"
+    ],
+    "meeting_id": "v9-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m41-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m41:0005",
+      "v9-m41:0007",
+      "v9-m41:0030",
+      "v9-m41:0031",
+      "v9-m41:0032",
+      "v9-m41:0033",
+      "v9-m41:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m41:0005",
+      "v9-m41:0007",
+      "v9-m41:0030",
+      "v9-m41:0031",
+      "v9-m41:0032",
+      "v9-m41:0033",
+      "v9-m41:0034"
+    ],
+    "meeting_id": "v9-m41",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m42-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m42:0003",
+      "v9-m42:0004",
+      "v9-m42:0005",
+      "v9-m42:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m42:0003",
+      "v9-m42:0004",
+      "v9-m42:0005",
+      "v9-m42:0006"
+    ],
+    "meeting_id": "v9-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m42-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m42:0004",
+      "v9-m42:0005",
+      "v9-m42:0006",
+      "v9-m42:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m42:0004",
+      "v9-m42:0005",
+      "v9-m42:0006",
+      "v9-m42:0007"
+    ],
+    "meeting_id": "v9-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m42-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m42:0017",
+      "v9-m42:0018",
+      "v9-m42:0044",
+      "v9-m42:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m42:0017",
+      "v9-m42:0018",
+      "v9-m42:0044",
+      "v9-m42:0045"
+    ],
+    "meeting_id": "v9-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m42-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m42:0021",
+      "v9-m42:0022",
+      "v9-m42:0026",
+      "v9-m42:0027",
+      "v9-m42:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m42:0021",
+      "v9-m42:0022",
+      "v9-m42:0026",
+      "v9-m42:0027",
+      "v9-m42:0049"
+    ],
+    "meeting_id": "v9-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m42-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m42:0005",
+      "v9-m42:0007",
+      "v9-m42:0030",
+      "v9-m42:0031",
+      "v9-m42:0032",
+      "v9-m42:0033",
+      "v9-m42:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m42:0005",
+      "v9-m42:0007",
+      "v9-m42:0030",
+      "v9-m42:0031",
+      "v9-m42:0032",
+      "v9-m42:0033",
+      "v9-m42:0034"
+    ],
+    "meeting_id": "v9-m42",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m43-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m43:0003",
+      "v9-m43:0004",
+      "v9-m43:0005",
+      "v9-m43:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m43:0003",
+      "v9-m43:0004",
+      "v9-m43:0005",
+      "v9-m43:0006"
+    ],
+    "meeting_id": "v9-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m43-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m43:0004",
+      "v9-m43:0005",
+      "v9-m43:0006",
+      "v9-m43:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m43:0004",
+      "v9-m43:0005",
+      "v9-m43:0006",
+      "v9-m43:0007"
+    ],
+    "meeting_id": "v9-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m43-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m43:0017",
+      "v9-m43:0018",
+      "v9-m43:0044",
+      "v9-m43:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m43:0017",
+      "v9-m43:0018",
+      "v9-m43:0044",
+      "v9-m43:0045"
+    ],
+    "meeting_id": "v9-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m43-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m43:0021",
+      "v9-m43:0022",
+      "v9-m43:0026",
+      "v9-m43:0027",
+      "v9-m43:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m43:0021",
+      "v9-m43:0022",
+      "v9-m43:0026",
+      "v9-m43:0027",
+      "v9-m43:0049"
+    ],
+    "meeting_id": "v9-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m43-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m43:0005",
+      "v9-m43:0007",
+      "v9-m43:0030",
+      "v9-m43:0031",
+      "v9-m43:0032",
+      "v9-m43:0033",
+      "v9-m43:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m43:0005",
+      "v9-m43:0007",
+      "v9-m43:0030",
+      "v9-m43:0031",
+      "v9-m43:0032",
+      "v9-m43:0033",
+      "v9-m43:0034"
+    ],
+    "meeting_id": "v9-m43",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m44-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m44:0003",
+      "v9-m44:0004",
+      "v9-m44:0005",
+      "v9-m44:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m44:0003",
+      "v9-m44:0004",
+      "v9-m44:0005",
+      "v9-m44:0006"
+    ],
+    "meeting_id": "v9-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m44-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m44:0004",
+      "v9-m44:0005",
+      "v9-m44:0006",
+      "v9-m44:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m44:0004",
+      "v9-m44:0005",
+      "v9-m44:0006",
+      "v9-m44:0007"
+    ],
+    "meeting_id": "v9-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m44-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m44:0017",
+      "v9-m44:0018",
+      "v9-m44:0044",
+      "v9-m44:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m44:0017",
+      "v9-m44:0018",
+      "v9-m44:0044",
+      "v9-m44:0045"
+    ],
+    "meeting_id": "v9-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m44-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m44:0021",
+      "v9-m44:0022",
+      "v9-m44:0026",
+      "v9-m44:0027",
+      "v9-m44:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m44:0021",
+      "v9-m44:0022",
+      "v9-m44:0026",
+      "v9-m44:0027",
+      "v9-m44:0049"
+    ],
+    "meeting_id": "v9-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m44-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m44:0005",
+      "v9-m44:0007",
+      "v9-m44:0030",
+      "v9-m44:0031",
+      "v9-m44:0032",
+      "v9-m44:0033",
+      "v9-m44:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m44:0005",
+      "v9-m44:0007",
+      "v9-m44:0030",
+      "v9-m44:0031",
+      "v9-m44:0032",
+      "v9-m44:0033",
+      "v9-m44:0034"
+    ],
+    "meeting_id": "v9-m44",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m45-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m45:0003",
+      "v9-m45:0004",
+      "v9-m45:0005",
+      "v9-m45:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m45:0003",
+      "v9-m45:0004",
+      "v9-m45:0005",
+      "v9-m45:0006"
+    ],
+    "meeting_id": "v9-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m45-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m45:0004",
+      "v9-m45:0005",
+      "v9-m45:0006",
+      "v9-m45:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m45:0004",
+      "v9-m45:0005",
+      "v9-m45:0006",
+      "v9-m45:0007"
+    ],
+    "meeting_id": "v9-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m45-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m45:0017",
+      "v9-m45:0018",
+      "v9-m45:0044",
+      "v9-m45:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m45:0017",
+      "v9-m45:0018",
+      "v9-m45:0044",
+      "v9-m45:0045"
+    ],
+    "meeting_id": "v9-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m45-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m45:0021",
+      "v9-m45:0022",
+      "v9-m45:0026",
+      "v9-m45:0027",
+      "v9-m45:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m45:0021",
+      "v9-m45:0022",
+      "v9-m45:0026",
+      "v9-m45:0027",
+      "v9-m45:0049"
+    ],
+    "meeting_id": "v9-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m45-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m45:0005",
+      "v9-m45:0007",
+      "v9-m45:0030",
+      "v9-m45:0031",
+      "v9-m45:0032",
+      "v9-m45:0033",
+      "v9-m45:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m45:0005",
+      "v9-m45:0007",
+      "v9-m45:0030",
+      "v9-m45:0031",
+      "v9-m45:0032",
+      "v9-m45:0033",
+      "v9-m45:0034"
+    ],
+    "meeting_id": "v9-m45",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m46-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m46:0003",
+      "v9-m46:0004",
+      "v9-m46:0005",
+      "v9-m46:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m46:0003",
+      "v9-m46:0004",
+      "v9-m46:0005",
+      "v9-m46:0006"
+    ],
+    "meeting_id": "v9-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m46-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m46:0004",
+      "v9-m46:0005",
+      "v9-m46:0006",
+      "v9-m46:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m46:0004",
+      "v9-m46:0005",
+      "v9-m46:0006",
+      "v9-m46:0007"
+    ],
+    "meeting_id": "v9-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m46-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m46:0017",
+      "v9-m46:0018",
+      "v9-m46:0044",
+      "v9-m46:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m46:0017",
+      "v9-m46:0018",
+      "v9-m46:0044",
+      "v9-m46:0045"
+    ],
+    "meeting_id": "v9-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m46-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m46:0021",
+      "v9-m46:0022",
+      "v9-m46:0026",
+      "v9-m46:0027",
+      "v9-m46:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m46:0021",
+      "v9-m46:0022",
+      "v9-m46:0026",
+      "v9-m46:0027",
+      "v9-m46:0049"
+    ],
+    "meeting_id": "v9-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m46-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m46:0005",
+      "v9-m46:0007",
+      "v9-m46:0030",
+      "v9-m46:0031",
+      "v9-m46:0032",
+      "v9-m46:0033",
+      "v9-m46:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m46:0005",
+      "v9-m46:0007",
+      "v9-m46:0030",
+      "v9-m46:0031",
+      "v9-m46:0032",
+      "v9-m46:0033",
+      "v9-m46:0034"
+    ],
+    "meeting_id": "v9-m46",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m47-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m47:0003",
+      "v9-m47:0004",
+      "v9-m47:0005",
+      "v9-m47:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m47:0003",
+      "v9-m47:0004",
+      "v9-m47:0005",
+      "v9-m47:0006"
+    ],
+    "meeting_id": "v9-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m47-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m47:0004",
+      "v9-m47:0005",
+      "v9-m47:0006",
+      "v9-m47:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m47:0004",
+      "v9-m47:0005",
+      "v9-m47:0006",
+      "v9-m47:0007"
+    ],
+    "meeting_id": "v9-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m47-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m47:0017",
+      "v9-m47:0018",
+      "v9-m47:0044",
+      "v9-m47:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m47:0017",
+      "v9-m47:0018",
+      "v9-m47:0044",
+      "v9-m47:0045"
+    ],
+    "meeting_id": "v9-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m47-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m47:0021",
+      "v9-m47:0022",
+      "v9-m47:0026",
+      "v9-m47:0027",
+      "v9-m47:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m47:0021",
+      "v9-m47:0022",
+      "v9-m47:0026",
+      "v9-m47:0027",
+      "v9-m47:0049"
+    ],
+    "meeting_id": "v9-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m47-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m47:0005",
+      "v9-m47:0007",
+      "v9-m47:0030",
+      "v9-m47:0031",
+      "v9-m47:0032",
+      "v9-m47:0033",
+      "v9-m47:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m47:0005",
+      "v9-m47:0007",
+      "v9-m47:0030",
+      "v9-m47:0031",
+      "v9-m47:0032",
+      "v9-m47:0033",
+      "v9-m47:0034"
+    ],
+    "meeting_id": "v9-m47",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m48-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m48:0003",
+      "v9-m48:0004",
+      "v9-m48:0005",
+      "v9-m48:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m48:0003",
+      "v9-m48:0004",
+      "v9-m48:0005",
+      "v9-m48:0006"
+    ],
+    "meeting_id": "v9-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m48-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m48:0004",
+      "v9-m48:0005",
+      "v9-m48:0006",
+      "v9-m48:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m48:0004",
+      "v9-m48:0005",
+      "v9-m48:0006",
+      "v9-m48:0007"
+    ],
+    "meeting_id": "v9-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m48-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m48:0017",
+      "v9-m48:0018",
+      "v9-m48:0044",
+      "v9-m48:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m48:0017",
+      "v9-m48:0018",
+      "v9-m48:0044",
+      "v9-m48:0045"
+    ],
+    "meeting_id": "v9-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m48-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m48:0021",
+      "v9-m48:0022",
+      "v9-m48:0026",
+      "v9-m48:0027",
+      "v9-m48:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m48:0021",
+      "v9-m48:0022",
+      "v9-m48:0026",
+      "v9-m48:0027",
+      "v9-m48:0049"
+    ],
+    "meeting_id": "v9-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m48-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m48:0005",
+      "v9-m48:0007",
+      "v9-m48:0030",
+      "v9-m48:0031",
+      "v9-m48:0032",
+      "v9-m48:0033",
+      "v9-m48:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m48:0005",
+      "v9-m48:0007",
+      "v9-m48:0030",
+      "v9-m48:0031",
+      "v9-m48:0032",
+      "v9-m48:0033",
+      "v9-m48:0034"
+    ],
+    "meeting_id": "v9-m48",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m49-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m49:0003",
+      "v9-m49:0004",
+      "v9-m49:0005",
+      "v9-m49:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m49:0003",
+      "v9-m49:0004",
+      "v9-m49:0005",
+      "v9-m49:0006"
+    ],
+    "meeting_id": "v9-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m49-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m49:0004",
+      "v9-m49:0005",
+      "v9-m49:0006",
+      "v9-m49:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m49:0004",
+      "v9-m49:0005",
+      "v9-m49:0006",
+      "v9-m49:0007"
+    ],
+    "meeting_id": "v9-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m49-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m49:0017",
+      "v9-m49:0018",
+      "v9-m49:0044",
+      "v9-m49:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m49:0017",
+      "v9-m49:0018",
+      "v9-m49:0044",
+      "v9-m49:0045"
+    ],
+    "meeting_id": "v9-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m49-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m49:0021",
+      "v9-m49:0022",
+      "v9-m49:0026",
+      "v9-m49:0027",
+      "v9-m49:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m49:0021",
+      "v9-m49:0022",
+      "v9-m49:0026",
+      "v9-m49:0027",
+      "v9-m49:0049"
+    ],
+    "meeting_id": "v9-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m49-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m49:0005",
+      "v9-m49:0007",
+      "v9-m49:0030",
+      "v9-m49:0031",
+      "v9-m49:0032",
+      "v9-m49:0033",
+      "v9-m49:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m49:0005",
+      "v9-m49:0007",
+      "v9-m49:0030",
+      "v9-m49:0031",
+      "v9-m49:0032",
+      "v9-m49:0033",
+      "v9-m49:0034"
+    ],
+    "meeting_id": "v9-m49",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m50-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m50:0003",
+      "v9-m50:0004",
+      "v9-m50:0005",
+      "v9-m50:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m50:0003",
+      "v9-m50:0004",
+      "v9-m50:0005",
+      "v9-m50:0006"
+    ],
+    "meeting_id": "v9-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m50-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m50:0004",
+      "v9-m50:0005",
+      "v9-m50:0006",
+      "v9-m50:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m50:0004",
+      "v9-m50:0005",
+      "v9-m50:0006",
+      "v9-m50:0007"
+    ],
+    "meeting_id": "v9-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m50-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m50:0017",
+      "v9-m50:0018",
+      "v9-m50:0044",
+      "v9-m50:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m50:0017",
+      "v9-m50:0018",
+      "v9-m50:0044",
+      "v9-m50:0045"
+    ],
+    "meeting_id": "v9-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m50-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m50:0021",
+      "v9-m50:0022",
+      "v9-m50:0026",
+      "v9-m50:0027",
+      "v9-m50:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m50:0021",
+      "v9-m50:0022",
+      "v9-m50:0026",
+      "v9-m50:0027",
+      "v9-m50:0049"
+    ],
+    "meeting_id": "v9-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m50-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m50:0005",
+      "v9-m50:0007",
+      "v9-m50:0030",
+      "v9-m50:0031",
+      "v9-m50:0032",
+      "v9-m50:0033",
+      "v9-m50:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m50:0005",
+      "v9-m50:0007",
+      "v9-m50:0030",
+      "v9-m50:0031",
+      "v9-m50:0032",
+      "v9-m50:0033",
+      "v9-m50:0034"
+    ],
+    "meeting_id": "v9-m50",
+    "split": "val",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m51-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m51:0003",
+      "v9-m51:0004",
+      "v9-m51:0005",
+      "v9-m51:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m51:0003",
+      "v9-m51:0004",
+      "v9-m51:0005",
+      "v9-m51:0006"
+    ],
+    "meeting_id": "v9-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m51-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m51:0004",
+      "v9-m51:0005",
+      "v9-m51:0006",
+      "v9-m51:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m51:0004",
+      "v9-m51:0005",
+      "v9-m51:0006",
+      "v9-m51:0007"
+    ],
+    "meeting_id": "v9-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m51-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m51:0017",
+      "v9-m51:0018",
+      "v9-m51:0044",
+      "v9-m51:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m51:0017",
+      "v9-m51:0018",
+      "v9-m51:0044",
+      "v9-m51:0045"
+    ],
+    "meeting_id": "v9-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m51-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m51:0021",
+      "v9-m51:0022",
+      "v9-m51:0026",
+      "v9-m51:0027",
+      "v9-m51:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m51:0021",
+      "v9-m51:0022",
+      "v9-m51:0026",
+      "v9-m51:0027",
+      "v9-m51:0049"
+    ],
+    "meeting_id": "v9-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m51-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m51:0005",
+      "v9-m51:0007",
+      "v9-m51:0030",
+      "v9-m51:0031",
+      "v9-m51:0032",
+      "v9-m51:0033",
+      "v9-m51:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m51:0005",
+      "v9-m51:0007",
+      "v9-m51:0030",
+      "v9-m51:0031",
+      "v9-m51:0032",
+      "v9-m51:0033",
+      "v9-m51:0034"
+    ],
+    "meeting_id": "v9-m51",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m52-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m52:0003",
+      "v9-m52:0004",
+      "v9-m52:0005",
+      "v9-m52:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m52:0003",
+      "v9-m52:0004",
+      "v9-m52:0005",
+      "v9-m52:0006"
+    ],
+    "meeting_id": "v9-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m52-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m52:0004",
+      "v9-m52:0005",
+      "v9-m52:0006",
+      "v9-m52:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m52:0004",
+      "v9-m52:0005",
+      "v9-m52:0006",
+      "v9-m52:0007"
+    ],
+    "meeting_id": "v9-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m52-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m52:0017",
+      "v9-m52:0018",
+      "v9-m52:0044",
+      "v9-m52:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m52:0017",
+      "v9-m52:0018",
+      "v9-m52:0044",
+      "v9-m52:0045"
+    ],
+    "meeting_id": "v9-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m52-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m52:0021",
+      "v9-m52:0022",
+      "v9-m52:0026",
+      "v9-m52:0027",
+      "v9-m52:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m52:0021",
+      "v9-m52:0022",
+      "v9-m52:0026",
+      "v9-m52:0027",
+      "v9-m52:0049"
+    ],
+    "meeting_id": "v9-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m52-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m52:0005",
+      "v9-m52:0007",
+      "v9-m52:0030",
+      "v9-m52:0031",
+      "v9-m52:0032",
+      "v9-m52:0033",
+      "v9-m52:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m52:0005",
+      "v9-m52:0007",
+      "v9-m52:0030",
+      "v9-m52:0031",
+      "v9-m52:0032",
+      "v9-m52:0033",
+      "v9-m52:0034"
+    ],
+    "meeting_id": "v9-m52",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m53-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m53:0003",
+      "v9-m53:0004",
+      "v9-m53:0005",
+      "v9-m53:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m53:0003",
+      "v9-m53:0004",
+      "v9-m53:0005",
+      "v9-m53:0006"
+    ],
+    "meeting_id": "v9-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m53-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m53:0004",
+      "v9-m53:0005",
+      "v9-m53:0006",
+      "v9-m53:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m53:0004",
+      "v9-m53:0005",
+      "v9-m53:0006",
+      "v9-m53:0007"
+    ],
+    "meeting_id": "v9-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m53-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m53:0017",
+      "v9-m53:0018",
+      "v9-m53:0044",
+      "v9-m53:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m53:0017",
+      "v9-m53:0018",
+      "v9-m53:0044",
+      "v9-m53:0045"
+    ],
+    "meeting_id": "v9-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m53-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m53:0021",
+      "v9-m53:0022",
+      "v9-m53:0026",
+      "v9-m53:0027",
+      "v9-m53:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m53:0021",
+      "v9-m53:0022",
+      "v9-m53:0026",
+      "v9-m53:0027",
+      "v9-m53:0049"
+    ],
+    "meeting_id": "v9-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m53-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m53:0005",
+      "v9-m53:0007",
+      "v9-m53:0030",
+      "v9-m53:0031",
+      "v9-m53:0032",
+      "v9-m53:0033",
+      "v9-m53:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m53:0005",
+      "v9-m53:0007",
+      "v9-m53:0030",
+      "v9-m53:0031",
+      "v9-m53:0032",
+      "v9-m53:0033",
+      "v9-m53:0034"
+    ],
+    "meeting_id": "v9-m53",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m54-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m54:0003",
+      "v9-m54:0004",
+      "v9-m54:0005",
+      "v9-m54:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m54:0003",
+      "v9-m54:0004",
+      "v9-m54:0005",
+      "v9-m54:0006"
+    ],
+    "meeting_id": "v9-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m54-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m54:0004",
+      "v9-m54:0005",
+      "v9-m54:0006",
+      "v9-m54:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m54:0004",
+      "v9-m54:0005",
+      "v9-m54:0006",
+      "v9-m54:0007"
+    ],
+    "meeting_id": "v9-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m54-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m54:0017",
+      "v9-m54:0018",
+      "v9-m54:0044",
+      "v9-m54:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m54:0017",
+      "v9-m54:0018",
+      "v9-m54:0044",
+      "v9-m54:0045"
+    ],
+    "meeting_id": "v9-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m54-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m54:0021",
+      "v9-m54:0022",
+      "v9-m54:0026",
+      "v9-m54:0027",
+      "v9-m54:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m54:0021",
+      "v9-m54:0022",
+      "v9-m54:0026",
+      "v9-m54:0027",
+      "v9-m54:0049"
+    ],
+    "meeting_id": "v9-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m54-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m54:0005",
+      "v9-m54:0007",
+      "v9-m54:0030",
+      "v9-m54:0031",
+      "v9-m54:0032",
+      "v9-m54:0033",
+      "v9-m54:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m54:0005",
+      "v9-m54:0007",
+      "v9-m54:0030",
+      "v9-m54:0031",
+      "v9-m54:0032",
+      "v9-m54:0033",
+      "v9-m54:0034"
+    ],
+    "meeting_id": "v9-m54",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m55-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m55:0003",
+      "v9-m55:0004",
+      "v9-m55:0005",
+      "v9-m55:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m55:0003",
+      "v9-m55:0004",
+      "v9-m55:0005",
+      "v9-m55:0006"
+    ],
+    "meeting_id": "v9-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m55-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m55:0004",
+      "v9-m55:0005",
+      "v9-m55:0006",
+      "v9-m55:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m55:0004",
+      "v9-m55:0005",
+      "v9-m55:0006",
+      "v9-m55:0007"
+    ],
+    "meeting_id": "v9-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m55-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m55:0017",
+      "v9-m55:0018",
+      "v9-m55:0044",
+      "v9-m55:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m55:0017",
+      "v9-m55:0018",
+      "v9-m55:0044",
+      "v9-m55:0045"
+    ],
+    "meeting_id": "v9-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m55-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m55:0021",
+      "v9-m55:0022",
+      "v9-m55:0026",
+      "v9-m55:0027",
+      "v9-m55:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m55:0021",
+      "v9-m55:0022",
+      "v9-m55:0026",
+      "v9-m55:0027",
+      "v9-m55:0049"
+    ],
+    "meeting_id": "v9-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m55-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m55:0005",
+      "v9-m55:0007",
+      "v9-m55:0030",
+      "v9-m55:0031",
+      "v9-m55:0032",
+      "v9-m55:0033",
+      "v9-m55:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m55:0005",
+      "v9-m55:0007",
+      "v9-m55:0030",
+      "v9-m55:0031",
+      "v9-m55:0032",
+      "v9-m55:0033",
+      "v9-m55:0034"
+    ],
+    "meeting_id": "v9-m55",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m56-q1",
+    "query": "Qui est l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m56:0003",
+      "v9-m56:0004",
+      "v9-m56:0005",
+      "v9-m56:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m56:0003",
+      "v9-m56:0004",
+      "v9-m56:0005",
+      "v9-m56:0006"
+    ],
+    "meeting_id": "v9-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m56-q2",
+    "query": "Où travaille l'épouse du réalisateur de Les Rivières de Sel ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m56:0004",
+      "v9-m56:0005",
+      "v9-m56:0006",
+      "v9-m56:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m56:0004",
+      "v9-m56:0005",
+      "v9-m56:0006",
+      "v9-m56:0007"
+    ],
+    "meeting_id": "v9-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m56-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m56:0017",
+      "v9-m56:0018",
+      "v9-m56:0044",
+      "v9-m56:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m56:0017",
+      "v9-m56:0018",
+      "v9-m56:0044",
+      "v9-m56:0045"
+    ],
+    "meeting_id": "v9-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m56-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m56:0021",
+      "v9-m56:0022",
+      "v9-m56:0026",
+      "v9-m56:0027",
+      "v9-m56:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m56:0021",
+      "v9-m56:0022",
+      "v9-m56:0026",
+      "v9-m56:0027",
+      "v9-m56:0049"
+    ],
+    "meeting_id": "v9-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m56-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m56:0005",
+      "v9-m56:0007",
+      "v9-m56:0030",
+      "v9-m56:0031",
+      "v9-m56:0032",
+      "v9-m56:0033",
+      "v9-m56:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m56:0005",
+      "v9-m56:0007",
+      "v9-m56:0030",
+      "v9-m56:0031",
+      "v9-m56:0032",
+      "v9-m56:0033",
+      "v9-m56:0034"
+    ],
+    "meeting_id": "v9-m56",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m57-q1",
+    "query": "Qui est l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m57:0003",
+      "v9-m57:0004",
+      "v9-m57:0005",
+      "v9-m57:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m57:0003",
+      "v9-m57:0004",
+      "v9-m57:0005",
+      "v9-m57:0006"
+    ],
+    "meeting_id": "v9-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m57-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Nuit des Falaises ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m57:0004",
+      "v9-m57:0005",
+      "v9-m57:0006",
+      "v9-m57:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m57:0004",
+      "v9-m57:0005",
+      "v9-m57:0006",
+      "v9-m57:0007"
+    ],
+    "meeting_id": "v9-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m57-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m57:0017",
+      "v9-m57:0018",
+      "v9-m57:0044",
+      "v9-m57:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m57:0017",
+      "v9-m57:0018",
+      "v9-m57:0044",
+      "v9-m57:0045"
+    ],
+    "meeting_id": "v9-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m57-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m57:0021",
+      "v9-m57:0022",
+      "v9-m57:0026",
+      "v9-m57:0027",
+      "v9-m57:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m57:0021",
+      "v9-m57:0022",
+      "v9-m57:0026",
+      "v9-m57:0027",
+      "v9-m57:0049"
+    ],
+    "meeting_id": "v9-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m57-q5",
+    "query": "Quel est le lien entre Atelier Nord, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m57:0005",
+      "v9-m57:0007",
+      "v9-m57:0030",
+      "v9-m57:0031",
+      "v9-m57:0032",
+      "v9-m57:0033",
+      "v9-m57:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m57:0005",
+      "v9-m57:0007",
+      "v9-m57:0030",
+      "v9-m57:0031",
+      "v9-m57:0032",
+      "v9-m57:0033",
+      "v9-m57:0034"
+    ],
+    "meeting_id": "v9-m57",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m58-q1",
+    "query": "Qui est l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m58:0003",
+      "v9-m58:0004",
+      "v9-m58:0005",
+      "v9-m58:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m58:0003",
+      "v9-m58:0004",
+      "v9-m58:0005",
+      "v9-m58:0006"
+    ],
+    "meeting_id": "v9-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m58-q2",
+    "query": "Où travaille l'épouse du réalisateur de Le Dernier Studio ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m58:0004",
+      "v9-m58:0005",
+      "v9-m58:0006",
+      "v9-m58:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m58:0004",
+      "v9-m58:0005",
+      "v9-m58:0006",
+      "v9-m58:0007"
+    ],
+    "meeting_id": "v9-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m58-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m58:0017",
+      "v9-m58:0018",
+      "v9-m58:0044",
+      "v9-m58:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m58:0017",
+      "v9-m58:0018",
+      "v9-m58:0044",
+      "v9-m58:0045"
+    ],
+    "meeting_id": "v9-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m58-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m58:0021",
+      "v9-m58:0022",
+      "v9-m58:0026",
+      "v9-m58:0027",
+      "v9-m58:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m58:0021",
+      "v9-m58:0022",
+      "v9-m58:0026",
+      "v9-m58:0027",
+      "v9-m58:0049"
+    ],
+    "meeting_id": "v9-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m58-q5",
+    "query": "Quel est le lien entre Studio Rivage, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m58:0005",
+      "v9-m58:0007",
+      "v9-m58:0030",
+      "v9-m58:0031",
+      "v9-m58:0032",
+      "v9-m58:0033",
+      "v9-m58:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m58:0005",
+      "v9-m58:0007",
+      "v9-m58:0030",
+      "v9-m58:0031",
+      "v9-m58:0032",
+      "v9-m58:0033",
+      "v9-m58:0034"
+    ],
+    "meeting_id": "v9-m58",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m59-q1",
+    "query": "Qui est l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m59:0003",
+      "v9-m59:0004",
+      "v9-m59:0005",
+      "v9-m59:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m59:0003",
+      "v9-m59:0004",
+      "v9-m59:0005",
+      "v9-m59:0006"
+    ],
+    "meeting_id": "v9-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m59-q2",
+    "query": "Où travaille l'épouse du réalisateur de Ombres du Nord ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m59:0004",
+      "v9-m59:0005",
+      "v9-m59:0006",
+      "v9-m59:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m59:0004",
+      "v9-m59:0005",
+      "v9-m59:0006",
+      "v9-m59:0007"
+    ],
+    "meeting_id": "v9-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m59-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m59:0017",
+      "v9-m59:0018",
+      "v9-m59:0044",
+      "v9-m59:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m59:0017",
+      "v9-m59:0018",
+      "v9-m59:0044",
+      "v9-m59:0045"
+    ],
+    "meeting_id": "v9-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m59-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m59:0021",
+      "v9-m59:0022",
+      "v9-m59:0026",
+      "v9-m59:0027",
+      "v9-m59:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m59:0021",
+      "v9-m59:0022",
+      "v9-m59:0026",
+      "v9-m59:0027",
+      "v9-m59:0049"
+    ],
+    "meeting_id": "v9-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m59-q5",
+    "query": "Quel est le lien entre Décor 9, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m59:0005",
+      "v9-m59:0007",
+      "v9-m59:0030",
+      "v9-m59:0031",
+      "v9-m59:0032",
+      "v9-m59:0033",
+      "v9-m59:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m59:0005",
+      "v9-m59:0007",
+      "v9-m59:0030",
+      "v9-m59:0031",
+      "v9-m59:0032",
+      "v9-m59:0033",
+      "v9-m59:0034"
+    ],
+    "meeting_id": "v9-m59",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m60-q1",
+    "query": "Qui est l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "Le réalisateur est nommé dans la réunion, et son épouse est nommée explicitement.",
+    "evidence_chunk_ids": [
+      "v9-m60:0003",
+      "v9-m60:0004",
+      "v9-m60:0005",
+      "v9-m60:0006"
+    ],
+    "target_chunk_ids": [
+      "v9-m60:0003",
+      "v9-m60:0004",
+      "v9-m60:0005",
+      "v9-m60:0006"
+    ],
+    "meeting_id": "v9-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m60-q2",
+    "query": "Où travaille l'épouse du réalisateur de La Maison Bleue ?",
+    "answer": "L'épouse du réalisateur travaille dans la société de décors nommée.",
+    "evidence_chunk_ids": [
+      "v9-m60:0004",
+      "v9-m60:0005",
+      "v9-m60:0006",
+      "v9-m60:0007"
+    ],
+    "target_chunk_ids": [
+      "v9-m60:0004",
+      "v9-m60:0005",
+      "v9-m60:0006",
+      "v9-m60:0007"
+    ],
+    "meeting_id": "v9-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m60-q3",
+    "query": "Quel budget final a été validé, et qui l'a approuvé ?",
+    "answer": "Le budget final inclut la sécurité et la reprise des décors ; le conseil le valide.",
+    "evidence_chunk_ids": [
+      "v9-m60:0017",
+      "v9-m60:0018",
+      "v9-m60:0044",
+      "v9-m60:0045"
+    ],
+    "target_chunk_ids": [
+      "v9-m60:0017",
+      "v9-m60:0018",
+      "v9-m60:0044",
+      "v9-m60:0045"
+    ],
+    "meeting_id": "v9-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m60-q4",
+    "query": "Pourquoi le tournage a-t-il été décalé, et quelle est la date finale ?",
+    "answer": "Le tournage a été décalé après l'incident et la fermeture de la maison ; la date finale est celle confirmée.",
+    "evidence_chunk_ids": [
+      "v9-m60:0021",
+      "v9-m60:0022",
+      "v9-m60:0026",
+      "v9-m60:0027",
+      "v9-m60:0049"
+    ],
+    "target_chunk_ids": [
+      "v9-m60:0021",
+      "v9-m60:0022",
+      "v9-m60:0026",
+      "v9-m60:0027",
+      "v9-m60:0049"
+    ],
+    "meeting_id": "v9-m60",
+    "split": "test",
+    "type": "multi_hop"
+  },
+  {
+    "query_id": "v9-m60-q5",
+    "query": "Quel est le lien entre Maison Lumen, le distributeur et le sous-distributeur ?",
+    "answer": "La société de décors travaille avec le sous-distributeur, mais le contrat décors est avec la production ; le distributeur principal reste distinct.",
+    "evidence_chunk_ids": [
+      "v9-m60:0005",
+      "v9-m60:0007",
+      "v9-m60:0030",
+      "v9-m60:0031",
+      "v9-m60:0032",
+      "v9-m60:0033",
+      "v9-m60:0034"
+    ],
+    "target_chunk_ids": [
+      "v9-m60:0005",
+      "v9-m60:0007",
+      "v9-m60:0030",
+      "v9-m60:0031",
+      "v9-m60:0032",
+      "v9-m60:0033",
+      "v9-m60:0034"
+    ],
+    "meeting_id": "v9-m60",
+    "split": "test",
+    "type": "multi_hop"
+  }
+]
