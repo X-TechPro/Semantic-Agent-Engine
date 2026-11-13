@@ -25,6 +25,7 @@ import math
 import os
 import re
 import sqlite3
+from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -37,6 +38,7 @@ import run_french_lab as lab
 
 ROOT = Path(__file__).resolve().parent
 ART = ROOT / "artifacts"
+DATA = ROOT / "data"
 HYBRID_DIR = ART / "hybrid"
 HYBRID_DIR.mkdir(parents=True, exist_ok=True)
 RELATIONS_DB = ART / "french_meeting_memory_v2.sqlite3"
@@ -115,9 +117,29 @@ def fourier_time(dt: datetime, dims: int = 32) -> np.ndarray:
 # --------------------------------------------------------------------------
 # query plan
 # --------------------------------------------------------------------------
-LATEST_RE = re.compile(r"\b(derni[eè]r\w*|derni[eè]res?|last|latest|final|most recent|en dernier|tout dernier)\b", re.I)
+LATEST_RE = re.compile(
+    r"\b(derni[eè]r\w*|derni[eè]res?|last|latest|final|most recent|en dernier|tout dernier|"
+    r"cl[oô]t\w*|fin de (?:s[ée]ance|r[ée]union)|termin\w*|mot de la fin|"
+    r"derni[eè]re intervention|dernier message)\b", re.I)
 EARLIEST_RE = re.compile(r"\b(premier|premi[eè]re|first|au d[ée]but|d[ée]but|debut|ouvert|ouverte|ouvre)\b", re.I)
 COUNT_RE = re.compile(r"\b(combien|nombre de|how many|count)\b", re.I)
+
+
+FRENCH_MONTHS = {
+    "janvier": 1, "février": 2, "fevrier": 2, "mars": 3, "avril": 4,
+    "mai": 5, "juin": 6, "juillet": 7, "août": 8, "aout": 8,
+    "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12, "decembre": 12,
+}
+
+
+def parse_dates(query: str) -> list[str]:
+    dates = re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", query)
+    for day, month, year in re.findall(
+            r"\b(\d{1,2})(?:er)?\s+([a-zéûôà]+)\s+(20\d{2})\b", query.casefold()):
+        m = FRENCH_MONTHS.get(month)
+        if m:
+            dates.append(f"{year}-{m:02d}-{int(day):02d}")
+    return list(dict.fromkeys(dates))
 
 
 def parse_query(query: str, speakers: set[str]) -> dict[str, Any]:
@@ -136,7 +158,7 @@ def parse_query(query: str, speakers: set[str]) -> dict[str, Any]:
         if name and name.casefold() in q:
             plan["speaker"] = name
             break
-    plan["dates"] = re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", query)
+    plan["dates"] = parse_dates(query)
     plan["times"] = re.findall(r"\b((?:[01]?\d|2[0-3]):[0-5]\d(?::[0-5]\d)?)\b", query)
     if "entre" in q and " et " in q:
         parts = q.split("entre", 1)[1].split(" et ", 1)
@@ -161,12 +183,34 @@ def parse_query(query: str, speakers: set[str]) -> dict[str, Any]:
     return plan
 
 
+def operator_category(plan: dict[str, Any]) -> str:
+    acts = set(plan.get("acts", []))
+    if plan.get("count"):
+        return "count"
+    if plan.get("earliest") and "decision" in acts:
+        return "first_decision"
+    if plan.get("latest") and "decision" in acts:
+        return "latest_decision"
+    if "objection" in acts:
+        return "objection"
+    if "engagement" in acts:
+        return "commitment"
+    if plan.get("latest"):
+        return "latest_message"
+    if plan.get("dates"):
+        return "dated"
+    if plan.get("speaker"):
+        return "speaker"
+    return "generic"
+
+
 # --------------------------------------------------------------------------
 # ColBERT-style multi-vector index
 # --------------------------------------------------------------------------
 class MultiVectorIndex:
     def __init__(self, records: dict[str, dict[str, Any]], slug: str, device: str = "cuda",
-                 model_name: str = "BAAI/bge-m3", max_len: int = 128):
+                 model_name: str = "BAAI/bge-m3", max_len: int = 128,
+                 projection_path: Path | None = None):
         self.records = records
         self.ids = list(records)
         self.id_to_pos = {cid: i for i, cid in enumerate(self.ids)}
@@ -174,12 +218,15 @@ class MultiVectorIndex:
         self.device = device if torch.cuda.is_available() and device != "cpu" else "cpu"
         self.model_name = model_name
         self.max_len = max_len
+        self.projection_path = projection_path
+        self.projection = None
         self._model = None
         self._tokenizer = None
         self.tokens: torch.Tensor | None = None
         self.offsets: torch.Tensor | None = None
         self.doc_index: torch.Tensor | None = None
-        self._cache_path = HYBRID_DIR / f"{slug}-{model_name.replace('/', '__')}-L{max_len}.pt"
+        suffix = f"-ft-{projection_path.stem}-api2" if projection_path else ""
+        self._cache_path = HYBRID_DIR / f"{slug}-{model_name.replace('/', '__')}-L{max_len}{suffix}.pt"
         self._load_cache()
 
     def _load_cache(self):
@@ -204,6 +251,11 @@ class MultiVectorIndex:
         self._model = AutoModel.from_pretrained(
             self.model_name, cache_dir=str(ART / "hf_cache"), dtype=torch.float16
         ).to(self.device).eval()
+        if self.projection_path and self.projection is None:
+            self.projection = torch.nn.Linear(1024, 1024).to(self.device)
+            state = torch.load(self.projection_path, map_location="cpu", weights_only=False)["projection"]
+            self.projection.load_state_dict(state)
+            self.projection.eval()
 
     def build(self, batch_size: int = 16):
         if self.tokens is not None:
@@ -219,8 +271,13 @@ class MultiVectorIndex:
                 enc = self._tokenizer(batch, padding=True, truncation=True, max_length=self.max_len,
                                       return_tensors="pt").to(self.device)
                 hidden = self._model(**enc).last_hidden_state.float()
-                hidden = F.normalize(hidden, dim=-1)
                 mask = enc["attention_mask"].bool()
+                if self.projection is not None:
+                    # Official BGE-M3 multi-vector path: colbert_linear on [:, 1:].
+                    hidden = hidden[:, 1:]
+                    mask = mask[:, 1:]
+                    hidden = self.projection(hidden)
+                hidden = F.normalize(hidden, dim=-1)
                 for i in range(hidden.size(0)):
                     vec = hidden[i][mask[i]].to(torch.float16).cpu()
                     packed.append(vec)
@@ -249,7 +306,13 @@ class MultiVectorIndex:
         with torch.inference_mode():
             enc = self._tokenizer([query], truncation=True, max_length=64, return_tensors="pt").to(self.device)
             hidden = self._model(**enc).last_hidden_state.float()
-            q = F.normalize(hidden[0][enc["attention_mask"][0].bool()], dim=-1).to(torch.float16)
+            mask = enc["attention_mask"].bool()
+            if self.projection is not None:
+                # Official BGE-M3 multi-vector path: colbert_linear on [:, 1:].
+                hidden = hidden[:, 1:]
+                mask = mask[:, 1:]
+                hidden = self.projection(hidden)
+            q = F.normalize(hidden[0][mask[0]], dim=-1).to(torch.float16)
             sims = q @ self.tokens.T
             maxima = torch.full((q.size(0), len(self.ids)), -1e4, device=self.device,
                                 dtype=torch.float16)
@@ -328,6 +391,12 @@ class GraphMemory:
         for src, dst, rel, conf in rows:
             if src in self.pos and dst in self.pos:
                 self.relations.append((src, dst, rel, float(conf)))
+        # A dataset may ship its own typed graph (v8 multi-hop seed).
+        for edge in self.ds.get("relations", []):
+            src, dst = edge.get("source"), edge.get("target")
+            if src in self.pos and dst in self.pos:
+                self.relations.append((src, dst, edge.get("relation", "related"),
+                                       float(edge.get("confidence", 1.0))))
 
     def build_torch(self, device: str = "cpu"):
         n = len(self.ids)
@@ -404,7 +473,16 @@ class GraphMemory:
                           "x": gx, "y": gy})
             counts = np.zeros(len(TOPICS), dtype=np.float32)
             count = len(items)
-            offsets = [(170, -70), (170, 0), (170, 70), (170, 140)][:count]
+            if count <= 4:
+                offsets = [(170, -70), (170, 0), (170, 70), (170, 140)][:count]
+            else:
+                # Large single-project corpora (v8/v9: 60 meetings) need a grid;
+                # the old 4 offsets stacked every meeting on top of each other.
+                cols = int(np.ceil(np.sqrt(count)))
+                spacing = 110
+                # Leave a top margin so the first row is not clipped after fit().
+                offsets = [((k % cols) * spacing, 100 + (k // cols) * spacing)
+                           for k in range(count)]
             for k, (mid, m) in enumerate(items):
                 ox, oy = offsets[k % len(offsets)]
                 short = m["title"]
@@ -413,7 +491,10 @@ class GraphMemory:
                     if short.startswith(prefix):
                         short = short[len(prefix):]
                         break
-                nodes.append({"id": f"meeting:{mid}", "label": short, "group": "meeting",
+                # A 60-meeting single-project graph cannot draw 60 full titles;
+                # use compact indexes and keep the full title in the inspector.
+                label = f"{k + 1:02d}" if count > 10 else short
+                nodes.append({"id": f"meeting:{mid}", "label": label, "group": "meeting",
                               "tags": ["meeting", m.get("style", "")],
                               "title": f"{m['title']}\n{m['meeting_date']} · {m['message_count']} messages",
                               "meeting_id": mid, "value": max(1, m["message_count"]),
@@ -568,6 +649,15 @@ class HybridRetriever:
         self.ids = list(self.records)
         self.id_to_pos = {cid: i for i, cid in enumerate(self.ids)}
         self.colbert = MultiVectorIndex(self.records, slug, device=engine.device)
+        projection = ART / "bge_colbert_projection_mixed.pt"
+        if not projection.exists():
+            projection = ART / "bge_colbert_projection.pt"
+        self.colbert_ft = (MultiVectorIndex(self.records, slug, device=engine.device,
+                                           projection_path=projection)
+                           if projection.exists() else self.colbert)
+        self._colbert_v2 = None
+        self._colbert_ft_v2 = None
+        self.bge_vecs: torch.Tensor | None = None
         self.graph = GraphMemory(self.ds)
         speakers = {r["username"] for r in self.records.values()}
         self.speakers = speakers
@@ -581,6 +671,9 @@ class HybridRetriever:
                 self.weights = torch.tensor(payload["weights"], dtype=torch.float32)
             except Exception:
                 pass
+        self.category_weights: dict[str, torch.Tensor] = {}
+        self.tuned_default: torch.Tensor | None = None
+        self._load_category_fusion()
 
     @classmethod
     def get(cls, engine, slug: str) -> "HybridRetriever":
@@ -589,7 +682,87 @@ class HybridRetriever:
             cls._instances[key] = cls(engine, slug)
         return cls._instances[key]
 
+    def _load_category_fusion(self):
+        paths = [
+            DATA / "fusion_categories.json",
+            HYBRID_DIR / f"fusion-categories-{self.slug}.json",
+            HYBRID_DIR / "fusion-categories.json",
+        ]
+        for path in paths:
+            if not path.exists():
+                continue
+            try:
+                payload = json.loads(path.read_text())
+            except Exception:
+                continue
+            if payload.get("default"):
+                self.tuned_default = torch.tensor(payload["default"], dtype=torch.float32)
+            self.category_weights = {
+                cat: torch.tensor(weights, dtype=torch.float32)
+                for cat, weights in (payload.get("categories") or {}).items() if weights
+            }
+            return
+
+    def _weights_for(self, category: str | None, tuned: bool = False) -> np.ndarray:
+        if tuned and category in self.category_weights:
+            weights = self.category_weights[category]
+        else:
+            weights = self.weights
+        return weights.detach().cpu().numpy()
+
     # ---- signals ------------------------------------------------------------
+    def late_colbert(self):
+        if self._colbert_v2 is None:
+            from colbert_v2 import LateChunkedColBERTv2
+            self._colbert_v2 = LateChunkedColBERTv2(self.records, self.ds["meetings"], self.slug,
+                                                    device=self.engine.device)
+        return self._colbert_v2
+
+    def colbert_ft_v2(self):
+        if self._colbert_ft_v2 is None:
+            from bge_colbert_v2 import CompressedColBERTIndex
+            self.colbert_ft.build()
+            self._colbert_ft_v2 = CompressedColBERTIndex(self.colbert_ft, device=self.engine.device)
+        return self._colbert_ft_v2
+
+    def _load_bge_dense(self):
+        if self.bge_vecs is not None:
+            return
+        path = HYBRID_DIR / f"{self.slug}-bge-m3-dense.pt"
+        if path.exists():
+            try:
+                payload = torch.load(path, map_location="cpu", weights_only=False)
+                if payload.get("ids") == self.ids:
+                    self.bge_vecs = payload["vecs"].to(torch.float16)
+                    return
+            except Exception:
+                pass
+        self.colbert._ensure_model()
+        tokenizer, model = self.colbert._tokenizer, self.colbert._model
+        device = self.colbert.device
+        vectors = []
+        with torch.inference_mode():
+            for start in range(0, len(self.ids), 64):
+                batch = [self.records[cid]["encoder_text"] for cid in self.ids[start:start + 64]]
+                enc = tokenizer(batch, padding=True, truncation=True, max_length=128,
+                                return_tensors="pt").to(device)
+                hidden = model(**enc).last_hidden_state.float()
+                vectors.append(F.normalize(hidden[:, 0], dim=-1).cpu())
+        self.bge_vecs = torch.cat(vectors, dim=0).to(torch.float16)
+        torch.save({"ids": self.ids, "vecs": self.bge_vecs}, path)
+
+    def bge_dense_score(self, query: str) -> np.ndarray:
+        self._load_bge_dense()
+        self.colbert._ensure_model()
+        tokenizer, model = self.colbert._tokenizer, self.colbert._model
+        device = self.colbert.device
+        with torch.inference_mode():
+            enc = tokenizer([query], truncation=True, max_length=64, return_tensors="pt").to(device)
+            hidden = model(**enc).last_hidden_state.float()
+            q = F.normalize(hidden[0, 0], dim=-1).cpu().to(torch.float16)
+        assert self.bge_vecs is not None
+        return (self.bge_vecs @ q).float().numpy()
+
     def _rank_pct(self, values: np.ndarray) -> np.ndarray:
         if len(values) <= 1:
             return np.ones_like(values, dtype=np.float32)
@@ -642,13 +815,19 @@ class HybridRetriever:
                 out[i] += 0.6
         return np.clip(out, 0, 1.25).astype(np.float32)
 
-    def signals(self, query: str, meeting_id: str | None = None) -> dict[str, Any]:
+    def signals(self, query: str, meeting_id: str | None = None, late: bool = False,
+                dense_bge: bool = False) -> dict[str, Any]:
         plan = parse_query(query, self.speakers)
         candidates = self.ds["by_meeting"].get(meeting_id, []) if meeting_id else list(self.ids)
-        col_full = self.colbert.score(query)
+        if late:
+            v2 = self.late_colbert().score(query)
+            col_full = v2["maxsim"]
+        else:
+            col_full = self.colbert.score(query)
         bm_full = self.ds["bm25"].scores(query, self.ids)
         qz = self.engine._encode_custom([query])[0][0]
         custom_full = np.asarray([float(np.dot(qz, self.records[c]["vector"])) for c in self.ids], dtype=np.float32)
+        bge_full = self.bge_dense_score(query) if dense_bge else None
         seed = 0.65 * self._rank_pct(col_full) + 0.35 * self._rank_pct(bm_full)
         seed = np.where(seed >= np.partition(seed, -30)[-30], seed, 0.0)
         graph_full = self.graph.ppr(seed)
@@ -659,6 +838,11 @@ class HybridRetriever:
             "graph": graph_full[idx],
             "custom": custom_full[idx],
         }
+        if late:
+            signals["maxsim_v2"] = v2["maxsim"][idx]
+            signals["late_vec"] = v2["late_vec"][idx]
+        if bge_full is not None:
+            signals["bge_dense"] = bge_full[idx]
         signals["temporal"], anchor = self._temporal(plan, candidates)
         signals["act"] = self._act_scores(plan, candidates)
         date_match = np.zeros(len(candidates), dtype=np.float32)
@@ -674,15 +858,40 @@ class HybridRetriever:
         signals["speaker"] = speaker_match
         return {"plan": plan, "candidates": candidates, "signals": signals, "anchor": anchor}
 
-    def fuse(self, sig: dict[str, np.ndarray], plan: dict[str, Any]) -> np.ndarray:
+    def fuse(self, sig: dict[str, np.ndarray], plan: dict[str, Any],
+             dense_key: str = "custom", category: str | None = None,
+             soft: bool = False) -> np.ndarray:
         col = self._rank_pct(sig["colbert"])
         bm = self._rank_pct(sig["bm25"])
         graph = self._rank_pct(sig["graph"])
-        custom = self._rank_pct(sig["custom"])
+        custom = self._rank_pct(sig[dense_key])
         temporal = sig["temporal"]
         act = sig["act"]
-        w = self.weights.detach().cpu().numpy()
+        w = self._weights_for(category, tuned=soft)
         allowed = np.ones_like(temporal, dtype=bool)
+        if soft:
+            score = (w[0] * col + w[1] * bm + w[2] * graph + w[3] * temporal
+                     + w[4] * act + w[5] * custom)
+            if plan.get("latest") and not plan["acts"] and not plan.get("speaker"):
+                return temporal
+            focus = np.clip(act, 0.0, 1.0)
+            if plan.get("latest") and plan["acts"]:
+                score = score + 0.35 * temporal + 0.25 * focus
+            elif plan.get("earliest") and plan["acts"]:
+                score = score - 0.35 * temporal + 0.25 * focus
+            elif plan.get("count") and "decision" in plan["acts"]:
+                score = score + 0.25 * focus
+            elif plan.get("dates") and "decision" in plan["acts"] and not plan.get("latest"):
+                score = score + 0.15 * sig["date"] + 0.25 * focus
+            elif plan.get("earliest"):
+                score = score - 0.35 * temporal
+            elif plan.get("latest"):
+                score = score + 0.20 * temporal
+            if plan.get("speaker"):
+                score = score + 0.35 * sig["speaker"]
+            if plan.get("dates") and not plan.get("latest"):
+                score = score + 0.15 * sig["date"]
+            return score
         if plan.get("speaker"):
             allowed &= sig["speaker"] > 0
         if plan.get("dates") and not plan.get("latest") and sig["date"].any():
@@ -718,14 +927,205 @@ class HybridRetriever:
             score = score + 0.20 * temporal
         return score
 
+    def method_scores(self, query: str, meeting_id: str | None = None) -> dict[str, Any]:
+        """Return v1 and v2 scores over the same candidates in one retrieval pass."""
+        payload = self.signals(query, meeting_id, late=False, dense_bge=True)
+        late_payload = self.signals(query, meeting_id, late=True)
+        sig = payload["signals"]
+        return {
+            "candidates": payload["candidates"],
+            "plan": payload["plan"],
+            "colbert": sig["colbert"],
+            "colbert_v2": late_payload["signals"]["colbert"],
+            "graphrag": self.fuse(sig, payload["plan"], "custom"),
+            "graphrag_bge": self.fuse(sig, payload["plan"], "bge_dense"),
+            "graphrag_auto": self.fuse(sig, payload["plan"],
+                                       "bge_dense" if not self.graph.topics_meaningful else "custom"),
+            "graphrag_tuned": self.fuse(
+                sig, payload["plan"],
+                "bge_dense" if not self.graph.topics_meaningful else "custom",
+                operator_category(payload["plan"]), soft=True),
+            "graphrag_soft": self.fuse(
+                sig, payload["plan"],
+                "bge_dense" if not self.graph.topics_meaningful else "custom",
+                None, soft=True),
+            "graphrag_cat": self.fuse(
+                sig, payload["plan"],
+                "bge_dense" if not self.graph.topics_meaningful else "custom",
+                operator_category(payload["plan"]), soft=False),
+            "graphrag_guarded": self._guarded(
+                sig, payload["plan"],
+                "bge_dense" if not self.graph.topics_meaningful else "custom"),
+            "graphrag_best": (self._guarded(sig, payload["plan"], "custom")
+                              if self.graph.topics_meaningful
+                              else self.fuse(sig, payload["plan"], "bge_dense")),
+            "graphrag_v2": self.fuse(late_payload["signals"], late_payload["plan"]),
+        }
+
+    def _guarded(self, sig: dict[str, np.ndarray], plan: dict[str, Any],
+                 dense_key: str, margin: float = 0.05) -> np.ndarray:
+        base = self.fuse(sig, plan, dense_key)
+        if not self.category_weights and self.tuned_default is None:
+            return base
+        tuned = self.fuse(sig, plan, dense_key, operator_category(plan), soft=True)
+        top = np.sort(base)
+        if len(top) >= 2:
+            gap = (top[-1] - top[-2]) / (abs(top[-1]) + 1e-9)
+            if gap > margin:
+                return base
+        return tuned
+
+    def _feature_matrix(self, sig: dict[str, np.ndarray]) -> torch.Tensor:
+        return torch.stack([
+            torch.as_tensor(self._rank_pct(sig["colbert"])),
+            torch.as_tensor(self._rank_pct(sig["bm25"])),
+            torch.as_tensor(self._rank_pct(sig["graph"])),
+            torch.as_tensor(sig["temporal"]),
+            torch.as_tensor(sig["act"]),
+            torch.as_tensor(self._rank_pct(sig["custom"])),
+        ], dim=1)
+
+    def train_category_fusion(self, train_queries: list[dict], val_queries: list[dict] | None = None,
+                              epochs: int = 150, lr: float = 0.05) -> dict[str, Any]:
+        def collect(queries):
+            rows = []
+            for q in queries:
+                target = q.get("target_chunk_id")
+                if not target:
+                    continue
+                payload = self.signals(q["query"], q.get("meeting_id"), dense_bge=False)
+                candidates = payload["candidates"]
+                if target not in candidates:
+                    continue
+                rows.append((operator_category(payload["plan"]),
+                             self._feature_matrix(payload["signals"]), candidates.index(target)))
+            return rows
+
+        train_rows = collect(train_queries)
+        val_rows = collect(val_queries or [])
+
+        def constrain(weights: torch.Tensor) -> torch.Tensor:
+            weights = weights.clamp(0.0, 0.6)
+            return weights / weights.sum().clamp_min(1e-6)
+
+        def fit(rows, init):
+            weights = torch.nn.Parameter(init.clone())
+            opt = torch.optim.AdamW([weights], lr=lr)
+            for _ in range(epochs):
+                opt.zero_grad(set_to_none=True)
+                losses = [F.cross_entropy((feat @ weights).unsqueeze(0), torch.tensor([target]))
+                          for _, feat, target in rows]
+                loss = torch.stack(losses).mean() + 1e-2 * ((weights - init) ** 2).sum()
+                loss.backward()
+                opt.step()
+            return constrain(weights.detach())
+
+        def mrr(rows, weights):
+            values = []
+            for _, feat, target in rows:
+                scores = feat @ weights
+                rank = int((scores > scores[target]).sum()) + 1
+                values.append(1.0 / rank if rank <= 10 else 0.0)
+            return float(np.mean(values)) if values else 0.0
+
+        initial = torch.tensor(self.weights, dtype=torch.float32)
+        global_weights = fit(train_rows, initial) if train_rows else initial
+        default_val, global_val = mrr(val_rows, initial), mrr(val_rows, global_weights)
+        chosen_global = global_weights if global_val >= default_val else initial
+
+        by_category = defaultdict(list)
+        for row in train_rows:
+            by_category[row[0]].append(row)
+        val_by_category = defaultdict(list)
+        for row in val_rows:
+            val_by_category[row[0]].append(row)
+
+        categories: dict[str, torch.Tensor] = {}
+        validation = {}
+        for category, rows in by_category.items():
+            if len(rows) < 30 or category in ("generic", "count", "first_decision", "dated", "speaker"):
+                continue
+            candidate = fit(rows, initial)
+            val_rows_cat = val_by_category.get(category, [])
+            if len(val_rows_cat) >= 10:
+                base = mrr(val_rows_cat, initial)
+                improved = mrr(val_rows_cat, candidate)
+                validation[category] = {"base": base, "candidate": improved, "n": len(rows)}
+                if improved >= base:
+                    categories[category] = candidate
+            # No validation slice: keep hand weights rather than guess.
+
+        self.tuned_default = chosen_global
+        self.category_weights = categories
+        payload = {
+            "default": self.tuned_default.tolist(),
+            "categories": {cat: weights.tolist() for cat, weights in categories.items()},
+            "validation": {"default": default_val, "global": global_val, **validation},
+            "train_queries": len(train_rows), "val_queries": len(val_rows),
+        }
+        (HYBRID_DIR / "fusion-categories.json").write_text(json.dumps(payload, indent=2))
+        return payload
+
     def search(self, query: str, top_k: int = 10, meeting_id: str | None = None,
-               method: str = "graphrag") -> dict[str, Any]:
-        payload = self.signals(query, meeting_id)
-        plan, candidates, sig = payload["plan"], payload["candidates"], payload["signals"]
-        if method == "colbert":
-            score = sig["colbert"]
+               method: str = "graphrag", extra_scores: np.ndarray | None = None,
+               extra_weight: float = 0.3) -> dict[str, Any]:
+        late = method in ("colbert_v2", "graphrag_v2")
+        auto_bge = method in ("graphrag_auto", "graphrag_tuned", "graphrag_soft",
+                              "graphrag_cat", "graphrag_guarded", "graphrag_best",
+                              "graphrag_hybrid", "graphrag_ft_router") and not self.graph.topics_meaningful
+        use_bge = method == "graphrag_bge" or auto_bge
+        candidates = self.ds["by_meeting"].get(meeting_id, []) if meeting_id else list(self.ids)
+        if method in ("rexu_v2_1", "rexu_v2_2",
+                      "colbert_ft", "colbert_ft_v2"):
+            plan, sig = {}, {}
         else:
-            score = self.fuse(sig, plan)
+            plan = parse_query(query, self.speakers)
+            payload = self.signals(query, meeting_id, late=late, dense_bge=use_bge)
+            plan, candidates, sig = payload["plan"], payload["candidates"], payload["signals"]
+        if method == "bge_only":
+            full = self.bge_dense_score(query)
+            score = np.asarray([full[self.id_to_pos[c]] for c in candidates], dtype=np.float32)
+        elif method in ("rexu_v2_1", "colbert_ft"):
+            full = self.colbert_ft.score(query)
+            score = np.asarray([full[self.id_to_pos[c]] for c in candidates], dtype=np.float32)
+        elif method in ("rexu_v2_2", "colbert_ft_v2"):
+            full = self.colbert_ft_v2().score(query)
+            score = np.asarray([full[self.id_to_pos[c]] for c in candidates], dtype=np.float32)
+        elif method in ("colbert", "colbert_v2"):
+            score = sig["colbert"]
+        elif method == "graphrag_tuned":
+            score = self.fuse(sig, plan, "bge_dense" if use_bge else "custom",
+                              operator_category(plan), soft=True)
+        elif method == "graphrag_soft":
+            score = self.fuse(sig, plan, "bge_dense" if use_bge else "custom", None, soft=True)
+        elif method == "graphrag_cat":
+            score = self.fuse(sig, plan, "bge_dense" if use_bge else "custom",
+                              operator_category(plan), soft=False)
+        elif method == "graphrag_guarded":
+            score = self._guarded(sig, plan, "bge_dense" if use_bge else "custom")
+        elif method == "graphrag_best":
+            if self.graph.topics_meaningful:
+                score = self._guarded(sig, plan, "custom")
+            else:
+                score = self.fuse(sig, plan, "bge_dense")
+        elif method in ("graphrag_hybrid", "graphrag_ft_router"):
+            if extra_scores is None:
+                raise ValueError(f"{method} requires extra_scores")
+            category = operator_category(plan)
+            graph_route = (method == "graphrag_hybrid"
+                           or category == "latest_message"
+                           or (category == "latest_decision" and meeting_id is None))
+            if graph_route:
+                base = self.fuse(sig, plan, "bge_dense" if use_bge else "custom",
+                                 category, soft=True)
+                idx = [self.id_to_pos[c] for c in candidates]
+                extra = np.asarray(extra_scores, dtype=np.float32)[idx]
+                score = (1.0 - extra_weight) * self._rank_pct(extra) + extra_weight * self._rank_pct(base)
+            else:
+                full = self.colbert_ft.score(query)
+                score = np.asarray([full[self.id_to_pos[c]] for c in candidates], dtype=np.float32)
+        else:
+            score = self.fuse(sig, plan, "bge_dense" if use_bge else "custom")
         order = np.argsort(-score)[:top_k]
         results = []
         for rank, i in enumerate(order, 1):
@@ -739,10 +1139,29 @@ class HybridRetriever:
                 "meeting_date": r["meeting_date"], "username": r["username"],
                 "timestamp": r["timestamp"], "message": r["message_text"],
                 "source_json": r["raw"],
-                "signals": {k: float(sig[k][i]) for k in ("colbert", "bm25", "graph", "temporal", "act", "custom")},
+                "signals": {k: float(sig[k][i]) for k in sig},
             })
-        explanation = ("ColBERT-style MaxSim + BM25 + differentiable GraphRAG PPR + temporal subspace"
-                       if method != "colbert" else "ColBERT-style late interaction (BGE-M3 MaxSim)")
+        explanations = {
+            "bge_only": "BGE-M3 dense single-vector (CLS cosine)",
+            "colbert": "ColBERT-style late interaction (BGE-M3 MaxSim)",
+            "colbert_ft": "fine-tuned BGE-M3 mixed-style ColBERT projection",
+            "colbert_ft_v2": "fine-tuned BGE-M3 ColBERT + ColBERTv2 2048-centroid compression",
+            "rexu_v2_1": "Rexu v2.1 · BGE-M3 FT + ColBERT v1",
+            "rexu_v2_2": "Rexu v2.2 · BGE-M3 FT + ColBERTv2",
+            "colbert_v2": "ColBERTv2 residual codes + late-chunked BGE-M3 MaxSim",
+            "graphrag": "ColBERT-style MaxSim + BM25 + differentiable GraphRAG PPR + temporal subspace",
+            "graphrag_bge": "ColBERT-style MaxSim + BM25 + graph PPR + temporal + BGE-M3 dense",
+            "graphrag_auto": "GraphRAG; BGE-M3 dense when the custom feature heads are not corpus-meaningful",
+            "graphrag_tuned": "GraphRAG with per-operator learned fusion weights and soft act/date plan",
+            "graphrag_soft": "GraphRAG with hand weights and a soft act/date plan",
+            "graphrag_cat": "GraphRAG with per-operator learned weights and the hard act/date plan",
+            "graphrag_guarded": "GraphRAG; keep v1 when its top-1 margin is clear, else tuned fusion",
+            "graphrag_best": "guarded fusion on in-domain corpora, auto dense on transcribed corpora",
+            "graphrag_hybrid": "0.7 * fine-tuned E5 rank + 0.3 * learned GraphRAG rank",
+            "graphrag_ft_router": "fine-tuned BGE ColBERT; GraphRAG only for latest/global temporal queries",
+            "graphrag_v2": "late-chunked ColBERTv2 + BM25 + differentiable GraphRAG PPR + temporal subspace",
+        }
+        explanation = explanations.get(method, explanations["graphrag"])
         return {"query": query, "method": method, "explanation": explanation,
                 "candidate_count": len(candidates), "plan": plan,
                 "results": results}

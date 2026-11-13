@@ -1,4 +1,7 @@
 @echo off
 cd /d "%~dp0"
-call .venv\Scripts\activate.bat
-python app.py
+if exist ".venv\Scripts\python.exe" (
+  ".venv\Scripts\python.exe" app.py
+) else (
+  python app.py
+)

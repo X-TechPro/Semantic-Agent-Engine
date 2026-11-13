@@ -109,7 +109,10 @@ TOPIC_TO_ID = {x:i for i,x in enumerate(TOPIC_KEYS)}
 FEATURE_NAMES = [f"theme:{x}" for x in TOPIC_KEYS] + [f"acte:{x}" for x in ACTS]
 ACT_OFFSET = len(TOPIC_KEYS)
 RELATIONS = ["supports", "contradicts", "supersedes", "creates_action", "answers", "unrelated"]
-PEOPLE = ["Alice", "Karim", "Léa", "Hugo", "Nora", "Mehdi", "Camille", "Thomas", "Inès", "Yanis", "Sarah", "Amine", "Julien", "Maya", "Romain", "Chloé", "Sofiane", "Emma"]
+PEOPLE = ["Alice", "Karim", "Léa", "Hugo", "Nora", "Mehdi", "Camille", "Thomas", "Inès", "Yanis", "Sarah", "Amine",
+          "Julien", "Maya", "Romain", "Chloé", "Sofiane", "Emma", "Nadia", "Lucas", "Aya", "Théo", "Manon", "Ibrahim"]
+# Project-disjoint pools: no speaker appears in more than one split.
+PEOPLE_BY_SPLIT = {"train": PEOPLE[:12], "val": PEOPLE[12:18], "test": PEOPLE[18:24]}
 PROJECTS = ["Atlas", "Boussole", "Cobalt", "Delta", "Équinoxe", "Falcon", "Galilée", "Horizon", "Iris", "Junon", "Kestrel", "Lynx", "Mistral", "Nova", "Orion"]
 
 
@@ -238,7 +241,7 @@ def render_message(style, act, alias, spec, decision, deadline, rng):
 
 def make_project_meetings(project_idx: int, split: str, rng: random.Random):
     project = PROJECTS[project_idx]
-    people = rng.sample(PEOPLE, 6)
+    people = rng.sample(PEOPLE_BY_SPLIT[split], 6)
     topics = rng.sample(TOPIC_KEYS, 6)
     meeting_rows = []
     # Exactly two formal and two messy meetings per project; split by project prevents leakage.
@@ -324,23 +327,43 @@ def query_rows_for_meeting(meeting):
       "find_commitment":["Qui prend en charge {deliverable} et que doit faire cette personne ?","À qui revient le suivi de {deliverable} ?","Qui s'est engagé à préparer {deliverable} ?"],
       "find_objection":["Qui a formulé une réserve au sujet de {alias} ?","Quel participant a contesté la proposition sur {alias} ?","D'où venait l'objection concernant {alias} ?"],
     }
+    # Held-out phrasings: never used to build train queries.
+    test_templates={
+      "topic_latest_decision":["Qu'est-ce qui a fini par être tranché sur {alias} ?","Quelle orientation a été gardée à la fin pour {alias} ?","Où est-on arrivé sur {alias} ?","Qu'est-ce qui a été validé en dernier sur {alias} ?"],
+      "find_commitment":["À qui revient {deliverable} ?","Qui s'occupe de {deliverable} ?","Qui a dit qu'il prenait {deliverable} en charge ?","Qui porte {deliverable} ?"],
+      "find_objection":["Qu'est-ce qui a coincé sur {alias} ?","Quelle critique a été faite sur {alias} ?","Qui n'était pas d'accord sur {alias} ?","Où était la réserve sur {alias} ?"],
+    }
+    active = test_templates if meeting["split"]=="test" else templates
     for topic,items in by_topic.items():
         spec=TOPICS[topic]
         final=[m for m in items if ann[str(m["message_id"])]["source_act"]=="decision"][0]
         commit=[m for m in items if ann[str(m["message_id"])]["source_act"]=="engagement"][0]
         objection=[m for m in items if ann[str(m["message_id"])]["source_act"]=="objection"][0]
         for qtype,target in [("topic_latest_decision",final),("find_commitment",commit),("find_objection",objection)]:
-            q=templates[qtype][(qi+len(topic))%len(templates[qtype])].format(alias=rng_choice(spec["aliases"],meeting,qi),deliverable=spec["deliverable"])
+            q=active[qtype][(qi+len(topic))%len(active[qtype])].format(alias=rng_choice(spec["aliases"],meeting,qi),deliverable=spec["deliverable"])
             qi+=1
             out.append(make_query(meeting,q,target,qtype,topic))
     decisions=[]
     for m in msgs:
         if ann[str(m["message_id"])]["source_act"]=="decision": decisions.append(m)
     last_decision=max(decisions,key=lambda x:x["message_id"])
-    out.append(make_query(meeting,"Quelle est la dernière décision actée pendant cette réunion, qui l'a formulée et à quelle heure ?",last_decision,"global_latest_decision",None))
-    out.append(make_query(meeting,"Retrouve la décision la plus récente et son auteur exact.",last_decision,"global_latest_decision",None))
+    if meeting["split"]=="test":
+        out.append(make_query(meeting,"Quelle a été la toute dernière décision de la réunion ?",last_decision,"global_latest_decision",None))
+        out.append(make_query(meeting,"Qu'est-ce qui a été acté en dernier ?",last_decision,"global_latest_decision",None))
+    else:
+        out.append(make_query(meeting,"Quelle est la dernière décision actée pendant cette réunion, qui l'a formulée et à quelle heure ?",last_decision,"global_latest_decision",None))
+        out.append(make_query(meeting,"Retrouve la décision la plus récente et son auteur exact.",last_decision,"global_latest_decision",None))
     last_msg=msgs[-1]
-    out.append(make_query(meeting,"Quel est le dernier message prononcé, par qui et à quel moment ?",last_msg,"latest_message",None))
+    last_q = ("Sur quoi s'est terminée la réunion ?" if meeting["split"]=="test"
+              else "Quel est le dernier message prononcé, par qui et à quel moment ?")
+    out.append(make_query(meeting,last_q,last_msg,"latest_message",None))
+    if meeting["split"]=="test":
+        q = rng_choice(["Combien de décisions ont été prises pendant cette réunion ?",
+                        "On a tranché combien de points au total ?",
+                        "Quel est le nombre de décisions prises ?"], meeting, 97)
+        item = make_query(meeting, q, decisions[0], "count_decisions", None)
+        item["target_chunk_ids"] = [f"{meeting['meeting_id']}:{m['message_id']:03d}" for m in decisions]
+        out.append(item)
     return out
 
 
@@ -350,7 +373,7 @@ def rng_choice(values, meeting, idx):
 
 
 def make_query(meeting,q,target,qtype,topic):
-    return {"query_id":f"{meeting['meeting_id']}-q{len(meeting['messages'])}-{qtype}-{target['message_id']}",
+    return {"query_id":f"{meeting['meeting_id']}-q{len(meeting['messages'])}-{qtype}-{target['message_id']}-{sha(q)[:6]}",
             "meeting_id":meeting["meeting_id"],"project_id":meeting["project_id"],"split":meeting["split"],
             "query":q,"query_type":qtype,"topic":topic,"target_message_id":target["message_id"],
             "target_chunk_id":f"{meeting['meeting_id']}:{target['message_id']:03d}",
@@ -1174,7 +1197,8 @@ def generate_query_json(queries,messages):
     for q in queries:
         r=messages[q["target_chunk_id"]]
         rows.append({"query_id":q["query_id"],"split":q["split"],"meeting_id":q["meeting_id"],"query":q["query"],"query_type":q["query_type"],
-          "target_chunk_id":q["target_chunk_id"],"target_json":r["raw"],"hard_negative_chunk_ids":hard_negs(q,messages,by_meeting(messages)) if q["split"]=="train" else []})
+          "target_chunk_id":q["target_chunk_id"],"target_chunk_ids":q.get("target_chunk_ids",[q["target_chunk_id"]]),
+          "target_json":r["raw"],"hard_negative_chunk_ids":hard_negs(q,messages,by_meeting(messages)) if q["split"]=="train" else []})
     save_json(DATA/"french_retrieval_queries.json",rows)
 
 def by_meeting(messages):
@@ -1214,7 +1238,7 @@ def evaluate_feature_heads(messages,topic_probs,act_probs):
     y_topic=np.asarray([TOPIC_TO_ID[messages[c]["topic"]] for c in ordered]); p_topic=np.argmax(topic_probs,axis=1)
     y_act=np.asarray([ACT_TO_ID[messages[c]["act"]] for c in ordered]); p_act=np.argmax(act_probs,axis=1)
     mask=np.asarray([messages[c]["split"]=="test" for c in ordered])
-    return {"topic_macro_f1":float(f1_score(y_topic[mask],p_topic[mask],average="macro")),
+    return {"version":"v7", "topic_macro_f1":float(f1_score(y_topic[mask],p_topic[mask],average="macro")),
             "topic_accuracy":float(accuracy_score(y_topic[mask],p_topic[mask])),
             "act_macro_f1":float(f1_score(y_act[mask],p_act[mask],average="macro")),
             "act_accuracy":float(accuracy_score(y_act[mask],p_act[mask]))}
@@ -1345,7 +1369,7 @@ def main():
         q_demo,_,_=encode_tiny(model,vocab,[text],device)
         demos[text]=demo_agent(text,meetings,messages,bm,intent_vec,intent_clf,q_demo[0],mv,tp,actp)
     params=sum(p.numel() for p in model.parameters())
-    result={"dataset":dataset_audit,"model":{"name":"french_tiny_v2_transcribed","architecture":"1-layer TransformerEncoder + 64-d normalized projection + topic/act heads","parameters":params,"vocabulary":len(vocab.itos),"embedding_dim":DIM,"epochs":epochs_used,"device":str(device)},
+    result={"dataset":dataset_audit,"model":{"name":"french_tiny_v7","architecture":"1-layer TransformerEncoder + 64-d normalized projection + topic/act heads","parameters":params,"vocabulary":len(vocab.itos),"embedding_dim":DIM,"epochs":epochs_used,"device":str(device)},
       "retrieval_metrics":metrics,"feature_aware_retrieval":{"validation":feature_policy_val,"test":feature_policy_test,"policy":feature_policy,"validation_tuning":feature_policy_tuning},
       "by_style":style_metrics,"hybrid_alpha":hybrid_alpha,"hybrid_alpha_validation_grid":hybrid_alpha_scores,"feature_head_metrics":feature_head_metrics,"relation_metrics":rel_metrics,"relation_memory_counts":relation_memory_counts,"intent_metrics":intent_metrics,"memory_integrity":integrity,
       "piscine_coverage":piscine_audit(),"agent_demo_samples":demos,"elapsed_seconds":time.time()-t0,

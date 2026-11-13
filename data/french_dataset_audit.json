@@ -7,11 +7,11 @@
   "min_speakers_per_meeting": 6,
   "messy_transcription_stats": {
     "messages": 1800,
-    "with_filler_or_discourse_marker": 1015,
-    "with_repeated_word": 214,
-    "without_terminal_punctuation": 1710,
-    "with_light_asr_artifact": 137,
-    "with_restart_or_repair": 223
+    "with_filler_or_discourse_marker": 1010,
+    "with_repeated_word": 202,
+    "without_terminal_punctuation": 1719,
+    "with_light_asr_artifact": 139,
+    "with_restart_or_repair": 213
   },
   "splits": {
     "train": {

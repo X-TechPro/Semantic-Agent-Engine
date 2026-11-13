@@ -178,7 +178,8 @@ class AgentEngine:
     def retrieve(self, query: str, slug: str, meeting_id: str | None, top_k: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         retriever = HybridRetriever.get(self.memory, slug)
         started = time.perf_counter()
-        payload = retriever.search(query, top_k=max(top_k * 3, top_k), meeting_id=meeting_id, method="graphrag")
+        payload = retriever.search(query, top_k=max(top_k * 3, top_k), meeting_id=meeting_id,
+                                   method="colbert_ft")
         elapsed = round((time.perf_counter() - started) * 1000, 1)
         evidence = []
         ds = self.memory._get_dataset(slug)

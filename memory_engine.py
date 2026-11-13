@@ -105,6 +105,7 @@ class MeetingMemoryEngine:
         self._pretrained_signature: dict[str, tuple[int, int] | None] = {}
         self._lock = threading.RLock()
         self._load_synthetic()
+        self._load_builtin_extra()
         self._load_transcribed()
         self._load_custom_from_disk()
 
@@ -215,7 +216,45 @@ class MeetingMemoryEngine:
                 if summary_row:
                     meetings[mid]["summary"] = summary_row["summary"] or ""
         conn.close()
-        self._finalize_dataset("synthetic", "Synthetic · français", meetings, records, None, DATA / "french_retrieval_queries.json", is_builtin=True)
+        self._finalize_dataset("synthetic", "Unified v7 · français", meetings, records, None, DATA / "french_retrieval_queries.json", is_builtin=True)
+
+    def _load_builtin_extra(self):
+        """Load the hand-written v10 multi-hop corpus as a built-in memory."""
+        for slug, name in (("v10", "v10 · Les Rivières de Sel (5 réunions)"),
+                           ("qmsum", "QMSum · test (35 réunions, anglais)")):
+            meeting_path = DATA / f"{slug}_meetings.json"
+            query_path = DATA / f"{slug}_queries.json"
+            if not meeting_path.exists() or not query_path.exists():
+                continue
+            payload = json.loads(meeting_path.read_text(encoding="utf-8"))
+            meetings, records, texts = {}, {}, []
+            for meeting in payload["meetings"]:
+                mid = meeting["meeting_id"]
+                meetings[mid] = {
+                    "meeting_id": mid,
+                    "project_id": meeting.get("project_id", slug),
+                    "project": meeting.get("project", "Les Rivières de Sel" if slug == "v10" else slug),
+                    "title": meeting.get("title", mid),
+                    "meeting_date": meeting.get("meeting_date", meeting.get("date", "")),
+                    "style": meeting.get("style", slug),
+                    "split": "train",
+                    "attendees": meeting.get("attendees", []),
+                    "summary": "",
+                    "messages": [],
+                }
+                for msg in meeting["messages"]:
+                    rec = self._record(mid, msg, meetings[mid], None)
+                    rec["chat_style"] = f"{slug}-synthetic"
+                    records[rec["chunk_id"]] = rec
+                    texts.append(rec["encoder_text"])
+            if not records:
+                continue
+            vectors, topic_probs, act_probs = self._encode_custom(texts)
+            for i, cid in enumerate(records):
+                records[cid]["vector"] = vectors[i]
+                records[cid]["topic_probs"] = topic_probs[i]
+                records[cid]["act_probs"] = act_probs[i]
+            self._finalize_dataset(slug, name, meetings, records, None, query_path, is_builtin=True)
 
     def _load_transcribed(self):
         """Built-in messy-transcription corpus (30 meetings, 10 unrelated projects)."""
@@ -560,7 +599,21 @@ class MeetingMemoryEngine:
             full = self._feature_aware(ds, query, candidates, meeting_id)
             ranked = [(x["chunk_id"], x["score"]) for x in full[:top_k]]
             explanation = "Custom embeddings + topic/act heads + temporal policy"
-        elif method in ("colbert", "graphrag"):
+        elif method in ("graphrag_hybrid", "graphrag_ft_router"):
+            from hybrid_retrieval import get_retriever
+            retriever = get_retriever(self, slug)
+            qv = self._query_pretrained("multilingual_e5", query)
+            pvec = self._pretrained_vectors_for(slug, "multilingual_e5", rows)
+            extra = np.asarray([float(np.dot(qv, pvec[c])) for c in retriever.ids], dtype=np.float32)
+            return retriever.search(query, top_k=top_k, meeting_id=meeting_id,
+                                    method=method, extra_scores=extra)
+        elif method in ("rexu_v3"):
+            from pplx_rexu import get_rexu_v3
+            return get_rexu_v3(self, slug).search(query, top_k=top_k, meeting_id=meeting_id, method=method)
+        elif method in ("bge_only", "colbert", "colbert_ft", "colbert_ft_v2",
+                        "rexu_v2_1", "rexu_v2_2", "graphrag",
+                        "graphrag_bge", "graphrag_auto", "graphrag_tuned", "graphrag_best",
+                        "colbert_v2", "graphrag_v2", "graphrag_ft_router"):
             from hybrid_retrieval import get_retriever
             return get_retriever(self, slug).search(query, top_k=top_k, meeting_id=meeting_id, method=method)
         elif method in MODEL_SPECS:
@@ -832,7 +885,19 @@ class MeetingMemoryEngine:
                 query_vector = self._query_pretrained(method, query)
             scores = np.asarray([np.dot(query_vector, pvec[c]) for c in candidates])
             return [candidates[i] for i in np.argsort(-scores)]
-        if method in ("colbert", "graphrag"):
+        if method in ("graphrag_hybrid", "graphrag_ft_router"):
+            res = self.search(ds["slug"], query, method, top_k=min(10, len(candidates)),
+                              meeting_id=meeting_id)
+            return [x["chunk_id"] for x in res["results"]]
+        if method in ("rexu_v3"):
+            from pplx_rexu import get_rexu_v3
+            res = get_rexu_v3(self, ds["slug"]).search(
+                query, top_k=min(10, len(candidates)), meeting_id=meeting_id, method=method)
+            return [x["chunk_id"] for x in res["results"]]
+        if method in ("bge_only", "colbert", "colbert_ft", "colbert_ft_v2",
+                      "rexu_v2_1", "rexu_v2_2", "graphrag",
+                      "graphrag_bge", "graphrag_auto", "graphrag_tuned", "graphrag_best",
+                      "colbert_v2", "graphrag_v2"):
             from hybrid_retrieval import get_retriever
             res = get_retriever(self, ds["slug"]).search(
                 query, top_k=min(10, len(candidates)), meeting_id=meeting_id, method=method)
@@ -844,8 +909,8 @@ class MeetingMemoryEngine:
         queries = [q for q in ds["queries"] if q.get("split", "test") == split]
         if not queries:
             return {"status": "NO_LABELLED_QUERIES", "message": "Aucun couple query -> target_chunk_id pour ce split. L'import permet le search live, mais pas le calcul de Recall/MRR.", "query_count": 0, "metrics": {}}
-        methods = methods or ["bm25", "dense", "feature_aware", "french_me5", "multilingual_e5",
-                              "colbert", "graphrag"]
+        methods = methods or ["bm25", "bge_only", "colbert", "rexu_v2_1", "rexu_v2_2",
+                              "graphrag_ft_router", "rexu_v3"]
         results = {}
         # Encode benchmark queries in batches for GPU throughput; avoid one tiny kernel launch per query.
         query_feature_cache = None
@@ -878,6 +943,7 @@ class MeetingMemoryEngine:
                                    "evaluated_queries": 0, "skipped_queries": len(queries)}
                 continue
             hits = {k: [] for k in (1, 3, 5, 10)}
+            any_hits = {k: [] for k in (1, 5)}
             rr, ndcg = [], []
             evaluated, skipped, errors = 0, 0, []
             rankings = []
@@ -920,6 +986,8 @@ class MeetingMemoryEngine:
                 rank = min(matched) if matched else 9999
                 for k in hits:
                     hits[k].append(len([r for r in matched if r <= k]) / len(targets))
+                for k in any_hits:
+                    any_hits[k].append(1.0 if any(r <= k for r in matched) else 0.0)
                 rr.append(1.0 / rank if rank <= 10 else 0.0)
                 ndcg.append(1.0 / math.log2(rank + 1) if rank <= 5 else 0.0)
                 evaluated += 1
@@ -929,7 +997,9 @@ class MeetingMemoryEngine:
                                      "rank": rank, "matched_targets": matched, "top10": ranked[:10]})
             if evaluated:
                 metric = {f"Recall@{k}": float(np.mean(v)) for k, v in hits.items()}
-                metric.update({"MRR@10": float(np.mean(rr)), "nDCG@5": float(np.mean(ndcg)),
+                metric.update({"Any Recall@1": float(np.mean(any_hits[1])),
+                               "Any Recall@5": float(np.mean(any_hits[5])),
+                               "MRR@10": float(np.mean(rr)), "nDCG@5": float(np.mean(ndcg)),
                                "evaluated_queries": evaluated, "skipped_queries": skipped})
                 results[method] = {"metrics": metric, "rankings": rankings, "errors": errors[:3]}
             else:

@@ -3,11 +3,20 @@
 from __future__ import annotations
 
 import json
+import sys
 import threading
 import time
 import traceback
 import uuid
 from pathlib import Path
+
+if sys.prefix == sys.base_prefix:
+    print(
+        "[warn] app.py is running outside .venv. Use ./run_app.sh or "
+        ".venv/bin/python app.py; a system torchvision/torch mismatch otherwise "
+        "surfaces as \"Could not import module 'XLMRobertaModel'\".",
+        file=sys.stderr,
+    )
 
 from flask import Flask, Response, jsonify, render_template, request, stream_with_context
 
@@ -73,7 +82,7 @@ def api_state():
     engine = get_engine()
     return jsonify({
         "datasets": engine.dataset_summaries(),
-        "active_dataset": "synthetic",
+        "active_dataset": "v10",
         "models": engine.model_status(),
         "baseline_metrics": engine.baseline_metrics(),
     })
@@ -161,10 +170,10 @@ def api_benchmark():
     payload = request.get_json(force=True)
     slug = payload.get("dataset", "synthetic")
     split = payload.get("split", "test")
-    methods = payload.get("methods") or ["bm25", "dense", "feature_aware", "french_me5", "multilingual_e5",
-                                         "colbert", "graphrag"]
-    methods = [m for m in methods if m in {"bm25", "dense", "feature_aware", "french_me5", "multilingual_e5",
-                                           "colbert", "graphrag"}]
+    methods = payload.get("methods") or ["bm25", "bge_only", "colbert", "rexu_v2_1",
+                                         "rexu_v2_2", "graphrag_ft_router", "rexu_v3"]
+    methods = [m for m in methods if m in {"bm25", "bge_only", "colbert", "rexu_v2_1",
+                                         "rexu_v2_2", "graphrag_ft_router", "rexu_v3"}]
     if not methods:
         return jsonify({"error": "Aucune méthode valide sélectionnée."}), 400
     job_id = uuid.uuid4().hex[:12]

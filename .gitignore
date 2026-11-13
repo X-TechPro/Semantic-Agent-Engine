@@ -10,3 +10,11 @@ data/user_datasets/**
 
 artifacts/hybrid/**
 artifacts/**
+
+.zvec-grep/
+
+archive/
+.commandcode/
+.pytest_cache/
+.hypothesis/
+.coverage

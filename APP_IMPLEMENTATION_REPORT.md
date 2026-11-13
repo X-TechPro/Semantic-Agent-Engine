@@ -1,4 +1,16 @@
+> Current state (2026-11-06): Rexu v3 is the active default; v3.1 is archived.
+> v10 is the active hand-written dataset: 5 meetings × 55 messages, 19 queries.
+> v7 remains legacy; generated v8/v9 are archived under `archive/generated_v8_v9/`.
+> v10 zero-shot: R@1 .500, R@5 1.000, MRR .688, Evidence@5 .475.
+> The benchmark page no longer shows architecture formulas.
+
 # Flask dashboard implementation report
+
+> Historical build report (v5). Current v7 results are in [README.md](README.md)
+> and [docs/EXPERIMENT_V7.md](docs/EXPERIMENT_V7.md). v6 material is archived
+> under `data/archive_v6/` and `artifacts/archive_v6/`.
+> The "NOT RUN" and "no Flask/CUDA" statements below describe the original
+> artifact host, not the current checkout.
 
 ## Delivered application
 

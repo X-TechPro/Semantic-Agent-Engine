@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
-source .venv/bin/activate
-python app.py
+if [ -x .venv/bin/python ]; then
+  exec .venv/bin/python app.py
+fi
+exec python app.py

@@ -37,7 +37,7 @@
       <div class="side-label">ACTIVE MEMORY</div>
       <div class="dataset-switcher">
         <div class="switcher-dot"></div>
-        <select id="datasetSelect" aria-label="Dataset actif"><option value="synthetic">Synthetic · français</option></select>
+        <select id="datasetSelect" aria-label="Dataset actif"><option value="synthetic">Unified v7 · legacy</option><option value="v10" selected>v10 · Les Rivières de Sel (5 réunions)</option></select>
         <span class="chevron legacy-glyph">⌄</span>
         <i class="chevron ui-lucide" data-lucide="chevron-down" aria-hidden="true"></i>
       </div>
@@ -70,7 +70,7 @@
           <div class="panel-topline"><span class="tiny-label">QUERY CONSOLE</span><span class="hotkey-note">ENTER TO SEARCH <kbd>↵</kbd></span></div>
           <div class="query-wrap"><span class="query-glyph legacy-glyph">⌕</span><i class="query-glyph ui-lucide" data-lucide="search" aria-hidden="true"></i><input id="queryInput" type="text" placeholder="Ex. : Quelle décision a été prise sur la base de données ?" autocomplete="off"><button id="searchButton" class="primary-button">Search <span>↗</span><i class="ui-lucide" data-lucide="arrow-up-right" aria-hidden="true"></i></button></div>
           <div class="query-controls">
-            <label><span>MÉTHODE</span><select id="methodSelect"><option value="graphrag">GraphRAG · hybride</option><option value="colbert">ColBERT · BGE-M3</option><option value="feature_aware">Feature-aware · custom</option><option value="dense">Dense · custom</option><option value="bm25">BM25</option><option value="french_me5">French ME5</option><option value="multilingual_e5">Multilingual E5</option><option value="compare">Comparer les 5</option></select></label>
+            <label><span>MÉTHODE</span><select id="methodSelect"><option value="rexu_v2_2">Rexu v2.2 · BGE-M3 FT + ColBERTv2</option><option value="rexu_v3" selected>Rexu v3 · pplx contextual tokens + late interaction (défaut)</option><option value="rexu_v2_1">Rexu v2.1 · BGE-M3 FT + ColBERT v1</option><option value="graphrag_ft_router">GraphRAG · FT-ColBERT router (défaut historique)</option><option value="colbert">ColBERT · BGE-M3 only</option><option value="bge_only">BGE-M3 · dense only</option><option value="bm25">BM25</option></select></label>
             <label><span>PORTÉE</span><select id="scopeSelect"><option value="">Toutes les réunions</option></select></label>
             <label><span>TOP-K</span><select id="topKSelect"><option>5</option><option selected>10</option><option>20</option><option>30</option></select></label>
             <div class="query-hint"><span class="pulse-dot"></span> JSON source immuable · résultats traçables</div>
@@ -118,7 +118,7 @@
         <div class="page-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> MODEL EVALUATION / 04</div><h1>Measure, <em>don't guess.</em></h1><p>Évaluez les méthodes sur les mêmes questions et les mêmes chunks cibles.</p></div><div class="heading-icon chart-icon"><span class="legacy-glyph">⌁</span><i class="ui-lucide" data-lucide="activity" aria-hidden="true"></i></div></div>
         <div class="panel benchmark-controls"><div><div class="tiny-label">EVALUATION RUN</div><h3>Comparer les stratégies de retrieval</h3><p>Le benchmark utilise les questions annotées du dataset actif.</p></div><div class="benchmark-action"><select id="benchmarkSplit"><option value="test" selected>Test split</option><option value="val">Validation split</option><option value="train">Train split</option></select><button class="primary-button" id="runBenchmark">Run benchmark <span>↗</span><i class="ui-lucide" data-lucide="play" aria-hidden="true"></i></button></div></div>
         <div id="benchmarkProgress" class="progress-panel hidden"><div class="progress-line"><span id="progressLabel">Initialisation…</span><span class="progress-spinner"></span></div><div class="progress-track"><span></span></div></div>
-        <div id="benchmarkResults" class="benchmark-results"><div class="empty-state panel"><div class="empty-icon"><span class="legacy-glyph">⌁</span><i class="ui-lucide" data-lucide="activity" aria-hidden="true"></i></div><h3>Aucun benchmark lancé</h3><p>Lancez un run pour comparer les sept méthodes sur les questions annotées du dataset actif.</p></div></div>
+        <div id="benchmarkResults" class="benchmark-results"><div class="empty-state panel"><div class="empty-icon"><span class="legacy-glyph">⌁</span><i class="ui-lucide" data-lucide="activity" aria-hidden="true"></i></div><h3>Aucun benchmark lancé</h3><p>Lancez un run pour comparer les méthodes de référence. Lancez un run pour comparer les méthodes de référence.</p></div></div>
       </section>
 
       <section class="view" id="view-graph">

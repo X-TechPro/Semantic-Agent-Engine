@@ -1,5 +1,5 @@
 const $ = (id) => document.getElementById(id);
-const state = { dataset: 'synthetic', meetings: [], selectedMeeting: null, jobTimer: null,
+const state = { dataset: 'v10', meetings: [], selectedMeeting: null, jobTimer: null,
   graph: { initialized: false, scope: 'global', meetingId: null, network: null, data: null },
   agent: { initialized: false, sending: false, history: [] } };
 
@@ -21,9 +21,20 @@ function applyUi(theme, persist = true) {
 const METHOD_LABELS = {
   bm25: 'BM25', dense: 'Dense · custom', feature_aware: 'Feature-aware',
   french_me5: 'French ME5', multilingual_e5: 'Multilingual E5',
-  colbert: 'ColBERT · BGE-M3', graphrag: 'GraphRAG · hybride'
+  colbert: 'ColBERT · BGE-M3', graphrag: 'GraphRAG · hybride',
+  colbert_v2: 'ColBERT v2 · ColBERTv2+late', graphrag_v2: 'GraphRAG v2 · ColBERTv2+late',
+  graphrag_bge: 'GraphRAG · BGE-M3 dense', graphrag_auto: 'GraphRAG · auto dense',
+  graphrag_tuned: 'GraphRAG · learned', graphrag_best: 'GraphRAG · best (adaptatif)',
+  graphrag_hybrid: 'GraphRAG · hybrid',
+  bge_only: 'BGE-M3 · dense only',
+  colbert_ft: 'Rexu v2.1 · BGE-M3 FT + ColBERT v1',
+  colbert_ft_v2: 'Rexu v2.2 · BGE-M3 FT + ColBERTv2',
+  rexu_v2_1: 'Rexu v2.1 · BGE-M3 FT + ColBERT v1',
+  rexu_v2_2: 'Rexu v2.2 · BGE-M3 FT + ColBERTv2',
+  rexu_v3: 'Rexu v3 · pplx contextual tokens + late interaction',
+  graphrag_ft_router: 'GraphRAG · FT-ColBERT router (default)'
 };
-const BENCH_ORDER = ['bm25', 'dense', 'feature_aware', 'french_me5', 'multilingual_e5', 'colbert', 'graphrag'];
+const BENCH_ORDER = ['bm25', 'bge_only', 'colbert', 'rexu_v2_1', 'rexu_v2_2', 'graphrag_ft_router', 'rexu_v3'];
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -128,7 +139,7 @@ function renderSearch(data) {
       if (!payload || payload.available === false) return `<section class="method-column"><div class="method-column-head"><b>${METHOD_LABELS[method] || method}</b><span>UNAVAILABLE</span></div><div class="method-error">${escapeHtml(payload?.error || 'Modèle indisponible.')}</div></section>`;
       return `<section class="method-column"><div class="method-column-head"><b>${METHOD_LABELS[method] || method}</b><span>${payload.candidate_count || 0} CANDIDATES</span></div>${(payload.results || []).map(resultCard).join('') || '<p class="method-error">Aucun résultat.</p>'}</section>`;
     }).join('');
-    $('resultCount').textContent = '5 méthodes'; $('searchMeta').textContent = 'Comparaison directe · même corpus';
+    $('resultCount').textContent = '6 méthodes'; $('searchMeta').textContent = 'Comparaison directe · même corpus';
   } else {
     const rows = data.results || [];
     $('searchResults').innerHTML = rows.map(resultCard).join('') || '<div class="empty-state"><h3>Aucun résultat</h3><p>Essayez une autre formulation ou changez la portée.</p></div>';
@@ -169,7 +180,9 @@ async function activateDataset(slug) {
 }
 const METRIC_FORMAT = {
   'Recall@1': v => `${(100 * v).toFixed(1)}%`,
+  'Any Recall@1': v => `${(100 * v).toFixed(1)}%`,
   'Recall@5': v => `${(100 * v).toFixed(1)}%`,
+  'Any Recall@5': v => `${(100 * v).toFixed(1)}%`,
   'Recall@10': v => `${(100 * v).toFixed(1)}%`,
   'MRR@10': v => v.toFixed(3),
   'nDCG@5': v => v.toFixed(3),
@@ -211,9 +224,9 @@ function renderBenchmarkResult(job) {
   const rows = Object.entries(methods).filter(([_,v])=>v.metrics)
     .sort((a, b) => (BENCH_ORDER.indexOf(a[0]) + 1 || 99) - (BENCH_ORDER.indexOf(b[0]) + 1 || 99))
     .map(([key,v])=>[key,v.metrics]);
-  const keys = ['Recall@1', 'Recall@5', 'Recall@10', 'MRR@10', 'nDCG@5'];
+  const keys = ['Recall@1', 'Any Recall@1', 'Recall@5', 'Any Recall@5', 'Recall@10', 'MRR@10', 'nDCG@5'];
   const maxes = maxesFor(rows, keys);
-  $('benchmarkResults').innerHTML = `<div class="panel baseline-panel"><div class="panel-topline"><span class="tiny-label">${escapeHtml(result.dataset)} · ${escapeHtml(result.split)} SPLIT</span><span class="format-tag green-tag">${result.query_count} QUESTIONS</span></div><table class="benchmark-table"><thead><tr><th>RETRIEVAL METHOD</th><th>RECALL@1</th><th>RECALL@5</th><th>RECALL@10</th><th>MRR@10</th><th>NDCG@5</th></tr></thead><tbody>${rows.map(([key,m])=>`<tr><td><span class="method-label"><i class="method-indicator"></i>${METHOD_LABELS[key]||key}</span></td>${metricTds(m, keys, maxes, rows.length)}</tr>`).join('')}</tbody></table><div class="benchmark-note">${rows.length} méthodes scorées. Les requêtes multi-réponses comptent la fraction des chunks cibles retrouvés. Les méthodes indisponibles ou échouées sont listées ci-dessous; les scores ne sont pas inventés.</div>${Object.entries(methods).filter(([_,v])=>!v.metrics).map(([key,v])=>`<div class="method-error">${escapeHtml(METHOD_LABELS[key]||key)} : ${escapeHtml((v.errors||[]).join(' · ') || v.status || 'indisponible')}</div>`).join('')}</div>`;
+  $('benchmarkResults').innerHTML = `<div class="panel baseline-panel"><div class="panel-topline"><span class="tiny-label">${escapeHtml(result.dataset)} · ${escapeHtml(result.split)} SPLIT</span><span class="format-tag green-tag">${result.query_count} QUESTIONS</span></div><table class="benchmark-table"><thead><tr><th>RETRIEVAL METHOD</th><th>RECALL@1</th><th>ANY R@1</th><th>RECALL@5</th><th>ANY R@5</th><th>RECALL@10</th><th>MRR@10</th><th>NDCG@5</th></tr></thead><tbody>${rows.map(([key,m])=>`<tr><td><span class="method-label"><i class="method-indicator"></i>${METHOD_LABELS[key]||key}</span></td>${metricTds(m, keys, maxes, rows.length)}</tr>`).join('')}</tbody></table><div class="benchmark-note">${rows.length} méthodes scorées. RECALL@K compte la fraction des chunks cibles retrouvés (multi-réponses) ; ANY R@K vaut 1 si au moins un chunk cible est dans le top-K. Utilisez ANY R@K pour comparer un split mono-réponse et un split multi-réponses. Les méthodes indisponibles ou échouées sont listées ci-dessous; les scores ne sont pas inventés.</div>${Object.entries(methods).filter(([_,v])=>!v.metrics).map(([key,v])=>`<div class="method-error">${escapeHtml(METHOD_LABELS[key]||key)} : ${escapeHtml((v.errors||[]).join(' · ') || v.status || 'indisponible')}</div>`).join('')}</div>`;
   renderIcons();
 }
 async function runBenchmark() {
@@ -221,7 +234,7 @@ async function runBenchmark() {
   $('benchmarkProgress').classList.remove('hidden'); $('progressLabel').textContent = `Lancement sur ${state.dataset}…`;
   $('benchmarkResults').innerHTML = '';
   try {
-    const data = await api('/api/benchmark',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({dataset:state.dataset,split:$('benchmarkSplit').value,methods:['bm25','dense','feature_aware','french_me5','multilingual_e5','colbert','graphrag']})});
+    const data = await api('/api/benchmark',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({dataset:state.dataset,split:$('benchmarkSplit').value,methods:['bm25','bge_only','colbert','rexu_v2_1','rexu_v2_2','graphrag_ft_router','rexu_v3']})});
     pollJob(data.job_id);
   } catch (err) { $('benchmarkProgress').classList.add('hidden'); btn.disabled=false; toast(err.message,true); }
 }
