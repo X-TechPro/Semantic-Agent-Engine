@@ -7,9 +7,10 @@ v10), and the comparison baselines.
 
 ## Corpora
 
-All queries are **meeting-scoped**: the candidate pool is the 60 messages of the
-query's own meeting (v8/v9) or the messages of its meeting (v10). The numbers
-below are therefore within-meeting ranking, not cross-meeting search.
+v8/v9 queries are **meeting-scoped**: the candidate pool is the 60 messages of
+the query's own meeting. v10 ranks all 275 messages across its 5 meetings. The
+numbers below are therefore within-meeting ranking for v8/v9 and cross-meeting
+for v10, not a single global search.
 
 | corpus | meetings | messages | queries (train/val/test) | kind |
 |---|---:|---:|---|---|
@@ -58,26 +59,73 @@ top 5.
 
 | corpus | R@1 | R@5 | MRR | EvidenceRecall@5 | AllHops@5 | n |
 |---|---:|---:|---:|---:|---:|---:|
-| v8 | 1.000 | 1.000 | 1.000 | 0.603 | 0.000 | 50 |
-| v9 | 1.000 | 1.000 | 1.000 | 0.813 | 0.420 | 50 |
-| v10 | 0.500 | 1.000 | 0.688 | 0.475 | 0.000 | 4 |
+| v8 | 1.000 | 1.000 | 1.000 | 0.643 | 0.020 | 50 |
+| v9 | 1.000 | 1.000 | 1.000 | 0.810 | 0.340 | 50 |
+| v10 | 0.750 | 1.000 | 0.875 | 0.525 | 0.000 | 4 |
 
 Raw values: `data/rexu_v3_eval.json`.
+
+### Noise robustness (acronyms, named entities, diarization)
+
+The synthetic corpora can be corrupted on the three axes the piscine brief
+cares about, without touching message ids or gold evidence:
+
+- **Acronyms** — full names replaced by their acronym, then case/spacing/dot
+  variants, dropped letters, or a confusable acronym.
+- **Named entities** — accents removed, one-character typos, hyphen/space
+  splits, case changes, applied to names, titles and query entities.
+- **Diarization** — speaker swaps with the next turn, mislabels, `Inconnu`
+  drops, merged `A / B` labels, spelling variants, and 25% of meetings
+  anonymised to `SPEAKER_01..N`.
+
+Two intensities: `data/noisy/` (acronym 50%, entity 30%, diarization 1×) and
+`data/noisy_heavy/` (80%, 60%, 2×). Queries are left clean, so this isolates
+corpus-side noise.
+
+| corpus | variant | R@1 | R@5 | MRR | EvidenceRecall@5 | AllHops@5 |
+|---|---|---:|---:|---:|---:|---:|
+| v8 | clean | 1.000 | 1.000 | 1.000 | 0.643 | 0.020 |
+| v8 | noisy | 1.000 | 1.000 | 1.000 | 0.630 | 0.040 |
+| v8 | heavy | 1.000 | 1.000 | 1.000 | 0.650 | 0.040 |
+| v9 | clean | 1.000 | 1.000 | 1.000 | 0.810 | 0.340 |
+| v9 | noisy | 1.000 | 1.000 | 1.000 | 0.805 | 0.320 |
+| v9 | heavy | 1.000 | 1.000 | 1.000 | 0.815 | 0.380 |
+| v10 | clean | 0.750 | 1.000 | 0.875 | 0.525 | 0.000 |
+| v10 | noisy | 0.750 | 1.000 | 0.875 | 0.525 | 0.000 |
+| v10 | heavy | 0.500 | 1.000 | 0.675 | 0.525 | 0.000 |
+
+What it shows:
+
+- **Rexu v3 absorbs message-level noise.** At the normal and heavy rates, v8/v9
+  R@1, R@5 and MRR do not move, and evidence recall stays within ±0.02. Whole-
+  meeting context plus token-level MaxSim means a mangled acronym or a swapped
+  speaker label rarely removes the answering span.
+- **The small hand-written corpus is where it shows.** v10 drops from R@1 .750
+  to .500 and MRR .875 to .675 under heavy noise (4 test queries, so indicative
+  only).
+- **What is not simulated:** query-side noise (acronyms/entities in the user
+  question) and turn segmentation errors (merged or split ASR segments). Those
+  are the remaining realism gaps; the corruption changes labels and text, not
+  boundaries or ids.
+
+Files: `data/noisy/`, `data/noisy_heavy/`, results in
+`data/rexu_v3_eval.json`; regenerate with `make_noisy_corpora.py` and
+`evaluate_rexu_v3.py`.
 
 What the table says:
 
 - **Finding one answering message is solved on v8/v9** (R@1 1.000) because the
-  pool is the query's own meeting. v10's R@1 0.500 is four test queries, so
+  pool is the query's own meeting. v10's R@1 0.750 is four test queries, so
   treat it as an indication, not a rate.
-- **Finding the whole chain is not.** AllHops@5 is 0.000 on v8, 0.420 on v9 and
-  0.000 on v10; EvidenceRecall@5 is 0.60/0.81/0.48. In multi-hop terms the
+- **Finding the whole chain is not.** AllHops@5 is 0.020 on v8, 0.340 on v9 and
+  0.000 on v10; EvidenceRecall@5 is 0.64/0.81/0.53. In multi-hop terms the
   model reliably finds a hop, not all hops.
 - v9's evidence sets are better covered than v8's: same R@1, but evidence
-  recall and AllHops@5 move from .603/.000 to .813/.420.
+  recall and AllHops@5 move from .643/.020 to .810/.340.
 - v8/v9/v10 values are not comparable to each other or to a cross-meeting
   benchmark; the candidate pool and the number of test queries differ.
 
-### Real-data check (QMSum test, 244 queries / 35 meetings, meeting scope)
+### Real-data check (QMSum test, 244 queries / 35 meetings, meeting scope, earlier checkpoint)
 
 | Recall@1 | AnyR@1 | Recall@5 | AnyR@5 | MRR@10 | median best-gold rank |
 |---:|---:|---:|---:|---:|---:|
@@ -98,6 +146,14 @@ python evaluate_v10.py
 
 # rebuild the v8/v9/v10 numbers (also retrains the head)
 python finetune_pplx_heads_multi.py
+
+# noise-injected corpora and the robustness table
+python make_noisy_corpora.py --out-dir data/noisy
+python evaluate_rexu_v3.py --device cuda
+python make_noisy_corpora.py --out-dir data/noisy_heavy --seed 23 \
+    --acronym-rate 0.8 --entity-rate 0.6 --diar-scale 2.0
+python evaluate_rexu_v3.py --device cuda --noisy-dir data/noisy_heavy \
+    --out artifacts/noisy_heavy_eval.json
 
 # UI
 python app.py                               # http://127.0.0.1:5000
@@ -151,13 +207,13 @@ fraction of all gold evidence in the top 5.
 | EN | BM25 | 0.020 | 0.260 | 0.560 | 0.980 | 0.153 | 0.240 |
 | EN | BGE-M3 dense | 0.040 | 0.540 | 0.800 | 1.000 | 0.272 | 0.430 |
 | EN | Pyramid v3.1 | 0.260 | **0.960** | **1.000** | **1.000** | 0.464 | **0.753** |
-| EN | **Rexu v3** | **0.400** | 0.920 | 0.960 | 0.960 | **0.564** | 0.653 |
+| EN | **Rexu v3** | **0.420** | 0.960 | 1.000 | 1.000 | **0.588** | 0.682 |
 | EN | SAE v4 + reranker | 0.060 | 0.580 | 0.720 | 0.780 | 0.244 | 0.427 |
 | EN | SAE v4, no reranker | 0.000 | 0.040 | 0.380 | 0.780 | 0.078 | 0.040 |
 | FR | BM25 | 0.060 | 0.440 | 0.600 | 0.980 | 0.185 | 0.335 |
 | FR | BGE-M3 dense | 0.020 | 0.600 | 0.720 | 0.960 | 0.258 | 0.480 |
 | FR | Pyramid v3.1 | 0.180 | **0.920** | **0.980** | **1.000** | 0.357 | **0.677** |
-| FR | **Rexu v3** | **0.460** | 0.860 | 0.960 | 0.980 | **0.610** | 0.665 |
+| FR | **Rexu v3** | **0.400** | 0.940 | 0.980 | 1.000 | **0.567** | **0.755** |
 | FR | SAE v4 + reranker | 0.160 | 0.600 | 0.720 | 0.760 | 0.319 | 0.465 |
 | FR | SAE v4, no reranker | 0.040 | 0.260 | 0.520 | 0.760 | 0.151 | 0.188 |
 
@@ -168,18 +224,19 @@ Resources (RTX 5060 8 GB; build/index and model load included where noted):
 | BM25 | 0.02 s | — | — | < 1 ms |
 | BGE-M3 dense | 0.9 s encode | 2.3–2.9 GB | 3.6–5.2 GB | one 206×50 matmul |
 | Pyramid v3.1 | 11.8–13.7 s | 2.9 GB | 4.7–5.3 GB | included in build |
-| **Rexu v3** | 5.4–11.6 s (cached docs) | 2.4 GB | 3.5–4.4 GB | 43–45 ms (p95 52–55) |
+| **Rexu v3** | 5.4–11.6 s (cached docs) | 2.4 GB | 3.5–4.4 GB | 39–55 ms (p95 52–55) |
 | SAE v4 + reranker | 1.0–1.3 s | 2.6 GB | 2.8–4.2 GB | 200–224 ms |
 | SAE v4, no reranker | 1.0–1.3 s | 1.1 GB | 2.6–3.7 GB | 42–83 ms |
 
 What it says:
 
-- **Rexu v3 is the best top-1 retriever** on both languages: R@1 0.40/0.46 and
-  MRR 0.56/0.61, ahead of pyramid (0.26/0.18 and 0.46/0.36) and far ahead of
+- **Rexu v3 is the best top-1 retriever** on both languages: R@1 0.42/0.40 and
+  MRR 0.59/0.57, ahead of pyramid (0.26/0.18 and 0.46/0.36) and far ahead of
   dense/BM25.
-- **Pyramid wins evidence coverage** (R@5 0.96/0.92, ev@5 0.75/0.68): it finds
-  the chain of supporting turns even when the main turn is not ranked first.
-  That is the multi-hop property, not a top-1 win.
+- **Evidence coverage is split.** Pyramid keeps the higher evidence recall on EN
+  (ev@5 0.753 vs 0.682); on FR Rexu is slightly ahead (0.755 vs 0.677). Both
+  find the chain at R@5 0.96/0.94 — the multi-hop property, not only a top-1
+  win.
 - **SAE is reranker-dominated here**: without it R@5 falls to 0.04/0.26; with
   it, 0.58/0.60. Its unit model and rule readers target French decision/state
   questions, not these chain questions.

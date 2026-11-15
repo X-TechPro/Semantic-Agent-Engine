@@ -1,0 +1,1990 @@
+{
+ "dataset": "v10",
+ "description": "Five hand-written French production meetings. Multi-hop facts: Les Rivières de Sel, Max, Maria, Atelier Nord, budget and launch revisions.",
+ "meetings": [
+  {
+   "meeting_id": "v10-m1",
+   "title": "Préparation des Rivières de Sel",
+   "meeting_date": "2026-02-03",
+   "style": "formelle",
+   "messages": [
+    {
+     "id": "v10-m1:001",
+     "message_id": 1,
+     "time": "09:00",
+     "speaker": "Max",
+     "text": "Bonjour à tous. On démarre la préparation des Rviières de sel. Je veux qu'on sorte d'ici avec une date de tournage, un budget plafond et une décision sur les décors."
+    },
+    {
+     "id": "v10-m1:002",
+     "message_id": 2,
+     "time": "09:01",
+     "speaker": "Camille",
+     "text": "Avant de parler budget, je veux verrouiller le titre. LesRivières de Sel, c'est le titre de travail depuis janvier, et je ne veux pas qu'on le change en cours de route."
+    },
+    {
+     "id": "v10-m1:003",
+     "message_id": 3,
+     "time": "09:02",
+     "speaker": "Max",
+     "text": "D'accord, Les-Rivières de Sel. Mx, tu confirmes que tu réalises ?"
+    },
+    {
+     "id": "v10-m1:004",
+     "message_id": 4,
+     "time": "09:02",
+     "speaker": "Maria",
+     "text": "Oui, je réalise. Je ne veux pas de co-réalisation, et je veux garder la main sur le montage final."
+    },
+    {
+     "id": "v10-m1:005",
+     "message_id": 5,
+     "time": "09:04",
+     "speaker": "Camille",
+     "text": "Je peux intervenir ? Je suis maria, je travaille chez Atelier-Nord. On doit valider les décors avant de parler de la date."
+    },
+    {
+     "id": "v10-m1:006",
+     "message_id": 6,
+     "time": "09:05",
+     "speaker": "Maria",
+     "text": "Attends, maria, tu es là pour LR ou pour la production ? Je ne veux pas mélanger les rôles."
+    },
+    {
+     "id": "v10-m1:007",
+     "message_id": 7,
+     "time": "09:06",
+     "speaker": "Maira",
+     "text": "Je travaille chez AN depuis trois ans. Je suis cheffe de projet décors. Pour ce film, je représente A.N., pas la production."
+    },
+    {
+     "id": "v10-m1:008",
+     "message_id": 8,
+     "time": "09:07",
+     "speaker": "Camille",
+     "text": "Et Maria est aussi ma femme. On en a parlé avant la réunion : le contrat est avec Atelier Nodr, pas avec elle personnellement."
+    },
+    {
+     "id": "v10-m1:009",
+     "message_id": 9,
+     "time": "09:08",
+     "speaker": "Max / Insè",
+     "text": "Donc on a un lien familial, mais un contrat professionnel séparé. C'est bien ça ?"
+    },
+    {
+     "id": "v10-m1:010",
+     "message_id": 10,
+     "time": "09:09",
+     "speaker": "Nadia",
+     "text": "C'est ça. Le devis Atelier-Nord est de 480 000 pour les décors, mais il inclut deux maisons. Si on n'en garde qu'une, on peut descendre à 390 000."
+    },
+    {
+     "id": "v10-m1:011",
+     "message_id": 11,
+     "time": "09:11",
+     "speaker": "Maàia",
+     "text": "Moi je veux juste savoir quand je tourne. J'ai un autre projet en mai, donc si la date change, il faut me le dire maintenant."
+    },
+    {
+     "id": "v10-m1:012",
+     "message_id": 12,
+     "time": "09:12",
+     "speaker": "Mxa",
+     "text": "Nadia, tu es la tête d'affiche. On te doit une date ferme. Mais on ne peut pas la donner avant d'avoir le budget et l'assurance."
+    },
+    {
+     "id": "v10-m1:013",
+     "message_id": 13,
+     "time": "09:14",
+     "speaker": "Inès",
+     "text": "Budget initial : 3,2 millions pour la phase une. C'est le plafond validé par la société. Au-delà, il faut un vote du conseil."
+    },
+    {
+     "id": "v10-m1:014",
+     "message_id": 14,
+     "time": "09:15",
+     "speaker": "Mpx",
+     "text": "3,2, c'est trop serré. Rien que les décors à 390 et l'assurance à 40, on est déjà à 430 sur un seul poste."
+    },
+    {
+     "id": "v10-m1:015",
+     "message_id": 15,
+     "time": "09:17",
+     "speaker": "Camille",
+     "text": "On garde une maison. Maria, tu refais le devis à 390. Ines, tu mets 3,2 comme plafond, pas comme engagement ferme."
+    },
+    {
+     "id": "v10-m1:016",
+     "message_id": 16,
+     "time": "09:18",
+     "speaker": "Maria",
+     "text": "Je peux refaire le devis, mais A N demande une assurance avant le 20 mars. Sans ça, on ne bloque pas la maison."
+    },
+    {
+     "id": "v10-m1:017",
+     "message_id": 17,
+     "time": "09:20",
+     "speaker": "Léo",
+     "text": "Pour l'image, je propose de tourner en avril. La lumière est meilleure et l'équipe est disponible. Si on décale en mai, il faut changer le planning de pré-lumière."
+    },
+    {
+     "id": "v10-m1:018",
+     "message_id": 18,
+     "time": "09:21",
+     "speaker": "Camille",
+     "text": "On vise le 12 avril. Léo, tu prépares le planning. Maria, tu confirmes la maison et le devis avant la prochaine réunion."
+    },
+    {
+     "id": "v10-m1:019",
+     "message_id": 19,
+     "time": "09:23",
+     "speaker": "Samir",
+     "text": "Lumière veut une copie finie pour le 20 novembre. Ils proposent une avance de 800 000, mais révisable si le tournage est décalé de plus de trois semaines."
+    },
+    {
+     "id": "v10-m1:020",
+     "message_id": 20,
+     "time": "09:24",
+     "speaker": "Max",
+     "text": "Donc si on décale, Lumière peut baisser l'avance. On ne peut pas leur donner une date qu'on ne tient pas."
+    },
+    {
+     "id": "v10-m1:021",
+     "message_id": 21,
+     "time": "09:25",
+     "speaker": "Camille",
+     "text": "Exactement. Le contrat Lumière est clair : date de copie, montant de l'avance, et clause de renégociation en cas de report."
+    },
+    {
+     "id": "v10-m1:022",
+     "message_id": 22,
+     "time": "09:27",
+     "speaker": "Samir",
+     "text": "Alors on note le 12 avril comme date cible, et le 3 mai comme plan B si l'assurance ne passe pas. On ne parle pas du 3 mai au distributeur tout de suite."
+    },
+    {
+     "id": "v10-m1:023",
+     "message_id": 23,
+     "time": "09:28",
+     "speaker": "Ins",
+     "text": "Attention, le 3 mai n'est pas gratuit. Si on décale, la maison reste bloquée et l'équipe technique coûte 12 000 de plus."
+    },
+    {
+     "id": "v10-m1:024",
+     "message_id": 24,
+     "time": "09:30",
+     "speaker": "Maria",
+     "text": "La maison est libre du 1er avril au 30 mai. Après, elle est louée à une autre production. Donc le 3 mai est encore possible, mais pas le 17 mai sans accord."
+    },
+    {
+     "id": "v10-m1:025",
+     "message_id": 25,
+     "time": "09:31",
+     "speaker": "Nadia / Inès",
+     "text": "Moi, le 3 mai me va. Le 12 avril aussi. Ce qui ne me va pas, c'est de changer trois fois."
+    },
+    {
+     "id": "v10-m1:026",
+     "message_id": 26,
+     "time": "09:33",
+     "speaker": "Inconnu",
+     "text": "On ne change pas trois fois. On a une date cible, un plan B, et on ne bouge plus après la validation de l'assurance."
+    },
+    {
+     "id": "v10-m1:027",
+     "message_id": 27,
+     "time": "09:34",
+     "speaker": "Camilme",
+     "text": "Décision : maison unique, devis AN à 390, date cible 12 avril, plan B 3 mai, assurance avant le 20 mars."
+    },
+    {
+     "id": "v10-m1:028",
+     "message_id": 28,
+     "time": "09:35",
+     "speaker": "Nadia",
+     "text": "Pour la sécurité, il faut un régisseur dédié. Je ne peux pas être chef op et responsable sécurité en même temps."
+    },
+    {
+     "id": "v10-m1:029",
+     "message_id": 29,
+     "time": "09:37",
+     "speaker": "Ines",
+     "text": "Marc devait être responsable sécurité, mais il est absent. On recrute un régisseur pour le tournage. C'est 25 000."
+    },
+    {
+     "id": "v10-m1:030",
+     "message_id": 30,
+     "time": "09:38",
+     "speaker": "Inès",
+     "text": "25 000 de plus, ça sort de la réserve. On passe à 3,225. Ce n'est plus le budget initial."
+    },
+    {
+     "id": "v10-m1:031",
+     "message_id": 31,
+     "time": "09:40",
+     "speaker": "Max",
+     "text": "On coupe les extras. 25 000 d'extras en moins, et on garde la sécurité. Je ne tourne pas sans régisseur."
+    },
+    {
+     "id": "v10-m1:032",
+     "message_id": 32,
+     "time": "09:41",
+     "speaker": "Nadia",
+     "text": "Si on coupe les extras, on coupe la scène de la place. C'est une scène importante pour mon personnage."
+    },
+    {
+     "id": "v10-m1:033",
+     "message_id": 33,
+     "time": "09:43",
+     "speaker": "Max",
+     "text": "La scène de la place peut se tourner avec moins de figurants. On garde la scène, on réduit la figuration."
+    },
+    {
+     "id": "v10-m1:034",
+     "message_id": 34,
+     "time": "09:44",
+     "speaker": "Maria",
+     "text": "atelier Nord peut prêter deux jours de décor, mais pas plus. Après, c'est facturé 8 000 par jour."
+    },
+    {
+     "id": "v10-m1:035",
+     "message_id": 35,
+     "time": "09:46",
+     "speaker": "Camille",
+     "text": "On note le prêt de deux jours. Maria, tu l'écris dans le contrat. Insè, tu intègres la sécurité et le prêt dans la version du budget."
+    },
+    {
+     "id": "v10-m1:036",
+     "message_id": 36,
+     "time": "09:47",
+     "speaker": "Léo",
+     "text": "Lumière veut aussi une clause de mention d'an au générique. Ce n'est pas un crédit producteur, juste une mention décor."
+    },
+    {
+     "id": "v10-m1:037",
+     "message_id": 37,
+     "time": "09:48",
+     "speaker": "Samir",
+     "text": "C'est dans notre contrat type. Une mention au générique de fin, pas au début. Ça ne change pas le contrat de production."
+    },
+    {
+     "id": "v10-m1:038",
+     "message_id": 38,
+     "time": "09:50",
+     "speaker": "Camille",
+     "text": "Accepté, mention au générique de fin. On ne donne pas de crédit producteur à Atelier Nord."
+    },
+    {
+     "id": "v10-m1:039",
+     "message_id": 39,
+     "time": "09:51",
+     "speaker": "Inconnu",
+     "text": "Donc on a un budget plafond à 3,225, avec une réserve de 335. Si l'assurance coûte plus de 40, on revient devant le conseil."
+    },
+    {
+     "id": "v10-m1:040",
+     "message_id": 40,
+     "time": "09:52",
+     "speaker": "Max",
+     "text": "Et si le conseil refuse, on ne tourne pas. C'est clair. Je ne veux pas d'un tournage non assuré."
+    },
+    {
+     "id": "v10-m1:041",
+     "message_id": 41,
+     "time": "09:54",
+     "speaker": "Naida",
+     "text": "Je veux une confirmation écrite avant vendredi. Même si la date est le 12 avril, je dois bloquer mon agenda."
+    },
+    {
+     "id": "v10-m1:042",
+     "message_id": 42,
+     "time": "09:55",
+     "speaker": "Léo",
+     "text": "Vendredi, tu as la confirmation de la date cible. Pas la date finale, mais la date cible."
+    },
+    {
+     "id": "v10-m1:043",
+     "message_id": 43,
+     "time": "09:56",
+     "speaker": "Cfmille",
+     "text": "Il me faut aussi la liste du matériel avant le 15 mars. Si on attend, les loueurs n'auront plus de caméra."
+    },
+    {
+     "id": "v10-m1:044",
+     "message_id": 44,
+     "time": "09:57",
+     "speaker": "Inconnu",
+     "text": "Léo, tu envoies la liste aujourd'hui. Marai, tu envoies le devis. Inès, tu envoies le budget. Samir, tu confirmes Lumière."
+    },
+    {
+     "id": "v10-m1:045",
+     "message_id": 45,
+     "time": "09:58",
+     "speaker": "Maria",
+     "text": "Je précise une dernière chose : je ne veux pas que le fait d'être la femme de Mxa soit utilisé pour négocier le devis. Le devis est le devis."
+    },
+    {
+     "id": "v10-m1:046",
+     "message_id": 46,
+     "time": "09:59",
+     "speaker": "Mèx",
+     "text": "On est d'accord. ND facture la production. Marai ne signe pas pour moi, et moi je ne signe pas pour elle."
+    },
+    {
+     "id": "v10-m1:047",
+     "message_id": 47,
+     "time": "10:00",
+     "speaker": "Cumille",
+     "text": "C'est noté au compte rendu. On sépare le contrat et la relation personnelle."
+    },
+    {
+     "id": "v10-m1:048",
+     "message_id": 48,
+     "time": "10:01",
+     "speaker": "Samir",
+     "text": "Lumière demandera peut-être une garantie bancaire. Si oui, il faut la demander cette semaine."
+    },
+    {
+     "id": "v10-m1:049",
+     "message_id": 49,
+     "time": "10:02",
+     "speaker": "Inconnu",
+     "text": "Je peux demander une garantie, mais ça coûte 15 000. On la prend sur la réserve."
+    },
+    {
+     "id": "v10-m1:050",
+     "message_id": 50,
+     "time": "10:03",
+     "speaker": "Camille",
+     "text": "On la demande seulement si Lumière la confirme. Pas de coût inutile."
+    },
+    {
+     "id": "v10-m1:051",
+     "message_id": 51,
+     "time": "10:04",
+     "speaker": "Leo",
+     "text": "D'accord. Donc vendredi, j'ai la date cible, et dans deux semaines on sait si c'est le 12 avril ou le 3 mai."
+    },
+    {
+     "id": "v10-m1:052",
+     "message_id": 52,
+     "time": "10:05",
+     "speaker": "Léo",
+     "text": "Et moi je veux une journée de pré-lumière avant le tournage. Une demi-journée ne suffit pas."
+    },
+    {
+     "id": "v10-m1:053",
+     "message_id": 53,
+     "time": "10:06",
+     "speaker": "Caimlle",
+     "text": "Journée de pré-lumière, on l'ajoute au planning. On se retrouve le 10 février pour le budget et l'assurance."
+    },
+    {
+     "id": "v10-m1:054",
+     "message_id": 54,
+     "time": "10:07",
+     "speaker": "Maria",
+     "text": "Le 10 février, je viendrai avec le devis signé et la confirmation de la maison."
+    },
+    {
+     "id": "v10-m1:055",
+     "message_id": 55,
+     "time": "10:08",
+     "speaker": "Inès",
+     "text": "Parfait. Décisions : maison unique, devis 390, sécurité 25, date cible 12 avril, plan B 3 mai, contrat Atelier Nord séparé. On lève."
+    }
+   ]
+  },
+  {
+   "meeting_id": "v10-m2",
+   "title": "Budget, assurance et date de tournage",
+   "meeting_date": "2026-02-10",
+   "style": "formelle",
+   "messages": [
+    {
+     "id": "v10-m2:001",
+     "message_id": 1,
+     "time": "09:00",
+     "speaker": "Mdx",
+     "text": "On reprend le 10 février. On devait avoir le devis, l'assurance et le budget. Je veux les trois, pas deux sur trois."
+    },
+    {
+     "id": "v10-m2:002",
+     "message_id": 2,
+     "time": "09:01",
+     "speaker": "Ins",
+     "text": "Le devis Atelier Nord est à 390, la sécurité à 25, l'assurance à 40. On est à 455 sur les trois lignes. Le plafond de 3,225 tient encore."
+    },
+    {
+     "id": "v10-m2:003",
+     "message_id": 3,
+     "time": "09:03",
+     "speaker": "Max",
+     "text": "Mais le conseil n'a pas encore validé 3,225. Il a validé 3,2. Donc on n'est pas dans le budget, on est au-dessus."
+    },
+    {
+     "id": "v10-m2:004",
+     "message_id": 4,
+     "time": "09:04",
+     "speaker": "Caille",
+     "text": "Exact. Je propose 3,8 au conseil. Ça laisse 350 de marge pour l'incident et la post-production."
+    },
+    {
+     "id": "v10-m2:005",
+     "message_id": 5,
+     "time": "09:05",
+     "speaker": "Inès",
+     "text": "3,8, c'est le nouveau plafond que je propose. Mais je ne peux pas le valider seule. Ines, tu confirmes la proposition ?"
+    },
+    {
+     "id": "v10-m2:006",
+     "message_id": 6,
+     "time": "09:06",
+     "speaker": "Inès",
+     "text": "Je confirme la proposition de 3,8. Le vote du conseil est obligatoire. Si le vote échoue, on revient à 3,2 et on annule la sécurité."
+    },
+    {
+     "id": "v10-m2:007",
+     "message_id": 7,
+     "time": "09:08",
+     "speaker": "Samir",
+     "text": "Si le budget dépasse 3,5, Lumière peut baisser l'avance de 800 à 650. C'est dans le contrat. Donc 3,8 nous coûte aussi 150 d'avance."
+    },
+    {
+     "id": "v10-m2:008",
+     "message_id": 8,
+     "time": "09:09",
+     "speaker": "Maria",
+     "text": "Donc on perd 150 d'un côté et on gagne 350 de l'autre. Le solde est encore positif, mais il faut le dire au conseil."
+    },
+    {
+     "id": "v10-m2:009",
+     "message_id": 9,
+     "time": "09:11",
+     "speaker": "Camille",
+     "text": "AN accepte 390, mais le contrat doit être signé avant le 28 février. Après, le prix passe à 430."
+    },
+    {
+     "id": "v10-m2:010",
+     "message_id": 10,
+     "time": "09:12",
+     "speaker": "Camille",
+     "text": "On signe avant le 28. Camille, tu as l'autorisation de signer le bon de commande ?"
+    },
+    {
+     "id": "v10-m2:011",
+     "message_id": 11,
+     "time": "09:13",
+     "speaker": "Inse",
+     "text": "J'ai l'autorisation jusqu'à 3,8 pour le bon de commande. Pas pour le contrat final tant que l'assurance n'est pas validée."
+    },
+    {
+     "id": "v10-m2:012",
+     "message_id": 12,
+     "time": "09:15",
+     "speaker": "Max",
+     "text": "L'assurance ne validera pas sans plan de sécurité écrit. Marc devait l'envoyer, il ne l'a pas fait."
+    },
+    {
+     "id": "v10-m2:013",
+     "message_id": 13,
+     "time": "09:16",
+     "speaker": "Nadia",
+     "text": "Marc est malade. Lko, tu peux récupérer le plan ?"
+    },
+    {
+     "id": "v10-m2:014",
+     "message_id": 14,
+     "time": "09:17",
+     "speaker": "Léo",
+     "text": "Je peux, mais je ne suis pas responsable sécurité. Je veux que ce soit écrit que je supplée, pas que je remplace."
+    },
+    {
+     "id": "v10-m2:015",
+     "message_id": 15,
+     "time": "09:18",
+     "speaker": "Inès",
+     "text": "On peut payer un consultant sécurité 15 000 pour valider le plan. C'est moins cher qu'un régisseur à l'année."
+    },
+    {
+     "id": "v10-m2:016",
+     "message_id": 16,
+     "time": "09:20",
+     "speaker": "Inconnu",
+     "text": "15 000, ça sort de la marge de 350. Il reste 335. D'accord, mais le plan doit être prêt avant le 20 février."
+    },
+    {
+     "id": "v10-m2:017",
+     "message_id": 17,
+     "time": "09:21",
+     "speaker": "Samir",
+     "text": "Lumière propose le 3 mai comme nouvelle date. Ils disent que le marché de novembre est trop chargé pour le 12 avril."
+    },
+    {
+     "id": "v10-m2:018",
+     "message_id": 18,
+     "time": "09:22",
+     "speaker": "Camille",
+     "text": "Le 3 mai, c'était notre plan B. Pourquoi-Lumière veut le plan B alors qu'on a une date cible ?"
+    },
+    {
+     "id": "v10-m2:019",
+     "message_id": 19,
+     "time": "09:24",
+     "speaker": "Samir",
+     "text": "Parce que leur calendrier de sortie est meilleur en novembre. Le 12 avril les oblige à sortir en octobre, et ils ont déjà deux films."
+    },
+    {
+     "id": "v10-m2:020",
+     "message_id": 20,
+     "time": "09:25",
+     "speaker": "Max",
+     "text": "Donc on décale pour le distributeur, pas pour l'assurance. Ce n'est pas la même raison."
+    },
+    {
+     "id": "v10-m2:021",
+     "message_id": 21,
+     "time": "09:26",
+     "speaker": "Nadia",
+     "text": "Le 3 mai, je suis disponible. Mais je veux une confirmation avant le 20 février, pas le 15 mars."
+    },
+    {
+     "id": "v10-m2:022",
+     "message_id": 22,
+     "time": "09:27",
+     "speaker": "Camille",
+     "text": "On confirme le 3 mai sous réserve de l'assurance. Si l'assurance échoue, on passe au 17 mai."
+    },
+    {
+     "id": "v10-m2:023",
+     "message_id": 23,
+     "time": "09:29",
+     "speaker": "Léo",
+     "text": "Le 17 mai, la lumière est moins bonne. Je peux tourner, mais je préfère le 3 mai. La maison est orientée est."
+    },
+    {
+     "id": "v10-m2:024",
+     "message_id": 24,
+     "time": "09:30",
+     "speaker": "Maria",
+     "text": "La maison est libre jusqu'au 30 mai. Après, elle est louée. Donc le 17 mai est la dernière date possible."
+    },
+    {
+     "id": "v10-m2:025",
+     "message_id": 25,
+     "time": "09:32",
+     "speaker": "Mxa",
+     "text": "On vise le 3 mai, avec le 17 mai comme date de secours. samir, tu confirmes Lumière sur le 3 mai ?"
+    },
+    {
+     "id": "v10-m2:026",
+     "message_id": 26,
+     "time": "09:33",
+     "speaker": "Samir",
+     "text": "Lumière confirme le 3 mai, mais demande une copie le 15 novembre et le nom d'an au générique."
+    },
+    {
+     "id": "v10-m2:027",
+     "message_id": 27,
+     "time": "09:34",
+     "speaker": "Mcx",
+     "text": "Atelier-Nord au générique, pourquoi ? Ils font les décors, pas la production."
+    },
+    {
+     "id": "v10-m2:028",
+     "message_id": 28,
+     "time": "09:35",
+     "speaker": "Nadia",
+     "text": "C'est dans leur contrat type. Une mention de la société de décors. Pas un crédit producteur, et pas un paiement."
+    },
+    {
+     "id": "v10-m2:029",
+     "message_id": 29,
+     "time": "09:37",
+     "speaker": "Caille",
+     "text": "Une mention ne coûte rien. On accepte, mais on ne met pas le logo au début."
+    },
+    {
+     "id": "v10-m2:030",
+     "message_id": 30,
+     "time": "09:38",
+     "speaker": "Inès",
+     "text": "Accepté. Et le budget ? On est à 3,8 avec 335 de marge. inès, tu confirmes ?"
+    },
+    {
+     "id": "v10-m2:031",
+     "message_id": 31,
+     "time": "09:39",
+     "speaker": "Inès",
+     "text": "Je confirme 3,8. Mais le conseil doit voter avant le 14 février. Si le vote échoue, on revient à 3,2 et on annule le consultant."
+    },
+    {
+     "id": "v10-m2:032",
+     "message_id": 32,
+     "time": "09:40",
+     "speaker": "Samir",
+     "text": "Le vote doit être avant le 15. SinonL umière retire son offre. Ils ne veulent pas attendre."
+    },
+    {
+     "id": "v10-m2:033",
+     "message_id": 33,
+     "time": "09:42",
+     "speaker": "Camille",
+     "text": "Je les appelle aujourd'hui. On ne peut pas perdre Lumière pour 150. On vote le 14."
+    },
+    {
+     "id": "v10-m2:034",
+     "message_id": 34,
+     "time": "09:43",
+     "speaker": "Inès",
+     "text": "Et mon contrat ? Il est basé sur le 3 mai ou sur le 12 avril ?"
+    },
+    {
+     "id": "v10-m2:035",
+     "message_id": 35,
+     "time": "09:44",
+     "speaker": "Nadia",
+     "text": "Sur le 3 mai, avec une clause de report au 17 mai sans frais si l'assurance échoue."
+    },
+    {
+     "id": "v10-m2:036",
+     "message_id": 36,
+     "time": "09:45",
+     "speaker": "Nadia",
+     "text": "D'accord. Mais je ne veux pas être la variable d'ajustement. Si on décale, c'est l'assurance, pas mon planning."
+    },
+    {
+     "id": "v10-m2:037",
+     "message_id": 37,
+     "time": "09:47",
+     "speaker": "Caéille",
+     "text": "Tu n'es pas la variable. La maison, l'assurance et la sécurité, oui. On te doit une date ferme."
+    },
+    {
+     "id": "v10-m2:038",
+     "message_id": 38,
+     "time": "09:48",
+     "speaker": "Maria",
+     "text": "Atelier Nord livre les décors le 28 avril. Si le tournage est le 3 mai, c'est juste mais faisable."
+    },
+    {
+     "id": "v10-m2:039",
+     "message_id": 39,
+     "time": "09:49",
+     "speaker": "Léo",
+     "text": "Le 28 avril, je veux une journée de pré-lumière. Sinon, on perd la première matinée."
+    },
+    {
+     "id": "v10-m2:040",
+     "message_id": 40,
+     "time": "09:50",
+     "speaker": "Camille",
+     "text": "Journée de pré-lumière le 2 mai. Léo, tu la mets au planning. On ne la déplace pas."
+    },
+    {
+     "id": "v10-m2:041",
+     "message_id": 41,
+     "time": "09:52",
+     "speaker": "Samir",
+     "text": "Lumière demande aussi une assurance pour la post-production. Ce n'est pas la même que l'assurance plateau."
+    },
+    {
+     "id": "v10-m2:042",
+     "message_id": 42,
+     "time": "09:53",
+     "speaker": "Max",
+     "text": "La post-production est couverte par la société, pas par l'assurance plateau. C'est 60 000."
+    },
+    {
+     "id": "v10-m2:043",
+     "message_id": 43,
+     "time": "09:54",
+     "speaker": "Max / Inès",
+     "text": "60 000 de plus ? On n'a pas ça. On a 335 de marge, pas 60 000."
+    },
+    {
+     "id": "v10-m2:044",
+     "message_id": 44,
+     "time": "09:55",
+     "speaker": "Ines",
+     "text": "C'est dans la marge de 335. On passe à 3,8 et on garde 275. On coupe les extras."
+    },
+    {
+     "id": "v10-m2:045",
+     "message_id": 45,
+     "time": "09:57",
+     "speaker": "Maria",
+     "text": "Le contrat Atelier-Nord inclut la reprise des décors après le tournage. C'est 18 000."
+    },
+    {
+     "id": "v10-m2:046",
+     "message_id": 46,
+     "time": "09:58",
+     "speaker": "Inès",
+     "text": "18 000, on les met dans la ligne décors. On est à 3,818. On frôle le plafond."
+    },
+    {
+     "id": "v10-m2:047",
+     "message_id": 47,
+     "time": "09:59",
+     "speaker": "Nadia",
+     "text": "On arrête les extras. nadia, tu es d'accord ?"
+    },
+    {
+     "id": "v10-m2:048",
+     "message_id": 48,
+     "time": "10:00",
+     "speaker": "Camille",
+     "text": "Oui, mais je veux la scène de la rivière. C'est le cœur du film. On coupe la foule, pas la rivière."
+    },
+    {
+     "id": "v10-m2:049",
+     "message_id": 49,
+     "time": "10:01",
+     "speaker": "Max",
+     "text": "La scène de la rivière reste. On coupe les scènes de foule. Et on garde la pré-lumière."
+    },
+    {
+     "id": "v10-m2:050",
+     "message_id": 50,
+     "time": "10:03",
+     "speaker": "Inès",
+     "text": "Donc budget 3,8, tournage 3 mai, assurance à valider, Lumière à confirmer, Atelier Nord à signer."
+    },
+    {
+     "id": "v10-m2:051",
+     "message_id": 51,
+     "time": "10:04",
+     "speaker": "Camille",
+     "text": "Et si le conseil refuse le 3,8, Lumière ne signe pas. C'est une condition, pas une option."
+    },
+    {
+     "id": "v10-m2:052",
+     "message_id": 52,
+     "time": "10:05",
+     "speaker": "Samir",
+     "text": "On le dit au conseil. Pas de budget, pas de tournage. Pas de tournage, pas de contrat Lumière."
+    },
+    {
+     "id": "v10-m2:053",
+     "message_id": 53,
+     "time": "10:06",
+     "speaker": "Maria",
+     "text": "A N doit savoir avant le 28. Si on n'a pas le bon de commande, on ne bloque pas la maison."
+    },
+    {
+     "id": "v10-m2:054",
+     "message_id": 54,
+     "time": "10:07",
+     "speaker": "Nadia",
+     "text": "Je signe le bon de commande dès le vote. On se retrouve le 17 février pour l'incident et la sécurité."
+    },
+    {
+     "id": "v10-m2:055",
+     "message_id": 55,
+     "time": "10:08",
+     "speaker": "Mxa",
+     "text": "Et on ne parle pas du 17 mai à Lumière. On garde cette date pour nous, en cas de problème."
+    }
+   ]
+  },
+  {
+   "meeting_id": "v10-m3",
+   "title": "Incident du 7 mai et sécurité",
+   "meeting_date": "2026-05-10",
+   "style": "messy",
+   "messages": [
+    {
+     "id": "v10-m3:001",
+     "message_id": 1,
+     "time": "18:30",
+     "speaker": "SPEAKER_02",
+     "text": "Réunion exceptionnelle. On devait parler du planning, mais il y a eu l'incident du 7 mai sur le plateau. Léo, tu commences, et on ne cherche pas un coupable."
+    },
+    {
+     "id": "v10-m3:002",
+     "message_id": 2,
+     "time": "18:31",
+     "speaker": "SPEAKER_01 / SPEAKER_05",
+     "text": "Jeudi 7 mai, 18 h 20, un projecteur a pris feu dans la maison. Personne n'a été blessé, mais le tournage a été arrêté et la maison a été fermée deux jours."
+    },
+    {
+     "id": "v10-m3:003",
+     "message_id": 3,
+     "time": "18:32",
+     "speaker": "SPEAKER_03",
+     "text": "La maison est fermée, donc on ne peut pas reprendre le 10. On avait le 3 mai comme date de tournage, mais on n'a tourné que trois jours."
+    },
+    {
+     "id": "v10-m3:004",
+     "message_id": 4,
+     "time": "18:34",
+     "speaker": "SPEAKER_l2",
+     "text": "Le problème, c'est le câblage. Le propriétaire avait bricolé une ligne. Le régisseur sécurité a dit que ce n'était pas aux normes."
+    },
+    {
+     "id": "v10-m3:005",
+     "message_id": 5,
+     "time": "18:35",
+     "speaker": "SPEAKER_01",
+     "text": "Atelicr Nord avait signalé le câblage en avril. J'ai envoyé un mail le 22 avril. Personne n'a répondu. Je peux le montrer."
+    },
+    {
+     "id": "v10-m3:006",
+     "message_id": 6,
+     "time": "18:36",
+     "speaker": "SPEAKER_04",
+     "text": "Pourquoi personne n'a répondu ? Marc était responsable sécurité, non ?"
+    },
+    {
+     "id": "v10-m3:007",
+     "message_id": 7,
+     "time": "18:37",
+     "speaker": "SPEAKER_01",
+     "text": "Marc était malade, et le consultant sécurité n'a pas été recruté. On a fait sans. C'est une erreur de production, pas une erreur d'Atelier Nord."
+    },
+    {
+     "id": "v10-m3:008",
+     "message_id": 8,
+     "time": "18:39",
+     "speaker": "Inconnu",
+     "text": "Donc l'incident du 7 mai vient du câblage, pas du tournage. Leo, tu confirmes ?"
+    },
+    {
+     "id": "v10-m3:009",
+     "message_id": 9,
+     "time": "18:40",
+     "speaker": "SPEAKER_01",
+     "text": "Je confirme. Le projecteur a surchauffé, le disjoncteur n'a pas coupé. Heureusement, l'équipe était dehors."
+    },
+    {
+     "id": "v10-m3:010",
+     "message_id": 10,
+     "time": "18:41",
+     "speaker": "SPEAKER_03",
+     "text": "Et la maison ? Elle est assurée ?"
+    },
+    {
+     "id": "v10-m3:011",
+     "message_id": 11,
+     "time": "18:42",
+     "speaker": "SPEAEKR_05",
+     "text": "L'assurance plateau couvre le matériel, pas les dommages au bâtiment. Le propriétaire demande 35 000."
+    },
+    {
+     "id": "v10-m3:012",
+     "message_id": 12,
+     "time": "18:44",
+     "speaker": "SPEAKER_01",
+     "text": "35 000, ce n'est pas dans le budget. On était à 3,8, avec 275 de marge. On passe à 3,835."
+    },
+    {
+     "id": "v10-m3:013",
+     "message_id": 13,
+     "time": "18:45",
+     "speaker": "SPEAKE_R06",
+     "text": "Lumière va être informé. Ils peuvent considérer que le tournage est interrompu et activer la clause de force majeure."
+    },
+    {
+     "id": "v10-m3:014",
+     "message_id": 14,
+     "time": "18:46",
+     "speaker": "SPEAKER_07",
+     "text": "Force majeure pour un câblage ? Ce n'est pas la faute de la production, mais c'est notre plateau. Ils peuvent quand même retarder la sortie."
+    },
+    {
+     "id": "v10-m3:015",
+     "message_id": 15,
+     "time": "18:47",
+     "speaker": "SPEAKER_07",
+     "text": "On décale à quelle date ? Je suis disponible jusqu'au 5 juin, après je pars. Donc le 17 mai, c'est encore possible."
+    },
+    {
+     "id": "v10-m3:016",
+     "message_id": 16,
+     "time": "18:49",
+     "speaker": "SPEAKER_03",
+     "text": "L'assurance exige une semaine de vérification. La maison est libre à partir du 17 mai. On vise le 17 mai."
+    },
+    {
+     "id": "v10-m3:017",
+     "message_id": 17,
+     "time": "18:50",
+     "speaker": "SPEAKER_01",
+     "text": "Le 17 mai, la lumière est moins bonne, mais on n'a pas le choix. On tourne le 17, et on finit le 30 mai."
+    },
+    {
+     "id": "v10-m3:018",
+     "message_id": 18,
+     "time": "18:51",
+     "speaker": "SPEAKER_04",
+     "text": "Atelier Nord peut reprendre les décors le 16. Mais il faut un électricien agréé. C'est 12 000."
+    },
+    {
+     "id": "v10-m3:019",
+     "message_id": 19,
+     "time": "18:52",
+     "speaker": "SPEAKER_05",
+     "text": "12 000 de plus. On est à 3,847. Le plafond de 3,8 est dépassé."
+    },
+    {
+     "id": "v10-m3:020",
+     "message_id": 20,
+     "time": "18:54",
+     "speaker": "SPEAKER_01",
+     "text": "On demande une rallonge de 50 000 au conseil. Si on ne l'a pas, on annule la scène de la rivière."
+    },
+    {
+     "id": "v10-m3:021",
+     "message_id": 21,
+     "time": "18:55",
+     "speaker": "Inconnu",
+     "text": "La scène de la rivière, c'est le film. On ne peut pas l'annuler. Coupez autre chose."
+    },
+    {
+     "id": "v10-m3:022",
+     "message_id": 22,
+     "time": "18:56",
+     "speaker": "SPEAKE_R03",
+     "text": "Lumière peut avancer 50 000, mais ils veulent un droit de regard sur le montage. C'est une mauvaise idée."
+    },
+    {
+     "id": "v10-m3:023",
+     "message_id": 23,
+     "time": "18:57",
+     "speaker": "SPEAKER_06",
+     "text": "Pas de droit de regard. On trouve 50 ailleurs ou on coupe. Le montage reste à moi."
+    },
+    {
+     "id": "v10-m3:024",
+     "message_id": 24,
+     "time": "18:58",
+     "speaker": "Inconnu",
+     "text": "Atelier Nnrd peut réduire sa marge de 20 000 si on signe un deuxième film. Mais ce n'est pas gratuit, et ce n'est pas pour ce budget."
+    },
+    {
+     "id": "v10-m3:025",
+     "message_id": 25,
+     "time": "18:59",
+     "speaker": "SPEAKER_01",
+     "text": "Un deuxième film, ce n'est pas dans le budget. On ne promet pas. On ne mélange pas les deux projets."
+    },
+    {
+     "id": "v10-m3:026",
+     "message_id": 26,
+     "time": "19:01",
+     "speaker": "SPAEKER_05",
+     "text": "On a 275 de marge initiale. Avec les 35 000 maison, les 12 000 électricien et les 18 000 reprise, il manque 50 000. Je peux couper la post-production de 30 000."
+    },
+    {
+     "id": "v10-m3:027",
+     "message_id": 27,
+     "time": "19:02",
+     "speaker": "SPEAKER_02",
+     "text": "Couper la post-production, c'est couper l'image. Je refuse. On coupe les extras et la musique, pas le montage."
+    },
+    {
+     "id": "v10-m3:028",
+     "message_id": 28,
+     "time": "19:03",
+     "speaker": "SPEKER_03",
+     "text": "On coupe les extras et la musique. Pas le montage. Et on garde la scène de la rivière."
+    },
+    {
+     "id": "v10-m3:029",
+     "message_id": 29,
+     "time": "19:04",
+     "speaker": "SPEAKER_01",
+     "text": "On coupe 20 000 d'extras et 10 000 de musique. Il reste 20 000 à trouver. Samir, tu peux négocier Lumière ?"
+    },
+    {
+     "id": "v10-m3:030",
+     "message_id": 30,
+     "time": "19:05",
+     "speaker": "SPEAKER_06 / SPEAKER_07",
+     "text": "Lumière peut payer 20 000 de plus si on leur donne la première fenêtre de diffusion. C'est acceptable."
+    },
+    {
+     "id": "v10-m3:031",
+     "message_id": 31,
+     "time": "19:06",
+     "speaker": "SPEAKER_03 / SPEAKEn_04",
+     "text": "La première fenêtre, c'est eux. On accepte. Mais pas de droit de regard sur le montage."
+    },
+    {
+     "id": "v10-m3:032",
+     "message_id": 32,
+     "time": "19:07",
+     "speaker": "SPEAKER_05",
+     "text": "Donc budget final 3,85, avec 20 000 de Lumière et 30 000 de coupes. On est à 3,85, pas 3,8."
+    },
+    {
+     "id": "v10-m3:033",
+     "message_id": 33,
+     "time": "19:09",
+     "speaker": "SPEAKER_01",
+     "text": "Le conseil valide 3,85. Je m'en occupe. Et la sécurité ?"
+    },
+    {
+     "id": "v10-m3:034",
+     "message_id": 34,
+     "time": "19:10",
+     "speaker": "SPEAKER_02",
+     "text": "Le régisseur sécurité revient le 14 mai. Il exige un plan écrit, un électricien agréé, et un extincteur par pièce. C'est 8 000."
+    },
+    {
+     "id": "v10-m3:035",
+     "message_id": 35,
+     "time": "19:11",
+     "speaker": "SPEAKER_05",
+     "text": "8 000 de plus. On est à 3,858. On coupe la musique, définitivement."
+    },
+    {
+     "id": "v10-m3:036",
+     "message_id": 36,
+     "time": "19:12",
+     "speaker": "SPEAKER_07",
+     "text": "D'accord. La musique, on la fera après. Le film d'abord. Et le plan sécurité doit être prêt avant le 14."
+    },
+    {
+     "id": "v10-m3:037",
+     "message_id": 37,
+     "time": "19:14",
+     "speaker": "SPEAKER_03",
+     "text": "Et le distributeur ? Lumière reste ? Parce que si on change de distributeur, je veux le savoir."
+    },
+    {
+     "id": "v10-m3:038",
+     "message_id": 38,
+     "time": "19:15",
+     "speaker": "SPEAKER_06",
+     "text": "Lumière reste, mais ils ont proposé Nord Diffusion pour la distribution en Belgique. Ce n'est pas un remplacement, c'est un sous-distributeur."
+    },
+    {
+     "id": "v10-m3:039",
+     "message_id": 39,
+     "time": "19:16",
+     "speaker": "Inconnu",
+     "text": "Don Lumière reste le distributeur principal. Nord Diffusion, c'est seulement la Belgique. On l'écrit."
+    },
+    {
+     "id": "v10-m3:040",
+     "message_id": 40,
+     "time": "19:17",
+     "speaker": "SPEAKEb_06",
+     "text": "Oui. Nord Diffusion a un contrat avec Atelier Nord pour les décors, mais ce n'est pas le même contrat."
+    },
+    {
+     "id": "v10-m3:041",
+     "message_id": 41,
+     "time": "19:18",
+     "speaker": "Inconnu",
+     "text": "Atevier Nord travaille avec Nord Diffusion, oui. Mais pour ce film, le contrat décors est avec la production, pas avec Nord Diffusgon."
+    },
+    {
+     "id": "v10-m3:042",
+     "message_id": 42,
+     "time": "19:19",
+     "speaker": "SPAKER_01",
+     "text": "On clarifie : Marai représente A N, pas Nord-Diffusion. Le contrat décors est entre A N et la production."
+    },
+    {
+     "id": "v10-m3:043",
+     "message_id": 43,
+     "time": "19:21",
+     "speaker": "SPEAKER_02",
+     "text": "Et l'incident du 7 mai, on le déclare comment ? Parce que l'assurance va demander la cause exacte."
+    },
+    {
+     "id": "v10-m3:044",
+     "message_id": 44,
+     "time": "19:22",
+     "speaker": "SPEAKER_05",
+     "text": "En assurance, c'est un incident matériel. Le propriétaire doit être indemnisé, mais la production n'est pas responsable du câblage."
+    },
+    {
+     "id": "v10-m3:045",
+     "message_id": 45,
+     "time": "19:23",
+     "speaker": "SPEAKER_03",
+     "text": "On ne dit pas que c'est la faute de Maria. Atelier Nord avait signalé le câblage. Le mail du 22 avril est la preuve."
+    },
+    {
+     "id": "v10-m3:046",
+     "message_id": 46,
+     "time": "19:24",
+     "speaker": "SPEAKER_04",
+     "text": "Merci. Je transmets le mail à l'assurance aujourd'hui. Et je note que la production n'a pas répondu."
+    },
+    {
+     "id": "v10-m3:047",
+     "message_id": 47,
+     "time": "19:25",
+     "speaker": "SPEAKER0_1",
+     "text": "On assume. La production n'a pas traité l'alerte. On le met dans le rapport, sans accuser maria."
+    },
+    {
+     "id": "v10-m3:048",
+     "message_id": 48,
+     "time": "19:27",
+     "speaker": "SPEAKER_05",
+     "text": "Et la nouvelle date ? Parce que je dois confirmer à mon agent avant demain."
+    },
+    {
+     "id": "v10-m3:049",
+     "message_id": 49,
+     "time": "19:28",
+     "speaker": "SPEAKER0_3",
+     "text": "Tournage le 17 mai, fin le 30. Sortie le 20 novembre. Lumière a accepté le 17 et la première fenêtre."
+    },
+    {
+     "id": "v10-m3:050",
+     "message_id": 50,
+     "time": "19:29",
+     "speaker": "SPEAKER_07",
+     "text": "Le 17 mai, je suis là. Mais je veux une confirmation écrite avant le 12."
+    },
+    {
+     "id": "v10-m3:051",
+     "message_id": 51,
+     "time": "19:30",
+     "speaker": "SPEAKER_01",
+     "text": "Confirmation écrite aujourd'hui. On ne bouge plus. Si on bouge, c'est le 24 mai, et on perd Nadia."
+    },
+    {
+     "id": "v10-m3:052",
+     "message_id": 52,
+     "time": "19:31",
+     "speaker": "SPEAKER_06",
+     "text": "Lumière ne veut pas le 24. Le 17 est la dernière date. Après, ils sortent le film en janvier."
+    },
+    {
+     "id": "v10-m3:053",
+     "message_id": 53,
+     "time": "19:33",
+     "speaker": "Inconnu",
+     "text": "Donc le 17 mai est la date finale. Budget 3,858. Lumière reste. NordD iffusion seulement pour la Belgique."
+    },
+    {
+     "id": "v10-m3:054",
+     "message_id": 54,
+     "time": "19:34",
+     "speaker": "SPEAKER_05",
+     "text": "Je mets à jour le budget et j'envoie au conseil. La ligne 8 000 sécurité est dedans."
+    },
+    {
+     "id": "v10-m3:055",
+     "message_id": 55,
+     "time": "19:35",
+     "speaker": "SPEAKER_02",
+     "text": "Je mets le plan sécurité et l'électricien au planning. On se revoit le 24 mai pour le point de reprise. Et Maria envoie le mail du 22 avril à l'assurance."
+    }
+   ]
+  },
+  {
+   "meeting_id": "v10-m4",
+   "title": "Contrats, distribution et budget final",
+   "meeting_date": "2026-05-17",
+   "style": "formelle",
+   "messages": [
+    {
+     "id": "v10-m4:001",
+     "message_id": 1,
+     "time": "09:00",
+     "speaker": "Camille",
+     "text": "On se retrouve le 17 mai. On doit signer les contrats, figer le budget et confirmer la distribution. Pas de nouveaux sujets."
+    },
+    {
+     "id": "v10-m4:002",
+     "message_id": 2,
+     "time": "09:01",
+     "speaker": "Inconnu",
+     "text": "Le budget est à 3,858. Le conseil a voté. On a 8 000 de sécurité et 12 000 d'électricien dans la ligne."
+    },
+    {
+     "id": "v10-m4:003",
+     "message_id": 3,
+     "time": "09:02",
+     "speaker": "Max",
+     "text": "Et la scène de la rivière ? Elle est toujours dans le planning ?"
+    },
+    {
+     "id": "v10-m4:004",
+     "message_id": 4,
+     "time": "09:03",
+     "speaker": "Inconnu",
+     "text": "Oui, elle est tournée le 22 mai. On a la pré-lumière le 16 et le plan sécurité validé."
+    },
+    {
+     "id": "v10-m4:005",
+     "message_id": 5,
+     "time": "09:04",
+     "speaker": "Camille",
+     "text": "Atelier Nord a livré les décors le 15. La reprise est prévue le 30. Le contrat est prêt à signer."
+    },
+    {
+     "id": "v10-m4:006",
+     "message_id": 6,
+     "time": "09:05",
+     "speaker": "Maria",
+     "text": "Avant de signer, je veux relire la clause qui sépare atelier Nord de nd. C'est le point qui a créé la confusion."
+    },
+    {
+     "id": "v10-m4:007",
+     "message_id": 7,
+     "time": "09:06",
+     "speaker": "Samir",
+     "text": "Lumière reste le distributeur principal. PRS est seulement sous-distributeur en Belgique. Ce sont deux contrats."
+    },
+    {
+     "id": "v10-m4:008",
+     "message_id": 8,
+     "time": "09:08",
+     "speaker": "Maria",
+     "text": "Et Atelier Nord a un contrat avec nd pour d'autres décors, pas pour ce film. Ce n'est pas le même objet."
+    },
+    {
+     "id": "v10-m4:009",
+     "message_id": 9,
+     "time": "09:09",
+     "speaker": "Camile",
+     "text": "Donc on écrit : Lumière principal, Nord Diffusion Belgique, Atelier ord décors. Personne ne signe pour une autre société."
+    },
+    {
+     "id": "v10-m4:010",
+     "message_id": 10,
+     "time": "09:10",
+     "speaker": "Max",
+     "text": "Et-Maria ne signe pas pour moi. Elle signe pour Atelier Nord. Moi je signe pour la production."
+    },
+    {
+     "id": "v10-m4:011",
+     "message_id": 11,
+     "time": "09:11",
+     "speaker": "Maria",
+     "text": "C'est écrit dans le contrat. Le lien familial est déclaré, mais il n'y a pas de délégation de signature."
+    },
+    {
+     "id": "v10-m4:012",
+     "message_id": 12,
+     "time": "09:13",
+     "speaker": "Ines",
+     "text": "La clause de transparence est dans le contrat. C'est suffisant pour le conseil."
+    },
+    {
+     "id": "v10-m4:013",
+     "message_id": 13,
+     "time": "09:14",
+     "speaker": "Samir",
+     "text": "Lumière veut aussi une garantie de livraison. Si la copie n'est pas prête le 15 novembre, ils peuvent sortir en janvier."
+    },
+    {
+     "id": "v10-m4:014",
+     "message_id": 14,
+     "time": "09:15",
+     "speaker": "Max",
+     "text": "La copie sera prête. On a fini le tournage le 30 mai et le montage est prévu en juin."
+    },
+    {
+     "id": "v10-m4:015",
+     "message_id": 15,
+     "time": "09:16",
+     "speaker": "Incnnu",
+     "text": "Le montage prend six semaines. Si on commence le 2 juin, on finit le 15 juillet. La copie est possible."
+    },
+    {
+     "id": "v10-m4:016",
+     "message_id": 16,
+     "time": "09:18",
+     "speaker": "Max",
+     "text": "La post-production coûte 60 000. C'est la ligne qui a été réduite. Il reste 30 000 de musique non dépensés."
+    },
+    {
+     "id": "v10-m4:017",
+     "message_id": 17,
+     "time": "09:19",
+     "speaker": "Samir",
+     "text": "On garde les 30 000 pour la copie et la musique. Le budget ne bouge plus. 3,858, point."
+    },
+    {
+     "id": "v10-m4:018",
+     "message_id": 18,
+     "time": "09:20",
+     "speaker": "Max",
+     "text": "Je veux que ce soit écrit. Pas de nouvelle ligne, pas de nouvelle rallonge. Si on dépasse, on coupe."
+    },
+    {
+     "id": "v10-m4:019",
+     "message_id": 19,
+     "time": "09:22",
+     "speaker": "Inconnu",
+     "text": "Et mon contrat de comédienne ? Il est basé sur le 3 mai, avec report au 17. Il faut le mettre à jour."
+    },
+    {
+     "id": "v10-m4:020",
+     "message_id": 20,
+     "time": "09:23",
+     "speaker": "Inconnu",
+     "text": "On met à jour la date et la clause de report. Pas de changement de cachet. Le cachet est déjà payé en deux fois."
+    },
+    {
+     "id": "v10-m4:021",
+     "message_id": 21,
+     "time": "09:24",
+     "speaker": "Naia",
+     "text": "D'accord. Mais je veux la confirmation écrite avant le 20. Mon agent ne travaille pas sans contrat daté."
+    },
+    {
+     "id": "v10-m4:022",
+     "message_id": 22,
+     "time": "09:25",
+     "speaker": "Camille",
+     "text": "Contrat daté aujourd'hui, confirmation avant le 20. C'est noté."
+    },
+    {
+     "id": "v10-m4:023",
+     "message_id": 23,
+     "time": "09:27",
+     "speaker": "Mxa",
+     "text": "Lumière demande une clause de confidentialité sur le budget. Ils ne veulent pas que le montant de l'avance circule."
+    },
+    {
+     "id": "v10-m4:024",
+     "message_id": 24,
+     "time": "09:28",
+     "speaker": "Nadia",
+     "text": "Le budget n'est pas secret. L'avance de Lumière peut l'être. On accepte la confidentialité sur l'avance, pas sur le film."
+    },
+    {
+     "id": "v10-m4:025",
+     "message_id": 25,
+     "time": "09:29",
+     "speaker": "Inès",
+     "text": "On peut limiter la confidentialité à l'avance et aux conditions commerciales. Le budget de production reste interne."
+    },
+    {
+     "id": "v10-m4:026",
+     "message_id": 26,
+     "time": "09:30",
+     "speaker": "Maira",
+     "text": "A.N. ne veut pas que son devis soit public. C'est déjà confidentiel dans le contrat."
+    },
+    {
+     "id": "v10-m4:027",
+     "message_id": 27,
+     "time": "09:32",
+     "speaker": "Cauille",
+     "text": "On garde les devis confidentiels. Le budget global reste interne. Le film n'est pas un secret."
+    },
+    {
+     "id": "v10-m4:028",
+     "message_id": 28,
+     "time": "09:33",
+     "speaker": "Leo",
+     "text": "Il y a un point technique : la scène de la rivière nécessite une autorisation de tournage. On l'a ?"
+    },
+    {
+     "id": "v10-m4:029",
+     "message_id": 29,
+     "time": "09:34",
+     "speaker": "Camille",
+     "text": "On a l'autorisation jusqu'au 25 mai. Si on tourne le 22, c'est bon. Après, il faut redemander."
+    },
+    {
+     "id": "v10-m4:030",
+     "message_id": 30,
+     "time": "09:35",
+     "speaker": "Max",
+     "text": "Donc on ne décale pas le 22. Si la météo est mauvaise, on tourne quand même. La rivière ne se déplace pas."
+    },
+    {
+     "id": "v10-m4:031",
+     "message_id": 31,
+     "time": "09:37",
+     "speaker": "Léo",
+     "text": "On tourne le 22, météo ou pas. On a une fenêtre de lumière de 6 h à 9 h. Après, c'est trop dur."
+    },
+    {
+     "id": "v10-m4:032",
+     "message_id": 32,
+     "time": "09:38",
+     "speaker": "Nadia",
+     "text": "Je serai là à 5 h 30. Mais je veux une loge, pas une tente. La dernière fois, c'était une tente."
+    },
+    {
+     "id": "v10-m4:033",
+     "message_id": 33,
+     "time": "09:39",
+     "speaker": "Camille",
+     "text": "Loge, pas tente. C'est dans le budget matériel. Léo, tu vérifies."
+    },
+    {
+     "id": "v10-m4:034",
+     "message_id": 34,
+     "time": "09:40",
+     "speaker": "Inconnu",
+     "text": "Vérifié. La loge est réservée. La tente, c'était pour le repérage, pas pour le tournage."
+    },
+    {
+     "id": "v10-m4:035",
+     "message_id": 35,
+     "time": "09:42",
+     "speaker": "Maria",
+     "text": "AN a besoin d'une confirmation de paiement avant de laisser les décors. On a un acompte de 50 % ?"
+    },
+    {
+     "id": "v10-m4:036",
+     "message_id": 36,
+     "time": "09:43",
+     "speaker": "Inès",
+     "text": "L'acompte est de 50 % à la signature, 50 % à la livraison. C'est dans le contrat. On paie aujourd'hui."
+    },
+    {
+     "id": "v10-m4:037",
+     "message_id": 37,
+     "time": "09:44",
+     "speaker": "Inconnu",
+     "text": "On signe et on paie l'acompte aujourd'hui. Meria, tu remets le planning de livraison."
+    },
+    {
+     "id": "v10-m4:038",
+     "message_id": 38,
+     "time": "09:45",
+     "speaker": "Maria",
+     "text": "Livraison le 15, reprise le 30. Le planning est prêt. Il est joint au contrat."
+    },
+    {
+     "id": "v10-m4:039",
+     "message_id": 39,
+     "time": "09:47",
+     "speaker": "Inconnu",
+     "text": "Lumière veut le nom du sous-distributeur belge dans le contrat. On met Nrod Diffusion, avec la mention Belgique seulement."
+    },
+    {
+     "id": "v10-m4:040",
+     "message_id": 40,
+     "time": "09:48",
+     "speaker": "Camille",
+     "text": "On met Nord-Diffusion-Belgique seulement. Lumière reste le distributeur principal. C'est clair pour tout le monde ?"
+    },
+    {
+     "id": "v10-m4:041",
+     "message_id": 41,
+     "time": "09:49",
+     "speaker": "Maria",
+     "text": "C'est clair. Et si N D veut distribuer en France, ce n'est pas dans ce contrat. Il faudra un avenant."
+    },
+    {
+     "id": "v10-m4:042",
+     "message_id": 42,
+     "time": "09:50",
+     "speaker": "Samir",
+     "text": "Exact. Le contrat Belgique ne donne aucun droit France. On ne signe pas un droit mondial par erreur."
+    },
+    {
+     "id": "v10-m4:043",
+     "message_id": 43,
+     "time": "09:52",
+     "speaker": "Inès",
+     "text": "Et la garantie bancaire de 15 000 ? Lumière l'a demandée ?"
+    },
+    {
+     "id": "v10-m4:044",
+     "message_id": 44,
+     "time": "09:53",
+     "speaker": "Samir",
+     "text": "Ils ne l'ont pas encore demandée. Si le budget reste à 3,858, ils ne la demandent pas."
+    },
+    {
+     "id": "v10-m4:045",
+     "message_id": 45,
+     "time": "09:54",
+     "speaker": "Léo",
+     "text": "Donc on ne paie pas la garantie. On la garde en réserve. Iès, tu ne l'engages pas."
+    },
+    {
+     "id": "v10-m4:046",
+     "message_id": 46,
+     "time": "09:55",
+     "speaker": "Iès",
+     "text": "Pas de garantie. Le budget reste à 3,858. La réserve de 15 000 reste disponible."
+    },
+    {
+     "id": "v10-m4:047",
+     "message_id": 47,
+     "time": "09:57",
+     "speaker": "Nadia",
+     "text": "On a donc une date, un budget, un contrat et un distributeur. C'est la première fois que j'entends les quatre ensemble."
+    },
+    {
+     "id": "v10-m4:048",
+     "message_id": 48,
+     "time": "09:58",
+     "speaker": "Max",
+     "text": "Et on ne change plus. Si quelqu'un change un des quatre, on refait une réunion. Pas de décision par mail."
+    },
+    {
+     "id": "v10-m4:049",
+     "message_id": 49,
+     "time": "09:59",
+     "speaker": "Maria",
+     "text": "Je signe le contrat AN maintenant. La production signe le bon de commande. On ne mélange pas les signatures."
+    },
+    {
+     "id": "v10-m4:050",
+     "message_id": 50,
+     "time": "10:00",
+     "speaker": "Camille",
+     "text": "Signatures séparées. Maria pour Atelier-Nord, moi pour la production. max ne signe pas pour maria."
+    },
+    {
+     "id": "v10-m4:051",
+     "message_id": 51,
+     "time": "10:01",
+     "speaker": "Samir",
+     "text": "Je fais signer Lumière demain. Le contrat Belgique suit après. N D ne signe pas avant Lumière."
+    },
+    {
+     "id": "v10-m4:052",
+     "message_id": 52,
+     "time": "10:02",
+     "speaker": "Iins",
+     "text": "Paiement de l'acompte Atelier-Nord aujourd'hui. Le solde à la livraison. Je note les deux dates."
+    },
+    {
+     "id": "v10-m4:053",
+     "message_id": 53,
+     "time": "10:03",
+     "speaker": "Caimlle",
+     "text": "On se retrouve le 20 juin pour la projection de contrôle. D'ici là, pas de nouvelle dépense."
+    },
+    {
+     "id": "v10-m4:054",
+     "message_id": 54,
+     "time": "10:04",
+     "speaker": "Leo",
+     "text": "projection de contrôle le 20 juin. Je réserve la salle et je prépare la copie de travail."
+    },
+    {
+     "id": "v10-m4:055",
+     "message_id": 55,
+     "time": "10:05",
+     "speaker": "Max",
+     "text": "Parfait. Budget 3,858, date 17 mai, Lumière principal, N.D. Belgique, Atelier Nord décors. On lève."
+    }
+   ]
+  },
+  {
+   "meeting_id": "v10-m5",
+   "title": "Projection de contrôle et bilan",
+   "meeting_date": "2026-06-20",
+   "style": "formelle",
+   "messages": [
+    {
+     "id": "v10-m5:001",
+     "message_id": 1,
+     "time": "09:00",
+     "speaker": "SPEAKER_01",
+     "text": "On est le 20 juin. On a tourné, on a une copie de travail, et on doit décider ce qui reste à corriger avant la copie finale du 15 novembre."
+    },
+    {
+     "id": "v10-m5:002",
+     "message_id": 2,
+     "time": "09:01",
+     "speaker": "SPEAKER_05",
+     "text": "J'ai vu la copie hier. Le montage tient, mais la scène de la rivière est trop longue de deux minutes. On peut couper sans perdre le sens."
+    },
+    {
+     "id": "v10-m5:003",
+     "message_id": 3,
+     "time": "09:02",
+     "speaker": "SPEAKER_03",
+     "text": "Deux minutes, c'est beaucoup. Si on coupe la rivière, mon personnage perd le moment où elle comprend que Max lui a menti."
+    },
+    {
+     "id": "v10-m5:004",
+     "message_id": 4,
+     "time": "09:03",
+     "speaker": "SPEAKER_7",
+     "text": "On ne coupe pas la révélation. On coupe les plans d'attente et le trajet en voiture. La révélation reste."
+    },
+    {
+     "id": "v10-m5:005",
+     "message_id": 5,
+     "time": "09:04",
+     "speaker": "SPEAKER_06",
+     "text": "Les plans d'attente, c'est trois minutes au total. On peut en garder une. La voiture, on peut la réduire à trente secondes."
+    },
+    {
+     "id": "v10-m5:006",
+     "message_id": 6,
+     "time": "09:05",
+     "speaker": "SPEAKER_01",
+     "text": "Décision : on coupe les plans d'attente et la voiture, pas la révélation. max, tu fais le nouveau montage cette semaine ?"
+    },
+    {
+     "id": "v10-m5:007",
+     "message_id": 7,
+     "time": "09:06",
+     "speaker": "SPEAKER_02",
+     "text": "Cette semaine, oui. Mais je veux que Nadia voie la nouvelle version avant qu'on l'envoie à Lumière."
+    },
+    {
+     "id": "v10-m5:008",
+     "message_id": 8,
+     "time": "09:07",
+     "speaker": "SEAKER_03",
+     "text": "Je veux la voir aussi. Et je veux que la scène du téléphone reste. C'est là qu'on comprend que Maria a prévenu Atelier Nord."
+    },
+    {
+     "id": "v10-m5:009",
+     "message_id": 9,
+     "time": "09:08",
+     "speaker": "SPEAKER_05",
+     "text": "La scène du téléphone, c'est le lien avec le mail du 22 avril. Si on la coupe, on perd la preuve que j'avais alerté la production."
+    },
+    {
+     "id": "v10-m5:010",
+     "message_id": 10,
+     "time": "09:09",
+     "speaker": "SPEAKER_02",
+     "text": "On garde la scène du téléphone. C'est une scène de 40 secondes, pas un plan d'attente."
+    },
+    {
+     "id": "v10-m5:011",
+     "message_id": 11,
+     "time": "09:11",
+     "speaker": "SPEAKER_06",
+     "text": "Le budget est à 3,858. Le montage supplémentaire ne coûte rien, mais le mixage et l'étalonnage peuvent coûter 20 000 de plus."
+    },
+    {
+     "id": "v10-m5:012",
+     "message_id": 12,
+     "time": "09:12",
+     "speaker": "SPEAKER_01",
+     "text": "On a 30 000 de musique non dépensés. On les utilise pour le mixage et l'étalonnage. Pas de nouvelle rallonge."
+    },
+    {
+     "id": "v10-m5:013",
+     "message_id": 13,
+     "time": "09:13",
+     "speaker": "SPEAKER_04",
+     "text": "L'étalonnage de la rivière est le plus gros poste. C'est 12 000. Le mixage, 8 000. On est à 20 000."
+    },
+    {
+     "id": "v10-m5:014",
+     "message_id": 14,
+     "time": "09:14",
+     "speaker": "SPEAKER_06",
+     "text": "Donc 30 000 de musique moins 20 000 de post-production, il reste 10 000 de réserve. Le budget final reste 3,858."
+    },
+    {
+     "id": "v10-m5:015",
+     "message_id": 15,
+     "time": "09:16",
+     "speaker": "SPEAKER_07",
+     "text": "Lumière a vu la copie de travail. Ils demandent une fin plus claire. Ils trouvent que le dernier plan de la rivière ne dit pas si Maria reste ou part."
+    },
+    {
+     "id": "v10-m5:016",
+     "message_id": 16,
+     "time": "09:17",
+     "speaker": "SPEAKER_02",
+     "text": "La fin n'est pas claire exprès. Mais si Lumière demande une fin plus claire, on peut ajouter un plan de maria qui ferme la porte."
+    },
+    {
+     "id": "v10-m5:017",
+     "message_id": 17,
+     "time": "09:18",
+     "speaker": "SPEAKER_04",
+     "text": "Un plan de Marai qui ferme la porte, ça veut dire qu'elle reste. Ce n'est pas ce que le scénario dit. Elle part."
+    },
+    {
+     "id": "v10-m5:018",
+     "message_id": 18,
+     "time": "09:19",
+     "speaker": "SPEAKER_05",
+     "text": "Je ne veux pas que le personnage reste parce que c'est la femme de Mcx. Elle part pour son travail. C'est plus fort."
+    },
+    {
+     "id": "v10-m5:019",
+     "message_id": 19,
+     "time": "09:21",
+     "speaker": "SPEAKER_01",
+     "text": "On garde la fin ouverte. On ne fait pas de plan de porte. Si Lumière insiste, on discute, mais on ne change pas le sens."
+    },
+    {
+     "id": "v10-m5:020",
+     "message_id": 20,
+     "time": "09:22",
+     "speaker": "SPEAKER_02",
+     "text": "Je peux défendre la fin ouverte. Mais Lumièae peut retarder la sortie si elle n'est pas convaincue."
+    },
+    {
+     "id": "v10-m5:021",
+     "message_id": 21,
+     "time": "09:23",
+     "speaker": "SPEAKER_07",
+     "text": "Ils peuvent retarder la sortie, pas changer le film. On tient la fin."
+    },
+    {
+     "id": "v10-m5:022",
+     "message_id": 22,
+     "time": "09:24",
+     "speaker": "SPEAKER_03",
+     "text": "Et la scène de la rivière ? On la garde dans la copie finale ?"
+    },
+    {
+     "id": "v10-m5:023",
+     "message_id": 23,
+     "time": "09:25",
+     "speaker": "SPEAKER_02 / SPEAKER_05",
+     "text": "On la garde. On coupe seulement les plans d'attente et la voiture. La scène reste, plus courte."
+    },
+    {
+     "id": "v10-m5:024",
+     "message_id": 24,
+     "time": "09:27",
+     "speaker": "SPEAKER_01",
+     "text": "Donc décision : nouveau montage cette semaine, projection de contrôle le 27, copie finale le 15 novembre. On ne change plus après le 27."
+    },
+    {
+     "id": "v10-m5:025",
+     "message_id": 25,
+     "time": "09:28",
+     "speaker": "SPEAKER_06",
+     "text": "Le mixage et l'étalonnage sont engagés. Le budget reste à 3,858. La réserve passe à 10 000."
+    },
+    {
+     "id": "v10-m5:026",
+     "message_id": 26,
+     "time": "09:29",
+     "speaker": "SPEAKER_07",
+     "text": "Lumière confirme la sortie le 20 novembre, avec la première fenêtre de diffusion. N.D. reste Belgique seulement."
+    },
+    {
+     "id": "v10-m5:027",
+     "message_id": 27,
+     "time": "09:30",
+     "speaker": "SPEAKER_03",
+     "text": "Atelier Nord a fini la reprise. Le contrat est soldé. Je peux envoyer la facture finale aujourd'hui."
+    },
+    {
+     "id": "v10-m5:028",
+     "message_id": 28,
+     "time": "09:31",
+     "speaker": "SPEAKER_01",
+     "text": "Facture finale, oui. On paie le solde et on clôt le contrat décors. Pas de nouvelle commande."
+    },
+    {
+     "id": "v10-m5:029",
+     "message_id": 29,
+     "time": "09:33",
+     "speaker": "SPEAKER_01",
+     "text": "La copie de travail a un problème de son sur la scène du téléphone. Le mixage doit corriger ça en priorité."
+    },
+    {
+     "id": "v10-m5:030",
+     "message_id": 30,
+     "time": "09:34",
+     "speaker": "SPEAKER_02",
+     "text": "Le son du téléphone, c'est important. C'est la scène qui explique le mail du 22 avril. On ne la rate pas."
+    },
+    {
+     "id": "v10-m5:031",
+     "message_id": 31,
+     "time": "09:35",
+     "speaker": "SPEAKER_06",
+     "text": "Le mixage a 8 000. Si le problème est plus grave, on utilise les 10 000 de réserve. Pas plus."
+    },
+    {
+     "id": "v10-m5:032",
+     "message_id": 32,
+     "time": "09:37",
+     "speaker": "SPEAKRE_03",
+     "text": "Et la promotion ? On ne m'a pas parlé de la promotion. Je dois être disponible pour les interviews ?"
+    },
+    {
+     "id": "v10-m5:033",
+     "message_id": 33,
+     "time": "09:38",
+     "speaker": "SPEAKER_06",
+     "text": "La promotion commence en octobre. On te donnera le planning deux semaines avant. Pas de surprise."
+    },
+    {
+     "id": "v10-m5:034",
+     "message_id": 34,
+     "time": "09:39",
+     "speaker": "SPEAKER_07",
+     "text": "Lumière veut une avant-première le 5 novembre. Si la copie est prête le 15 novembre, ce n'est pas possible."
+    },
+    {
+     "id": "v10-m5:035",
+     "message_id": 35,
+     "time": "09:40",
+     "speaker": "SPEAKER_02",
+     "text": "On peut faire une avant-première avec la copie de travail le 5 novembre, et la copie finale le 15. Ce sont deux copies."
+    },
+    {
+     "id": "v10-m5:036",
+     "message_id": 36,
+     "time": "09:41",
+     "speaker": "Inconnu",
+     "text": "Une avant-première avec une copie non finie, c'est risqué. Si les critiques voient une copie de travail, ils écrivent sur la copie de travail."
+    },
+    {
+     "id": "v10-m5:037",
+     "message_id": 37,
+     "time": "09:43",
+     "speaker": "SPEAKER_07",
+     "text": "Lumière accepte de décaler l'avant-première au 12 novembre, avec la copie finale le 15. C'est serré, mais faisable."
+    },
+    {
+     "id": "v10-m5:038",
+     "message_id": 38,
+     "time": "09:44",
+     "speaker": "SPEAKER_01",
+     "text": "On décale l'avant-première au 12. La copie finale reste le 15. On ne décale pas la sortie du 20."
+    },
+    {
+     "id": "v10-m5:039",
+     "message_id": 39,
+     "time": "09:45",
+     "speaker": "SPEAKER_06",
+     "text": "Le budget promotion n'est pas dans les 3,858. C'est Lumière qui paie. On ne paie pas la promotion."
+    },
+    {
+     "id": "v10-m5:040",
+     "message_id": 40,
+     "time": "09:46",
+     "speaker": "SPEAKER_07",
+     "text": "Exact. La promotion est dans le contrat Lumière. La production ne paie pas les interviews."
+    },
+    {
+     "id": "v10-m5:041",
+     "message_id": 41,
+     "time": "09:48",
+     "speaker": "SPEAKER_05",
+     "text": "Je ne serai pas à l'avant-première. Atelier Nord n'est pas invitée, et je ne viens pas comme épouse de Max."
+    },
+    {
+     "id": "v10-m5:042",
+     "message_id": 42,
+     "time": "09:49",
+     "speaker": "SPEAKER_02",
+     "text": "Tu viens si tu veux, mais pas comme représentante d'Atelier Nord. Le contrat est fini. Tu viens comme Maira, ou tu ne viens pas."
+    },
+    {
+     "id": "v10-m5:043",
+     "message_id": 43,
+     "time": "09:50",
+     "speaker": "SPEAKEe05",
+     "text": "Je ne viens pas. La production et les décors, c'est fini. Je ne veux pas être dans les photos."
+    },
+    {
+     "id": "v10-m5:044",
+     "message_id": 44,
+     "time": "09:51",
+     "speaker": "SPEAKER_01",
+     "text": "C'est noté. Maira n'est pas à l'avant-première. On ne la mentionne pas dans la promotion."
+    },
+    {
+     "id": "v10-m5:045",
+     "message_id": 45,
+     "time": "09:52",
+     "speaker": "SPEAKER_30",
+     "text": "Moi je serai là. Mais je veux que le contrat de promotion soit séparé du contrat de comédienne."
+    },
+    {
+     "id": "v10-m5:046",
+     "message_id": 46,
+     "time": "09:53",
+     "speaker": "SPEAKER_06",
+     "text": "Le contrat de promotion est séparé. Il est payé par Lumière, pas par la production. On te l'envoie cette semaine."
+    },
+    {
+     "id": "v10-m5:047",
+     "message_id": 47,
+     "time": "09:55",
+     "speaker": "Inconnu",
+     "text": "Après le mixage, je veux une projection technique. Pas une projection de presse. Juste l'équipe image et son."
+    },
+    {
+     "id": "v10-m5:048",
+     "message_id": 48,
+     "time": "09:56",
+     "speaker": "SPEAKER_01",
+     "text": "Projetcion technique le 10 novembre. Avant-première le 12. Copie finale le 15. Sortie le 20. C'est le calendrier."
+    },
+    {
+     "id": "v10-m5:049",
+     "message_id": 49,
+     "time": "09:57",
+     "speaker": "SPEAKER_02",
+     "text": "Et le montage final est verrouillé après la projection technique. Pas de changement après le 10."
+    },
+    {
+     "id": "v10-m5:050",
+     "message_id": 50,
+     "time": "09:58",
+     "speaker": "SPEAKER03",
+     "text": "Je veux voir la version du 27 avant le verrouillage. Si la scène du téléphone est mauvaise, je le dis."
+    },
+    {
+     "id": "v10-m5:051",
+     "message_id": 51,
+     "time": "09:59",
+     "speaker": "SPEAKRE_02",
+     "text": "Tu la vois le 27. Si la scène du téléphone est mauvaise, on la refait. Mais on ne refait pas tout le film."
+    },
+    {
+     "id": "v10-m5:052",
+     "message_id": 52,
+     "time": "10:00",
+     "speaker": "SPEAKER_06",
+     "text": "On a donc un calendrier, un budget final et des responsabilités. Inès, tu envoies le budget final. Samir, tu confirmes Lumière. Léo, tu planifies le mixage."
+    },
+    {
+     "id": "v10-m5:053",
+     "message_id": 53,
+     "time": "10:01",
+     "speaker": "SPEAKER_01",
+     "text": "Budget final 3,858, réserve 10 000. J'envoie aujourd'hui."
+    },
+    {
+     "id": "v10-m5:054",
+     "message_id": 54,
+     "time": "10:02",
+     "speaker": "SPEAKER_01",
+     "text": "Lumière confirme l'avant-première le 12 et la sortie le 20. Nord Diffusion reste Belgique."
+    },
+    {
+     "id": "v10-m5:055",
+     "message_id": 55,
+     "time": "10:03",
+     "speaker": "SPEAKER_01",
+     "text": "Parfait. On se retrouve le 27 pour la projection de contrôle. Et on ne change plus le budget. On lève."
+    }
+   ]
+  }
+ ],
+ "corruption": {
+  "source": "v10_meetings.json",
+  "seed": 23,
+  "acronym_rate": 0.8,
+  "entity_rate": 0.6,
+  "diarization_scale": 2.0,
+  "counts": {
+   "swap": 29,
+   "mislabel": 31,
+   "merged_label": 7,
+   "name_variant": 29,
+   "drop": 21,
+   "acronym_injected": 20,
+   "acronym": 19,
+   "entity": 66,
+   "anonymised_meeting": 2
+  },
+  "test_queries": 4
+ }
+}

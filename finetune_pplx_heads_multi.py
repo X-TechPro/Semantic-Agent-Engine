@@ -52,13 +52,28 @@ class Pack:
 
 
 def load_packs():
-    eng = me.MeetingMemoryEngine(device=DEVICE)
-    v7 = eng._get_dataset("synthetic")
+    # v7 train split, built directly from the JSON corpus (no engine/sqlite
+    # dependency: the artifact cache is not required to rebuild the head).
+    v7m = json.loads((ROOT / "data/french_synthetic_meetings.json").read_text())
+    v7q = json.loads((ROOT / "data/french_retrieval_queries.json").read_text())
+    r7, b7 = {}, {}
+    for split, rows in v7m.items():
+        for m in rows:
+            mid = m["meeting_id"]; b7[mid] = []
+            for x in m["messages"]:
+                cid = f"{mid}:{int(x['message_id']):03d}"; b7[mid].append(cid)
+                text = x.get("message", x.get("text", ""))
+                speaker = x.get("username", x.get("speaker", ""))
+                r7[cid] = {"chunk_id": cid, "meeting_id": mid, "encoder_text":
+                           f"Réunion : {m['title']}. Intervenant : {speaker}. "
+                           f"Intervention : {text}", "message_text": text}
     # v8
     d8 = json.loads((ROOT / "data/v8_meetings.json").read_text())
     q8 = json.loads((ROOT / "data/v8_queries.json").read_text())
+    if isinstance(q8, dict): q8 = q8["queries"]
+    d8m = d8["meetings"] if isinstance(d8, dict) else d8
     r8, b8 = {}, {}
-    for m in d8["meetings"]:
+    for m in d8m:
         mid = m["meeting_id"]; b8[mid] = []
         for x in m["messages"]:
             cid = x.get("id") or f"{mid}:{x['message_id']:04d}"; b8[mid].append(cid)
@@ -71,15 +86,16 @@ def load_packs():
     d9 = json.loads((ROOT / "data/v9_meetings.json").read_text())
     q9 = json.loads((ROOT / "data/v9_queries.json").read_text())
     if isinstance(q9, dict): q9 = q9["queries"]
+    d9m = d9["meetings"] if isinstance(d9, dict) else d9
     r9, b9 = {}, {}
-    for m in d9["meetings"]:
+    for m in d9m:
         mid = m["meeting_id"]; b9[mid] = []
         for x in m["messages"]:
             cid = x["id"]; b9[mid].append(cid)
             r9[cid] = {"chunk_id": cid, "meeting_id": mid, "encoder_text":
                        f"Réunion : {m['title']}. Intervenant : {x['speaker']}. Intervention : {x['text']}",
                        "message_text": x["text"]}
-    packs = [Pack("v7", v7["records"], v7["by_meeting"], v7["queries"], {}, {}, {}, {}),
+    packs = [Pack("v7", r7, b7, v7q, {}, {}, {}, {}),
              Pack("v8", r8, b8, q8, {}, {}, {}, {}),
              Pack("v9", r9, b9, q9, {}, {}, {}, {})]
     enc = PplxContextTokens()
@@ -100,8 +116,12 @@ def main():
     torch.manual_seed(17); random.seed(17)
     packs = load_packs()
     late = LateHead().to(DEVICE)
-    late.load_state_dict(torch.load(ART / "pplx_v3_late_head_multi.pt", map_location="cpu",
-                                    weights_only=False)["late"])
+    head_path = ART / "pplx_v3_late_head_multi.pt"
+    if head_path.exists():
+        late.load_state_dict(torch.load(head_path, map_location="cpu",
+                                        weights_only=False)["late"])
+    else:
+        print("no existing late head; training from scratch", flush=True)
     late.train()
     params = list(late.parameters())
     opt = torch.optim.AdamW(params, lr=2e-4, weight_decay=1e-3)

@@ -1,0 +1,384 @@
+{
+ "queries": [
+  {
+   "query_id": "v10-q01",
+   "meeting_id": "v10-m1",
+   "split": "train",
+   "type": "fact",
+   "query": "Qui réalise Les Rivières de Sel ?",
+   "answer": "Max réalise Les Rivières de Sel.",
+   "evidence_chunk_ids": [
+    "v10-m1:003",
+    "v10-m1:004"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:003",
+    "v10-m1:004"
+   ]
+  },
+  {
+   "query_id": "v10-q02",
+   "meeting_id": "v10-m1",
+   "split": "train",
+   "type": "fact",
+   "query": "Qui est l'épouse de Max ?",
+   "answer": "Maria est l'épouse de Max.",
+   "evidence_chunk_ids": [
+    "v10-m1:009",
+    "v10-m1:010"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:009",
+    "v10-m1:010"
+   ]
+  },
+  {
+   "query_id": "v10-q03",
+   "meeting_id": "v10-m1",
+   "split": "train",
+   "type": "fact",
+   "query": "Où travaille Maria ?",
+   "answer": "Maria travaille chez Atelier Nord comme cheffe de projet décors.",
+   "evidence_chunk_ids": [
+    "v10-m1:007",
+    "v10-m1:009"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:007",
+    "v10-m1:009"
+   ]
+  },
+  {
+   "query_id": "v10-q04",
+   "meeting_id": "v10-m1",
+   "split": "train",
+   "type": "multi_hop_entity",
+   "query": "Qui est l'épouse du réalisateur des Rivières de Sel ?",
+   "answer": "Maria, l'épouse de Max, qui réalise Les Rivières de Sel.",
+   "evidence_chunk_ids": [
+    "v10-m1:003",
+    "v10-m1:004",
+    "v10-m1:009",
+    "v10-m1:010"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:003",
+    "v10-m1:004",
+    "v10-m1:009",
+    "v10-m1:010"
+   ]
+  },
+  {
+   "query_id": "v10-q05",
+   "meeting_id": "v10-m1",
+   "split": "train",
+   "type": "multi_hop_entity",
+   "query": "Où travaille l'épouse du réalisateur ?",
+   "answer": "Maria, épouse de Max, travaille chez Atelier Nord.",
+   "evidence_chunk_ids": [
+    "v10-m1:004",
+    "v10-m1:007",
+    "v10-m1:009",
+    "v10-m1:010"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:004",
+    "v10-m1:007",
+    "v10-m1:009",
+    "v10-m1:010"
+   ]
+  },
+  {
+   "query_id": "v10-q06",
+   "meeting_id": "v10-m1",
+   "split": "train",
+   "type": "budget",
+   "query": "Quel budget initial a été annoncé pour la phase une ?",
+   "answer": "Le budget initial était de 3,2 millions.",
+   "evidence_chunk_ids": [
+    "v10-m1:013",
+    "v10-m1:015"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:013",
+    "v10-m1:015"
+   ]
+  },
+  {
+   "query_id": "v10-q07",
+   "meeting_id": "v10-m2",
+   "split": "train",
+   "type": "multi_hop_budget",
+   "query": "Quel budget a été proposé au conseil, et qui devait le porter ?",
+   "answer": "Inès a confirmé la proposition de 3,8 millions, portée par Camille au conseil.",
+   "evidence_chunk_ids": [
+    "v10-m2:004",
+    "v10-m2:005",
+    "v10-m2:006",
+    "v10-m2:031"
+   ],
+   "target_chunk_ids": [
+    "v10-m2:004",
+    "v10-m2:005",
+    "v10-m2:006",
+    "v10-m2:031"
+   ]
+  },
+  {
+   "query_id": "v10-q08",
+   "meeting_id": "v10-m2",
+   "split": "train",
+   "type": "multi_hop_responsibility",
+   "query": "Qui était responsable de la sécurité avant le recrutement du régisseur ?",
+   "answer": "Marc était responsable de la sécurité, mais il était absent ; Léo suppléait sans le remplacer.",
+   "evidence_chunk_ids": [
+    "v10-m1:028",
+    "v10-m1:029",
+    "v10-m2:012",
+    "v10-m2:013",
+    "v10-m2:014"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:028",
+    "v10-m1:029",
+    "v10-m2:012",
+    "v10-m2:013",
+    "v10-m2:014"
+   ]
+  },
+  {
+   "query_id": "v10-q09",
+   "meeting_id": "v10-m2",
+   "split": "train",
+   "type": "temporal_revision",
+   "query": "Quelle était la date de secours si l'assurance refusait le 3 mai ?",
+   "answer": "La date de secours était le 17 mai, dernière fenêtre disponible pour la maison.",
+   "evidence_chunk_ids": [
+    "v10-m1:022",
+    "v10-m2:022",
+    "v10-m2:024",
+    "v10-m3:016"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:022",
+    "v10-m2:022",
+    "v10-m2:024",
+    "v10-m3:016"
+   ]
+  },
+  {
+   "query_id": "v10-q10",
+   "meeting_id": "v10-m3",
+   "split": "val",
+   "type": "multi_hop_causal",
+   "query": "Pourquoi le tournage a-t-il été décalé après le 3 mai ?",
+   "answer": "Un câblage non conforme a provoqué un incendie de projecteur le 7 mai ; la maison a été fermée.",
+   "evidence_chunk_ids": [
+    "v10-m3:002",
+    "v10-m3:004",
+    "v10-m3:005",
+    "v10-m3:007",
+    "v10-m3:008"
+   ],
+   "target_chunk_ids": [
+    "v10-m3:002",
+    "v10-m3:004",
+    "v10-m3:005",
+    "v10-m3:007",
+    "v10-m3:008"
+   ]
+  },
+  {
+   "query_id": "v10-q11",
+   "meeting_id": "v10-m3",
+   "split": "val",
+   "type": "multi_hop_temporal",
+   "query": "Quelle est la date finale de tournage après l'incident ?",
+   "answer": "Le tournage reprend le 17 mai et se termine le 30 mai.",
+   "evidence_chunk_ids": [
+    "v10-m3:016",
+    "v10-m3:017",
+    "v10-m3:049",
+    "v10-m4:001"
+   ],
+   "target_chunk_ids": [
+    "v10-m3:016",
+    "v10-m3:017",
+    "v10-m3:049",
+    "v10-m4:001"
+   ]
+  },
+  {
+   "query_id": "v10-q12",
+   "meeting_id": "v10-m3",
+   "split": "val",
+   "type": "multi_hop_budget",
+   "query": "Quel budget final a été validé après l'incident, et pourquoi ?",
+   "answer": "Le budget est passé à 3,858 millions après l'incendie, l'électricien et la sécurité.",
+   "evidence_chunk_ids": [
+    "v10-m3:011",
+    "v10-m3:018",
+    "v10-m3:032",
+    "v10-m3:034",
+    "v10-m3:036"
+   ],
+   "target_chunk_ids": [
+    "v10-m3:011",
+    "v10-m3:018",
+    "v10-m3:032",
+    "v10-m3:034",
+    "v10-m3:036"
+   ]
+  },
+  {
+   "query_id": "v10-q13",
+   "meeting_id": "v10-m4",
+   "split": "val",
+   "type": "multi_hop_entity",
+   "query": "Quel distributeur reste principal, et quel est le rôle de Nord Diffusion ?",
+   "answer": "Lumière reste le distributeur principal ; Nord Diffusion est seulement sous-distributeur en Belgique.",
+   "evidence_chunk_ids": [
+    "v10-m3:038",
+    "v10-m3:039",
+    "v10-m3:040",
+    "v10-m4:007",
+    "v10-m4:008"
+   ],
+   "target_chunk_ids": [
+    "v10-m3:038",
+    "v10-m3:039",
+    "v10-m3:040",
+    "v10-m4:007",
+    "v10-m4:008"
+   ]
+  },
+  {
+   "query_id": "v10-q14",
+   "meeting_id": "v10-m4",
+   "split": "val",
+   "type": "multi_hop_contract",
+   "query": "Quel contrat lie Atelier Nord à la production, et qui signe ?",
+   "answer": "Atelier Nord fournit les décors pour 390 000 ; Maria signe pour Atelier Nord, Camille pour la production.",
+   "evidence_chunk_ids": [
+    "v10-m1:010",
+    "v10-m1:015",
+    "v10-m2:045",
+    "v10-m2:046",
+    "v10-m4:009",
+    "v10-m4:010"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:010",
+    "v10-m1:015",
+    "v10-m2:045",
+    "v10-m2:046",
+    "v10-m4:009",
+    "v10-m4:010"
+   ]
+  },
+  {
+   "query_id": "v10-q15",
+   "meeting_id": "v10-m4",
+   "split": "val",
+   "type": "multi_hop_contract",
+   "query": "Qui signe le contrat entre Atelier Nord et la production, et qui ne signe pas ?",
+   "answer": "Maria signe pour Atelier Nord et Camille pour la production ; Max ne signe pas pour Maria.",
+   "evidence_chunk_ids": [
+    "v10-m1:045",
+    "v10-m1:046",
+    "v10-m4:009",
+    "v10-m4:010",
+    "v10-m4:050"
+   ],
+   "target_chunk_ids": [
+    "v10-m1:045",
+    "v10-m1:046",
+    "v10-m4:009",
+    "v10-m4:010",
+    "v10-m4:050"
+   ]
+  },
+  {
+   "query_id": "v10-q16",
+   "meeting_id": "v10-m5",
+   "split": "test",
+   "type": "multi_hop_temporal",
+   "query": "Quelles sont les dates de la projection de contrôle, de l'avant-première et de la copie finale ?",
+   "answer": "Projection de contrôle le 27 juin, avant-première le 12 novembre, copie finale le 15 novembre.",
+   "evidence_chunk_ids": [
+    "v10-m5:024",
+    "v10-m5:037",
+    "v10-m5:038",
+    "v10-m5:048"
+   ],
+   "target_chunk_ids": [
+    "v10-m5:024",
+    "v10-m5:037",
+    "v10-m5:038",
+    "v10-m5:048"
+   ]
+  },
+  {
+   "query_id": "v10-q17",
+   "meeting_id": "v10-m5",
+   "split": "test",
+   "type": "multi_hop_budget",
+   "query": "Quel est le budget final et combien reste-t-il de réserve ?",
+   "answer": "Le budget final est de 3,858 millions, avec 10 000 de réserve.",
+   "evidence_chunk_ids": [
+    "v10-m3:032",
+    "v10-m3:036",
+    "v10-m5:014",
+    "v10-m5:025"
+   ],
+   "target_chunk_ids": [
+    "v10-m3:032",
+    "v10-m3:036",
+    "v10-m5:014",
+    "v10-m5:025"
+   ]
+  },
+  {
+   "query_id": "v10-q18",
+   "meeting_id": "v10-m5",
+   "split": "test",
+   "type": "multi_hop_responsibility",
+   "query": "Qui paie la promotion du film, et qui n'est pas à l'avant-première ?",
+   "answer": "Lumière paie la promotion ; Maria ne vient pas à l'avant-première.",
+   "evidence_chunk_ids": [
+    "v10-m5:038",
+    "v10-m5:039",
+    "v10-m5:040",
+    "v10-m5:041",
+    "v10-m5:043"
+   ],
+   "target_chunk_ids": [
+    "v10-m5:038",
+    "v10-m5:039",
+    "v10-m5:040",
+    "v10-m5:041",
+    "v10-m5:043"
+   ]
+  },
+  {
+   "query_id": "v10-q19",
+   "meeting_id": "v10-m5",
+   "split": "test",
+   "type": "multi_hop_entity",
+   "query": "Quel est le rôle final de Nord Diffusion, et qui reste le distributeur principal ?",
+   "answer": "Lumière reste le distributeur principal ; Nord Diffusion reste sous-distributeur en Belgique.",
+   "evidence_chunk_ids": [
+    "v10-m4:007",
+    "v10-m4:008",
+    "v10-m5:026",
+    "v10-m5:054"
+   ],
+   "target_chunk_ids": [
+    "v10-m4:007",
+    "v10-m4:008",
+    "v10-m5:026",
+    "v10-m5:054"
+   ]
+  }
+ ]
+}
